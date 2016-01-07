@@ -1,0 +1,156 @@
+<?php 
+// Fichier CstMsg.php
+//
+$NoMsg = 0;
+define ('MSGFORMSTAGE_MATERIEL',           ++$NoMsg);
+define ('MSGFORMSTAGE_LOGICIEL',           ++$NoMsg);
+
+define ('MSGFORMSTAGE_LANGAGES',           ++$NoMsg);
+define ('MSGFORMSTAGE_BD',                 ++$NoMsg);
+define ('MSGFORMSTAGE_LOGICIELS_SPEC',     ++$NoMsg);
+define ('MSGFORMSTAGE_METHODES_STANDARDS', ++$NoMsg);
+
+define ('MSGFORMSTAGE_ANALYSE',            ++$NoMsg);
+define ('MSGFORMSTAGE_CONCEPTION',         ++$NoMsg);
+define ('MSGFORMSTAGE_PROGRAMMATION',      ++$NoMsg);
+define ('MSGFORMSTAGE_CONTROLE_QL',        ++$NoMsg);
+define ('MSGFORMSTAGE_GESTIONPROJET',      ++$NoMsg);
+
+define ('MSGFORMSTAGE_SUJET',              ++$NoMsg);
+define ('MSGFORMSTAGE_NATURE_TACHE',       ++$NoMsg);
+define ('MSGFORMSTAGE_INTEGRATION',        ++$NoMsg);
+
+define ('MSGFORMSTAGE_REMARQUES',          ++$NoMsg);
+define ('MSGFORMSTAGE_DESCR_SERVICE',      ++$NoMsg);
+define ('MSGFORMSTAGE_NBPERS_CI',          ++$NoMsg);
+define ('MSGFORMSTAGE_NBSTAGIAIRES',       ++$NoMsg);
+define ('MSGFORMSTAGE_NBPERS_SERV',        ++$NoMsg);
+define ('MSGFORMSTAGE_OLDSTAGIAIRES',      ++$NoMsg);
+define ('MSGFORMSTAGE_ENVIRONSTAGIAIRE',   ++$NoMsg);
+
+define ('MSGFORMSTAGE_RENS_PRATIQUES',   ++$NoMsg);
+define ('MSGFORMSTAGE_INDEMN_STAGE',     ++$NoMsg);
+define ('MSGFORMSTAGE_INDEMN_REPAS',     ++$NoMsg);
+define ('MSGFORMSTAGE_INDEMN_TRANSPORT', ++$NoMsg);
+define ('MSGFORMSTAGE_MOYEN_TRANSPORT',  ++$NoMsg);
+define ('MSGFORMSTAGE_EMBAUCHE',         ++$NoMsg);
+
+$Msg_FormStage [MSGFORMSTAGE_MATERIEL      ] = 'Environnement matMsg_FormStageriel'; 
+$Msg_FormStage [MSGFORMSTAGE_LOGICIEL      ] = 'Environnement logiciel'; 
+
+define ('MSGFORMSTAGE_LANGAGES',           ++$NoMsg);
+define ('MSGFORMSTAGE_BD',                 ++$NoMsg);
+define ('MSGFORMSTAGE_LOGICIELS_SPEC',     ++$NoMsg);
+define ('MSGFORMSTAGE_METHODES_STANDARDS', ++$NoMsg);
+
+$Msg_FormStage [MSGFORMSTAGE_LANGAGES          ] = 'Langages'; 
+$Msg_FormStage [MSGFORMSTAGE_BD                ] = 'Bases de donn&eacute;es';
+$Msg_FormStage [MSGFORMSTAGE_LOGICIELS_SPEC    ] = 'Utilisation de logiciels sp&eacute;cifiques &agrave; l\'entreprise';
+$Msg_FormStage [MSGFORMSTAGE_METHODES_STANDARDS] = 'M�thodes ou standars : ';
+
+$Msg_FormStage [MSGFORMSTAGE_ANALYSE         ] = '- d\'Analyse :';
+$Msg_FormStage [MSGFORMSTAGE_CONCEPTION      ] = '- de Conception :';
+$Msg_FormStage [MSGFORMSTAGE_PROGRAMMATION   ] = '- de Programmation :';
+$Msg_FormStage [MSGFORMSTAGE_CONTROLE_QL     ] = '- de Controle qualit&eacute; logicielle :';
+$Msg_FormStage [MSGFORMSTAGE_GESTIONPROJET   ] = '- de Gestion de projet :';
+
+$Msg_FormStage [MSGFORMSTAGE_SUJET           ] = 'Sujet :';
+$Msg_FormStage [MSGFORMSTAGE_NATURE_TACHE    ] = 'Nature de la t&acirc;che :';
+$Msg_FormStage [MSGFORMSTAGE_INTEGRATION     ] = 'Le travail de l\'&eacute;tudiant :';
+
+$Msg_FormStage [MSGFORMSTAGE_REMARQUES       ] = 'Remarques g&eacute;n&eacute;rales : ';
+$Msg_FormStage [MSGFORMSTAGE_DESCR_SERVICE   ] = 'Service: ';
+$Msg_FormStage [MSGFORMSTAGE_NBPERS_CI       ] = 'Nombre de personnes du Centre Informatique : ';
+$Msg_FormStage [MSGFORMSTAGE_NBSTAGIAIRES    ] = 'Nombre de stagiaires pr&eacute;vus : ';
+$Msg_FormStage [MSGFORMSTAGE_NBPERS_SERV     ] = 'Nombre de personnes du service o&ucirc; sera affect&eacute; le stagiaire : ';
+$Msg_FormStage [MSGFORMSTAGE_OLDSTAGIAIRES   ] = 'L\'entreprise � d&eacute;j&agrave; accueilli des stagiaires <br /> de notre d&eacute;partement : ';
+$Msg_FormStage [MSGFORMSTAGE_ENVIRONSTAGIAIRE] = 'Le stagiaire travaillera :';
+
+$Msg_FormStage [MSGFORMSTAGE_RENS_PRATIQUES  ] = 'Renseignements pratiques : ';
+$Msg_FormStage [MSGFORMSTAGE_INDEMN_STAGE    ] = 'Indemnit&eacute;s de Stage';
+$Msg_FormStage [MSGFORMSTAGE_INDEMN_REPAS    ] = 'Indemnit&eacute;s de Repas';
+$Msg_FormStage [MSGFORMSTAGE_INDEMN_TRANSPORT] = 'Indemnit&eacute;s de Transport';
+$Msg_FormStage [MSGFORMSTAGE_MOYEN_TRANSPORT ] = 'Moyen de Transport';
+$Msg_FormStage [MSGFORMSTAGE_EMBAUCHE        ] = 'Possibilit&eacute; d\'embauche apr&egrave;s le stage';
+
+define ('MATERIEL_PAR_LIGNE', 2);
+define ('LAN_PAR_LIGNE',      3);
+define ('WAN_PAR_LIGNE',      2);
+define ('LANG_PAR_LIGNE',     4);
+define ('OS_PAR_LIGNE',       4);
+define ('BD_PAR_LIGNE',       4);
+
+$IndCodErr = 0;
+
+define ('ERRCONNECT',        ++$IndCodErr);
+define ('ERRSELECT',         ++$IndCodErr);
+define ('ERRREQUEST',        ++$IndCodErr);
+
+define ('LOGINUNDERSCORE',   ++$IndCodErr);
+define ('LOGINCARINVAL',     ++$IndCodErr);
+define ('LOGINNBCARINVAL',   ++$IndCodErr);
+define ('LOGINDEJAPRIS',     ++$IndCodErr);
+define ('TUTEUR_SOC_IMPOSS', ++$IndCodErr);
+define ('STATUS_SOC_IMPOSS', ++$IndCodErr);
+define ('STATUS_SANS_SOC',   ++$IndCodErr);
+define ('SOC_ET_INFOS_SOC',  ++$IndCodErr);
+define ('NPCI_NON_NUM',      ++$IndCodErr);
+define ('NBSTAG_NON_NUM',    ++$IndCodErr);
+define ('NBSTAG_NUL',        ++$IndCodErr);
+define ('CARINVAL_IN_TEL',   ++$IndCodErr);
+define ('LGINVAL_IN_TEL',    ++$IndCodErr);
+
+$MsgErr = array();
+
+$MsgErr [ERRCONNECT]         = '<font color="#ff0000">'
+                               .'Erreur mysql_connect() de connexion &agrave; :<br /><br />'
+		    			       .'</font>';
+$MsgErr [ERRSELECT]         = '<font color="#ff0000">'
+                              .'Erreur mysql_select_db() de s&eacute;lection de la base : '	
+			                  .'</font>';							   
+$MsgErr [ERRREQUEST]        = '<font color="#ff0000">'
+                              .'Echec de la requ&ecirc;te :<br /><br />'			   
+			                  .'</font>';
+$MsgErr [LOGINUNDERSCORE]   = '<font color="#ff0000">'
+                              .'Login invalide'
+			                  .'</font>';
+$MsgErr [LOGINCARINVAL]     = '<font color="#ff0000">'
+                              .'Caract&egrave;res invalides dans le login'
+			                  .'</font>';
+$MsgErr [LOGINNBCARINVAL]   = '<font color="#ff0000">'
+                              .'Login trop long ou trop court'
+			                  .'</font>';
+$MsgErr [LOGINDEJAPRIS]     = '<font color="#ff0000">'
+                              .'Login d&eacute;j&agrave; attribu&eacute;'
+			                  .'</font>';
+$MsgErr [TUTEUR_SOC_IMPOSS] = '<font color="#ff0000">'
+                              .'Ce tuteur n\'est pas dans l\'entreprise s&eacute;lectionn&eacute;e'
+			                  .'</font>';
+$MsgErr [STATUS_SOC_IMPOSS] = '<font color="#ff0000">'
+                              .'Pour le statut de tuteur, choisir une entreprise'
+			                  .'</font>';
+$MsgErr [STATUS_SANS_SOC]   = '<font color="#ff0000">'
+                              .'Pas d\'entreprise pour ce statut'
+			                  .'</font>';
+$MsgErr [SOC_ET_INFOS_SOC]  = '<font color="#ff0000">'
+                              .'Une entreprise est s&eacute;lectionn&eacute;e, ne pas remplir les infos'
+			                  .'</font>';
+$MsgErr [NPCI_NON_NUM]      = '<font color="#ff0000">'
+                              .'Caract&egrave;re non num&eacute;rique dans le champ <b>Nombre de personnes du C.I.</b>'
+			                  .'</font>';
+$MsgErr [NPSERVICE_NON_NUM] = '<font color="#ff0000">'
+                              .'Caract&egrave;re non num&eacute;rique dans le champ <b>Nombre de personnes du service</b>'
+			                  .'</font>';
+$MsgErr [NBSTAG_NON_NUM]    = '<font color="#ff0000">'
+                              .'Caract&egrave;re non num&eacute;rique dans le champ <b>Nombre de stagiaires pr&eacute;vus</b>'
+			                  .'</font>';
+$MsgErr [NBSTAG_NUL]        = '<font color="#ff0000">'
+                              .'Valeur nulle dans le champ <b>Nombre de stagiaires pr&eacute;vus</b>'
+			                  .'</font>';
+$MsgErr [CARINVAL_IN_TEL]   = '<font color="#ff0000">'
+                              .'Caract&egrave;re invalide dans un num&eacute;ro de tel. ou un fax'
+			                  .'</font>';
+$MsgErr [LGINVAL_IN_TEL]    = '<font color="#ff0000">'
+                              .'Num&eacute;ro de tel. ou fax trop long ou trop court'
+			                  .'</font>';
+?>
