@@ -211,7 +211,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=CoordonneesEntreprise" target="principal">
-                Coordonnées de l'entreprise
+                Coordonnï¿½es de l'entreprise
 			</a>
         </td>
 	</tr>
@@ -253,7 +253,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants1A" target="principal">
-                Mailing aux 1<sup>ère</sup> année
+                Mailing aux 1<sup>ï¿½re</sup> annï¿½e
 			</a>
         </td>
 	</tr>
@@ -267,7 +267,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous" target="principal">
-                Mailing aux 2<sup>ème</sup> année
+                Mailing aux 2<sup>ï¿½me</sup> annï¿½e
 			</a>
         </td>
 	</tr>
@@ -297,7 +297,7 @@ en tant que <b><?=$Libelle?></b>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=AffectStageEtud"
 			                                             target="principal">
-                Affectation d'un stage à un étudiant
+                Affectation d'un stage ï¿½ un ï¿½tudiant
 			</a>
         </td>
 	</tr>
