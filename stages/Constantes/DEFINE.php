@@ -23,6 +23,15 @@
 
 	define ('STATUTADMIN',      '1');
 	define ('STATUTETUD1',      '5');
+
+	define ('STATUTPROF',       '2');
+	define ('STATUTPROFIUTAIX', '2');
+	define ('STATUTPROFIUT',    '3');
+	define ('ENSEIGNANT',       '4');
+	define ('STATUTANCIEN',     '7');
+	define ('STATUTML',         '9');
+	define ('STATUTETUD2',      '6');
+	define ('STATUTETUDLP',    '10');
 	
 	define ('MINIMUM_LEGAL_INDEMNITES',  '508.20');
 
