@@ -82,4 +82,8 @@ function IsEtud1      () { return $_SESSION ['Statut'] == ETUD1;      }
 function IsEtud2      () { return $_SESSION ['Statut'] == ETUD2;      }
 
 function IsEtud       () { return IsEtud1() || IsEtud2();             }
+
+function IsEtudByLogin  ($login) { return strlen ($login) ==  6;      }
+function IsProfByLogin  ($login) { return strpos ($login, '.') === 1; }
+
 ?>

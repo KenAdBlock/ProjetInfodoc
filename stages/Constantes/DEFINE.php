@@ -20,6 +20,9 @@
 	define ('ETUD1',  'etud1');
 	define ('ETUD2',  'etud2');
 	define ('ETUDLP', 'etudlp');
+
+	define ('STATUTADMIN',      '1');
+	define ('STATUTETUD1',      '5');
 	
 	define ('MINIMUM_LEGAL_INDEMNITES',  '508.20');
 
