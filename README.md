@@ -10,12 +10,12 @@ Toutes les annonces de stage disponibles sur le site possèdent une fiche détai
 
 # Besoins exprimés par le client
 
-# Refonte général du design
+## Refonte général du design
 Le client souhaite améliorer le design et l’utilisation de l’interface d’administration de son site web déjà en ligne. Il souhaite également y ajouter quelques fonctionnalités jugées utiles au site web.
 
 Le design du site, étant la partie la plus importante au niveau du temps à consacrer, doit respecter la charte graphique de l’AMU. Le thème du site sera dans les tons clairs et le contraste entre le fond et le texte doit rendre le visuel le plus agréable possible à l’utilisateur.
 
-# Optimisation de l’interface d’administration
+## Optimisation de l’interface d’administration
 L’interface d’administration quant à elle, se doit de rester fonctionnelle tout comme l’ensemble du site web. L’amélioration de certaines fonctionnalités de l’administration permettra une maintenance plus simple et plus rapide de l’administrateur, étant par la même occasion le client de ce projet.
 
 Aucune des fonctionnalités déjà présentes sur ce site ne doit pas disparaître. 
