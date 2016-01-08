@@ -8265,7 +8265,15 @@ button.btn-floating {
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 16px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  color: #0071b9;
+=======
   color: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+=======
+  color: #26a69a;
+>>>>>>> parent of 9de6cde... modifications formulaires
   display: block;
   line-height: 22px;
   padding: 14px 16px;
@@ -8775,8 +8783,13 @@ input[type=tel]:focus:not([readonly]),
 input[type=number]:focus:not([readonly]),
 input[type=search]:focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
+<<<<<<< HEAD
+  border-bottom: 1px solid #0071b9;
+  box-shadow: 0 1px 0 0 #0071b9;
+=======
   border-bottom: 1px solid #26a69a;
   box-shadow: 0 1px 0 0 #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
 }
 
 input:not([type]):focus:not([readonly]) + label,
@@ -8791,7 +8804,11 @@ input[type=tel]:focus:not([readonly]) + label,
 input[type=number]:focus:not([readonly]) + label,
 input[type=search]:focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
+<<<<<<< HEAD
+  color: #0071b9;
+=======
   color: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
 }
 
 input:not([type]).valid, input:not([type]):focus.valid,
@@ -9110,8 +9127,18 @@ textarea.materialize-textarea {
 
 [type="radio"]:checked + label:after {
   border-radius: 50%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  border: 2px solid #0071b9;
+  background-color: #0071b9;
+=======
   border: 2px solid #26a69a;
   background-color: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+=======
+  border: 2px solid #26a69a;
+  background-color: #26a69a;
+>>>>>>> parent of 9de6cde... modifications formulaires
   z-index: 0;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
@@ -9120,12 +9147,28 @@ textarea.materialize-textarea {
 /* Radio With gap */
 [type="radio"].with-gap:checked + label:before {
   border-radius: 50%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  border: 2px solid #0071b9;
+=======
   border: 2px solid #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+=======
+  border: 2px solid #26a69a;
+>>>>>>> parent of 9de6cde... modifications formulaires
 }
 
 [type="radio"].with-gap:checked + label:after {
   border-radius: 50%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  border: 2px solid #0071b9;
+=======
   border: 2px solid #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+=======
+  border: 2px solid #26a69a;
+>>>>>>> parent of 9de6cde... modifications formulaires
   background-color: #26a69a;
   z-index: 0;
   -webkit-transform: scale(0.5);
@@ -9596,7 +9639,15 @@ input[type=range] + .thumb {
   height: 0;
   width: 0;
   border-radius: 50%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  background-color: #0071b9;
+=======
   background-color: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+=======
+  background-color: #26a69a;
+>>>>>>> parent of 9de6cde... modifications formulaires
   top: 10px;
   margin-left: -6px;
   -webkit-transform-origin: 50% 50%;
@@ -9609,7 +9660,15 @@ input[type=range] + .thumb .value {
   display: block;
   width: 30px;
   text-align: center;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  color: #0071b9;
+=======
   color: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+=======
+  color: #26a69a;
+>>>>>>> parent of 9de6cde... modifications formulaires
   font-size: 0;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -9646,7 +9705,15 @@ input[type=range]::-webkit-slider-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  background-color: #0071b9;
+=======
   background-color: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+=======
+  background-color: #26a69a;
+>>>>>>> parent of 9de6cde... modifications formulaires
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
   margin: -5px 0 0 0;
@@ -9674,7 +9741,15 @@ input[type=range]::-moz-range-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  background: #0071b9;
+=======
   background: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+=======
+  background: #26a69a;
+>>>>>>> parent of 9de6cde... modifications formulaires
   margin-top: -5px;
 }
 
@@ -9712,7 +9787,15 @@ input[type=range]::-ms-thumb {
   height: 14px;
   width: 14px;
   border-radius: 50%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  background: #0071b9;
+=======
   background: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+=======
+  background: #26a69a;
+>>>>>>> parent of 9de6cde... modifications formulaires
 }
 
 input[type=range]:focus::-ms-fill-lower {
