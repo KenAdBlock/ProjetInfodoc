@@ -1,0 +1,33 @@
+.titrePrincipal{
+    color: #ff8800;
+}
+
+.modal-connexion-title{
+    color:black;
+}
+
+#modal1{
+    width: 35%;
+}
+
+#modal2{
+    width: 50%;
+}
+
+.btn{
+    background-color: #0071b9;
+}
+
+.btn:hover{
+    background-color: #fbba00;
+}
+
+.logo-nav{
+   width: 30%;
+
+}
+
+.nav{
+    background-color: #e7e7e7;
+}
+
