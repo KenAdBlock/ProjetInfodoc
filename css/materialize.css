@@ -8267,13 +8267,19 @@ button.btn-floating {
   font-size: 16px;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   color: #0071b9;
 =======
   color: #26a69a;
 >>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+<<<<<<< HEAD
 =======
   color: #26a69a;
 >>>>>>> parent of 9de6cde... modifications formulaires
+=======
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   display: block;
   line-height: 22px;
   padding: 14px 16px;
@@ -9129,6 +9135,7 @@ textarea.materialize-textarea {
   border-radius: 50%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   border: 2px solid #0071b9;
   background-color: #0071b9;
 =======
@@ -9139,6 +9146,14 @@ textarea.materialize-textarea {
   border: 2px solid #26a69a;
   background-color: #26a69a;
 >>>>>>> parent of 9de6cde... modifications formulaires
+=======
+  border: 2px solid #0071b9;
+  background-color: #0071b9;
+=======
+  border: 2px solid #26a69a;
+  background-color: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   z-index: 0;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
@@ -9149,19 +9164,26 @@ textarea.materialize-textarea {
   border-radius: 50%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   border: 2px solid #0071b9;
 =======
   border: 2px solid #26a69a;
 >>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+<<<<<<< HEAD
 =======
   border: 2px solid #26a69a;
 >>>>>>> parent of 9de6cde... modifications formulaires
+=======
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
 }
 
 [type="radio"].with-gap:checked + label:after {
   border-radius: 50%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   border: 2px solid #0071b9;
 =======
   border: 2px solid #26a69a;
@@ -9169,6 +9191,12 @@ textarea.materialize-textarea {
 =======
   border: 2px solid #26a69a;
 >>>>>>> parent of 9de6cde... modifications formulaires
+=======
+  border: 2px solid #0071b9;
+=======
+  border: 2px solid #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   background-color: #26a69a;
   z-index: 0;
   -webkit-transform: scale(0.5);
@@ -9641,13 +9669,19 @@ input[type=range] + .thumb {
   border-radius: 50%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   background-color: #0071b9;
 =======
   background-color: #26a69a;
 >>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+<<<<<<< HEAD
 =======
   background-color: #26a69a;
 >>>>>>> parent of 9de6cde... modifications formulaires
+=======
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   top: 10px;
   margin-left: -6px;
   -webkit-transform-origin: 50% 50%;
@@ -9662,6 +9696,7 @@ input[type=range] + .thumb .value {
   text-align: center;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   color: #0071b9;
 =======
   color: #26a69a;
@@ -9669,6 +9704,12 @@ input[type=range] + .thumb .value {
 =======
   color: #26a69a;
 >>>>>>> parent of 9de6cde... modifications formulaires
+=======
+  color: #0071b9;
+=======
+  color: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   font-size: 0;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -9707,6 +9748,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 50%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #0071b9;
 =======
   background-color: #26a69a;
@@ -9714,6 +9756,12 @@ input[type=range]::-webkit-slider-thumb {
 =======
   background-color: #26a69a;
 >>>>>>> parent of 9de6cde... modifications formulaires
+=======
+  background-color: #0071b9;
+=======
+  background-color: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
   margin: -5px 0 0 0;
@@ -9743,13 +9791,19 @@ input[type=range]::-moz-range-thumb {
   border-radius: 50%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   background: #0071b9;
 =======
   background: #26a69a;
 >>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+<<<<<<< HEAD
 =======
   background: #26a69a;
 >>>>>>> parent of 9de6cde... modifications formulaires
+=======
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
   margin-top: -5px;
 }
 
@@ -9789,6 +9843,7 @@ input[type=range]::-ms-thumb {
   border-radius: 50%;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   background: #0071b9;
 =======
   background: #26a69a;
@@ -9796,6 +9851,12 @@ input[type=range]::-ms-thumb {
 =======
   background: #26a69a;
 >>>>>>> parent of 9de6cde... modifications formulaires
+=======
+  background: #0071b9;
+=======
+  background: #26a69a;
+>>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
+>>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
 }
 
 input[type=range]:focus::-ms-fill-lower {
