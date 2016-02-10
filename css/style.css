@@ -13,7 +13,7 @@
 	font-size: inherit;
 }
 main{
-	margin-top: -10px;
+	margin-top: -7px;
 	margin-bottom: -35px;
 }
 #separator-img{
@@ -29,10 +29,6 @@ hr{
 	line-height: 30px;
 }
 
-nav{
-  position: relative;
-
-}
 footer{
   position: relative;
 }
@@ -46,7 +42,7 @@ li span {font-weight:normal;line-height: 25px;}
 
 /* label color */
    .input-field label {
-     color: #000;
+     color: #0d47a1;
    }
    /* label focus color */
    .input-field input[type=text]:focus + label {
@@ -75,3 +71,7 @@ li span {font-weight:normal;line-height: 25px;}
    .input-field .prefix.active {
      color: #1e88e5;
    }
+   .prefix{
+    color:#1976d2;
+   }
+   

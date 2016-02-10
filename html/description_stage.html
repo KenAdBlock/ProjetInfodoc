@@ -11,57 +11,74 @@
   <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 </head>
-<body class="grey lighten-5">
-  <header class="white">
+<body>
 
+  <header>
+
+    <div class="row container">
+  
       <img class="left-align" src="../img/logo_iut.png">
-
       <img  class="right" src="../img/Logo_IUT.jpg">
-<hr id="separator-img">
+
+    </div>
+
+  </header>
 
   <nav class="blue" role="navigation">
     
     <div class="nav-wrapper container">
-      <ul class="right hide-on-med-and-down">
+
+      <ul class="left hide-on-med-and-down">
+        <li><a href="#" data-activates="slide-out" class=" left button-collapse show-on-large"><i class="material-icons">view_headline</i></a></li>
         <li><a href="#"> Généralités  </a></li>
         <li><a href="#"> Programme </a></li>
+      </ul>
+
+      <ul class="right hide-on-med-and-down">
         <li><a href="index.html"><i class="material-icons right">account_circle</i>Se déconnecter</a></li>
-        <li><a href="#" data-activates="slide-out" class=" left button-collapse show-on-large"><i class="material-icons">view_headline</i></a></li> 
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#"> Généralités  </a></li>
         <li><a href="#"> Programme </a></li>
-        <li><a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-action-account-circle"></i></a></li>
+        <li><a href="index.html"><i class="material-icons right">account_circle</i>Se déconnecter</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>  
 
-    <div id="slide-out" class="side-nav blue lighten-5 black-text">
-      <h5>Bienvenue</h5> 
-      <p class="center">
-        
-      Vous êtes connecté(e) sous le pseudonyme <br>
-      <b>gonedw</b>
-      </p>
-      <hr>
+      <div id="slide-out" class="side-nav  grey lighten-4 black-text">
+        <div class="row">
+          <div class="col s12">
 
-      <a class="card hoverable" href="liste_stages.html"><b>Liste des fiches de stage</b></a>
-      <a class="card hoverable" href="liste_enterprise.html"><b>Liste des entreprises</b></a>
-    </div>
+            <h5 class="center">Bienvenue</h5> 
+            <p class="center">
+            Vous êtes connecté(e) sous le pseudonyme <br>
+            <b>gonedw</b>
+            </p>
+            <hr>
+            <p>
+              <a class="waves-effect waves-light btn blue white-text" href="home.html">Accueil</a> <br>
+              <a class="waves-effect waves-light btn blue white-text" href="liste_enterprise.html">Liste des entreprises</a>
+            </p>
+
+          </div>
+        </div>
+      </div>
 
     </div>
   </nav>
   </header>
             
-  <div class="container">
-    <div class="row">
-      <div class="col s12 card blue-grey lighten-5 z-depth-1 image-test" id="image-test" style="opacity: 0;">
-        <div class="card-content">
+  <main>
 
-        <div class="row">
-          <div class="col s12 ">
-            <h4 class="center">Annee 2015-2016 : fiche de stage n° 45</h4> <hr>
-      <h5>1. Entreprise</h5>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card grey lighten-3 z-depth-1" id="objectifs" style="opacity: 0;">
+            <div class="card-content">
+              <span class="card-title"><h4 class="center">Annee 2015-2016 : fiche de stage n° 45</h4></span> 
+              
+              
+              <h5>1. Entreprise</h5>
 
       <table>
         <tbody>
@@ -139,56 +156,52 @@ Possibilité d'embauche après le stage : oui <br>
       <h5>2. Environnement du stagiaire dans le cadre de sa tâche</h5>
 
       <b>2.1 Environnement matériel</b> <br>
-      <p>
-        
-      </p>
+              
 
-           </div>
+            </div>
+          </div>
         </div>
-
-        </div>
-
       </div>
     </div>
-  </div>
 
-  <footer class="page-footer amber ">
+  </main>
+
+  <footer class="page-footer amber">
+
     <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Site infodoc - stages</h5>
-                <p class="grey-text text-lighten-4"> Ce site est destiné aux étudiants du département informatiques de l'IUT Aix-Marseille, pour les aider dans la recherche de stages. Les entreprises peuvent aussi s'inscrire pour déposer des offres de stages</p>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Liens</h5>
-                <ul>
-                    <li><a class="white-text" href="http://iut.univ-amu.fr/">Site de l'IUT</a></li>
-                    <li><a class="white-text" href="http://iut.univ-amu.fr/departements/informatique-info-aix">Departement informartique</a></li>
-                    <li><a class="white-text" href="http://iut.univ-amu.fr/diplomes/licence-professionnelle-systemes-informatiques-logiciels-developpement-administration">LP SIL DA2I</a></li>
-                    <li><a class="white-text" href="#!"></a></li>
-                </ul>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Conctact</h5>
-                <ul>
-                    <li><a class="white-text" href="#!">Responsable des stages: Marc Laporte</a></li>
-                </ul>
-            </div>
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Site infodoc - stages</h5>
+          <p class="grey-text text-lighten-4">Ce site est destiné aux étudiants du département informatiques de l'IUT Aix-Marseille, pour les aider dans la recherche de stages. Les entreprises peuvent aussi s'inscrire pour déposer des offres de stages</p>
         </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Site de l'IUT</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Departement informartique</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">LP SIL DA2I</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Contact</h5>
+
+          <div class="white-text">Responsable des stages : </div> <a class="white-text" href="#!">  Marc Laporte</a>
+
+        </div>
+      </div>
     </div>
     <div class="footer-copyright">
-        <div class="container">
-            Fait par <a class="amber-text text-darken-3" href="http://materializecss.com"><b>LP SIL DA2I - Promotion 2015/2016</b></a>
-        </div>
+      <div class="container">
+        LP SIL DA2I - Promotion 2015/2016
+      </div>
     </div>
-</footer>
+
+  </footer>
   <!--  Scripts-->
   
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="../js/materialize.js"></script>
   <script src="../js/init.js"></script>
-  <script type="text/javascript">
-      Materialize.fadeInImage('#image-test')
-    </script>
+
   </body>
 </html>
