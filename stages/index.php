@@ -8,6 +8,7 @@
 ?>
 <html>
     <link rel="stylesheet" href="<?=$PATH_CSS?>stages.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="Img/favicon.ico">
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
