@@ -40,6 +40,16 @@ p{
 ol {font-weight: bold;}
 li span {font-weight:normal;line-height: 25px;}
 
+.collapsible-body{
+  padding: 20px;
+}
+.collapsible-header{
+  background:#546e7a;
+  border: 0px;
+}
+.collapsible-header:hover{
+  background:#90a4ae;
+}
 /* label color */
    .input-field label {
      color: #0d47a1;
