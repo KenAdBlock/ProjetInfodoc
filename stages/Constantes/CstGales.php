@@ -42,11 +42,19 @@
     $URLUnivMediterranee   = 'http://www.univ-amu.fr/';
     $URL_IUT               = 'http://iut.univ-amu.fr/';
     $URL_DEPTINFO          = 'http://iut.univ-amu.fr/departements/informatique-info-aix/';
+
+    $port = $_SERVER['SERVER_PORT'];
+
+    if($port != '80') {
+        $port = ':' . $port;
+    } else {
+        $port = '';
+    }
 	
 	switch ($MachineHote)
 	{
 	  case PCDM :
-	    $URL_SERVEUR_SITE  = 'http://127.0.0.1/';
+	    $URL_SERVEUR_SITE  = 'http://127.0.0.1/' . $port;
 	    $RACINE            = '/stages/';
 	    break;
 		
@@ -56,8 +64,8 @@
 	    break;
 
 	  case INFODOC :
-	    $URL_SERVEUR_SITE = 'http://infodoc.iut.univ-aix.fr/';
-	    $RACINE           = '~laporte/stages/';
+	    $URL_SERVEUR_SITE = 'http://localhost/' . $port;
+	    $RACINE           = 'projetinfodoc/stages/';
 	    break;
 	}
 	$URL_SITE            = $URL_SERVEUR_SITE.$RACINE;

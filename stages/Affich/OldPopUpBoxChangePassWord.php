@@ -15,9 +15,8 @@
 	include_once ($PATH_CONSTANTES.'CstErr.php');
 	include_once ($PATH_UTIL.      'UtilErr.php');
 
-    // V�rification qu'il existe bien une session ouverte 
+    // Vérification qu'il existe bien une session ouverte
 	//   et qu'il existe bien un login dans la session ouverte
-
 	include_once ($PATH_GENERAL.'AreSessionAndLogin.php');
 	
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
