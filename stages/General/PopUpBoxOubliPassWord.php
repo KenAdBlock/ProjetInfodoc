@@ -1,7 +1,6 @@
 <?php
-    $PATH_RACINE     = '../../';
-    $PATH_STAGES     = $PATH_RACINE.'stages/';
-    $PATH_CONSTANTES = $PATH_STAGES.'Constantes/';
+    $PATH_RACINE     = '../';
+    $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
     $Sender          = "From: marc.laporte@univ-amu.fr";
 
     require_once ($PATH_CONSTANTES.'DEFINE.php');

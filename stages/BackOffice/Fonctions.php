@@ -93,9 +93,8 @@ function RecupOldEntreprises()
 
     $CleOK = '069b9247591948b71d303ac66371bf0b';
 
-    $PATH_RACINE     = '../../';
-    $PATH_STAGES     = $PATH_RACINE.'stages/';
-    $PATH_CONSTANTES = $PATH_STAGES.'Constantes/';
+    $PATH_RACINE     = '../';
+    $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
 
     require_once ($PATH_CONSTANTES.'DEFINE.php');
     require_once ($PATH_CONSTANTES.'CstGales.php');
@@ -106,12 +105,12 @@ function RecupOldEntreprises()
     require_once ($PATH_UTIL.'UtilSession.php');
     OpenSession  ($NomSession);
 
-    // Vérification qu'il existe bien une session ouverte 
+    // Vï¿½rification qu'il existe bien une session ouverte 
 	//   et qu'il existe bien un login dans la session ouverte
 	
 	OpenedSessionAndLoginNonVideIsOK ($JS_HistoryBack);
 
-	// Récupérations des variables envoyées par POST ou GET
+	// Rï¿½cupï¿½rations des variables envoyï¿½es par POST ou GET
 	
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = stripslashes ($valeur);
@@ -141,7 +140,7 @@ function RecupOldEntreprises()
 // ========================
 
 	//
-    //Fonction sécurisant les strings dans les Formulaires
+    //Fonction sï¿½curisant les strings dans les Formulaires
   
 function SecureStr (&$_str)  
 {
@@ -153,14 +152,14 @@ function SecureStr (&$_str)
 function NormaliserNomPrenomLogin ($Ligne, 
                                    &$Nom, &$Prenoms, &$NumGroupe, &$LoginAuto)
 {
-    // Séparation du nom_prenom et du groupe
+    // Sï¿½paration du nom_prenom et du groupe
 	
    $TabStr = explode ("\t", $Ligne);
 
    $NomPrenom = $TabStr [0];
    $NumGroupe = $TabStr [1];
       
-   // Séparation du nom et des prénoms
+   // Sï¿½paration du nom et des prï¿½noms
 
    $TabStr = explode (" ", $NomPrenom);
    
@@ -171,24 +170,24 @@ function NormaliserNomPrenomLogin ($Ligne,
    $NomCompacte = str_replace ("'", "_", $Nom);
    $Nom         = str_replace ("_", " ", $Nom);
 	
-   // Recomposition et mise en minuscules de tous les prénoms
+   // Recomposition et mise en minuscules de tous les prï¿½noms
  
    $Prenoms = $TabStr [1];
    for ($i = 2; $i < count ($TabStr); ++$i) $Prenoms .= ' '.$TabStr [$i];
    $Prenoms = strtolower ($Prenoms);
    
-   // Compactage de tous les prénoms
+   // Compactage de tous les prï¿½noms
    
    $PrenomsCompactes = str_replace ('-', '', $Prenoms);
    
-   // Mise en majuscule de l'initiale de chaque prénom
+   // Mise en majuscule de l'initiale de chaque prï¿½nom
   
    $Prenoms [0] = chr (ord ($Prenoms [0]) - 32);
    for ($i = 1; $i < strlen ($Prenoms); ++$i) 
        if ($Prenoms [$i - 1] == ' ' || $Prenoms [$i - 1] == '-' )
 	       $Prenoms [$i] = chr (ord ($Prenoms [$i]) - 32);
  
-   // Compactage de tous les prénoms
+   // Compactage de tous les prï¿½noms
    
    $PrenomsCompactes = '';
    for ($i = 0; $i < strlen ($Prenoms); ++$i)
@@ -219,7 +218,7 @@ function NormaliserNomPrenomLogin1A2A ($Annee)
 	    {
 	        $Obj = mysql_fetch_object ($ReqEtud);
 	        print ($Nom.' '.$Prenoms.' '.$NumGroupe.';'.$LoginAuto.
-	               ' Ancien nom =  '.$Obj->Nom.' Ancien prénom =  '.$Obj->Prenom.'<br />');
+	               ' Ancien nom =  '.$Obj->Nom.' Ancien prï¿½nom =  '.$Obj->Prenom.'<br />');
         }
         /*
         $ReqEtud = Query ("UPDATE $NomTabUsers SET 

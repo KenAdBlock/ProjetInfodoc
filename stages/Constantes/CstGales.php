@@ -65,16 +65,16 @@
 	// Chemins standard
 	// ================
 	
-	$PATH_CSS        = $PATH_STAGES.'css/';
+	$PATH_CSS        = $PATH_RACINE.'css/';
     $PATH_GIFS       = $PATH_RACINE.'gif/';
     $PATH_UTIL       = $PATH_RACINE.'Util/';
-    $PATH_GENERAL    = $PATH_STAGES.'General/';
-    $PATH_COMMUNS    = $PATH_STAGES.'Communs/';
-    $PATH_BACKOFFICE = $PATH_STAGES.'BackOffice/';
-	$PATH_LIST       = $PATH_STAGES.'List/';
-	$PATH_FORM       = $PATH_STAGES.'Form/';
-	$PATH_AFFICH     = $PATH_STAGES.'Affich/';
-	$PATH_CLASS      = $PATH_STAGES.'Class/';
-	$PATH_LIBRES     = $PATH_STAGES.'Libres/';
+    $PATH_GENERAL    = $PATH_RACINE.'General/';
+    $PATH_COMMUNS    = $PATH_RACINE.'Communs/';
+    $PATH_BACKOFFICE = $PATH_RACINE.'BackOffice/';
+	$PATH_LIST       = $PATH_RACINE.'List/';
+	$PATH_FORM       = $PATH_RACINE.'Form/';
+	$PATH_AFFICH     = $PATH_RACINE.'Affich/';
+	$PATH_CLASS      = $PATH_RACINE.'Class/';
+	$PATH_LIBRES     = $PATH_RACINE.'Libres/';
 	
 ?>

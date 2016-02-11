@@ -1,9 +1,8 @@
 <?php
-    $PATH_RACINE     = '../../';
-    $PATH_STAGES     = $PATH_RACINE.'stages/';
-    $PATH_CONSTANTES = $PATH_STAGES.'Constantes/';
-    $PATH_UTIL       = $PATH_STAGES.'Util/';
-    $PATH_COMMUNS    = $PATH_STAGES.'Communs/';
+    $PATH_RACINE     = '../';
+    $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
+    $PATH_UTIL       = $PATH_RACINE.'Util/';
+    $PATH_COMMUNS    = $PATH_RACINE.'Communs/';
 
     require_once ($PATH_CONSTANTES.'DEFINE.php');
     require_once ($PATH_CONSTANTES.'CstGales.php');
@@ -19,7 +18,7 @@
     OpenSession  ($NomSession);
 
 	?>
-    <script>if (! window.opener) location.replace ("<?=$PATH_STAGES?>index.php")</script>
+    <script>if (! window.opener) location.replace ("<?=$PATH_RACINE?>index.php")</script>
     <?php
     // V�rification qu'il existe bien une session ouverte 
 	//   et qu'il existe bien un login dans la session ouverte

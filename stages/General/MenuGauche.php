@@ -1,23 +1,22 @@
 <?php
     ini_set('display_error', 1);
 
-    $PATH_RACINE     = '../../';
+    $PATH_RACINE     = '../';
 /**/    $PATH_PARENT     = '../';
-    $PATH_DEFINE     = $PATH_PARENT.'Constantes/';
+    $PATH_DEFINE     = $PATH_RACINE.'Constantes/';
     require_once ($PATH_DEFINE.'DEFINE.php');
 /**/	if (MAXLGLOGIN == 0) {
         define ('MAXLGLOGIN', 12);    // surcharge define ('MAXLGLOGIN', 10); de site mathieu
     }
 
-    $PATH_STAGES     = $PATH_RACINE.'stages/';
-    $PATH_CONSTANTES = $PATH_STAGES.'Constantes/';
+    $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
 
     require_once ($PATH_CONSTANTES.'CstGales.php');
 
     // Ouverture de la session
 	// =======================
 
-/**/    $PATH_UTIL       = $PATH_PARENT.'Util/';
+/**/    $PATH_UTIL       = $PATH_RACINE.'Util/';
     require_once ($PATH_UTIL.'UtilSession.php');
     OpenSession  ($NomSession);
 
@@ -31,8 +30,8 @@
 	$Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
     $NomBaseMathieu  = "laporte";
-    $UserMathieu     = "laporte";
-    $PasswdMathieu   = "d2m2l2";
+    $UserMathieu     = "root";
+    $PasswdMathieu   = "";
     $HoteMathieu     = "localhost";
 
 	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu,

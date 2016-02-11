@@ -8,8 +8,8 @@
 	{
 	  case INFODOC :
         $NomBase  = "stages"; 
-        $User     = "stages"; 
-        $Passwd   = "dm2ml"; 
+        $User     = "root";
+        $Passwd   = "";
         $Hote     = "localhost";
 	    break;
 	}
