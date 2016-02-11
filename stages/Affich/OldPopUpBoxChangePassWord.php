@@ -3,7 +3,7 @@
 	
 	$PATH_RACINE     = '../';
 	$PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
-	$PATH_GIFS       = $PATH_RACINE.'gif/';
+	$PATH_GIFS       = '/gif/';
 	$PATH_CSS        = $PATH_RACINE.'css/';
 	$PATH_JS         = $PATH_RACINE.'js/';
 	$PATH_GENERAL    = $PATH_RACINE.'General/';

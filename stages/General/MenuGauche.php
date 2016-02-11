@@ -2,7 +2,6 @@
     ini_set('display_error', 1);
 
     $PATH_RACINE     = '../';
-/**/    $PATH_PARENT     = '../';
     $PATH_DEFINE     = $PATH_RACINE.'Constantes/';
     require_once ($PATH_DEFINE.'DEFINE.php');
 /**/	if (MAXLGLOGIN == 0) {
@@ -37,7 +36,7 @@
 	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu,
 	                                 $PasswdMathieu, $NomBaseMathieu);
 
-	// R�cup�rations des variables envoy�es par POST ou GET
+	// Récupérations des variables envoyées par POST ou GET
 	// ====================================================
 
     if (isset ($_SESSION))
@@ -53,10 +52,10 @@
 /* * / CloseSessionAndRedirect ($URL_SITE); /* */
     if (IsSessionAndLoginNonVide())
     {
-        // Une session est en cours et un login y est enregistr� ==>
-        //     connexion interdite (pr�venir l'appel direct de ce script)
-        //     D�connexion ? ==> fermeture de la session et retour � l'accueil
-        //     Sinon         ==> v�rifier autorisation
+        // Une session est en cours et un login y est enregistré ==>
+        //     connexion interdite (prévenir l'appel direct de ce script)
+        //     Déconnexion ? ==> fermeture de la session et retour à l'accueil
+        //     Sinon         ==> vérifier autorisation
 
         if ($Step == 'Decnx')
         {
