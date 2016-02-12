@@ -359,7 +359,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="?Step=Decnx" target="_top">
-			    Deconnexion</a>
+			    D&eacute;connexion</a>
         </td>
 	</tr>
 </table>
