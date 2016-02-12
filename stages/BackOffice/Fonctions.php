@@ -206,7 +206,7 @@ function NormaliserNomPrenomLogin1A2A ($Annee)
     $handle = fopen ($Annee.'.txt', 'r');
     for (; $Ligne = fgets($handle); )
     {
-        NormaliserNomPrenomLogin ($Ligne, &$Nom, &$Prenoms, &$NumGroupe, &$LoginAuto);
+        NormaliserNomPrenomLogin ($Ligne, $Nom, $Prenoms, $NumGroupe, $LoginAuto);
         $ReqEtud = Query ("SELECT * FROM $NomTabUsers
 			  	                WHERE Identifiant = '$LoginAuto'",
 	                       $ConnectMathieu);

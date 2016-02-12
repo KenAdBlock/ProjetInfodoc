@@ -2,7 +2,7 @@
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
     require_once ($PATH_CLASS .'CEntreprise.php');
-    require_once ($PATH_RACINE.'stages/Util/UtilPages.php');
+    require_once ($PATH_RACINE.'Util/UtilPages.php');
     
     if ($Status == TUTEUR) $IdentPK = $FK_EntrepriseUser;
 
@@ -30,9 +30,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	<br />
 	<h2 style="text-align : center"><?=$ValNomE?></h2>
 	<table align="center" valign="center">
-	<colgroup>
-		<col width = "210">
-		<col width = "450">
+		<colgroup>
+			<col width = "210">
+			<col width = "450">
+		</colgroup>
 		<tr>
 			<td><i>Adresse :</i></td>
 			<td><?=$ValAdr1?>	</td>
