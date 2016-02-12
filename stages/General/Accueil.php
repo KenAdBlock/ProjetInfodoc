@@ -7,7 +7,7 @@ function Accueil ($LoginProv)
 Si vous d&eacute;sirez nous verser de la
 </p>
 <h1 style="background-color : #efefef; text-align : center">
-<a href="http://infodoc.iut.univ-aix.fr/~laporte/Libres/LettreTA.php" target="_blanc">
+<a href="../Libres/LettreTA.php" target="_blanc">
 Taxe d'apprentissage</a>
 </h1>
 
