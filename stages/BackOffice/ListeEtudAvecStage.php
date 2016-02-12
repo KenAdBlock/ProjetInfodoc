@@ -25,7 +25,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 			 ORDER BY Nom",
 	               $ConnectMathieu);
 ?>
-<h1>Liste des �tudiants ayant un stage</h1>
+<h1>Liste des étudiants ayant un stage</h1>
 <table>
         <th>Nom</th>
         <th>Pr&eacute;nom</th>
@@ -64,7 +64,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc�der directement � cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>
