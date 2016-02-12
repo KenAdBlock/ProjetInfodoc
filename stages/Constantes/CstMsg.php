@@ -51,20 +51,20 @@ define ('MSGFORMSTAGE_INDEMN_TRANSPORT', ++$NoMsg);
 define ('MSGFORMSTAGE_MOYEN_TRANSPORT',  ++$NoMsg);
 define ('MSGFORMSTAGE_EMBAUCHE',         ++$NoMsg);
 
-$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGE       ] = 'Ce stage s\'adresse � des �tudiants de ';
+$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGE       ] = 'Ce stage s\'adresse à des étudiants de ';
 $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEDUT    ] = 'DUT';
 $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGELP     ] = 'Licence pro SIL';
-$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF ] = 'Indiff�rent';
+$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF ] = 'Indifférent';
 $Msg_FormStage [MSGFORMSTAGE_1                 ] = '1. Entreprise';
 $Msg_FormStage [MSGFORMSTAGE_1_1               ] = '1.1 Ma&icirc;tre de stage';
-$Msg_FormStage [MSGFORMSTAGE_ADRSTAGE          ] = 'Si l\'adresse du lieu de stage est diff�rente de celle de l\'entreprise, veillez remplir le cadre ci-dessous';
+$Msg_FormStage [MSGFORMSTAGE_ADRSTAGE          ] = 'Si l\'adresse du lieu de stage est différente de celle de l\'entreprise, veillez remplir le cadre ci-dessous';
 $Msg_FormStage [MSGFORMSTAGE_TUTEUR            ] = 'Tuteur de stage : ';
-$Msg_FormStage [MSGFORMSTAGE_2                 ] = '2. Environnement du stagiaire dans le cadre de sa t�che'; 
-$Msg_FormStage [MSGFORMSTAGE_ENV_MATERIEL      ] = '2.1 Environnement mat�riel'; 
+$Msg_FormStage [MSGFORMSTAGE_2                 ] = '2. Environnement du stagiaire dans le cadre de sa tâche';
+$Msg_FormStage [MSGFORMSTAGE_ENV_MATERIEL      ] = '2.1 Environnement matériel';
 $Msg_FormStage [MSGFORMSTAGE_ENV_LOGICIEL      ] = '2.2 Environnement logiciel'; 
 $Msg_FormStage [MSGFORMSTAGE_DESCR_SERVICE     ] = '1.2 Service';
 $Msg_FormStage [MSGFORMSTAGE_RENS_PRATIQUES    ] = '1.3 Renseignements pratiques';
-$Msg_FormStage [MSGFORMSTAGE_METHODES_STANDARDS] = '2.3 M�thodes ou standards';
+$Msg_FormStage [MSGFORMSTAGE_METHODES_STANDARDS] = '2.3 Méthodes ou standards';
 $Msg_FormStage [MSGFORMSTAGE_SUJET             ] = '3. Sujet';
 
 define ('MSGFORMSTAGE_LANGAGES',           ++$NoMsg);
@@ -73,39 +73,39 @@ define ('MSGFORMSTAGE_LOGICIELS_SPEC',     ++$NoMsg);
 define ('MSGFORMSTAGE_METHODES_STANDARDS', ++$NoMsg);
 
 $Msg_FormStage [MSGFORMSTAGE_LANGAGES          ] = 'Langages de programmation'; 
-$Msg_FormStage [MSGFORMSTAGE_BD                ] = 'Bases de donn�es';
-$Msg_FormStage [MSGFORMSTAGE_LOGICIELS_SPEC    ] = 'Logiciels sp�cifiques � l\'entreprise';
+$Msg_FormStage [MSGFORMSTAGE_BD                ] = 'Bases de données';
+$Msg_FormStage [MSGFORMSTAGE_LOGICIELS_SPEC    ] = 'Logiciels spécifiques à l\'entreprise';
 
 $Msg_FormStage [MSGFORMSTAGE_STDANALYSE        ] = '&nbsp; &nbsp; &nbsp; &nbsp; - d\'Analyse';
 $Msg_FormStage [MSGFORMSTAGE_STDCONCEPTION     ] = '&nbsp; &nbsp; &nbsp; &nbsp; - de Conception';
 $Msg_FormStage [MSGFORMSTAGE_STDPROGRAMMATION  ] = '&nbsp; &nbsp; &nbsp; &nbsp; - de Programmation';
-$Msg_FormStage [MSGFORMSTAGE_STDCONTROLE_QL    ] = '&nbsp; &nbsp; &nbsp; &nbsp; - de Controle qualit� logicielle';
+$Msg_FormStage [MSGFORMSTAGE_STDCONTROLE_QL    ] = '&nbsp; &nbsp; &nbsp; &nbsp; - de Controle qualité logicielle';
 $Msg_FormStage [MSGFORMSTAGE_STDGESTIONPROJET  ] = '&nbsp; &nbsp; &nbsp; &nbsp; - de Gestion de projet';
 
-$Msg_FormStage [MSGFORMSTAGE_NATURE_TACHE    ] = 'Nature de la t�che :';
+$Msg_FormStage [MSGFORMSTAGE_NATURE_TACHE    ] = 'Nature de la tâche :';
 $Msg_FormStage [MSGFORMSTAGE_PROGRAMMATION   ] = '&nbsp; &nbsp; &nbsp; &nbsp; - programmation';
 $Msg_FormStage [MSGFORMSTAGE_ANALYSE         ] = '&nbsp; &nbsp; &nbsp; &nbsp; - analyse';
 
-$Msg_FormStage [MSGFORMSTAGE_INTEGRATION     ] = 'Encadrement du stagiaire, le travail de l\'�tudiant : ';
-$Msg_FormStage [MSGFORMSTAGE_INTEGRPROJETGLOBAL] = '&nbsp; &nbsp; &nbsp; &nbsp; - s\'int�gre-t-il dans un projet global ?';
-$Msg_FormStage [MSGFORMSTAGE_ENTITEINDEPENDANTE] = '&nbsp; &nbsp; &nbsp; &nbsp; - constitue-t-il une entit� ind�pendante ? ';
+$Msg_FormStage [MSGFORMSTAGE_INTEGRATION     ] = 'Encadrement du stagiaire, le travail de l\'étudiant : ';
+$Msg_FormStage [MSGFORMSTAGE_INTEGRPROJETGLOBAL] = '&nbsp; &nbsp; &nbsp; &nbsp; - s\'intègre-t-il dans un projet global ?';
+$Msg_FormStage [MSGFORMSTAGE_ENTITEINDEPENDANTE] = '&nbsp; &nbsp; &nbsp; &nbsp; - constitue-t-il une entité indépendante ? ';
 
-$Msg_FormStage [MSGFORMSTAGE_REMARQUES       ] = 'Remarques g�n�rales : ';
+$Msg_FormStage [MSGFORMSTAGE_REMARQUES       ] = 'Remarques générales : ';
 $Msg_FormStage [MSGFORMSTAGE_NBPERS_CI       ] = 'Nombre de personnes du Centre Informatique : ';
-$Msg_FormStage [MSGFORMSTAGE_NBSTAGIAIRES    ] = 'Nombre de stagiaires pr�vus : ';
-$Msg_FormStage [MSGFORMSTAGE_NBPERS_SERV     ] = 'Nombre de personnes du service o� sera affect� le stagiaire : ';
-$Msg_FormStage [MSGFORMSTAGE_OLDSTAGIAIRES   ] = 'L\'entreprise a-t-elle d�j� accueilli des stagiaires <br />&nbsp; &nbsp; de notre d�partement auparavant ? ';
+$Msg_FormStage [MSGFORMSTAGE_NBSTAGIAIRES    ] = 'Nombre de stagiaires prévus : ';
+$Msg_FormStage [MSGFORMSTAGE_NBPERS_SERV     ] = 'Nombre de personnes du service où sera affecté le stagiaire : ';
+$Msg_FormStage [MSGFORMSTAGE_OLDSTAGIAIRES   ] = 'L\'entreprise a-t-elle déjà accueilli des stagiaires <br />&nbsp; &nbsp; de notre département auparavant ? ';
 $Msg_FormStage [MSGFORMSTAGE_ENVIRONSTAGIAIRE] = 'Le stagiaire travaillera-t-il ';
 $Msg_FormStage [MSGFORMSTAGE_SEUL            ] = 'seul ';
 $Msg_FormStage [MSGFORMSTAGE_COLL_INFORM     ] = 'en collaboration avec un informaticien';
 
-$Msg_FormStage [MSGFORMSTAGE_INDEMN_STAGE    ] = 'Indemnit�s mensuelles (&euro;/mois) &nbsp; &nbsp; ';
+$Msg_FormStage [MSGFORMSTAGE_INDEMN_STAGE    ] = 'Indemnités mensuelles (&euro;/mois) &nbsp; &nbsp; ';
 $Msg_FormStage [MSGFORMSTAGE_INDEMN_REPAS    ] = 'Repas';
 $Msg_FormStage [MSGFORMSTAGE_INDEMN_TRANSPORT] = 'Transport';
 $Msg_FormStage [MSGFORMSTAGE_MOYEN_TRANSPORT ] = 'Moyen de Transport';
-$Msg_FormStage [MSGFORMSTAGE_EMBAUCHE        ] = 'Possibilit� d\'embauche apr�s le stage';
+$Msg_FormStage [MSGFORMSTAGE_EMBAUCHE        ] = 'Possibilité d\'embauche après le stage';
 
-$Msg_FormStage [MSGFORMSTAGE_PRECISEZ        ] = 'Si oui, pr�cisez ';
+$Msg_FormStage [MSGFORMSTAGE_PRECISEZ        ] = 'Si oui, précisez ';
 
 define ('MATERIEL_PAR_LIGNE', 1);
 define ('LANG_PAR_LIGNE',     2);
@@ -152,13 +152,13 @@ $MsgErr [LOGINUNDERSCORE]   = '<font color="#ff0000">'
                               .'Login invalide'
 			                  .'</font>';
 $MsgErr [LOGINCARINVAL]     = '<font color="#ff0000">'
-                              .'Caract�res invalides dans le login'
+                              .'Caractères invalides dans le login'
 			                  .'</font>';
 $MsgErr [LOGINNBCARINVAL]   = '<font color="#ff0000">'
                               .'Login trop long ou trop court'
 			                  .'</font>';
 $MsgErr [LOGINDEJAPRIS]     = '<font color="#ff0000">'
-                              .'Login d�j� attribu�'
+                              .'Login déjà attribué'
 			                  .'</font>';
 $MsgErr [TUTEUR_SOC_IMPOSS] = '<font color="#ff0000">'
                               .'Ce tuteur n\'est pas dans l\'entreprise s&eacute;lectionn&eacute;e'
@@ -173,46 +173,46 @@ $MsgErr [SOC_ET_INFOS_SOC]  = '<font color="#ff0000">'
                               .'Une entreprise est s&eacute;lectionn&eacute;e, ne pas remplir les infos'
 			                  .'</font>';
 $MsgErr [NPCI_NON_NUM]      = '<font color="#ff0000">'
-                              .'Caract�re non num�rique dans le champ <b>Nombre de personnes du C.I.</b>'
+                              .'Caractère non numérique dans le champ <b>Nombre de personnes du C.I.</b>'
 			                  .'</font>';
 $MsgErr [NPSERVICE_NON_NUM] = '<font color="#ff0000">'
-                              .'Caract�re non num�rique dans le champ <b>Nombre de personnes du service</b>'
+                              .'Caractère non numérique dans le champ <b>Nombre de personnes du service</b>'
 			                  .'</font>';
 $MsgErr [NBSTAG_NON_NUM]    = '<font color="#ff0000">'
-                              .'Caract�re non num�rique dans le champ <b>Nombre de stagiaires pr�vus</b>'
+                              .'Caractère non numérique dans le champ <b>Nombre de stagiaires prévus</b>'
 			                  .'</font>';
 $MsgErr [NBSTAG_NUL]        = '<font color="#ff0000">'
-                              .'Valeur nulle dans le champ <b>Nombre de stagiaires pr�vus</b>'
+                              .'Valeur nulle dans le champ <b>Nombre de stagiaires prévus</b>'
 			                  .'</font>';
 $MsgErr [CARINVAL_IN_TEL]   = '<font color="#ff0000">'
-                              .'Caract�re invalide dans un num�ro de tel. ou un fax'
+                              .'Caractère invalide dans un numéro de tel. ou un fax'
 			                  .'</font>';
 $MsgErr [LGINVAL_IN_TEL]    = '<font color="#ff0000">'
-                              .'Num�ro de tel. ou fax trop long ou trop court'
+                              .'Numéro de tel. ou fax trop long ou trop court'
 			                  .'</font>';
 
 $MsgErr [INDEMN_INVALIDE]    = '<font color="#ff0000">'
-                               .'champ <b>Indemnit�s mensuelles</b> invalide'
+                               .'champ <b>Indemnités mensuelles</b> invalide'
 			                   .'</font>';
 $MsgErr [INDEMN_INSUFFISANTE] = '<font color="#ff0000">'
-                               .'champ <b>Indemnit�s mensuelles</b> inf&eacute;rieur au minimum l�gal de '
+                               .'champ <b>Indemnités mensuelles</b> inf&eacute;rieur au minimum légal de '
 							   .MINIMUM_LEGAL_INDEMNITES
 							   .' &euro;'
 			                   .'</font>';
 
 $MsgErr [INDEMN_REPAS_INCORRECTE]     = '<font color="#ff0000">'
-                                       .'Incoh�rence dans le champ  <b>'
+                                       .'Incohérence dans le champ  <b>'
 								       .$Msg_FormStage [MSGFORMSTAGE_INDEMN_REPAS]
 								       .'</b>'
 		    			               .'</font>';
 
 $MsgErr [INDEMN_TRANSPORT_INCORRECTE] = '<font color="#ff0000">'
-                                       .'Incoh�rence dans le champ  <b>'
+                                       .'Incohérence dans le champ  <b>'
 								       .$Msg_FormStage [MSGFORMSTAGE_INDEMN_TRANSPORT]
 								       .'</b>'
 		    			               .'</font>';
 $MsgErr [LOGICIELS_SPEC_INCORRECTS] = '<font color="#ff0000">'
-                                       .'Incoh�rence dans le champ  <b>'
+                                       .'Incohérence dans le champ  <b>'
 								       .$Msg_FormStage [MSGFORMSTAGE_LOGICIELS_SPEC]
 								       .'</b>'
 		    			               .'</font>';
