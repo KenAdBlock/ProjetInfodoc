@@ -26,11 +26,7 @@
 
 	function Query ($Requete, $Connexion)
 	{
-
 	   global $MsgErr, $ERRREQUEST;
-
-//		var_dump(mysql_fetch_object($Connexion));
-
 
 	    $Result = @mysql_query($Requete, $Connexion);
 //	                 or die ($MsgErr [$ERRREQUEST].$Requete);
