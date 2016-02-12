@@ -65,7 +65,7 @@
 
 	  case INFODOC :
 	    $URL_SERVEUR_SITE = 'http://localhost' . $port . '/';
-	    $RACINE           = 'projetinfodoc/stages/';
+	    $RACINE           = 'ProjetInfodoc/stages/';
 	    break;
 	}
 	$URL_SITE            = $URL_SERVEUR_SITE.$RACINE;
