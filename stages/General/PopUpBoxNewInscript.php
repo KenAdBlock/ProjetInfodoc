@@ -43,7 +43,7 @@
 	
 	include_once ($PATH_CLASS.'CNewInscript.php');
 
-    // R�cup�ration des variables envoy�es par POST ou GET
+    // Récupération des variables envoyées par POST ou GET
 
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
@@ -76,7 +76,7 @@
     switch ($StepNewInscript)
     {
       case 'Init' :
-        // Pr�paration du nouvel enreg.
+        // Préparation du nouvel enreg.
 
         $ObjTuple = new CNewInscript ();
 		
@@ -225,7 +225,7 @@
 		
 	     if (!$CodErrVide)
             {			
-            	  // Pr�paration de l'enreg. � enregistrer
+            	  // Préparation de l'enreg. à enregistrer
 
                 $ObjTuple = new CNewInscript ();
 			
