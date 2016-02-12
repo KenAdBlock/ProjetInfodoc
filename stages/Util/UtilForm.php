@@ -22,7 +22,7 @@ function AttributsAHRef ($Title       = '', $OnMouseOver = '',
 } // (AttributsAHRef)
 
 //
-// Génération d'un bouton
+// GÃ©nÃ©ration d'un bouton
 //
 function GenerButton ($LibButton, $Adresse, $WidthButton)
 {
@@ -38,21 +38,21 @@ function GenerButton ($LibButton, $Adresse, $WidthButton)
 } // GenerButton()
 
 //
-// Génération d'un select d'un attribut
-//     Affichage de l'attribut avec/sans décodage (appel de FromBd2Html())
-//     Ajout possible en début ou en fin d'une option supplémentaire
+// GÃ©nÃ©ration d'un select d'un attribut
+//     Affichage de l'attribut avec/sans dÃ©codage (appel de FromBd2Html())
+//     Ajout possible en dÃ©but ou en fin d'une option supplÃ©mentaire
 //
 //     $WidthSelect               : valeur de l'option selected
 //     $Requete                   : requete contenant les options
 //     $NomSelect                 : 'name' de la balise 'select'
 //     $Option                    : identificateur du champ qui sert de 'value' 
 //                                      dans les options
-//     $LibOption                 : libellé des options
+//     $LibOption                 : libellÃ© des options
 //     $ValOptionSelected         : valeur de l'option selected
-//     $WithDecod                 : décodage de LibOption par appel de FromBd2Html())
-//     $LibOptionSuppl            : libellé de l'option supplémentaire
-//     $OptionSuppl               : valeur de l'option supplémentaire 
-//     $Entete                    : option supplémentaire en début de liste
+//     $WithDecod                 : dÃ©codage de LibOption par appel de FromBd2Html())
+//     $LibOptionSuppl            : libellÃ© de l'option supplÃ©mentaire
+//     $OptionSuppl               : valeur de l'option supplÃ©mentaire
+//     $Entete                    : option supplÃ©mentaire en dÃ©but de liste
 
 function GenerSelect1Attr ($WidthSelect, $Requete, $NomSelect,
                            $Option, $LibOption, $ValOptionSelected,
