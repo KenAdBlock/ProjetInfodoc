@@ -11,7 +11,7 @@
 //
 function RandomPassWord ($MaxLg = MAXLGPASSWD)
 {
-    $LesCaracteres  = "AabBCDEFcdefghGHJKijkmLMNnPQRSTUVWXYpqrsZtwxyz23456789"; //caract�res possibles
+    $LesCaracteres  = "AabBCDEFcdefghGHJKijkmLMNnPQRSTUVWXYpqrsZtwxyz23456789"; //caractères possibles
 	$NbCarPossibles = strlen ($LesCaracteres);
     srand ((double) microtime() * 1000000);
 /**/	$NewPassWord = "";

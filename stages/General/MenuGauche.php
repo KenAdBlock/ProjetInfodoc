@@ -26,7 +26,6 @@
 	require_once ($PATH_CONSTANTES.'CstErrBD.php');
     require_once ($PATH_UTIL.      'UtilBD.php');    // ConnectSelect(), Query()
     require_once ($PATH_UTIL.      'UtilLogin.php'); // IsEtudByLogin(), IsProfByLogin()
-	$Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
     $NomBaseMathieu  = "laporte";
     $UserMathieu     = "root";
@@ -91,18 +90,18 @@
 						               OR FK_Statut = '".STATUTPROFIUTAIX."'
 						               OR FK_Statut = '".STATUTML."')";
 					}
-                    $ReqUser = Query ("SELECT $NomTabUsers.*
-				                           FROM $NomTabUsers
-						    			   WHERE Identifiant  = '$login'".$ReqWhere,
-						              $ConnectMathieu);
+                    $ReqUser = Query ("SELECT $NomTabUsers.* FROM $NomTabUsers WHERE Identifiant  = '$login'".$ReqWhere, $ConnectMathieu);
+                    mysql_close($ConnectMathieu);
+                    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 					if ($NbUsers = mysql_num_rows ($ReqUser))
 					{
-					    // R�cup�ration de toutes les informations utiles
+					    // Récupération de toutes les informations utiles
 
 
 					    $User = mysql_fetch_object ($ReqUser);
+                        var_dump($User);
 
-						$UserPassWord      = $User->PassWord;
+                        $UserPassWord      = $User->PassWord;
                         $UserNom           = $User->Nom;
                         $UserPrenom        = $User->Prenom;
                         $UserPK_User       = $User->PK_Id;
@@ -130,7 +129,7 @@
 						              $Connexion);
 					if ($NbUsers = mysql_num_rows ($ReqUser))
 					{
-					    // R�cup�ration de toues les informations utiles
+					    // Récupération de toutes les informations utiles
 
 					    $User = mysql_fetch_object ($ReqUser);
 						$UserPassWord      = $User->PassWord;
@@ -162,10 +161,8 @@
                         $_SESSION ['PK_UserCible']      = $UserPK_User;
 	                    $_SESSION ['Status']            = $LeStatus;
 
-                        $ReqLibStatus = Query ("SELECT $NomTabStatus.Libelle
-				                                   FROM $NomTabStatus
-					                               WHERE  Code = '$LeStatus'",
-                                               $Connexion);
+
+                        $ReqLibStatus = Query("SELECT $NomTabStatus.Libelle FROM $NomTabStatus WHERE Code = '$LeStatus'", $Connexion);
 
                         $ObjLibStatus = mysql_fetch_object ($ReqLibStatus);
                         $_SESSION ['LibStatus']         = $ObjLibStatus->Libelle;

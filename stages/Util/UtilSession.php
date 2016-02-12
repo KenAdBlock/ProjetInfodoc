@@ -1,10 +1,10 @@
 <?php
     // Fichier UtilSessions.php
 	//
-	// Utilitaires concernant les sessions et le login associé
+	// Utilitaires concernant les sessions et le login associï¿½
     // 
 	// Dans ce site, une session n'est valide que si la variable 'login' y est
-	//   enregistrée (sauf justement pendant que le client se connecte !)
+	//   enregistrï¿½e (sauf justement pendant que le client se connecte !)
 	//
 	// CloseSession(), CloseSessionAndRedirect(), OpenSession(), PurgeSession(), 
 	// IsOpenedSession(), IsSessionAndLoginNonVide(), 
@@ -14,41 +14,41 @@
 /*
 IsOKOpenedSessionAndLoginNonVide()
 ================================
-// Vérification qu'il existe bien une session ouverte 
+// Vï¿½rification qu'il existe bien une session ouverte 
 //   et qu'il existe bien un login NON VIDE dans la session ouverte
-//   Dans le premier cas, la fenêtre est refermée
-//   Dans le second cas, redirection vers l'URL passée en paramètre 
+//   Dans le premier cas, la fenï¿½tre est refermï¿½e
+//   Dans le second cas, redirection vers l'URL passï¿½e en paramï¿½tre 
 //       (la Home Page, en principe)
 
 IsOKSessionAndLoginObligatoires()
 ===============================
-// Termine le script et redirige vers l'URL passée en paramètre 
+// Termine le script et redirige vers l'URL passï¿½e en paramï¿½tre 
 //   (en principe la page d'accueil) si aucune session 
 //   n'est ouverte  ou s'il n'existe pas de 'login' non vide dans 
 //   la session ouverte
 
 IsOpenedSession()
 ===============
-// Vérification qu'une session est ouverte 
+// Vï¿½rification qu'une session est ouverte 
 //   et qu'il existe un login VIDE OU NON dans la session ouverte
 
 IsLoginNonVideInSession() 
 =======================
-// Vérification que le 'login' de la session ouverte est NON VIDE
+// Vï¿½rification que le 'login' de la session ouverte est NON VIDE
 
 IsSessionAndLoginNonVide() 
 ========================
-// Vérification qu'une session est ouverte
+// Vï¿½rification qu'une session est ouverte
 //   et qu'il existe un 'login' NON VIDE dans la session ouverte
  
 PurgeSession()
 ============
-// Détruit toutes les variables de session
+// Dï¿½truit toutes les variables de session
 	
 */
 require_once ($PATH_UTIL.'UtilDivers.php');
 
-// Détruit toutes les variables de session
+// Dï¿½truit toutes les variables de session
 //		
 function PurgeSession()
 //       ============
@@ -64,7 +64,7 @@ function CloseSession ()
 	if (isset ($_COOKIE [session_name()])) 
         setcookie (session_name(), '', time()-42000, '/');
 
-    // Finalement, on détruit la session.
+    // Finalement, on dÃ©truit la session.
 
     session_destroy();
 
@@ -93,7 +93,7 @@ function OpenSession ($SessionName)
 
 } // OpenSession()
 	
-// Vérification qu'une session DU SITE est ouverte 
+// VÃ©rification qu'une session DU SITE est ouverte
 //   et qu'il existe un login (vide ou pas) dans la session ouverte
 //
 function IsOpenedSession()
@@ -103,7 +103,7 @@ function IsOpenedSession()
 	 
 } // IsOpenedSession()
 
-// Vérification que le 'login' de la session ouverte est non vide
+// Vï¿½rification que le 'login' de la session ouverte est non vide
 //
 function IsLoginNonVideInSession() 
 //       =======================
@@ -112,7 +112,7 @@ function IsLoginNonVideInSession()
 	
 } // IsLoginNonVideInSession()
 
-// Vérification si une session est ouverte
+// Vï¿½rification si une session est ouverte
 //   et s'il existe un 'login' non vide dans la session ouverte
 //   
 function IsSessionAndLoginNonVide() 
@@ -122,7 +122,7 @@ function IsSessionAndLoginNonVide()
 	
 } // IsSessionAndLoginNonVide()
  
-// Termine le script et redirige vers l'URL passée en paramètre 
+// Termine le script et redirige vers l'URL passï¿½e en paramï¿½tre 
 //   (en principe la page d'accueil) si aucune session 
 //   n'est ouverte  ou s'il n'existe pas de 'login' non vide dans 
 //   la session ouverte
@@ -137,7 +137,7 @@ function DebutSession()
 
 function IsOKSessionAndLoginObligatoires(
 //       ===============================
-	                  $URL, $Message = "Connexion préalable nécessaire") 
+	                  $URL, $Message = "Connexion prï¿½alable nï¿½cessaire") 
 {
 	if (IsSessionAndLoginNonVide()) return true;
 		
@@ -152,10 +152,10 @@ function IsOKSessionAndLoginObligatoires(
 		
 } // IsOKSessionAndLoginObligatoires()
 
-// Vérification qu'il existe bien une session ouverte 
+// Vï¿½rification qu'il existe bien une session ouverte 
 //   et qu'il existe bien un login NON VIDE dans la session ouverte
-//   Dans le premier cas, la fenêtre est refermée
-//   Dans le second cas, redirection vers l'URL passée en paramètre 
+//   Dans le premier cas, la fenï¿½tre est refermï¿½e
+//   Dans le second cas, redirection vers l'URL passï¿½e en paramï¿½tre 
 //       (la Home Page, en principe)
 
 function OpenedSessionAndLoginNonVideIsOK ($URL)

@@ -9,7 +9,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $ConnectMathieu = ConnectSelect ($HoteMathieu,   $UserMathieu,
                                      $PasswdMathieu, $NomBaseMathieu);
 					   
-    // G�n�ration de la table des �tudiants
+    // Génération de la table des étudiants
 	// ====================================
 
     if (!isset ($Etape)) $Etape = 'Init';

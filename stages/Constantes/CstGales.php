@@ -54,7 +54,7 @@
 	switch ($MachineHote)
 	{
 	  case PCDM :
-	    $URL_SERVEUR_SITE  = 'http://127.0.0.1/' . $port;
+	    $URL_SERVEUR_SITE  = 'http://127.0.0.1' . $port . '/';
 	    $RACINE            = '/stages/';
 	    break;
 		
@@ -64,7 +64,7 @@
 	    break;
 
 	  case INFODOC :
-	    $URL_SERVEUR_SITE = 'http://localhost/' . $port;
+	    $URL_SERVEUR_SITE = 'http://localhost' . $port . '/';
 	    $RACINE           = 'projetinfodoc/stages/';
 	    break;
 	}

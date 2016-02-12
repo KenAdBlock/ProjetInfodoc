@@ -3,8 +3,8 @@
     //
     // Identification de la base
     // 
-	    $NomBase  = "laporte"; 
-	    $User     = "laporte"; 
+	    $NomBase  = "stages";
+	    $User    = "root";
 	    $Passwd   = ""; 
 	    $Hote     = "localhost";
 
