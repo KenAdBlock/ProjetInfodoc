@@ -211,7 +211,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=CoordonneesEntreprise" target="principal">
-                Coordonn�es de l'entreprise
+                Coordonnées de l'entreprise
 			</a>
         </td>
 	</tr>
@@ -253,7 +253,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants1A" target="principal">
-                Mailing aux 1<sup>�re</sup> ann�e
+                Mailing aux 1<sup>ère</sup> année
 			</a>
         </td>
 	</tr>
@@ -267,7 +267,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous" target="principal">
-                Mailing aux 2<sup>�me</sup> ann�e
+                Mailing aux 2<sup>ème</sup> année
 			</a>
         </td>
 	</tr>
@@ -297,7 +297,7 @@ en tant que <b><?=$Libelle?></b>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=AffectStageEtud"
 			                                             target="principal">
-                Affectation d'un stage � un �tudiant
+                Affectation d'un stage à un étudiant
 			</a>
         </td>
 	</tr>
@@ -359,7 +359,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="?Step=Decnx" target="_top">
-			    Deconnexion</a>
+			    D&eacute;connexion</a>
         </td>
 	</tr>
 </table>
