@@ -8,25 +8,17 @@
 	$URL_PROGR_LP  = $PATH_CONSTANTES.'_lp_da2i.pdf';
 
 ?>
-<html>
-<head>
-    
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="<?=$PATH_CSS?>materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
 
-<body>
 <nav class="blue" role="navigation">
 
     <div class="nav-wrapper container">
 
       <ul class="left hide-on-med-and-down">
-        <!--<li><a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons left">account_circle</i>Se connecter</a></li>-->
+        <li><a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons left">account_circle</i>Se connecter</a></li>
       </ul>
 
       <ul class="right hide-on-med-and-down">
-        <!--<li><a href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxNewInscript.php')"><i class="material-icons left">create</i>Nouvelle inscription</a></li>  -->
+        <li><a href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxNewInscript.php')"><i class="material-icons left">create</i>Nouvelle inscription</a></li>  
       </ul> 
 
       <div id="nav-mobile" class="side-nav">
@@ -68,43 +60,9 @@
         </div>
       </div>
 
-      <!--<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>  -->
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>  
 
-      <div id="slide-out" class="side-nav grey lighten-4 z-depth-3 black-text">
-        <div class="row">
-          <div class="col s12">
-
-            <p class="center">
-              Si vous désirez nous verser de la 
-              <a class="waves-effect waves-light btn blue lighten-2 white-text" href="../Libres/LettreTA.php" target="_blanc">Taxe d'apprentissage</a>
-              merci de cliquer ci-dessus
-            </p>
-            <form action="" method="POST" role="form">
-              <h5 class="center">Connexion</h5>
-              <div class="input-field col s12">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefixx" type="text" class="validate">
-                <label for="icon_prefix">Login</label>
-              </div>
-              <div class="input-field col s12">
-                <i class="material-icons prefix">https</i>
-                <input id="icon_telephone" type="password" class="validate">
-                <label for="icon_telephone">Pass</label>
-              </div>
-              <p class="center">
-                <a href="home.html" class="waves-effect waves-light btn white-text amber lighten-1"><i class="material-icons left">label</i>Se connecter</a>
-              </p>  
-              <p class="center">
-                <a class="waves-effect waves-light btn blue white-text modal-trigger" href="#modal_pass_oublie"><i class="material-icons left">restore</i>Mot de passe oublié</a>
-              </p>
-            </form>
-            <p class="center">
-              <!--<a href="#"><img class="responsive-img hoverable z-depth-1" width="200" src="../img/logo_alumni.jpg"></a>-->
-            </p>            
-
-          </div>
-        </div>
-      </div>
+      
 
       <!-- Modal Structure -->
       <div id="modal_pass_oublie" class="modal">
@@ -217,9 +175,3 @@
       </div>
     </div>
   </footer>
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="<?=$PATH_JS?>materialize.js"></script>
-  <script src="<?=$PATH_JS?>init.js"></script>
-</body>
-</html>

@@ -60,7 +60,7 @@
 
         if ($Step == 'Decnx')
         {
-            CloseSessionAndRedirect ($URL_SITE);
+            CloseSessionAndRedirect ($URL_SITE.$PATH_PHP);
         }
     }
     else
@@ -179,24 +179,7 @@
 	require_once ('Consult.php');     // Consult()
 	include ('GetDroits.php');
 
-?>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="<?=$PATH_CSS?>materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <script language="javascript">
-function popup(page)
-{
-    window.open (page, "titre", "width=600, height=400, scrollbars=yes");
-}
-</script>
-</head>
 
-<body>
-
-<?php
 switch ($Step)
 {
   case 'Accueil' :
@@ -209,9 +192,3 @@ switch ($Step)
     break;
 }
 ?>
-<!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="<?=$PATH_JS?>materialize.js"></script>
-  <script src="<?=$PATH_JS?>init.js"></script>
-</body>
-</html>

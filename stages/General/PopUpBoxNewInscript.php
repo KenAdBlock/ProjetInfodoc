@@ -341,10 +341,12 @@ Responsable des stages
                 <form method="POST" role="form" class="col s12">
                   <div class="row">
                     <div class="input-field col l6 m6 s12">
+                      <?=$ValidNomTuteur?>
                       <input name="NomTuteur" size="50" value="<?=$ValNomTuteur?>" id="NomTuteur" type="text" class="validate">
                       <label for="NomTuteur"><b>Nom *</b></label>
                     </div>
                     <div class="input-field col l6 m6 s12">
+                      <?=$ValidPrenomTuteur?>
                       <input name="PrenomTuteur" size="50" value="<?=$ValPrenomTuteur?>" id="PrenomTuteur" type="text" class="validate">
                       <label for="PrenomTuteur"><b>Prénom *</b></label>
                     </div>
@@ -352,7 +354,6 @@ Responsable des stages
                   <div class="row">
                     <div class="input-field col l6 m6 s12">
                       <select>
-                        <option value="" disabled selected>Choisissez</option>
                         <option name="CiviliteTuteur" value="M">M</option>
                         <option name="CiviliteTuteur" value="Mme">Mme</option>
                         <option name="CiviliteTuteur" value="Mlle">Mlle</option>
@@ -360,12 +361,14 @@ Responsable des stages
                       <label><b>Civilité *</b></label>
                     </div>
                     <div class="input-field col l6 m6 s12">
+                      <?=$ValidMailTuteur?>
                       <input name="MailTuteur" size="50" value="<?=$ValMailTuteur?>" id="MailTuteur" type="text" class="validate">
                       <label for="MailTuteur"><b>Mail *</b></label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col l6 m6 s12">
+                      <?=$ValidTelTuteur?>
                       <input name="TelTuteur" size="50" value="<?=$ValTelTuteur?>" id="TelTuteur" type="text" class="validate">
                       <label for="TelTuteur"><b>Tel *</b></label>
                     </div>
@@ -399,6 +402,7 @@ Responsable des stages
                   <h5 class="center">Entreprise</h5>
                   <div class="row">
                     <div class="input-field col s12">
+                      <?=$ValidNomE?>
                       <input name="NomE" size="50" value="<?=$ValNomE?>" id="NomE" type="text" class="validate">
                       <label for="NomE"><b>Raison sociale *</b></label>
                     </div>
@@ -407,6 +411,7 @@ Responsable des stages
                   <hr>
                   <div class="row">
                     <div class="input-field col l6 m6 s12">
+                      <?=$ValidAdr1?>
                       <input name="Adr1" size="50" value="<?=$ValAdr1?>" id="Adr1" type="text" class="validate">
                       <label for="Adr1"><b>Adresse *</b></label>
                     </div>
@@ -417,10 +422,12 @@ Responsable des stages
                   </div>
                   <div class="row">
                     <div class="input-field col l6 m6 s12">
+                      <?=$ValidCP?>
                       <input name="CP" size="50" value="<?=$ValCP?>" id="CP" type="text" class="validate">
                       <label for="CP"><b>Code postal *</b></label>
                     </div>
                     <div class="input-field col l6 m6 s12">
+                      <?=$ValidVille?>
                       <input name="Ville" size="50" value="<?=$ValVille?>" id="Ville" type="text" class="validate">
                       <label for="Ville"><b>Ville *</b></label>
                     </div>
@@ -433,10 +440,12 @@ Responsable des stages
                   </p>
                   <div class="row">
                     <div class="input-field col l6 m6 s12">
+                      <?=$ValidNomRespAdmin?>
                       <input name="NomRespAdmin" size="50" value="<?=$ValNomRespAdmin?>" id="NomRespAdmin" type="text" class="validate">
                       <label for="NomRespAdmin"><b>Nom *</b></label>
                     </div>
                     <div class="input-field col l6 m6 s12">
+                      <?=$ValidPrenomRespAdmin?>
                       <input name="PrenomRespAdmin" size="50" value="<?=$ValPrenomRespAdmin?>" id="PrenomRespAdmin" type="text" class="validate">
                       <label for="PrenomRespAdmin"><b>Prénom *</b></label>
                     </div>
@@ -458,6 +467,7 @@ Responsable des stages
                   </div>
                   <div class="row">
                     <div class="input-field col l6 m6 s12">
+                      <?=$ValidTelRespAdmin?>
                       <input name="TelRespAdmin" size="50" value="<?=$ValTelRespAdmin?>" id="TelRespAdmin" type="text" class="validate">
                       <label for="TelRespAdmin"><b>Tel *</b></label>
                     </div>
@@ -678,26 +688,7 @@ Responsable des stages
 	        </table>
 		</td>
 	</tr>
-                                                                           <?php
-                                        if (count ($CodErrInval))
-										{
-                                                                           ?>
-	<tr>			
-        <td colspan="4" style="text-align : center"><br /><hr></td>
-    </tr>
-                                                                           <?php
-                                            for ($i = 0; $i < count ($CodErrInval); ++$i)
-										    {
-                                                                           ?>
-	<tr>			
-        <td colspan="4">
-		    <?=$MsgErr [$CodErrInval [$i]]?><br />
-        </td>
-    </tr>
-                                                                           <?php
-                                            }
-                                        }
-                                                                           ?>
+                                                                           
 	<tr>			
         <td colspan="4" align="center"><br /><hr></td>
     </tr>

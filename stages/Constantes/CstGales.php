@@ -85,5 +85,6 @@
 	$PATH_AFFICH     = $PATH_RACINE.'Affich/';
 	$PATH_CLASS      = $PATH_RACINE.'Class/';
 	$PATH_LIBRES     = $PATH_RACINE.'Libres/';
+	$PATH_PHP		 = 'Php/';
 	
 ?>
