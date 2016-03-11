@@ -12,18 +12,13 @@ function Consult ($Login, $Libelle, $Status)
 	$URL_BackOffice     = $PATH_BACKOFFICE.'BackOffice.php?Trait=BackOffice';
 
 ?>
-<h2>
-Bienvenue
-</h2>
-<p>
-Vous êtes connecté(e) sous le pseudonyme
-</p>
+<h5 class="center">Bienvenue</h5> 
+            <p class="center">
+            Vous êtes connecté(e) sous le pseudonyme <br>
+            <b><?=$Login?></b> 
+            </p>
+            <p class="center">en tant que <b><?=$Libelle?></b></p>
 
-<h1><?=$Login?></h1>
-
-<p>
-en tant que <b><?=$Libelle?></b>
-</p>
 
                                                                            <?php
                                         if (GetDroits ($Status, 'ChangerPassWord'))
@@ -86,7 +81,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="../forum2014.html" target="principal">
-		        Liste des entreprises présentes au Forum des stages
+		        Liste des entreprises pr&eacute;sentes au Forum des stages
 			</a>
         </td>
 	</tr>
@@ -170,7 +165,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeDetailsEntreprises" target="principal">
-			    Liste détaillée des entreprises
+			    Liste d&eacute;taill&eacute;e des entreprises
 		    </a>
         </td>
 	</tr>
@@ -198,7 +193,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ModifInfosUserConnecte" target="principal">
-                Vos Coordonnées
+                Vos Coordonn&eacute;es
 			</a>
         </td>
 	</tr>
@@ -212,7 +207,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=CoordonneesEntreprise" target="principal">
-                Coordonnées de l'entreprise
+                Coordonn&eacute;es de l'entreprise
 			</a>
         </td>
 	</tr>
@@ -240,7 +235,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeEtudAvecStage" target="principal">
-                Liste des étudiants avec stage
+                Liste des &eacute;tudiants avec stage
 			</a>
         </td>
 	</tr>
@@ -254,7 +249,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants1A" target="principal">
-                Mailing aux 1<sup>ère</sup> année
+                Mailing aux 1<sup>&egrave;re</sup> ann&eacute;e
 			</a>
         </td>
 	</tr>
@@ -268,7 +263,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous" target="principal">
-                Mailing aux 2<sup>ème</sup> année
+                Mailing aux 2<sup>&egrave;me</sup> ann&eacute;e
 			</a>
         </td>
 	</tr>
@@ -314,7 +309,7 @@ en tant que <b><?=$Libelle?></b>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Etiquettes"
 			                                             target="principal">
-                Étiquettes
+                Etiquettes
 			</a>
         </td>
 	</tr>
@@ -360,7 +355,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="?Step=Decnx" target="_top">
-			    Déconnexion</a>
+			    D&eacute;connexion</a>
         </td>
 	</tr>
 </table>

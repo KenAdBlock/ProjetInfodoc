@@ -73,6 +73,7 @@
 	// Chemins standard
 	// ================
 	
+	$PATH_JS         = $PATH_RACINE.'js/';
 	$PATH_CSS        = $PATH_RACINE.'css/';
     $PATH_GIFS       = $PATH_RACINE.'gif/';
     $PATH_UTIL       = $PATH_RACINE.'Util/';

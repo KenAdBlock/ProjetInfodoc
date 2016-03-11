@@ -31,7 +31,7 @@
 
     $NomBaseMathieu  = "laporte";
     $UserMathieu     = "root";
-    $PasswdMathieu   = "";
+    $PasswdMathieu   = "rootro";
     $HoteMathieu     = "localhost";
 
 	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu,
@@ -183,7 +183,9 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel=stylesheet type=text/css href="<?=$PATH_CSS?>Accueil.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="<?=$PATH_CSS?>materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <script language="javascript">
 function popup(page)
 {
@@ -192,8 +194,7 @@ function popup(page)
 </script>
 </head>
 
-<body background="<?=$PATH_GIFS?>lvbkgnd.jpg" bgcolor="#FFFFFF" text="#000000"
-      link="#006666" vlink="#666666" alink="#FF66CC">
+<body>
 
 <?php
 switch ($Step)
@@ -208,5 +209,9 @@ switch ($Step)
     break;
 }
 ?>
+<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="<?=$PATH_JS?>materialize.js"></script>
+  <script src="<?=$PATH_JS?>init.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $NomBaseMathieu  = "laporte"; 
     $NomBaseStages   = "stages"; 
     $UserMathieu     = "root";
-    $PasswdMathieu   = "";
+    $PasswdMathieu   = "rootro";
     $HoteMathieu     = "localhost";
     $Sender          = "From: marc.laporte@univ-amu.fr";
 	
