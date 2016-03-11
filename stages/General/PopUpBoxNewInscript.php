@@ -467,9 +467,9 @@ Responsable des stages
                   </div>
                   <div class="row">
                     <div class="input-field col l6 m6 s12">
-                      <?=$ValidTelRespAdmin?>
+                      
                       <input name="TelRespAdmin" size="50" value="<?=$ValTelRespAdmin?>" id="TelRespAdmin" type="text" class="validate">
-                      <label for="TelRespAdmin"><b>Tel *</b></label>
+                      <label for="TelRespAdmin"><b><?=$ValidTelRespAdmin?>Tel *</b></label>
                     </div>
                     <div class="input-field col l6 m6 s12">
                       <input name="FaxRespAdmin" size="50" value="<?=$ValFaxRespAdmin?>" id="FaxRespAdmin" type="text" class="validate">

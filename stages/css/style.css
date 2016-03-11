@@ -1,0 +1,149 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+main{
+  margin-bottom: -55px;
+}
+#separator-img{
+  border: 0px;
+}
+.card1{
+  background: linear-gradient(to right, rgba(256,256,256,.80),rgba(256,256,256,.90), rgba(256,256,256,.80));
+}
+hr{
+  border-color: #ffffff;
+}
+.side-nav > p{
+  line-height: 30px;
+}
+
+p{
+  text-align: justify;
+  line-height: 25px;
+}
+ol {font-weight: bold;}
+li span {font-weight:normal;line-height: 25px;}
+
+.collapsible-body{
+  padding: 20px;
+}
+.collapsible-header{
+  background:#546e7a;
+  border: 0px;
+}
+.collapsible-header:hover{
+  background:#90a4ae;
+}
+/* label color */
+   .input-field label {
+     color: #1976d2;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label,h5 {
+     color: #1e88e5;
+   }
+   /* label focus color */
+   .input-field input[type=password]:focus + label {
+     color: #1e88e5;
+   }
+   /* label underline focus color */
+   .input-field input[type=text] {
+   
+     border-bottom: 1px solid #1e88e5;
+     
+   }
+   .input-field input[type=password] {
+   
+     border-bottom: 1px solid #1e88e5;
+     
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #1e88e5;
+     box-shadow: 0 2px 0 0 #1e88e5;
+   }
+   /* label underline focus color */
+   .input-field input[type=password]:focus {
+     border-bottom: 1px solid #1e88e5;
+     box-shadow: 0 2px 0 0 #1e88e5;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #1976d2;
+     box-shadow: 0 1px 0 0 #1976d2;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #1e88e5;
+   }
+   .prefix{
+    color:#1976d2;
+   }
+   [type="checkbox"].filled-in:checked + label:after {
+  top: 0px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #eeeeee;
+  background-color: #1976d2;
+  z-index: 0;
+}
+nav{
+  margin-top: -20px;
+}
+footer.page-footer{
+  background:transparent;
+}
+footer{
+  position:relative;
+}
+#sidenav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 997;
+  will-change: opacity;
+}
+
+nav .input-field label.active {
+  font-size: .8rem;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
+}
+nav .input-field input {
+  height: 100%;
+  font-size: 1rem;
+  border-bottom: 1px solid #1e88e5;
+  padding-left: 0rem;
+}
+td, th {
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 0px;
+}
+#connecter{
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  outline: 0;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+
+}
+#connecter:hover{
+  transition: box-shadow .25s;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
