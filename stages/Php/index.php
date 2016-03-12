@@ -1,6 +1,6 @@
 <?php
     $PATH_RACINE     = '../';
-    $PATH_CONSTANTES = 'Constantes/';
+    $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
     $PATH_GENERAL		= $PATH_RACINE.'General/';
 
     include_once ($PATH_CONSTANTES.'CstGales.php');
