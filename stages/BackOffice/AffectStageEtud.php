@@ -245,7 +245,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 </p>
 <input type="hidden" name="Etape" value="Valid" >
 </form>
-<script type="text/javascript"><!-- document.ZoneSaisie.NomPrenom.focus(); //--></script> 
+<script type="text/javascript"><!-- document.ZoneSaisie.NomPrenom.focus(); //--></script>
                                                                            <?php
 										    }
                                         }

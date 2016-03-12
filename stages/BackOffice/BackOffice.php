@@ -6,11 +6,13 @@ require_once ('Fonctions.php');
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <head>
     <meta HTTP-EQUIV="Page-Exit" content="blendTrans(Duration=0.7)">
-    <script src=<?=$PATH_JS?>/confirm.js type=text/javascript></script>
     <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="<?=$PATH_CSS?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
+  <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
+
 
 <SCRIPT LANGUAGE="JavaScript">
 <!-- Begin

@@ -4,20 +4,20 @@
     $PATH_GENERAL		= $PATH_RACINE.'General/';
 
     include_once ($PATH_CONSTANTES.'CstGales.php');
-
 ?>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Stages</title>
-		
+
+		<link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
 		<!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="<?=$PATH_CSS?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 
-	<script language="javascript">
+	    <script language="javascript">
 			function popup(page)
 			{
 				window.open (page, "titre", "width=600, height=400, scrollbars=yes");
@@ -33,9 +33,9 @@
 		include ($PATH_GENERAL."Generalites.php");
 	?>
 
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  	<script src="../js/materialize.js"></script>
-  	<script src="../js/init.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="<?=$PATH_JS?>materialize.min.js"></script>
+        <script src="<?=$PATH_JS?>init.js"></script>
 
     </body>
 </html>

@@ -9,7 +9,10 @@
 
 	$NomSession = 'Stages';
 
+
 	$PASSWDBD = "rootro";
+
+
 
     // Noms des tables
 
@@ -31,9 +34,11 @@
 	$NomTabTaxe              = 'tabtaxe';
 	$NomTabAnneesEntreprises = 'tabanneesentreprises';
 	
-    $MailResponsableStages = "marc.laporte@univ-amu.fr";
+//    $MailResponsableStages = "marc.laporte@univ-amu.fr";
+    $MailResponsableStages = "darkweizer@gmail.com";
 	$NomResponsableStages  = "Marc LAPORTE";
-    $MailAdministrateur    = "marc.laporte@univ-amu.fr";
+//    $MailAdministrateur    = "marc.laporte@univ-amu.fr";
+    $MailAdministrateur    = "darkweizer@gmail.com";
 	$NomAdministrateur     = "Marc LAPORTE";
 	$MailSecretariatTA     = "sophie.mebkhout	@univ-amu.fr";
 	$MailBidon             = "bidon@bidon.fr";
@@ -77,6 +82,7 @@
 	
 	$PATH_JS         = $PATH_RACINE.'js/';
 	$PATH_CSS        = $PATH_RACINE.'css/';
+    $PATH_IMG       = $PATH_RACINE.'Img/';
     $PATH_GIFS       = $PATH_RACINE.'gif/';
     $PATH_UTIL       = $PATH_RACINE.'Util/';
     $PATH_GENERAL    = $PATH_RACINE.'General/';

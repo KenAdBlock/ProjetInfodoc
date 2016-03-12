@@ -90,13 +90,14 @@
 <head> 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<title>Changement de mot de passe</title> 
+<title>Changement de mot de passe</title>
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   	<link href="<?=$PATH_CSS?>materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   	<link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
         
-</head> 
+</head>
 <body>
 
 <script language="JavaScript">

@@ -18,7 +18,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 <br /><br />
 <span style="color : red">
-<small><i>Ne pas oublier de sauvegarder immédiatement le fichier <b>.xls</b></i></small> dès qu'il s'ouvrira</span>
+<small><i>Ne pas oublier de sauvegarder immédiatement le fichier <b>.ods</b></i></small> dès qu'il s'ouvrira</span>
 </p>
 <?php
 }

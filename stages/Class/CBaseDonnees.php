@@ -14,7 +14,7 @@ class CBaseDonnees
 
     function CBaseDonnees ($PK_BD = 0)
     {
-        global $Connexion;
+        global $Connexion, $NomTabBasesDonnees;
 
         if (!isset ($PK_BD) || $PK_BD == 0)
         {
@@ -78,7 +78,7 @@ class CBaseDonnees
 
     function Select()
     {
-        global $Connexion;
+        global $Connexion, $NomTabBasesDonnees;
 
         $Req = Query ("SELECT * FROM $NomTabBasesDonnees  WHERE PK_BD = $this->PK_BD",
                   $Connexion);
@@ -96,10 +96,10 @@ class CBaseDonnees
 
     function Insert()
     {
-        global $Connexion;
+        global $Connexion, $NomTabBasesDonnees;
         
         return Query ("INSERT INTO $NomTabBasesDonnees VALUES (
-                '',
+                NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
@@ -109,7 +109,7 @@ class CBaseDonnees
 
     function Delete()
     {
-        global $Connexion;
+        global $Connexion, $NomTabBasesDonnees;
 
         return Query ("DELETE FROM $NomTabBasesDonnees WHERE PK_BD = $this->PK_BD",
                      $Connexion);
@@ -118,7 +118,7 @@ class CBaseDonnees
 
     function Update ()
     {
-        global $Connexion;
+        global $Connexion, $NomTabBasesDonnees;
         
         $Req = Query ("UPDATE $NomTabBasesDonnees SET 
                                  Code    = '$this->Code',
