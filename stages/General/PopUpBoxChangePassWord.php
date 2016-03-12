@@ -112,9 +112,7 @@
             <div class="card-content">
             	<span class="card-title"><h5 class="center">Changement de mot de passe</h5></span> 
 <form method="post"> 
-<table align="center" border="0" cellpadding="2" cellspacing="0"> 
-    <tr>
-	    <td colspan="4">
+
 		    <br /><b>Attention </b>: 
 		    <ul><li>le mot de passe doit comporter entre <b><?=MINLGPASSWD?></b> 
 		    et <b><?=MAXLGPASSWD?></b> chiffres ou lettres (majuscules ou 
@@ -125,43 +123,37 @@
 		     <b>caractères différents</b>.
 
             </li></ul>
-		</td>
-	</tr>
-	<tr>
-	    <td nowrap valign="top"><?=$Indic ['NewPW1']?></td> 
-	    <td align="right"><nobr><b><?=$LibPW1?></b> <sup>*</sup></nobr></td>
-		<td colspan="4"><div class="input-field col s12"><input type="password" name="NewPW1" id="NewPW1">
-		</div></td>
 
-	</tr>
-	<tr>
-	    <td nowrap valign="top"><?=$Indic ['NewPW2']?></td> 
-	    <td align="right"><nobr><b><?=$LibPW2?></b> <sup>*</sup></nobr></td>
-		<td colspan="4"><div class="input-field col s12"><input type="password" name="NewPW2">
-		</div></td>
+
+
+<div class="input-field col s12"><input type="password" name="NewPW1" id="NewPW1">
+		<label for="NewPW1"><?=$Indic ['NewPW1']?><b><?=$LibPW1?></b> <sup>*</sup></label>
+		</div>
+
+
+
+<div class="input-field col s12"><input type="password" id="NewPW2" name="NewPW2">
+	<label for="NewPW2"><?=$Indic ['NewPW2']?><b><?=$LibPW2?></b> <sup>*</sup></label>
+		</div>
 
 		
-	</tr>
-	<tr><td>&nbsp;</td><td>&nbsp;</td>
-	<td colspan="4" align="right"><button class="btn waves-effect waves-light white-text blue" type="submit">Valider</button></td>
-<td>&nbsp;</td></tr>
+
+
+<button class="btn waves-effect waves-light white-text blue" type="submit">Valider</button>
+
 	
-	<tr>
-        <td colspan="4" align="left"
-		    ><blockquote><sup>*</sup>
+<blockquote><sup>*</sup>
 			 <small>Choisissez un mot de passe composé de
 			 <b><?=MINLGPASSWD?></b> à
 			 <b><?=MAXLGPASSWD?></b> lettres <br />&nbsp; (majuscules ou
 			 minuscules <b>sans accents</b>) ou chiffres</small></blockquote>
              <hr>
-		</td>
-    </tr>
+
                                                                            <?php
                                         if (count ($CodErr))
 										{
                                                                            ?>
-    <tr>
-        <td colspan="4">
+
                                                                            <?php										
                                             while ($Code = array_pop ($CodErr))
 											{
@@ -172,25 +164,20 @@
                                                     PrintMsgErr ($TextMsgErr [$Code]);
 											}
                                                                            ?>
-        </td>
-    </tr>
-	<tr>
-        <td colspan="4" align="center"><hr>
-		</td>
-	</tr>
+
+  <hr>
+		
                                                                            <?php
                                         }
                                                                            ?>
-	<tr>
-        <td class="center" colspan="4" align="center">
+	
+        
 		    <button class="btn waves-effect waves-light white-text blue" type="submit" 
 		           
-		           onClick="window.close()">Fermer la fenetre</button></td>
-    </tr>
-	<tr>
-        <td colspan="4" align="center"><hr></td>
-    </tr>
-</table>
+		           onClick="window.close()">Fermer la fenetre</button>
+    
+        <hr>
+
 <input type="hidden" name="StepChPwd" value="Valid">
 </form>
 </div>
