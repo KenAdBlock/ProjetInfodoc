@@ -4,7 +4,7 @@ function Accueil ($LoginProv)
     global $PATH_GENERAL;
 ?>
 
-<nav class="blue" role="navigation">
+<nav class="bleu1" role="navigation">
 
     <div class="nav-wrapper container">
 
@@ -29,7 +29,7 @@ function Accueil ($LoginProv)
 
             <p class="center">
               Si vous désirez nous verser de la
-              <a class="waves-effect waves-light btn blue lighten-2 white-text" href="../Libres/LettreTA.php" target="_blanc">Taxe d'apprentissage</a>
+              <a class="waves-effect waves-light btn bleu2 white-text" href="../Libres/LettreTA.php" target="_blanc">Taxe d'apprentissage</a>
               merci de cliquer ci-dessus
             </p>
 
@@ -51,7 +51,7 @@ function Accueil ($LoginProv)
                   <input name="password" type="password" id="password" size="10">
 <label for="password">Pass</label>
             </div><p class="center">
-                        <button id="connecter" class="btn waves-effect waves-light white-text amber lighten-1" type="submit" name="Submit">Se connecter</button>
+                        <button id="connecter" class="btn waves-effect waves-light white-text jeune" type="submit" name="Submit">Se connecter</button>
                         
 </p>
 <input name="Step" type="hidden" value="Cnx">
@@ -59,7 +59,7 @@ function Accueil ($LoginProv)
 </form>
 
 <p class="center">
-            <a class="waves-effect waves-light btn white-text blue" href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxOubliPassWord.php')"
+            <a class="waves-effect waves-light btn white-text bleu1" href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxOubliPassWord.php')"
                 >Mot de passe oublié</a>
 </p>         
 

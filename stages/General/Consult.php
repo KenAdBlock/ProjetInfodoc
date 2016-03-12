@@ -13,7 +13,7 @@ function Consult ($Login, $Libelle, $Status)
 
 ?>
 
-<nav class="blue" role="navigation">
+<nav class="bleu1 role="navigation">
 
     <div class="nav-wrapper container">
 
