@@ -328,13 +328,14 @@ Responsable des stages
             <div class="card-content">
               <span class="card-title"><h4 class="center">Stage proposé par :</h4></span> 
               
-              <p><i>Toutes les rubriques <b>*</b> doivent obligatoirement être remplies</i></p>
+              <p class="center"><i>Toutes les rubriques <b>*</b> doivent obligatoirement être remplies</i></p>
                                                                         <?php
                                             if ($CodErrVide) 
                                             { 
                                                                            ?>
-<p style="text-align : center; font-size : 12 px;">
-    Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
+
+<p style="text-align : center; font-size : 12px;">
+    Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
 </p> 
                                                                            <?php 
                                             } 

@@ -14,7 +14,6 @@
 
   <div class="container">
     <div class="row">
-<!--    <div class="row no-margin-bottom">-->
       <div class="col s12">
         <div class="card grey lighten-4 z-depth-1" id="objectif" style="opacity: 1;">
           <div class="card-content">
@@ -80,10 +79,8 @@
 </main>
 
 <footer class="page-footer">
-<!--  <div class="amber">-->
-  <div class="footer-perso amber">
+  <div class="amber">
     <div class="container">
-<!--      <div class="row">-->
       <div class="row no-margin-bottom">
         <div class="col s12">
           <p class="right white-text">
