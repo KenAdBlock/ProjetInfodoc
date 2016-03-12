@@ -7,7 +7,7 @@
  */
 
 main{
-  margin-bottom: -55px;
+  margin-bottom: -30px;
 }
 #separator-img{
   border: 0px;
@@ -51,24 +51,19 @@ li span {font-weight:normal;line-height: 25px;}
    .input-field input[type=password]:focus + label {
      color: #1e88e5;
    }
+   /* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #1e88e5;
+   }
    /* label underline focus color */
-   .input-field input[type=text] {
+   .input-field input[type=text],.input-field input[type=password],.input-field input[type=email] {
    
      border-bottom: 1px solid #1e88e5;
      
    }
-   .input-field input[type=password] {
-   
-     border-bottom: 1px solid #1e88e5;
-     
-   }
+
    /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid #1e88e5;
-     box-shadow: 0 2px 0 0 #1e88e5;
-   }
-   /* label underline focus color */
-   .input-field input[type=password]:focus {
+   .input-field input[type=text]:focus,.input-field input[type=password]:focus,.input-field input[type=email]:focus {
      border-bottom: 1px solid #1e88e5;
      box-shadow: 0 2px 0 0 #1e88e5;
    }
@@ -131,10 +126,11 @@ td, th {
   border-radius: 0px;
 }
 #connecter{
+  width: 100%;
   border: none;
   border-radius: 2px;
   display: inline-block;
-  height: 36px;
+  height: 60px;
   line-height: 36px;
   outline: 0;
   padding: 0 2rem;
@@ -142,8 +138,4 @@ td, th {
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
 
-}
-#connecter:hover{
-  transition: box-shadow .25s;
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

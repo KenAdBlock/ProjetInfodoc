@@ -12,12 +12,38 @@ function Consult ($Login, $Libelle, $Status)
 	$URL_BackOffice     = $PATH_BACKOFFICE.'BackOffice.php?Trait=BackOffice';
 
 ?>
+
+<nav class="blue" role="navigation">
+
+    <div class="nav-wrapper container">
+
+      <ul class="left hide-on-med-and-down">
+        <li><a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons left">account_circle</i><?=$Login?></a></li>
+      </ul>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="?Step=Decnx" target="_top"> D&eacute;connexion</a></li>  
+      </ul> 
+
+      
+
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>  
+
+    </div>
+  </nav>
+
+<div id="slide-out" class="side-nav grey lighten-4 z-depth-3 black-text">
+        <div class="row">
+          <div class="col s12">
 <h5 class="center">Bienvenue</h5> 
             <p class="center">
             Vous êtes connecté(e) sous le pseudonyme <br>
             <b><?=$Login?></b> 
             </p>
             <p class="center">en tant que <b><?=$Libelle?></b></p>
+
+
+
 
 
                                                                            <?php
@@ -347,18 +373,9 @@ function Consult ($Login, $Libelle, $Status)
                                                                            <?php
 			                            }
 										                                   ?>
-<table width="100%" border="0">
-    <tr>
-	    <td align="center">&nbsp;
-        </td>
-	</tr>
-    <tr>
-	    <td align="center">
-            <a href="?Step=Decnx" target="_top">
-			    D&eacute;connexion</a>
-        </td>
-	</tr>
-</table>
+</div>
+</div>
+</div>
 
 <?php
 } // Consult()
