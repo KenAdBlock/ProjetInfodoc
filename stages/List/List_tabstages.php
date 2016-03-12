@@ -34,8 +34,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     }
     $QuelOrdreNum    = 'Ordre '.($Slx == 'NumAsc' ? 'de' : '').'croissant';
-    $GifOrderNum     = $PATH_GIFS.
-                      ($Slx == 'NumDesc' ? 'asc' : 'desc').'_order.png';
+    $GifOrderNum     = ($Slx == 'NumDesc' ? 'arrow_drop_down' : 'arrow_drop_up');
     $QuelOrdreNomE   = 'Ordre croissant';
 
     $URL_AffichStage = $PATH_BACKOFFICE.'BackOffice.php?Trait=Affich&SlxTable='.$NomTabStages.'&IdentPK=';
@@ -92,31 +91,25 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     {
     ?>
 
-<h1 style="text-align : center">
-    <?=$Title?>
-</h1>
+<span class="card-title"><h4 class="center"><?=$Title?></h4></span>
+    
                                                                           <?php
         if (! mysql_num_rows ($ReqStages))
         {
                                                                           ?>
-<h4 align="center">
+<h5 class="center">
     Aucun stage n'a été trouvé.
-</h4>
+</h5>
                                                                           <?php
         }
         else
         {
                                                                           ?>
-<h4 style="text-align : center;">
-    Pour afficher les informations relatives à un stage, cliquez sur son numéro.
-</h4>
-<table  align="center">
-    <tbody>
-    <tr>
-        <td valign="top">
-            <table cellpadding="5">
-                <tbody>
-                    <tr>
+
+<table  class="highlight bordered centered grey lighten-3">
+  <thead class="grey darken-1 white-text">
+
+                  <tr>
                         <th>&nbsp;</th>
                                                                              <?php
                                                 if ($DroitAffectStageEtud)
@@ -139,23 +132,29 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                 }
                                                                               ?>
                         <th style="text-align : center" valign="top" nowrap>
-                            <a href="<?=$URL_ListNum?>"
+                            <a class="white-text" href="<?=$URL_ListNum?>"
                                <?=AttributsAHRef ($QuelOrdreNum, $QuelOrdreNum, '', '');?>
-                                ><b>Numéro</b>&nbsp;
-                                 <img border="0" src="<?=$GifOrderNum?>">
+                                ><i class="material-icons white-text right" style="font-size: 20px"><?=$GifOrderNum?></i>
+                                <b>Numéro</b>&nbsp;
+                                 
                             </a>
                         </th>
 
                         <th>Nbre stages restant</th>
 
                         <th style="text-align : center" valign="top" nowrap>
-                            <a href="<?=$URL_ListNomE?>"
+                            <a class="white-text" href="<?=$URL_ListNomE?>"
                                <?=AttributsAHRef ($QuelOrdreNomE, $QuelOrdreNomE, '', '');?>
                                 <b>Entreprise</b>
                             </a>
                         </th>
                     </tr>
-                    <tr><td colspan="<?=$NbCol?>"><hr></td></tr>
+
+                </thead>
+
+                <tbody>
+                    
+                    <!--<tr><td colspan="<?=$NbCol?>"></td></tr>-->
                     <tr>
                                                                              <?php
                                             mysql_data_seek ($ReqStages, 0);
@@ -165,14 +164,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                     if ($DroitStagesNonPourvus)
                                                         continue;
                                                     else
-                                                        $BgColor = '#ffc2c2';
+                                                        $BgColor = '#2196f3';
                                                 else
-                                                    $BgColor = '#efefef';
+                                                    $BgColor = '#b71c1c';
                                                                               ?>
                          <td valign="top">
                             <a href="<?=$URL_AffichStage.$ObjStage->PK_Stage?>"
                                <?=AttributsAHRef  ('Detail', 'Detail', '', '');?>
-                           ><img src="<?=$PATH_GIFS?>b_browse.png" border="0"></a>
+                           ><i class="material-icons blue-text text-lighten-1">description</i></a>
                         </td>
                                                                               <?php
                                                 if ($DroitAffectStageEtud)
@@ -183,7 +182,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                         <td valign="top">
                             <a href="<?=$URL_Affect.$ObjStage->PK_Stage?>"
                                <?=AttributsAHRef  ('Affecter', 'Affecter', '', '');?>
-                           ><img src="<?=$PATH_GIFS?>b_insrow.png" border="0"></a>
+                           ><i class="material-icons blue-text text-lighten-1">input</i></a>
                         </td>
 
                                                                               <?php
@@ -203,7 +202,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                         <td valign="top">
                             <a href="<?=$URL_FormStage.$ObjStage->PK_Stage?>"
                                <?=AttributsAHRef  ('Modifier', 'Modifier', '', '');?>
-                           ><img src="<?=$PATH_GIFS?>b_edit.png" border="0"></a>
+                           ><i class="material-icons yellow-text text-darken-2">mode_edit</i></a>
                         </td>
                                                                             <?php
                                                 }
@@ -214,8 +213,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                             <a href="<?=$URL_DelStage.$ObjStage->PK_Stage?>"
                                <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
                                onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$ObjStage->PK_Stage?> ?')"
-                               ><img src="<?=$PATH_GIFS?>b_deltbl.png"
-                                     border="0">
+                               ><i class="material-icons red-text text-darken-2">delete_forever</i>
                             </a>
                         </td>
                                                                               <?php
@@ -228,8 +226,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                             <?=$ObjStage->PK_Stage?></a>
                         </td>
                         <td style="text-align : center"><?=$ObjStage->NbStagesRestant?></td>
-                        <td valign="top" align="center" style="background-color : <?=$BgColor?>" >
-                            <a href="<?=$URL_AffichSoc.$ObjStage->FK_Entreprise?>"
+                        <td valign="top" align="center">
+                            <a style="color : <?=$BgColor?>" href="<?=$URL_AffichSoc.$ObjStage->FK_Entreprise?>"
                                <?=AttributsAHRef  ('Afficher la fiche de l\'entreprise',
                                                    'Details entreprise', '', '');?>
                             >
@@ -240,11 +238,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             }
                                                                               ?>
                 </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody>
+
 </table>
+
 <?php
         }
     }

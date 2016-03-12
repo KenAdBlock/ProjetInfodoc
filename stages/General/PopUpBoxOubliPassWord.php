@@ -74,7 +74,7 @@
         <div class="col s12">
           <div class="card grey lighten-4 z-depth-1">
             <div class="card-content">
-              <span class="card-title"><h4 class="center">Mot de passe oublié</h4></span> 
+              <span class="card-title"><h5 class="center">Mot de passe oublié</h5></span> 
 <form method="post"> 
 <p>
 		Entrez votre login et votre adresse <nobr>e-mail</nobr> pour récupérer

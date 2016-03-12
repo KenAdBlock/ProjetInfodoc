@@ -9,7 +9,7 @@
 
 	$NomSession = 'Stages';
 
-	$PASSWDBD = "";
+	$PASSWDBD = "rootro";
 
     // Noms des tables
 

@@ -7,7 +7,10 @@ require_once ('Fonctions.php');
 <head>
     <meta HTTP-EQUIV="Page-Exit" content="blendTrans(Duration=0.7)">
     <script src=<?=$PATH_JS?>/confirm.js type=text/javascript></script>
-    <link rel=stylesheet type=text/css href="<?=$PATH_CSS?>stages.css">
+    <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="<?=$PATH_CSS?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 <SCRIPT LANGUAGE="JavaScript">
 <!-- Begin
@@ -26,7 +29,11 @@ function check (field)
 </head>
 
 <body>
-
+<div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card grey lighten-4 z-depth-1" >
+            <div class="card-content">
 <?php
     // Récupérations des variables envoyées par POST ou GET
 	
@@ -264,5 +271,14 @@ function check (field)
     // Fermeture de la base
     mysql_close ($Connexion);
 ?>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="<?=$PATH_JS?>materialize.js"></script>
+  <script src="<?=$PATH_JS?>init.js"></script>
 </body>
 </html>
