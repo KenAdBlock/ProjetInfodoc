@@ -20,7 +20,7 @@
 	?>
     <script>if (! window.opener) location.replace ("<?=$PATH_RACINE?>index.php")</script>
     <?php
-    // V�rification qu'il existe bien une session ouverte 
+    // Vérification qu'il existe bien une session ouverte
 	//   et qu'il existe bien un login dans la session ouverte
 	
 	OpenedSessionAndLoginNonVideIsOK ($JS_HistoryBack);
@@ -33,7 +33,7 @@
 
     // ========================================================================== //
 
-    // R�cup�ration des valeurs transmises par POST et par GET
+    // Récupération des valeurs transmises par POST et par GET
 	
     foreach ($_GET  as $clef => $valeur) $$clef = htmlspecialchars ($valeur);
     foreach ($_POST as $clef => $valeur) $$clef = htmlspecialchars ($valeur);
@@ -59,10 +59,10 @@
 		foreach ($ArrayLibChamps as $key => $value)
 		    $Indic [$key]  = ESPACE;
 
-        if (ValidChampRempli ('NewPW1', $NewPW1, &$NomChampVide, &$Indic))
-	        ValidPassWord ('NewPW1', $NewPW1, &$Indic);
+        if (ValidChampRempli ('NewPW1', $NewPW1, $NomChampVide, $Indic))
+	        ValidPassWord ('NewPW1', $NewPW1, $Indic);
 
-        ValidChampRempli ('NewPW2', $NewPW2, &$NomChampVide, &$Indic);
+        ValidChampRempli ('NewPW2', $NewPW2, $NomChampVide, $Indic);
 
 		if (count ($CodErr) == 0)
     	    if ($NewPW1 != $NewPW2)
@@ -109,7 +109,7 @@
 		    <br /><b>Attention </b>: 
 		    <ul><li>le mot de passe doit comporter entre <b><?=MINLGPASSWD?></b> 
 		    et <b><?=MAXLGPASSWD?></b> chiffres ou lettres (majuscules ou 
-		    minuscules sauf le <b>�</b>, et sans accent), 
+		    minuscules sauf le <b>ç</b>, et sans accent),
 
             </li><li>
 		    les <b>majuscules et les minuscules</b> sont consid&eacute;r&eacute;es comme des
@@ -134,7 +134,7 @@
         <td colspan="4" align="left"
 		    ><blockquote><sup>*</sup>
 			 <small>Choisissez un mot de passe compos&eacute; de 
-			 <b><?=MINLGPASSWD?></b> �
+			 <b><?=MINLGPASSWD?></b> à
 			 <b><?=MAXLGPASSWD?></b> lettres <br />&nbsp; (majuscules ou
 			 minuscules <b>sans accents</b>) ou chiffres</small></blockquote>
              <hr>

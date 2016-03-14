@@ -132,7 +132,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
             $ValidTelR = FLECHE;
 		}
         $ValMailR = trim ($MailR);
-        if (($ValFaxR = trim ($FaxR)) != '' && ($Err = NormaliserTel (&$ValFaxR)))
+        if (($ValFaxR = trim ($FaxR)) != '' && ($Err = NormaliserTel ($ValFaxR)))
 		{
 		    array_push ($CodErrInval, $Err);
             $ValidFaxR = FLECHE;

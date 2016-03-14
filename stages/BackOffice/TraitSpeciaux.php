@@ -2,7 +2,7 @@
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
 ?>
-<? php /*
+<?php /*
 <a href="?Trait=ListeEtud1A">Etudiants de 1ère année</a>
 
 <br /><br />
