@@ -218,7 +218,7 @@ function NormaliserNomPrenomLogin1A2A ($Annee)
 	    {
 	        $Obj = mysql_fetch_object ($ReqEtud);
 	        print ($Nom.' '.$Prenoms.' '.$NumGroupe.';'.$LoginAuto.
-	               ' Ancien nom =  '.$Obj->Nom.' Ancien pr�nom =  '.$Obj->Prenom.'<br />');
+	               ' Ancien nom =  '.$Obj->Nom.' Ancien prénom =  '.$Obj->Prenom.'<br />');
         }
         /*
         $ReqEtud = Query ("UPDATE $NomTabUsers SET 

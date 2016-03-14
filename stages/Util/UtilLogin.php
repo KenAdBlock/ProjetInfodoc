@@ -1,13 +1,13 @@
 <?php
     // fichier UtilForm.php
     //
-    // Utilitaires pour la (d�)-connexion
+    // Utilitaires pour la (dé)-connexion
     // 
     //   GenerSendPassWord(), IsAdmin(), RandomPassWord(), GetStatutByLogin()
 	//
     //   IsAdmin(), IsML(), IsEtud1(), IsEtud2(), IsEtud()
 //
-// G�n�ration d'un mot de passe al�atoire
+// Génération d'un mot de passe aléatoire
 //
 function RandomPassWord ($MaxLg = MAXLGPASSWD)
 {
