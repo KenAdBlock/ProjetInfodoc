@@ -86,7 +86,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
             array_push ($CodErrVide, 'Tel');
             $ValidTel = FLECHE;
         }
-		else if ($Err = NormaliserTel (&$ValTel))
+		else if ($Err = NormaliserTel ($ValTel))
 		{
 		    array_push ($CodErrInval, $Err);
             $ValidTel = FLECHE;
@@ -96,7 +96,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
             array_push ($CodErrVide, 'Mail');
             $ValidMail = FLECHE;
         }
-        if (($ValFax = trim ($Fax)) != '' && ($Err = NormaliserTel (&$ValFax)))
+        if (($ValFax = trim ($Fax)) != '' && ($Err = NormaliserTel ($ValFax)))
 		{
 		    array_push ($CodErrInval, $Err);
             $ValidFax = FLECHE;
@@ -201,7 +201,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                                            <?php
                                         }
 										                                   ?>
-<p style="text-align : center; font-size : 11 px; font-style : italic;">
+<p style="text-align : center; font-size : 11px; font-style : italic;">
 Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
 </p>
 
@@ -209,7 +209,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
                                         if ($CodErrVide || $CodErrInval)
                                         {
 										                                   ?>
-<p style="text-align : center; font-size : 16 px;">
+<p style="text-align : center; font-size : 16px;">
 Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
 </p>
 										                                   <?php

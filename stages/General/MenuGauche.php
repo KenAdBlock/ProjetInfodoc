@@ -182,6 +182,7 @@
 ?>
 <html>
 <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel=stylesheet type=text/css href="<?=$PATH_CSS?>Accueil.css">
     <script language="javascript">
 function popup(page)

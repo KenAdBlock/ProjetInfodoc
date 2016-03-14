@@ -3,8 +3,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
     $NomBaseMathieu  = "laporte"; 
     $NomBaseStages   = "stages"; 
-    $UserMathieu     = "laporte"; 
-    $PasswdMathieu   = "d2m2l2"; 
+    $UserMathieu     = "root";
+    $PasswdMathieu   = "";
     $HoteMathieu     = "localhost";
     $Sender          = "From: marc.laporte@univ-amu.fr";
 	
@@ -67,7 +67,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
       case 'LstEtudiants2A' :
 	  /*===================*/
         $TitreTraitement = "Liste des &eacute;tudiants de 2<sup>&egrave;me</sup> ann&eacute;e et de LP";
-		if ($Sel2A == 'AvecStage') $TitreTraitement .= " avec stage"; 
+		if ($Sel2A == 'AvecStage') $TitreTraitement .= " avec stage";
 		if ($Sel2A == 'SansStage') $TitreTraitement .= " sans stage"; 
 
 		if ($Sel2A == 'AvecStage')
@@ -113,7 +113,6 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
       case 'SendMails' :
 	  /*===============*/
         $TitreTraitement = "Mail envoy&eacute;";
-
 /*    */
 // ===================================================================
 // ============ Fonctionnement normal ================================
@@ -126,7 +125,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		mail  ($MailAdministrateur, $SujetDuMail, stripslashes ($TexteDuMail), $Sender);
 /*    */
 // ===================================================================
-// ============ Remise � jour de tous les mots de passe ==============
+// ============ Remise à jour de tous les mots de passe ==============
 // ===================================================================
 /*   * /
 require_once ($PATH_UTIL.'UtilLogin.php');
@@ -140,11 +139,11 @@ for ($i = count ($tabmail); $i--; )
 
 \tJe vous prie de trouver dans ce mail un nouveau mot de passe que je vous demande d'utiliser pour toute connexion au site\n\n infodoc.iut.univ-aix.fr/stages\n
 Nouveau mot de passe : $NewPwd\n
-\tJe demande � celles et ceux qui ont d�j� un mot de passe et qui ne l'ont pas oubli� de ne pas m'en vouloir et d'en changer pour celui qui vous est aujourd'hui attribu�.\n
-Vous pourrez bien s�r le modifier � votre convenance d�s votre prochaine connexion.\n
+\tJe demande à celles et ceux qui ont déjà un mot de passe et qui ne l'ont pas oublié de ne pas m'en vouloir et d'en changer pour celui qui vous est aujourd'hui attribué.\n
+Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine connexion.\n
 \tCordialement\n\n
 \t\t\t\t\t<?=$NomResponsableStages?>,
-\t\t\tresponsable des stages au d�partement informatique de l'IUT d'aix en Provence";
+\t\t\tresponsable des stages au département informatique de l'IUT d'aix en Provence";
 
 	$MailI = $tabmail [$i];
     mail  ($MailI, $SujetDuMail, stripslashes ($TexteDuMail), $Sender);
@@ -274,7 +273,7 @@ Vous pourrez bien s�r le modifier � votre convenance d�s votre prochaine c
 </td></tr>
 </table>
                                                                            <?php
-                                        } // fin de la pr�paration du mail
+                                        } // fin de la préparation du mail
 
 										switch ($SsStep)
 										{
@@ -443,7 +442,7 @@ Vous pourrez bien s�r le modifier � votre convenance d�s votre prochaine c
 										
 										  case 'SendMails' :
 /*
-� <?=$MailResponsableStages?> et en copie � :
+à <?=$MailResponsableStages?> et en copie à :
 <br />
 <?=$Headers?>
 */
