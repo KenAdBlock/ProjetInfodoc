@@ -105,7 +105,7 @@
     <tr>
 		<br /><b>Attention </b>: 
 		<ul><li>le mot de passe doit comporter entre <b><?=MINLGPASSWD?></b> et <b><?=MAXLGPASSWD?></b> chiffres ou lettres (majuscules ou minuscules sauf le <b>�</b>, et sans accent), 
-</li><li>les <b>majuscules et les minuscules</b> sont consid�r�es comme des <b>caract�res diff�rents</b>.
+</li><li>les <b>majuscules et les minuscules</b> sont consid&eacute;r&eacute;es comme des <b>caract&egrave;res diff&eacute;rents</b>.
 </li></ul>
 		</td>
 	</tr>
@@ -123,7 +123,7 @@
 	</tr>
 	<tr>
         <td colspan="4" align="left"
-		    ><blockquote><sup>*</sup><small>Choisissez un mot de passe compos� de <b><?=MINLGPASSWD?></b> �
+		    ><blockquote><sup>*</sup><small>Choisissez un mot de passe compos&eacute; de <b><?=MINLGPASSWD?></b> &agrave;
 			 <b><?=MAXLGPASSWD?></b> lettres <br />&nbsp; (majuscules ou minuscules <b>sans accents</b>) ou chiffres</small></blockquote>
 <hr></td>
     </tr>

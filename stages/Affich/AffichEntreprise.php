@@ -109,7 +109,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
 			<td valign="top">
-				<i>Pr�sentation de <nobr>l'entreprise :</nobr></i>
+				<i>Pr&eacute;sentation de <nobr>l'entreprise :</nobr></i>
 			</td>
 			<td>
 <?php 
@@ -172,7 +172,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-	<h2 style="text-align : center">Vous ne pouvez acc�der directement � cette page</h2>
+	<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
 <?php
 }
 ?>

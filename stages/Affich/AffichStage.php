@@ -38,14 +38,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $WidthCadre  = 800;
 	
 	$MsgProposeA = array();
-	$MsgProposeA [1] = 'aux �tudiants de DUT';
-	$MsgProposeA [2] = 'aux �tudiants de Licence Professionnelle';
-	$MsgProposeA [3] = 'aux �tudiants de DUT ou de Licence Professionnelle';
+	$MsgProposeA [1] = 'aux &eacute;tudiants de DUT';
+	$MsgProposeA [2] = 'aux &eacute;tudiants de Licence Professionnelle';
+	$MsgProposeA [3] = 'aux &eacute;tudiants de DUT ou de Licence Professionnelle';
 ?>
-<h2 style="text-align : center;">Annee 2015-2016 : fiche de stage n� <?=$ValPK_Stage?></h2>
+<h2 style="text-align : center;">Annee 2015-2016 : fiche de stage n&deg; <?=$ValPK_Stage?></h2>
 
 <h3 style="text-align : center;">
-    propos� <?=$MsgProposeA [$ObjStage->GetNiveauStage()]?>
+    propos&eacute; <?=$MsgProposeA [$ObjStage->GetNiveauStage()]?>
 </h3>
 
 <table align="center" style="border : 2px solid blue" width="<?=$WidthCadre?>"><tr><td>
@@ -90,7 +90,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                                           ?>
  	<tr>
 	    <td></td>
-        <td valign="top"><nobr><b>Pr�sentation de l'entreprise :</b></nobr></td>
+        <td valign="top"><nobr><b>Pr&eacute;sentation de l'entreprise :</b></nobr></td>
         <td valign="top"><?=$ObjEntreprise->GetPresentEntreprise()?></td>
 	</tr>
 	                                                                       <?php
@@ -134,7 +134,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 					</td>
                 </tr>
                 <tr style="background-color : #d4d4d4">
-                    <th>T�l.</th>
+                    <th>T&eacute;l.</th>
                     <td><?=$ObjEntreprise->GetTelR()?>&nbsp;</td>
                     <td><?=$ObjUser->GetTel()?>&nbsp;</td>
                 </tr>
@@ -166,9 +166,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
  	<tr>
 	    <td></td>
         <td colspan="2">L'entreprise 
-		     <?=$ObjStage->GetAreOldStagiaires() ? 'a d�j�'
+		     <?=$ObjStage->GetAreOldStagiaires() ? 'a d&eacute;j&agrave;'
 			                                     : 'n\'a encore jamais'?>
-		     accueilli des stagiaires de notre d�partement auparavant
+		     accueilli des stagiaires de notre d&eacute;partement auparavant
 		</td>
 	</tr>
  	<tr>
@@ -201,7 +201,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	</tr>
  	<tr>
 	    <td></td>
-        <td colspan="2">Indemnit�s mensuelles :
+        <td colspan="2">Indemnit&eacute;s mensuelles :
 		                <?=$ObjStage->GetIndemnitesMensuellesStage();?> &euro;
 		</td>
 	</tr>
@@ -398,7 +398,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc�der directement � cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
 <?php
 }
 ?>
