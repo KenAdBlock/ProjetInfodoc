@@ -328,7 +328,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
     <tr>
         <td valign="top"><?=$ValidPresentEntreprise?></td>
         <td style="text-align : right" valign="top">
-		    Pr�sentation de l'entreprise :
+		    Présentation de l'entreprise :
 		</td>
         <td>
             <textarea name="PresentEntreprise" cols="60" rows="5"

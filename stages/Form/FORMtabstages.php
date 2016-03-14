@@ -3,7 +3,7 @@
     session_start();
     include ('Class/CStage.php');
 
-    // R�cup�ration des variables envoy�es par POST ou GET
+    // Récupération des variables envoyées par POST ou GET
 
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
@@ -12,7 +12,7 @@
     switch ($Step)
     {
       case 'InitModif' :
-        // R�cup�ration de l'enreg. � modifier
+        // Récupération de l'enreg. à modifier
 
         $ObjTuple = new CStage ($IdentPK);
         $ValPK_Stage = $ObjTuple->GetPK_Stage();
@@ -101,7 +101,7 @@
         break;
 
       case 'InitNew' :
-        // Pr�paration du nouvel enreg.
+        // Préparation du nouvel enreg.
 
         $ObjTuple = new CStage ();
         $ValPK_Stage = $ObjTuple->GetPK_Stage();
@@ -211,9 +211,9 @@
         else
             $ValidFK_Entreprise = ESPACE;
             
-        //ici, un exemple de r�cup�ration des valeurs des checkboxs,
+        //ici, un exemple de récupération des valeurs des checkboxs,
         //chaque checkbox vaut une puissance de 2 (1,2,4,8,...) et est
-        //donc ajout�e pour ne faire qu'une valeur.
+        //donc ajoutée pour ne faire qu'une valeur.
         $ValMateriel = $_REQUEST[GMS]+$_REQUEST[ST]+$_REQUEST[Micro];
         if (trim ($ValMateriel) == '0')
         {
@@ -344,7 +344,7 @@
         if (!$CodErrVide && !$CodErrInval)
         {
             print ('<h1>Enregistrer</h1>');
-            // Pr�paration de l'enreg. � enregistrer
+            // Préparation de l'enreg. à enregistrer
             $ObjTuple = new CStage ();
             $ObjTuple->SetPK_Stage($ValPK_Stage);
             $ObjTuple->SetFK_Entreprise($ValFK_Entreprise);
@@ -471,7 +471,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         </td>
         </tr>
         <?}else
-            //Si c'est une fiche cr�e par un tuteur, il ne doit pas
+            //Si c'est une fiche crée par un tuteur, il ne doit pas
             //pouvoir modifier l'entreprise...
           {
                $login = $_SESSION['Login'];
@@ -489,15 +489,15 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         
     <tr>
         <td valign="top"><tt><?=$ValidMateriel?></tt></td>
-        <td style="text-align : right" valign="top"><b>Materiel utilis&eacute;
+        <td style="text-align : right" valign="top"><b>Matériel utilis&eacute;
         </b></td>
         <td>
             <input type="checkbox" name=GMS value="1"
             
-            <?// pour savoir si une checkbox �tait coch�e, on fait des
+            <?// pour savoir si une checkbox était cochée, on fait des
               //divisions par 2 successives de la valeur initiale...
               if (($ValMateriel%2)==1) {?>checked<?}?>>
-            Grands et moyens syst�mes
+            Grands et moyens systèmes
             <input type="checkbox" name=ST value="2"
             <?if ((($ValMateriel/2)%2)==1) {?>checked<?}?>>
             Stations de travail
@@ -513,7 +513,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
     </tr>
     <tr>
         <td valign="top"><tt><?=$ValidResLocaux?></tt></td>
-        <td style="text-align : right" valign="top"><b>R�seaux locaux</b></td>
+        <td style="text-align : right" valign="top"><b>Réseaux locaux</b></td>
         <td>
             <input type="checkbox" name=Eth value="1"
             <?if (($ValResLocaux %2)==1) {?>checked<?}?>>
@@ -706,7 +706,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
             <textarea name="Sujet" cols="40" rows="6"><?=$ValSujet?></textarea>
         </td>
     </tr>
-    <tr><td></td><td><b>Nature de la t�che : </b></td></tr>
+    <tr><td></td><td><b>Nature de la tâche : </b></td></tr>
     <tr>
         <td></td><td></td><td>
             <input type="checkbox" name=Prog value="1"
@@ -720,7 +720,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
             </td></tr>
     </tr>
     <tr>
-    <tr><td></td><td><b>Le travail de l'�tudiant : </b></td></tr>
+    <tr><td></td><td><b>Le travail de l'étudiant : </b></td></tr>
     <tr>
         <td></td><td></td><td>
             <input type="checkbox" name=PG value="1"
@@ -736,7 +736,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
     <tr>
         <td valign="top"><tt><?=$ValidRqs?></tt></td>
         <td style="text-align : right" valign="top"><b>Remarques
-        g�n�rales </b></td>
+        générales </b></td>
         <td>
             <textarea name="Rqs" cols="40" rows="4"><?=$ValRqs?></textarea>
         </td>
@@ -760,8 +760,8 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
     <tr>
         <td valign="top"><tt><?=$ValidSTAG?></tt></td>
         <td style ="text-align : right" valign="top">
-            <b>L'entreprise � d&eacute;j&agrave; accueilli des stagiaires de notre
-            d�partement</b>
+            <b>L'entreprise à d&eacute;j&agrave; accueilli des stagiaires de notre
+            département</b>
             <td><input type="checkbox" name=STAG value="1"
             <?if ($ValSTAG ==1) {?>checked<?}?>>
             </td>
@@ -778,7 +778,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
     <tr>
         <td valign="top"><tt><?=$ValidNbPS?></tt></td>
         <td style="text-align : right" valign="top"><b>Nombre de
-        personnes du service o� sera affect&eacute; le stagiaire</b></td>
+        personnes du service où sera affect&eacute; le stagiaire</b></td>
         <td>
             <input type="text" name="NbPS" size="6" value="<?=$ValNbPS?>">
         </td>

@@ -35,7 +35,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	$QuelOrdreResp = 'Ordre '.  ($slx == 'NomRespAsc' ? 'de' : '')     .'croissant';
 	$GifOrderResp  = $PATH_GIFS.($slx == 'NomRespAsc' ? 'desc' : 'asc').'_order.png';
 
-    $Title = 'Liste d�taill�e des entreprises';
+    $Title = 'Liste détaillée des entreprises';
 
 ?>
 <h1 style="text-align : center">
