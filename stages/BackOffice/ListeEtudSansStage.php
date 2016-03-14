@@ -2,8 +2,8 @@
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
 	$NomBaseMathieu  = /*"mathieu"*/"laporte"; 
-    $UserMathieu     = /*"mathieu"*/"laporte"; 
-    $PasswdMathieu   = /*"dehaime"*/"d2m2l2"; 
+    $UserMathieu     = /*"mathieu"*/"root";
+    $PasswdMathieu   = /*"dehaime"*/"";
     $HoteMathieu     = "localhost";
 
 	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu, 
