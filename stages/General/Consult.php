@@ -102,6 +102,7 @@ en tant que <b><?=$Libelle?></b>
             <a href="<?=$URL_List.$NomTabStages?>" target="principal">
 		        Liste des fiches de stage
 			</a>
+<!--			--><?php //var_dump($URL_List.$NomTabStages);?>
         </td>
 	</tr>
 </table> 

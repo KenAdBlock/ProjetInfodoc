@@ -27,6 +27,8 @@
     require_once ($PATH_UTIL.      'UtilBD.php');    // ConnectSelect(), Query()
     require_once ($PATH_UTIL.      'UtilLogin.php'); // IsEtudByLogin(), IsProfByLogin()
 
+    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+
     $NomBaseMathieu  = "laporte";
     $UserMathieu     = "root";
     $PasswdMathieu   = "";
@@ -91,9 +93,7 @@
 						               OR FK_Statut = '".STATUTML."')";
 					}
                     $ReqUser = Query ("SELECT $NomTabUsers.* FROM $NomTabUsers WHERE Identifiant  = '$login'".$ReqWhere, $ConnectMathieu);
-                    mysql_close($ConnectMathieu);
-                    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
-					if ($NbUsers = mysql_num_rows ($ReqUser))
+                    if ($NbUsers = mysql_num_rows ($ReqUser))
 					{
 					    // Récupération de toutes les informations utiles
 
