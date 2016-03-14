@@ -39,8 +39,8 @@ define ('MSGFORMSTAGE_ENVIRONSTAGIAIRE',   ++$NoMsg);
 define ('MSGFORMSTAGE_SEUL',               ++$NoMsg);
 define ('MSGFORMSTAGE_COLL_INFORM',        ++$NoMsg);
 
-define ('MSGFORMSTAGE_PROGRAMMATION',      ++$NoMsg);
-define ('MSGFORMSTAGE_ANALYSE',            ++$NoMsg);
+//define ('MSGFORMSTAGE_PROGRAMMATION',      ++$NoMsg);
+//define ('MSGFORMSTAGE_ANALYSE',            ++$NoMsg);
 define ('MSGFORMSTAGE_INTEGRPROJETGLOBAL', ++$NoMsg);
 define ('MSGFORMSTAGE_ENTITEINDEPENDANTE', ++$NoMsg);
 
@@ -67,10 +67,10 @@ $Msg_FormStage [MSGFORMSTAGE_RENS_PRATIQUES    ] = '1.3 Renseignements pratiques
 $Msg_FormStage [MSGFORMSTAGE_METHODES_STANDARDS] = '2.3 Méthodes ou standards';
 $Msg_FormStage [MSGFORMSTAGE_SUJET             ] = '3. Sujet';
 
-define ('MSGFORMSTAGE_LANGAGES',           ++$NoMsg);
-define ('MSGFORMSTAGE_BD',                 ++$NoMsg);
-define ('MSGFORMSTAGE_LOGICIELS_SPEC',     ++$NoMsg);
-define ('MSGFORMSTAGE_METHODES_STANDARDS', ++$NoMsg);
+//define ('MSGFORMSTAGE_LANGAGES',           ++$NoMsg);
+//define ('MSGFORMSTAGE_BD',                 ++$NoMsg);
+//define ('MSGFORMSTAGE_LOGICIELS_SPEC',     ++$NoMsg);
+//define ('MSGFORMSTAGE_METHODES_STANDARDS', ++$NoMsg);
 
 $Msg_FormStage [MSGFORMSTAGE_LANGAGES          ] = 'Langages de programmation'; 
 $Msg_FormStage [MSGFORMSTAGE_BD                ] = 'Bases de données';

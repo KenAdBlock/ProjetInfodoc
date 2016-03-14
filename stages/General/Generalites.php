@@ -82,7 +82,7 @@ public au taux de 15% du plafond de la S&eacute;curit&eacute; Sociale, soit 1109
 <p style="text-align : right">
 <br /><br />
 Le responsable des stages : 
-<u><a href="mailto:<?=$MailResponsableStages?>"><?=$NomResponsableStages?></u></a>
+<u><a href="mailto:<?=$MailResponsableStages?>"><?=$NomResponsableStages?></a></u>
 </p>
 
 <p>

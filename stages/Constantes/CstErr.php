@@ -5,9 +5,11 @@
 	
 	$NOERR             = 0;
 	$ERRCHAMPNONREMPLI = 10000;
-    
+
+	$new_link = false;
+
 	$MsgErr = array();
-	
+
 	$ERRSESSIONDEJAOUVERTE = 1;
 	$ERRDECONNECTEZVOUS    = 2;
 	$ERRLOGININEXISTANT    = 3;
