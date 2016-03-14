@@ -236,7 +236,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_2], 2);
 	/*
 	    ==========================
-	    2.1 Environnement mat�riel 
+	    2.1 Environnement mat&eacute;riel
 	    ==========================
 	*/
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_ENV_MATERIEL], 3);

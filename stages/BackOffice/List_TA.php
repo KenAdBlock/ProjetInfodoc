@@ -2,7 +2,7 @@
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
     $Title = 'Liste des entreprises devant verser la Taxe d\'Apprentissage';
-	
+
     $ReqVersements = Query ("SELECT * FROM $NomTabTaxe ORDER BY RaisonSocialeSoc",
                             $Connexion);
     ?>
@@ -14,7 +14,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         {
                                                                           ?>
 <h4 align="center">
-    Aucune entreprise n'a été trouvée.
+    Aucune entreprise n'a &eacute;t&eacute; trouv&eacute;e.
 </h4>
                                                                           <?php
         }
@@ -59,7 +59,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
 <?php
 }
 ?>

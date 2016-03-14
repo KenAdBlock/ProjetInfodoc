@@ -137,7 +137,7 @@ function DebutSession()
 
 function IsOKSessionAndLoginObligatoires(
 //       ===============================
-	                  $URL, $Message = "Connexion préalable nécessaire")
+	                  $URL, $Message = "Connexion pr&eacute;alable n&eacute;cessaire")
 {
 	if (IsSessionAndLoginNonVide()) return true;
 		

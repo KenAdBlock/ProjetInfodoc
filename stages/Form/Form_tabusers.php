@@ -392,7 +392,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement � cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
 <?php
 }
 ?>

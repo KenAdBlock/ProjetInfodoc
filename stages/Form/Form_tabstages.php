@@ -579,7 +579,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
 <span style="color : red;">Gratification :</span>
 
 <br /><br />
-L'article 30 de la loi n� 2009-1437 du 24/11/09, modifi&eacute;e par  la loi n�2014-788 du 10 juillet 2014, impose pour tous les stages de plus de deux mois la gratification des 
+L'article 30 de la loi n&deg; 2009-1437 du 24/11/09, modifi&eacute;e par  la loi n&deg;2014-788 du 10 juillet 2014, impose pour tous les stages de plus de deux mois la gratification des
 stagiaires dans le priv&eacute; comme dans le public au taux de 13,75% du plafond de la S&eacute;curit&eacute; Sociale, soit <?=MINIMUM_LEGAL_INDEMNITES?> euros/mois - taux au 30/12/14.
 </p></blockquote>
 </div>
@@ -838,7 +838,7 @@ stagiaires dans le priv&eacute; comme dans le public au taux de 13,75% du plafon
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement � cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
 <?php
 }
 ?>

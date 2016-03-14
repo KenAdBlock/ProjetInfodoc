@@ -86,10 +86,10 @@ Vous avez fait le choix de soutenir notre formation, en nous versant la taxe d'a
 Ce formulaire nous permettra d'en effectuer le suivi.
 
 <br /><br />
-Nous vous remercions de l'intérêt que vous avez porté &agrave; notre démarche.
+Nous vous remercions de l'int&eacute;r&ecirc;t que vous avez port&eacute; &agrave; notre d&eacute;marche.
 
 <br /><br />
-Nous vous aviserons du versement dès sa transmission par l'organisme collecteur.
+Nous vous aviserons du versement d&egrave;s sa transmission par l'organisme collecteur.
 
 <br /><br />
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cordialement
@@ -99,7 +99,7 @@ Nous vous aviserons du versement dès sa transmission par l'organisme collecteur
 <p style="text-align : center">
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Patricia Gaitan
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Responsable du département
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Responsable du d&eacute;partement
 </p>
 </blockquote></blockquote></blockquote></blockquote>
 
@@ -132,12 +132,12 @@ Nous vous aviserons du versement dès sa transmission par l'organisme collecteur
 /* ==========================  mail d'information  ======================*/
 
 $SujetDuMail = 'Taxe d\'apprentissage';
-$TexteDuMail = "La société \n\n".$RaisonSocialeSoc.
+$TexteDuMail = "La soci&eacute;t&eacute; \n\n".$RaisonSocialeSoc.
                "\n\nversera \n".
-			   "\nCatégorie A : " .$CatA.
-			   "\nCatégorie A + B : ".$CatAPlusB.
-			   "\nCatégorie B + C : ".$CatBPlusC.
-               "\n\npar l'intermédiaire de l'organisme \n\n".$NomCollecteur;
+			   "\nCat&eacute;gorie A : " .$CatA.
+			   "\nCat&eacute;gorie A + B : ".$CatAPlusB.
+			   "\nCat&eacute;gorie B + C : ".$CatBPlusC.
+               "\n\npar l'interm&eacute;diaire de l'organisme \n\n".$NomCollecteur;
 $TexteDuMail = wordwrap ($TexteDuMail, 70);		
 mail  ($MailAdministrateur, $SujetDuMail, stripslashes ($TexteDuMail));
 mail  ($MailSecretariatTA,  $SujetDuMail, stripslashes ($TexteDuMail));

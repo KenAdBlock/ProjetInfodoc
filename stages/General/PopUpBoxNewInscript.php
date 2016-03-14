@@ -260,7 +260,7 @@
 
 		  $Sujet   = 'Nouvel inscrit pour stage';
 		  $Message = 'Inscription de :   '.
-		             $ValCiviliteTuteur.' '.$ValPrenomTuteur.'   '.$ValNomTuteur.'    � valider';
+		             $ValCiviliteTuteur.' '.$ValPrenomTuteur.'   '.$ValNomTuteur.'    &agrave; valider';
                 $Dest    =  $MailResponsableStages;
 
 		  if ($MachineHote == INFODOC) mail ($Dest, $Sujet, $Message);

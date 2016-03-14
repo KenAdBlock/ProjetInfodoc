@@ -254,7 +254,7 @@ invalide, veuillez entre un num&eacute;ro</p>
            ($_SESSION['privilege'] == "prof")or
            ($_SESSION['privilege'] == "etud"))
         {?>
-        <tr><td></td><td><b>Privil�ge</b></td><td><b>
+        <tr><td></td><td><b>Privil&egrave;ge</b></td><td><b>
 
         <?
             switch($ValPrivilege)

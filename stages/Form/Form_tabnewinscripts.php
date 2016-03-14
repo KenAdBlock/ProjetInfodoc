@@ -388,7 +388,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
 	<tr>
 	    <td colspan="3">
             <p style="text-align : center; font-size : 11 px; font-style : italic;">
-		    Si aucune entreprise n'est s�lectionn&eacute;e dans cette liste, 
+		    Si aucune entreprise n'est s&eacute;lectionn&eacute;e dans cette liste,
 			le cadre ci-dessous doit &ecirc;tre compl&eacute;t&eacute;.
 			<br />&nbsp;
 			</p>

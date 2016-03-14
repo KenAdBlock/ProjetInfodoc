@@ -27,7 +27,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <tt><?=$ValidMateriel?></tt>
 		</td>
         <td style="text-align : right" valign="top">
-		    <b>Mat�riel utilis&eacute;</b>
+		    <b>Mat&eacute;riel utilis&eacute;</b>
 		</td>
 		<td><table><tr>
 		                                                                   <?php
@@ -366,7 +366,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement � cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
 <?php
 }
 ?>

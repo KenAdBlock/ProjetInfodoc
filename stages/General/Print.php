@@ -96,7 +96,7 @@
 	                                    {
 	                                        if ($ObjPage->Titre != '') 
 											                               ?>
-                    <h1 class="TitrePage"><?=$ObjPage->Titre?><?=$TousCorriges ? " - Corrig�s" : "";?></h1>
+                    <h1 class="TitrePage"><?=$ObjPage->Titre?><?=$TousCorriges ? " - Corrig&eacute;s" : "";?></h1>
 	                                                                       <?php 
 											if ($ObjPage->SousTitre != '') 
 											                               ?>

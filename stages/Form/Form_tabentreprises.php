@@ -190,7 +190,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
                                         {
 										                                   ?>
 <p style="text-align : center; font-size : 16 px;">Les
-<?=FLECHE?> indiquent qu'une rubrique est vide ou erron�e</p>
+<?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e</p>
 										                                   <?php
                                         }
 										                                   ?>
@@ -328,7 +328,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
     <tr>
         <td valign="top"><?=$ValidPresentEntreprise?></td>
         <td style="text-align : right" valign="top">
-		    Pr�sentation de l'entreprise :
+		    Pr&eacute;sentation de l'entreprise :
 		</td>
         <td>
             <textarea name="PresentEntreprise" cols="60" rows="5"
@@ -390,7 +390,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc�der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
 <?php
 }
 ?>

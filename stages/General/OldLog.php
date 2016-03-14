@@ -2,17 +2,17 @@
 		header("Location:log.php"); // redirection si OK
 
 /*
-require_once('connexion.php'); //identifiants de connexion à la BD.
+require_once('connexion.php'); //identifiants de connexion &agrave; la BD.
 
-session_start(); // début de session
+session_start(); // d&eacute;but de session
 if (isset($_POST['login']))
 { 
 	$login = $_POST['login']; // mise en variable du nom d'utilisateur
-	$pass = md5($_POST['pass']); // mise en variable du mot de passe crypté
+	$pass = md5($_POST['pass']); // mise en variable du mot de passe crypt&eacute;
 	
-// requete sur la table administrateurs (on récupère les infos de la personne)
+// requete sur la table administrateurs (on r&eacute;cup&egrave;re les infos de la personne)
     mysql_select_db($NomBase);
-    $verif_query=sprintf("SELECT * FROM tabusers WHERE login='$login' AND pass='$pass'"); // requête sur la base administrateurs
+    $verif_query=sprintf("SELECT * FROM tabusers WHERE login='$login' AND pass='$pass'"); // requ&ecirc;te sur la base administrateurs
     $verif = mysql_query($verif_query) or die(mysql_error());
     $row_verif = mysql_fetch_assoc($verif);
     $utilisateur = mysql_num_rows($verif);
@@ -22,7 +22,7 @@ if (isset($_POST['login']))
     {
 	    session_register("authentification"); // enregistrement de la session
         
-		// déclaration des variables de session
+		// d&eacute;claration des variables de session
 		$_SESSION['privilege'] = $row_verif['Privilege'];
 		$_SESSION['NomS'] = $row_verif['Nom'];
 		$_SESSION['PrenomS'] = $row_verif['Prenom'];
@@ -34,11 +34,11 @@ if (isset($_POST['login']))
 		header("Location:log.php?erreur=login");
 	}
 }
-// Gestion de la déconnexion
+// Gestion de la d&eacute;connexion
 if(isset($_GET['erreur']) && $_GET['erreur'] == 'logout')
 {
     session_unset("authentification");//on tue la session
-    header("Location:stages.html");  // puis on revient à l'accueil
+    header("Location:stages.html");  // puis on revient ï¿½ l'accueil
 }
 /*                */
 
@@ -75,7 +75,7 @@ if(isset($_GET['erreur']) && $_GET['erreur'] == 'logout')
   <div align="center">
   <p align ="center">
   <? if(!isset($_GET['erreur'])) { ?>
-    Si vous avez déjà un login 
+    Si vous avez dï¿½jï¿½ un login 
   <? } ?>
     
   </p>

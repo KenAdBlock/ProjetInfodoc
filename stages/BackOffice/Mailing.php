@@ -54,7 +54,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  /*===================*/
       case 'LstEtudiants1A' :
 	  /*===================*/
-        $TitreTraitement = "Liste des �tudiants de 1<sup>�re</sup> ann�e";
+        $TitreTraitement = "Liste des &eacute;tudiants de 1<sup>&egrave;re</sup> ann&eacute;e";
 
         define ('STATUS_ETUD1', 5);
 		$ReqMails = Query ("SELECT * FROM $NomTabUsers
@@ -66,7 +66,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  /*===================*/
       case 'LstEtudiants2A' :
 	  /*===================*/
-        $TitreTraitement = "Liste des �tudiants de 2<sup>�me</sup> ann�e et de LP";
+        $TitreTraitement = "Liste des &eacute;tudiants de 2<sup>&egrave;me</sup> ann&eacute;e et de LP";
 		if ($Sel2A == 'AvecStage') $TitreTraitement .= " avec stage"; 
 		if ($Sel2A == 'SansStage') $TitreTraitement .= " sans stage"; 
 
@@ -112,7 +112,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  /*===============*/
       case 'SendMails' :
 	  /*===============*/
-        $TitreTraitement = "Mail envoy�";
+        $TitreTraitement = "Mail envoy&eacute;";
 
 /*    */
 // ===================================================================
@@ -177,7 +177,7 @@ Vous pourrez bien s�r le modifier � votre convenance d�s votre prochaine c
     <tr>
 	    <td>
             <a href="<?=$URL_List.$NomTabMailsToSend?>" target="principal">
-                Liste des mails � envoyer aux nouveaux inscrits
+                Liste des mails &agrave; envoyer aux nouveaux inscrits
 			</a>
         </td>
 	</tr>
@@ -212,12 +212,12 @@ Vous pourrez bien s�r le modifier � votre convenance d�s votre prochaine c
     </tr>
     <tr>
         <td><a href="?Trait=Mailing&SsStep=LstEtudiants1A">
-            Liste des �tudiants de 1<sup>�re</sup> ann�e</a>
+            Liste des &eacute;tudiants de 1<sup>&egrave;re</sup> ann&eacute;e</a>
         </td>
     </tr>
     <tr>
         <td>
-            Liste des �tudiants de 2<sup>�me</sup> ann�e et de LP
+            Liste des &eacute;tudiants de 2<sup>&egrave;me</sup> ann&eacute;e et de LP
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous">tous</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=AvecStage">avec stage</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=SansStage">sans stage</a>
@@ -369,7 +369,7 @@ Vous pourrez bien s�r le modifier � votre convenance d�s votre prochaine c
 <table cellpadding="3">
     <tr>
 	    <th colspan="2" style="text-align : left">&nbsp;</th>
-	    <th style="text-align : left">Nom - Pr�nom</th>
+	    <th style="text-align : left">Nom - Pr&eacute;nom</th>
 	    <th style="text-align : left">mail</th>
 	</tr>
                                                                            <?php
@@ -461,7 +461,7 @@ Vous pourrez bien s�r le modifier � votre convenance d�s votre prochaine c
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc�der directement � cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
 <?php
 }
 ?>

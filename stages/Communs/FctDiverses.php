@@ -518,7 +518,7 @@ function AffichOuiNonDetail ($Libelle, $Valeur, $Detail)
                                                                           ?>
 	<tr>
         <td style="text-align : right" valign="top">
-            <i>D�tails</i>
+            <i>D&eacute;tails</i>
         </td>
         <td valign="top">
             <?=$Detail?>
