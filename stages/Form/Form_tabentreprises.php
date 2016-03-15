@@ -46,7 +46,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
       case 'InitModif' :
       case 'InitNew'   :
 	  
-        // Pr&eacute;paration du nouvel enreg. ou r&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
+        // Préparation du nouvel enreg. ou récupération de l'enreg. à modifier
 
 	    $ObjTuple = new CEntreprise 
 		                         ($StepConsult == 'InitModif'  ?  $IdentPK : 0);
@@ -74,7 +74,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         $CodErrVide  = array();
         $CodErrInval = array();
 		
-		// Champs non valid&eacute;s
+		// Champs non validés
 		
         $ValPK_Entreprise     = $PK_Entreprise;
         $ValAdr2              = $Adr2;
@@ -85,7 +85,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 			 $SiteEntreprise = '';
         $ValSiteEntreprise    = $SiteEntreprise;
 			
-		// Champs valid&eacute;s
+		// Champs validés
 		
 		$ValNomE = trim ($NomE);
         if (! GetDroits ($Status, 'ModifEntreprise'))
@@ -174,7 +174,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         break;
     }
     if ($IdentPK == 0)
-		$Titre = 'Cr&eacute;ation d\'une nouvelle entreprise';
+		$Titre = 'Création d\'une nouvelle entreprise';
     else
 		$Titre = 'Modification de l\'entreprise '.$IdentPK;
 										                                ?>
@@ -183,14 +183,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 </h1>
  
 <p style="text-align : center; font-size : 11 px; font-style : italic;">
-Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
+Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
 </p>
 										                                   <?php
                                         if ($CodErrVide || $CodErrInval)
                                         {
 										                                   ?>
 <p style="text-align : center; font-size : 16 px;">Les
-<?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e</p>
+<?=FLECHE?> indiquent qu'une rubrique est vide ou erronée</p>
 										                                   <?php
                                         }
 										                                   ?>
@@ -203,7 +203,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
 										                                   ?>
     <tr>
         <td valign="top"><?=$ValidPK_Entreprise?></td>
-        <td style="text-align : right" valign="top"><b>Num&eacute;ro</b></td>
+        <td style="text-align : right" valign="top"><b>Numéro</b></td>
         <td>
             <?=$ValPK_Entreprise?>
         </td>
@@ -274,7 +274,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
     <tr>
         <td valign="top"><?=$ValidCivilite?></td>
         <td style="text-align : right" valign="top">
-		    <b>Civilit&eacute; : </b>
+		    <b>Civilité : </b>
 		</td>
 		<td>
 		    M<input type="radio" name="Civilite" value="M" checked="checked">
@@ -294,7 +294,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
     <tr>
         <td valign="top"><?=$ValidPrenomR?></td>
         <td style="text-align : right" valign="top">
-		    <b>Pr&eacute;nom : </b>
+		    <b>Prénom : </b>
 		</td>
         <td>
             <input type="text" name="PrenomR" size="50" 
@@ -328,7 +328,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
     <tr>
         <td valign="top"><?=$ValidPresentEntreprise?></td>
         <td style="text-align : right" valign="top">
-		    Pr&eacute;sentation de l'entreprise :
+		    Présentation de l'entreprise :
 		</td>
         <td>
             <textarea name="PresentEntreprise" cols="60" rows="5"
@@ -390,7 +390,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

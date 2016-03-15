@@ -1,12 +1,12 @@
 <form method="post">
-<a href="mailto:<?=$ValMailTuteur?>">Envoyer</a> &agrave; <?=$ValMailTuteur?> :
+<a href="mailto:<?=$ValMailTuteur?>">Envoyer</a> à <?=$ValMailTuteur?> :
 <pre>
 Sujet : <b>Nouveaux login et mot de passe</b>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <?=$ValNomTuteur?> <?=$ValPrenomTuteur?>,
 
-J'ai le plaisir de vous informer que vous pourrez dor&eacute;navant
+J'ai le plaisir de vous informer que vous pourrez dorénavant
 vous connecter et enregistrer vos propositions de stage sur le site
 
 http://infodoc.iut.univ-aix.fr/stages
@@ -46,12 +46,12 @@ Mot de passe : <?=$NewPassWord?>&nbsp;
                                            print ('	
 </table>');
                                            print ('
-<p>Le message suivant sera envoy&eacute; &agrave; la liste ci-dessus :
+<p>Le message suivant sera envoyé à la liste ci-dessus :
 <br><br><b>Sujet</b> : '.FromBd2Html ($Sujet).'
 <br><b>Texte</b> : '.FromBd2Html ($Message).'
 <br><br><a href="'.$URL.'"><i>Envoyer</i></a>');
                                            print ('
-<p>Le message suivant sera envoy&eacute; &agrave; la liste-test : MT & DM
+<p>Le message suivant sera envoyé à la liste-test : MT & DM
 <br><br><b>Sujet</b> : '.FromBd2Html ($Sujet).'
 <br><b>Texte</b> : '.FromBd2Html ($Message).'
 

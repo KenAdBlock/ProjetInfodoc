@@ -18,7 +18,7 @@ function check (field)
     checkflag = !checkflag;
     for (i = field.length; i--; ) field[i].checked = checkflag;
 
-    return checkflag ? "Tout d&eacute;cocher" : "Tout cocher";
+    return checkflag ? "Tout décocher" : "Tout cocher";
 }
 //  End -->
 </script>
@@ -28,7 +28,7 @@ function check (field)
 <body>
 
 <?php
-    // R&eacute;cup&eacute;rations des variables envoy&eacute;es par POST ou GET
+    // Récupérations des variables envoyées par POST ou GET
 	
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;

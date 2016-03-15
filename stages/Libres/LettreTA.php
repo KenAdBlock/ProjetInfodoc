@@ -16,7 +16,7 @@
 
 	$Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
-	// R&eacute;cup&eacute;rations des variables envoy&eacute;es par POST ou GET
+	// Récupérations des variables envoyées par POST ou GET
 	// ====================================================
 	
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
@@ -86,10 +86,10 @@ Vous avez fait le choix de soutenir notre formation, en nous versant la taxe d'a
 Ce formulaire nous permettra d'en effectuer le suivi.
 
 <br /><br />
-Nous vous remercions de l'int&eacute;r&ecirc;t que vous avez port&eacute; &agrave; notre d&eacute;marche.
+Nous vous remercions de l'intérêt que vous avez porté à notre démarche.
 
 <br /><br />
-Nous vous aviserons du versement d&egrave;s sa transmission par l'organisme collecteur.
+Nous vous aviserons du versement dès sa transmission par l'organisme collecteur.
 
 <br /><br />
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cordialement
@@ -99,7 +99,7 @@ Nous vous aviserons du versement d&egrave;s sa transmission par l'organisme coll
 <p style="text-align : center">
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Patricia Gaitan
 <br />
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Responsable du d&eacute;partement
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Responsable du département
 </p>
 </blockquote></blockquote></blockquote></blockquote>
 
@@ -132,12 +132,12 @@ Nous vous aviserons du versement d&egrave;s sa transmission par l'organisme coll
 /* ==========================  mail d'information  ======================*/
 
 $SujetDuMail = 'Taxe d\'apprentissage';
-$TexteDuMail = "La soci&eacute;t&eacute; \n\n".$RaisonSocialeSoc.
+$TexteDuMail = "La société \n\n".$RaisonSocialeSoc.
                "\n\nversera \n".
-			   "\nCat&eacute;gorie A : " .$CatA.
-			   "\nCat&eacute;gorie A + B : ".$CatAPlusB.
-			   "\nCat&eacute;gorie B + C : ".$CatBPlusC.
-               "\n\npar l'interm&eacute;diaire de l'organisme \n\n".$NomCollecteur;
+			   "\nCatégorie A : " .$CatA.
+			   "\nCatégorie A + B : ".$CatAPlusB.
+			   "\nCatégorie B + C : ".$CatBPlusC.
+               "\n\npar l'intermédiaire de l'organisme \n\n".$NomCollecteur;
 $TexteDuMail = wordwrap ($TexteDuMail, 70);		
 mail  ($MailAdministrateur, $SujetDuMail, stripslashes ($TexteDuMail));
 mail  ($MailSecretariatTA,  $SujetDuMail, stripslashes ($TexteDuMail));
@@ -183,13 +183,13 @@ mail  ($MailSecretariatTA,  $SujetDuMail, stripslashes ($TexteDuMail));
 	    <td colspn="2">&nbsp;</td>
 	</tr>
 	<tr>
-	    <td style="text-align : right" valign="top">Personne ou <br />service &agrave; contacter :</td>
+	    <td style="text-align : right" valign="top">Personne ou <br />service à contacter :</td>
         <td>
             <input type="text" name="Contact" size="66">
 	    </td>
 	</tr>
 	<tr>
-        <td style="text-align : right" valign="top">T&eacute;l. :</td>
+        <td style="text-align : right" valign="top">Tél. :</td>
         <td>
 	        <table>
 			   <tr>
@@ -208,27 +208,27 @@ mail  ($MailSecretariatTA,  $SujetDuMail, stripslashes ($TexteDuMail));
 </td></tr></table>
 
 <p>
-Le d&eacute;partement Informatique de l'I.U.T. d'Aix-en-Provence est habilit&eacute; &agrave; percevoir <u><b>un versement Hors-quota ou bar&egrave;me au titre de la cat&eacute;gorie B</b></u>.
+Le département Informatique de l'I.U.T. d'Aix-en-Provence est habilité à percevoir <u><b>un versement Hors-quota ou barème au titre de la catégorie B</b></u>.
 
-(Il est toutefois possible de cumuler des cat&eacute;gories voisines, par exemple A+B ou B+C.
+(Il est toutefois possible de cumuler des catégories voisines, par exemple A+B ou B+C.
 </p>
 
 <table align="center" border="0"><tr><td>
 <table cellpadding="2">
     <tr>
-        <td style="text-align : right" valign="top">Cat&eacute;gorie B - Montant : </td>
+        <td style="text-align : right" valign="top">Catégorie B - Montant : </td>
         <td>
             <input type="text" name="CatA" size="50"">
 	    </td>
 	</tr>
     <tr>
-        <td style="text-align : right" valign="top">Par cumul, cat&eacute;gories A+B - Montant : </td>
+        <td style="text-align : right" valign="top">Par cumul, catégories A+B - Montant : </td>
         <td>
             <input type="text" name="CatAPlusB" size="50"">
 	    </td>
 	</tr>
     <tr>
-        <td style="text-align : right" valign="top">Par cumul, cat&eacute;gories B+C - Montant : </td>
+        <td style="text-align : right" valign="top">Par cumul, catégories B+C - Montant : </td>
         <td>
             <input type="text" name="CatBPlusC" size="50"">
 	    </td>
@@ -237,11 +237,11 @@ Le d&eacute;partement Informatique de l'I.U.T. d'Aix-en-Provence est habilit&eac
 </td></tr></table>
 
 <p>
-Lors de votre versement aupr&egrave;s d'un organisme collecteur, veuillez bien pr&eacute;ciser l'&eacute;tablissement b&eacute;n&eacute;ficiaire :
+Lors de votre versement auprès d'un organisme collecteur, veuillez bien préciser l'établissement bénéficiaire :
 </p>
 
 <p  style="text-align : center">
-<u><b>D&eacute;partement INFORMATIQUE de l'IUT d'Aix-en-Provence</b></u>
+<u><b>Département INFORMATIQUE de l'IUT d'Aix-en-Provence</b></u>
 </p>
 
 <p style="background : #D4D8D4">
@@ -301,9 +301,9 @@ Lors de votre versement aupr&egrave;s d'un organisme collecteur, veuillez bien p
 <p  style="text-align : right">
 <small>Institut Universaire de Technologie d'Aix-en-Provence
 <br />
-D&eacute;partement Informatique - Avenue Gaston Berger - 13625 Aix-en-Provence cedex 1
+Département Informatique - Avenue Gaston Berger - 13625 Aix-en-Provence cedex 1
 <br />
-T&eacute;l&eacute;phone : 04 42 93 90 43 - T&eacute;l&eacute;copie : 04 42 93 90 74 - mel : informatique@iut.univmed.fr
+Téléphone : 04 42 93 90 43 - Télécopie : 04 42 93 90 74 - mel : informatique@iut.univmed.fr
 </small>
 </p>
 */?>

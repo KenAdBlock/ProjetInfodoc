@@ -16,7 +16,7 @@ function Consult ($Login, $Libelle, $Status)
 Bienvenue
 </h2>
 <p>
-Vous &ecirc;tes connect&eacute;(e) sous le pseudonyme 
+Vous êtes connecté(e) sous le pseudonyme
 </p>
 
 <h1><?=$Login?></h1>
@@ -86,7 +86,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="../forum2014.html" target="principal">
-		        Liste des entreprises pr&eacute;sentes au Forum des stages
+		        Liste des entreprises présentes au Forum des stages
 			</a>
         </td>
 	</tr>
@@ -170,7 +170,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeDetailsEntreprises" target="principal">
-			    Liste d&eacute;taill&eacute;e des entreprises
+			    Liste détaillée des entreprises
 		    </a>
         </td>
 	</tr>
@@ -198,7 +198,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ModifInfosUserConnecte" target="principal">
-                Vos Coordonn&eacute;es
+                Vos Coordonnées
 			</a>
         </td>
 	</tr>
@@ -212,7 +212,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=CoordonneesEntreprise" target="principal">
-                Coordonn&eacute;es de l'entreprise
+                Coordonnées de l'entreprise
 			</a>
         </td>
 	</tr>
@@ -240,7 +240,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeEtudAvecStage" target="principal">
-                Liste des &eacute;tudiants avec stage
+                Liste des étudiants avec stage
 			</a>
         </td>
 	</tr>
@@ -254,7 +254,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants1A" target="principal">
-                Mailing aux 1<sup>&egrave;re</sup> ann&eacute;e
+                Mailing aux 1<sup>ère</sup> année
 			</a>
         </td>
 	</tr>
@@ -268,7 +268,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous" target="principal">
-                Mailing aux 2<sup>&egrave;me</sup> ann&eacute;e
+                Mailing aux 2<sup>ème</sup> année
 			</a>
         </td>
 	</tr>
@@ -298,7 +298,7 @@ en tant que <b><?=$Libelle?></b>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=AffectStageEtud"
 			                                             target="principal">
-                Affectation d'un stage &agrave; un &eacute;tudiant
+                Affectation d'un stage à un étudiant
 			</a>
         </td>
 	</tr>
@@ -360,7 +360,7 @@ en tant que <b><?=$Libelle?></b>
     <tr>
 	    <td align="center">
             <a href="?Step=Decnx" target="_top">
-			    D&eacute;connexion</a>
+			    Déconnexion</a>
         </td>
 	</tr>
 </table>

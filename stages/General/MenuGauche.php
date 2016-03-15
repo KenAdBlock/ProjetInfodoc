@@ -37,7 +37,7 @@
 	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu,
 	                                 $PasswdMathieu, $NomBaseMathieu);
 
-	// R&eacute;cup&eacute;rations des variables envoy&eacute;es par POST ou GET
+	// Récupérations des variables envoyées par POST ou GET
 	// ====================================================
 
     if (isset ($_SESSION))
@@ -53,10 +53,10 @@
 /* * / CloseSessionAndRedirect ($URL_SITE); /* */
     if (IsSessionAndLoginNonVide())
     {
-        // Une session est en cours et un login y est enregistr&eacute; ==>
-        //     connexion interdite (pr&eacute;venir l'appel direct de ce script)
-        //     D&eacute;connexion ? ==> fermeture de la session et retour &agrave; l'accueil
-        //     Sinon         ==> v&eacute;rifier autorisation
+        // Une session est en cours et un login y est enregistré ==>
+        //     connexion interdite (prévenir l'appel direct de ce script)
+        //     Déconnexion ? ==> fermeture de la session et retour à l'accueil
+        //     Sinon         ==> vérifier autorisation
 
         if ($Step == 'Decnx')
         {
@@ -95,7 +95,7 @@
                     $ReqUser = Query ("SELECT $NomTabUsers.* FROM $NomTabUsers WHERE Identifiant  = '$login'".$ReqWhere, $ConnectMathieu);
                     if ($NbUsers = mysql_num_rows ($ReqUser))
 					{
-					    // R&eacute;cup&eacute;ration de toutes les informations utiles
+					    // Récupération de toutes les informations utiles
 
 
 					    $User = mysql_fetch_object ($ReqUser);
@@ -128,7 +128,7 @@
 						              $Connexion);
 					if ($NbUsers = mysql_num_rows ($ReqUser))
 					{
-					    // R&eacute;cup&eacute;ration de toutes les informations utiles
+					    // Récupération de toutes les informations utiles
 
 					    $User = mysql_fetch_object ($ReqUser);
 						$UserPassWord      = $User->PassWord;

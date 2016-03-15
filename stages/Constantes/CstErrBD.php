@@ -1,5 +1,5 @@
 <?php
 
-	// Erreurs d'acc&egrave;s &agrave; la base de donn&eacute;es : ==> CstMsg
+	// Erreurs d'accès à la base de données : ==> CstMsg
 
 ?>

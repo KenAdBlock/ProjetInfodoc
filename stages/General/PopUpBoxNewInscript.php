@@ -43,7 +43,7 @@
 	
 	include_once ($PATH_CLASS.'CNewInscript.php');
 
-    // R&eacute;cup&eacute;ration des variables envoy&eacute;es par POST ou GET
+    // Récupération des variables envoyées par POST ou GET
 
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
@@ -76,7 +76,7 @@
     switch ($StepNewInscript)
     {
       case 'Init' :
-        // Pr&eacute;paration du nouvel enreg.
+        // Préparation du nouvel enreg.
 
         $ObjTuple = new CNewInscript ();
 		
@@ -225,7 +225,7 @@
 		
 	     if (!$CodErrVide)
             {			
-            	  // Pr&eacute;paration de l'enreg. &agrave; enregistrer
+            	  // Préparation de l'enreg. à enregistrer
 
                 $ObjTuple = new CNewInscript ();
 			
@@ -260,7 +260,7 @@
 
 		  $Sujet   = 'Nouvel inscrit pour stage';
 		  $Message = 'Inscription de :   '.
-		             $ValCiviliteTuteur.' '.$ValPrenomTuteur.'   '.$ValNomTuteur.'    &agrave; valider';
+		             $ValCiviliteTuteur.' '.$ValPrenomTuteur.'   '.$ValNomTuteur.'    à valider';
                 $Dest    =  $MailResponsableStages;
 
 		  if ($MachineHote == INFODOC) mail ($Dest, $Sujet, $Message);
@@ -295,9 +295,9 @@
 										{
 										  case 'Ack' : 
 										                                   ?>
-Votre inscription a bien &eacute;t&eacute; enregistr&eacute;e et nous vous en remercions.
+Votre inscription a bien été enregistrée et nous vous en remercions.
 
-Vous recevrez dans les plus brefs d&eacute;lais un login et un mot de passe pour vous permettre d'entrer les caract&eacute;ristiques du stage que vous proposez.
+Vous recevrez dans les plus brefs délais un login et un mot de passe pour vous permettre d'entrer les caractéristiques du stage que vous proposez.
 
 <br /><br />
 <div style="text-align : right">
@@ -306,7 +306,7 @@ Vous recevrez dans les plus brefs d&eacute;lais un login et un mot de passe pour
 Responsable des stages
 </div>
 <div style="text-align : center">
-<input type="button" value="Fermer la fen&ecirc;tre"
+<input type="button" value="Fermer la fenêtre"
        onClick="window.close()">
 </div>
 
@@ -317,18 +317,18 @@ Responsable des stages
 										                                   ?>
 
 <h1>
-Stage propos&eacute; par :
+Stage proposé par :
 </h1>
 
 <p style="text-align : center; font-size : 11 px; font-style : italic;">
-    Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
+    Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
 </p>
                                                                            <?php
 			                                if ($CodErrVide) 
 										    { 
 										                                   ?>
 <p style="text-align : center; font-size : 12 px;">
-    Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
+    Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 </p> 
 	                                                                       <?php 
 									        } 
@@ -338,7 +338,7 @@ Stage propos&eacute; par :
      <tr>
         <td valign="top"><?=$ValidCiviliteTuteur?></td>
         <td style="text-align : right" valign="top">
-		    <b>Civilit&eacute; : </b>
+		    <b>Civilité : </b>
 		</td>
 		<td>
 		    M<input type="radio" name="CiviliteTuteur" value="M" checked="checked">
@@ -356,7 +356,7 @@ Stage propos&eacute; par :
     </tr>
     <tr>
         <td valign="top"><?=$ValidPrenomTuteur?></td>
-        <td style="text-align : right" valign="top"><b>Pr&eacute;nom</b></td>
+        <td style="text-align : right" valign="top"><b>Prénom</b></td>
         <td>
             <input type="text" name="PrenomTuteur" size="50" value="<?=$ValPrenomTuteur?>">
         </td>
@@ -409,7 +409,7 @@ Stage propos&eacute; par :
 	<tr>
 	    <td colspan="3">
             <p style="text-align : center; font-size : 11 px; font-style : italic;">
-		    Si votre entreprise n'appara&icirc;t pas dans cette liste, veuillez compl&eacute;ter 
+		    Si votre entreprise n'apparaît pas dans cette liste, veuillez compléter
 			le cadre ci-dessous.
 			<br />&nbsp;
 			</p>
@@ -476,7 +476,7 @@ Stage propos&eacute; par :
      			<tr>
      			   <td valign="top"><?=$ValidCiviliteRespAdminr?></td>
      			   <td style="text-align : right" valign="top">
-					    <b>Civilit&eacute; : </b>
+					    <b>Civilité : </b>
 					</td>
 					<td>
 					    M<input type="radio"    name="CiviliteRespAdmin" value="M" checked="checked">
@@ -497,7 +497,7 @@ Stage propos&eacute; par :
                 <tr>
                     <td valign="top"><?=$ValidPrenomRespAdmin?></td>
                     <td style="text-align : right" valign="top">
-					    <b>Pr&eacute;nom</b></td>
+					    <b>Prénom</b></td>
                     <td>
                         <input type="text" name="PrenomRespAdmin" size="50" 
                                value="<?=$ValPrenomRespAdmin?>">

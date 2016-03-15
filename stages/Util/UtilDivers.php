@@ -66,8 +66,8 @@
 
 	} // Today()
 
-    function NbJoursDuMois ($Annee   = 0 /* ann&eacute;e courante par d&eacute;faut     */,
-	                        $NumMois = 0 /* de 1 &agrave; 12; Si 0, mois courant */)
+    function NbJoursDuMois ($Annee   = 0 /* année courante par défaut     */,
+	                        $NumMois = 0 /* de 1 à 12; Si 0, mois courant */)
 	{
 	    if (0 == $Annee || 0 == $NumMois)
 		{

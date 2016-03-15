@@ -1,12 +1,12 @@
 <?php
     // fichier UtilValid.php
     //
-    // Foonctions de validation des diff&eacute;rents types
+    // Foonctions de validation des différents types
     // 
     //   ValidCodePostal(), ValidDate(), ValidEMail(), 
 	//   ValidImage(),      ValidPath(), ValidTelephone(), ValidURL()
 //
-// G&eacute;n&eacute;ration d'un bouton
+// Génération d'un bouton
 //
 function ValidCodePostal ($Param)
 {

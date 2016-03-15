@@ -4,7 +4,7 @@ function Accueil ($LoginProv)
     global $PATH_GENERAL;
 ?>
 <p style="text-align : center">
-Si vous d&eacute;sirez nous verser de la
+Si vous désirez nous verser de la
 </p>
 <h1 style="background-color : #efefef; text-align : center">
 <a href="../Libres/LettreTA.php" target="_blanc">
@@ -58,7 +58,7 @@ merci de cliquer ci-dessus
     <tr>
         <td style="text-align : center">
             <a href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxOubliPassWord.php')"
-			    >Mot de passe oubli&eacute;</a>
+			    >Mot de passe oublié</a>
         </td>
     </tr>
 </table>

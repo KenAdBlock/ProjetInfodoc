@@ -61,7 +61,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
       case 'InitModif' :
       case 'InitNew'   :
 	  
-        // Pr&eacute;paration du nouvel enreg. ou r&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
+        // Préparation du nouvel enreg. ou récupération de l'enreg. à modifier
 
 	    $ObjInscript = new CNewInscript 
 		                     ($StepNewInscript == 'InitModif'  ?  $IdentPK : 0);
@@ -204,7 +204,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         {
 	     if ($ValFK_Entreprise == 0)
 	     {				
-	         // Cr&eacute;ation d'une nouvelle entreprise
+	         // Création d'une nouvelle entreprise
 				
                 $ObjSoc = new CEntreprise ();
 
@@ -237,7 +237,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		  }
 		  $ObjSoc->Insert();
 
-		  // R&eacute;cup&eacute;ration de sa cl&eacute;
+		  // Récupération de sa clé
 			
 		  $ValFK_Entreprise = mysql_insert_id();
 	     }
@@ -266,7 +266,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 	     $ObjInscript->Delete();
 
-	     // Enregistrement du mail &agrave; envoyer
+	     // Enregistrement du mail à envoyer
 
             Query ("INSERT INTO $NomTabMailsToSend VALUES (
 			    	  '$ValLoginTuteur',
@@ -292,14 +292,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 </h1>
  
 <p style="text-align : center; font-size : 11 px; font-style : italic;">
-Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
+Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
 </p>
 										                                   <?php
                                         if ($CodErrVide || $CodErrInval)
                                         {
 										                                   ?>
 <p style="text-align : center; font-size : 16 px;">
-Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
+Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 </p>
 										                                   <?php
                                         }
@@ -309,7 +309,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
      <tr>
         <td valign="top"><?=$ValidCiviliteTuteur?></td>
         <td style="text-align : right" valign="top">
-		    <b>Civilit&eacute; : </b>
+		    <b>Civilité : </b>
 		</td>
 		<td>
 		    M<input type="radio" name="CiviliteTuteur" value="M" checked="checked">
@@ -326,7 +326,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
     </tr>
     <tr>
         <td valign="top"><?=$ValidPrenomTuteur?></td>
-        <td style="text-align : right" valign="top"><b>Pr&eacute;nom</b></td>
+        <td style="text-align : right" valign="top"><b>Prénom</b></td>
         <td>
             <input type="text" name="PrenomTuteur" size="50" value="<?=$ValPrenomTuteur?>">
         </td>
@@ -388,8 +388,8 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
 	<tr>
 	    <td colspan="3">
             <p style="text-align : center; font-size : 11 px; font-style : italic;">
-		    Si aucune entreprise n'est s&eacute;lectionn&eacute;e dans cette liste,
-			le cadre ci-dessous doit &ecirc;tre compl&eacute;t&eacute;.
+		    Si aucune entreprise n'est sélectionnée dans cette liste,
+			le cadre ci-dessous doit être complété.
 			<br />&nbsp;
 			</p>
 		</td>
@@ -455,7 +455,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
      			<tr>
      			   <td valign="top"><?=$ValidCiviliteRespAdmin?></td>
      			   <td style="text-align : right" valign="top">
-					    <b>Civilit&eacute; : </b>
+					    <b>Civilité : </b>
 					</td>
 					<td>
 					    M<input type="radio"    name="CiviliteRespAdmin" value="M" checked="checked">
@@ -476,7 +476,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
                 <tr>
                     <td valign="top"><?=$ValidPrenomRespAdmin?></td>
                     <td style="text-align : right" valign="top">
-					    <b>Pr&eacute;nom</b></td>
+					    <b>Prénom</b></td>
                     <td>
                         <input type="text" name="PrenomRespAdmin" size="50" 
                                value="<?=$ValPrenomRespAdmin?>">
@@ -555,7 +555,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

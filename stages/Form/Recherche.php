@@ -27,7 +27,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <tt><?=$ValidMateriel?></tt>
 		</td>
         <td style="text-align : right" valign="top">
-		    <b>Mat&eacute;riel utilis&eacute;</b>
+		    <b>Matériel utilisé</b>
 		</td>
 		<td><table><tr>
 		                                                                   <?php
@@ -48,7 +48,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <tt><?=$ValidReseauxLocaux?></tt>
 		</td>
 	    <td style="text-align : right" valign="top">
-		    <b>R&eacute;seaux locaux</b>
+		    <b>Réseaux locaux</b>
 		</td>
 	    <td>
 		  <table><tr>
@@ -80,7 +80,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <tt><?=$ValidResPublics?></tt>
 		</td>
         <td style="text-align : right" valign="top">
-		    <b>R&eacute;seaux publics</b>
+		    <b>Réseaux publics</b>
 		</td>
 		<td><table><tr>
 		                                                                   <?php
@@ -141,7 +141,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <?=$ValidSystExpl?></tt>
 		</td>
         <td style="text-align : right" valign="top">
-		    <b>Syst&egrave;mes d'exploitation </b>
+		    <b>Systèmes d'exploitation </b>
 		</td>
 		<td><table><tr>
 		                                                                   <?php
@@ -171,7 +171,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <tt><?=$ValidBasesD?></tt>
 		</td>
         <td style="text-align : right" valign="top">
-		    <b>Bases de donn&eacute;es</b>
+		    <b>Bases de données</b>
 		</td>
 		<td><table><tr>
 		                                                                   <?php
@@ -202,7 +202,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <tt><?=$ValidAtGL?></tt>
 		</td>
         <td style="text-align : right" valign="top">
-		    <b>Ateliers de G&eacute;nie Logiciel</b>
+		    <b>Ateliers de Génie Logiciel</b>
 		</td>
         <td>
             <input type="text" name="AtGL" size="50" value="<?=$ValAtGL?>">
@@ -256,7 +256,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <tt><?=$ValidMCtrl?></tt>
 		</td>
         <td style="text-align : right" valign="top" nowrap>
-		    <b>Controle qualit&eacute; logicielle</b>
+		    <b>Controle qualité logicielle</b>
 		</td>
         <td valign="top">
             <input type="text" name="MCtrl" size="50" value="<?=$ValMCtrl?>">
@@ -287,7 +287,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <tt><?=$ValidIS?></tt>
 		</td>
         <td style="text-align : right" valign="top">
-		    <b>Indemnit&eacute;s de Stage</b>
+		    <b>Indemnités de Stage</b>
 		</td>
         <td>
 		    Oui<input type="radio" name=IST value="1" checked>
@@ -299,7 +299,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		<tt><?=$ValidIR?></tt>
 		</td>
         <td style="text-align : right" valign="top">
-		<b>Indemnit&eacute;s de Repas</b>
+		<b>Indemnités de Repas</b>
 		</td>
         <td>
 		    Oui<input type="radio" name=IR value="1" checked>
@@ -311,7 +311,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <?=$ValidIT?></tt>
 		</td>
         <td style="text-align : right" valign="top">
-		    <b>Indemnit&eacute;s de Transport</b>
+		    <b>Indemnités de Transport</b>
 		</td>
         <td>
 		    Oui<input type="radio" name=IT value="1" checked>
@@ -336,7 +336,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <tt><?=$ValidEmb?></tt>
 		</td>
         <td style="text-align : right" valign="top">
-		    <b>Possibilit&eacute; d'embauche apr&egrave;s le stage</b>
+		    <b>Possibilité d'embauche après le stage</b>
 		</td>
         <td>
 		    Oui<input type="radio" name=Emb value="1" checked>
@@ -366,7 +366,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

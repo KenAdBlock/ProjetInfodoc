@@ -21,7 +21,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	$WidthButton = 100;
     $WidthCadre  = 800
 ?>
-<h2 style="text-align : center;">Fiche de stage n&deg; <?=$ValPK_Stage?></h2>
+<h2 style="text-align : center;">Fiche de stage n° <?=$ValPK_Stage?></h2>
 
 <table align="center" border="1" width="<?=$WidthCadre?>"><tr><td>
 <table cellpadding="2" width="100%">
@@ -59,7 +59,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                 <td><?=$ObjUser->GetPrenom()?> <?=$ObjUser->GetNom()?></td>
             </tr>
             <tr>
-                <th>T&eacute;l.</th>
+                <th>Tél.</th>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
@@ -221,7 +221,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

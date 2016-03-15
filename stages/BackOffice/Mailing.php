@@ -54,7 +54,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  /*===================*/
       case 'LstEtudiants1A' :
 	  /*===================*/
-        $TitreTraitement = "Liste des &eacute;tudiants de 1<sup>&egrave;re</sup> ann&eacute;e";
+        $TitreTraitement = "Liste des étudiants de 1<sup>ère</sup> année";
 
         define ('STATUS_ETUD1', 5);
 		$ReqMails = Query ("SELECT * FROM $NomTabUsers
@@ -66,7 +66,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  /*===================*/
       case 'LstEtudiants2A' :
 	  /*===================*/
-        $TitreTraitement = "Liste des &eacute;tudiants de 2<sup>&egrave;me</sup> ann&eacute;e et de LP";
+        $TitreTraitement = "Liste des étudiants de 2<sup>ème</sup> année et de LP";
 		if ($Sel2A == 'AvecStage') $TitreTraitement .= " avec stage";
 		if ($Sel2A == 'SansStage') $TitreTraitement .= " sans stage"; 
 
@@ -112,7 +112,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  /*===============*/
       case 'SendMails' :
 	  /*===============*/
-        $TitreTraitement = "Mail envoy&eacute;";
+        $TitreTraitement = "Mail envoyé";
 /*    */
 // ===================================================================
 // ============ Fonctionnement normal ================================
@@ -125,7 +125,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		mail  ($MailAdministrateur, $SujetDuMail, stripslashes ($TexteDuMail), $Sender);
 /*    */
 // ===================================================================
-// ============ Remise &agrave; jour de tous les mots de passe ==============
+// ============ Remise à jour de tous les mots de passe ==============
 // ===================================================================
 /*   * /
 require_once ($PATH_UTIL.'UtilLogin.php');
@@ -139,11 +139,11 @@ for ($i = count ($tabmail); $i--; )
 
 \tJe vous prie de trouver dans ce mail un nouveau mot de passe que je vous demande d'utiliser pour toute connexion au site\n\n infodoc.iut.univ-aix.fr/stages\n
 Nouveau mot de passe : $NewPwd\n
-\tJe demande &agrave; celles et ceux qui ont d&eacute;j&agrave; un mot de passe et qui ne l'ont pas oubli&eacute; de ne pas m'en vouloir et d'en changer pour celui qui vous est aujourd'hui attribu&eacute;.\n
-Vous pourrez bien sûr le modifier &agrave; votre convenance d&egrave;s votre prochaine connexion.\n
+\tJe demande à celles et ceux qui ont déjà un mot de passe et qui ne l'ont pas oublié de ne pas m'en vouloir et d'en changer pour celui qui vous est aujourd'hui attribué.\n
+Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine connexion.\n
 \tCordialement\n\n
 \t\t\t\t\t<?=$NomResponsableStages?>,
-\t\t\tresponsable des stages au d&eacute;partement informatique de l'IUT d'aix en Provence";
+\t\t\tresponsable des stages au département informatique de l'IUT d'aix en Provence";
 
 	$MailI = $tabmail [$i];
     mail  ($MailI, $SujetDuMail, stripslashes ($TexteDuMail), $Sender);
@@ -176,7 +176,7 @@ Vous pourrez bien sûr le modifier &agrave; votre convenance d&egrave;s votre pr
     <tr>
 	    <td>
             <a href="<?=$URL_List.$NomTabMailsToSend?>" target="principal">
-                Liste des mails &agrave; envoyer aux nouveaux inscrits
+                Liste des mails à envoyer aux nouveaux inscrits
 			</a>
         </td>
 	</tr>
@@ -211,12 +211,12 @@ Vous pourrez bien sûr le modifier &agrave; votre convenance d&egrave;s votre pr
     </tr>
     <tr>
         <td><a href="?Trait=Mailing&SsStep=LstEtudiants1A">
-            Liste des &eacute;tudiants de 1<sup>&egrave;re</sup> ann&eacute;e</a>
+            Liste des étudiants de 1<sup>ère</sup> année</a>
         </td>
     </tr>
     <tr>
         <td>
-            Liste des &eacute;tudiants de 2<sup>&egrave;me</sup> ann&eacute;e et de LP
+            Liste des étudiants de 2<sup>ème</sup> année et de LP
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous">tous</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=AvecStage">avec stage</a>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=SansStage">sans stage</a>
@@ -273,7 +273,7 @@ Vous pourrez bien sûr le modifier &agrave; votre convenance d&egrave;s votre pr
 </td></tr>
 </table>
                                                                            <?php
-                                        } // fin de la pr&eacute;paration du mail
+                                        } // fin de la préparation du mail
 
 										switch ($SsStep)
 										{
@@ -368,7 +368,7 @@ Vous pourrez bien sûr le modifier &agrave; votre convenance d&egrave;s votre pr
 <table cellpadding="3">
     <tr>
 	    <th colspan="2" style="text-align : left">&nbsp;</th>
-	    <th style="text-align : left">Nom - Pr&eacute;nom</th>
+	    <th style="text-align : left">Nom - Prénom</th>
 	    <th style="text-align : left">mail</th>
 	</tr>
                                                                            <?php
@@ -442,7 +442,7 @@ Vous pourrez bien sûr le modifier &agrave; votre convenance d&egrave;s votre pr
 										
 										  case 'SendMails' :
 /*
-&agrave; <?=$MailResponsableStages?> et en copie &agrave;:
+à <?=$MailResponsableStages?> et en copie à:
 <br />
 <?=$Headers?>
 */
@@ -460,7 +460,7 @@ Vous pourrez bien sûr le modifier &agrave; votre convenance d&egrave;s votre pr
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

@@ -29,7 +29,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     require_once ($PATH_CLASS.'CStage.php');
 
-    // R&eacute;cup&eacute;ration des variables envoy&eacute;es par POST ou GET
+    // Récupération des variables envoyées par POST ou GET
 
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
@@ -95,7 +95,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 	    $ObjStage = new CStage ($StepStage == 'InitModif' ? $IdentPK : 0);
 
-		// ToDo ; V&eacute;rifier que l'utilisateur a bien acc&eacute;s au stage
+		// ToDo ; Vérifier que l'utilisateur a bien accés au stage
 		
         $ValPK_Stage      = $ObjStage->GetPK_Stage();
         $ValFK_Entreprise = $Status == TUTEUR ? $FK_EntrepriseUser
@@ -269,7 +269,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		}			
         $ValFK_Tuteur = $FK_Tuteur;
 		
-        // Recherche de l'entreprise &agrave; partir du tuteur
+        // Recherche de l'entreprise à partir du tuteur
 
 		$ReqTuteur = Query ("SELECT FK_Entreprise FROM $NomTabUsers
 			                              WHERE PK_User = $ValFK_Tuteur;",
@@ -280,7 +280,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
         if (! ($CodErrVide || $CodErrInval))
         {
-            // Pr&eacute;paration de l'enregistrement
+            // Préparation de l'enregistrement
 			
             $ObjStage = new CStage ();
 			
@@ -380,7 +380,7 @@ alert('<?php echo 'Oui ? '.$ValLogicielsSpecOuiNon.' '.ProtectApos ($ValLogiciel
 	                                        if ($IdentPK == 0)
 										    {
                                                                            ?>
-<h1>Cr&eacute;ation d'une nouvelle fiche de stage</h1>
+<h1>Création d'une nouvelle fiche de stage</h1>
                                                                            <?php
                                             }
                                             else
@@ -408,14 +408,14 @@ alert('<?php echo 'Oui ? '.$ValLogicielsSpecOuiNon.' '.ProtectApos ($ValLogiciel
 </nobr>
 
 <p style="text-align : center; font-size : 11 px; font-style : italic;">
-Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
+Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
 </p>
                                                                            <?php
                                         if ($CodErrVide || $CodErrInval) 
 										{ 
 										                                   ?>
 <p style="text-align : center; font-size : 16 px;">
-Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
+Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 </p> 
                                                                            <?php
 										} 
@@ -579,8 +579,8 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
 <span style="color : red;">Gratification :</span>
 
 <br /><br />
-L'article 30 de la loi n&deg; 2009-1437 du 24/11/09, modifi&eacute;e par  la loi n&deg;2014-788 du 10 juillet 2014, impose pour tous les stages de plus de deux mois la gratification des
-stagiaires dans le priv&eacute; comme dans le public au taux de 13,75% du plafond de la S&eacute;curit&eacute; Sociale, soit <?=MINIMUM_LEGAL_INDEMNITES?> euros/mois - taux au 30/12/14.
+L'article 30 de la loi n° 2009-1437 du 24/11/09, modifiée par  la loi n°2014-788 du 10 juillet 2014, impose pour tous les stages de plus de deux mois la gratification des
+stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de la Sécurité Sociale, soit <?=MINIMUM_LEGAL_INDEMNITES?> euros/mois - taux au 30/12/14.
 </p></blockquote>
 </div>
 </td></tr>
@@ -624,7 +624,7 @@ stagiaires dans le priv&eacute; comme dans le public au taux de 13,75% du plafon
 	      
 	/*
 	    ==========================
-	    2.1 Environnement mat&eacute;riel
+	    2.1 Environnement matériel
 	    ==========================
 	*/
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_ENV_MATERIEL], 3);
@@ -680,7 +680,7 @@ stagiaires dans le priv&eacute; comme dans le public au taux de 13,75% du plafon
                                        AffichLigneVierge();
 	/*
 	    =========================
-	    2.3 M&eacute;thodes ou standards
+	    2.3 Méthodes ou standards
 	    =========================
 	*/
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_METHODES_STANDARDS], 3);
@@ -838,7 +838,7 @@ stagiaires dans le priv&eacute; comme dans le public au taux de 13,75% du plafon
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

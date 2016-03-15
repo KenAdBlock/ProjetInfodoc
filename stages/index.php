@@ -10,7 +10,7 @@
     <link rel="icon" type="image/x-icon" href="Img/favicon.ico">
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Stages</title>
 	</head>
 

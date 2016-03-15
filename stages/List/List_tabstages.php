@@ -60,7 +60,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                  ORDER BY ".$OrderReq,
                             $Connexion);
     }
-    // Requete g&eacute;n&eacute;rale pour toutes les fiches de stage
+    // Requete générale pour toutes les fiches de stage
     /*
     else if ($Status == ETUDLP)
     {
@@ -100,7 +100,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         {
                                                                           ?>
 <h4 align="center">
-    Aucun stage n'a &eacute;t&eacute; trouv&eacute;.
+    Aucun stage n'a été trouvé.
 </h4>
                                                                           <?php
         }
@@ -108,7 +108,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         {
                                                                           ?>
 <h4 style="text-align : center;">
-    Pour afficher les informations relatives &agrave; un stage, cliquez sur son num&eacute;ro.
+    Pour afficher les informations relatives à un stage, cliquez sur son numéro.
 </h4>
 <table  align="center">
     <tbody> <!-- TODO ?? -->
@@ -141,7 +141,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                         <th style="text-align : center" valign="top" nowrap>
                             <a href="<?=$URL_ListNum?>"
                                <?=AttributsAHRef ($QuelOrdreNum, $QuelOrdreNum, '', '');?>
-                                ><b>Num&eacute;ro</b>&nbsp;
+                                ><b>Numéro</b>&nbsp;
                                  <img border="0" src="<?=$GifOrderNum?>">
                             </a>
                         </th>
@@ -252,7 +252,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
     ?>
-    <h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+    <h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
     <?php
 }
     ?>

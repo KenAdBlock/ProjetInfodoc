@@ -1,7 +1,7 @@
 <?php
     include_once ('Class/CUser.php');//bonjour
 
-    // R&eacute;cup&eacute;ration des variables envoy&eacute;es par POST ou GET
+    // Récupération des variables envoyées par POST ou GET
 
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
@@ -11,7 +11,7 @@
     {
       case 'InitModif' :
 	  
-        // R&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
+        // Récupération de l'enreg. à modifier
 
         $ObjTuple = new CUser ($IdentPK);
         $ValPK_User = $ObjTuple->GetPK_User();
@@ -38,7 +38,7 @@
         break;
 
       case 'InitNew' :
-        // Pr&eacute;paration du nouvel enreg.
+        // Préparation du nouvel enreg.
 
         $ObjTuple = new CUser ();
         $ValPK_User = $ObjTuple->GetPK_User();
@@ -128,14 +128,14 @@
                 if ($ValPrivilege == 'tuteur')
                     $ValFK_Entreprise = $FK_Entreprise;
 
-                // l'attribut entreprise doit &ecirc;tre selectionn&eacute; seulement si le
-                // privil&egrave;ge selectionn&eacute; est Tuteur
+                // l'attribut entreprise doit être selectionné seulement si le
+                // privilège selectionné est Tuteur
 		
                 if ((trim ($ValFK_Entreprise) != '') && (trim ($ValPrivilege) != 'tuteur'))
                     $CodErrTut = true;        
         
-                // on compare le login entr&eacute; avec les logins d&eacute;j&agrave;  existants pour
-                // &eacute;viter qu'il y en ai 2 identiques
+                // on compare le login entré avec les logins déjà  existants pour
+                // éviter qu'il y en ai 2 identiques
         if ($IdentPK ==0)
         {
             $ReqL = Query("SELECT Login from tabusers",$Connexion);
@@ -154,7 +154,7 @@
         if (!$CodErrVide && !$CodErrInval && !$CodErrLog && !$CodErrTut)
         {
             print ('<h1>Enregistrer</h1>');
-            // Pr&eacute;paration de l'enreg. &agrave; enregistrer
+            // Préparation de l'enreg. à enregistrer
 
             $ObjTuple = new CUser ();
             $ObjTuple->SetPK_User($ValPK_User);
@@ -199,19 +199,19 @@
     {
                                                                        ?>
 <?php if ($IdentPK==0) {?>
-<h1> Cr&eacute;ation d'un Nouvel Utilisateur </h1>
+<h1> Création d'un Nouvel Utilisateur </h1>
 <?php } else {?>
 <h1> Modification d'un Utilisateur </h1>
 <?php }?>
-<p style="text-align : center; font-size : 11px; font-style : italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies</p>
+<p style="text-align : center; font-size : 11px; font-style : italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies</p>
 <?php if ($CodErrVide || $CodErrInval) { ?>
 <p style="text-align : center; font-size : 16px;">Les
-<?=$Fleche?> indiquent qu'une rubrique est vide ou erron&eacute;e</p> <?php } ?>
+<?=$Fleche?> indiquent qu'une rubrique est vide ou erronée</p> <?php } ?>
 <?php if ($CodErrTut) { ?>
-<p style="text-align : center; font-size : 16px;">Si vous n'&ecirc;tes pas Tuteur, veuillez ne pas sp&eacute;cifier d'Entreprise</p>
+<p style="text-align : center; font-size : 16px;">Si vous n'êtes pas Tuteur, veuillez ne pas spécifier d'Entreprise</p>
 <?php } ?>
 <?php if ($CodErrLog) { ?>
-<p style="text-align : center; font-size : 16px;">Ce Login est d&eacute;j&agrave;
+<p style="text-align : center; font-size : 16px;">Ce Login est déjà
 pris, veuillez en choisir un autre</p>
 <?php } ?>
 <?php if ($CodErrFax) { ?>
@@ -220,7 +220,7 @@ invalide, veuillez entrez un nombre.</p>
 <?php } ?>
 <?php if ($CodErrTel) { ?>
 <p style="text-align : center; font-size : 16px;">Le Champ Tel est
-invalide, veuillez entre un num&eacute;ro</p>
+invalide, veuillez entre un numéro</p>
 <?php } ?>
 <form method="post">
 <table align="center" border="1px" ><tr><td>
@@ -228,7 +228,7 @@ invalide, veuillez entre un num&eacute;ro</p>
     <?php if ($ValPK_User) { ?>
     <tr>
         <td valign="top"><tt><?=$ValidPK_User?></tt></td>
-        <td style="text-align : right" valign="top"><b>Num&eacute;ro</b></td>
+        <td style="text-align : right" valign="top"><b>Numéro</b></td>
         <td>
             <?=$ValPK_User?>
         </td>
@@ -255,7 +255,7 @@ invalide, veuillez entre un num&eacute;ro</p>
            ($_SESSION['privilege'] == "etud"))
         {?>
 
-        <tr><td></td><td><b>Privil&egrave;ge</b></td><td><b>
+        <tr><td></td><td><b>Privilège</b></td><td><b>
 
         <?php
             switch($ValPrivilege)
@@ -348,7 +348,7 @@ invalide, veuillez entre un num&eacute;ro</p>
     <?php $ResultListEntreprise = Query ("SELECT NomE, PK_Entreprise FROM
     tabentreprise",$Connexion);?>
     <tr>
-    <td></td><td></td><td width="250">Si vous &ecirc;tes Tuteur Professionnel, pr&eacute;cisez l'entreprise </td>
+    <td></td><td></td><td width="250">Si vous êtes Tuteur Professionnel, précisez l'entreprise </td>
     </tr>
     <?php if ($_SESSION['privilege']!="tuteur")
       { ?>
@@ -373,7 +373,7 @@ invalide, veuillez entre un num&eacute;ro</p>
         </td>
         </tr>
         <?php }else
-            //Si c'est une fiche cr&eacute;e par un tuteur, il ne doit pas
+            //Si c'est une fiche crée par un tuteur, il ne doit pas
             //pouvoir modifier l'entreprise...
           {
                $login = $_SESSION['Login'];

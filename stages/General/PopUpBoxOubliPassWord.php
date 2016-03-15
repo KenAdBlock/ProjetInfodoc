@@ -72,11 +72,11 @@
 <table bgcolor="#E6E6E6" border="0" cellpadding="5" cellspacing="0"> 
     <tr>
 	    <td colspan="3">
-		Entrez votre login et votre adresse <nobr>e-mail</nobr> pour r&eacute;cup&eacute;rer
+		Entrez votre login et votre adresse <nobr>e-mail</nobr> pour récupérer
 		un nouveau  mot de passe. 
 		<br /><br />
-		En validant ce formulaire, votre mot de passe sera r&eacute;initialis&eacute; et
-		le nouveau mot de passe vous sera envoy&eacute; automatiquement par e-mail.
+		En validant ce formulaire, votre mot de passe sera réinitialisé et
+		le nouveau mot de passe vous sera envoyé automatiquement par e-mail.
 		</td>
 	</tr>
 	<tr>
@@ -98,7 +98,7 @@
 										                                   ?>
 	<tr>
         <td colspan="3" align="center" style="color : red">
-		   Ces informations ne correspondent &agrave; aucun utilisateur enregistr&eacute;
+		   Ces informations ne correspondent à aucun utilisateur enregistré
 		</td>
     </tr>
 	<tr>
@@ -128,14 +128,14 @@
 <table bgcolor="#E6E6E6" border="0" cellpadding="5" cellspacing="0"> 
     <tr>
 	    <td colspan="3">
-		Votre demande a bien &eacute;t&eacute; enregistr&eacute;e.
+		Votre demande a bien été enregistrée.
 		<br /><br />
-		Votre nouveau mot de passe vous sera envoy&eacute; automatiquement par courrier &eacute;lectronique dans les plus brefs d&eacute;lais.
+		Votre nouveau mot de passe vous sera envoyé automatiquement par courrier électronique dans les plus brefs délais.
 		</td>
 	</tr>
 	<tr>
         <td colspan="3" align="center"><input type="submit" 
-		    value="Fermer la fen&ecirc;tre"
+		    value="Fermer la fenêtre"
 		    onClick="window.close()">
 		</td>
 	</tr>

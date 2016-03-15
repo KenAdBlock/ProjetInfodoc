@@ -50,7 +50,7 @@ ini_set("sendmail_from", "marc.laporte@univ-amu.fr");
             <textarea  cols="80" rows="17" name="Message">
          <?=$Obj->Prenom?> <?=$Obj->Nom?>,
 
-J'ai le plaisir de vous informer que vous pourrez dor&eacute;navant vous connecter et enregistrer vos propositions de stage sur le site
+J'ai le plaisir de vous informer que vous pourrez dorénavant vous connecter et enregistrer vos propositions de stage sur le site
 
 http://infodoc.iut.univ-aix.fr/stages
 
@@ -80,7 +80,7 @@ Responsable des stages
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

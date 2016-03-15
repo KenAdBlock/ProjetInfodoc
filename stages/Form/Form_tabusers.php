@@ -48,7 +48,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
       case 'InitModif' :
       case 'InitNew'   :
 	  
-        // Pr&eacute;paration du nouvel enreg. ou r&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
+        // Préparation du nouvel enreg. ou récupération de l'enreg. à modifier
 
 	    $ObjTuple = new CUser ($StepConsult == 'InitModif'? $IdentPK : 0);
 
@@ -136,7 +136,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         }
         if (! ($CodErrVide || $CodErrInval))
         {
-            // Pr&eacute;paration de l'enregistrement
+            // Préparation de l'enregistrement
 
             $ObjTuple = new CUser ();
 			
@@ -157,7 +157,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                 $ObjTuple->SetPassWord (md5 ($NewPassWord));
                 $ObjTuple->Insert();
 				
-				// Enregistrement du mail &agrave; envoyer
+				// Enregistrement du mail à envoyer
 				
 				Query ("INSERT INTO $NomTabMailsToSend VALUES (
 			    	  	   '$ValLogin',
@@ -197,12 +197,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                         else
                                         {
                                                                            ?>
-<h1>Cr&eacute;ation d'un nouvel utilisateur </h1>
+<h1>Création d'un nouvel utilisateur </h1>
                                                                            <?php
                                         }
 										                                   ?>
 <p style="text-align : center; font-size : 11px; font-style : italic;">
-Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
+Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
 </p>
 
 										                                   <?php
@@ -210,7 +210,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies
                                         {
 										                                   ?>
 <p style="text-align : center; font-size : 16px;">
-Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
+Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 </p>
 										                                   <?php
                                         }
@@ -223,7 +223,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
      <tr>
         <td valign="top"><?=$ValidCivilite?></td>
         <td style="text-align : right" valign="top">
-		    <b>Civilit&eacute; : </b>
+		    <b>Civilité : </b>
 		</td>
 		<td>
 		    M<input type="radio" name="Civilite" value="M" checked="checked">
@@ -240,7 +240,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
     </tr>
     <tr>
         <td valign="top"><?=$ValidPrenom?></td>
-        <td style="text-align : right" valign="top"><b>Pr&eacute;nom</b></td>
+        <td style="text-align : right" valign="top"><b>Prénom</b></td>
         <td>
             <input type="text" name="Prenom" size="50" value="<?=$ValPrenom?>">
         </td>
@@ -316,7 +316,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
     <tr>
         <td><?=$ValidFK_Entreprise?></td>
 		<td style="text-align : right; valign="top">
-		    Pour un tuteur, pr&eacute;ciser l'<b>entreprise</b>
+		    Pour un tuteur, préciser l'<b>entreprise</b>
 		</td>
 		<td>
 		    <select name="FK_Entreprise">
@@ -392,7 +392,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

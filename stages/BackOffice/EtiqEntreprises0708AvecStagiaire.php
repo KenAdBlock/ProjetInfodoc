@@ -17,7 +17,7 @@ $NomTabStages      = tabstages0708;
     {
                                                                           ?>
 <h4 align="center">
-    Aucune entreprise n'a &eacute;t&eacute; trouv&eacute;e.
+    Aucune entreprise n'a été trouvée.
 </h4>
                                                                           <?php
     }
@@ -49,7 +49,7 @@ $NomTabStages      = tabstages0708;
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

@@ -1,17 +1,17 @@
 <?php
     // fichier UtilForm.php
     //
-    // Utilitaires pour la (d&eacute;)-connexion
+    // Utilitaires pour la (dé)-connexion
     // 
     //   GenerSendPassWord(), IsAdmin(), RandomPassWord(), GetStatutByLogin()
 	//
     //   IsAdmin(), IsML(), IsEtud1(), IsEtud2(), IsEtud()
 //
-// G&eacute;n&eacute;ration d'un mot de passe al&eacute;atoire
+// Génération d'un mot de passe aléatoire
 //
 function RandomPassWord ($MaxLg = MAXLGPASSWD)
 {
-    $LesCaracteres  = "AabBCDEFcdefghGHJKijkmLMNnPQRSTUVWXYpqrsZtwxyz23456789"; //caract&egrave;res possibles
+    $LesCaracteres  = "AabBCDEFcdefghGHJKijkmLMNnPQRSTUVWXYpqrsZtwxyz23456789"; //caractères possibles
 	$NbCarPossibles = strlen ($LesCaracteres);
     srand ((double) microtime() * 1000000);
 /**/	$NewPassWord = "";

@@ -15,7 +15,7 @@
 	include_once ($PATH_CONSTANTES.'CstErr.php');
 	include_once ($PATH_UTIL.      'UtilErr.php');
 
-    // V&eacute;rification qu'il existe bien une session ouverte
+    // Vérification qu'il existe bien une session ouverte
 	//   et qu'il existe bien un login dans la session ouverte
 	include_once ($PATH_GENERAL.'AreSessionAndLogin.php');
 	
@@ -104,8 +104,8 @@
 <table align="center" border="0" cellpadding="2" cellspacing="0"> 
     <tr>
 		<br /><b>Attention </b>: 
-		<ul><li>le mot de passe doit comporter entre <b><?=MINLGPASSWD?></b> et <b><?=MAXLGPASSWD?></b> chiffres ou lettres (majuscules ou minuscules sauf le <b>&ccedil;</b>, et sans accent),
-</li><li>les <b>majuscules et les minuscules</b> sont consid&eacute;r&eacute;es comme des <b>caract&egrave;res diff&eacute;rents</b>.
+		<ul><li>le mot de passe doit comporter entre <b><?=MINLGPASSWD?></b> et <b><?=MAXLGPASSWD?></b> chiffres ou lettres (majuscules ou minuscules sauf le <b>ç</b>, et sans accent),
+</li><li>les <b>majuscules et les minuscules</b> sont considérées comme des <b>caractères différents</b>.
 </li></ul>
 		</td>
 	</tr>
@@ -123,7 +123,7 @@
 	</tr>
 	<tr>
         <td colspan="4" align="left"
-		    ><blockquote><sup>*</sup><small>Choisissez un mot de passe compos&eacute; de <b><?=MINLGPASSWD?></b> &agrave;
+		    ><blockquote><sup>*</sup><small>Choisissez un mot de passe composé de <b><?=MINLGPASSWD?></b> à
 			 <b><?=MAXLGPASSWD?></b> lettres <br />&nbsp; (majuscules ou minuscules <b>sans accents</b>) ou chiffres</small></blockquote>
 <hr></td>
     </tr>

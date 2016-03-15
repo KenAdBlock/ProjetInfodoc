@@ -2,7 +2,7 @@
     
     include ('Class/CEntreprise.php');
 
-    // R&eacute;cup&eacute;ration des variables envoy&eacute;es par POST ou GET
+    // Récupération des variables envoyées par POST ou GET
 
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
@@ -11,7 +11,7 @@
     switch ($Step)
     {
       case 'InitModif' :
-        // R&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
+        // Récupération de l'enreg. à modifier
 
         $ObjTuple = new CEntreprise ($IdentPK);
         $ValPK_Entreprise = $ObjTuple->GetPK_Entreprise();
@@ -39,7 +39,7 @@
         break;
 
       case 'InitNew' :
-        // Pr&eacute;paration du nouvel enreg.
+        // Préparation du nouvel enreg.
 
         $ObjTuple = new CEntreprise ();
         $ValPK_Entreprise = $ObjTuple->GetPK_Entreprise();
@@ -131,7 +131,7 @@
         $ValFaxR = $FaxR;
         $Fleche = FLECHE;
 
-        // on compare l' entreprise entr&eacute;e avec les entreprises d&eacute;j&agrave; existantes
+        // on compare l' entreprise entrée avec les entreprises déjà existantes
         $ReqL = Query("SELECT NomE from tabentreprise",$Connexion);
         while ($RowL = mysql_fetch_row($ReqL))
         {  
@@ -150,7 +150,7 @@
         if (!$CodErrVide && !$CodErrInval)
         {
             print ('<h1>Enregistrer</h1>');
-            // Pr&eacute;paration de l'enreg. &agrave; enregistrer
+            // Préparation de l'enreg. à enregistrer
 
             $ObjTuple = new CEntreprise ();
             $ObjTuple->SetPK_Entreprise($ValPK_Entreprise);
@@ -200,12 +200,12 @@
         <?php } else {?>
         <h1> Modification d'une entreprise </h1>
         <?php }?>
-<p style="text-align : center; font-size : 11 px; font-style : italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies</p>
+<p style="text-align : center; font-size : 11 px; font-style : italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies</p>
 <?php if ($CodErrVide || $CodErrInval) { ?>
 <p style="text-align : center; font-size : 16 px;">Les
-<?=$Fleche?> indiquent qu'une rubrique est vide ou erron&eacute;e</p> <?php } ?>
+<?=$Fleche?> indiquent qu'une rubrique est vide ou erronée</p> <?php } ?>
 <?php if ($CodErrLog) { ?>
-<p style="text-align : center; font-size : 16 px;">Ce nom d'entreprise existe d&eacute;j&agrave;</p>
+<p style="text-align : center; font-size : 16 px;">Ce nom d'entreprise existe déjà</p>
 <?php } ?>
 <form method="post">
 <table align="center" border="1"><tr><td>
@@ -213,7 +213,7 @@
     <?php if($ValPK_Entreprise) { ?>
     <tr>
         <td valign="top"><tt><?=$ValidPK_Entreprise?></tt></td>
-        <td style="text-align : right" valign="top"><b>Num&eacute;ro</b></td>
+        <td style="text-align : right" valign="top"><b>Numéro</b></td>
         <td>
             <?=$ValPK_Entreprise?>
         </td>
@@ -236,7 +236,7 @@
     </tr>
     <tr>
         <td valign="top"><tt><?=$ValidPrenomR?></tt></td>
-        <td style="text-align : right" valign="top"><b>Pr&eacute;nom du
+        <td style="text-align : right" valign="top"><b>Prénom du
         Responsable</b></td>
         <td>
             <input type="text" name="PrenomR" size="50" value="<?=$ValPrenomR?>">

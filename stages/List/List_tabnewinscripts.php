@@ -53,10 +53,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 									    }
                                                                           ?>
                     <th style="text-align : center" valign="top" nowrap>
-					    <b>Num&eacute;ro</b>
+					    <b>Numéro</b>
 					</th>
                     <th style="text-align : center" valign="top" nowrap>
-					    <b>Nom - Pr&eacute;nom</b>
+					    <b>Nom - Prénom</b>
 					</th>
                 <tr><td colspan="<?=$NbCol?>"><hr></td></tr>
                 <tr>
@@ -113,7 +113,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

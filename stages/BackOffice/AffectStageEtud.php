@@ -9,7 +9,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $ConnectMathieu = ConnectSelect ($HoteMathieu,   $UserMathieu,
                                      $PasswdMathieu, $NomBaseMathieu);
 					   
-    // G&eacute;n&eacute;ration de la table des &eacute;tudiants
+    // Génération de la table des étudiants
 	// ====================================
 
     if (!isset ($Etape)) $Etape = 'Init';
@@ -34,12 +34,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                                                             ORDER BY NomE",
 	                                                        $Connexion);
 										if (mysql_num_rows ($ReqStages) == 0)
-										   print ('Aucun stage ne correspond &agrave; ce num&eacute;ro');
+										   print ('Aucun stage ne correspond à ce numéro');
 										else
 										{
 										 	$ObjStage = mysql_fetch_object ($ReqStages);
 											if ($ObjStage->NbStagesRestant == 0)
-										        print ('Stage d&eacute;j&agrave; pourvu');
+										        print ('Stage déjà pourvu');
 											else
 											{
                                                 $ReqEtudAffecte = Query ("SELECT * FROM $NomTabUsers
@@ -47,7 +47,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 																			    AND FK_STAGE = 0",
 	                                                                     $ConnectMathieu);
 										        if (mysql_num_rows ($ReqEtudAffecte) == 0)
-										           print ('Etudiant d&eacute;j&agrave; affect&eacute;');
+										           print ('Etudiant déjà affecté');
 										        else
 										        {
 												    $LibelleNiveau = 'Stage de ';
@@ -128,15 +128,15 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                         AND PK_Stage = ".$FK_Stage,
 	                      $Connexion);
 	  if (mysql_num_rows ($ReqStages) == 0)
-		print ('Aucun stage ne correspond &agrave; ce num&eacute;ro');
+		print ('Aucun stage ne correspond à ce numéro');
 	  else
 	  {
 		$ObjStage = mysql_fetch_object ($ReqStages);
 		if ($ObjStage->NbStagesRestant == 0)
-			print ('Stage d&eacute;j&agrave; pourvu');
+			print ('Stage déjà pourvu');
 		else
 		{
-   			$LibelleNiveau = 'Stage n&deg; '.$ObjStage->PK_Stage.' pour ';
+   			$LibelleNiveau = 'Stage n° '.$ObjStage->PK_Stage.' pour ';
                      $Where = ' WHERE ';
 			switch ($ObjStage->NiveauStage)
 			{
@@ -228,7 +228,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	</tr>
 	<?php /*
     <tr>
-	    <td style="text-align : right"><b>N&deg; du stage :</b>
+	    <td style="text-align : right"><b>N° du stage :</b>
         <td >
 		    <input type="text" name="FK_Stage" maxlength="5" size="5" 
 			        value="">
@@ -256,7 +256,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

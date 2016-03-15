@@ -49,7 +49,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     }
 </SCRIPT>
 
-<h2 align="center">Utilisateur n&deg; <?=$ValPK_User?></h2>
+<h2 align="center">Utilisateur n° <?=$ValPK_User?></h2>
 <table align="center" valign="center">
 <colgroup>
     <col width = "110">
@@ -68,7 +68,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     <col width = "110">
     <col width = "250">
     <tr>
-        <td><i>Coordonn&eacute;es :</i></td><td>
+        <td><i>Coordonnées :</i></td><td>
             <?=$ValCivilite?> <b><?=$ValPrenom?> <?=$ValNom?></b>
         </td>
     </tr>
@@ -114,7 +114,7 @@ Modifier</a>
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>

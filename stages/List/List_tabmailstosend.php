@@ -8,7 +8,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	$URL_Form = $PATH_BACKOFFICE.'BackOffice.php?Trait=SendMail&SlxTable='.$NomTabMailsToSend;
 	$URL_Del = $PATH_BACKOFFICE.'BackOffice.php?Trait=Del&SlxTable='.  $NomTabMailsToSend;
 
-    $Title = 'Liste des mails &agrave; envoyer';
+    $Title = 'Liste des mails à envoyer';
 ?>
 <h1 style="text-align : center">
     <?=$Title?>
@@ -18,7 +18,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         {
                                                                           ?>
 <h4 align="center">
-    Il n'y a actuellement aucun mail &agrave; envoyer.
+    Il n'y a actuellement aucun mail à envoyer.
 </h4>
                                                                           <?php
         }
@@ -33,10 +33,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                 <tr>
                     <th colspan="2">&nbsp;</th>
                     <th style="text-align : center" valign="top" nowrap>
-					    <b>Num&eacute;ro</b>
+					    <b>Numéro</b>
 					</th>
                     <th style="text-align : center" valign="top" nowrap>
-					    <b>Nom - Pr&eacute;nom</b>
+					    <b>Nom - Prénom</b>
 					</th>
                 <tr><td colspan="5"><hr></td></tr>
                 <tr>
@@ -75,7 +75,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
 ?>
