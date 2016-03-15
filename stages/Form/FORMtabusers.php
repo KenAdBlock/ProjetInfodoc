@@ -1,5 +1,5 @@
 <?php
-    include_once ('Class/CUser.php');
+    include_once ('Class/CUser.php');//bonjour
 
     // R&eacute;cup&eacute;ration des variables envoy&eacute;es par POST ou GET
 
