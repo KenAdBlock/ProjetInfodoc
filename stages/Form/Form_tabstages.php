@@ -29,7 +29,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     require_once ($PATH_CLASS.'CStage.php');
 
-    // R�cup�ration des variables envoy�es par POST ou GET
+    // R&eacute;cup&eacute;ration des variables envoy&eacute;es par POST ou GET
 
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
@@ -95,7 +95,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 	    $ObjStage = new CStage ($StepStage == 'InitModif' ? $IdentPK : 0);
 
-		// ToDo ; V�rifier que l'utilisateur a bien acc�s au stage
+		// ToDo ; V&eacute;rifier que l'utilisateur a bien acc&eacute;s au stage
 		
         $ValPK_Stage      = $ObjStage->GetPK_Stage();
         $ValFK_Entreprise = $Status == TUTEUR ? $FK_EntrepriseUser
@@ -269,7 +269,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		}			
         $ValFK_Tuteur = $FK_Tuteur;
 		
-        // Recherche de l'entreprise � partir du tuteur
+        // Recherche de l'entreprise &agrave; partir du tuteur
 
 		$ReqTuteur = Query ("SELECT FK_Entreprise FROM $NomTabUsers
 			                              WHERE PK_User = $ValFK_Tuteur;",
@@ -280,7 +280,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
         if (! ($CodErrVide || $CodErrInval))
         {
-            // Pr�paration de l'enregistrement
+            // Pr&eacute;paration de l'enregistrement
 			
             $ObjStage = new CStage ();
 			
@@ -624,7 +624,7 @@ stagiaires dans le priv&eacute; comme dans le public au taux de 13,75% du plafon
 	      
 	/*
 	    ==========================
-	    2.1 Environnement mat�riel 
+	    2.1 Environnement mat&eacute;riel
 	    ==========================
 	*/
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_ENV_MATERIEL], 3);
@@ -680,7 +680,7 @@ stagiaires dans le priv&eacute; comme dans le public au taux de 13,75% du plafon
                                        AffichLigneVierge();
 	/*
 	    =========================
-	    2.3 M�thodes ou standards 
+	    2.3 M&eacute;thodes ou standards
 	    =========================
 	*/
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_METHODES_STANDARDS], 3);

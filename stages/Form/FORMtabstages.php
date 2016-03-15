@@ -3,7 +3,7 @@
     session_start();
     include ('Class/CStage.php');
 
-    // Récupération des variables envoyées par POST ou GET
+    // R&eacute;cup&eacute;ration des variables envoy&eacute;es par POST ou GET
 
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
@@ -12,7 +12,7 @@
     switch ($Step)
     {
       case 'InitModif' :
-        // Récupération de l'enreg. à modifier
+        // R&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
 
         $ObjTuple = new CStage ($IdentPK);
         $ValPK_Stage = $ObjTuple->GetPK_Stage();
@@ -101,7 +101,7 @@
         break;
 
       case 'InitNew' :
-        // Préparation du nouvel enreg.
+        // Pr&eacute;paration du nouvel enreg.
 
         $ObjTuple = new CStage ();
         $ValPK_Stage = $ObjTuple->GetPK_Stage();
@@ -211,9 +211,9 @@
         else
             $ValidFK_Entreprise = ESPACE;
             
-        //ici, un exemple de récupération des valeurs des checkboxs,
+        //ici, un exemple de r&eacute;cup&eacute;ration des valeurs des checkboxs,
         //chaque checkbox vaut une puissance de 2 (1,2,4,8,...) et est
-        //donc ajoutée pour ne faire qu'une valeur.
+        //donc ajout&eacute;e pour ne faire qu'une valeur.
         $ValMateriel = $_REQUEST[GMS]+$_REQUEST[ST]+$_REQUEST[Micro];
         if (trim ($ValMateriel) == '0')
         {
@@ -344,7 +344,7 @@
         if (!$CodErrVide && !$CodErrInval)
         {
             print ('<h1>Enregistrer</h1>');
-            // Préparation de l'enreg. à enregistrer
+            // Pr&eacute;paration de l'enreg. &agrave; enregistrer
             $ObjTuple = new CStage ();
             $ObjTuple->SetPK_Stage($ValPK_Stage);
             $ObjTuple->SetFK_Entreprise($ValFK_Entreprise);
@@ -471,7 +471,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         </td>
         </tr>
         <?php }else
-            //Si c'est une fiche crée par un tuteur, il ne doit pas
+            //Si c'est une fiche cr&eacute;e par un tuteur, il ne doit pas
             //pouvoir modifier l'entreprise...
           {
                $login = $_SESSION['Login'];
@@ -494,7 +494,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td>
             <input type="checkbox" name=GMS value="1"
             
-            <?php // pour savoir si une checkbox était cochée, on fait des
+            <?php // pour savoir si une checkbox &eacute;tait coch&eacute;e, on fait des
               //divisions par 2 successives de la valeur initiale...
               if (($ValMateriel%2)==1) {?>checked<?}?>>
             Grands et moyens syst&egrave;mes

@@ -46,7 +46,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
       case 'InitModif' :
       case 'InitNew'   :
 	  
-        // Pr�paration du nouvel enreg. ou r�cup�ration de l'enreg. � modifier
+        // Pr&eacute;paration du nouvel enreg. ou r&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
 
 	    $ObjTuple = new CEntreprise 
 		                         ($StepConsult == 'InitModif'  ?  $IdentPK : 0);
@@ -74,7 +74,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         $CodErrVide  = array();
         $CodErrInval = array();
 		
-		// Champs non valid�s
+		// Champs non valid&eacute;s
 		
         $ValPK_Entreprise     = $PK_Entreprise;
         $ValAdr2              = $Adr2;
@@ -85,7 +85,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 			 $SiteEntreprise = '';
         $ValSiteEntreprise    = $SiteEntreprise;
 			
-		// Champs valid�s
+		// Champs valid&eacute;s
 		
 		$ValNomE = trim ($NomE);
         if (! GetDroits ($Status, 'ModifEntreprise'))

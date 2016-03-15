@@ -298,7 +298,7 @@ en tant que <b><?=$Libelle?></b>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=AffectStageEtud"
 			                                             target="principal">
-                Affectation d'un stage à un étudiant
+                Affectation d'un stage &agrave; un &eacute;tudiant
 			</a>
         </td>
 	</tr>
