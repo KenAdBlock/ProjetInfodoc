@@ -38,7 +38,7 @@ if (isset($_POST['login']))
 if(isset($_GET['erreur']) && $_GET['erreur'] == 'logout')
 {
     session_unset("authentification");//on tue la session
-    header("Location:stages.html");  // puis on revient � l'accueil
+    header("Location:stages.html");  // puis on revient &agrave; l'accueil
 }
 /*                */
 
@@ -75,7 +75,7 @@ if(isset($_GET['erreur']) && $_GET['erreur'] == 'logout')
   <div align="center">
   <p align ="center">
   <? if(!isset($_GET['erreur'])) { ?>
-    Si vous avez d�j� un login 
+    Si vous avez d&eacute;j&agrave; un login
   <? } ?>
     
   </p>

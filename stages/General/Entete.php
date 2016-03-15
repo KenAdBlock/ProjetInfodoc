@@ -11,7 +11,7 @@
 </head>
 
 <body background="<?=$PATH_GIFS?>spitxtr.jpg" bgcolor="#99CCCC" text="#003366" link="#006666" vlink="#669999" alink="#666633"><!--mstheme--><font face="Verdana, Arial, Helvetica">
-<a name="#d�but">
+<a name="#d&eacute;but">
 <!--mstheme--></font><table  width=585 height="75" > 
 <tr>
 <td nowrap align="left" valign="top" width="77" height="65"><!--mstheme-->

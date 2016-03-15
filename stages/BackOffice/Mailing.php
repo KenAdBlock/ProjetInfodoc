@@ -442,7 +442,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										
 										  case 'SendMails' :
 /*
-à <?=$MailResponsableStages?> et en copie à :
+à <?=$MailResponsableStages?> et en copie &agrave;:
 <br />
 <?=$Headers?>
 */

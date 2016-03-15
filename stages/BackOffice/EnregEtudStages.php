@@ -17,12 +17,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 						    ORDER BY Nom",
 	                   $ConnectMathieu);
 					   
-    // Génération de la table des étudiants
+    // G&eacute;n&eacute;ration de la table des &eacute;tudiants
 	// ====================================
 
     if (!isset ($Etape)) $Etape = 'Init';
                                                                            ?>
-<h1>Affectation des étudiants aux stages<?=isset ($Etape) && $Etape == 'Valid' ? ' actualisée' : ''?></h1>
+<h1>Affectation des &eacute;tudiants aux stages<?=isset ($Etape) && $Etape == 'Valid' ? ' actualis&eacute;e' : ''?></h1>
                                                                            <?php
     switch ($Etape)
     {
@@ -143,7 +143,7 @@ function MAJTxtAffich (ind)
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
+<h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
 <?php
 }
 ?>
