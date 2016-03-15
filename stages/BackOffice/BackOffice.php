@@ -3,7 +3,7 @@ require_once ('Fonctions.php');
 ?>	
 
 <html>
-<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <head>
     <meta HTTP-EQUIV="Page-Exit" content="blendTrans(Duration=0.7)">
     <script src=<?=$PATH_JS?>/confirm.js type=text/javascript></script>
