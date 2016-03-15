@@ -1,5 +1,5 @@
 <?php
-    include_once ('Class/CUser.php');
+    include_once ('Class/CUser.php');//bonjour
 
     // R�cup�ration des variables envoy�es par POST ou GET
 
