@@ -195,22 +195,22 @@
     else
     {
                                                                         ?>
-        <? if ($IdentPK==0) {?>
+        <?php if ($IdentPK==0) {?>
         <h1> Insertion d'une nouvelle entreprise </h1>
-        <?} else {?>
+        <?php } else {?>
         <h1> Modification d'une entreprise </h1>
-        <?}?>
+        <?php }?>
 <p style="text-align : center; font-size : 11 px; font-style : italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies</p>
-<? if ($CodErrVide || $CodErrInval) { ?>
+<?php if ($CodErrVide || $CodErrInval) { ?>
 <p style="text-align : center; font-size : 16 px;">Les
-<?=$Fleche?> indiquent qu'une rubrique est vide ou erron&eacute;e</p> <? } ?>
-<? if ($CodErrLog) { ?>
+<?=$Fleche?> indiquent qu'une rubrique est vide ou erron&eacute;e</p> <?php } ?>
+<?php if ($CodErrLog) { ?>
 <p style="text-align : center; font-size : 16 px;">Ce nom d'entreprise existe d&eacute;j&agrave;</p>
-<? } ?>   
+<?php } ?>
 <form method="post">
 <table align="center" border="1"><tr><td>
 <table cellpadding="2">
-    <? if($ValPK_Entreprise) { ?>
+    <?php if($ValPK_Entreprise) { ?>
     <tr>
         <td valign="top"><tt><?=$ValidPK_Entreprise?></tt></td>
         <td style="text-align : right" valign="top"><b>Num&eacute;ro</b></td>
@@ -218,7 +218,7 @@
             <?=$ValPK_Entreprise?>
         </td>
     </tr>
-    <? } ?>
+    <?php } ?>
     <tr>
         <td valign="top"><tt><?=$ValidNomE?></tt></td>
         <td style="text-align : right" valign="top"><b>Raison Sociale</b></td>

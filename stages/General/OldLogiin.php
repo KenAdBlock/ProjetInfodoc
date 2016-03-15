@@ -59,9 +59,9 @@ if(isset($_GET['erreur']) && $_GET['erreur'] == 'logout')
   <p align="center" <strong>
   
       <!-- Si l'utilisateur n'est pas reconnu -->
-      <? if(isset($_GET['erreur']) && ($_GET['erreur'] == "login"))
+      <?php if(isset($_GET['erreur']) && ($_GET['erreur'] == "login"))
       { ?>
-           <span>Erreur ! login ou pass incorrect, veuillez recommencer</span>        <? } ?>
+           <span>Erreur ! login ou pass incorrect, veuillez recommencer</span>        <?php } ?>
 
       <!-- Si aucune session n'est ouverte ou que les droits sont
       insuffisants pour afficher une page -->
@@ -74,10 +74,10 @@ if(isset($_GET['erreur']) && $_GET['erreur'] == 'logout')
   
   <div align="center">
   <p align ="center">
-  <? if(!isset($_GET['erreur'])) { ?>
+  <?php if(!isset($_GET['erreur'])) { ?>
     Si vous avez d&eacute;j&agrave;  un login
-  <? } ?>
-    
+  <?php } ?>
+
   </p>
     <table width="100" border="0" cellpadding="0" cellspacing="0" bordercolor="# 
 CCCCCC">

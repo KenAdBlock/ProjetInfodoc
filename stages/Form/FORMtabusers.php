@@ -191,41 +191,41 @@
         {
                                                                        ?>
         <script>location.replace("?Trait=AFFICH&SlxTable=tabusers");</script>
-        <?}?>
+        <?php }?>
         <script>location.replace("?Trait=LIST&SlxTable=tabusers");</script>
                                                                        <?php
     }
     else
     {
                                                                        ?>
-<? if ($IdentPK==0) {?>
+<?php if ($IdentPK==0) {?>
 <h1> Cr&eacute;ation d'un Nouvel Utilisateur </h1>
-<?} else {?>
+<?php } else {?>
 <h1> Modification d'un Utilisateur </h1>
-<?}?>
-<p style="text-align : center; font-size : 11 px; font-style : italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies</p>
-<? if ($CodErrVide || $CodErrInval) { ?>
-<p style="text-align : center; font-size : 16 px;">Les
-<?=$Fleche?> indiquent qu'une rubrique est vide ou erron&eacute;e</p> <? } ?>
-<? if ($CodErrTut) { ?>
-<p style="text-align : center; font-size : 16 px;">Si vous n'&ecirc;tes pas Tuteur, veuillez ne pas sp&eacute;cifier d'Entreprise</p>
-<? } ?>
-<? if ($CodErrLog) { ?>
-<p style="text-align : center; font-size : 16 px;">Ce Login est d&eacute;j&agrave;
+<?php }?>
+<p style="text-align : center; font-size : 11px; font-style : italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies</p>
+<?php if ($CodErrVide || $CodErrInval) { ?>
+<p style="text-align : center; font-size : 16px;">Les
+<?=$Fleche?> indiquent qu'une rubrique est vide ou erron&eacute;e</p> <?php } ?>
+<?php if ($CodErrTut) { ?>
+<p style="text-align : center; font-size : 16px;">Si vous n'&ecirc;tes pas Tuteur, veuillez ne pas sp&eacute;cifier d'Entreprise</p>
+<?php } ?>
+<?php if ($CodErrLog) { ?>
+<p style="text-align : center; font-size : 16px;">Ce Login est d&eacute;j&agrave;
 pris, veuillez en choisir un autre</p>
-<? } ?>
-<? if ($CodErrFax) { ?>
-<p style="text-align : center; font-size : 16 px;">Le Champ Fax est
+<?php } ?>
+<?php if ($CodErrFax) { ?>
+<p style="text-align : center; font-size : 16px;">Le Champ Fax est
 invalide, veuillez entrez un nombre.</p>
-<? } ?>
-<? if ($CodErrTel) { ?>
-<p style="text-align : center; font-size : 16 px;">Le Champ Tel est
+<?php } ?>
+<?php if ($CodErrTel) { ?>
+<p style="text-align : center; font-size : 16px;">Le Champ Tel est
 invalide, veuillez entre un num&eacute;ro</p>
-<? } ?>
+<?php } ?>
 <form method="post">
 <table align="center" border="1px" ><tr><td>
 <table cellpadding="2">
-    <?if ($ValPK_User) { ?>
+    <?php if ($ValPK_User) { ?>
     <tr>
         <td valign="top"><tt><?=$ValidPK_User?></tt></td>
         <td style="text-align : right" valign="top"><b>Num&eacute;ro</b></td>
@@ -233,7 +233,7 @@ invalide, veuillez entre un num&eacute;ro</p>
             <?=$ValPK_User?>
         </td>
     </tr>
-    <? } ?>
+    <?php } ?>
     <tr>
         <td valign="top"><tt><?=$ValidLogin?></tt></td>
         <td style="text-align : right" valign="top"><b>Login</b></td>
@@ -241,7 +241,7 @@ invalide, veuillez entre un num&eacute;ro</p>
             <input type="text" name="Login" size="50" value="<?=$ValLogin?>">
         </td>
     </tr>
-    <?if ($IdentPK==0){?>
+    <?php if ($IdentPK==0){?>
     <tr>
         <td valign="top"><tt><?=$ValidPass?></tt></td>
         <td style="text-align : right" valign="top"><b>Pass</b></td>
@@ -249,14 +249,15 @@ invalide, veuillez entre un num&eacute;ro</p>
             <input type="password" name="Pass" size="50" value="<?=$ValPass?>">
         </td>
     </tr>
-    <?}?>
-    <?  if(($_SESSION['privilege'] == "tuteur")or
+    <?php}?>
+    <?php  if(($_SESSION['privilege'] == "tuteur")or
            ($_SESSION['privilege'] == "prof")or
            ($_SESSION['privilege'] == "etud"))
         {?>
+
         <tr><td></td><td><b>Privil&egrave;ge</b></td><td><b>
 
-        <?
+        <?php
             switch($ValPrivilege)
             {
                 case'resp':
@@ -286,28 +287,28 @@ invalide, veuillez entre un num&eacute;ro</p>
 
           <input type="hidden" name="Privilege" value = <?=$ValPrivilege?>>
         </b></td></tr>
-      <?}else
+      <?php }else
       {?>
     <tr>
         <td valign="top"><tt><?=$ValidPrivilege?></tt></td>
       <td><span class="Style8"><b>Privilege</b></span></td>
       <td><select name="Privilege" id=Privilege">
-        <option value="etud" <?if($ValPrivilege=="etud") {?> selected <?}?>>
+        <option value="etud" <?php if($ValPrivilege=="etud") {?> selected <?php }?>>
         Etudiant</option>
-        <option value="resp" <?if($ValPrivilege=="resp") {?> selected <?}?>>
+        <option value="resp" <?php if($ValPrivilege=="resp") {?> selected <?php }?>>
         Responsable de Stage</option>
-        <option value="admin" <?if($ValPrivilege=="admin") {?> selected <?}?>>
+        <option value="admin" <?php if($ValPrivilege=="admin") {?> selected <?php }?>>
         Administrateur</option>
-        <option value="secr" <?if($ValPrivilege=="secr") {?> selected <?}?>>
+        <option value="secr" <?php if($ValPrivilege=="secr") {?> selected <?php }?>>
         Secretariat</option>
-        <option value="prof" <?if($ValPrivilege=="prof") {?> selected <?}?>>
+        <option value="prof" <?php if($ValPrivilege=="prof") {?> selected <?php }?>>
         Professeur</option>
-        <option value="tuteur" <?if($ValPrivilege=="tuteur") {?> selected <?}?>>
+        <option value="tuteur" <?php if($ValPrivilege=="tuteur") {?> selected <?php }?>>
         Tuteur Professionnel</option>
       </select></td>
         </td>
     </tr>
-    <? }?>
+    <?php }?>
     <tr>
         <td valign="top"><tt><?=$ValidNom?></tt></td>
         <td style="text-align : right" valign="top"><b>Nom</b></td>
@@ -344,12 +345,12 @@ invalide, veuillez entre un num&eacute;ro</p>
         </td>
     </tr>
 
-    <? $ResultListEntreprise = Query ("SELECT NomE, PK_Entreprise FROM
+    <?php $ResultListEntreprise = Query ("SELECT NomE, PK_Entreprise FROM
     tabentreprise",$Connexion);?>
     <tr>
     <td></td><td></td><td width="250">Si vous &ecirc;tes Tuteur Professionnel, pr&eacute;cisez l'entreprise </td>
     </tr>
-    <?if ($_SESSION['privilege']!="tuteur")
+    <?php if ($_SESSION['privilege']!="tuteur")
       { ?>
         <tr>
         <td valign="top"><tt><?=$ValidFK_Entreprise?></tt></td>
@@ -362,8 +363,8 @@ invalide, veuillez entre un num&eacute;ro</p>
                                         {
                                                                          ?>
                     <option value="<?=$row [1]?>"
-                    <?if($row[1]==$ValFK_Entreprise)
-                    {?>selected <?}?>>
+                    <?php if($row[1]==$ValFK_Entreprise)
+                    {?>selected <?php }?>>
                     <?=$row [0]?></option>
                                                                          <?php
                                         }
@@ -371,7 +372,7 @@ invalide, veuillez entre un num&eacute;ro</p>
             </select>
         </td>
         </tr>
-        <?}else
+        <?php }else
             //Si c'est une fiche cr�e par un tuteur, il ne doit pas
             //pouvoir modifier l'entreprise...
           {
@@ -385,7 +386,7 @@ invalide, veuillez entre un num&eacute;ro</p>
           ?>
           <tr><td></td><td></td><td align="center"><b><?=$row2[0]?></b></td></tr>
           <input type="hidden" name="FK_Entreprise" value = <?=$row1[0]?>>
-          <?}?>
+          <?php }?>
     <tr>
         <td colspan="3" style="text-align : center">
             <input type="button" value="Abandonner"

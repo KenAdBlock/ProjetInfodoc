@@ -2,6 +2,7 @@
 		header("Location:log.php"); // redirection si OK
 
 /*
+
 require_once('connexion.php'); //identifiants de connexion &agrave; la BD.
 
 session_start(); // d&eacute;but de session
@@ -22,6 +23,7 @@ if (isset($_POST['login']))
     {
 	    session_register("authentification"); // enregistrement de la session
         
+
 		// d&eacute;claration des variables de session
 		$_SESSION['privilege'] = $row_verif['Privilege'];
 		$_SESSION['NomS'] = $row_verif['Nom'];
@@ -59,9 +61,9 @@ if(isset($_GET['erreur']) && $_GET['erreur'] == 'logout')
   <p align="center" <strong>
   
       <!-- Si l'utilisateur n'est pas reconnu -->
-      <? if(isset($_GET['erreur']) && ($_GET['erreur'] == "login"))
+      <?php if(isset($_GET['erreur']) && ($_GET['erreur'] == "login"))
       { ?>
-           <span>Erreur ! login ou pass incorrect, veuillez recommencer</span>        <? } ?>
+           <span>Erreur ! login ou pass incorrect, veuillez recommencer</span>        <?php } ?>
 
       <!-- Si aucune session n'est ouverte ou que les droits sont
       insuffisants pour afficher une page -->
@@ -74,9 +76,15 @@ if(isset($_GET['erreur']) && $_GET['erreur'] == 'logout')
   
   <div align="center">
   <p align ="center">
+<<<<<<< HEAD
   <? if(!isset($_GET['erreur'])) { ?>
     Si vous avez d&eacute;j&agrave; un login
   <? } ?>
+=======
+  <?php if(!isset($_GET['erreur'])) { ?>
+    Si vous avez déjà un login
+  <?php } ?>
+>>>>>>> 537cea7fd800aa3aee627d147bdc5b030f77bbaf
     
   </p>
     <table width="100" border="0" cellpadding="0" cellspacing="0" bordercolor="# 
