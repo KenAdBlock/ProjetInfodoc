@@ -36,7 +36,7 @@
     {
 	    global $CodErr, $ERREMAILINVALIDE;
 
-        if (eregi ("^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.)+[a-z]{2,3}$", $EMail))
+        if (preg_match("^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.)+[a-z]{2,3}$", $EMail))
             return true;
 
         array_push ($CodErr, $ERREMAILINVALIDE);
