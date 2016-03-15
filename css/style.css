@@ -6,27 +6,25 @@
  * Made By MaterializeCSS.com
  */
 
-
 main{
-	margin-top: -7px;
-	margin-bottom: -55px;
+  margin-bottom: -55px;
 }
 #separator-img{
-	border: 0px;
+  border: 0px;
 }
 .card1{
-	background: linear-gradient(to right, rgba(256,256,256,.80),rgba(256,256,256,.90), rgba(256,256,256,.80));
+  background: linear-gradient(to right, rgba(256,256,256,.80),rgba(256,256,256,.90), rgba(256,256,256,.80));
 }
 hr{
-	border-color: #ffffff;
+  border-color: #ffffff;
 }
 .side-nav > p{
-	line-height: 30px;
+  line-height: 30px;
 }
 
 p{
-	text-align: justify;
-	line-height: 25px;
+  text-align: justify;
+  line-height: 25px;
 }
 ol {font-weight: bold;}
 li span {font-weight:normal;line-height: 25px;}
@@ -92,4 +90,33 @@ footer.page-footer{
 }
 footer{
   position:relative;
+}
+#sidenav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 997;
+  will-change: opacity;
+}
+
+nav .input-field label.active {
+  font-size: .8rem;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
+}
+nav .input-field input {
+  height: 100%;
+  font-size: 1rem;
+  border-bottom: 1px solid #1e88e5;
+  padding-left: 0rem;
+}
+td, th {
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 0px;
 }
