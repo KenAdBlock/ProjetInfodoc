@@ -61,7 +61,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
       case 'InitModif' :
       case 'InitNew'   :
 	  
-        // Pr�paration du nouvel enreg. ou r�cup�ration de l'enreg. � modifier
+        // Pr&eacute;paration du nouvel enreg. ou r&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
 
 	    $ObjInscript = new CNewInscript 
 		                     ($StepNewInscript == 'InitModif'  ?  $IdentPK : 0);
@@ -204,7 +204,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         {
 	     if ($ValFK_Entreprise == 0)
 	     {				
-	         // Cr�ation d'une nouvelle entreprise
+	         // Cr&eacute;ation d'une nouvelle entreprise
 				
                 $ObjSoc = new CEntreprise ();
 
@@ -237,7 +237,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		  }
 		  $ObjSoc->Insert();
 
-		  // R�cup�ration de sa cl�
+		  // R&eacute;cup&eacute;ration de sa cl&eacute;
 			
 		  $ValFK_Entreprise = mysql_insert_id();
 	     }
@@ -266,7 +266,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 	     $ObjInscript->Delete();
 
-	     // Enregistrement du mail � envoyer
+	     // Enregistrement du mail &agrave; envoyer
 
             Query ("INSERT INTO $NomTabMailsToSend VALUES (
 			    	  '$ValLoginTuteur',

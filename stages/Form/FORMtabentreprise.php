@@ -2,7 +2,7 @@
     
     include ('Class/CEntreprise.php');
 
-    // Récupération des variables envoyées par POST ou GET
+    // R&eacute;cup&eacute;ration des variables envoy&eacute;es par POST ou GET
 
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
@@ -11,7 +11,7 @@
     switch ($Step)
     {
       case 'InitModif' :
-        // Récupération de l'enreg. à modifier
+        // R&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
 
         $ObjTuple = new CEntreprise ($IdentPK);
         $ValPK_Entreprise = $ObjTuple->GetPK_Entreprise();
@@ -39,7 +39,7 @@
         break;
 
       case 'InitNew' :
-        // Préparation du nouvel enreg.
+        // Pr&eacute;paration du nouvel enreg.
 
         $ObjTuple = new CEntreprise ();
         $ValPK_Entreprise = $ObjTuple->GetPK_Entreprise();
@@ -131,7 +131,7 @@
         $ValFaxR = $FaxR;
         $Fleche = FLECHE;
 
-        // on compare l' entreprise entrée avec les entreprises déjà existantes
+        // on compare l' entreprise entr&eacute;e avec les entreprises d&eacute;j&agrave; existantes
         $ReqL = Query("SELECT NomE from tabentreprise",$Connexion);
         while ($RowL = mysql_fetch_row($ReqL))
         {  
@@ -150,7 +150,7 @@
         if (!$CodErrVide && !$CodErrInval)
         {
             print ('<h1>Enregistrer</h1>');
-            // Préparation de l'enreg. à enregistrer
+            // Pr&eacute;paration de l'enreg. &agrave; enregistrer
 
             $ObjTuple = new CEntreprise ();
             $ObjTuple->SetPK_Entreprise($ValPK_Entreprise);

@@ -15,7 +15,7 @@
 	include_once ($PATH_CONSTANTES.'CstErr.php');
 	include_once ($PATH_UTIL.      'UtilErr.php');
 
-    // Vérification qu'il existe bien une session ouverte
+    // V&eacute;rification qu'il existe bien une session ouverte
 	//   et qu'il existe bien un login dans la session ouverte
 	include_once ($PATH_GENERAL.'AreSessionAndLogin.php');
 	

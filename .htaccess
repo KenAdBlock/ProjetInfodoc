@@ -1,21 +1,21 @@
 # Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
 RewriteBase /
 
-# Empêche de lister le contenu des dossiers
+# Emp&ecirc;che de lister le contenu des dossiers
 Options -Indexes
 
 # Redirections en cas d'erreur 403
 ErrorDocument 403 http://localhost/ProjetInfodoc/stages/
-# Mettre l'adresse en ligne à la ligne suivante (supprimer cette ligne et celle précédente)
+# Mettre l'adresse en ligne &agrave; la ligne suivante (supprimer cette ligne et celle pr&eacute;c&eacute;dente)
 #ErrorDocument 403 http://infodoc.iut.univ-aix.fr/~laporte/stages/
 
 # Redirections en cas d'erreur 404
 ErrorDocument 404 http://localhost/ProjetInfodoc/stages/
-# Mettre l'adresse en ligne à la ligne suivante (supprimer cette ligne et celle précédente)
+# Mettre l'adresse en ligne &agrave; la ligne suivante (supprimer cette ligne et celle pr&eacute;c&eacute;dente)
 #ErrorDocument 404 http://infodoc.iut.univ-aix.fr/~laporte/stages/
 
 
 
 
-# Redirections en cas d'accès aux répertoires suivants
+# Redirections en cas d'acc&egrave;s aux r&eacute;pertoires suivants
 Redirect permanent ^http://localhost/ProjetInfodoc/stages/gif$ http://localhost/ProjetInfodoc/stages/

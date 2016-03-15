@@ -1,7 +1,7 @@
 <?php
     include_once ('Class/CUser.php');
 
-    // R�cup�ration des variables envoy�es par POST ou GET
+    // R&eacute;cup&eacute;ration des variables envoy&eacute;es par POST ou GET
 
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
@@ -11,7 +11,7 @@
     {
       case 'InitModif' :
 	  
-        // R�cup�ration de l'enreg. � modifier
+        // R&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
 
         $ObjTuple = new CUser ($IdentPK);
         $ValPK_User = $ObjTuple->GetPK_User();
@@ -38,7 +38,7 @@
         break;
 
       case 'InitNew' :
-        // Pr�paration du nouvel enreg.
+        // Pr&eacute;paration du nouvel enreg.
 
         $ObjTuple = new CUser ();
         $ValPK_User = $ObjTuple->GetPK_User();
@@ -128,14 +128,14 @@
                 if ($ValPrivilege == 'tuteur')
                     $ValFK_Entreprise = $FK_Entreprise;
 
-                // l'attribut entreprise doit �tre selectionn� seulement si le
-                // privil�ge selectionn� est Tuteur
+                // l'attribut entreprise doit &ecirc;tre selectionn&eacute; seulement si le
+                // privil&egrave;ge selectionn&eacute; est Tuteur
 		
                 if ((trim ($ValFK_Entreprise) != '') && (trim ($ValPrivilege) != 'tuteur'))
                     $CodErrTut = true;        
         
-                // on compare le login entr� avec les logins d�j� existants pour
-                // �viter qu'il y en ai 2 identiques
+                // on compare le login entr&eacute; avec les logins d&eacute;j&agrave;  existants pour
+                // &eacute;viter qu'il y en ai 2 identiques
         if ($IdentPK ==0)
         {
             $ReqL = Query("SELECT Login from tabusers",$Connexion);
@@ -154,7 +154,7 @@
         if (!$CodErrVide && !$CodErrInval && !$CodErrLog && !$CodErrTut)
         {
             print ('<h1>Enregistrer</h1>');
-            // Pr�paration de l'enreg. � enregistrer
+            // Pr&eacute;paration de l'enreg. &agrave; enregistrer
 
             $ObjTuple = new CUser ();
             $ObjTuple->SetPK_User($ValPK_User);
@@ -373,7 +373,7 @@ invalide, veuillez entre un num&eacute;ro</p>
         </td>
         </tr>
         <?php }else
-            //Si c'est une fiche cr�e par un tuteur, il ne doit pas
+            //Si c'est une fiche cr&eacute;e par un tuteur, il ne doit pas
             //pouvoir modifier l'entreprise...
           {
                $login = $_SESSION['Login'];

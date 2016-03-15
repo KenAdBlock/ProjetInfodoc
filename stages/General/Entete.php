@@ -28,7 +28,7 @@
 <!--
 <td bgcolor="#FFFFFF" nowrap width="599" height="71"><!--mstheme-- >
     <font face="Verdana, Arial, Helvetica">
-          <h2 align="center"><a name="d�but">
+          <h2 align="center"><a name="dacute;but">
 		      <span style="text-transform: capitalize">
               <font size="5" color="#0000FF" face="Verdana">D</font></span
 			  ><font size="5" color="#0000FF" face="Verdana"
@@ -38,9 +38,9 @@
           <h3 align="center"><font color="#C0C0C0" face="Verdana">
 		       IUT Aix-en-Provence</font>
           </h3>
-<a name="#d�but">
+<a name="#dacute;but">
 <p align="center" style="margin-top: 2">
-<cite><font color="0099FF" size='1'>&quot;Un dipl�me pour tous les m�tiers &nbsp;de 
+<cite><font color="0099FF" size='1'>&quot;Un dipl&ocirc;me pour tous les m&eacute;tiers &nbsp;de
  l'informatique&quot;&nbsp;&nbsp;</font></cite>
 </p>
 -->
@@ -52,7 +52,7 @@ Helvetica"><!--mstheme--></font>
 </table><!--mstheme--><font face="Verdana, Arial, Helvetica"><!--mstheme--></font><table border="0" width="100%" cellspacing="4" cellpadding="5">
     <tr>
       <th width="1%" bgcolor="#D3E9E9" align="center" nowrap><!--mstheme--><font face="Verdana, Arial, Helvetica"><strong><span style="text-transform: capitalize">
-      <font color="#0000FF" style="font-size: 7pt">&nbsp;</font><a href="<?=$URL_DEPTINFO?>" target="_top" style="text-decoration: none" name="#d�but"><font color="#0000FF" style="font-size: 7pt">G&eacute;n&egrave;ralit&eacute;s</font></a></span></strong></th>
+      <font color="#0000FF" style="font-size: 7pt">&nbsp;</font><a href="<?=$URL_DEPTINFO?>" target="_top" style="text-decoration: none" name="#d&eacute;but"><font color="#0000FF" style="font-size: 7pt">G&eacute;n&egrave;ralit&eacute;s</font></a></span></strong></th>
 
       <th width="1%" bgcolor="#D3E9E9" align="center" nowrap><!--mstheme--><font face="Verdana, Arial, Helvetica">
       <a href="<?=$URL_DEPTINFO?>program.html" target="principal" style="text-decoration: none"><strong><span style="text-transform: capitalize">

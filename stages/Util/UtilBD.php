@@ -11,18 +11,18 @@
 
 	    global $MsgErr, $ERRSELECT, $ERRCONNECT, $new_link;
 		
-        // Connexion à mySQL
+        // Connexion &agrave; mySQL
 
         $Connexion = @mysql_connect ($Hote, $User, $Passwd, true) /*or die ($MsgErr [$ERRCONNECT] .'Hote : '.$Hote.'<br>User : '.$User)*/;
 
-        // Sélection de la base
+        // S&eacute;lection de la base
 		
         $Result = @mysql_select_db ($NomBase, $Connexion);
 //		                 or die ($MsgErr [$ERRSELECT].$NomBase);
 
 
 		if(!$Result){
-			var_dump("Connexion à la base : <b>".$Hote."</b> avec l'utilisateur : <b>".$User. "</b> a &eacute;chou&eacute;.");
+			var_dump("Connexion &agrave; la base : <b>".$Hote."</b> avec l'utilisateur : <b>".$User. "</b> a &eacute;chou&eacute;.");
 			echo mysql_error();
 			exit;
 		}

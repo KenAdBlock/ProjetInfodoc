@@ -112,7 +112,7 @@
 		    <br /><b>Attention </b>: 
 		    <ul><li>le mot de passe doit comporter entre <b><?=MINLGPASSWD?></b> 
 		    et <b><?=MAXLGPASSWD?></b> chiffres ou lettres (majuscules ou 
-		    minuscules sauf le <b>ç</b>, et sans accent),
+		    minuscules sauf le <b>&ccedil;</b>, et sans accent),
 
             </li><li>
 		    les <b>majuscules et les minuscules</b> sont consid&eacute;r&eacute;es comme des

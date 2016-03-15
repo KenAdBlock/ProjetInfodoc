@@ -166,7 +166,6 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
  	<tr>
 	    <td></td>
         <td colspan="2">L'entreprise 
-<<<<<<< HEAD
 		     <?=$ObjStage->GetAreOldStagiaires() ? 'a d&eacute;j&agrave;'
 			                                     : 'n\'a encore jamais'?>
 		     accueilli des stagiaires de notre d&eacute;partement auparavant
@@ -287,7 +286,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
        AffichSepar ();
 	/*
 	    =========================
-	    2.3 Méthodes ou standards
+	    2.3 M&eacute;thodes ou standards
 	    =========================
 	*/
                                         if ($ObjStage->GetMethodesAnalyse ()      != '' ||
