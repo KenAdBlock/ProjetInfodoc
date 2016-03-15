@@ -76,16 +76,10 @@ if(isset($_GET['erreur']) && $_GET['erreur'] == 'logout')
   
   <div align="center">
   <p align ="center">
-<<<<<<< HEAD
-  <? if(!isset($_GET['erreur'])) { ?>
-    Si vous avez d&eacute;j&agrave; un login
-  <? } ?>
-=======
   <?php if(!isset($_GET['erreur'])) { ?>
-    Si vous avez déjà un login
+    Si vous avez d&eacute;j&agrave; un login
   <?php } ?>
->>>>>>> 537cea7fd800aa3aee627d147bdc5b030f77bbaf
-    
+
   </p>
     <table width="100" border="0" cellpadding="0" cellspacing="0" bordercolor="# 
 CCCCCC">

@@ -98,7 +98,7 @@
 										                                   ?>
 	<tr>
         <td colspan="3" align="center" style="color : red">
-		   Ces informations ne correspondent à aucun utilisateur enregistr&eacute;
+		   Ces informations ne correspondent &agrave; aucun utilisateur enregistr&eacute;
 		</td>
     </tr>
 	<tr>
@@ -135,7 +135,7 @@
 	</tr>
 	<tr>
         <td colspan="3" align="center"><input type="submit" 
-		    value="Fermer la fenêtre"
+		    value="Fermer la fen&ecirc;tre"
 		    onClick="window.close()">
 		</td>
 	</tr>

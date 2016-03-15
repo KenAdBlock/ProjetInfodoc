@@ -10,8 +10,8 @@
     switch ($Step)
     {
       case 'InitModif' :
-	  
-        // Récupération de l'enreg. À modifier
+
+        // Récupération de l'enreg. À modifier.
 
         $ObjTuple = new CUser ($IdentPK);
         $ValPK_User = $ObjTuple->GetPK_User();
@@ -38,6 +38,7 @@
         break;
 
       case 'InitNew' :
+
         // Préparation du nouvel enreg.
 
         $ObjTuple = new CUser ();

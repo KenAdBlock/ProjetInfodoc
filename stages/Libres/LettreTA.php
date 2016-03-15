@@ -16,7 +16,7 @@
 
 	$Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
-	// Récupérations des variables envoyées par POST ou GET
+	// R&eacute;cup&eacute;rations des variables envoy&eacute;es par POST ou GET
 	// ====================================================
 	
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;

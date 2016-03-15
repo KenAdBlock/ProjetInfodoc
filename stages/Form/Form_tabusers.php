@@ -48,7 +48,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
       case 'InitModif' :
       case 'InitNew'   :
 	  
-        // Pr&eacute;paration du nouvel enreg. ou r&eacute;cup&eacute;ration de l'enreg. � modifier
+        // Pr&eacute;paration du nouvel enreg. ou r&eacute;cup&eacute;ration de l'enreg. &agrave; modifier
 
 	    $ObjTuple = new CUser ($StepConsult == 'InitModif'? $IdentPK : 0);
 
@@ -136,7 +136,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         }
         if (! ($CodErrVide || $CodErrInval))
         {
-            // Pr�paration de l'enregistrement
+            // Pr&eacute;paration de l'enregistrement
 
             $ObjTuple = new CUser ();
 			
@@ -157,7 +157,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                 $ObjTuple->SetPassWord (md5 ($NewPassWord));
                 $ObjTuple->Insert();
 				
-				// Enregistrement du mail � envoyer
+				// Enregistrement du mail &agrave; envoyer
 				
 				Query ("INSERT INTO $NomTabMailsToSend VALUES (
 			    	  	   '$ValLogin',

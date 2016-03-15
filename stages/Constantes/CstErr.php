@@ -1,7 +1,7 @@
 <?php
     // Fichier CstErr.php
 	
-	// Traitement général des erreurs
+	// Traitement g&eacute;n&eacute;ral des erreurs
 	
 	$NOERR             = 0;
 	$ERRCHAMPNONREMPLI = 10000;

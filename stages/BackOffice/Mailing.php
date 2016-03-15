@@ -125,7 +125,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		mail  ($MailAdministrateur, $SujetDuMail, stripslashes ($TexteDuMail), $Sender);
 /*    */
 // ===================================================================
-// ============ Remise à jour de tous les mots de passe ==============
+// ============ Remise &agrave; jour de tous les mots de passe ==============
 // ===================================================================
 /*   * /
 require_once ($PATH_UTIL.'UtilLogin.php');
@@ -139,11 +139,11 @@ for ($i = count ($tabmail); $i--; )
 
 \tJe vous prie de trouver dans ce mail un nouveau mot de passe que je vous demande d'utiliser pour toute connexion au site\n\n infodoc.iut.univ-aix.fr/stages\n
 Nouveau mot de passe : $NewPwd\n
-\tJe demande à celles et ceux qui ont déjà un mot de passe et qui ne l'ont pas oublié de ne pas m'en vouloir et d'en changer pour celui qui vous est aujourd'hui attribué.\n
-Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine connexion.\n
+\tJe demande &agrave; celles et ceux qui ont d&eacute;j&agrave; un mot de passe et qui ne l'ont pas oubli&eacute; de ne pas m'en vouloir et d'en changer pour celui qui vous est aujourd'hui attribu&eacute;.\n
+Vous pourrez bien sûr le modifier &agrave; votre convenance d&egrave;s votre prochaine connexion.\n
 \tCordialement\n\n
 \t\t\t\t\t<?=$NomResponsableStages?>,
-\t\t\tresponsable des stages au département informatique de l'IUT d'aix en Provence";
+\t\t\tresponsable des stages au d&eacute;partement informatique de l'IUT d'aix en Provence";
 
 	$MailI = $tabmail [$i];
     mail  ($MailI, $SujetDuMail, stripslashes ($TexteDuMail), $Sender);
@@ -273,7 +273,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 </td></tr>
 </table>
                                                                            <?php
-                                        } // fin de la préparation du mail
+                                        } // fin de la pr&eacute;paration du mail
 
 										switch ($SsStep)
 										{
@@ -442,7 +442,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										
 										  case 'SendMails' :
 /*
-à <?=$MailResponsableStages?> et en copie &agrave;:
+&agrave; <?=$MailResponsableStages?> et en copie &agrave;:
 <br />
 <?=$Headers?>
 */

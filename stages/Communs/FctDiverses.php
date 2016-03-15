@@ -14,7 +14,7 @@ function NormaliserTel (&$Tel)
 {
     return 0;
 	/*                                                          * /
-	// Supprim� le 09/10/2007 � la demande de Sylvie
+	// Supprim&eacute; le 09/10/2007 &agrave; la demande de Sylvie
 
     $Chaine = $Tel;
     for ($i = 0, $j = 0; $i < strlen ($Chaine); ++$i)
@@ -40,7 +40,7 @@ function ErrorLogin ($Login, $IsNew = 1)
 {
     global $NomTabUsers, $Connexion;
 	
-    // 7 � 12 caract�res alpha-num�riques + '_'
+    // 7 &agrave; 12 caract&egrave;res alpha-num&eacute;riques + '_'
 	
     $Nb = substr_count ($Login, "_");
 	$Lg = strlen ($Login);

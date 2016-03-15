@@ -60,7 +60,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                  ORDER BY ".$OrderReq,
                             $Connexion);
     }
-    // Requete générale pour toutes les fiches de stage
+    // Requete g&eacute;n&eacute;rale pour toutes les fiches de stage
     /*
     else if ($Status == ETUDLP)
     {
