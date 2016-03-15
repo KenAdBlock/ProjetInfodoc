@@ -489,7 +489,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         
     <tr>
         <td valign="top"><tt><?=$ValidMateriel?></tt></td>
-        <td style="text-align : right" valign="top"><b>Matériel utilis&eacute;
+        <td style="text-align : right" valign="top"><b>Mat&eacute;riel utilis&eacute;
         </b></td>
         <td>
             <input type="checkbox" name=GMS value="1"

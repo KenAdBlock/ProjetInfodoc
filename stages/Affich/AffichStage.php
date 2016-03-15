@@ -38,15 +38,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $WidthCadre  = 800;
 	
 	$MsgProposeA = array();
-<<<<<<< HEAD
 	$MsgProposeA [1] = 'aux &eacute;tudiants de DUT';
 	$MsgProposeA [2] = 'aux &eacute;tudiants de Licence Professionnelle';
 	$MsgProposeA [3] = 'aux &eacute;tudiants de DUT ou de Licence Professionnelle';
-=======
-	$MsgProposeA [1] = 'aux étudiants de DUT';
-	$MsgProposeA [2] = 'aux étudiants de Licence Professionnelle';
-	$MsgProposeA [3] = 'aux étudiants de DUT ou de Licence Professionnelle';
->>>>>>> 537cea7fd800aa3aee627d147bdc5b030f77bbaf
 ?>
 <h2 style="text-align : center;">Annee 2015-2016 : fiche de stage n&deg; <?=$ValPK_Stage?></h2>
 
@@ -96,11 +90,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                                           ?>
  	<tr>
 	    <td></td>
-<<<<<<< HEAD
         <td valign="top"><nobr><b>Pr&eacute;sentation de l'entreprise :</b></nobr></td>
-=======
-        <td valign="top"><nobr><b>Présentation de l'entreprise :</b></nobr></td>
->>>>>>> 537cea7fd800aa3aee627d147bdc5b030f77bbaf
         <td valign="top"><?=$ObjEntreprise->GetPresentEntreprise()?></td>
 	</tr>
 	                                                                       <?php
@@ -144,11 +134,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 					</td>
                 </tr>
                 <tr style="background-color : #d4d4d4">
-<<<<<<< HEAD
                     <th>T&eacute;l.</th>
-=======
-                    <th>Tél.</th>
->>>>>>> 537cea7fd800aa3aee627d147bdc5b030f77bbaf
                     <td><?=$ObjEntreprise->GetTelR()?>&nbsp;</td>
                     <td><?=$ObjUser->GetTel()?>&nbsp;</td>
                 </tr>
@@ -184,11 +170,6 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		     <?=$ObjStage->GetAreOldStagiaires() ? 'a d&eacute;j&agrave;'
 			                                     : 'n\'a encore jamais'?>
 		     accueilli des stagiaires de notre d&eacute;partement auparavant
-=======
-		     <?=$ObjStage->GetAreOldStagiaires() ? 'a déjà'
-			                                     : 'n\'a encore jamais'?>
-		     accueilli des stagiaires de notre département auparavant
->>>>>>> 537cea7fd800aa3aee627d147bdc5b030f77bbaf
 		</td>
 	</tr>
  	<tr>
@@ -221,11 +202,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	</tr>
  	<tr>
 	    <td></td>
-<<<<<<< HEAD
         <td colspan="2">Indemnit&eacute;s mensuelles :
-=======
-        <td colspan="2">Indemnités mensuelles :
->>>>>>> 537cea7fd800aa3aee627d147bdc5b030f77bbaf
 		                <?=$ObjStage->GetIndemnitesMensuellesStage();?> &euro;
 		</td>
 	</tr>
@@ -260,11 +237,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_2], 2);
 	/*
 	    ==========================
-<<<<<<< HEAD
 	    2.1 Environnement mat&eacute;riel
-=======
-	    2.1 Environnement matériel
->>>>>>> 537cea7fd800aa3aee627d147bdc5b030f77bbaf
 	    ==========================
 	*/
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_ENV_MATERIEL], 3);
@@ -426,11 +399,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<<<<<<< HEAD
 <h2 style="text-align : center">Vous ne pouvez acc&eacute;der directement &agrave; cette page</h2>
-=======
-<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
->>>>>>> 537cea7fd800aa3aee627d147bdc5b030f77bbaf
 <?php
 }
 ?>

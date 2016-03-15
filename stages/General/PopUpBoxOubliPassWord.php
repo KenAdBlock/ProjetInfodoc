@@ -128,7 +128,7 @@
 <table bgcolor="#E6E6E6" border="0" cellpadding="5" cellspacing="0"> 
     <tr>
 	    <td colspan="3">
-		Votre demande a bien été enregistr&eacute;e.
+		Votre demande a bien &eacute;t&eacute; enregistr&eacute;e.
 		<br /><br />
 		Votre nouveau mot de passe vous sera envoy&eacute; automatiquement par courrier &eacute;lectronique dans les plus brefs d&eacute;lais.
 		</td>

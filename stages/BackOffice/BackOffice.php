@@ -18,7 +18,7 @@ function check (field)
     checkflag = !checkflag;
     for (i = field.length; i--; ) field[i].checked = checkflag;
 
-    return checkflag ? "Tout décocher" : "Tout cocher";
+    return checkflag ? "Tout d&eacute;cocher" : "Tout cocher";
 }
 //  End -->
 </script>

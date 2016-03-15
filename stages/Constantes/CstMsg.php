@@ -51,7 +51,7 @@ define ('MSGFORMSTAGE_INDEMN_TRANSPORT', ++$NoMsg);
 define ('MSGFORMSTAGE_MOYEN_TRANSPORT',  ++$NoMsg);
 define ('MSGFORMSTAGE_EMBAUCHE',         ++$NoMsg);
 
-$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGE       ] = 'Ce stage s\'adresse &agrave; des étudiants de ';
+$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGE       ] = 'Ce stage s\'adresse &agrave; des &eacute;tudiants de ';
 $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEDUT    ] = 'DUT';
 $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGELP     ] = 'Licence pro SIL';
 $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF ] = 'Indiff&eacute;rent';

@@ -22,7 +22,7 @@
 
 
 		if(!$Result){
-			var_dump("Connexion à la base : <b>".$Hote."</b> avec l'utilisateur : <b>".$User. "</b> a échoué.");
+			var_dump("Connexion à la base : <b>".$Hote."</b> avec l'utilisateur : <b>".$User. "</b> a &eacute;chou&eacute;.");
 			echo mysql_error();
 			exit;
 		}
