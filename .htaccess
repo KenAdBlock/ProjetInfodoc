@@ -21,7 +21,8 @@ ErrorDocument 404 http://localhost/ProjetInfodoc/stages/
 
 
 
-<<<<<<< HEAD
+
+
 # Redirige vers l'index les URLs pointant vers les répertoires suivants
 ### Tests ...
 
@@ -34,12 +35,4 @@ ErrorDocument 404 http://localhost/ProjetInfodoc/stages/
 
 # RewriteCond %{HTTP_HOST} ^(localhost/ProjetInfodoc/stages/)$
 # RewriteRule ^(.+)$ %1$1
-=======
 
-# Redirections en cas d'acc&egrave;s aux r&eacute;pertoires suivants
-Redirect permanent ^http://localhost/ProjetInfodoc/stages/gif$ http://localhost/ProjetInfodoc/stages/
-
-# Redirige vers l'index les URLs pointant vers des dossiers
-RewriteRule ^stages/css/$ stages/index.php [L]
-
->>>>>>> 2749b4157173af1c11563df35c530ece5578cba7
