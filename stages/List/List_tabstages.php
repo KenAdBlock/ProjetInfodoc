@@ -111,11 +111,11 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     Pour afficher les informations relatives à un stage, cliquez sur son numéro.
 </h4>
 <table  align="center">
-    <tbody> <!-- TODO ?? -->
+    <tbody>
     <tr>
         <td valign="top">
             <table cellpadding="5">
-                <tbody><!-- TODO ?? -->
+                <tbody>
                     <tr>
                         <th>&nbsp;</th>
                                                                              <?php
@@ -239,11 +239,11 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                                               <?php
                                             }
                                                                               ?>
-                </tbody> <!-- TODO ?? -->
+                </tbody>
             </table>
         </td>
     </tr>
-    </tbody> <!-- TODO ?? -->
+    </tbody>
 </table>
 <?php
         }

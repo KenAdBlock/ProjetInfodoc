@@ -314,7 +314,7 @@ en tant que <b><?=$Libelle?></b>
 	    <td align="center">
             <a href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Etiquettes"
 			                                             target="principal">
-                Etiquettes
+                Étiquettes
 			</a>
         </td>
 	</tr>

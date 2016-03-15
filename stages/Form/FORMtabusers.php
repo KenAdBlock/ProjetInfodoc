@@ -1,5 +1,5 @@
 <?php
-    include_once ('Class/CUser.php');//bonjour
+    include_once ('Class/CUser.php');
 
     // Récupération des variables envoyées par POST ou GET
 
@@ -10,8 +10,8 @@
     switch ($Step)
     {
       case 'InitModif' :
-	  
-        // Récupération de l'enreg. à modifier
+
+        // Récupération de l'enreg. À modifier.
 
         $ObjTuple = new CUser ($IdentPK);
         $ValPK_User = $ObjTuple->GetPK_User();
@@ -38,6 +38,7 @@
         break;
 
       case 'InitNew' :
+
         // Préparation du nouvel enreg.
 
         $ObjTuple = new CUser ();
@@ -134,7 +135,8 @@
                 if ((trim ($ValFK_Entreprise) != '') && (trim ($ValPrivilege) != 'tuteur'))
                     $CodErrTut = true;        
         
-                // on compare le login entré avec les logins déjà  existants pour
+
+                // on compare le login entré avec les logins déjà existants pour
                 // éviter qu'il y en ai 2 identiques
         if ($IdentPK ==0)
         {
@@ -154,7 +156,7 @@
         if (!$CodErrVide && !$CodErrInval && !$CodErrLog && !$CodErrTut)
         {
             print ('<h1>Enregistrer</h1>');
-            // Préparation de l'enreg. à enregistrer
+            // Préparation de l'enreg. À enregistrer
 
             $ObjTuple = new CUser ();
             $ObjTuple->SetPK_User($ValPK_User);

@@ -34,6 +34,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                     $Connexion);
 	    break;
 	}
+
+    $ConnexionInfor_Shema =  ConnectSelect('localhost','root','','INFORMATION_SCHEMA');
+    $ReqCulName = Query ("SELECT COLUMN_NAME FROM COLUMNS where TABLE_NAME='$NomTabEntreprises' AND (COLUMN_NAME='NomE' OR COLUMN_NAME='Adr1' OR COLUMN_NAME='Adr2' OR COLUMN_NAME='CP' OR COLUMN_NAME='Ville')", $ConnexionInfor_Shema);
+    $var = mysql_data_seek($ReqCulName, 0);
     if (! mysql_num_rows ($ReqSoc))
     {
                                                                           ?>
@@ -44,9 +48,18 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     }
     else
     {
-	    $FichEtiq = 
-		fopen ('/home/mathieu/public_html/stages/Libres/Etiquettes.xls', 'w');
+	    $FichEtiq =
+		fopen ($PATH_LIBRES.'Etiquettes.ods', 'w');
                                                      mysql_data_seek ($ReqSoc, 0);
+                                                     fwrite($FichEtiq,chr(239) . chr(187) . chr(191));
+        $cpt = 0;
+        while($ObjSocs = mysql_fetch_object($ReqCulName)){
+            if($cpt>0)
+                fwrite($FichEtiq,"\t");
+            fwrite ($FichEtiq, $ObjSocs->COLUMN_NAME);
+            $cpt++;
+        }
+        fwrite($FichEtiq,"\n\n");
                                                      while ($ObjSoc = mysql_fetch_object ($ReqSoc))
                                                      {
         $EtiqNomE  = stripslashes (trim ($ObjSoc->NomE));
@@ -60,8 +73,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         fwrite ($FichEtiq, "\t$EtiqCP");
         fwrite ($FichEtiq, "\t$EtiqVille\n");
                                                      }
-	    fclose ($FichEtiq);                                                                                             
-        redirect ($URL_SITE."Libres/Etiquettes.xls");
+	    fclose ($FichEtiq);
+        redirect ($PATH_LIBRES."Etiquettes.ods");
 /*
         <a href="http://infodoc/~mathieu/stages/Libres/Etiquettes.xls"
 		         target="_blank">Telecharger</a>
