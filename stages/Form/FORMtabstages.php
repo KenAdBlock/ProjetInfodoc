@@ -423,21 +423,21 @@
     else
     {
                                                                        ?>
-        <? if ($IdentPK==0) {?>
+        <?php if ($IdentPK==0) {?>
         <h1> Insertion d'une nouvelle Fiche de Stage </h1>
-        <?} else {?>
+        <?php } else {?>
         <h1> Modification d'une Fiche de Stage </h1>
-        <?}?>
-<p style="text-align : center; font-size : 11 px; font-style :
+        <?php }?>
+<p style="text-align : center; font-size : 11px; font-style :
 italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre remplies</p>
-<? if ($CodErrVide || $CodErrInval) { ?>
-<p style="text-align : center; font-size : 16 px;">Les
-<?=$Fleche?> indiquent qu'une rubrique est vide ou erron&eacute;e</p> <? } ?>
+<?php if ($CodErrVide || $CodErrInval) { ?>
+<p style="text-align : center; font-size : 16px;">Les
+<?=$Fleche?> indiquent qu'une rubrique est vide ou erron&eacute;e</p> <?php } ?>
 
 <form method="post">
 <table align="center" border="1"><tr><td>
 <table cellpadding="2">
-    <? if ($ValPK_Stage) { ?>
+    <?php if ($ValPK_Stage) { ?>
     <tr>
         <td valign="top"><tt><?=$ValidPK_Stage?></tt></td>
         <td style="text-align : right" valign="top"><b>Num&eacute;ro</b></td>
@@ -445,8 +445,8 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
             <?=$ValPK_Stage?>
         </td>
     </tr>
-    <? } ?>
-    <? if($_SESSION ['privilege'] != "tuteur") 
+    <?php } ?>
+    <?php if($_SESSION ['privilege'] != "tuteur")
        {
             $ResultListEntreprise = Query ("SELECT NomE, PK_Entreprise FROM
             tabentreprise",$Connexion);?>
@@ -461,8 +461,8 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
                                         {
                                                                          ?>
                     <option value="<?=$row [1]?>"
-                    <?if($row[1]==$ValFK_Entreprise)
-                    {?>selected <?}?>>
+                    <?php if($row[1]==$ValFK_Entreprise)
+                    {?>selected <?php }?>>
                     <?=$row [0]?></option>
                                                                          <?php
                                         }
@@ -470,7 +470,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
             </select>
         </td>
         </tr>
-        <?}else
+        <?php }else
             //Si c'est une fiche crée par un tuteur, il ne doit pas
             //pouvoir modifier l'entreprise...
           {
@@ -485,7 +485,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
           <tr><td></td><td align ="right"><b>Entreprise</b></td><td><?=$row2[0]?></td></tr>
           <input type="hidden" name="FK_Entreprise" value =
           <?=$row1[0]?>>
-          <?}?>
+          <?php }?>
         
     <tr>
         <td valign="top"><tt><?=$ValidMateriel?></tt></td>
@@ -494,17 +494,17 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td>
             <input type="checkbox" name=GMS value="1"
             
-            <?// pour savoir si une checkbox était cochée, on fait des
+            <?php // pour savoir si une checkbox était cochée, on fait des
               //divisions par 2 successives de la valeur initiale...
-              if (($ValMateriel%2)==1) {?>checked<?}?>>
+              if (($ValMateriel%2)==1) {?>checked<?php }?>>
             Grands et moyens systèmes
             <input type="checkbox" name=ST value="2"
-            <?if ((($ValMateriel/2)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValMateriel/2)%2)==1) {?>checked<?php }?>>
             Stations de travail
         <tr><td></td><td></td>
         <td>
             <input type="checkbox" name=Micro value="4"
-            <?if ((($ValMateriel/4)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValMateriel/4)%2)==1) {?>checked<?php }?>>
             Micro (PC,Mac,Pocket PC,...)
         </td>
         </tr>
@@ -516,18 +516,18 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td style="text-align : right" valign="top"><b>Réseaux locaux</b></td>
         <td>
             <input type="checkbox" name=Eth value="1"
-            <?if (($ValResLocaux %2)==1) {?>checked<?}?>>
+            <?php if (($ValResLocaux %2)==1) {?>checked<?php }?>>
             Ethernet
             <input type="checkbox" name=Nov value="2"
-            <?if ((($ValResLocaux/2)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValResLocaux/2)%2)==1) {?>checked<?php }?>>
             Novell
         <tr><td></td><td></td>
         <td>
             <input type="checkbox" name=NT value="4"
-            <?if ((($ValResLocaux/4)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValResLocaux/4)%2)==1) {?>checked<?php }?>>
             WindowsNTServeur  
             <input type="checkbox" name=LM value="8"
-            <?if ((($ValResLocaux/8)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValResLocaux/8)%2)==1) {?>checked<?php }?>>
             Lan Manager        </td>
         </tr>
         </td>
@@ -545,10 +545,10 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td style="text-align : right" valign="top"><b>R&eacute;seaux publics</b></td>
         <td>
             <input type="checkbox" name=It value="1"
-            <?if (($ValResPublics%2) ==1) {?>checked<?}?>>
+            <?php if (($ValResPublics%2) ==1) {?>checked<?php }?>>
             Internet
             <input type="checkbox" name=Tp value="2"
-            <?if ((($ValResPublics/2)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValResPublics/2)%2)==1) {?>checked<?php }?>>
             Transpac        </td>
         </td>
     </tr>
@@ -564,24 +564,24 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td style="text-align : right" valign="top"><b>Langages</b></td>
         <td>
             <input type="checkbox" name=Cpp value="1"
-            <?if (($ValLangages%2) ==1) {?>checked<?}?>>
+            <?php if (($ValLangages%2) ==1) {?>checked<?php }?>>
             C/C++
             <input type="checkbox" name=Ada value="2"
-            <?if ((($ValLangages/2)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValLangages/2)%2)==1) {?>checked<?php }?>>
             Ada
             <input type="checkbox" name=Java value="4"
-            <?if ((($ValLangages/4)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValLangages/4)%2)==1) {?>checked<?php }?>>
             Java
         <tr><td></td><td></td>
         <td>
             <input type="checkbox" name=Perl value="8"
-            <?if ((($ValLangages/8)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValLangages/8)%2)==1) {?>checked<?php }?>>
             PERL  
             <input type="checkbox" name=Delphi value="16"
-            <?if ((($ValLangages/16)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValLangages/16)%2)==1) {?>checked<?php }?>>
             DELPHI  
             <input type="checkbox" name=Php value="32"
-            <?if ((($ValLangages/32)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValLangages/32)%2)==1) {?>checked<?php }?>>
             PHP ASP</td>
         </tr>
     </tr>
@@ -598,21 +598,21 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         d'exploitation </b></td>
         <td>
             <input type="checkbox" name=unix value="1"
-            <?if (($ValSystExpl%2) ==1) {?>checked<?}?>>
+            <?php if (($ValSystExpl%2) ==1) {?>checked<?php }?>>
             Unix/Linux
             <input type="checkbox" name=VM value="2"
-            <?if ((($ValSystExpl/2)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValSystExpl/2)%2)==1) {?>checked<?php }?>>
             VM
             <input type="checkbox" name=VMS value="4"
-            <?if ((($ValSystExpl/4)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValSystExpl/4)%2)==1) {?>checked<?php }?>>
             VMS
             <input type="checkbox" name=OS value="8"
-            <?if ((($ValSystExpl/8)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValSystExpl/8)%2)==1) {?>checked<?php }?>>
             OS/2  
         <tr><td></td><td></td>
         <td>
             <input type="checkbox" name=win value="16"
-            <?if ((($ValSystExpl/16)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValSystExpl/16)%2)==1) {?>checked<?php }?>>
             Windows
             Version
             <input type="text" name="VersionSE" size="20" value="<?=$ValVersionSE?>">
@@ -631,18 +631,18 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td style="text-align : right" valign="top"><b>Bases de donn&eacute;es</b></td>
         <td>
             <input type="checkbox" name=Syb value="1"
-            <?if (($ValBasesD%2) ==1) {?>checked<?}?>>
+            <?php if (($ValBasesD%2) ==1) {?>checked<?php }?>>
             Sybase
             <input type="checkbox" name=Ing value="2"
-            <?if ((($ValBasesD/2)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValBasesD/2)%2)==1) {?>checked<?php }?>>
             INGRES
-        <tr><td></td><td></td>
+        <tr><td></td><td>
         <td>
             <input type="checkbox" name=Mysql value="4"
-            <?if ((($ValBasesD/4)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValBasesD/4)%2)==1) {?>checked<?php }?>>
             MYSQL  
             <input type="checkbox" name=Oracle value="8"
-            <?if ((($ValBasesD/8)%2)==1) {?>checked<?}?>>
+            <?php if ((($ValBasesD/8)%2)==1) {?>checked<?php }?>>
             ORACLE        </td>
         </tr>
     </tr>
@@ -710,12 +710,12 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
     <tr>
         <td></td><td></td><td>
             <input type="checkbox" name=Prog value="1"
-            <?if ($ValProg ==1) {?>checked<?}?>>
+            <?php if ($ValProg ==1) {?>checked<?php }?>>
             Programmation
             </td>
         <tr><td></td><td></td><td>
             <input type="checkbox" name=Anal value="1"
-            <?if ($ValAnalyse ==1) {?>checked<?}?>>
+            <?php if ($ValAnalyse ==1) {?>checked<?php }?>>
             Analyse
             </td></tr>
     </tr>
@@ -724,12 +724,12 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
     <tr>
         <td></td><td></td><td>
             <input type="checkbox" name=PG value="1"
-            <?if ($ValPG ==1) {?>checked<?}?>>
+            <?php if ($ValPG ==1) {?>checked<?php }?>>
             S'integre dans un
             projet global</td>
             <tr><td></td><td></td><td>
             <input type="checkbox" name=EI value="1"
-            <?if ($ValEI ==1) {?>checked<?}?>>
+            <?php if ($ValEI ==1) {?>checked<?php }?>>
             Constitue une
             entit&eacute; ind&eacute;pendante        </td></tr>
     </tr>
@@ -763,7 +763,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
             <b>L'entreprise à d&eacute;j&agrave; accueilli des stagiaires de notre
             département</b>
             <td><input type="checkbox" name=STAG value="1"
-            <?if ($ValSTAG ==1) {?>checked<?}?>>
+            <?php if ($ValSTAG ==1) {?>checked<?php }?>>
             </td>
         </td>
     </tr>
@@ -788,13 +788,13 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td valign="top"><tt><?=$ValidSEUL?></tt></td><td></td>
         <td>
             <input type="checkbox" name=SEUL value="1"
-            <?if ($ValSEUL ==1) {?>checked<?}?>>
+            <?php if ($ValSEUL ==1) {?>checked<?php }?>>
             Seul
         </td>
     </tr>
     <tr><td></td><td></td><td>
             <input type="checkbox" name=Coll value="1"
-            <?if ($ValCOLLAB ==1) {?>checked<?}?>>
+            <?php if ($ValCOLLAB ==1) {?>checked<?php }?>>
             En collaboration
             avec 1 analyste ou 1 ing&eacute;nieur 
     </tr>
@@ -804,7 +804,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td style="text-align : right" valign="top"><b>Indemnit&eacute;s de Stage</b></td>
         <td>
             <input type="checkbox" name=IST value="1"
-            <?if ($ValIST ==1) {?>checked<?}?>>
+            <?php if ($ValIST ==1) {?>checked<?php }?>>
         </td>
     </tr>
     <tr>
@@ -819,7 +819,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td style="text-align : right" valign="top"><b>Indemnit&eacute;s de Repas</b></td>
         <td>
             <input type="checkbox" name=IR value="1"
-            <?if ($ValIR ==1) {?>checked<?}?>>
+            <?php if ($ValIR ==1) {?>checked<?php }?>>
         </td>
     </tr>
     <tr>
@@ -834,7 +834,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td style="text-align : right" valign="top"><b>Indemnit&eacute;s de Transport</b></td>
         <td>
             <input type="checkbox" name=IT value="1"
-            <?if ($ValIT ==1) {?>checked<?}?>>
+            <?php if ($ValIT ==1) {?>checked<?php }?>>
         </td>
     </tr>
     <tr>
@@ -849,7 +849,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td style="text-align : right" valign="top"><b>Moyen de Transport</b></td>
         <td>
             <input type="checkbox" name=MT value="1"
-            <?if ($ValMT ==1) {?>checked<?}?>>
+            <?php if ($ValMT ==1) {?>checked<?php }?>>
         </td>
     </tr>
     <tr>
@@ -864,7 +864,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement &ecirc;tre 
         <td style="text-align : right" valign="top"><b>Possibilit&eacute; d'embauche apr&egrave;s le stage</b></td>
         <td>
             <input type="checkbox" name=Emb value="1"
-            <?if ($ValEmb ==1) {?>checked<?}?>>
+            <?php if ($ValEmb ==1) {?>checked<?php }?>>
         </td>
     </tr>
     <tr>
