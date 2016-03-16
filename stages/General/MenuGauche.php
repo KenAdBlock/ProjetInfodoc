@@ -31,7 +31,7 @@
 
     $NomBaseMathieu  = "laporte";
     $UserMathieu     = "root";
-    $PasswdMathieu   = "rootro";
+    $PasswdMathieu   = $PASSWDBD;
     $HoteMathieu     = "localhost";
 
 	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu,

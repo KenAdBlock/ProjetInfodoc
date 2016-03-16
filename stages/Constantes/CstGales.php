@@ -9,6 +9,8 @@
 
 	$NomSession = 'Stages';
 
+	$PASSWDBD = "";
+
     // Noms des tables
 
     $NomTabUsers             = 'tabusers';

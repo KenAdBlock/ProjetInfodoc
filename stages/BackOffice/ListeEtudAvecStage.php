@@ -3,7 +3,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
     $NomBaseMathieu  = /*"mathieu"*/"laporte"; 
     $UserMathieu     = /*"mathieu"*/"root";
-    $PasswdMathieu   = /*"dehaime"*/"rootro";
+    $PasswdMathieu   = /*"dehaime"*/$PASSWDBD;
     $HoteMathieu     = "localhost";
 
     $ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu, 
@@ -11,7 +11,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     $NomBaseStage  = /*"mathieu"*/"stages"; 
     $UserStage     = /*"mathieu"*/"root";
-    $PasswdStage   = /*"dehaime"*/"rootro";
+    $PasswdStage   = /*"dehaime"*/$PASSWDBD;
     $HoteStage     = "localhost";
 
     $ConnectStage = ConnectSelect ($HoteStage, $UserStage, 

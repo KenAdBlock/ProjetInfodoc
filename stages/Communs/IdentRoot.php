@@ -9,7 +9,7 @@
 	  case INFODOC :
         $NomBase  = "stages"; 
         $User     = "root";
-        $Passwd   = "rootro";
+        $Passwd   = $PASSWDBD;
         $Hote     = "localhost";
 	    break;
 	}
