@@ -51,99 +51,102 @@
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
 <html> 
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Oubli du mot de passe</title>
-	<link rel="stylesheet" href="<?=$PATH_CSS?>PopUps.css" type="text/css">
-	<link rel=stylesheet type=text/css href="<?=$PATH_CSS?>stages.css">
-</head>
+	<head>
+		<title>Oubli du mot de passe</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<body>
-<script language="JavaScript">
-<!--
-    this.resizeTo ('<?=$WidthPopUpBoxOubliPW?>.', '<?=$HeightPopUpBoxOubliPW?>');
-// -->
-</script>
+		<link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
+		<!-- CSS -->
+		<link rel="stylesheet" href="<?=$PATH_CSS?>PopUps.css" type="text/css">
+		<link rel=stylesheet type=text/css href="<?=$PATH_CSS?>stages.css">
+	</head>
+
+	<body>
+	<script language="JavaScript">
+	<!--
+		this.resizeTo ('<?=$WidthPopUpBoxOubliPW?>.', '<?=$HeightPopUpBoxOubliPW?>');
+	// -->
+	</script>
                                                                            <?php
                                         if ($StepPW != 'MAJOK')
 										{
 										                                   ?>
-<form method="post"> 
-<table bgcolor="#E6E6E6" border="0" cellpadding="5" cellspacing="0"> 
-    <tr>
-	    <td colspan="3">
-		Entrez votre login et votre adresse <nobr>e-mail</nobr> pour récupérer
-		un nouveau  mot de passe. 
-		<br /><br />
-		En validant ce formulaire, votre mot de passe sera réinitialisé et
-		le nouveau mot de passe vous sera envoyé automatiquement par e-mail.
-		</td>
-	</tr>
-	<tr>
-	    <td align="right"><nobr><b>Votre login</b></td>
-		<td><input type="text" name="login"></td>
-		<td></td>
-	</tr>
-	<tr>
-	    <td align="right"><nobr><b>Votre e-mail</b></td>
-		<td><input type="text" name="email"></td>
-		<td align="left"><input type="submit" value="Valider"></td>
-	</tr>
-	<tr>
-        <td colspan="3" align="center"><hr></td>
-    </tr>
-                                                                           <?php
-                                            if (! $NoErr)
-										    {
-										                                   ?>
-	<tr>
-        <td colspan="3" align="center" style="color : red">
-		   Ces informations ne correspondent à aucun utilisateur enregistré
-		</td>
-    </tr>
-	<tr>
-        <td colspan="3" align="center"><hr></td>
-    </tr>
-                                                                           <?php
-                                            }
-											                               ?>																		   
-	<tr>
-        <td colspan="3" align="center"><input type="submit" 
-		    value="Fermer la fenetre"
-		    onClick="window.close()">
-		</td>
-    </tr>
-	<tr>
-        <td colspan="3" align="center"><hr></td>
-    </tr>
-</table>
-<input type="hidden" name="StepPW" value="Valid">
-</form>
-                                                                           <?php
-                                        }
-										else
-										{
-										                                   ?>
-<form method="post">
-<table bgcolor="#E6E6E6" border="0" cellpadding="5" cellspacing="0"> 
-    <tr>
-	    <td colspan="3">
-		Votre demande a bien été enregistrée.
-		<br /><br />
-		Votre nouveau mot de passe vous sera envoyé automatiquement par courrier électronique dans les plus brefs délais.
-		</td>
-	</tr>
-	<tr>
-        <td colspan="3" align="center"><input type="submit" 
-		    value="Fermer la fenêtre"
-		    onClick="window.close()">
-		</td>
-	</tr>
-</table>
-</form>
-                                                                           <?php
-                                          }
-										                                   ?>
-</body> 
+	<form method="post">
+	<table bgcolor="#E6E6E6" border="0" cellpadding="5" cellspacing="0">
+		<tr>
+			<td colspan="3">
+			Entrez votre login et votre adresse <nobr>e-mail</nobr> pour récupérer
+			un nouveau  mot de passe.
+			<br /><br />
+			En validant ce formulaire, votre mot de passe sera réinitialisé et
+			le nouveau mot de passe vous sera envoyé automatiquement par e-mail.
+			</td>
+		</tr>
+		<tr>
+			<td align="right"><nobr><b>Votre login</b></td>
+			<td><input type="text" name="login"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td align="right"><nobr><b>Votre e-mail</b></td>
+			<td><input type="text" name="email"></td>
+			<td align="left"><input type="submit" value="Valider"></td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center"><hr></td>
+		</tr>
+																			   <?php
+												if (! $NoErr)
+												{
+																			   ?>
+		<tr>
+			<td colspan="3" align="center" style="color : red">
+			   Ces informations ne correspondent à aucun utilisateur enregistré
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center"><hr></td>
+		</tr>
+																			   <?php
+												}
+																			   ?>
+		<tr>
+			<td colspan="3" align="center"><input type="submit"
+				value="Fermer la fenetre"
+				onClick="window.close()">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center"><hr></td>
+		</tr>
+	</table>
+	<input type="hidden" name="StepPW" value="Valid">
+	</form>
+																			   <?php
+											}
+											else
+											{
+																			   ?>
+	<form method="post">
+	<table bgcolor="#E6E6E6" border="0" cellpadding="5" cellspacing="0">
+		<tr>
+			<td colspan="3">
+			Votre demande a bien été enregistrée.
+			<br /><br />
+			Votre nouveau mot de passe vous sera envoyé automatiquement par courrier électronique dans les plus brefs délais.
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center"><input type="submit"
+				value="Fermer la fenêtre"
+				onClick="window.close()">
+			</td>
+		</tr>
+	</table>
+	</form>
+																			   <?php
+											  }
+																			   ?>
+	</body>
 </html>
 

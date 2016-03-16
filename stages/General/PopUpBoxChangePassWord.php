@@ -89,11 +89,12 @@
 <html> 
 <head> 
 
-<title>Changement de mot de passe</title> 
+<title>Changement de mot de passe</title>
 
+<link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
 <link rel=stylesheet type=text/css href="<?=$PATH_CSS?>stages.css">
         
-</head> 
+</head>
 <body>
 
 <script language="JavaScript">
