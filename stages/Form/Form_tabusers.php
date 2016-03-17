@@ -315,7 +315,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 	</tr>
     <tr>
         <td><?=$ValidFK_Entreprise?></td>
-		<td style="text-align : right; valign="top">
+		<td style="text-align : right" valign="top">
 		    Pour un tuteur, préciser l'<b>entreprise</b>
 		</td>
 		<td>
@@ -382,7 +382,6 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
         </td>
     </tr>
 </table>
-</td></tr></table>
 <input type="hidden" name="StepConsult" value="Valid" >
 <input type="hidden" name="PK_User" value="<?=$ValPK_User?>" >
 <input type="hidden" name="PassWord" value="<?=$ValPassWord?>" >
