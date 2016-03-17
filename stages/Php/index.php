@@ -33,7 +33,7 @@
 		include ($PATH_GENERAL."Generalites.php");
 	?>
 
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
         <script src="<?=$PATH_JS?>materialize.min.js"></script>
         <script src="<?=$PATH_JS?>init.js"></script>
 
