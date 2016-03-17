@@ -13,7 +13,7 @@
 		<link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
 		<!-- CSS  -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href="<?=$PATH_CSS?>materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="<?=$PATH_CSS?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 		<link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 
@@ -34,7 +34,7 @@
 	?>
 
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="<?=$PATH_JS?>materialize.js"></script>
+        <script src="<?=$PATH_JS?>materialize.min.js"></script>
         <script src="<?=$PATH_JS?>init.js"></script>
 
     </body>
