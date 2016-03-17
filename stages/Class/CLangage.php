@@ -14,7 +14,7 @@ class CLangage
 
     function CLangage ($PK_Langage = 0)
     {
-        global $Connexion;
+        global $Connexion, $NomTabLangage;
 
         if (!isset ($PK_Langage) || $PK_Langage == 0)
         {
@@ -78,7 +78,7 @@ class CLangage
 
     function Select()
     {
-        global $Connexion;
+        global $Connexion, $NomTabLangage;
 
         $Req = Query ("SELECT * FROM $NomTabLangage  WHERE PK_Langage = $this->PK_Langage",
                   $Connexion);
@@ -96,10 +96,10 @@ class CLangage
 
     function Insert()
     {
-        global $Connexion;
+        global $Connexion, $NomTabLangage;
         
         return Query ("INSERT INTO $NomTabLangage VALUES (
-                '',
+                NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
@@ -109,7 +109,7 @@ class CLangage
 
     function Delete()
     {
-        global $Connexion;
+        global $Connexion, $NomTabLangage;
 
         return Query ("DELETE FROM $NomTabLangage WHERE PK_Langage = $this->PK_Langage",
                      $Connexion);
@@ -118,7 +118,7 @@ class CLangage
 
     function Update ()
     {
-        global $Connexion;
+        global $Connexion, $NomTabLangage;
         
         $Req = Query ("UPDATE $NomTabLangage SET 
                                  Code    = '$this->Code',

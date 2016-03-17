@@ -119,7 +119,7 @@
         /* ==========================  Enregistrement   ==========================*/
 
                 Query ("INSERT INTO $NomTabTaxe VALUES (
-                              '',
+                              NULL,
                               '".addslashes ($RaisonSocialeSoc)."',
                               '".addslashes ($AdresseSoc)."',
                               '$CodePostalSoc',
