@@ -284,7 +284,7 @@
         <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="<?=$PATH_CSS?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
@@ -715,8 +715,8 @@
                                                                                ?>
 
     <!--  Scripts-->
-      <script src="<?=$PATH_JS?>jquery-2.2.1.min.js"></script>
-      <script src="<?=$PATH_JS?>materialize.min.js"></script>
+      <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
+      <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
       <script src="<?=$PATH_JS?>init.js"></script>
     </body>
 </html>
