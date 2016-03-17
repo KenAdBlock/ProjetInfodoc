@@ -18,7 +18,7 @@ function RecupFichEntreprises()
 		$Champs [6] = addslashes ($Champs [6]);
 		$Champs [8] = addslashes ($Champs [8]);
 		Query ("INSERT INTO oldtabentreprises VALUES (
-		'',  '$Champs[0]', '$Champs[1]', '$Champs[2]', '$Champs[3]', 
+		NULL,  '$Champs[0]', '$Champs[1]', '$Champs[2]', '$Champs[3]',
 		'$Champs[4]', '$Champs[5]', '$Champs[6]', '$Champs[7]', '$Champs[8]', '$Champs[9]', 
 		'$Champs[10]', '$Champs[11]', '$Champs[12]', '$Champs[13]' )", 
 		       $Connexion);

@@ -219,7 +219,7 @@ class CEntreprise
         global $NomTabEntreprises, $Connexion;
 
         return Query ("INSERT INTO $NomTabEntreprises VALUES (
-                '',
+                NULL,
                  $this->Is_Valide,
                 '".addslashes ($this->NomE)."',
                 '$this->Civilite',

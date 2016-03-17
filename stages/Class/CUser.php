@@ -177,7 +177,7 @@ class CUser
         global $Connexion, $NomTabUsers;
         
         return Query ("INSERT INTO $NomTabUsers VALUES (
-                '',
+                NULL,
                 '$this->Login',
                 '$this->PassWord',
                 '$this->Status',

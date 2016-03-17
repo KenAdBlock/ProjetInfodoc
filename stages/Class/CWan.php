@@ -14,7 +14,7 @@ class CWan
 
     function CWan ($PK_Wan = 0)
     {
-        global $Connexion;
+        global $Connexion, $NomTabReseauxPublics;
 
         if (!isset ($PK_Wan) || $PK_Wan == 0)
         {
@@ -96,10 +96,10 @@ class CWan
 
     function Insert()
     {
-        global $Connexion;
+        global $Connexion, $NomTabReseauxPublics;
         
         return Query ("INSERT INTO $NomTabReseauxPublics VALUES (
-                '',
+                NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
@@ -109,7 +109,7 @@ class CWan
 
     function Delete()
     {
-        global $Connexion;
+        global $Connexion, $NomTabReseauxPublics;
 
         return Query ("DELETE FROM $NomTabReseauxPublics WHERE PK_Wan = $this->PK_Wan",
                      $Connexion);
@@ -118,7 +118,7 @@ class CWan
 
     function Update ()
     {
-        global $Connexion;
+        global $Connexion, $NomTabReseauxPublics;
         
         $Req = Query ("UPDATE $NomTabReseauxPublics SET 
                                  Code    = '$this->Code',

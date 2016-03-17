@@ -14,7 +14,7 @@ class COperatingSystem
 
     function COperatingSystem ($PK_OS = 0)
     {
-        global $Connexion;
+        global $Connexion, $NomTabOS;
 
         if (!isset ($PK_OS) || $PK_OS == 0)
         {
@@ -78,7 +78,7 @@ class COperatingSystem
 
     function Select()
     {
-        global $Connexion;
+        global $Connexion, $NomTabOS;
 
         $Req = Query ("SELECT * FROM $NomTabOS  WHERE PK_OS = $this->PK_OS",
                   $Connexion);
@@ -96,10 +96,10 @@ class COperatingSystem
 
     function Insert()
     {
-        global $Connexion;
+        global $Connexion, $NomTabOS;
         
         return Query ("INSERT INTO $NomTabOS VALUES (
-                '',
+                NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
@@ -109,7 +109,7 @@ class COperatingSystem
 
     function Delete()
     {
-        global $Connexion;
+        global $Connexion, $NomTabOS;
 
         return Query ("DELETE FROM $NomTabOS WHERE PK_OS = $this->PK_OS",
                      $Connexion);
@@ -118,7 +118,7 @@ class COperatingSystem
 
     function Update ()
     {
-        global $Connexion;
+        global $Connexion, $NomTabOS;
         
         $Req = Query ("UPDATE $NomTabOS SET 
                                  Code    = '$this->Code',
