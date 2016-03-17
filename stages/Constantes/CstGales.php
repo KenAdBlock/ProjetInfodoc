@@ -30,9 +30,11 @@
 	$NomTabTaxe              = 'tabtaxe';
 	$NomTabAnneesEntreprises = 'tabanneesentreprises';
 	
-    $MailResponsableStages = "marc.laporte@univ-amu.fr";
+//    $MailResponsableStages = "marc.laporte@univ-amu.fr";
+    $MailResponsableStages = "darkweizer@gmail.com";
 	$NomResponsableStages  = "Marc LAPORTE";
-    $MailAdministrateur    = "marc.laporte@univ-amu.fr";
+//    $MailAdministrateur    = "marc.laporte@univ-amu.fr";
+    $MailAdministrateur    = "darkweizer@gmail.com";
 	$NomAdministrateur     = "Marc LAPORTE";
 	$MailSecretariatTA     = "sophie.mebkhout	@univ-amu.fr";
 	$MailBidon             = "bidon@bidon.fr";

@@ -1,7 +1,8 @@
 <?php
     $PATH_RACINE     = '../';
     $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
-    $Sender          = "From: marc.laporte@univ-amu.fr";
+//    $Sender          = "From: marc.laporte@univ-amu.fr";
+    $Sender          = "From: darkweizer@gmail.com";
 
     require_once ($PATH_CONSTANTES.'DEFINE.php');
     require_once ($PATH_CONSTANTES.'CstGales.php');
@@ -43,7 +44,8 @@
 			Query ("UPDATE $NomTabUsers SET PassWord = '$NewPassWordKrpte'
 		                WHERE PK_User = '$ObjMail->PK_User';",
 				   $Connexion);
-	        mail ("marc.laporte@univ-amu.fr", 'Nouveau mot de passe', $Message, $Sender);
+//	        mail ("marc.laporte@univ-amu.fr", 'Nouveau mot de passe', $Message, $Sender);
+	        mail ("darkweizer@gmail.com", 'Nouveau mot de passe', $Message, $Sender);
 			$StepPW = 'MAJOK';
 		} 
 	}

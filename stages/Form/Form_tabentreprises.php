@@ -182,14 +182,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     <?=$Titre?>
 </h1>
  
-<p style="text-align : center; font-size : 11 px; font-style : italic;">
+<p style="text-align : center; font-size : 11px; font-style : italic;">
 Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
 </p>
 										                                   <?php
                                         if ($CodErrVide || $CodErrInval)
                                         {
 										                                   ?>
-<p style="text-align : center; font-size : 16 px;">Les
+<p style="text-align : center; font-size : 16px;">Les
 <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée</p>
 										                                   <?php
                                         }
@@ -234,7 +234,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
         </td>
     </tr>
     <tr>
-        <td colspan="3" style="text-align : center; font-size : 11 px; 
+        <td colspan="3" style="text-align : center; font-size : 11px;
 		                       font-style : italic;">
             Pour les grandes entreprises, indiquer le service
 			<hr>

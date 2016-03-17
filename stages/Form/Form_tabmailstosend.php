@@ -1,5 +1,6 @@
 <?php
-$Expediteur = 'From: marc.laporte@univ-amu.fr';
+//$Expediteur = 'From: marc.laporte@univ-amu.fr';
+$Expediteur = 'From: darkweizer@gmail.com';
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
 	if ($StepSendMail == 'Valid')
@@ -10,7 +11,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                           $Connexion);
 */
 ini_set("SMTP", "smtp.univ-amu.fr");
-ini_set("sendmail_from", "marc.laporte@univ-amu.fr");
+//ini_set("sendmail_from", "marc.laporte@univ-amu.fr");
+ini_set("sendmail_from", "darkweizer@gmail.com");
         mail ($Destinataire, stripslashes ($Sujet), stripslashes ($Message), $Expediteur);
 	
 	 $URL_List = $PATH_BACKOFFICE.'BackOffice.php?Trait=List&SlxTable='.$NomTabMailsToSend;
