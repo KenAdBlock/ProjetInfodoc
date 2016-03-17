@@ -488,10 +488,10 @@ class CStage
         global $Connexion, $NomTabStages;
 
         return Query ("INSERT INTO $NomTabStages VALUES (
-                          '',
+                           NULL,
                            $this->FK_Entreprise,
                            $this->FK_Tuteur,
-				  
+
                            $this->NiveauStage,
                            $this->Materiel,
                            $this->Langages,
@@ -505,23 +505,23 @@ class CStage
                           '$this->MethodesProgrammation',
                           '$this->MethodesControleQL',
                           '$this->MethodesGestionProjet',
-						  
+
                           '$this->Sujet',
-						  
+
                            $this->IsNatureTacheProgr,
                            $this->IsNatureStageAnalyse,
                            $this->IsIntegrationProjetGlobal,
                            $this->IsIntegrationEntiteIndependante,
-						   
+
                           '$this->RemarquesGenerales',
-						  
+
                           '$this->NbPersCentreInfo',
                            $this->AreOldStagiaires,
                            $this->NbStagesProposes,
                            $this->NbStagesRestant ,
                           '$this->NbPersonnesService',
                            $this->IsStagiaireSeul,
-						   
+
                           '$this->IndemnitesMensuellesStage',
                           '$this->IndemnitesRepas',
                           '$this->IndemnitesTransport',
@@ -532,6 +532,7 @@ class CStage
                           '$this->CPStage',
                           '$this->VilleStage')",
                      $Connexion);
+//        return Query ("INSERT INTO $NomTabStages VALUES ('',$this->FK_Entreprise,$this->FK_Tuteur,$this->NiveauStage,$this->Materiel,$this->Langages,'$this->AutresLangages',$this->BD,'$this->AutresBD','$this->LogicielsSpecifiques','$this->MethodesAnalyse','$this->MethodesConception','$this->MethodesProgrammation','$this->MethodesControleQL','$this->MethodesGestionProjet','$this->Sujet',$this->IsNatureTacheProgr,$this->IsNatureStageAnalyse,$this->IsIntegrationProjetGlobal,$this->IsIntegrationEntiteIndependante,'$this->RemarquesGenerales','$this->NbPersCentreInfo',$this->NbStagesProposes,$this->AreOldStagiaires,$this->NbStagesRestant ,'$this->NbPersonnesService',$this->IsStagiaireSeul,'$this->IndemnitesMensuellesStage','$this->IndemnitesRepas','$this->IndemnitesTransport',$this->IsEmbauchePossible,'$this->Adr1Stage','$this->Adr2Stage','$this->CPStage','$this->VilleStage')",$Connexion);
 
     } // Insert()
 

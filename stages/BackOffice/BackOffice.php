@@ -6,7 +6,7 @@ require_once ('Fonctions.php');
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <head>
     <meta HTTP-EQUIV="Page-Exit" content="blendTrans(Duration=0.7)">
-    <script src=<?=$PATH_JS?>/confirm.js type=text/javascript></script>
+    <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
     <link rel=stylesheet type=text/css href="<?=$PATH_CSS?>stages.css">
 
 <SCRIPT LANGUAGE="JavaScript">
