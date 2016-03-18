@@ -350,8 +350,8 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
                                 if (count ($CodErrInval))
                                 {
                                 ?>
-                                <hr><br>
-                                <?php
+                                <hr>
+                                <p class="center"><?php
                                 for ($i = 0; $i < count ($CodErrInval); ++$i)
                                 {
                                 ?>
@@ -360,7 +360,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
                                     <?php
                                 }
                                 }
-                                ?>
+                                ?></p>
                             </div>
 
                             <p class="center">
