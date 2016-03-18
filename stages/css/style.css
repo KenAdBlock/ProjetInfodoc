@@ -163,6 +163,10 @@ a.ashadow {
   transition: background .25s;
   border-radius: 5px;
 }
-a.ashadow:hover{
+a.ashadow:hover {
   background: #e0e0e0;
+}
+
+#login-connect {
+    font-size: 19px;
 }

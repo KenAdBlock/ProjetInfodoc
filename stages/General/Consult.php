@@ -38,7 +38,7 @@ function Consult ($Login, $Libelle, $Status)
 <h5 class="center">Bienvenue</h5> 
             <p class="center">
             Vous êtes connecté(e) sous le pseudonyme <br>
-            <b><?=$Login?></b> 
+            <b id="login-connect"><?=$Login?></b> 
             </p>
             <p class="center">en tant que <b><?=$Libelle?></b></p>
 
