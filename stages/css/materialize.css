@@ -9133,27 +9133,21 @@ textarea.materialize-textarea {
 
 [type="radio"]:checked + label:after {
   border-radius: 50%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   border: 2px solid #0071b9;
   background-color: #0071b9;
 =======
   border: 2px solid #26a69a;
   background-color: #26a69a;
->>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
-=======
+
   border: 2px solid #26a69a;
   background-color: #26a69a;
->>>>>>> parent of 9de6cde... modifications formulaires
-=======
+
   border: 2px solid #0071b9;
   background-color: #0071b9;
 =======
   border: 2px solid #26a69a;
   background-color: #26a69a;
->>>>>>> 4f38d362f5830e274c43969a11cfe78f87767c0e
->>>>>>> 0fba15728a0a8bc5f30bbbbf1526d38fd52739ce
+
   z-index: 0;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);

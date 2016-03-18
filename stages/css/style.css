@@ -147,3 +147,9 @@ td, th {
   transition: box-shadow .25s;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+[type="radio"]:checked + label:after {
+    border-radius: 50%;
+    border: 2px solid #0071b9;
+    background-color: #0071b9;
+}

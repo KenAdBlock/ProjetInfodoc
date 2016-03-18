@@ -191,13 +191,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                         if ($IdentPK)
 									    {
 										                                   ?>
-<h1>Modification de l'utilisateur <?=$ValPK_User?></h1>
+<span class="card-title"><h4 class="center">Modification de l'utilisateur <?=$ValPK_User?></h4></span>
                                                                            <?php
                                         }
                                         else
                                         {
                                                                            ?>
-<h1>Création d'un nouvel utilisateur </h1>
+
+<span class="card-title"><h4 class="center">Création d'un nouvel utilisateur :</h4></span>
                                                                            <?php
                                         }
 										                                   ?>
@@ -218,176 +219,186 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 <?php /*
 <form method="post" action="<?=$PATH_GENERAL?>Generalites.php" target="principal"> 
 */ ?>
-<form method="post"> 
-<table align="center" border="0" cellpadding="2" cellspacing="0"> 
-     <tr>
-        <td valign="top"><?=$ValidCivilite?></td>
-        <td style="text-align : right" valign="top">
-		    <b>Civilité : </b>
-		</td>
-		<td>
-		    M<input type="radio" name="Civilite" value="M" checked="checked">
-		    Mme<input type="radio" name="Civilite" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>>
-		    Mlle<input type="radio" name="Civilite" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>>
-		</td>
-    </tr>
-   <tr>
-        <td valign="top"><?=$ValidNom?></td>
-        <td style="text-align : right" valign="top"><b>Nom</b></td>
-        <td>
-            <input type="text" name="Nom" size="50" value="<?=$ValNom?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidPrenom?></td>
-        <td style="text-align : right" valign="top"><b>Prénom</b></td>
-        <td>
-            <input type="text" name="Prenom" size="50" value="<?=$ValPrenom?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidTel?></td>
-        <td style="text-align : right" valign="top"><b>Tel</b></td>
-        <td>
-            <input type="text" name="Tel" size="50" value="<?=$ValTel?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidMail?></td>
-        <td style="text-align : right" valign="top"><b>Mail</b></td>
-        <td>
-            <input type="text" name="Mail" size="50" value="<?=$ValMail?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidFax?></td>
-        <td style="text-align : right" valign="top">Fax</td>
-        <td>
-            <input type="text" name="Fax" size="50" value="<?=$ValFax?>">
-        </td>
-    </tr>
-			                                                               <?php
-										if ($IdentPK == 0)
-										{
-                                                                           ?>
-    <tr>
-        <td valign="top"><?=$ValidLogin?></td>
-        <td style="text-align : right; color : red" valign="top">
-		    <b>Nouveau login</b>
-		</td>
-        <td>
-            <input type="text" name="Login" size="50" value="<?=$ValLogin?>">
-        </td>
-    </tr>
-			                                                               <?php
-										}
-										else
-										{
-                                                                           ?>
-			<input type="hidden" name="Login" value="<?=$ValLogin?>">														   
-			                                                               <?php
-										}
-										if ($StepConsult == 'InitNew' || 
-										     GetDroits ($Status, 'ModifUser'))
-										{
-                                                                           ?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- CSS  -->
+<link href="<?=$PATH_CSS?>materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
 
-
-
-    <tr>
-        <td><?=$ValidStatus?></td>
-		<td style="text-align : right" valign="top"><b>Statut</b></td>
-		<td>
-		    <select name="StatusUser">
-			                                                               <?php
-			                                while ($ObjStatus = mysql_fetch_object ($ReqStatus))
-										    {
-                                                                           ?>
-                <option value="<?=$ObjStatus->Code?>" 
-				        <?=$ObjStatus->Code == $ValStatus ? 'selected' : ''?>>
-				    <?=$ObjStatus->Libelle?>
-				</option>
-			                                                               <?php
-			                                }
-                                                                           ?>
-			</select>
-		</td>
-	</tr>
-    <tr>
-        <td><?=$ValidFK_Entreprise?></td>
-		<td style="text-align : right; valign="top">
-		    Pour un tuteur, préciser l'<b>entreprise</b>
-		</td>
-		<td>
-		    <select name="FK_Entreprise">
-                <option value="0"
-				        <?=$ValFK_Entreprise == 0 ? 'selected' : ''?>
-				    >----------------
-				</option>
-			                                                               <?php
-			                                while ($ObjSoc = mysql_fetch_object ($ReqEntreprises))
-										    {
-                                                                           ?>
-                <option value="<?=$ObjSoc->PK_Entreprise?>" 
-				        <?=$ObjSoc->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
-				    <?=$ObjSoc->NomE?>
-				</option>
-			                                                               <?php
-			                                }
-                                                                           ?>
-			</select>
-		</td>
-    </tr>
-			                                                               <?php
-										}
-										else
-										{
-                                                                           ?>
-
-<input type="hidden" name="StatusUser"    value="<?=$ValStatus?>">
-<input type="hidden" name="FK_Entreprise" value="<?=$ValFK_Entreprise?>">
-    		                                                               <?php
-										}
-                                        if (count ($CodErrInval))
-										{
-                                                                           ?>
-	<tr>			
-        <td colspan="3" style="text-align : center"><br /><hr></td>
-    </tr>
-                                                                           <?php
-                                            for ($i = 0; $i < count ($CodErrInval); ++$i)
-										    {
-                                                                           ?>
-	<tr>			
-        <td colspan="3" style="text-align : center; color : red">
-		    <?=$MsgErr [$CodErrInval [$i]]?><br />
-        </td>
-    </tr>
-                                                                           <?php
-                                            }
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="card grey lighten-4 z-depth-1">
+                <div class="card-content">
+                    <div class="row">
+                        <form method="post" role="form" class="col s12">
+                            <div class="row">
+                            <div class="input-field col l1 m1 s">
+                                <label for="Nom"><b>Civilité</b></label>
+                            </div>
+                            <div class="col l6 s12 m12">
+                            <div class="input-field col l4 m4 s4">
+                            <p>
+                                <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
+                                <label for="CiviliteM">M</label>
+                            </p>
+                            </div>
+                            <div class="input-field col l4 m4 s4">
+                            <p>
+                                <input name="Civilite" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
+                                 <label for="CiviliteMme">Mme</label>
+                            </p>
+                            </div>
+                            <div class="input-field col l4 m4 s4">
+                            <p>
+                                <input name="Civilite" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
+                                <label for="CiviliteMlle">Mlle</label>
+                            </p>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col l6 m6 s12">
+                                    <?=$ValidNom?>
+                                    <input id="Nom" type="text" class="validate" name="Nom" size="50" value="<?=$ValNom?>">
+                                    <label for="Nom"><b>Nom</b></label>
+                                </div>
+                                <div class="input-field col l6 m6 s12">
+                                    <?=$ValidPrenom?>
+                                    <input id="Prenom" type="text" class="validate" name="Prenom" size="50" value="<?=$ValPrenom?>">
+                                    <label for="Prenom"><b>Prénom</b></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col l6 m6 s12">
+                                    <?=$ValidTel?>
+                                    <input id="Tel" type="text" class="validate" name="Tel" size="50" value="<?=$ValTel?>">
+                                    <label for="Tel"><b>Tel</b></label>
+                                </div>
+                                <div class="input-field col l6 m6 s12">
+                                    <?=$ValidMail?>
+                                    <input id="Mail" type="text" class="validate" name="Mail" size="50" value="<?=$ValMail?>">
+                                    <label for="Mail"><b>Mail</b></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col l6 m6 s12">
+                                    <input id="Fax" type="text" class="validate" name="Fax" size="50" value="<?=$ValFax?>">
+                                    <label for="Fax">Fax</label>
+                                </div>
+                               <?php
+                                if ($IdentPK == 0)
+                                {
+                                ?>
+                                <div class="input-field col l6 m6 s12">
+                                    <?=$ValidLogin?>
+                                    <input id="Login" type="text" class="validate" name="Login" size="50" value="<?=$ValLogin?>">
+                                    <label for="Login"><b>Nouveau login</b></label>
+                                </div>
+                            </div>
+                            <?php
+                            }
+                            else
+                            {
+                                ?>
+                                <input type="hidden" name="Login" value="<?=$ValLogin?>">
+                                <?php
+                            }
+                            if ($StepConsult == 'InitNew' ||
+                            GetDroits ($Status, 'ModifUser'))
+                            {
+                            ?>
+                            <div class="row">
+                                <div class="input-field col l6 m6 s12">
+                                    <?=$ValidStatus?>
+                                    <select name="StatusUser">
+                                        <?php
+                                        while ($ObjStatus = mysql_fetch_object ($ReqStatus))
+                                        {
+                                            ?>
+                                            <option value="<?=$ObjStatus->Code?>"
+                                                <?=$ObjStatus->Code == $ValStatus ? 'selected' : ''?>>
+                                                <?=$ObjStatus->Libelle?>
+                                            </option>
+                                            <?php
                                         }
-                                                                           ?>
-	<tr>			
-        <td colspan="3" align="center"><br /><hr></td>
-    </tr>
-    <tr>
-        <td colspan="3" style="text-align : center">
-            <input type="button" value="Abandonner"
-                    onClick="history.go (-1)">
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="reset" value="Reinitialiser">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="submit" value="Valider" >
-        </td>
-    </tr>
-</table>
-</td></tr></table>
+                                        ?>
+                                    </select>
+                                    <label><b>Statut</b></label>
+                                </div>
+                                <div class="input-field col l6 m6 s12">
+                                    <?=$ValidFK_Entreprise?>
+                                    <select name="FK_Entreprise">
+                                        <option value="0"
+                                            <?=$ValFK_Entreprise == 0 ? 'selected' : ''?>
+                                        >----------------
+                                        </option>
+                                        <?php
+                                        while ($ObjSoc = mysql_fetch_object ($ReqEntreprises))
+                                        {
+                                            ?>
+                                            <option value="<?=$ObjSoc->PK_Entreprise?>"
+                                                <?=$ObjSoc->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
+                                                <?=$ObjSoc->NomE?>
+                                            </option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
+                                    <label>Pour un tuteur, préciser l'<b>entreprise</b></label>
+                                </div>
+                                <?php
+                                }
+                                else
+                                {
+                                    ?>
+
+                                    <input type="hidden" name="StatusUser"    value="<?=$ValStatus?>">
+                                    <input type="hidden" name="FK_Entreprise" value="<?=$ValFK_Entreprise?>">
+                                    <?php
+                                }
+                                if (count ($CodErrInval))
+                                {
+                                ?>
+                                <hr><br>
+                                <?php
+                                for ($i = 0; $i < count ($CodErrInval); ++$i)
+                                {
+                                ?>
+                                <?=$MsgErr [$CodErrInval [$i]]?><br />
+                                <hr><br>
+                                    <?php
+                                }
+                                }
+                                ?>
+                            </div>
+
+
+                            <p class="center">
+                                <button type="reset" class="waves-effect waves-light btn black white-text"  onClick="history.go (-1)">Abandonner</button>
+                                <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+                                <button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button></p>
+
 <input type="hidden" name="StepConsult" value="Valid" >
 <input type="hidden" name="PK_User" value="<?=$ValPK_User?>" >
 <input type="hidden" name="PassWord" value="<?=$ValPassWord?>" >
 </form>
-                                                                           <?php
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="<?=$PATH_JS?>materialize.js"></script>
+<script src="<?=$PATH_JS?>init.js"></script>
+</body>
+</html>
+    <?php
 }
 else
 {

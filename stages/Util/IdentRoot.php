@@ -5,7 +5,7 @@
     // 
 	    $NomBase  = "stages";
 	    $User    = "root";
-	    $Passwd   = "rootro"; 
+	    $Passwd   = "";
 	    $Hote     = "localhost";
 
 ?>
