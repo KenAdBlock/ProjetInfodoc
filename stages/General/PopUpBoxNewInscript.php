@@ -304,7 +304,6 @@
 
     Vous recevrez dans les plus brefs délais un login et un mot de passe pour vous permettre d'entrer les caractéristiques du stage que vous proposez.
 
-<<<<<<< HEAD
 <br /><br />
 <div style="text-align : right">
 <?=$NomResponsableStages?>
