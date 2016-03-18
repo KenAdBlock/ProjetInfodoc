@@ -28,7 +28,7 @@ function Accueil ($LoginProv)
           <div class="col s12">
 
             <p class="center">
-              Si vous d&eacute;sirez nous verser de la
+              Si vous désirez nous verser de la
               <a class="waves-effect waves-light btn blue lighten-2 white-text" href="../Libres/LettreTA.php" target="_blanc">Taxe d'apprentissage</a>
               merci de cliquer ci-dessus
             </p>
@@ -60,7 +60,7 @@ function Accueil ($LoginProv)
 
 <p class="center">
             <a class="waves-effect waves-light btn white-text blue" href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxOubliPassWord.php')"
-                >Mot de passe oubli&eacute;</a>
+                >Mot de passe oublié</a>
 </p>         
 
           </div>
@@ -72,7 +72,7 @@ function Accueil ($LoginProv)
           <div class="col s12">
 
             <p class="center">
-              Si vous d&eacute;sirez nous verser de la
+              Si vous désirez nous verser de la
               <a class="waves-effect waves-light btn blue lighten-2 white-text" href="../Libres/LettreTA.php" target="_blanc">Taxe d'apprentissage</a>
               merci de cliquer ci-dessus
             </p>
@@ -108,7 +108,7 @@ function Accueil ($LoginProv)
 </p>
 <p class="center">
             <a class="waves-effect waves-light btn white-text blue" href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxOubliPassWord.php')"
-                >Mot de passe oubli&eacute;</a>
+                >Mot de passe oublié</a>
 </p>               
 
           </div>

@@ -260,7 +260,7 @@
 
 		  $Sujet   = 'Nouvel inscrit pour stage';
 		  $Message = 'Inscription de :   '.
-		             $ValCiviliteTuteur.' '.$ValPrenomTuteur.'   '.$ValNomTuteur.'    &agrave; valider';
+		             $ValCiviliteTuteur.' '.$ValPrenomTuteur.'   '.$ValNomTuteur.'    à valider';
                 $Dest    =  $MailResponsableStages;
 
 		  if ($MachineHote == INFODOC) mail ($Dest, $Sujet, $Message);
@@ -300,9 +300,9 @@
 										{
 										  case 'Ack' : 
 										                                   ?>
-    Votre inscription a bien &eacute;t&eacute; enregistr&eacute;e et nous vous en remercions.
+    Votre inscription a bien été enregistrée et nous vous en remercions.
 
-    Vous recevrez dans les plus brefs d&eacute;lais un login et un mot de passe pour vous permettre d'entrer les caract&eacute;ristiques du stage que vous proposez.
+    Vous recevrez dans les plus brefs délais un login et un mot de passe pour vous permettre d'entrer les caractéristiques du stage que vous proposez.
 
 <<<<<<< HEAD
 <br /><br />
@@ -312,7 +312,7 @@
 Responsable des stages
 </div>
 <div style="text-align : center">
-<input type="button" value="Fermer la fen&ecirc;tre"
+<input type="button" value="Fermer la fenêtre"
        onClick="window.close()">
 </div>
 
@@ -335,7 +335,7 @@ Responsable des stages
                                             { 
                                                                            ?>
 <p style="text-align : center; font-size : 12 px;">
-    Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
+    Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 </p> 
                                                                            <?php 
                                             } 
