@@ -4,10 +4,11 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $NomBaseMathieu  = "laporte"; 
     $NomBaseStages   = "stages"; 
     $UserMathieu     = "root";
-    $PasswdMathieu   = "";
+    $PasswdMathieu   = $PASSWDBD;
     $HoteMathieu     = "localhost";
-    $Sender          = "From: marc.laporte@univ-amu.fr";
-	
+//    $Sender          = "From: marc.laporte@univ-amu.fr";
+    $Sender          = "From: darkweizer@gmail.com";
+
 	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu, 
 	                                 $PasswdMathieu, $NomBaseMathieu);
 
@@ -258,16 +259,16 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 </tr>
 <tr>
 <td style="text-align : center"><br />&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" style="width : <?=$WidthButton?> px; background-color : #ffd7d7" 
+<input type="button" style="width : <?=$WidthButton?>px; background-color : #ffd7d7"
        value="Tout decocher" 
        onClick="this.value=check (this.form.elements['tabmail[]'])">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="submit" style="width : <?=$WidthButton?> px;" 
+<input type="submit" style="width : <?=$WidthButton?>px;"
        value="Envoyer">&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" style="width : <?=$WidthButton?> px;" 
+<input type="button" style="width : <?=$WidthButton?>px;"
        value="Retour aux listes" 
        onClick="document.location='?Trait=Mailing&SsStep=Init'">&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" style="width : <?=$WidthButton?> px;" 
+<input type="button" style="width : <?=$WidthButton?>px;"
        value="Abandonner" 
        onClick="document.location='?Trait='">
 </td></tr>

@@ -219,20 +219,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 <?php /*
 <form method="post" action="<?=$PATH_GENERAL?>Generalites.php" target="principal"> 
 */ ?>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!-- CSS  -->
-<link href="<?=$PATH_CSS?>materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-<link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body>
 
-<div class="container">
-    <div class="row">
-        <div class="col s12">
-            <div class="card grey lighten-4 z-depth-1">
-                <div class="card-content">
                     <div class="row">
                         <form method="post" role="form" class="col s12">
                             <div class="row">
@@ -376,28 +363,21 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
                                 ?>
                             </div>
 
-
                             <p class="center">
                                 <button type="reset" class="waves-effect waves-light btn black white-text"  onClick="history.go (-1)">Abandonner</button>
                                 <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
                                 <button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button></p>
 
-<input type="hidden" name="StepConsult" value="Valid" >
-<input type="hidden" name="PK_User" value="<?=$ValPK_User?>" >
-<input type="hidden" name="PassWord" value="<?=$ValPassWord?>" >
-</form>
+    <input type="hidden" name="StepConsult" value="Valid" >
+    <input type="hidden" name="PK_User" value="<?=$ValPK_User?>" >
+    <input type="hidden" name="PassWord" value="<?=$ValPassWord?>" >
+    </form>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="<?=$PATH_JS?>materialize.js"></script>
 <script src="<?=$PATH_JS?>init.js"></script>
-</body>
-</html>
     <?php
 }
 else

@@ -380,7 +380,7 @@ alert('<?php echo 'Oui ? '.$ValLogicielsSpecOuiNon.' '.ProtectApos ($ValLogiciel
 	                                        if ($IdentPK == 0)
 										    {
                                                                            ?>
-<h1>Création d'une nouvelle fiche de stage</h1>
+<span class="card-title"><h4 class="center">Création d'une nouvelle fiche de stage</h4></span> 
                                                                            <?php
                                             }
                                             else

@@ -9,17 +9,14 @@ RewriteBase /
 Options -Indexes
 
 # Redirections en cas d'erreur 403
-ErrorDocument 403 http://localhost/ProjetInfodoc/stages/
+ErrorDocument 403 http://localhost/ProjetInfodoc/stages/Php
 # Mettre l'adresse en ligne à la ligne suivante (supprimer cette ligne et celle précédente)
 #ErrorDocument 403 http://infodoc.iut.univ-aix.fr/~laporte/stages/
 
 # Redirections en cas d'erreur 404
-ErrorDocument 404 http://localhost/ProjetInfodoc/stages/
+ErrorDocument 404 http://localhost/ProjetInfodoc/stages/Php
 # Mettre l'adresse en ligne à la ligne suivante (supprimer cette ligne et celle précédente)
 #ErrorDocument 404 http://infodoc.iut.univ-aix.fr/~laporte/stages/
-
-
-
 
 
 # Redirections en cas d'accès aux répertoires suivants

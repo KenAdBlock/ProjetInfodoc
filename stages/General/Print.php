@@ -28,7 +28,7 @@
 	require_once ($PATH_CONSTANTES.'CstErr.php');
     require_once ($PATH_UTIL      .'UtilLogin.php');
 	require_once ($PATH_UTIL      .'UtilPages.php');
-	require_once ($PATH_COMMUNS   .'FonctionsSite.php');
+	require_once ($PATH_COMMUNS   .'FctDiverses.php');
 
     // Connexion a mySQL
 	

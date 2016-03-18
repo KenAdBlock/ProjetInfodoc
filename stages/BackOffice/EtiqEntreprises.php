@@ -35,7 +35,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    break;
 	}
 
-    $ConnexionInfor_Shema =  ConnectSelect('localhost','root','','INFORMATION_SCHEMA');
+    $ConnexionInfor_Shema =  ConnectSelect('localhost','root',$PASSWDBD,'INFORMATION_SCHEMA');
     $ReqCulName = Query ("SELECT COLUMN_NAME FROM COLUMNS where TABLE_NAME='$NomTabEntreprises' AND (COLUMN_NAME='NomE' OR COLUMN_NAME='Adr1' OR COLUMN_NAME='Adr2' OR COLUMN_NAME='CP' OR COLUMN_NAME='Ville')", $ConnexionInfor_Shema);
     $var = mysql_data_seek($ReqCulName, 0);
     if (! mysql_num_rows ($ReqSoc))

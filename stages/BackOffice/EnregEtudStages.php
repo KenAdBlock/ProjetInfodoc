@@ -4,7 +4,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	$NomBaseMathieu  = "mathieu"; 
 	$NomBaseStages   = "stages"; 
     $UserMathieu     = "mathieu"; 
-    $PasswdMathieu   = "dehaime"; 
+    $PasswdMathieu   = $PASSWDBD;
     $HoteMathieu     = "localhost";
 
 	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu, 

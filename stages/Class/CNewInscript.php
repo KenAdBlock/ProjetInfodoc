@@ -293,7 +293,7 @@ class CNewInscript
         global $Connexion, $NomTabNewInscripts;
         
         return Query ("INSERT INTO $NomTabNewInscripts VALUES (
-                '',
+                NULL,
                 '$this->CiviliteTuteur',
                 '$this->NomTuteur',
                 '$this->PrenomTuteur',

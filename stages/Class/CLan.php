@@ -14,7 +14,7 @@ class CLan
 
     function CLan ($PK_Lan = 0)
     {
-        global $Connexion;
+        global $Connexion, $NomTabReseauxLocaux;
 
         if (!isset ($PK_Lan) || $PK_Lan == 0)
         {
@@ -78,7 +78,7 @@ class CLan
 
     function Select()
     {
-        global $Connexion;
+        global $Connexion, $NomTabReseauxLocaux;
 
         $Req = Query ("SELECT * FROM $NomTabReseauxLocaux  WHERE PK_Lan = $this->PK_Lan",
                   $Connexion);
@@ -96,10 +96,10 @@ class CLan
 
     function Insert()
     {
-        global $Connexion;
+        global $Connexion, $NomTabReseauxLocaux;
         
         return Query ("INSERT INTO $NomTabReseauxLocaux VALUES (
-                '',
+                NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
@@ -109,7 +109,7 @@ class CLan
 
     function Delete()
     {
-        global $Connexion;
+        global $Connexion, $NomTabReseauxLocaux;
 
         return Query ("DELETE FROM $NomTabReseauxLocaux WHERE PK_Lan = $this->PK_Lan",
                      $Connexion);
@@ -118,7 +118,7 @@ class CLan
 
     function Update ()
     {
-        global $Connexion;
+        global $Connexion, $NomTabReseauxLocaux;
         
         $Req = Query ("UPDATE $NomTabReseauxLocaux SET 
                                  Code    = '$this->Code',

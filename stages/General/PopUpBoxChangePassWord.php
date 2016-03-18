@@ -88,12 +88,16 @@
 ?>
 <html> 
 <head> 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<title>Changement de mot de passe</title> 
+<title>Changement de mot de passe</title>
 
-<link rel=stylesheet type=text/css href="<?=$PATH_CSS?>stages.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link href="<?=$PATH_CSS?>materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  	<link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	<link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
         
-</head> 
+</head>
 <body>
 
 <script language="JavaScript">
@@ -102,9 +106,12 @@
                    '<?=$HeightPopUpBoxChangePW?>');
 // -->
 </script>
-
-<h1>Changement de mot de passe</h1>
-
+<div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card grey lighten-4 z-depth-1">
+            <div class="card-content">
+            	<span class="card-title"><h5 class="center">Changement de mot de passe</h5></span> 
 <form method="post"> 
 <table align="center" border="0" cellpadding="2" cellspacing="0"> 
     <tr>
@@ -124,15 +131,22 @@
 	<tr>
 	    <td nowrap valign="top"><?=$Indic ['NewPW1']?></td> 
 	    <td align="right"><nobr><b><?=$LibPW1?></b> <sup>*</sup></nobr></td>
-		<td><input type="password" name="NewPW1"></td>
-		<td>&nbsp;</td>
+		<td colspan="4"><div class="input-field col s12"><input type="password" name="NewPW1" id="NewPW1">
+		</div></td>
+
 	</tr>
 	<tr>
 	    <td nowrap valign="top"><?=$Indic ['NewPW2']?></td> 
 	    <td align="right"><nobr><b><?=$LibPW2?></b> <sup>*</sup></nobr></td>
-		<td><input type="password" name="NewPW2"></td>
-		<td align="left"><input type="submit" value="Valider"></td>
+		<td colspan="4"><div class="input-field col s12"><input type="password" name="NewPW2">
+		</div></td>
+
+		
 	</tr>
+	<tr><td>&nbsp;</td><td>&nbsp;</td>
+	<td colspan="4" align="right"><button class="btn waves-effect waves-light white-text blue" type="submit">Valider</button></td>
+<td>&nbsp;</td></tr>
+	
 	<tr>
         <td colspan="4" align="left"
 		    ><blockquote><sup>*</sup>
@@ -169,10 +183,10 @@
                                         }
                                                                            ?>
 	<tr>
-        <td colspan="4" align="center">
-		    <input type="submit" 
-		           value="Fermer la fenetre"
-		           onClick="window.close()"></td>
+        <td class="center" colspan="4" align="center">
+		    <button class="btn waves-effect waves-light white-text blue" type="submit" 
+		           
+		           onClick="window.close()">Fermer la fenetre</button></td>
     </tr>
 	<tr>
         <td colspan="4" align="center"><hr></td>
@@ -180,7 +194,14 @@
 </table>
 <input type="hidden" name="StepChPwd" value="Valid">
 </form>
-
+</div>
+          </div>
+        </div>
+      </div>
+      <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="<?=$PATH_JS?>materialize.js"></script>
+  <script src="<?=$PATH_JS?>init.js"></script>
 </body> 
 </html>
 

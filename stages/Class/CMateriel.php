@@ -14,7 +14,7 @@ class CMateriel
 
     function CMateriel ($PK_Materiel = 0)
     {
-        global $Connexion;
+        global $Connexion, $NomTabMateriels;
 
         if (!isset ($PK_Materiel) || $PK_Materiel == 0)
         {
@@ -77,7 +77,7 @@ class CMateriel
 
     function Select()
     {
-        global $Connexion;
+        global $Connexion, $NomTabMateriels;
 
         $Req = Query ("SELECT * FROM $NomTabMateriels  WHERE PK_Materiel = $this->PK_Materiel",
                   $Connexion);
@@ -95,10 +95,10 @@ class CMateriel
 
     function Insert()
     {
-        global $Connexion;
+        global $Connexion, $NomTabMateriels;
         
         return Query ("INSERT INTO $NomTabMateriels VALUES (
-                '',
+                NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
@@ -108,7 +108,7 @@ class CMateriel
 
     function Delete()
     {
-        global $Connexion;
+        global $Connexion, $NomTabMateriels;
 
         return Query ("DELETE FROM $NomTabMateriels WHERE PK_Materiel = $this->PK_Materiel",
                      $Connexion);
@@ -117,7 +117,7 @@ class CMateriel
 
     function Update ()
     {
-        global $Connexion;
+        global $Connexion, $NomTabMateriels;
         
         $Req = Query ("UPDATE $NomTabMateriels SET 
                                  Code    = '$this->Code',
