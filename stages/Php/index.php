@@ -7,7 +7,7 @@
 ?>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Stages</title>
 
 		<link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
