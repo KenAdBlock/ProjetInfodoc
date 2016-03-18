@@ -9,8 +9,8 @@
 	define ('MINLGLOGIN',  7);
 	define ('MAXLGLOGIN', 12);
 	
-    define ('FLECHE', '<font color="red"><tt>&rArr;</tt></font>');
-    define ('ESPACE', '<tt>&nbsp;</tt>');
+    define ('FLECHE', '<font color="red"><tt>'."⇒ ".'</tt></font>');
+    define ('ESPACE', '<tt>'." ".'</tt>');
 
 	define ('ADMIN',  'admin');
 	define ('RESP',   'resp');
