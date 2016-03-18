@@ -76,19 +76,24 @@
 	// Chemins standard
 	// ================
 	
-	$PATH_JS         = $PATH_RACINE.'js/';
-	$PATH_CSS        = $PATH_RACINE.'css/';
-    $PATH_IMG       = $PATH_RACINE.'Img/';
-    $PATH_GIFS       = $PATH_RACINE.'gif/';
-    $PATH_UTIL       = $PATH_RACINE.'Util/';
-    $PATH_GENERAL    = $PATH_RACINE.'General/';
-    $PATH_COMMUNS    = $PATH_RACINE.'Communs/';
-    $PATH_BACKOFFICE = $PATH_RACINE.'BackOffice/';
-	$PATH_LIST       = $PATH_RACINE.'List/';
-	$PATH_FORM       = $PATH_RACINE.'Form/';
-	$PATH_AFFICH     = $PATH_RACINE.'Affich/';
-	$PATH_CLASS      = $PATH_RACINE.'Class/';
-	$PATH_LIBRES     = $PATH_RACINE.'Libres/';
-	$PATH_PHP		 = 'Php/';
+	$PATH_JS            = $PATH_RACINE.'js/';
+	$PATH_CSS           = $PATH_RACINE.'css/';
+    $PATH_IMG           = $PATH_RACINE.'Img/';
+    $PATH_GIFS          = $PATH_RACINE.'gif/';
+    $PATH_UTIL          = $PATH_RACINE.'Util/';
+    $PATH_GENERAL       = $PATH_RACINE.'General/';
+    $PATH_COMMUNS       = $PATH_RACINE.'Communs/';
+    $PATH_BACKOFFICE    = $PATH_RACINE.'BackOffice/';
+	$PATH_LIST          = $PATH_RACINE.'List/';
+	$PATH_FORM          = $PATH_RACINE.'Form/';
+	$PATH_AFFICH        = $PATH_RACINE.'Affich/';
+	$PATH_CLASS         = $PATH_RACINE.'Class/';
+	$PATH_LIBRES        = $PATH_RACINE.'Libres/';
+
+	$PATH_PHP           = 'Php/';
+    $PATH_VENDOR        = 'Vendor/';
+    $PATH_JQUERY        = $PATH_VENDOR.'jquery/';
+    $PATH_MATERIALIZE   = $PATH_VENDOR.'materialize/';
+
 	
 ?>

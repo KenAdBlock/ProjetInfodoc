@@ -284,7 +284,7 @@
         <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="<?=$PATH_CSS?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
@@ -333,7 +333,7 @@
                                                 if ($CodErrVide)
                                                 {
                                                                                ?>
-    <p style="text-align : center; font-size : 12 px;">
+    <p style="text-align : center; font-size : 12px;">
         Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
     </p>
                                                                                <?php
@@ -566,7 +566,7 @@
         </tr>
         <tr>
             <td colspan="3">
-                <p style="text-align : center; font-size : 11 px; font-style : italic;">
+                <p style="text-align : center; font-size : 11px; font-style : italic;">
                 Si votre entreprise n'appara&icirc;t pas dans cette liste, veuillez compl&eacute;ter
                 le cadre ci-dessous.
                 <br />&nbsp;
@@ -574,7 +574,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="3" style="border : 1 solid Blue;">
+            <td colspan="3" style="border: solid blue;">
                 <table width="100%" >
                     <tr>
                         <td colspan="3" style="text-align : center">
@@ -589,7 +589,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3" style="text-align : center; font-size : 11 px;
+                        <td colspan="3" style="text-align : center; font-size : 11px;
                                         font-style : italic;">
                             Pour les grandes entreprises, indiquer le service
                             <hr>
@@ -715,8 +715,8 @@
                                                                                ?>
 
     <!--  Scripts-->
-      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="<?=$PATH_JS?>materialize.min.js"></script>
+      <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
+      <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
       <script src="<?=$PATH_JS?>init.js"></script>
     </body>
 </html>
