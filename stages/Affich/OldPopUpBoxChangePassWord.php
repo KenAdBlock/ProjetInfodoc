@@ -26,7 +26,7 @@
     include_once ($PATH_UTIL.'IdentRoot.php');
     include_once ($PATH_UTIL.'UtilBD.php');
 	
-    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
 	$WidthDfltPopUpBoxChangePW  = 550;
 	$HeightDfltPopUpBoxChangePW = 530;
@@ -68,7 +68,7 @@
 		    $ReqEnreg = Query ("UPDATE $NomTabUsers SET
 					  		        Pass = '$NewPWCrypte'
 								WHERE PK_User = '$Identifiant'",
-							    $Connexion);  
+							    $ConnectStages);  
                                                                               ?>
 <script language="JavaScript">
 <!--

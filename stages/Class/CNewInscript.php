@@ -34,7 +34,7 @@ class CNewInscript
 
     function CNewInscript ($PK_NewInscript = 0)
     {
-        global $Connexion, $NomTabNewInscripts;
+        global $ConnectStages, $NomTabNewInscripts;
 
         if (!isset ($PK_NewInscript) || $PK_NewInscript == 0)
         {
@@ -68,7 +68,7 @@ class CNewInscript
 
             $ReqTuple = Query ("SELECT * FROM  $NomTabNewInscripts
                                     WHERE PK_NewInscript = '$PK_NewInscript'",
-                               $Connexion);
+                               $ConnectStages);
             $LeTuple = mysql_fetch_object ($ReqTuple);
 
             $this->CiviliteTuteur    = $LeTuple->CiviliteTuteur;
@@ -252,11 +252,11 @@ class CNewInscript
 
     function Select()
     {
-        global $Connexion, $NomTabNewInscripts;
+        global $ConnectStages, $NomTabNewInscripts;
 
         $Req = Query ("SELECT * FROM $NomTabNewInscripts  
 		                   WHERE PK_NewInscript = $this->PK_NewInscript",
-                      $Connexion);
+                      $ConnectStages);
         $Obj = mysql_fetch_object ($Req);
 
         if (! $Obj) return false;
@@ -290,7 +290,7 @@ class CNewInscript
 
     function Insert()
     {
-        global $Connexion, $NomTabNewInscripts;
+        global $ConnectStages, $NomTabNewInscripts;
         
         return Query ("INSERT INTO $NomTabNewInscripts VALUES (
                 NULL,
@@ -316,23 +316,23 @@ class CNewInscript
                 '$this->Ville' ,
 
                 '$this->FK_Entreprise');",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabNewInscripts;
+        global $ConnectStages, $NomTabNewInscripts;
 
         return Query ("DELETE FROM $NomTabNewInscripts 
 		                   WHERE PK_NewInscript = $this->PK_NewInscript",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabNewInscripts;
+        global $ConnectStages, $NomTabNewInscripts;
         
         $Req = Query ("UPDATE $NomTabNewInscripts SET 
                                  CiviliteTuteur      = '$this->CiviliteTuteur',
@@ -359,7 +359,7 @@ class CNewInscript
                                  FK_Entreprise = '$this->FK_Entreprise'
 
                            WHERE PK_NewInscript = $this->PK_NewInscript",
-                  $Connexion);
+                  $ConnectStages);
 
     } // Update()
 

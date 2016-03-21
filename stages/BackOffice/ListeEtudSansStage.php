@@ -6,14 +6,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $PasswdMathieu   = /*"dehaime"*/$PASSWDBD;
     $HoteMathieu     = "localhost";
 
-	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu, 
+	$ConnectLaporte = ConnectSelect ($HoteMathieu, $UserMathieu, 
 	                                 $PasswdMathieu, $NomBaseMathieu);
 
     define ('STATUS_ETUD2', 6);
     $ReqEtud = Query ("SELECT * FROM $NomTabUsers
 			  	            WHERE FK_Statut = ".STATUS_ETUD2." AND FK_Stage = ''
 						    ORDER BY Nom",
-	                   $ConnectMathieu);
+	                   $ConnectLaporte);
 ?>
 <h1>Liste des étudiants n'ayant pas de stage</h1>
 

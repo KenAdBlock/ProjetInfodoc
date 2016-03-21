@@ -14,7 +14,7 @@
 	require_once ($PATH_CONSTANTES. 'CstErrBD.php');
     require_once ($PATH_UTIL.       'UtilBD.php');  // ConnectSelect(), Query()
 
-	$Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+	$ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
 	// Récupérations des variables envoyées par POST ou GET
 	// ====================================================
@@ -134,7 +134,7 @@
                               '".addslashes ($AdresseCollect)."',
                               '$CodePostalCollect',
                               '".addslashes ($VilleCollect)."');",
-                             $Connexion);
+                             $ConnectStages);
 
         /* ==========================  mail d'information  ======================*/
 

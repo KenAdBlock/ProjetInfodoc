@@ -7,7 +7,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $PasswdMathieu   = $PASSWDBD;
     $HoteMathieu     = "localhost";
 
-	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu, 
+	$ConnectLaporte = ConnectSelect ($HoteMathieu, $UserMathieu, 
 	                                 $PasswdMathieu, $NomBaseMathieu);
 
     define ('STATUS_ETUD2', 6);
@@ -15,7 +15,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $ReqEtud = Query ("SELECT * FROM $NomTabUsers
 			  	            WHERE FK_Statut = ".STATUS_ETUD2."
 						    ORDER BY Nom",
-	                   $ConnectMathieu);
+	                   $ConnectLaporte);
 					   
     // Génération de la table des étudiants
 	// ====================================
@@ -36,7 +36,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                                                             WHERE $NomTabEntreprises.PK_Entreprise =
 						                                                                $NomTabStages.FK_Entreprise
 	                                                             ORDER BY NomE",
-	                                                        $Connexion);
+	                                                        $ConnectStages);
 	                                    mysql_data_seek ($ReqStages, 0);
                                         for ($i = 0 ; $Obj = mysql_fetch_object ($ReqStages); ++$i)
                                         {
@@ -44,7 +44,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             Query ("UPDATE $NomTabStages 
 											            SET Etudiant = '".$$Nom."'
 	                                                    WHERE PK_Stage = '$Obj->PK_Stage'",
-	                                                $Connexion);										     
+	                                                $ConnectStages);										     
                                         }
       case 'Init' :
         $ReqStages = Query ("SELECT $NomTabStages.FK_Entreprise,
@@ -56,7 +56,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                         WHERE $NomTabEntreprises.PK_Entreprise =
 						           $NomTabStages.FK_Entreprise
 						     ORDER BY NomE",
-	                       $Connexion);
+	                       $ConnectStages);
 ?>
 
 <script language=javascript>

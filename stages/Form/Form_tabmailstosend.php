@@ -8,7 +8,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 /*
                      Query ("DELETE FROM $NomTabMailsToSend 
 	                       WHERE PK_Login = '$IdentPK'", 
-	                           $Connexion);
+	                           $ConnectStages);
 */
 ini_set("SMTP", "smtp.univ-amu.fr");
 //ini_set("sendmail_from", "marc.laporte@univ-amu.fr");
@@ -22,7 +22,7 @@ ini_set("sendmail_from", "darkweizer@gmail.com");
 	{
         $ReqMail = Query ("SELECT * FROM $NomTabMailsToSend 
 	                           WHERE PK_Login = '$IdentPK'", 
-	                               $Connexion);
+	                               $ConnectStages);
         $Obj = mysql_fetch_object ($ReqMail);
                                                                            ?>
 <form method="post">

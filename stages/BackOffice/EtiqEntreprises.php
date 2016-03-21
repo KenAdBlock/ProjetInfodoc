@@ -11,7 +11,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	{
 	  case 'Toutes' :
         $ReqSoc = Query ("SELECT * FROM $NomTabEntreprises ORDER BY NomE", 
-	                     $Connexion);
+	                     $ConnectStages);
 	    break;
 		
 	  case '0708AvecStagiaire' :
@@ -25,7 +25,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                          WHERE FK_Entreprise = PK_Entreprise
 					                AND  NbStag > NbStagesRestant 
 					          ORDER BY NomE", 
-	                 $Connexion);
+	                 $ConnectStages);
 	    break;
 
 	  case 'Avant2008' :
@@ -37,12 +37,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                             AND  $NomTabAnneesEntreprises.FirstID       <= $NomTabEntreprises.PK_Entreprise
                             AND  $NomTabEntreprises.PK_Entreprise <= $NomTabAnneesEntreprises.LastID
                           ORDER BY NomE", 
-	                     $Connexion);
+	                     $ConnectStages);
 	    break;
 	}
 
-    $ConnexionInfor_Shema =  ConnectSelect('localhost','root',$PASSWDBD,'INFORMATION_SCHEMA');
-    $ReqCulName = Query ("SELECT COLUMN_NAME FROM COLUMNS where TABLE_NAME='$NomTabEntreprises' AND (COLUMN_NAME='NomE' OR COLUMN_NAME='Adr1' OR COLUMN_NAME='Adr2' OR COLUMN_NAME='CP' OR COLUMN_NAME='Ville')", $ConnexionInfor_Shema);
+    $ConnectStagesInfor_Shema =  ConnectSelect('localhost','root',$PASSWDBD,'INFORMATION_SCHEMA');
+    $ReqCulName = Query ("SELECT COLUMN_NAME FROM COLUMNS where TABLE_NAME='$NomTabEntreprises' AND (COLUMN_NAME='NomE' OR COLUMN_NAME='Adr1' OR COLUMN_NAME='Adr2' OR COLUMN_NAME='CP' OR COLUMN_NAME='Ville')", $ConnectStagesInfor_Shema);
     $var = mysql_data_seek($ReqCulName, 0);
     if (! mysql_num_rows ($ReqSoc))
     {

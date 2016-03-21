@@ -22,12 +22,12 @@ function RandomPassWord ($MaxLg = MAXLGPASSWD)
 
 function GenerSendPassWord ($Login) 
 {
-	global $MonEMail, $Connexion;
+	global $MonEMail, $ConnectStages;
 
 	/* Chargement des infos de l'utilisateur */
 	
 	$ReqUser = Query ("SELECT EMail FROM tabusers WHERE Login = '$Login'",
-	                  $Connexion);
+	                  $ConnectStages);
 	
 	$Obj = mysql_fetch_object ($ReqUser);
 
@@ -50,7 +50,7 @@ function GenerSendPassWord ($Login)
 
 function GetStatutByLogin (&$CodeBin)
 {
-    global $NomTabUsers, $NomTabStatuts, $Connexion;
+    global $NomTabUsers, $NomTabStatuts, $ConnectStages;
 	
 	$CodeBin = 0;
     if (! isset ($_SESSION ['login']) || $_SESSION ['login'] == '') return '';
@@ -61,7 +61,7 @@ function GetStatutByLogin (&$CodeBin)
 	                   FROM $NomTabUsers, $NomTabStatuts
 		    	       WHERE $NomTabUsers.FK_Statut = $NomTabStatuts.PK_Statut
 			    		 AND $NomTabUsers.Identifiant = '$LoginSession'",
-	                  $Connexion);
+	                  $ConnectStages);
 	if (mysql_num_rows ($ReqUser) != 1) return '';
 	
     $ObjUser = mysql_fetch_object ($ReqUser);

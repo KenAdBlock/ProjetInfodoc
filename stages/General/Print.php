@@ -35,7 +35,7 @@
     require_once ($PATH_UTIL.'IdentRoot.php');
     require_once ($PATH_UTIL.'UtilBD.php');
 		
-    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
 	// Construction des droits
 /*
@@ -114,7 +114,7 @@
 		                                            $ReqPages = Query ("SELECT * FROM $NomTabPages
 		                                                                    WHERE NomPageMere = '$SlxPage' 
 		                                                                    ORDER BY OrdrePartiel",
-		                                                               $Connexion);
+		                                                               $ConnectStages);
 		                                            while ($ObjAutrePage = mysql_fetch_object ($ReqPages))
 		                                            {
 									                    $ObjNewPage = SearchPage ($ObjAutrePage->NomPage, $NomFichierZip, $CorrigeZip,
@@ -167,7 +167,7 @@
 </html>
 <?php
 
-    mysql_close ($Connexion);
+    mysql_close ($ConnectStages);
 ?>
 <script type="text/javascript" language="javascript1.2">
 <!--

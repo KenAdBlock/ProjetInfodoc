@@ -38,7 +38,7 @@ function NormaliserTel (&$Tel)
 function ErrorLogin ($Login, $IsNew = 1)
 //       ==========
 {
-    global $NomTabUsers, $Connexion;
+    global $NomTabUsers, $ConnectStages;
 	
     // 7 à 12 caractères alpha-numériques + '_'
 	
@@ -55,7 +55,7 @@ function ErrorLogin ($Login, $IsNew = 1)
 	if ($IsNew)
 	{
 	    $ReqUsers = Query ("SELECT Login FROM $NomTabUsers WHERE Login = '$Login'",
-                           $Connexion);
+                           $ConnectStages);
 	    if (mysql_num_rows ($ReqUsers)) return LOGINDEJAPRIS;
 	}
 

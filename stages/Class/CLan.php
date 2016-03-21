@@ -14,7 +14,7 @@ class CLan
 
     function CLan ($PK_Lan = 0)
     {
-        global $Connexion, $NomTabReseauxLocaux;
+        global $ConnectStages, $NomTabReseauxLocaux;
 
         if (!isset ($PK_Lan) || $PK_Lan == 0)
         {
@@ -30,7 +30,7 @@ class CLan
 
             $ReqTuple = Query ("SELECT * FROM  $NomTabReseauxLocaux
                                     WHERE PK_Lan = '$PK_Lan'",
-                               $Connexion);
+                               $ConnectStages);
             $LeTuple = mysql_fetch_object ($ReqTuple);
 
             $this->Code    = $LeTuple->Code    ;
@@ -78,10 +78,10 @@ class CLan
 
     function Select()
     {
-        global $Connexion, $NomTabReseauxLocaux;
+        global $ConnectStages, $NomTabReseauxLocaux;
 
         $Req = Query ("SELECT * FROM $NomTabReseauxLocaux  WHERE PK_Lan = $this->PK_Lan",
-                  $Connexion);
+                  $ConnectStages);
         $Obj = mysql_fetch_object ($Req);
 
         if (! $Obj) return false;
@@ -96,29 +96,29 @@ class CLan
 
     function Insert()
     {
-        global $Connexion, $NomTabReseauxLocaux;
+        global $ConnectStages, $NomTabReseauxLocaux;
         
         return Query ("INSERT INTO $NomTabReseauxLocaux VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabReseauxLocaux;
+        global $ConnectStages, $NomTabReseauxLocaux;
 
         return Query ("DELETE FROM $NomTabReseauxLocaux WHERE PK_Lan = $this->PK_Lan",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabReseauxLocaux;
+        global $ConnectStages, $NomTabReseauxLocaux;
         
         $Req = Query ("UPDATE $NomTabReseauxLocaux SET 
                                  Code    = '$this->Code',
@@ -126,7 +126,7 @@ class CLan
                                  CodeBin =  $this->CodeBin,
 
                            WHERE PK_Lan = $this->PK_Lan",
-                  $Connexion);
+                  $ConnectStages);
 
     } // Update()
 

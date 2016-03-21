@@ -21,7 +21,7 @@ class CUser
 
     function CUser ($PK_User = 0)
     {
-        global $Connexion, $NomTabUsers;
+        global $ConnectStages, $NomTabUsers;
 
         if (!isset ($PK_User) || $PK_User == 0)
         {
@@ -44,7 +44,7 @@ class CUser
 
             $ReqTuple = Query ("SELECT * FROM  $NomTabUsers
                                     WHERE PK_User = '$PK_User'",
-                               $Connexion);
+                               $ConnectStages);
             $LeTuple = mysql_fetch_object ($ReqTuple);
 
             $this->Login         = $LeTuple->Login    ;
@@ -149,10 +149,10 @@ class CUser
 
     function Select()
     {
-        global $Connexion, $NomTabUsers;
+        global $ConnectStages, $NomTabUsers;
 
         $Req = Query ("SELECT * FROM $NomTabUsers  WHERE PK_User = $this->PK_User",
-                  $Connexion);
+                  $ConnectStages);
         $Obj = mysql_fetch_object ($Req);
 
         if (! $Obj) return false;
@@ -174,7 +174,7 @@ class CUser
 
     function Insert()
     {
-        global $Connexion, $NomTabUsers;
+        global $ConnectStages, $NomTabUsers;
         
         return Query ("INSERT INTO $NomTabUsers VALUES (
                 NULL,
@@ -188,22 +188,22 @@ class CUser
                 '$this->Tel' ,
                 '$this->Fax',
                  $this->FK_Entreprise);",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabUsers;
+        global $ConnectStages, $NomTabUsers;
 
         return Query ("DELETE FROM $NomTabUsers WHERE PK_User = $this->PK_User",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabUsers;
+        global $ConnectStages, $NomTabUsers;
 
         $Req = Query ("UPDATE $NomTabUsers SET 
                                  Login         = '$this->Login',
@@ -218,7 +218,7 @@ class CUser
                                  FK_Entreprise =  $this->FK_Entreprise
 
                            WHERE PK_User = $this->PK_User",
-                  $Connexion);
+                  $ConnectStages);
 
     } // Update()
 

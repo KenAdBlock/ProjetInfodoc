@@ -449,7 +449,7 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement être rempl
     <?php if($_SESSION ['privilege'] != "tuteur")
        {
             $ResultListEntreprise = Query ("SELECT NomE, PK_Entreprise FROM
-            tabentreprise",$Connexion);?>
+            tabentreprise",$ConnectStages);?>
         <tr>
         <td valign="top"><tt><?=$ValidFK_Entreprise?></tt></td>
         <td style="text-align : right" valign="top"><b>Nom de
@@ -476,10 +476,10 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement être rempl
           {
                $login = $_SESSION['Login'];
                $req1 = Query("SELECT FK_Entreprise from tabusers where
-                              Login='$login'",$Connexion);
+                              Login='$login'",$ConnectStages);
                $row1 = mysql_fetch_row ($req1);
                $req2 = Query("SELECT NomE from tabentreprise where
-                       PK_Entreprise = $row1[0]",$Connexion);
+                       PK_Entreprise = $row1[0]",$ConnectStages);
                $row2 = mysql_fetch_row ($req2);
           ?>
           <tr><td></td><td align ="right"><b>Entreprise</b></td><td><?=$row2[0]?></td></tr>

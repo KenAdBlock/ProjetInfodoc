@@ -1,12 +1,12 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-    $ReqOS         = Query ("SELECT * FROM $NomTabOS",             $Connexion);
-    $ReqLangages   = Query ("SELECT * FROM $NomTabLangages",       $Connexion);
-    $ReqMateriels  = Query ("SELECT * FROM $NomTabMateriels",      $Connexion);
-    $ReqLans       = Query ("SELECT * FROM $NomTabReseauxLocaux",  $Connexion);
-    $ReqWans       = Query ("SELECT * FROM $NomTabReseauxPublics", $Connexion);
-    $ReqBDs        = Query ("SELECT * FROM $NomTabBasesDonnees",   $Connexion);
+    $ReqOS         = Query ("SELECT * FROM $NomTabOS",             $ConnectStages);
+    $ReqLangages   = Query ("SELECT * FROM $NomTabLangages",       $ConnectStages);
+    $ReqMateriels  = Query ("SELECT * FROM $NomTabMateriels",      $ConnectStages);
+    $ReqLans       = Query ("SELECT * FROM $NomTabReseauxLocaux",  $ConnectStages);
+    $ReqWans       = Query ("SELECT * FROM $NomTabReseauxPublics", $ConnectStages);
+    $ReqBDs        = Query ("SELECT * FROM $NomTabBasesDonnees",   $ConnectStages);
 
 	$ValidMateriel =
 	$ValidReseauxLocaux =

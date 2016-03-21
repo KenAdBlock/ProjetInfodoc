@@ -14,7 +14,7 @@ class COperatingSystem
 
     function COperatingSystem ($PK_OS = 0)
     {
-        global $Connexion, $NomTabOS;
+        global $ConnectStages, $NomTabOS;
 
         if (!isset ($PK_OS) || $PK_OS == 0)
         {
@@ -30,7 +30,7 @@ class COperatingSystem
 
             $ReqTuple = Query ("SELECT * FROM  $NomTabOS
                                     WHERE PK_OS = '$PK_OS'",
-                               $Connexion);
+                               $ConnectStages);
             $LeTuple = mysql_fetch_object ($ReqTuple);
 
             $this->Code    = $LeTuple->Code    ;
@@ -78,10 +78,10 @@ class COperatingSystem
 
     function Select()
     {
-        global $Connexion, $NomTabOS;
+        global $ConnectStages, $NomTabOS;
 
         $Req = Query ("SELECT * FROM $NomTabOS  WHERE PK_OS = $this->PK_OS",
-                  $Connexion);
+                  $ConnectStages);
         $Obj = mysql_fetch_object ($Req);
 
         if (! $Obj) return false;
@@ -96,29 +96,29 @@ class COperatingSystem
 
     function Insert()
     {
-        global $Connexion, $NomTabOS;
+        global $ConnectStages, $NomTabOS;
         
         return Query ("INSERT INTO $NomTabOS VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabOS;
+        global $ConnectStages, $NomTabOS;
 
         return Query ("DELETE FROM $NomTabOS WHERE PK_OS = $this->PK_OS",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabOS;
+        global $ConnectStages, $NomTabOS;
         
         $Req = Query ("UPDATE $NomTabOS SET 
                                  Code    = '$this->Code',
@@ -126,7 +126,7 @@ class COperatingSystem
                                  CodeBin =  $this->CodeBin,
 
                            WHERE PK_OS = $this->PK_OS",
-                  $Connexion);
+                  $ConnectStages);
 
     } // Update()
 

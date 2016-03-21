@@ -14,7 +14,7 @@ class CMateriel
 
     function CMateriel ($PK_Materiel = 0)
     {
-        global $Connexion, $NomTabMateriels;
+        global $ConnectStages, $NomTabMateriels;
 
         if (!isset ($PK_Materiel) || $PK_Materiel == 0)
         {
@@ -30,7 +30,7 @@ class CMateriel
 
             $ReqTuple = Query ("SELECT * FROM  $NomTabMateriels
                                     WHERE PK_Materiel = '$PK_Materiel'",
-                               $Connexion);
+                               $ConnectStages);
             $LeTuple = mysql_fetch_object ($ReqTuple);
 
             $this->Code    = $LeTuple->Code   ;
@@ -77,10 +77,10 @@ class CMateriel
 
     function Select()
     {
-        global $Connexion, $NomTabMateriels;
+        global $ConnectStages, $NomTabMateriels;
 
         $Req = Query ("SELECT * FROM $NomTabMateriels  WHERE PK_Materiel = $this->PK_Materiel",
-                  $Connexion);
+                  $ConnectStages);
         $Obj = mysql_fetch_object ($Req);
 
         if (! $Obj) return false;
@@ -95,29 +95,29 @@ class CMateriel
 
     function Insert()
     {
-        global $Connexion, $NomTabMateriels;
+        global $ConnectStages, $NomTabMateriels;
         
         return Query ("INSERT INTO $NomTabMateriels VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabMateriels;
+        global $ConnectStages, $NomTabMateriels;
 
         return Query ("DELETE FROM $NomTabMateriels WHERE PK_Materiel = $this->PK_Materiel",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabMateriels;
+        global $ConnectStages, $NomTabMateriels;
         
         $Req = Query ("UPDATE $NomTabMateriels SET 
                                  Code    = '$this->Code',
@@ -125,7 +125,7 @@ class CMateriel
                                  CodeBin =  $this->CodeBin,
 
                            WHERE PK_Materiel = $this->PK_Materiel",
-                  $Connexion);
+                  $ConnectStages);
 
     } // Update()
 

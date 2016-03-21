@@ -140,7 +140,7 @@
                 // éviter qu'il y en ai 2 identiques
         if ($IdentPK ==0)
         {
-            $ReqL = Query("SELECT Login from tabusers",$Connexion);
+            $ReqL = Query("SELECT Login from tabusers",$ConnectStages);
             while ($RowL = mysql_fetch_row($ReqL))
             {
                 if ($ValLogin == $RowL[0])
@@ -348,7 +348,7 @@ invalide, veuillez entre un numéro</p>
     </tr>
 
     <?php $ResultListEntreprise = Query ("SELECT NomE, PK_Entreprise FROM
-    tabentreprise",$Connexion);?>
+    tabentreprise",$ConnectStages);?>
     <tr>
     <td></td><td></td><td width="250">Si vous êtes Tuteur Professionnel, précisez l'entreprise </td>
     </tr>
@@ -380,10 +380,10 @@ invalide, veuillez entre un numéro</p>
           {
                $login = $_SESSION['Login'];
                $req1 = Query("SELECT FK_Entreprise from tabusers where
-                              Login='$login'",$Connexion);
+                              Login='$login'",$ConnectStages);
                $row1 = mysql_fetch_row ($req1);
                $req2 = Query("SELECT NomE from tabentreprise where
-                       PK_Entreprise = $row1[0]",$Connexion);
+                       PK_Entreprise = $row1[0]",$ConnectStages);
                $row2 = mysql_fetch_row ($req2);
           ?>
           <tr><td></td><td></td><td align="center"><b><?=$row2[0]?></b></td></tr>

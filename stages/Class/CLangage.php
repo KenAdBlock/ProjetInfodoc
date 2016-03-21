@@ -14,7 +14,7 @@ class CLangage
 
     function CLangage ($PK_Langage = 0)
     {
-        global $Connexion, $NomTabLangage;
+        global $ConnectStages, $NomTabLangage;
 
         if (!isset ($PK_Langage) || $PK_Langage == 0)
         {
@@ -30,7 +30,7 @@ class CLangage
 
             $ReqTuple = Query ("SELECT * FROM  $NomTabLangage
                                     WHERE PK_Langage = '$PK_Langage'",
-                               $Connexion);
+                               $ConnectStages);
             $LeTuple = mysql_fetch_object ($ReqTuple);
 
             $this->Code    = $LeTuple->Code    ;
@@ -78,10 +78,10 @@ class CLangage
 
     function Select()
     {
-        global $Connexion, $NomTabLangage;
+        global $ConnectStages, $NomTabLangage;
 
         $Req = Query ("SELECT * FROM $NomTabLangage  WHERE PK_Langage = $this->PK_Langage",
-                  $Connexion);
+                  $ConnectStages);
         $Obj = mysql_fetch_object ($Req);
 
         if (! $Obj) return false;
@@ -96,29 +96,29 @@ class CLangage
 
     function Insert()
     {
-        global $Connexion, $NomTabLangage;
+        global $ConnectStages, $NomTabLangage;
         
         return Query ("INSERT INTO $NomTabLangage VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabLangage;
+        global $ConnectStages, $NomTabLangage;
 
         return Query ("DELETE FROM $NomTabLangage WHERE PK_Langage = $this->PK_Langage",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabLangage;
+        global $ConnectStages, $NomTabLangage;
         
         $Req = Query ("UPDATE $NomTabLangage SET 
                                  Code    = '$this->Code',
@@ -126,7 +126,7 @@ class CLangage
                                  Libelle =  $this->CodeBin,
 
                            WHERE PK_Langage = $this->PK_Langage",
-                  $Connexion);
+                  $ConnectStages);
 
     } // Update()
 

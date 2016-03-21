@@ -31,7 +31,7 @@
 	// =================
 	
 	
-    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
     // ========================================================================== //
 
@@ -80,7 +80,7 @@
 		    $ReqEnreg = Query ("UPDATE $NomTabUsers SET
 					  		        Password = '$NewPWCrypte'
 							    WHERE Login = '$login'",
-						    $Connexion);
+						    $ConnectStages);
             CloseWindow();
 		    die;
 		}

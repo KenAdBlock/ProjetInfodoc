@@ -6,7 +6,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	{
 	    $ReqUser = Query ("SELECT PK_User FROM $NomTabUsers 
 		                        WHERE Login = '$login'",
-						   $Connexion); 
+						   $ConnectStages); 
         $ObjUser = mysql_fetch_object ($ReqUser);
 		$IdentPK = $ObjUser->PK_User;
     }
@@ -29,7 +29,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
  
     $ReqStatus = Query ("SELECT Code FROM $NomTabStatus 
 	                         WHERE Code = '$ValStatus'",
-						$Connexion);
+						$ConnectStages);
 	$ObjStatus = mysql_fetch_object ($ReqStatus);
 	$LibelleStatus = $ObjStatus->Code;
     
@@ -37,7 +37,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     {
        $ReqSoc = Query ("SELECT NomE FROM $NomTabEntreprises
 	                         WHERE PK_Entreprise = $ValFK_Entreprise",
-						$Connexion); 
+						$ConnectStages); 
        $ObjSoc = mysql_fetch_object ($ReqSoc);
 	   $NomE   = $ObjSoc->NomE;
     }

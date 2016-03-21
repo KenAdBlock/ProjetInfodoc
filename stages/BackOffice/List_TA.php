@@ -4,7 +4,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $Title = 'Liste des entreprises devant verser la Taxe d\'Apprentissage';
 
     $ReqVersements = Query ("SELECT * FROM $NomTabTaxe ORDER BY RaisonSocialeSoc",
-                            $Connexion);
+                            $ConnectStages);
     ?>
 <h1 style="text-align : center">
     <?=$Title?>

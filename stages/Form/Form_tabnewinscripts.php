@@ -30,7 +30,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 	$ReqEntreprises = Query ("SELECT * FROM $NomTabEntreprises
 	                              ORDER BY NomE",
-	                         $Connexion);	
+	                         $ConnectStages);	
     $ValidPK_NewInscript  =
 	
     $ValidCiviliteTuteur  =
@@ -275,7 +275,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 				  '".addslashes ($ValNomTuteur)."',
 				  '".addslashes ($ValPrenomTuteur)."',
                               '$ValMailTuteur');",
-		     $Connexion);
+		     $ConnectStages);
 										                                   ?>
         <script>
             location.replace("?Trait=List&SlxTable=<?=$NomTabNewInscripts?>");

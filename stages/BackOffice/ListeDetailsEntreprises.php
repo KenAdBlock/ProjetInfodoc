@@ -21,7 +21,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    $OrderReq = "NomE asc";
 	}
     $ReqSoc = Query ("SELECT * FROM $NomTabEntreprises ORDER BY ".$OrderReq, 
-	                 $Connexion);
+	                 $ConnectStages);
 
 	$URL_AffichSoc = $PATH_BACKOFFICE.'BackOffice.php?Trait=Affich&SlxTable='.$NomTabEntreprises.'&IdentPK=';
 

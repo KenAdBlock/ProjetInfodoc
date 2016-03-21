@@ -14,7 +14,7 @@
     require_once ($PATH_COMMUNS.'IdentRoot.php');
     require_once ($PATH_UTIL.'UtilBD.php');
 	
-    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
 	require_once ($PATH_UTIL.'UtilLogin.php');
 	
@@ -34,7 +34,7 @@
 		$RewMail = Query ("SELECT * FROM $NomTabUsers
 		                       WHERE Mail = '$email'
 							    AND  Login = '$login';",
-						   $Connexion);
+						   $ConnectStages);
 		if ($NoErr = mysql_num_rows ($RewMail))
 		{
 		    $ObjMail = mysql_fetch_object ($RewMail);
@@ -43,7 +43,7 @@
 			$Message = "$ObjMail->Prenom $ObjMail->Nom,\n\nJ'ai le plaisir de vous informer que votre nouveau mot de passe est :\n\n$NewPassWord\n\n M. Laporte\nWebmestre\n$email";
 			Query ("UPDATE $NomTabUsers SET PassWord = '$NewPassWordKrpte'
 		                WHERE PK_User = '$ObjMail->PK_User';",
-				   $Connexion);
+				   $ConnectStages);
 //	        mail ("marc.laporte@univ-amu.fr", 'Nouveau mot de passe', $Message, $Sender);
 	        mail ("darkweizer@gmail.com", 'Nouveau mot de passe', $Message, $Sender);
 			$StepPW = 'MAJOK';

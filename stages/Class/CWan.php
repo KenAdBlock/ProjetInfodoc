@@ -14,7 +14,7 @@ class CWan
 
     function CWan ($PK_Wan = 0)
     {
-        global $Connexion, $NomTabReseauxPublics;
+        global $ConnectStages, $NomTabReseauxPublics;
 
         if (!isset ($PK_Wan) || $PK_Wan == 0)
         {
@@ -30,7 +30,7 @@ class CWan
 
             $ReqTuple = Query ("SELECT * FROM  $NomTabReseauxPublics
                                     WHERE PK_Wan = '$PK_Wan'",
-                               $Connexion);
+                               $ConnectStages);
             $LeTuple = mysql_fetch_object ($ReqTuple);
 
             $this->Code    = $LeTuple->Code    ;
@@ -78,10 +78,10 @@ class CWan
 
     function Select()
     {
-        global $Connexion;
+        global $ConnectStages;
 
         $Req = Query ("SELECT * FROM $NomTabReseauxPublics  WHERE PK_Wan = $this->PK_Wan",
-                  $Connexion);
+                  $ConnectStages);
         $Obj = mysql_fetch_object ($Req);
 
         if (! $Obj) return false;
@@ -96,29 +96,29 @@ class CWan
 
     function Insert()
     {
-        global $Connexion, $NomTabReseauxPublics;
+        global $ConnectStages, $NomTabReseauxPublics;
         
         return Query ("INSERT INTO $NomTabReseauxPublics VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabReseauxPublics;
+        global $ConnectStages, $NomTabReseauxPublics;
 
         return Query ("DELETE FROM $NomTabReseauxPublics WHERE PK_Wan = $this->PK_Wan",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabReseauxPublics;
+        global $ConnectStages, $NomTabReseauxPublics;
         
         $Req = Query ("UPDATE $NomTabReseauxPublics SET 
                                  Code    = '$this->Code',
@@ -126,7 +126,7 @@ class CWan
                                  Libelle =  $this->CodeBin,
 
                            WHERE PK_Wan = $this->PK_Wan",
-                  $Connexion);
+                  $ConnectStages);
 
     } // Update()
 

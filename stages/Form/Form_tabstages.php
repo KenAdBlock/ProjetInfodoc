@@ -23,9 +23,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     require_once ($PATH_COMMUNS.'FctDiverses.php'); // IsInSet()
 	
-    $ReqLangages     = Query ("SELECT * FROM $NomTabLangages",       $Connexion);
-    $ReqMateriels    = Query ("SELECT * FROM $NomTabMateriels",      $Connexion);
-    $ReqBDs          = Query ("SELECT * FROM $NomTabBasesDonnees",   $Connexion);
+    $ReqLangages     = Query ("SELECT * FROM $NomTabLangages",       $ConnectStages);
+    $ReqMateriels    = Query ("SELECT * FROM $NomTabMateriels",      $ConnectStages);
+    $ReqBDs          = Query ("SELECT * FROM $NomTabBasesDonnees",   $ConnectStages);
 
     require_once ($PATH_CLASS.'CStage.php');
 
@@ -105,7 +105,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		{
 		    $ReqSoc  = Query ("SELECT NomE FROM $NomTabEntreprises
 			                       WHERE PK_Entreprise = $ValFK_Entreprise;",
-			                  $Connexion);
+			                  $ConnectStages);
 			$ObjSoc  = mysql_fetch_object ($ReqSoc);
 			$ValNomE = $ObjSoc->NomE;
 		}
@@ -273,7 +273,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 		$ReqTuteur = Query ("SELECT FK_Entreprise FROM $NomTabUsers
 			                              WHERE PK_User = $ValFK_Tuteur;",
-								     $Connexion);
+								     $ConnectStages);
         
         $ObjTuteur = mysql_fetch_object ($ReqTuteur);
 		$ValFK_Entreprise = $ObjTuteur->FK_Entreprise;
@@ -355,7 +355,7 @@ alert('<?php echo 'Oui ? '.$ValLogicielsSpecOuiNon.' '.ProtectApos ($ValLogiciel
 		                          WHERE $NomTabUsers.Status = '".TUTEUR."'
 								    AND $NomTabUsers.FK_Entreprise = $NomTabEntreprises.PK_Entreprise
 								  ORDER BY NomE, Nom", 
-	                         $Connexion);
+	                         $ConnectStages);
 
                                         if ($StepStage == 'MAJTabOK')
                                         {

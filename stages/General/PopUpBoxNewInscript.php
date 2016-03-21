@@ -28,13 +28,13 @@
     require_once ($PATH_COMMUNS.'IdentRoot.php');
     require_once ($PATH_UTIL.'UtilBD.php');
 	
-    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
     //
 
 	$ReqEntreprises = Query ("SELECT * FROM $NomTabEntreprises
 	                              ORDER BY NomE",
-	                         $Connexion);	
+	                         $ConnectStages);	
     //
 	
 	$CodErr       = array();

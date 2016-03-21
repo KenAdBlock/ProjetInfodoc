@@ -25,7 +25,7 @@ class CEntreprise
 
     function CEntreprise ($PK_Entreprise = 0)
     {
-        global $NomTabEntreprises, $Connexion;
+        global $NomTabEntreprises, $ConnectStages;
 
         if (!isset ($PK_Entreprise) || $PK_Entreprise == 0)
         {
@@ -51,7 +51,7 @@ class CEntreprise
             $this->PK_Entreprise = $PK_Entreprise;
             $ReqTuple = Query ("SELECT * FROM  $NomTabEntreprises
                                     WHERE PK_Entreprise = '$PK_Entreprise'",
-                               $Connexion);
+                               $ConnectStages);
             $LeTuple = mysql_fetch_object ($ReqTuple);
 
             $this->Is_Valide         = 1                          ;
@@ -186,11 +186,11 @@ class CEntreprise
 
     function Select()
     {
-        global $NomTabEntreprises, $Connexion;
+        global $NomTabEntreprises, $ConnectStages;
 
         $Req = Query ("SELECT * FROM $NomTabEntreprises  
 		                   WHERE PK_Entreprise = $this->PK_Entreprise",
-                  $Connexion);
+                  $ConnectStages);
         $Obj = mysql_fetch_object ($Req);
 
         if (! $Obj) return false;
@@ -216,7 +216,7 @@ class CEntreprise
 
     function Insert()
     {
-        global $NomTabEntreprises, $Connexion;
+        global $NomTabEntreprises, $ConnectStages;
 
         return Query ("INSERT INTO $NomTabEntreprises VALUES (
                 NULL,
@@ -234,23 +234,23 @@ class CEntreprise
                 '$this->FaxR',
                 '".addslashes ($this->PresentEntreprise)."',
                 '".addslashes ($this->SiteEntreprise)."')",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Insert()
 
     function Delete()
     {
-        global $NomTabEntreprises, $Connexion;
+        global $NomTabEntreprises, $ConnectStages;
 
         return Query ("DELETE FROM $NomTabEntreprises 
 		                   WHERE PK_Entreprise = $this->PK_Entreprise",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Delete()
 
     function Update ()
     {
-        global $NomTabEntreprises, $Connexion;
+        global $NomTabEntreprises, $ConnectStages;
 
         $Req = Query ("UPDATE $NomTabEntreprises 
 		               SET 
@@ -270,7 +270,7 @@ class CEntreprise
                            SiteEntreprise    = '".addslashes ($this->SiteEntreprise)."'
 
                            WHERE PK_Entreprise = $this->PK_Entreprise",
-                  $Connexion);
+                  $ConnectStages);
     } // Update()
 
 } // CEntreprise

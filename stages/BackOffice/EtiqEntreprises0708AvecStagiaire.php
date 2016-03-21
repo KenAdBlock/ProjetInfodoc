@@ -11,7 +11,7 @@ $NomTabStages      = tabstages0708;
 	                  WHERE FK_Entreprise = PK_Entreprise
 					    AND  NbStag > NbStagesRestant 
 					  ORDER BY NomE", 
-	                 $Connexion);
+	                 $ConnectStages);
 
      if (! mysql_num_rows ($ReqSoc))
     {

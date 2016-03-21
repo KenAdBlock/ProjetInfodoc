@@ -22,11 +22,11 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     require_once ($PATH_COMMUNS.'FctDiverses.php');
 
 	$ReqStatus      = Query ("SELECT * FROM $NomTabStatus",     
-	                         $Connexion);
+	                         $ConnectStages);
 	$ReqEntreprises = Query ("SELECT NomE, PK_Entreprise 
 	                              FROM $NomTabEntreprises
 								  ORDER BY NomE",
-	                         $Connexion);
+	                         $ConnectStages);
     if (! GetDroits ($Status, 'ModifUser')) $IdentPK = $_SESSION ['PK_User'];
 	
     if (!isset ($StepConsult))
@@ -166,7 +166,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 				 	       '$ValNom',
 				 	       '$ValPrenom',
                   	       '$ValMail');",
-			            $Connexion);
+			            $ConnectStages);
 			}
             else
             {

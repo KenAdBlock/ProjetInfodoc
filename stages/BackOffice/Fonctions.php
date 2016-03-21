@@ -2,7 +2,7 @@
 function RecupFichEntreprises()
 //       ====================
 {
-    global $Connexion, $PATH_STAGES;
+    global $ConnectStages, $PATH_STAGES;
 
     $Fic = fopen ($PATH_STAGES."stages.txt", "r");
 	    $Buff = fgets ($Fic);
@@ -21,7 +21,7 @@ function RecupFichEntreprises()
 		NULL,  '$Champs[0]', '$Champs[1]', '$Champs[2]', '$Champs[3]',
 		'$Champs[4]', '$Champs[5]', '$Champs[6]', '$Champs[7]', '$Champs[8]', '$Champs[9]', 
 		'$Champs[10]', '$Champs[11]', '$Champs[12]', '$Champs[13]' )", 
-		       $Connexion);
+		       $ConnectStages);
 	}
     fclose ($Fic);
 
@@ -30,14 +30,14 @@ function RecupFichEntreprises()
 function RecupOldEntreprises()
 //       ===================
 {
-    global $Connexion;
+    global $ConnectStages;
 /*     * /
     $ReqOldSocs = Query ("SELECT oldtabentreprises.*, oldtabstages.NomEtudiant, oldtabstages.Annee 
 	                         FROM oldtabentreprises, oldtabstages 
 						     WHERE oldtabentreprises.NomEntreprise = oldtabstages.NomEntreprise
 							 AND   oldtabstages.Annee > 1999
 							 ORDER BY oldtabstages.Annee DESC, oldtabentreprises.NomEntreprise",
-	                     $Connexion);
+	                     $ConnectStages);
 /*    */
 /*    */
     $ReqOldSocs = Query ("SELECT DISTINCT oldtabentreprises.*
@@ -45,7 +45,7 @@ function RecupOldEntreprises()
 						     WHERE oldtabentreprises.NomEntreprise = oldtabstages.NomEntreprise
 							 AND   oldtabstages.Annee > 1999
 							 ORDER BY oldtabentreprises.NomEntreprise",
-	                     $Connexion);
+	                     $ConnectStages);
 /*    */
 ?>
 <table>
@@ -124,7 +124,7 @@ function RecupOldEntreprises()
     require_once ($PATH_COMMUNS.'IdentRoot.php');
     require_once ($PATH_UTIL.'UtilBD.php');
 	
-    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
 	//
     include_once ($PATH_UTIL.'UtilBackOffice.php');
@@ -209,7 +209,7 @@ function NormaliserNomPrenomLogin1A2A ($Annee)
         NormaliserNomPrenomLogin ($Ligne, $Nom, $Prenoms, $NumGroupe, $LoginAuto);
         $ReqEtud = Query ("SELECT * FROM $NomTabUsers
 			  	                WHERE Identifiant = '$LoginAuto'",
-	                       $ConnectMathieu);
+	                       $ConnectLaporte);
         if (mysql_num_rows ($ReqEtud) == 0)
 	        print ($LoginAuto." : non trouve <br />");
 	    else  if (mysql_num_rows ($ReqEtud) > 1)
@@ -226,7 +226,7 @@ function NormaliserNomPrenomLogin1A2A ($Annee)
                                      Prenom = \"$Prenoms\",
                                      Groupe =  $NumGroupe
                                WHERE Identifiant = '$LoginAuto'",
-                      	        $ConnectMathieu);
+                      	        $ConnectLaporte);
         */
     }
     fclose ($handle);

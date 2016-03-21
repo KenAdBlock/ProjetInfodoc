@@ -34,7 +34,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                        FROM $NomTabUsers, $NomTabStatus
 							WHERE $NomTabUsers.Status = $NomTabStatus.Code
                             ORDER BY ".$OrderReq,
-                       $Connexion);
+                       $ConnectStages);
 
 	$URL_ListNom    = '?Trait=List&SlxTable='.$NomTabUsers.'&Slx=';
 	switch ($Slx)

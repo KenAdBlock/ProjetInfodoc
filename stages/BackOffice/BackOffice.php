@@ -84,31 +84,31 @@ function check (field)
           case "$NomTabUsers" :
             if (! GetDroits ($Status, 'DelUser')) redirect ($URL_SITE);
 			Query ("DELETE FROM $SlxTable WHERE PK_User = '$IdentPK';",
-			       $Connexion);
+			       $ConnectStages);
             break;
                 
           case "$NomTabNewInscripts" :
             if (! GetDroits ($Status, 'DelNewInscript')) redirect ($URL_SITE);
 			Query ("DELETE FROM $SlxTable WHERE PK_NewInscript = '$IdentPK';",
-			       $Connexion);
+			       $ConnectStages);
             break;
                 
           case "$NomTabStages" :
             if (! GetDroits ($Status, 'DelStage')) redirect ($URL_SITE);
 			Query ("DELETE FROM $SlxTable WHERE PK_Stage = '$IdentPK';",
-			       $Connexion);
+			       $ConnectStages);
             break;
                 
           case "$NomTabMailsToSend" :
             if (! GetDroits ($Status, 'DelMailsToSend')) redirect ($URL_SITE);
 			Query ("DELETE FROM $SlxTable WHERE PK_Login = '$IdentPK';",
-			       $Connexion);
+			       $ConnectStages);
             break;
                 
           case "$NomTabEntreprises" :
             if (! GetDroits ($Status, 'DelEntreprise')) redirect ($URL_SITE);
 			Query ("DELETE FROM $SlxTable WHERE PK_Entreprise = '$IdentPK';",
-			       $Connexion);
+			       $ConnectStages);
             break;  
   
 		  default :
@@ -272,7 +272,7 @@ function check (field)
 
     }
     // Fermeture de la base
-    mysql_close ($Connexion);
+    mysql_close ($ConnectStages);
 ?>
 </div>
           </div>

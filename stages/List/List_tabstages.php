@@ -57,7 +57,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                  WHERE S.FK_Entreprise = E.PK_Entreprise
                                    AND E.PK_Entreprise = $FK_EntrepriseUser
                                  ORDER BY ".$OrderReq,
-                            $Connexion);
+                            $ConnectStages);
     }
     // Requete générale pour toutes les fiches de stage
     /*
@@ -68,7 +68,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                  WHERE S.FK_Entreprise = E.PK_Entreprise
                                  AND (S.NiveauStage = 2 OR S.NiveauStage = 3)
                                  ORDER BY ".$OrderReq,
-                            $Connexion);
+                            $ConnectStages);
     }
     */
     else if ($Status == ETUD2)
@@ -78,7 +78,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                  WHERE S.FK_Entreprise = E.PK_Entreprise
                                  AND (S.NiveauStage = 1 OR S.NiveauStage = 3)
                                  ORDER BY ".$OrderReq,
-                            $Connexion);
+                            $ConnectStages);
     }
     else
     {
@@ -86,7 +86,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                  FROM $NomTabStages S, $NomTabEntreprises E
                                  WHERE S.FK_Entreprise = E.PK_Entreprise
                                  ORDER BY ".$OrderReq,
-                            $Connexion);
+                            $ConnectStages);
     }
     {
     ?>

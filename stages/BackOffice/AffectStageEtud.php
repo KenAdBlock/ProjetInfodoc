@@ -6,7 +6,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $UserMathieu     = /*"mathieu"*/"root";
     $PasswdMathieu   = /*"dm2ml"*/$PASSWDBD;
     $HoteMathieu     = "localhost";
-    $ConnectMathieu = ConnectSelect ($HoteMathieu,   $UserMathieu,
+    $ConnectLaporte = ConnectSelect ($HoteMathieu,   $UserMathieu,
                                      $PasswdMathieu, $NomBaseMathieu);
 					   
     // Génération de la table des étudiants
@@ -32,7 +32,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 																       $NomTabEntreprises.PK_Entreprise =
 						                                                                $NomTabStages.FK_Entreprise
 	                                                             ORDER BY NomE",
-	                                                        $Connexion);
+	                                                        $ConnectStages);
 										if (mysql_num_rows ($ReqStages) == 0)
 										   print ('Aucun stage ne correspond à ce numéro');
 										else
@@ -45,7 +45,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                 $ReqEtudAffecte = Query ("SELECT * FROM $NomTabUsers
 			  	                                                             WHERE Identifiant = '$LoginCache'
 																			    AND FK_STAGE = 0",
-	                                                                     $ConnectMathieu);
+	                                                                     $ConnectLaporte);
 										        if (mysql_num_rows ($ReqEtudAffecte) == 0)
 										           print ('Étudiant déjà affecté');
 										        else
@@ -105,12 +105,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		Query ("UPDATE $NomTabUsers 
 		            SET FK_Stage = '$FK_Stage'
 		            WHERE Identifiant = '$Identifiant'",
-			   $ConnectMathieu);
+			   $ConnectLaporte);
 
 		Query ("UPDATE $NomTabStages 
 		            SET NbStagesRestant = NbStagesRestant - 1
 		            WHERE PK_Stage = '$FK_Stage'",
-			   $Connexion);
+			   $ConnectStages);
 
 		$Etape = 'Init';
 		
@@ -126,7 +126,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                         WHERE $NomTabEntreprises.PK_Entreprise =
 						           $NomTabStages.FK_Entreprise
 	                         AND PK_Stage = ".$FK_Stage,
-	                      $Connexion);
+	                      $ConnectStages);
 	  if (mysql_num_rows ($ReqStages) == 0)
 		print ('Aucun stage ne correspond à ce numéro');
 	  else
@@ -156,7 +156,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 					break;
 														  
 			}
-			$ReqEtud = Query ("SELECT * FROM $NomTabUsers".$Where." ORDER BY Nom", $ConnectMathieu);
+			$ReqEtud = Query ("SELECT * FROM $NomTabUsers".$Where." ORDER BY Nom", $ConnectLaporte);
 ?>
 
 <script language=javascript>

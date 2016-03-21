@@ -66,7 +66,7 @@ class CStage
 
     function CStage ($PK_Stage = 0)
     {
-        global $Connexion, $NomTabStages;
+        global $ConnectStages, $NomTabStages;
 
         if (!isset ($PK_Stage) || $PK_Stage == 0)
         {
@@ -119,7 +119,7 @@ class CStage
 
             $ReqTuple = Query ("SELECT * FROM  $NomTabStages
                                     WHERE PK_Stage = '$PK_Stage'",
-                               $Connexion);
+                               $ConnectStages);
             $LeTuple = mysql_fetch_object ($ReqTuple);
 
             $this->FK_Entreprise                   = $LeTuple->FK_Entreprise;
@@ -429,10 +429,10 @@ class CStage
 
     function Select()
     {
-        global $Connexion, $NomTabStages;
+        global $ConnectStages, $NomTabStages;
 
         $Req = Query ("SELECT * FROM $NomTabStages  WHERE PK_Stage = $this->PK_Stage",
-                  $Connexion);
+                  $ConnectStages);
         $Obj = mysql_fetch_object ($Req);
 
         if (! $Obj) return false;
@@ -485,7 +485,7 @@ class CStage
 
     function Insert()
     {
-        global $Connexion, $NomTabStages;
+        global $ConnectStages, $NomTabStages;
 
         return Query ("INSERT INTO $NomTabStages VALUES (
                            NULL,
@@ -531,23 +531,23 @@ class CStage
                           '$this->Adr2Stage',
                           '$this->CPStage',
                           '$this->VilleStage')",
-                     $Connexion);
-//        return Query ("INSERT INTO $NomTabStages VALUES (NULL,$this->FK_Entreprise,$this->FK_Tuteur,$this->NiveauStage,$this->Materiel,$this->Langages,'$this->AutresLangages',$this->BD,'$this->AutresBD','$this->LogicielsSpecifiques','$this->MethodesAnalyse','$this->MethodesConception','$this->MethodesProgrammation','$this->MethodesControleQL','$this->MethodesGestionProjet','$this->Sujet',$this->IsNatureTacheProgr,$this->IsNatureStageAnalyse,$this->IsIntegrationProjetGlobal,$this->IsIntegrationEntiteIndependante,'$this->RemarquesGenerales','$this->NbPersCentreInfo',$this->NbStagesProposes,$this->AreOldStagiaires,$this->NbStagesRestant ,'$this->NbPersonnesService',$this->IsStagiaireSeul,'$this->IndemnitesMensuellesStage','$this->IndemnitesRepas','$this->IndemnitesTransport',$this->IsEmbauchePossible,'$this->Adr1Stage','$this->Adr2Stage','$this->CPStage','$this->VilleStage')",$Connexion);
+                     $ConnectStages);
+//        return Query ("INSERT INTO $NomTabStages VALUES (NULL,$this->FK_Entreprise,$this->FK_Tuteur,$this->NiveauStage,$this->Materiel,$this->Langages,'$this->AutresLangages',$this->BD,'$this->AutresBD','$this->LogicielsSpecifiques','$this->MethodesAnalyse','$this->MethodesConception','$this->MethodesProgrammation','$this->MethodesControleQL','$this->MethodesGestionProjet','$this->Sujet',$this->IsNatureTacheProgr,$this->IsNatureStageAnalyse,$this->IsIntegrationProjetGlobal,$this->IsIntegrationEntiteIndependante,'$this->RemarquesGenerales','$this->NbPersCentreInfo',$this->NbStagesProposes,$this->AreOldStagiaires,$this->NbStagesRestant ,'$this->NbPersonnesService',$this->IsStagiaireSeul,'$this->IndemnitesMensuellesStage','$this->IndemnitesRepas','$this->IndemnitesTransport',$this->IsEmbauchePossible,'$this->Adr1Stage','$this->Adr2Stage','$this->CPStage','$this->VilleStage')",$ConnectStages);
 
     } // Insert()
     
     function Delete()
     {
-        global $Connexion, $NomTabStages;
+        global $ConnectStages, $NomTabStages;
 
         return Query ("DELETE FROM $NomTabStages WHERE PK_Stage = $this->PK_Stage",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabStages;
+        global $ConnectStages, $NomTabStages;
 
         $Req = Query ("UPDATE $NomTabStages 
 		               SET 
@@ -595,7 +595,7 @@ class CStage
                            VilleStage                       = '$this->VilleStage'
 						   
                            WHERE PK_Stage = $this->PK_Stage",
-                  $Connexion);
+                  $ConnectStages);
 
     } // Update()
 

@@ -14,7 +14,7 @@ class CBaseDonnees
 
     function CBaseDonnees ($PK_BD = 0)
     {
-        global $Connexion, $NomTabBasesDonnees;
+        global $ConnectStages, $NomTabBasesDonnees;
 
         if (!isset ($PK_BD) || $PK_BD == 0)
         {
@@ -30,7 +30,7 @@ class CBaseDonnees
 
             $ReqTuple = Query ("SELECT * FROM  $NomTabBasesDonnees
                                     WHERE PK_BD = '$PK_BD'",
-                               $Connexion);
+                               $ConnectStages);
             $LeTuple = mysql_fetch_object ($ReqTuple);
 
             $this->Code    = $LeTuple->Code    ;
@@ -78,10 +78,10 @@ class CBaseDonnees
 
     function Select()
     {
-        global $Connexion, $NomTabBasesDonnees;
+        global $ConnectStages, $NomTabBasesDonnees;
 
         $Req = Query ("SELECT * FROM $NomTabBasesDonnees  WHERE PK_BD = $this->PK_BD",
-                  $Connexion);
+                  $ConnectStages);
         $Obj = mysql_fetch_object ($Req);
 
         if (! $Obj) return false;
@@ -96,29 +96,29 @@ class CBaseDonnees
 
     function Insert()
     {
-        global $Connexion, $NomTabBasesDonnees;
+        global $ConnectStages, $NomTabBasesDonnees;
         
         return Query ("INSERT INTO $NomTabBasesDonnees VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
                  $this->CodeBin);",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabBasesDonnees;
+        global $ConnectStages, $NomTabBasesDonnees;
 
         return Query ("DELETE FROM $NomTabBasesDonnees WHERE PK_BD = $this->PK_BD",
-                     $Connexion);
+                     $ConnectStages);
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabBasesDonnees;
+        global $ConnectStages, $NomTabBasesDonnees;
         
         $Req = Query ("UPDATE $NomTabBasesDonnees SET 
                                  Code    = '$this->Code',
@@ -126,7 +126,7 @@ class CBaseDonnees
                                  Libelle =  $this->CodeBin,
 
                            WHERE PK_BD = $this->PK_BD",
-                  $Connexion);
+                  $ConnectStages);
 
     } // Update()
 

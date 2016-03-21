@@ -132,7 +132,7 @@
         $Fleche = FLECHE;
 
         // on compare l' entreprise entrée avec les entreprises déjà existantes
-        $ReqL = Query("SELECT NomE from tabentreprise",$Connexion);
+        $ReqL = Query("SELECT NomE from tabentreprise",$ConnectStages);
         while ($RowL = mysql_fetch_row($ReqL))
         {  
             if ($ValNomE == $RowL[0])

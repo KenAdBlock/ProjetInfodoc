@@ -9,7 +9,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 //    $Sender          = "From: marc.laporte@univ-amu.fr";
     $Sender          = "From: darkweizer@gmail.com";
 
-	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu, 
+	$ConnectLaporte = ConnectSelect ($HoteMathieu, $UserMathieu, 
 	                                 $PasswdMathieu, $NomBaseMathieu);
 
 	$URL_List    = $PATH_BACKOFFICE.'BackOffice.php?Trait=List&SlxTable=';
@@ -37,7 +37,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 								   ORDER BY $NomTabEntreprises.NomE, 
 								            $NomTabUsers.Nom,
 											$NomTabUsers.Prenom",
-	                        $Connexion);
+	                        $ConnectStages);
      	break;
     
 	  /*======================*/
@@ -49,7 +49,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		$ReqMails = Query ("SELECT * FROM $NomTabEntreprises
 	                            WHERE  MailR <> '' AND MailR <> '$MailBidon'
 								ORDER BY  NomE",
-	                        $Connexion);
+	                        $ConnectStages);
     	break;
     
 	  /*===================*/
@@ -61,7 +61,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		$ReqMails = Query ("SELECT * FROM $NomTabUsers
 			  	               WHERE FK_Statut = ".STATUS_ETUD1."
 						       ORDER BY Nom",
-	                        $ConnectMathieu);
+	                        $ConnectLaporte);
     	break;
     
 	  /*===================*/
@@ -83,7 +83,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		$ReqMails = Query ("SELECT * FROM $NomTabUsers
 			  	               WHERE (FK_Statut = ".STATUS_ETUD2." OR FK_Statut =".STATUS_ETUDLP.")".$ReqWhere."
 						       ORDER BY Nom",
-	                        $ConnectMathieu);
+	                        $ConnectLaporte);
     	break;
     
 	  /*===================*/
@@ -95,7 +95,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		$ReqMails = Query ("SELECT * FROM $NomTabUsers
 			  	               WHERE FK_Statut = ".STATUS_PROF."
 						       ORDER BY Nom",
-	                        $ConnectMathieu);
+	                        $ConnectLaporte);
     	break;
 
 	  /*=======================*/
@@ -107,7 +107,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                            WHERE (MailR = '' OR MailR = '$MailBidon')
 								    AND $NomTabEntreprises.PK_Entreprise = tabstages0506.FK_Entreprise
 								ORDER BY  NomE",
-	                        $Connexion);
+	                        $ConnectStages);
     	break;
     
 	  /*===============*/
@@ -150,7 +150,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
     mail  ($MailI, $SujetDuMail, stripslashes ($TexteDuMail), $Sender);
     $NewPwd = md5 ($NewPwd);
     Query ("UPDATE $NomTabUsers SET PassWord = '$NewPwd'
-		    WHERE   Mail = '$MailI'", $Connexion);
+		    WHERE   Mail = '$MailI'", $ConnectStages);
 }
 /*   */
 // ===================================================================
@@ -335,7 +335,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 								                                               AND Mail <> '' 
 								                                               AND Mail <> '$MailBidon'
 								                                               AND FK_Entreprise = '$ObjMails->PK_Entreprise'",
-	                                                                    $Connexion);
+	                                                                    $ConnectStages);
                                                  if (mysql_num_rows ($ReqMailsUser) > 0) continue;
                                                                            ?>
     <tr>
@@ -412,7 +412,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 								                                               AND Mail <> '' 
 								                                               AND Mail <> '$MailBidon'
 								                                               AND FK_Entreprise = '$ObjMails->PK_Entreprise'",
-	                                                                    $Connexion);
+	                                                                    $ConnectStages);
                                                  if (mysql_num_rows ($ReqMailsUser) > 0) continue;
                                                                            ?>
     <tr>

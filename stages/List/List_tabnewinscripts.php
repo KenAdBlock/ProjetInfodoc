@@ -3,7 +3,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
     $ReqNewInscripts = Query ("SELECT * FROM $NomTabNewInscripts 
 	                               ORDER BY PK_NewInscript", 
-	                           $Connexion);
+	                           $ConnectStages);
 
 	$URL_Form = $PATH_BACKOFFICE.'BackOffice.php?Trait=Form&SlxTable='.$NomTabNewInscripts;
     $URL_Del  = $PATH_BACKOFFICE.'BackOffice.php?Trait=Del&SlxTable='. $NomTabNewInscripts;
