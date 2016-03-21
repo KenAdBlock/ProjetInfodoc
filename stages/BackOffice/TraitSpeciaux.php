@@ -3,10 +3,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
 ?>
 <?php /*
-<a href="?Trait=ListeEtud1A">Etudiants de 1ère année</a>
+<a href="?Trait=ListeEtud1A">Étudiants de 1ère année</a>
 
 <br /><br />
-<a href="?Trait=ListeEtud2A">Etudiants de 2ème année</a>
+<a href="?Trait=ListeEtud2A">Étudiants de 2ème année</a>
 
 <br /><br />
 <a href="?Trait=RecupFichEntreprises">Récupérer le fichier "stages.txt</a> dans la table <tt>oldentreprises</tt>

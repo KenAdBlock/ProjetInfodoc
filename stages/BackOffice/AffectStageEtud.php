@@ -4,11 +4,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $NomBaseMathieu  = /*"mathieu"*/"laporte"; 
     $NomBaseStages   = "stages"; 
     $UserMathieu     = /*"mathieu"*/"root";
-<<<<<<< HEAD
-    $PasswdMathieu   = /*"dm2ml"*/"";
-=======
     $PasswdMathieu   = /*"dm2ml"*/$PASSWDBD;
->>>>>>> a0950c541eb61b8b8e8fc2a845716fc963a75536
     $HoteMathieu     = "localhost";
     $ConnectMathieu = ConnectSelect ($HoteMathieu,   $UserMathieu,
                                      $PasswdMathieu, $NomBaseMathieu);
@@ -51,7 +47,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 																			    AND FK_STAGE = 0",
 	                                                                     $ConnectMathieu);
 										        if (mysql_num_rows ($ReqEtudAffecte) == 0)
-										           print ('Etudiant déjà affecté');
+										           print ('Étudiant déjà affecté');
 										        else
 										        {
 												    $LibelleNiveau = 'Stage de ';
@@ -77,7 +73,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    <td colspan="2" style="text-align : center"><?=$LibelleNiveau?></td>
 	</tr>
     <tr>
-	    <td><b>Etudiant</b>
+	    <td><b>Étudiant</b>
 		<td><?=$NomPrenom?></td>
 	</tr>
     <tr>
@@ -223,7 +219,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         </td>
     </tr>
     <tr>
-	    <td style="text-align : right"><b>Etudiant :</b>
+	    <td style="text-align : right"><b>Étudiant :</b>
         <td >
 		    <input type="text" name="NomPrenom" maxlength="50" size="30" 
 			        value="" onKeyUp="MAJTxtAffich ();">
