@@ -185,6 +185,28 @@ a.ashadow:hover {
 .jeune,.jeune:hover{
   background:#FFCC00; 
 }
+.jeune-text{
+  color: #FFCC00;
+}
 option *{
   color: black;
+}
+textarea.materialize-textarea {
+  background-color: transparent;
+  border: none;
+  border: 1px solid #0066cc;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all .3s;
+}
+textarea.materialize-textarea:focus:not([readonly]) {
+  border: 1px solid #0066cc;
+  box-shadow: 0px 0px 3px 0px #0066cc;
 }

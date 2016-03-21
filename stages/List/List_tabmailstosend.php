@@ -10,26 +10,22 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     $Title = 'Liste des mails à envoyer';
 ?>
-<h1 style="text-align : center">
-    <?=$Title?>
-</h1>
+<span class="card-title"><h4 class="center"><?=$Title?></h4></span>
                                                                           <?php
         if (! mysql_num_rows ($ReqMails))
         {
                                                                           ?>
-<h4 align="center">
-    Il n'y a actuellement aucun mail à envoyer.
-</h4>
+<h5 class="center">
+    Aucun stage n'a été trouvé.
+</h5>
                                                                           <?php
         }
         else
         {
                                                                           ?>
 
-<table  align="center">
-    <tr>
-        <td valign="top">
-            <table cellpadding="5">
+<table  class="highlight bordered centered grey lighten-5">
+  <thead class="grey white-text">
                 <tr>
                     <th colspan="2">&nbsp;</th>
                     <th style="text-align : center" valign="top" nowrap>
@@ -38,7 +34,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <th style="text-align : center" valign="top" nowrap>
 					    <b>Nom - Prénom</b>
 					</th>
-                <tr><td colspan="5"><hr></td></tr>
+        </thead>
+
                 <tr>
                                                                            <?php
                                         while ($Obj = mysql_fetch_object ($ReqMails))
@@ -48,12 +45,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <td valign="top">
                         <a href="<?=$URL_Form.'&IdentPK='.$Obj->PK_Login?>"
                            <?=AttributsAHRef  ('Envoyer', 'Envoyer', '', '');?>
-					   ><img src="<?=$PATH_GIFS?>b_edit.png" border="0"></a>
+					   ><i class="material-icons yellow-text text-darken-2">mode_edit</i></a>
                     </td>
                     <td valign="top">
                         <a href="<?=$URL_Del.'&IdentPK='.$Obj->PK_Login?>"
                            <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
-					   ><img src="<?=$PATH_GIFS?>b_deltbl.png" border="0"></a>
+					   ><i class="material-icons red-text text-darken-2">delete_forever</i></a>
                     </td>
                     <td valign="top" style="text-align : center">
                         <?=$Obj->PK_Login?>
@@ -65,9 +62,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                                        <?php
                                          }
                                                                        ?>
-            </table>
-        </td>
-    </tr>
+            
 </table>
 <?php
     }
