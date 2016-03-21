@@ -24,9 +24,9 @@
             </p> <br>
 
             <p>
-              <b>Etudiants de 2<sup>ème</sup> année 10 semaines :</b> du 11 avril au 17 juin 2016 <br>
+              <b>Étudiants de 2<sup>e</sup> année 10 semaines :</b> du 11 avril au 17 juin 2016 <br>
 
-              <b>Etudiants de Licence Professionnelle SIL - DA2I <sup><a class="tooltipped" data-position="top" data-delay="50" data-tooltip="Systèmes Informatiques et Logiciels - Développement et Administration Internet et Intranet">1</a></sup> 12 semaines :</b> du 18 avril au 08 juillet 2016
+              <b>Étudiants de Licence Professionnelle SIL - DA2I <sup><a class="tooltipped" data-position="top" data-delay="50" data-tooltip="Systèmes Informatiques et Logiciels - Développement et Administration Internet et Intranet">1</a></sup> 12 semaines :</b> du 18 avril au 08 juillet 2016
             </p> <br>
 
             <p>Une des originalités de la formation dispensée dans les I.U.T. et dans les licences professionnelles se traduit par la nécessité pour les étudiants d'effectuer un stage obligatoire en entreprise. D'une durée de dix ou douze semaines selon le cas (D.U.T ou Licence Professionnelle), le stage poursuit les quatre objectifs suivants : </p>

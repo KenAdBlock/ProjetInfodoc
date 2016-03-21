@@ -267,7 +267,7 @@ invalide, veuillez entre un numéro</p>
                 break;
             
                 case'etud':
-                echo "Etudiant(e)";
+                echo "Étudiant(e)";
                 break;
             
                 case'prof':
