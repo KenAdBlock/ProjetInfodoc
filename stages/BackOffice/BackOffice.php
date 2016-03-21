@@ -35,7 +35,7 @@ function check (field)
 <div class="container">
       <div class="row">
         <div class="col s12">
-          <div class="card grey lighten-4 z-depth-1" >
+          <div class="card grey lighten-5 z-depth-1" >
             <div class="card-content">
 <?php
     // Récupérations des variables envoyées par POST ou GET
