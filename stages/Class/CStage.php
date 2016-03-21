@@ -536,7 +536,7 @@ class CStage
 
     } // Insert()
 
-    
+
     function Delete()
     {
         global $Connexion, $NomTabStages;
