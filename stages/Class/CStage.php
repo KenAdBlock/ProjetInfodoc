@@ -535,11 +535,7 @@ class CStage
 //        return Query ("INSERT INTO $NomTabStages VALUES (NULL,$this->FK_Entreprise,$this->FK_Tuteur,$this->NiveauStage,$this->Materiel,$this->Langages,'$this->AutresLangages',$this->BD,'$this->AutresBD','$this->LogicielsSpecifiques','$this->MethodesAnalyse','$this->MethodesConception','$this->MethodesProgrammation','$this->MethodesControleQL','$this->MethodesGestionProjet','$this->Sujet',$this->IsNatureTacheProgr,$this->IsNatureStageAnalyse,$this->IsIntegrationProjetGlobal,$this->IsIntegrationEntiteIndependante,'$this->RemarquesGenerales','$this->NbPersCentreInfo',$this->NbStagesProposes,$this->AreOldStagiaires,$this->NbStagesRestant ,'$this->NbPersonnesService',$this->IsStagiaireSeul,'$this->IndemnitesMensuellesStage','$this->IndemnitesRepas','$this->IndemnitesTransport',$this->IsEmbauchePossible,'$this->Adr1Stage','$this->Adr2Stage','$this->CPStage','$this->VilleStage')",$Connexion);
 
     } // Insert()
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 180ee04b34d82e0db19f4766b0b5000c0e3e6d65
+    
     function Delete()
     {
         global $Connexion, $NomTabStages;
