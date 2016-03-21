@@ -79,7 +79,7 @@
 </main>
 
 <footer class="page-footer">
-  <div class="amber">
+  <div class="jeune">
     <div class="container">
       <div class="row no-margin-bottom">
         <div class="col s12">

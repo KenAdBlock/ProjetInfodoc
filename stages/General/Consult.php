@@ -13,7 +13,7 @@ function Consult ($Login, $Libelle, $Status)
 
 ?>
 
-<nav class="blue" role="navigation">
+<nav class="bleu1 role="navigation">
 
     <div class="nav-wrapper container">
 
@@ -212,7 +212,7 @@ function Consult ($Login, $Libelle, $Status)
 										                                   ?>
             <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Etiquettes"
 			                                             target="principal">
-                Etiquettes
+                Étiquettes
 			</a>
                                                                            <?php
  			                            }

@@ -450,6 +450,8 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
 										else
 										{
                                                                          ?>
+                                                                         <div class="row">
+    <div class="input-field col s12">
             <select name="FK_Tuteur" size="1" style="width: <?=$WidthSelect?>px">;
                 <option value="0" <?=$ValFK_Tuteur == 0 ? 'selected' : ''?> >----------------</option>
                                                                          <?php
@@ -463,7 +465,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                                                          <?php
 										    }
                                                                          ?>
-			</select>
+			</select></div></div>
                                                                          <?php
 										}
                                                                          ?>
