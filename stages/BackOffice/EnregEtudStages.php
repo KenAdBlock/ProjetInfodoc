@@ -1,14 +1,8 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-	$NomBaseMathieu  = "mathieu"; 
-	$NomBaseStages   = "stages"; 
-    $UserMathieu     = "mathieu"; 
-    $PasswdMathieu   = $PASSWDBD;
-    $HoteMathieu     = "localhost";
-
-	$ConnectLaporte = ConnectSelect ($HoteMathieu, $UserMathieu, 
-	                                 $PasswdMathieu, $NomBaseMathieu);
+    $UtilBD = new UtilBD();
+    $ConnectStages = $UtilBD->ConnectStages();
 
     define ('STATUS_ETUD2', 6);
 

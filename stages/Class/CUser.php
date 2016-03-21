@@ -42,21 +42,20 @@ class CUser
         {
             $this->PK_User = $PK_User;
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabUsers
-                                    WHERE PK_User = '$PK_User'",
-                               $ConnectStages);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabUsers
+                                    WHERE PK_User = '$PK_User'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $this->Login         = $LeTuple->Login    ;
-            $this->PassWord      = $LeTuple->PassWord ;
-            $this->Status        = $LeTuple->Status   ;
-            $this->Civilite      = $LeTuple->Civilite ;
-            $this->Nom           = stripslashes ($LeTuple->Nom);
-            $this->Prenom        = stripslashes ($LeTuple->Prenom);
-            $this->Mail          = $LeTuple->Mail     ;
-            $this->Tel           = $LeTuple->Tel      ;
-            $this->Fax           = $LeTuple->Fax      ;
-            $this->FK_Entreprise = $LeTuple->FK_Entreprise      ;
+            $this->Login         = $LeTuple['Login']    ;
+            $this->PassWord      = $LeTuple['PassWord'] ;
+            $this->Status        = $LeTuple['Status']   ;
+            $this->Civilite      = $LeTuple['Civilite'] ;
+            $this->Nom           = stripslashes ($LeTuple['Nom']);
+            $this->Prenom        = stripslashes ($LeTuple['Prenom']);
+            $this->Mail          = $LeTuple['Mail']     ;
+            $this->Tel           = $LeTuple['Tel']      ;
+            $this->Fax           = $LeTuple['Fax']      ;
+            $this->FK_Entreprise = $LeTuple['FK_Entreprise']      ;
         }
 
     } // CUser()
@@ -151,22 +150,21 @@ class CUser
     {
         global $ConnectStages, $NomTabUsers;
 
-        $Req = Query ("SELECT * FROM $NomTabUsers  WHERE PK_User = $this->PK_User",
-                  $ConnectStages);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabUsers  WHERE PK_User = $this->PK_User");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetLogin             ($Obj->Login);
-        $this->SetPassWord          ($Obj->PassWord);
-        $this->SetStatus            ($Obj->Status);
-        $this->SetCivilite          ($Obj->Civilite);
-        $this->SetNom               (stripslashes ($Obj->Nom));
-        $this->SetPrenom            (stripslashes ($Obj->Prenom));
-        $this->SetMail              ($Obj->Mail);
-        $this->SetTel               ($Obj->Tel);
-        $this->SetFax               ($Obj->Fax);
-        $this->SetFK_Entreprise     ($Obj->FK_Entreprise);
+        $this->SetLogin             ($Obj['Login']);
+        $this->SetPassWord          ($Obj['PassWord']);
+        $this->SetStatus            ($Obj['Status']);
+        $this->SetCivilite          ($Obj['Civilite']);
+        $this->SetNom               (stripslashes ($Obj['Nom']));
+        $this->SetPrenom            (stripslashes ($Obj['Prenom']));
+        $this->SetMail              ($Obj['Mail']);
+        $this->SetTel               ($Obj['Tel']);
+        $this->SetFax               ($Obj['Fax']);
+        $this->SetFK_Entreprise     ($Obj['FK_Entreprise']);
 
         return true;
 
@@ -175,8 +173,8 @@ class CUser
     function Insert()
     {
         global $ConnectStages, $NomTabUsers;
-        
-        return Query ("INSERT INTO $NomTabUsers VALUES (
+
+        return $ConnectStages->query("INSERT INTO $NomTabUsers VALUES (
                 NULL,
                 '$this->Login',
                 '$this->PassWord',
@@ -187,8 +185,7 @@ class CUser
                 '$this->Mail',
                 '$this->Tel' ,
                 '$this->Fax',
-                 $this->FK_Entreprise);",
-                     $ConnectStages);
+                 $this->FK_Entreprise);");
 
     } // Insert()
 
@@ -196,8 +193,7 @@ class CUser
     {
         global $ConnectStages, $NomTabUsers;
 
-        return Query ("DELETE FROM $NomTabUsers WHERE PK_User = $this->PK_User",
-                     $ConnectStages);
+        return $ConnectStages->query("DELETE FROM $NomTabUsers WHERE PK_User = $this->PK_User");
 
     } // Delete()
 
@@ -205,7 +201,7 @@ class CUser
     {
         global $ConnectStages, $NomTabUsers;
 
-        $Req = Query ("UPDATE $NomTabUsers SET 
+        $Req = $ConnectStages->query("UPDATE $NomTabUsers SET 
                                  Login         = '$this->Login',
                                  PassWord      = '$this->PassWord',
                                  Status        = '$this->Status',
@@ -217,8 +213,7 @@ class CUser
                                  Fax           = '$this->Fax',
                                  FK_Entreprise =  $this->FK_Entreprise
 
-                           WHERE PK_User = $this->PK_User",
-                  $ConnectStages);
+                           WHERE PK_User = $this->PK_User");
 
     } // Update()
 

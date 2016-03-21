@@ -54,9 +54,11 @@ function ErrorLogin ($Login, $IsNew = 1)
 
 	if ($IsNew)
 	{
-	    $ReqUsers = Query ("SELECT Login FROM $NomTabUsers WHERE Login = '$Login'",
-                           $ConnectStages);
-	    if (mysql_num_rows ($ReqUsers)) return LOGINDEJAPRIS;
+
+		$ReqUsers = $ConnectStages->prepare("SELECT Login FROM $NomTabUsers WHERE Login = :Login");
+		$ReqUsers->bindValue(':Login', $Login);
+		$ReqUsers->execute();
+	    if ($ReqUsers->rowCount()) return LOGINDEJAPRIS;
 	}
 
 	return 0;
@@ -67,9 +69,8 @@ function CalcCodeBin ($Requete)
 //       ===========
 {
 	$CodeBin = 0;
-	mysql_data_seek ($Requete, 0);
-    while ($Obj = mysql_fetch_object ($Requete))
-	    if ($_POST [$Obj->Code]) $CodeBin += $Obj->CodeBin;
+    while ($Obj = $Requete->fetch())
+	    if ($_POST [$Obj['Code']]) $CodeBin += $Obj['CodeBin'];
 
 	return $CodeBin;
 
@@ -110,9 +111,8 @@ function SaisieRubrStage ($SymboleValid, $Libelle, $Requete, $Masque,
 										                                   ?>
 		</colgroup>
 										                                   <?php
-										mysql_data_seek ($Requete, 0);
 										$NbSurLigne = 0;
-		                                while ($Obj = mysql_fetch_object ($Requete))
+		                                while ($Obj = $Requete->fetch())
 										{
 										    if ($NbSurLigne == 0)
 											{
@@ -123,10 +123,10 @@ function SaisieRubrStage ($SymboleValid, $Libelle, $Requete, $Masque,
 										                                   ?>			
 			    
 				<td nowrap valign="top">
-                    <input type="checkbox" name="<?=$Obj->Code?>" value="<?=$Obj->CodeBin?>"
-					       <?=(IsInSet ($Obj->CodeBin, $Masque)) ? 'checked' : ''?>>
+                    <input type="checkbox" name="<?=$Obj['Code']?>" value="<?=$Obj['CodeBin']?>"
+					       <?=(IsInSet ($Obj['CodeBin'], $Masque)) ? 'checked' : ''?>>
 			        &nbsp;
-		            <?=$Obj->Libelle?>
+		            <?=$Obj['Libelle']?>
 		        </td>
 										                                   <?php
 											if (++$NbSurLigne == $NbParLigne)
@@ -435,9 +435,8 @@ function AffichRubrStage ($Libelle, $Requete, $Masque, $Autres = '',
 										                                   ?>
 		</colgroup>
 										                                   <?php
-										mysql_data_seek ($Requete, 0);
 										$NbSurLigne = 0;
-		                                while ($Obj = mysql_fetch_object ($Requete))
+		                                while ($Obj = $Requete->fetch())
 										{
 										    if ($NbSurLigne == 0)
 											{
@@ -448,10 +447,10 @@ function AffichRubrStage ($Libelle, $Requete, $Masque, $Autres = '',
 										                                   ?>			
 			    
 				<td nowrap valign="top">
-		            <img src="<?=$PATH_GIFS?><?=(IsInSet ($Obj->CodeBin, $Masque)) ? 'cbv' : 'cb'?>.jpg" 
+		            <img src="<?=$PATH_GIFS?><?=(IsInSet ($Obj['CodeBin'], $Masque)) ? 'cbv' : 'cb'?>.jpg"
 			             height="13" width="13">
 			        &nbsp;
-		            <?=stripslashes ($Obj->Libelle)?>
+		            <?=stripslashes ($Obj['Libelle'])?>
 		        </td>
 										                                   <?php
 											if (++$NbSurLigne == $NbParLigne)

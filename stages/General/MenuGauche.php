@@ -22,24 +22,14 @@
 	// Connexion a mySQL
 	// =================
 
-    require_once ($PATH_COMMUNS.   'IdentRoot.php');
 	require_once ($PATH_CONSTANTES.'CstErrBD.php');
-    require_once ($PATH_UTIL.      'UtilBD.php');    // ConnectSelect(), Query()
+    require_once ($PATH_UTIL.      'UtilBD.php'); 
     require_once ($PATH_UTIL.      'UtilLogin.php'); // IsEtudByLogin(), IsProfByLogin()
 
     $UtilBD = new UtilBD();
     $ConnectStages = $UtilBD->ConnectStages();
-//    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
 
     $ConnectLaporte = $UtilBD->ConnectLaporte();
-
-//    $NomBaseMathieu  = "laporte";
-//    $UserMathieu     = "root";
-//    $PasswdMathieu   = $PASSWDBD;
-//    $HoteMathieu     = "localhost";
-
-//	$ConnectLaporte = ConnectSelect ($HoteMathieu, $UserMathieu,
-//	                                 $PasswdMathieu, $NomBaseMathieu);
 
 	// Récupérations des variables envoyées par POST ou GET
 	// ====================================================

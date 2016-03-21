@@ -23,10 +23,10 @@
 
     // Connexion a mySQL
 	
-    include_once ($PATH_UTIL.'IdentRoot.php');
     include_once ($PATH_UTIL.'UtilBD.php');
-	
-    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+
+	$UtilBD = new UtilBD();
+	$ConnectStages = $UtilBD->ConnectStages();
 
 	$WidthDfltPopUpBoxChangePW  = 550;
 	$HeightDfltPopUpBoxChangePW = 530;

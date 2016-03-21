@@ -10,11 +10,11 @@
 	// Connexion a mySQL
 	// =================
 	
-    require_once ($PATH_RACINE.     'Communs/IdentRoot.php');
 	require_once ($PATH_CONSTANTES. 'CstErrBD.php');
-    require_once ($PATH_UTIL.       'UtilBD.php');  // ConnectSelect(), Query()
+    require_once ($PATH_UTIL.       'UtilBD.php');
 
-	$ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+    $UtilBD = new UtilBD();
+    $ConnectStages = $UtilBD->ConnectStages();
 
 	// Récupérations des variables envoyées par POST ou GET
 	// ====================================================

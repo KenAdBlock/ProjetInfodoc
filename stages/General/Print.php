@@ -32,10 +32,10 @@
 
     // Connexion a mySQL
 	
-    require_once ($PATH_UTIL.'IdentRoot.php');
     require_once ($PATH_UTIL.'UtilBD.php');
-		
-    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+
+	$UtilBD = new UtilBD();
+	$ConnectStages = $UtilBD->ConnectStages();
 
 	// Construction des droits
 /*

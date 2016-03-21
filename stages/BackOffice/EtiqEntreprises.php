@@ -6,6 +6,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
 
     require_once ($PATH_CONSTANTES.'CstGales.php');
+    require_once ($PATH_UTIL.'UtilBD.php');
 
     switch ($Option)
 	{
@@ -41,7 +42,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    break;
 	}
 
-    $ConnectStagesInfor_Shema =  ConnectSelect('localhost','root',$PASSWDBD,'INFORMATION_SCHEMA');
+
+    $UtilBD = new UtilBD();
+    $ConnectStages = $UtilBD->ConnectInformationShema();
+    
     $ReqCulName = Query ("SELECT COLUMN_NAME FROM COLUMNS where TABLE_NAME='$NomTabEntreprises' AND (COLUMN_NAME='NomE' OR COLUMN_NAME='Adr1' OR COLUMN_NAME='Adr2' OR COLUMN_NAME='CP' OR COLUMN_NAME='Ville')", $ConnectStagesInfor_Shema);
     $var = mysql_data_seek($ReqCulName, 0);
     if (! mysql_num_rows ($ReqSoc))

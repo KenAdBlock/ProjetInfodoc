@@ -20,13 +20,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     require_once ($PATH_CLASS.'CUser.php');
     require_once ($PATH_UTIL.'UtilLogin.php');
     require_once ($PATH_COMMUNS.'FctDiverses.php');
-
-	$ReqStatus      = Query ("SELECT * FROM $NomTabStatus",     
-	                         $ConnectStages);
-	$ReqEntreprises = Query ("SELECT NomE, PK_Entreprise 
-	                              FROM $NomTabEntreprises
-								  ORDER BY NomE",
-	                         $ConnectStages);
+    
+    $ReqStatus = $ConnectStages->query("SELECT * FROM $NomTabStatus");
+    $ReqEntreprises = $ConnectStages->query("SELECT NomE, PK_Entreprise 
+	                                           FROM $NomTabEntreprises
+								               ORDER BY NomE");
+    
     if (! GetDroits ($Status, 'ModifUser')) $IdentPK = $_SESSION ['PK_User'];
 	
     if (!isset ($StepConsult))
@@ -158,15 +157,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                 $ObjTuple->Insert();
 				
 				// Enregistrement du mail à envoyer
-				
-				Query ("INSERT INTO $NomTabMailsToSend VALUES (
+                
+                $ConnectStages->query("INSERT INTO $NomTabMailsToSend VALUES (
 			    	  	   '$ValLogin',
 				 	       '$NewPassWord',
 				 	       '$ValCivilite',
 				 	       '$ValNom',
 				 	       '$ValPrenom',
-                  	       '$ValMail');",
-			            $ConnectStages);
+                  	       '$ValMail');");
 			}
             else
             {
@@ -303,12 +301,12 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                     <?=$ValidStatus?>
                                     <select name="StatusUser">
                                         <?php
-                                        while ($ObjStatus = mysql_fetch_object ($ReqStatus))
+                                        while ($ObjStatus = $ReqStatus->fetch())
                                         {
                                             ?>
-                                            <option value="<?=$ObjStatus->Code?>"
-                                                <?=$ObjStatus->Code == $ValStatus ? 'selected' : ''?>>
-                                                <?=$ObjStatus->Libelle?>
+                                            <option value="<?=$ObjStatus['Code']?>"
+                                                <?=$ObjStatus['Code'] == $ValStatus ? 'selected' : ''?>>
+                                                <?=$ObjStatus['Libelle']?>
                                             </option>
                                             <?php
                                         }
@@ -324,12 +322,12 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                         >----------------
                                         </option>
                                         <?php
-                                        while ($ObjSoc = mysql_fetch_object ($ReqEntreprises))
+                                        while ($ObjSoc = $ReqEntreprises->fetch())
                                         {
                                             ?>
-                                            <option value="<?=$ObjSoc->PK_Entreprise?>"
-                                                <?=$ObjSoc->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
-                                                <?=$ObjSoc->NomE?>
+                                            <option value="<?=$ObjSoc['PK_Entreprise']?>"
+                                                <?=$ObjSoc['PK_Entreprise'] == $ValFK_Entreprise ? 'selected' : ''?>>
+                                                <?=$ObjSoc['NomE']?>
                                             </option>
                                             <?php
                                         }

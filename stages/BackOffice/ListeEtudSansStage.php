@@ -1,31 +1,26 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-	$NomBaseMathieu  = /*"mathieu"*/"laporte"; 
-    $UserMathieu     = /*"mathieu"*/"root";
-    $PasswdMathieu   = /*"dehaime"*/$PASSWDBD;
-    $HoteMathieu     = "localhost";
-
-	$ConnectLaporte = ConnectSelect ($HoteMathieu, $UserMathieu, 
-	                                 $PasswdMathieu, $NomBaseMathieu);
+	$UtilBD = new UtilBD();
+	$ConnectLaporte = $UtilBD->ConnectLaporte();
 
     define ('STATUS_ETUD2', 6);
-    $ReqEtud = Query ("SELECT * FROM $NomTabUsers
+	
+	$ReqEtud = $ConnectLaporte->query("SELECT * FROM $NomTabUsers
 			  	            WHERE FK_Statut = ".STATUS_ETUD2." AND FK_Stage = ''
-						    ORDER BY Nom",
-	                   $ConnectLaporte);
+						    ORDER BY Nom");
 ?>
 <h1>Liste des étudiants n'ayant pas de stage</h1>
 
 <table>
                                                                            <?php
-                                        while ($ObjEtud = mysql_fetch_object ($ReqEtud))
+                                        while ($ObjEtud = $ReqEtud->fetch())
 										{
 										                                   ?>
     <tr>
-	    <td><?=$ObjEtud->Nom?></td>
-	    <td><?=$ObjEtud->Prenom?></td>
-	    <td><?=$ObjEtud->FK_Stage?></td>
+	    <td><?=$ObjEtud['Nom']?></td>
+	    <td><?=$ObjEtud['Prenom']?></td>
+	    <td><?=$ObjEtud['FK_Stage']?></td>
 	</tr>
                                                                            <?php
                                         }

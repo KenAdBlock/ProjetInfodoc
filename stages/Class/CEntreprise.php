@@ -49,25 +49,25 @@ class CEntreprise
         else
         {
             $this->PK_Entreprise = $PK_Entreprise;
-            $ReqTuple = Query ("SELECT * FROM  $NomTabEntreprises
-                                    WHERE PK_Entreprise = '$PK_Entreprise'",
-                               $ConnectStages);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
 
-            $this->Is_Valide         = 1                          ;
-            $this->NomE              = stripslashes ($LeTuple->NomE);
-            $this->Civilite         = $LeTuple->Civilite          ;
-            $this->NomR              = stripslashes ($LeTuple->NomR);
-            $this->PrenomR           = stripslashes ($LeTuple->PrenomR);
-            $this->Adr1              = stripslashes ($LeTuple->Adr1);
-            $this->Adr2              = stripslashes ($LeTuple->Adr2);
-            $this->CP                = $LeTuple->CP               ;
-            $this->Ville             = stripslashes ($LeTuple->Ville);
-            $this->TelR              = $LeTuple->TelR             ;
-            $this->MailR             = $LeTuple->MailR            ;
-            $this->FaxR              = $LeTuple->FaxR             ;
-            $this->PresentEntreprise = stripslashes ($LeTuple->PresentEntreprise);
-            $this->SiteEntreprise    = stripslashes ($LeTuple->SiteEntreprise);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabEntreprises
+                                    WHERE PK_Entreprise = '$PK_Entreprise'");
+            $LeTuple = $ReqTuple->fetch();
+
+            $this->Is_Valide         = 1;
+            $this->NomE              = stripslashes ($LeTuple['NomE']);
+            $this->Civilite         = $LeTuple['Civilite'];
+            $this->NomR              = stripslashes ($LeTuple['NomR']);
+            $this->PrenomR           = stripslashes ($LeTuple['PrenomR']);
+            $this->Adr1              = stripslashes ($LeTuple['Adr1']);
+            $this->Adr2              = stripslashes ($LeTuple['Adr2']);
+            $this->CP                = $LeTuple['CP'];
+            $this->Ville             = stripslashes ($LeTuple['Ville']);
+            $this->TelR              = $LeTuple['TelR'];
+            $this->MailR             = $LeTuple['MailR'];
+            $this->FaxR              = $LeTuple['FaxR'];
+            $this->PresentEntreprise = stripslashes ($LeTuple['PresentEntreprise']);
+            $this->SiteEntreprise    = stripslashes ($LeTuple['SiteEntreprise']);
         }
 
     } // CEntreprise()
@@ -188,27 +188,26 @@ class CEntreprise
     {
         global $NomTabEntreprises, $ConnectStages;
 
-        $Req = Query ("SELECT * FROM $NomTabEntreprises  
-		                   WHERE PK_Entreprise = $this->PK_Entreprise",
-                  $ConnectStages);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabEntreprises  
+		                   WHERE PK_Entreprise = $this->PK_Entreprise");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetIs_Valide         ($Obj->Is_Valide);
-        $this->SetNomE              (stripslashes ($Obj->NomE));
-        $this->SetCivilite          ($Obj->Civilite);
-        $this->SetNomR              (stripslashes ($Obj->NomR));
-        $this->SetPrenomR           (stripslashes ($Obj->PrenomR));
-        $this->SetAdr1              (stripslashes ($Obj->Adr1));
-        $this->SetAdr2              (stripslashes ($Obj->Adr2));
-        $this->SetCP                ($Obj->CP);
-        $this->SetVille             (stripslashes ($Obj->Ville));
-        $this->SetTelR              ($Obj->TelR);
-        $this->SetMailR             ($Obj->MailR);
-        $this->SetFaxR              ($Obj->FaxR);
-        $this->SetPresentEntreprise ($Obj->PresentEntreprise);
-        $this->SetSiteEntreprise    ($Obj->SiteEntreprise);
+        $this->SetIs_Valide         ($Obj['Is_Valide']);
+        $this->SetNomE              (stripslashes ($Obj['NomE']));
+        $this->SetCivilite          ($Obj['Civilite']);
+        $this->SetNomR              (stripslashes ($Obj['NomR']));
+        $this->SetPrenomR           (stripslashes ($Obj['PrenomR']));
+        $this->SetAdr1              (stripslashes ($Obj['Adr1']));
+        $this->SetAdr2              (stripslashes ($Obj['Adr2']));
+        $this->SetCP                ($Obj['CP']);
+        $this->SetVille             (stripslashes ($Obj['Ville']));
+        $this->SetTelR              ($Obj['TelR']);
+        $this->SetMailR             ($Obj['MailR']);
+        $this->SetFaxR              ($Obj['FaxR']);
+        $this->SetPresentEntreprise ($Obj['PresentEntreprise']);
+        $this->SetSiteEntreprise    ($Obj['SiteEntreprise']);
 
         return true;
 
@@ -218,7 +217,7 @@ class CEntreprise
     {
         global $NomTabEntreprises, $ConnectStages;
 
-        return Query ("INSERT INTO $NomTabEntreprises VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabEntreprises VALUES (
                 NULL,
                  $this->Is_Valide,
                 '".addslashes ($this->NomE)."',
@@ -233,8 +232,7 @@ class CEntreprise
                 '$this->MailR',
                 '$this->FaxR',
                 '".addslashes ($this->PresentEntreprise)."',
-                '".addslashes ($this->SiteEntreprise)."')",
-                     $ConnectStages);
+                '".addslashes ($this->SiteEntreprise)."')");
 
     } // Insert()
 
@@ -242,9 +240,8 @@ class CEntreprise
     {
         global $NomTabEntreprises, $ConnectStages;
 
-        return Query ("DELETE FROM $NomTabEntreprises 
-		                   WHERE PK_Entreprise = $this->PK_Entreprise",
-                     $ConnectStages);
+        return $ConnectStages->query("DELETE FROM $NomTabEntreprises 
+		                   WHERE PK_Entreprise = $this->PK_Entreprise");
 
     } // Delete()
 
@@ -252,7 +249,7 @@ class CEntreprise
     {
         global $NomTabEntreprises, $ConnectStages;
 
-        $Req = Query ("UPDATE $NomTabEntreprises 
+        $Req = $ConnectStages->query("UPDATE $NomTabEntreprises 
 		               SET 
                            Is_Valide         =  $this->Is_Valide,
                            NomE              = '".addslashes ($this->NomE)."',
@@ -269,8 +266,7 @@ class CEntreprise
                            PresentEntreprise = '".addslashes ($this->PresentEntreprise)."',
                            SiteEntreprise    = '".addslashes ($this->SiteEntreprise)."'
 
-                           WHERE PK_Entreprise = $this->PK_Entreprise",
-                  $ConnectStages);
+                           WHERE PK_Entreprise = $this->PK_Entreprise");
     } // Update()
 
 } // CEntreprise

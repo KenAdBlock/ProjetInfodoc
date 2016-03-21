@@ -25,10 +25,10 @@
     // Connexion a mySQL
 	// =================
 	
-    require_once ($PATH_COMMUNS.'IdentRoot.php');
     require_once ($PATH_UTIL.'UtilBD.php');
-	
-    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+    
+    $UtilBD = new UtilBD();
+    $ConnectStages = $UtilBD->ConnectStages();
 
     //
 

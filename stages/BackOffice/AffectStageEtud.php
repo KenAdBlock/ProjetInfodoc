@@ -1,13 +1,8 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-    $NomBaseMathieu  = /*"mathieu"*/"laporte"; 
-    $NomBaseStages   = "stages"; 
-    $UserMathieu     = /*"mathieu"*/"root";
-    $PasswdMathieu   = /*"dm2ml"*/$PASSWDBD;
-    $HoteMathieu     = "localhost";
-    $ConnectLaporte = ConnectSelect ($HoteMathieu,   $UserMathieu,
-                                     $PasswdMathieu, $NomBaseMathieu);
+	$UtilBD = new UtilBD();
+	$ConnectLaporte = $UtilBD->ConnectLaporte();
 					   
     // Génération de la table des étudiants
 	// ====================================

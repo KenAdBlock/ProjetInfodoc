@@ -40,12 +40,18 @@ function RecupOldEntreprises()
 	                     $ConnectStages);
 /*    */
 /*    */
-    $ReqOldSocs = Query ("SELECT DISTINCT oldtabentreprises.*
-	                         FROM oldtabentreprises, oldtabstages 
-						     WHERE oldtabentreprises.NomEntreprise = oldtabstages.NomEntreprise
-							 AND   oldtabstages.Annee > 1999
-							 ORDER BY oldtabentreprises.NomEntreprise",
-	                     $ConnectStages);
+//    $ReqOldSocs = Query ("SELECT DISTINCT oldtabentreprises.*
+//	                         FROM oldtabentreprises, oldtabstages
+//						     WHERE oldtabentreprises.NomEntreprise = oldtabstages.NomEntreprise
+//							 AND   oldtabstages.Annee > 1999
+//							 ORDER BY oldtabentreprises.NomEntreprise",
+//	                     $ConnectStages);
+
+    $ReqOldSocs = $ConnectStages->query("SELECT DISTINCT oldtabentreprises.*
+	                                       FROM oldtabentreprises, oldtabstages 
+						                   WHERE oldtabentreprises.NomEntreprise = oldtabstages.NomEntreprise
+							               AND   oldtabstages.Annee > 1999
+							               ORDER BY oldtabentreprises.NomEntreprise");
 /*    */
 ?>
 <table>
@@ -57,30 +63,30 @@ function RecupOldEntreprises()
 <th>Annee</th>
 </tr>
 <?php						 
-	while ($ObjReq = mysql_fetch_object ($ReqOldSocs))
+	while ($ObjReq = $ReqOldSocs->fetch())
 	{
         $ObjSoc = new CEntreprise ();
 		
         $ObjSoc->SetPK_Entreprise (0);
 		
-        $ObjSoc->SetNomE          ($ObjReq->NomEntreprise);
-        $ObjSoc->SetNomR          ($ObjReq->NomRespAdmin);
-        $ObjSoc->SetPrenomR       ($ObjReq->PrenomRespAdmin);
-        $ObjSoc->SetAdr1          ($ObjReq->Adr1);
-        $ObjSoc->SetAdr2          ($ObjReq->Adr2);
-        $ObjSoc->SetCP            ($ObjReq->CP);
-        $ObjSoc->SetVille         ($ObjReq->Ville);
-        $ObjSoc->SetTelR          ($ObjReq->TelRespAdmin);
-        $ObjSoc->SetMailR         ($ObjReq->emailRespAdmin);
+        $ObjSoc->SetNomE          ($ObjReq['NomEntreprise']);
+        $ObjSoc->SetNomR          ($ObjReq['NomRespAdmin']);
+        $ObjSoc->SetPrenomR       ($ObjReq['PrenomRespAdmin']);
+        $ObjSoc->SetAdr1          ($ObjReq['Adr1']);
+        $ObjSoc->SetAdr2          ($ObjReq['Adr2']);
+        $ObjSoc->SetCP            ($ObjReq['CP']);
+        $ObjSoc->SetVille         ($ObjReq['Ville']);
+        $ObjSoc->SetTelR          ($ObjReq['TelRespAdmin']);
+        $ObjSoc->SetMailR         ($ObjReq['emailRespAdmin']);
 		
         $ObjSoc->Insert();
 ?>
 <tr>
-    <td><?=$ObjReq->Is_Valide?></td>
-	<td><?=$ObjReq->NomEntreprise?></td>
-    <td><?=$ObjReq->NomRespAdmin?></td>
-    <td><?=$ObjReq->NomEtudiant?></td>
-    <td><?=$ObjReq->Annee?></td>
+    <td><?=$ObjReq['Is_Valide']?></td>
+	<td><?=$ObjReq['NomEntreprise']?></td>
+    <td><?=$ObjReq['NomRespAdmin']?></td>
+    <td><?=$ObjReq['NomEtudiant']?></td>
+    <td><?=$ObjReq['Annee']?></td>
 </tr>
 <?php
     }
@@ -120,11 +126,11 @@ function RecupOldEntreprises()
 
     // Connexion a mySQL
 	// =================
-	
-    require_once ($PATH_COMMUNS.'IdentRoot.php');
+
     require_once ($PATH_UTIL.'UtilBD.php');
-	
-    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+
+    $UtilBD = new UtilBD();
+    $ConnectStages = $UtilBD->ConnectStages();
 
 	//
     include_once ($PATH_UTIL.'UtilBackOffice.php');
@@ -202,23 +208,28 @@ function NormaliserNomPrenomLogin ($Ligne,
 } // NormaliserNomPrenomLogin
 
 function NormaliserNomPrenomLogin1A2A ($Annee)
-{		
+{
+    global $ConnectLaporte;
     $handle = fopen ($Annee.'.txt', 'r');
     for (; $Ligne = fgets($handle); )
     {
         NormaliserNomPrenomLogin ($Ligne, $Nom, $Prenoms, $NumGroupe, $LoginAuto);
-        $ReqEtud = Query ("SELECT * FROM $NomTabUsers
-			  	                WHERE Identifiant = '$LoginAuto'",
-	                       $ConnectLaporte);
-        if (mysql_num_rows ($ReqEtud) == 0)
+//        $ReqEtud = Query ("SELECT * FROM $NomTabUsers
+//			  	                WHERE Identifiant = '$LoginAuto'",
+//	                       $ConnectLaporte);
+        $ReqEtud = $ConnectLaporte->prepare("SELECT * FROM $NomTabUsers
+			  	                             WHERE Identifiant = '$LoginAuto'");
+        $ReqEtud->bindValue(':LoginAuto', $LoginAuto);
+        $ReqEtud->execute();
+        if (rowCount($ReqEtud) == 0)
 	        print ($LoginAuto." : non trouve <br />");
 	    else  if (mysql_num_rows ($ReqEtud) > 1)
 	       print ($LoginAuto." : plus d'une occurrence <br />");
 	    else
 	    {
-	        $Obj = mysql_fetch_object ($ReqEtud);
+	        $Obj = $ReqEtud->fetch();
 	        print ($Nom.' '.$Prenoms.' '.$NumGroupe.';'.$LoginAuto.
-	               ' Ancien nom =  '.$Obj->Nom.' Ancien prénom =  '.$Obj->Prenom.'<br />');
+	               ' Ancien nom =  '.$Obj['Nom'].' Ancien prénom =  '.$Obj['Prenom'].'<br />');
         }
         /*
         $ReqEtud = Query ("UPDATE $NomTabUsers SET 

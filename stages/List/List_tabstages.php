@@ -52,41 +52,56 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     if ($Status == TUTEUR)
     {
-        $ReqStages = Query ("SELECT *
+//        $ReqStages = Query ("SELECT *
+//                                 FROM $NomTabStages S, $NomTabEntreprises E
+//                                 WHERE S.FK_Entreprise = E.PK_Entreprise
+//                                   AND E.PK_Entreprise = $FK_EntrepriseUser
+//                                 ORDER BY ".$OrderReq,
+//                            $ConnectStages);
+        $ReqStages = $ConnectStages->prepare("SELECT *
                                  FROM $NomTabStages S, $NomTabEntreprises E
                                  WHERE S.FK_Entreprise = E.PK_Entreprise
-                                   AND E.PK_Entreprise = $FK_EntrepriseUser
-                                 ORDER BY ".$OrderReq,
-                            $ConnectStages);
+                                   AND E.PK_Entreprise = :EntrepriseUser
+                                 ORDER BY ".$OrderReq);
+        $ReqStages->bindValue(':EntrepriseUser', $FK_EntrepriseUser, PDO::PARAM_INT);
+        $ReqStages->execute();
     }
     // Requete générale pour toutes les fiches de stage
     /*
     else if ($Status == ETUDLP)
     {
-        $ReqStages = Query ("SELECT *
+        $ReqStages = $ConnectStages->query("SELECT *
                                  FROM $NomTabStages S, $NomTabEntreprises E
                                  WHERE S.FK_Entreprise = E.PK_Entreprise
                                  AND (S.NiveauStage = 2 OR S.NiveauStage = 3)
-                                 ORDER BY ".$OrderReq,
-                            $ConnectStages);
+                                 ORDER BY ".$OrderReq);
     }
     */
     else if ($Status == ETUD2)
     {
-        $ReqStages = Query ("SELECT *
+//        $ReqStages = Query ("SELECT *
+//                                 FROM $NomTabStages S, $NomTabEntreprises E
+//                                 WHERE S.FK_Entreprise = E.PK_Entreprise
+//                                 AND (S.NiveauStage = 1 OR S.NiveauStage = 3)
+//                                 ORDER BY ".$OrderReq,
+//                            $ConnectStages);
+        $ReqStages = $ConnectStages->query("SELECT *
                                  FROM $NomTabStages S, $NomTabEntreprises E
                                  WHERE S.FK_Entreprise = E.PK_Entreprise
                                  AND (S.NiveauStage = 1 OR S.NiveauStage = 3)
-                                 ORDER BY ".$OrderReq,
-                            $ConnectStages);
+                                 ORDER BY ".$OrderReq);
     }
     else
     {
-        $ReqStages = Query ("SELECT *
+//        $ReqStages = Query ("SELECT *
+//                                 FROM $NomTabStages S, $NomTabEntreprises E
+//                                 WHERE S.FK_Entreprise = E.PK_Entreprise
+//                                 ORDER BY ".$OrderReq,
+//                            $ConnectStages);
+        $ReqStages = $ConnectStages->query("SELECT *
                                  FROM $NomTabStages S, $NomTabEntreprises E
                                  WHERE S.FK_Entreprise = E.PK_Entreprise
-                                 ORDER BY ".$OrderReq,
-                            $ConnectStages);
+                                 ORDER BY ".$OrderReq);
     }
     {
     ?>
@@ -94,7 +109,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 <span class="card-title"><h4 class="center"><?=$Title?></h4></span>
     
                                                                           <?php
-        if (! mysql_num_rows ($ReqStages))
+        if (! $ReqStages->rowCount())
         {
                                                                           ?>
 <h5 class="center">
@@ -157,10 +172,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <!--<tr><td colspan="<?=$NbCol?>"></td></tr>-->
                     <tr>
                                                                              <?php
-                                            mysql_data_seek ($ReqStages, 0);
-                                            while ($ObjStage = mysql_fetch_object ($ReqStages))
+                                            while ($ObjStage = $ReqStages->fetch())
                                             {
-                                                if ($ObjStage->NbStagesRestant == 0)
+                                                if ($ObjStage['NbStagesRestant'] == 0)
                                                     if ($DroitStagesNonPourvus)
                                                         continue;
                                                     else
@@ -169,18 +183,18 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                     $BgColor = '#b71c1c';
                                                                               ?>
                          <td valign="top">
-                            <a href="<?=$URL_AffichStage.$ObjStage->PK_Stage?>"
+                            <a href="<?=$URL_AffichStage.$ObjStage['PK_Stage']?>"
                                <?=AttributsAHRef  ('Detail', 'Detail', '', '');?>
                            ><i class="material-icons blue-text text-lighten-1">description</i></a>
                         </td>
                                                                               <?php
                                                 if ($DroitAffectStageEtud)
                                                 {
-                                                    if ($ObjStage->NbStagesRestant)
+                                                    if ($ObjStage['NbStagesRestant'])
                                                     {
                                                                               ?>
                         <td valign="top">
-                            <a href="<?=$URL_Affect.$ObjStage->PK_Stage?>"
+                            <a href="<?=$URL_Affect.$ObjStage['PK_Stage']?>"
                                <?=AttributsAHRef  ('Affecter', 'Affecter', '', '');?>
                            ><i class="material-icons blue-text text-lighten-1">input</i></a>
                         </td>
@@ -200,7 +214,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                 {
                                                                               ?>
                         <td valign="top">
-                            <a href="<?=$URL_FormStage.$ObjStage->PK_Stage?>"
+                            <a href="<?=$URL_FormStage.$ObjStage['PK_Stage']?>"
                                <?=AttributsAHRef  ('Modifier', 'Modifier', '', '');?>
                            ><i class="material-icons yellow-text text-darken-2">mode_edit</i></a>
                         </td>
@@ -210,9 +224,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                 {
                                                                               ?>
                         <td valign="top">
-                            <a href="<?=$URL_DelStage.$ObjStage->PK_Stage?>"
+                            <a href="<?=$URL_DelStage.$ObjStage['PK_Stage']?>"
                                <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
-                               onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$ObjStage->PK_Stage?> ?')"
+                               onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$ObjStage['PK_Stage']?> ?')"
                                ><i class="material-icons red-text text-darken-2">delete_forever</i>
                             </a>
                         </td>
@@ -220,18 +234,18 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                 }
                                                                               ?>
                         <td valign="top" align="center">
-                            <a href="<?=$URL_AffichStage.$ObjStage->PK_Stage?>"
-                               <?=AttributsAHRef  ($Bulle [$ObjStage->NiveauStage], 'Details stage', '', '');?>
+                            <a href="<?=$URL_AffichStage.$ObjStage['PK_Stage']?>"
+                               <?=AttributsAHRef  ($Bulle [$ObjStage['NiveauStage']], 'Details stage', '', '');?>
                             >
-                            <?=$ObjStage->PK_Stage?></a>
+                            <?=$ObjStage['PK_Stage']?></a>
                         </td>
-                        <td style="text-align : center"><?=$ObjStage->NbStagesRestant?></td>
+                        <td style="text-align : center"><?=$ObjStage['NbStagesRestant']?></td>
                         <td valign="top" align="center">
-                            <a style="color : <?=$BgColor?>" href="<?=$URL_AffichSoc.$ObjStage->FK_Entreprise?>"
+                            <a style="color : <?=$BgColor?>" href="<?=$URL_AffichSoc.$ObjStage['FK_Entreprise']?>"
                                <?=AttributsAHRef  ('Afficher la fiche de l\'entreprise',
                                                    'Details entreprise', '', '');?>
                             >
-                            <?=stripslashes ($ObjStage->NomE)?></a>
+                            <?=stripslashes ($ObjStage['NomE'])?></a>
                         </td>
                     </tr>
                                                                               <?php

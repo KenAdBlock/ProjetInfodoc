@@ -272,7 +272,7 @@ function check (field)
 
     }
     // Fermeture de la base
-    mysql_close ($ConnectStages);
+    $ConnectStages = null;
 ?>
 </div>
           </div>

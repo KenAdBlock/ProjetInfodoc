@@ -10,7 +10,6 @@
     require_once ($PATH_UTIL.'UtilSession.php');
     require_once ($PATH_UTIL.'UtilBD.php');
     require_once ($PATH_UTIL.'UtilErr.php'); // ValidChampRempli(), ValidPassWord(), 
-    require_once ($PATH_COMMUNS.'IdentRoot.php');	
 
     // Ouverture de la session
 	// =======================
@@ -29,9 +28,10 @@
 
     // Connexion a mySQL
 	// =================
-	
-	
-    $ConnectStages = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+
+
+	$UtilBD = new UtilBD();
+	$ConnectStages = $UtilBD->ConnectStages();
 
     // ========================================================================== //
 

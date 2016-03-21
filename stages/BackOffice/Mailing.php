@@ -1,16 +1,11 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-    $NomBaseMathieu  = "laporte"; 
-    $NomBaseStages   = "stages"; 
-    $UserMathieu     = "root";
-    $PasswdMathieu   = $PASSWDBD;
-    $HoteMathieu     = "localhost";
 //    $Sender          = "From: marc.laporte@univ-amu.fr";
     $Sender          = "From: darkweizer@gmail.com";
 
-	$ConnectLaporte = ConnectSelect ($HoteMathieu, $UserMathieu, 
-	                                 $PasswdMathieu, $NomBaseMathieu);
+	$UtilBD = new UtilBD();
+	$ConnectLaporte = $UtilBD->ConnectLaporte();
 
 	$URL_List    = $PATH_BACKOFFICE.'BackOffice.php?Trait=List&SlxTable=';
     $WidthButton = 130;
