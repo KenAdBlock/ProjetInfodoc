@@ -396,20 +396,20 @@ alert('<?php echo 'Oui ? '.$ValLogicielsSpecOuiNon.' '.ProtectApos ($ValLogiciel
 <p style="text-align : center;">
 <?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGE]?>
 
-<nobr  style="font-weight : bold; color : red">
+
 &nbsp; &nbsp; &nbsp; 
 <input id="<?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEDUT]?>" type="radio" name="NiveauStage" value="1"
 			       <?=$ValNiveauStage == 1 ? 'checked' : ''?> >
-                   <label class="black-text" for="<?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEDUT]?>"><?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEDUT]?></label>
+                   <label class="black-text" for="<?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEDUT]?>"><b><?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEDUT]?></b></label>
 &nbsp; &nbsp; &nbsp; 
 <input id="<?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGELP]?>" type="radio" name="NiveauStage" value="2"
 			       <?=$ValNiveauStage == 2 ? 'checked' : ''?> >
-                   <label class="black-text" for="<?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGELP]?>"><?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGELP]?></label>
+                   <label class="black-text" for="<?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGELP]?>"><b><?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGELP]?></b></label>
 &nbsp; &nbsp; 
 <input id="<?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF]?>" type="radio" name="NiveauStage" value="3"
 			       <?=$ValNiveauStage == 3 ? 'checked' : ''?> >
-                   <label class="black-text" for="<?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF]?>"><?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF]?></label>
-</nobr>
+                   <label class="black-text" for="<?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF]?>"><b><?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF]?></b></label>
+
 
 <p style="text-align : center; font-size : 11 px; font-style : italic;">
 Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
@@ -480,7 +480,8 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
         AffichTitre ($Msg_FormStage [MSGFORMSTAGE_ADRSTAGE], 4, 'left', 'normal');
 
                                                                          ?>
-	    
+	    <table class="cadre">
+            <tr><td>
     <div class="input-field col s12 l6">
     <?=$ValidAdr1Stage?>
 
@@ -504,7 +505,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
         
             <input type="text" name="VilleStage" id="VilleStage" size="50" value="<?=$ValVilleStage?>">
         <label for="VilleStage"><b>Ville</b></label>
-        </div>
+        </div></td></tr></table>
     
                                                                          <?php
                                         AffichLigneVierge();
@@ -807,16 +808,14 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
                                          }
                                                                            ?>
     
-       
-            <button type="button" 
+       <p class="center">
+            <button class="waves-effect waves-light btn black white-text" type="button" 
                     onClick="history.go (-1)">Abandonner</button>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="reset" value="Reinitialiser">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="submit" 
-                   value="Valider" >
-        
+
+            <button class="waves-effect waves-light btn black white-text" type="reset">Reinitialiser</button>
+
+            <button class="waves-effect waves-light btn bleu2 white-text" type="submit">Valider</button>
+        </p>
 
 <input type="hidden" name="StepStage" value="Valid" >
 <input type="hidden" name="PK_Stage" value="<?=$ValPK_Stage?>" >
