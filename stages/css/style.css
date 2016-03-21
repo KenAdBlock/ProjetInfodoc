@@ -99,9 +99,6 @@ footer{
 
 /********************************************/
 .footer-perso{
-    /*overflow: hidden;*/
-    /*height: 50px;*/
-    /*line-height: 50px;*/
     color: rgba(255,255,255,0.8);
     background-color: rgba(51,51,51,0.08)
 }
@@ -117,7 +114,7 @@ footer{
   left: 0;
   right: 0;
   height: 120vh;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, .5);
   z-index: 997;
   will-change: opacity;
 }
@@ -154,17 +151,15 @@ td, th {
   -webkit-tap-highlight-color: transparent;
 
 }
-<<<<<<< HEAD
 #connecter:hover{
   transition: box-shadow .25s;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 [type="radio"]:checked + label:after {
     border-radius: 50%;
     border: 2px solid #0071b9;
     background-color: #0071b9;
-=======
+}
 table.highlight > tbody > tr:hover {
   background-color: #e0e0e0;
 }
@@ -174,7 +169,10 @@ a.ashadow {
   transition: background .25s;
   border-radius: 5px;
 }
-a.ashadow:hover{
+a.ashadow:hover {
   background: #e0e0e0;
->>>>>>> a0950c541eb61b8b8e8fc2a845716fc963a75536
+}
+
+#login-connect {
+    font-size: 19px;
 }

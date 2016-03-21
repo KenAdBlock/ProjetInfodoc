@@ -55,17 +55,17 @@ $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGE       ] = 'Ce stage s\'adresse à des �
 $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEDUT    ] = 'DUT';
 $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGELP     ] = 'Licence pro SIL';
 $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF ] = 'Indifférent';
-$Msg_FormStage [MSGFORMSTAGE_1                 ] = '1. Entreprise';
-$Msg_FormStage [MSGFORMSTAGE_1_1               ] = '1.1 Maître de stage';
-$Msg_FormStage [MSGFORMSTAGE_ADRSTAGE          ] = 'Si l\'adresse du lieu de stage est différente de celle de l\'entreprise, veillez remplir le cadre ci-dessous';
+$Msg_FormStage [MSGFORMSTAGE_1                 ] = '<h5>1. Entreprise</h5>';
+$Msg_FormStage [MSGFORMSTAGE_1_1               ] = '<h6><b>1.1 Maître de stage</b></h6>';
+$Msg_FormStage [MSGFORMSTAGE_ADRSTAGE          ] = '<h6><b>Si l\'adresse du lieu de stage est différente de celle de l\'entreprise, veillez remplir le cadre ci-dessous</b></h6>';
 $Msg_FormStage [MSGFORMSTAGE_TUTEUR            ] = 'Tuteur de stage : ';
-$Msg_FormStage [MSGFORMSTAGE_2                 ] = '2. Environnement du stagiaire dans le cadre de sa tâche';
-$Msg_FormStage [MSGFORMSTAGE_ENV_MATERIEL      ] = '2.1 Environnement matériel';
-$Msg_FormStage [MSGFORMSTAGE_ENV_LOGICIEL      ] = '2.2 Environnement logiciel'; 
-$Msg_FormStage [MSGFORMSTAGE_DESCR_SERVICE     ] = '1.2 Service';
-$Msg_FormStage [MSGFORMSTAGE_RENS_PRATIQUES    ] = '1.3 Renseignements pratiques';
-$Msg_FormStage [MSGFORMSTAGE_METHODES_STANDARDS] = '2.3 Méthodes ou standards';
-$Msg_FormStage [MSGFORMSTAGE_SUJET             ] = '3. Sujet';
+$Msg_FormStage [MSGFORMSTAGE_2                 ] = '<h5>2. Environnement du stagiaire dans le cadre de sa tâche</h5>';
+$Msg_FormStage [MSGFORMSTAGE_ENV_MATERIEL      ] = '<h6><b>2.1 Environnement matériel</b></h6>';
+$Msg_FormStage [MSGFORMSTAGE_ENV_LOGICIEL      ] = '<h6><b>2.2 Environnement logiciel</b></h6>'; 
+$Msg_FormStage [MSGFORMSTAGE_DESCR_SERVICE     ] = '<h6><b>1.2 Service</b></h6>';
+$Msg_FormStage [MSGFORMSTAGE_RENS_PRATIQUES    ] = '<h6><b>1.3 Renseignements pratiques</b></h6>';
+$Msg_FormStage [MSGFORMSTAGE_METHODES_STANDARDS] = '<h6><b>2.3 Méthodes ou standards</b></h6>';
+$Msg_FormStage [MSGFORMSTAGE_SUJET             ] = '<h5>3. Sujet</h5>';
 
 //define ('MSGFORMSTAGE_LANGAGES',           ++$NoMsg);
 //define ('MSGFORMSTAGE_BD',                 ++$NoMsg);

@@ -334,9 +334,8 @@ Responsable des stages
                                             { 
                                                                            ?>
 
-<p style="text-align : center; font-size : 12 px;">
-    Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
-
+<p style="text-align : center; font-size : 12px;">
+    Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
 </p> 
                                                                            <?php 
                                             } 

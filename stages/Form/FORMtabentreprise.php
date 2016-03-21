@@ -203,7 +203,7 @@
 <p style="text-align : center; font-size : 11 px; font-style : italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies</p>
 <?php if ($CodErrVide || $CodErrInval) { ?>
 <p style="text-align : center; font-size : 16 px;">Les
-<?=$Fleche?> indiquent qu'une rubrique est vide ou erronée</p> <?php } ?>
+<?=$Fleche?>indiquent qu'une rubrique est vide ou erronée</p> <?php } ?>
 <?php if ($CodErrLog) { ?>
 <p style="text-align : center; font-size : 16 px;">Ce nom d'entreprise existe déjà</p>
 <?php } ?>

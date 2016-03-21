@@ -392,6 +392,7 @@ alert('<?php echo 'Oui ? '.$ValLogicielsSpecOuiNon.' '.ProtectApos ($ValLogiciel
                                                                            ?>
 
 <form method="post">
+    
 <p style="text-align : center;">
 <?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGE]?>
 
@@ -415,18 +416,12 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
 										{ 
 										                                   ?>
 <p style="text-align : center; font-size : 16 px;">
-Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
+Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
 </p> 
                                                                            <?php
 										} 
 										                                   ?>
-<table cellpadding="2" align="center" style="border : 2px solid blue">
-<colgroup>
-    <col width = "10">
-    <col width = "200">
-    <col width = "170">
-	
-   <tr><td colspan="3"><table>
+
     <?php 
 	    /* ================================= */
 	    /* 1. Entreprise                     */
@@ -438,13 +433,12 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 	    /* ================================= */
         AffichTitre ($Msg_FormStage [MSGFORMSTAGE_1_1], 3);
 		    ?>
-	</table></td></tr>
-	<tr>
-	    <td><?=$ValidFK_Tuteur?></td>
+
+	    <?=$ValidFK_Tuteur?>
             <?php /*		<td style="text-align : left" valign="top">&nbsp;
 <?=$Bold?><?=$Msg_FormStage [MSGFORMSTAGE_TUTEUR]?><?=$FinBold?>
 		</td>*/ ?>
-		<td colspan="2">
+
                                                                          <?php
 		                                if ($Status == TUTEUR)
 										{
@@ -473,8 +467,7 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
                                                                          <?php
 										}
                                                                          ?>
-        </td>
-	</tr>
+        
                                                                          <?php
 	    /* ================================= */
 	    /*     Adresse du lieu de stage      */
@@ -482,37 +475,31 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
         AffichTitre ($Msg_FormStage [MSGFORMSTAGE_ADRSTAGE], 4, 'left', 'normal');
 
                                                                          ?>
-	    <tr><td></td><td colspan="2"><table cellpadding="2" align="center" 
-		                           style="border : 2px solid blue" width="100%">
-    <tr>
-        <td valign="top"><?=$ValidAdr1Stage?></td>
-        <td style="text-align : right" valign="top"><b>Adresse</b></td>
-        <td>
-            <input type="text" name="Adr1Stage" size="50" value="<?=$ValAdr1Stage?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidAdr2Stage?></td>
-        <td style="text-align : right" valign="top">Adresse 2</td>
-        <td>
+	    <div class="row">
+    <div class="input-field col s12">
+    <?=$ValidAdr1Stage?>
+
+            <input type="text" name="Adr1Stage" id="Adr1Stage" size="50" value="<?=$ValAdr1Stage?>">
+            <label for="Adr1Stage"><b>Adresse</b></label>
+        </div></div>
+        <?=$ValidAdr2Stage?>
+        Adresse 2
+        
             <input type="text" name="Adr2Stage" size="50" value="<?=$ValAdr2Stage?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidCPStage?></td>
-        <td style="text-align : right" valign="top"><b>Code postal</b></td>
-        <td>
+        
+    
+        <?=$ValidCPStage?>
+        <b>Code postal</b>
+        
             <input type="text" name="CPStage" size="50" value="<?=$ValCPStage?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidVilleStage?></td>
-        <td style="text-align : right" valign="top"><b>Ville</b></td>
-        <td>
+        
+    
+        <?=$ValidVilleStage?>
+        <b>Ville</b>
+        
             <input type="text" name="VilleStage" size="50" value="<?=$ValVilleStage?>">
-        </td>
-    </tr>
-		</table></td></tr>
+        
+    
                                                                          <?php
                                         AffichLigneVierge();
 		
@@ -561,8 +548,8 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 
 
                                                                          ?>
-	</table></td></tr>
-	<tr><td colspan="3"><table>
+	
+	
                                                                          <?php
                                         AffichLigneVierge();
 
@@ -573,8 +560,8 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 
                                         AffichTitre ($Msg_FormStage [MSGFORMSTAGE_RENS_PRATIQUES], 3);
 		                                                                 ?>							
-<tr><td colspan="3">
-<div style="background-color : Silver; border : thin solid Black;">
+
+
 <blockquote><p>
 <span style="color : red;">Gratification :</span>
 
@@ -582,8 +569,8 @@ Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erronée
 L'article 30 de la loi n° 2009-1437 du 24/11/09, modifiée par  la loi n°2014-788 du 10 juillet 2014, impose pour tous les stages de plus de deux mois la gratification des
 stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de la Sécurité Sociale, soit <?=MINIMUM_LEGAL_INDEMNITES?> euros/mois - taux au 30/12/14.
 </p></blockquote>
-</div>
-</td></tr>
+
+
                                                                          <?php
                                         SaisieRubrInput (
                                             $Msg_FormStage [MSGFORMSTAGE_INDEMN_STAGE],
@@ -775,9 +762,9 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
                                         if (count ($CodErrInval) || count ($CodErrVide))
 										{
                                                                            ?>
-	<tr>			
-         <td colspan="3" align="center"><br /><hr></td>
-    </tr>
+				
+         <br /><hr>
+    
                                                                            <?php
                                         }
 										if (count ($CodErrInval))
@@ -785,11 +772,11 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
                                             for ($i = 0; $i < count ($CodErrInval); ++$i)
 										    {
                                                                            ?>
-	<tr>			
-        <td colspan="3" style="text-align : center; color : red">
+		
+        
 		    <?=$MsgErr [$CodErrInval [$i]]?><br />
-        </td>
-    </tr>
+        
+    
                                                                            <?php
                                             }
                                         }
@@ -798,25 +785,23 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
                                             for ($i = 0; $i < count ($CodErrVide); ++$i)
 										    {
                                                                            ?>
-	<tr>			
-        <td colspan="3" style="text-align : center; color : red">
+	
 		    <b><?=$CodErrVide [$i]?></b><?=$MsgErr [CHAMP_NON_REMPLI]?><br />
-        </td>
-    </tr>
+        
                                                                            <?php
                                             }
                                         }
                                         if (count ($CodErrInval) || count ($CodErrVide))
 										{
                                                                            ?>
-	<tr>			
-         <td colspan="3" align="center"><br /><hr></td>
-    </tr>
+			
+        <br /><hr>
+    
                                                                            <?php
                                          }
                                                                            ?>
-    <tr>
-        <td colspan="3" style="text-align : center">
+    
+       
             <input type="button" value="Abandonner"
                     onClick="history.go (-1)">
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -825,12 +810,11 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" 
                    value="Valider" >
-        </td>
-    </tr>
-</table>
+        
 
 <input type="hidden" name="StepStage" value="Valid" >
 <input type="hidden" name="PK_Stage" value="<?=$ValPK_Stage?>" >
+
 </form>
                                                                        <?php
                                         }
