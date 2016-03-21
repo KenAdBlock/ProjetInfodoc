@@ -12,8 +12,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    $slx      = 'NAsc';
 	    $OrderReq = "NomE asc";
 	}
-    $ReqSoc = Query ("SELECT * FROM $NomTabEntreprises ORDER BY ".$OrderReq, 
-	                 $ConnectStages);
+
+    $ReqSoc = $ConnectStages->query("SELECT * FROM $NomTabEntreprises ORDER BY ".$OrderReq);
 
 	$URL_ListSoc  = '?Trait=List&SlxTable='.$NomTabEntreprises.'&slx='.
 	                ($slx == 'NAsc' ? 'NDesc' : 'NAsc' );
@@ -36,7 +36,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     <?=$Title?>
 </h1>
                                                                           <?php
-     if (! mysql_num_rows ($ReqSoc))
+     if (! $ReqSoc->rowCount())
     {
                                                                           ?>
 <h4 align="center">
@@ -79,13 +79,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                 <tr><td colspan="<?=$NbCol?>"><hr></td></tr>
                 <tr>
                                                                        <?php
-                                                     mysql_data_seek ($ReqSoc, 0);
-                                                     while ($ObjSoc = mysql_fetch_object ($ReqSoc))
+                                                     while ($ObjSoc = $ReqSoc->fetch())
                                                      {
                                                                        ?>
                 <tr>
                       <td valign="top">
-                        <a href="<?=$URL_AffichSoc.$ObjSoc->PK_Entreprise?>"
+                        <a href="<?=$URL_AffichSoc.$ObjSoc['PK_Entreprise']?>"
                            <?=AttributsAHRef  ('Detail', 'Detail', '', '');?>
 					   ><img src="<?=$PATH_GIFS?>b_browse.png" border="0"></a>
                     </td>
@@ -94,7 +93,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             {
                                                                           ?>
                     <td valign="top">
-                        <a href="<?=$URL_FormSoc.$ObjSoc->PK_Entreprise?>"
+                        <a href="<?=$URL_FormSoc.$ObjSoc['PK_Entreprise']?>"
                            <?=AttributsAHRef  ('Modifier', 'Modifier', '', '');?>
 					   ><img src="<?=$PATH_GIFS?>b_edit.png" border="0"></a>
                     </td>
@@ -104,9 +103,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             {
                                                                           ?>
                      <td valign="top">
-                        <a href="<?=$URL_DelSoc.$ObjSoc->PK_Entreprise?>"
+                        <a href="<?=$URL_DelSoc.$ObjSoc['PK_Entreprise']?>"
                            <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
-                           onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=addslashes($ObjSoc->NomE)?> ?')"
+                           onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=addslashes($ObjSoc['NomE'])?> ?')"
                              ><img src="<?=$PATH_GIFS?>b_deltbl.png"
 						         border="0">
 						</a>
@@ -115,7 +114,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 									        }
                                                                           ?>
                     <td valign="top" style="text-align : center">
-                        <?=stripslashes (trim ($ObjSoc->NomE))?>
+                        <?=stripslashes (trim ($ObjSoc['NomE']))?>
 					</td>
                 </tr>
 
