@@ -40,7 +40,19 @@ function Consult ($Login, $Libelle, $Status)
             Vous êtes connecté(e) sous le pseudonyme <br>
             <b id="login-connect"><?=$Login?></b> 
             </p>
-            <p class="center">en tant que <b><?=$Libelle?></b></p>
+<!--            <p class="center">en tant que <b>--><?//=$Libelle?><!--</b></p>-->
+            <p class="center">en tant
+			<?php
+				if ($Libelle != "professeur") {
+			?>
+					qu'<b><?= $Libelle ?></b></p>
+			<?php
+				} else {
+			?>
+				  	que <b><?= $Libelle ?></b></p>
+			<?php
+				}
+			?>
 
 <hr>
 <p class="center">
