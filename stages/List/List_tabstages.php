@@ -33,7 +33,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
       case 'NumDesc' : $URL_ListNum .= 'NumAsc'  ; break;
 
     }
-    $QuelOrdreNum    = 'Ordre '.($Slx == 'NumAsc' ? 'de' : '').'croissant';
+    $QuelOrdreNum    = 'Ordre '.($Slx == 'NumAsc' ? 'dé' : '').'croissant';
     $GifOrderNum     = ($Slx == 'NumDesc' ? 'arrow_drop_down' : 'arrow_drop_up');
     $QuelOrdreNomE   = 'Ordre croissant';
 
@@ -140,7 +140,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                             </a>
                         </th>
 
-                        <th>Nbre stages restant</th>
+                        <th>Nombre de stages</th>
 
                         <th style="text-align : center" valign="top" nowrap>
                             <a class="white-text" href="<?=$URL_ListNomE?>"
