@@ -44,8 +44,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  default          : $URL_ListNom .= 'NAscSAsc' ; break;
 	}
 	$QuelOrdreNom    = 'Ordre '.($Slx == 'NAscSAsc' ? 'de' : '').'croissant';
-	$GifOrderNom     = $PATH_GIFS.
-                      ($Slx == 'NDescSAsc' ? 'asc' : 'desc').'_order.png';
+	$GifOrderNom     = ($Slx == 'NDescSAsc' ? 'arrow_drop_down' : 'arrow_drop_up');
 
 	$URL_ListStatus  = '?Trait=List&SlxTable='.$NomTabUsers.'&Slx=';
 	switch ($Slx)
@@ -55,8 +54,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  default          : $URL_ListStatus .= 'SAscNAsc' ; break;
 	}
 	$QuelOrdreStatus = 'Ordre '.($Slx == 'SAscNAsc' ? 'de' : '').'croissant';
-	$GifOrderStatus  = $PATH_GIFS.
-                       ($Slx == 'SDescNAsc' ? 'asc' : 'desc').'_order.png';
+	$GifOrderStatus  = ($Slx == 'SDescNAsc' ? 'arrow_drop_down' : 'arrow_drop_up');
 
 	$URL_ListLogin = '?Trait=List&SlxTable='.$NomTabUsers.'&Slx=';
 	switch ($Slx)
@@ -65,16 +63,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  default          : $URL_ListLogin .= 'LoginAsc'  ; break;	
 	}
 	$QuelOrdreLogin = 'Ordre '.($Slx == 'LoginAsc' ? 'de' : '').'croissant';
-	$GifOrderLogin  = $PATH_GIFS.
-                       ($Slx == 'LoginDesc' ? 'asc' : 'desc').'_order.png';
+	$GifOrderLogin  = ($Slx == 'LoginDesc' ? 'arrow_drop_down' : 'arrow_drop_up');
 					   
 	$URL_ModifUser  = $PATH_BACKOFFICE.'BackOffice.php?Trait=Form&SlxTable='.$NomTabUsers;
 	$URL_DelUser    = $PATH_BACKOFFICE.'BackOffice.php?Trait=Del&SlxTable=' .$NomTabUsers;
                   
 ?>
-<h1 style="text-align : center">
-    <?=$Title?>
-</h1>
+
+<span class="card-title"><h4 class="center"><?=$Title?></h4></span>
                                                                           <?php
      if (! mysql_num_rows ($ReqUsers))
     {
@@ -88,39 +84,37 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     {
                                                                           ?>
 
-<table align="center" border="0" cellpadding="2">
-    <tr>
-        <td valign="top">
-            <table cellpadding="2">
-                <tr>
+<table  class="highlight bordered centered grey lighten-3">
+  <thead class="grey darken-1 white-text">
+  	<tr>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                     <th style="text-align : center" valign="top" nowrap>
-					    <a href="<?=$URL_ListLogin?>"
+					    <a class="white-text" href="<?=$URL_ListLogin?>"
                            <?=AttributsAHRef ($QuelOrdreLogin, $QuelOrdreLogin, '', '');?>
-						    ><b>Login</b>&nbsp;
-							 <img border="0" src="<?=$GifOrderLogin?>">
+						    ><i class="material-icons white-text " style="font-size: 20px"><?=$GifOrderLogin?></i>
+						    <b>Login</b>&nbsp;
 						</a>
 					</th>
                     <th style="text-align : center" valign="top" nowrap>
-					    <a href="<?=$URL_ListStatus?>"
+					    <a class="white-text" href="<?=$URL_ListStatus?>"
                            <?=AttributsAHRef ($QuelOrdreStatus, $QuelOrdreStatus, '', '');?>
-						    ><b>Statut</b>&nbsp;
-							 <img border="0" src="<?=$GifOrderStatus?>">
+						    ><i class="material-icons white-text " style="font-size: 20px"><?=$GifOrderStatus?></i>
+						    <b>Statut</b>&nbsp;
 						</a>
 					</th>
                     <th style="text-align : center" valign="top" nowrap>
-					    <a href="<?=$URL_ListNom?>"
+					    <a class="white-text" href="<?=$URL_ListNom?>"
                            <?=AttributsAHRef ($QuelOrdreNom, $QuelOrdreNom, '', '');?>
-						    ><b>Nom</b>&nbsp;
-							 <img border="0" src="<?=$GifOrderNom?>">
+						    ><i class="material-icons white-text " style="font-size: 20px"><?=$GifOrderNom?></i>
+						    <b>Nom</b>&nbsp;
 						</a>
 					</th>
                     <th style="text-align : center" valign="top" nowrap>
 					    <b>Prénom</b>
 					</th>
                 </tr>
-                <tr><td colspan="6"><hr></td></tr>
+                </thead>
                                                                        <?php
                                                      mysql_data_seek ($ReqUsers, 0);
                                                      while ($ObjUser = mysql_fetch_object ($ReqUsers))
@@ -130,14 +124,13 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <td valign="top">
                         <a href="<?=$URL_ModifUser.'&IdentPK='.$ObjUser->PK_User?>"
                            <?=AttributsAHRef  ('Modifier', 'Modifier', '', '');?>
-					   ><img src="<?=$PATH_GIFS?>b_edit.png" border="0"></a>
+					   ><i class="material-icons yellow-text text-darken-2">mode_edit</i></a>
                     </td>
                     <td valign="top">
                         <a href="<?=$URL_DelUser.'&IdentPK='.$ObjUser->PK_User?>"
                            <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
                            onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$ObjUser->Nom?> ?')"
-						   ><img src="<?=$PATH_GIFS?>b_deltbl.png"
-						         border="0">
+						   ><i class="material-icons red-text text-darken-2">delete_forever</i>
 						</a>
                     </td>
                     <td valign="top" style="text-align : center">

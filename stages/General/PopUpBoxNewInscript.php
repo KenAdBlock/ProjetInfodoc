@@ -260,7 +260,7 @@
 
 		  $Sujet   = 'Nouvel inscrit pour stage';
 		  $Message = 'Inscription de :   '.
-		             $ValCiviliteTuteur.' '.$ValPrenomTuteur.'   '.$ValNomTuteur.'    &agrave; valider';
+		             $ValCiviliteTuteur.' '.$ValPrenomTuteur.'   '.$ValNomTuteur.'    à valider';
                 $Dest    =  $MailResponsableStages;
 
 		  if ($MachineHote == INFODOC) mail ($Dest, $Sujet, $Message);
@@ -284,7 +284,7 @@
         <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="<?=$PATH_CSS?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
@@ -300,423 +300,201 @@
 										{
 										  case 'Ack' : 
 										                                   ?>
-    Votre inscription a bien &eacute;t&eacute; enregistr&eacute;e et nous vous en remercions.
+    Votre inscription a bien été enregistrée et nous vous en remercions.
 
-    Vous recevrez dans les plus brefs d&eacute;lais un login et un mot de passe pour vous permettre d'entrer les caract&eacute;ristiques du stage que vous proposez.
+    Vous recevrez dans les plus brefs délais un login et un mot de passe pour vous permettre d'entrer les caractéristiques du stage que vous proposez.
 
-    <br /><br />
-    <div style="text-align : right">
-    <?=$NomResponsableStages?>
-    <br />
-    Responsable des stages
-    </div>
-    <div style="text-align : center">
-    <input type="button" value="Fermer la fen&ecirc;tre"
-           onClick="window.close()">
-    </div>
+<br /><br />
+<div style="text-align : right">
+<?=$NomResponsableStages?>
+<br />
+Responsable des stages
+</div>
+<div style="text-align : center">
+<input type="button" value="Fermer la fenêtre"
+       onClick="window.close()">
+</div>
 
-                                                                               <?php
-                                                break;
+                                                                           <?php
+			                                break;
+										   
+										  default : 
+										                                   ?>
 
-                                              default :
-                                                                               ?>
+<div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card grey lighten-4 z-depth-1">
+            <div class="card-content">
+              <span class="card-title"><h4 class="center">Stage proposé par :</h4></span> 
+              
+              <p class="center"><i>Toutes les rubriques <b>*</b> doivent obligatoirement être remplies</i></p>
+                                                                        <?php
+                                            if ($CodErrVide) 
+                                            { 
+                                                                           ?>
 
-    <div class="container">
-          <div class="row">
-            <div class="col s12">
-              <div class="card grey lighten-4 z-depth-1">
-                <div class="card-content">
-                  <span class="card-title"><h4 class="center">Stage proposé par :</h4></span>
-
-                  <p><i>Toutes les rubriques <b>*</b> doivent obligatoirement être remplies</i></p>
-                                                                            <?php
-                                                if ($CodErrVide)
-                                                {
-                                                                               ?>
-    <p style="text-align : center; font-size : 12 px;">
-        Les <?=FLECHE?> indiquent qu'une rubrique est vide ou erron&eacute;e
-    </p>
-                                                                               <?php
-                                                }
-                                                                               ?>
+<p style="text-align : center; font-size : 12px;">
+    Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
+</p> 
+                                                                           <?php 
+                                            } 
+                                                                           ?>
+              <div class="row">
+                <form method="POST" role="form" class="col s12">
                   <div class="row">
-                    <form method="POST" role="form" class="col s12">
-                      <div class="row">
-                        <div class="input-field col l6 m6 s12">
-                          <?=$ValidNomTuteur?>
-                          <input name="NomTuteur" size="50" value="<?=$ValNomTuteur?>" id="NomTuteur" type="text" class="validate">
-                          <label for="NomTuteur"><b>Nom *</b></label>
-                        </div>
-                        <div class="input-field col l6 m6 s12">
-                          <?=$ValidPrenomTuteur?>
-                          <input name="PrenomTuteur" size="50" value="<?=$ValPrenomTuteur?>" id="PrenomTuteur" type="text" class="validate">
-                          <label for="PrenomTuteur"><b>Prénom *</b></label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col l6 m6 s12">
-                          <select>
-                            <option name="CiviliteTuteur" value="M">M</option>
-                            <option name="CiviliteTuteur" value="Mme">Mme</option>
-                            <option name="CiviliteTuteur" value="Mlle">Mlle</option>
-                          </select>
-                          <label><b>Civilité *</b></label>
-                        </div>
-                        <div class="input-field col l6 m6 s12">
-                          <?=$ValidMailTuteur?>
-                          <input name="MailTuteur" size="50" value="<?=$ValMailTuteur?>" id="MailTuteur" type="text" class="validate">
-                          <label for="MailTuteur"><b>Mail *</b></label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col l6 m6 s12">
-                          <?=$ValidTelTuteur?>
-                          <input name="TelTuteur" size="50" value="<?=$ValTelTuteur?>" id="TelTuteur" type="text" class="validate">
-                          <label for="TelTuteur"><b>Tel *</b></label>
-                        </div>
-                        <div class="input-field col l6 m6 s12">
-                          <input name="FaxTuteur" size="50" value="<?=$ValFaxTuteur?>" id="FaxTuteur" type="text" class="validate">
-                          <label for="FaxTuteur">Fax</label>
-                        </div>
-                      </div>
-                      <hr><br>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <select name="FK_Entreprise">
-                              <option value="0">Choisissez</option>
-                              <?php
-                                while ($Obj =  mysql_fetch_object ($ReqEntreprises))
-                                {
-                              ?>
-                              <option value="<?=$Obj->PK_Entreprise?>"
-                                <?=$Obj->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
-                                <?=$Obj->NomE?>
-                              </option>
-                              <?php
-                                }
-                              ?>
-                          </select>
-                          <label><b>Entreprise *</b></label>
-                        </div>
-                      </div>
-                      <p><i>Si votre entreprise n'apparaît pas dans cette liste, veuillez compléter le cadre ci-dessous.</i></p><br>
-
-                      <h5 class="center">Entreprise</h5>
-                      <div class="row">
-                        <div class="input-field col s12">
-                          <?=$ValidNomE?>
-                          <input name="NomE" size="50" value="<?=$ValNomE?>" id="NomE" type="text" class="validate">
-                          <label for="NomE"><b>Raison sociale *</b></label>
-                        </div>
-                      </div>
-                      <p><i>Pour les grandes entreprises, indiquer le service</i></p>
-                      <hr>
-                      <div class="row">
-                        <div class="input-field col l6 m6 s12">
-                          <?=$ValidAdr1?>
-                          <input name="Adr1" size="50" value="<?=$ValAdr1?>" id="Adr1" type="text" class="validate">
-                          <label for="Adr1"><b>Adresse *</b></label>
-                        </div>
-                        <div class="input-field col l6 m6 s12">
-                          <input name="Adr2" size="50" value="<?=$ValAdr2?>" id="Adr2" type="text" class="validate">
-                          <label for="Adr2">Adresse 2</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col l6 m6 s12">
-                          <?=$ValidCP?>
-                          <input name="CP" size="50" value="<?=$ValCP?>" id="CP" type="text" class="validate">
-                          <label for="CP"><b>Code postal *</b></label>
-                        </div>
-                        <div class="input-field col l6 m6 s12">
-                          <?=$ValidVille?>
-                          <input name="Ville" size="50" value="<?=$ValVille?>" id="Ville" type="text" class="validate">
-                          <label for="Ville"><b>Ville *</b></label>
-                        </div>
-                      </div>
-                      <p>
-                        <input name="Is_IdemTuteur" value="1"
-                       <?=$ValIs_IdemTuteur == 1 ? 'checked' : ''?> type="checkbox" class="filled-in" id="Is_IdemTuteur"/>
-                        <label for="Is_IdemTuteur">Responsable administratif</label><br>
-                        idem ci-dessus, sinon :
-                      </p>
-                      <div class="row">
-                        <div class="input-field col l6 m6 s12">
-                          <?=$ValidNomRespAdmin?>
-                          <input name="NomRespAdmin" size="50" value="<?=$ValNomRespAdmin?>" id="NomRespAdmin" type="text" class="validate">
-                          <label for="NomRespAdmin"><b>Nom *</b></label>
-                        </div>
-                        <div class="input-field col l6 m6 s12">
-                          <?=$ValidPrenomRespAdmin?>
-                          <input name="PrenomRespAdmin" size="50" value="<?=$ValPrenomRespAdmin?>" id="PrenomRespAdmin" type="text" class="validate">
-                          <label for="PrenomRespAdmin"><b>Prénom *</b></label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col l6 m6 s12">
-                          <select>
-                            <option value="" disabled selected>Choisissez</option>
-                            <option name="CiviliteTuteur" value="M">M</option>
-                            <option name="CiviliteTuteur" value="Mme">Mme</option>
-                            <option name="CiviliteTuteur" value="Mlle">Mlle</option>
-                          </select>
-                          <label><b>Civilité *</b></label>
-                        </div>
-                        <div class="input-field col l6 m6 s12">
-                          <input name="MailRespAdmin" size="50" value="<?=$ValMailRespAdmin?>" id="MailRespAdmin" type="text" class="validate">
-                          <label for="MailRespAdmin">Mail</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="input-field col l6 m6 s12">
-
-                          <input name="TelRespAdmin" size="50" value="<?=$ValTelRespAdmin?>" id="TelRespAdmin" type="text" class="validate">
-                          <label for="TelRespAdmin"><b><?=$ValidTelRespAdmin?>Tel *</b></label>
-                        </div>
-                        <div class="input-field col l6 m6 s12">
-                          <input name="FaxRespAdmin" size="50" value="<?=$ValFaxRespAdmin?>" id="FaxRespAdmin" type="text" class="validate">
-                          <label for="FaxRespAdmin">Fax</label>
-                        </div>
-                      </div>
-                      <p class="right">
-                      <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
-                      <button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button></p>
-                      <input type="hidden" name="StepNewInscript" value="Valid">
-                    </form>
+                    <div class="input-field col l6 m6 s12">
+                      
+                      <input name="NomTuteur" size="50" value="<?=$ValNomTuteur?>" id="NomTuteur" type="text" class="validate">
+                      <label for="NomTuteur"><b><?=$ValidNomTuteur?>Nom *</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                      
+                      <input name="PrenomTuteur" size="50" value="<?=$ValPrenomTuteur?>" id="PrenomTuteur" type="text" class="validate">
+                      <label for="PrenomTuteur"><b><?=$ValidPrenomTuteur?>Prénom *</b></label>
+                    </div>
                   </div>
-                </div>
+                  <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                      <select>
+                        <option name="CiviliteTuteur" value="M">M</option>
+                        <option name="CiviliteTuteur" value="Mme">Mme</option>
+                        <option name="CiviliteTuteur" value="Mlle">Mlle</option>
+                      </select>
+                      <label><b>&nbsp;Civilité *</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                      
+                      <input name="MailTuteur" size="50" value="<?=$ValMailTuteur?>" id="MailTuteur" type="email" class="validate">
+                      <label for="MailTuteur"><b><?=$ValidMailTuteur?>Mail *</b></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                      
+                      <input name="TelTuteur" size="50" value="<?=$ValTelTuteur?>" id="TelTuteur" type="text" class="validate">
+                      <label for="TelTuteur"><b><?=$ValidTelTuteur?>Tel *</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                      <input name="FaxTuteur" size="50" value="<?=$ValFaxTuteur?>" id="FaxTuteur" type="text" class="validate">
+                      <label for="FaxTuteur">Fax</label>
+                    </div>
+                  </div>
+                  <hr><br>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <select name="FK_Entreprise">
+                          <option value="0">Choisissez</option>
+                          <?php
+                            while ($Obj =  mysql_fetch_object ($ReqEntreprises))
+                            {
+                          ?>
+                          <option value="<?=$Obj->PK_Entreprise?>" 
+                            <?=$Obj->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
+                            <?=$Obj->NomE?>
+                          </option>
+                          <?php
+                            }
+                          ?>
+                      </select>
+                      <label><b>Entreprise *</b></label>
+                    </div>
+                  </div>
+                  <p><i>Si votre entreprise n'apparaît pas dans cette liste, veuillez compléter le cadre ci-dessous.</i></p><br>
+
+                  <h5 class="center">Entreprise</h5>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      
+                      <input name="NomE" size="50" value="<?=$ValNomE?>" id="NomE" type="text" class="validate">
+                      <label for="NomE"><b><?=$ValidNomE?>Raison sociale *</b></label>
+                    </div>
+                  </div>
+                  <p><i>Pour les grandes entreprises, indiquer le service</i></p>
+                  <hr>
+                  <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                      
+                      <input name="Adr1" size="50" value="<?=$ValAdr1?>" id="Adr1" type="text" class="validate">
+                      <label for="Adr1"><b><?=$ValidAdr1?>Adresse *</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                      <input name="Adr2" size="50" value="<?=$ValAdr2?>" id="Adr2" type="text" class="validate">
+                      <label for="Adr2">&nbsp;Adresse 2</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                      
+                      <input name="CP" size="50" value="<?=$ValCP?>" id="CP" type="text" class="validate">
+                      <label for="CP"><b><?=$ValidCP?>Code postal *</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                      
+                      <input name="Ville" size="50" value="<?=$ValVille?>" id="Ville" type="text" class="validate">
+                      <label for="Ville"><b><?=$ValidVille?>Ville *</b></label>
+                    </div>
+                  </div>
+                  <p>
+                    <input name="Is_IdemTuteur" value="1"
+                   <?=$ValIs_IdemTuteur == 1 ? 'checked' : ''?> type="checkbox" class="filled-in" id="Is_IdemTuteur"/>
+                    <label for="Is_IdemTuteur">Responsable administratif</label><br>
+                    idem ci-dessus, sinon :
+                  </p>
+                  <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                      
+                      <input name="NomRespAdmin" size="50" value="<?=$ValNomRespAdmin?>" id="NomRespAdmin" type="text" class="validate">
+                      <label for="NomRespAdmin"><b><?=$ValidNomRespAdmin?>Nom *</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                      
+                      <input name="PrenomRespAdmin" size="50" value="<?=$ValPrenomRespAdmin?>" id="PrenomRespAdmin" type="text" class="validate">
+                      <label for="PrenomRespAdmin"><b><?=$ValidPrenomRespAdmin?>Prénom *</b></label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                      <select>
+                        <option name="CiviliteTuteur" value="M">M</option>
+                        <option name="CiviliteTuteur" value="Mme">Mme</option>
+                        <option name="CiviliteTuteur" value="Mlle">Mlle</option>
+                      </select>
+                      <label><b>&nbsp;&nbsp;Civilité *</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                      <input name="MailRespAdmin" size="50" value="<?=$ValMailRespAdmin?>" id="MailRespAdmin" type="email" class="validate">
+                      <label for="MailRespAdmin">&nbsp;Mail</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                      <input name="TelRespAdmin" size="50" value="<?=$ValTelRespAdmin?>" id="TelRespAdmin" type="text" class="validate">
+                      <label for="TelRespAdmin"><b><?=$ValidTelRespAdmin?>Tel *</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                      <input name="FaxRespAdmin" size="50" value="<?=$ValFaxRespAdmin?>" id="FaxRespAdmin" type="text" class="validate">
+                      <label for="FaxRespAdmin">&nbsp;Fax</label>
+                    </div>
+                  </div>
+                  <p class="right">
+                  <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+                  <button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button></p>
+                  <input type="hidden" name="StepNewInscript" value="Valid">
+                </form>
+
               </div>
             </div>
           </div>
         </div>
 
-
-    <form method="post">
-    <table align="center" border="0" cellpadding="2" cellspacing="0">
-         <tr>
-            <td valign="top"><?=$ValidCiviliteTuteur?></td>
-            <td style="text-align : right" valign="top">
-                <b>Civilit&eacute; : </b>
-            </td>
-            <td>
-                M<input type="radio" name="CiviliteTuteur" value="M" checked="checked">
-                Mme<input type="radio" name="CiviliteTuteur" value="Mme" <?=$ValCiviliteTuteur == 'Mme' ? 'checked' : ''?>>
-                Mlle<input type="radio" name="CiviliteTuteur" value="Mlle" <?=$ValCiviliteTuteur == 'Mlle' ? 'checked' : ''?>>
-            </td>
-        </tr>
-
-        <tr>
-            <td valign="top"><?=$ValidNomTuteur?></td>
-            <td style="text-align : right" valign="top"><b>Nom</b></td>
-            <td>
-                <input type="text" name="NomTuteur" size="50" value="<?=$ValNomTuteur?>">
-            </td>
-        </tr>
-        <tr>
-            <td valign="top"><?=$ValidPrenomTuteur?></td>
-            <td style="text-align : right" valign="top"><b>Pr&eacute;nom</b></td>
-            <td>
-                <input type="text" name="PrenomTuteur" size="50" value="<?=$ValPrenomTuteur?>">
-            </td>
-        </tr>
-        <tr>
-            <td valign="top"><?=$ValidTelTuteur?></td>
-            <td style="text-align : right" valign="top"><b>Tel</b></td>
-            <td>
-                <input type="text" name="TelTuteur" size="50" value="<?=$ValTelTuteur?>">
-            </td>
-        </tr>
-        <tr>
-            <td valign="top"><?=$ValidMailTuteur?></td>
-            <td style="text-align : right" valign="top"><b>Mail</b></td>
-            <td>
-                <input type="text" name="MailTuteur" size="50" value="<?=$ValMailTuteur?>">
-            </td>
-        </tr>
-        <tr>
-            <td valign="top"><?=$ValidFaxTuteur?></td>
-            <td style="text-align : right" valign="top">Fax</td>
-            <td>
-                <input type="text" name="FaxTuteur" size="50" value="<?=$ValFaxTuteur?>">
-            </td>
-        </tr>
-        <tr>
-            <td colspan="4" align="center"><hr></td>
-        </tr>
-        <tr>
-            <td valign="top">&nbsp;</td>
-            <td style="text-align : right" valign="top"><b>Entreprise</b></td>
-            <td colspan="4" align="left">
-                <select name="FK_Entreprise">
-                    <option value="0">----------------</option>
-                                                                               <?php
-                                                while ($Obj =
-                                                     mysql_fetch_object ($ReqEntreprises))
-                                                {
-                                                                               ?>
-                    <option value="<?=$Obj->PK_Entreprise?>"
-                            <?=$Obj->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
-                        <?=$Obj->NomE?>
-                    </option>
-                                                                               <?php
-                                                }
-                                                                               ?>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="3">
-                <p style="text-align : center; font-size : 11 px; font-style : italic;">
-                Si votre entreprise n'appara&icirc;t pas dans cette liste, veuillez compl&eacute;ter
-                le cadre ci-dessous.
-                <br />&nbsp;
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="3" style="border : 1 solid Blue;">
-                <table width="100%" >
-                    <tr>
-                        <td colspan="3" style="text-align : center">
-                            Entreprise
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><?=$ValidNomE?></td>
-                        <td style="text-align : right" valign="top"><b>Raison sociale</b></td>
-                        <td>
-                            <input type="text" name="NomE" size="50" value="<?=$ValNomE?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="text-align : center; font-size : 11 px;
-                                        font-style : italic;">
-                            Pour les grandes entreprises, indiquer le service
-                            <hr>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><?=$ValidAdr1?></td>
-                        <td style="text-align : right" valign="top"><b>Adresse</b></td>
-                        <td>
-                            <input type="text" name="Adr1" size="50" value="<?=$ValAdr1?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><?=$ValidAdr2?></td>
-                        <td style="text-align : right" valign="top">Adresse 2</td>
-                        <td>
-                            <input type="text" name="Adr2" size="50" value="<?=$ValAdr2?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><?=$ValidCP?></td>
-                        <td style="text-align : right" valign="top"><b>Code postal</b></td>
-                        <td>
-                            <input type="text" name="CP" size="50" value="<?=$ValCP?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><?=$ValidVille?></td>
-                        <td style="text-align : right" valign="top"><b>Ville</b></td>
-                        <td>
-                            <input type="text" name="Ville" size="50" value="<?=$ValVille?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="text-align : center">
-                            Responsable administratif
-                            <input type="checkbox" name="Is_IdemTuteur" value="1"
-                                   <?=$ValIs_IdemTuteur == 1 ? 'checked' : ''?>>
-                                idem ci-dessus, sinon :
-                        </td>
-                    </tr>
-                    <tr>
-                       <td valign="top"><?=$ValidCiviliteRespAdminr?></td>
-                       <td style="text-align : right" valign="top">
-                            <b>Civilit&eacute; : </b>
-                        </td>
-                        <td>
-                            M<input type="radio"    name="CiviliteRespAdmin" value="M" checked="checked">
-                            Mme<input type="radio"  name="CiviliteRespAdmin" value="Mme" <?=$ValCiviliteRespAdmin == 'Mme' ? 'checked' : ''?>>
-                            Mlle<input type="radio" name="CiviliteRespAdmin" value="Mlle" <?=$ValCiviliteRespAdmin == 'Mlle' ? 'checked' : ''?>>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><?=$ValidNomRespAdmin?></td>
-                        <td style="text-align : right" valign="top">
-                            <b>Nom</b>
-                        </td>
-                        <td nowrap>
-                            <input type="text" name="NomRespAdmin"
-                                   size="50" value="<?=$ValNomRespAdmin?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><?=$ValidPrenomRespAdmin?></td>
-                        <td style="text-align : right" valign="top">
-                            <b>Pr&eacute;nom</b></td>
-                        <td>
-                            <input type="text" name="PrenomRespAdmin" size="50"
-                                   value="<?=$ValPrenomRespAdmin?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><?=$ValidTelRespAdmin?></td>
-                        <td style="text-align : right" valign="top">
-                            <b>Tel</b></td>
-                        <td>
-                            <input type="text" name="TelRespAdmin" size="50"
-                                   value="<?=$ValTelRespAdmin?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><?=$ValidMailRespAdmin?></td>
-                        <td style="text-align : right" valign="top">
-                            Mail</td>
-                        <td>
-                            <input type="text" name="MailRespAdmin" size="50"
-                                   value="<?=$ValMailRespAdmin?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top"><?=$ValidFaxRespAdmin?></td>
-                        <td style="text-align : right" valign="top">Fax</td>
-                        <td>
-                            <input type="text" name="FaxRespAdmin" size="50"
-                                   value="<?=$ValFaxRespAdmin?>">
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="4" align="center"><br /><hr></td>
-        </tr>
-        <tr>
-            <td colspan="3" style="text-align : center">
-                <input type="button"
-                       value="Abandonner"
-                       onClick="window.close()">
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="reset" value="Reinitialiser">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="submit" value="Valider">
-            </td>
-        </tr>
-    </table>
-    <input type="hidden" name="StepNewInscript" value="Valid">
-
-    </form>
-                                                                               <?php
+                                                            <?php
                                             }
                                                                                ?>
 
     <!--  Scripts-->
-      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="<?=$PATH_JS?>materialize.min.js"></script>
+      <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
+      <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
       <script src="<?=$PATH_JS?>init.js"></script>
     </body>
 </html>

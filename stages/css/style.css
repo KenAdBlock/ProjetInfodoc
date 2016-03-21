@@ -7,7 +7,7 @@
  */
 
 main{
-  margin-bottom: -55px;
+  margin-bottom: -30px;
 }
 #separator-img{
   border: 0px;
@@ -41,55 +41,50 @@ li span {font-weight:normal;line-height: 25px;}
 }
 /* label color */
    .input-field label {
-     color: #1976d2;
+     color: #0066CC;
    }
    /* label focus color */
    .input-field input[type=text]:focus + label,h5 {
-     color: #1e88e5;
+     color: #0066cc;
    }
    /* label focus color */
    .input-field input[type=password]:focus + label {
-     color: #1e88e5;
+     color: #0066cc;
+   }
+   /* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #0066cc;
    }
    /* label underline focus color */
-   .input-field input[type=text] {
+   .input-field input[type=text],.input-field input[type=password],.input-field input[type=email] {
    
-     border-bottom: 1px solid #1e88e5;
+     border-bottom: 1px solid #0066cc;
      
    }
-   .input-field input[type=password] {
-   
-     border-bottom: 1px solid #1e88e5;
-     
-   }
+
    /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid #1e88e5;
-     box-shadow: 0 2px 0 0 #1e88e5;
-   }
-   /* label underline focus color */
-   .input-field input[type=password]:focus {
-     border-bottom: 1px solid #1e88e5;
-     box-shadow: 0 2px 0 0 #1e88e5;
+   .input-field input[type=text]:focus,.input-field input[type=password]:focus,.input-field input[type=email]:focus {
+     border-bottom: 1px solid #0066cc;
+     box-shadow: 0 2px 0 0 #0066cc;
    }
    /* valid color */
    .input-field input[type=text].valid {
-     border-bottom: 1px solid #1976d2;
-     box-shadow: 0 1px 0 0 #1976d2;
+     border-bottom: 1px solid #0066CC;
+     box-shadow: 0 1px 0 0 #0066CC;
    }
    /* icon prefix focus color */
    .input-field .prefix.active {
-     color: #1e88e5;
+     color: #0066cc;
    }
    .prefix{
-    color:#1976d2;
+    color:#0066cc;
    }
    [type="checkbox"].filled-in:checked + label:after {
   top: 0px;
   width: 20px;
   height: 20px;
   border: 1px solid #eeeeee;
-  background-color: #1976d2;
+  background-color: #0066CC;
   z-index: 0;
 }
 nav{
@@ -101,13 +96,25 @@ footer.page-footer{
 footer{
   position:relative;
 }
+
+/********************************************/
+.footer-perso{
+    color: rgba(255,255,255,0.8);
+    background-color: rgba(51,51,51,0.08)
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+/********************************************/
+
 #sidenav-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 120vh;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, .5);
   z-index: 997;
   will-change: opacity;
 }
@@ -120,7 +127,7 @@ nav .input-field label.active {
 nav .input-field input {
   height: 100%;
   font-size: 1rem;
-  border-bottom: 1px solid #1e88e5;
+  border-bottom: 1px solid #0066cc;
   padding-left: 0rem;
 }
 td, th {
@@ -131,10 +138,11 @@ td, th {
   border-radius: 0px;
 }
 #connecter{
+  width: 100%;
   border: none;
   border-radius: 2px;
   display: inline-block;
-  height: 36px;
+  height: 60px;
   line-height: 36px;
   outline: 0;
   padding: 0 2rem;
@@ -146,4 +154,37 @@ td, th {
 #connecter:hover{
   transition: box-shadow .25s;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+[type="radio"]:checked + label:after {
+    border-radius: 50%;
+    border: 2px solid #0071b9;
+    background-color: #0071b9;
+}
+table.highlight > tbody > tr:hover {
+  background-color: #e0e0e0;
+}
+a.ashadow {
+  margin-top: -13px;
+  margin-bottom: -13px;
+  transition: background .25s;
+  border-radius: 5px;
+}
+a.ashadow:hover {
+  background: #e0e0e0;
+}
+
+#login-connect {
+    font-size: 19px;
+}
+.bleu1,.bleu1:hover{
+  background: #0066cc;
+}
+.bleu2,.bleu2:hover{
+  background: #00CCFF;
+}
+.jeune,.jeune:hover{
+  background:#FFCC00; 
+}
+option *{
+  color: black;
 }

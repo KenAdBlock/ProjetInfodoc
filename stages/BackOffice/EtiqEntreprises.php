@@ -1,6 +1,12 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
+    $PATH_RACINE     = '../';
+    $PATH_DEFINE     = $PATH_RACINE.'Constantes/';
+    $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
+
+    require_once ($PATH_CONSTANTES.'CstGales.php');
+
     switch ($Option)
 	{
 	  case 'Toutes' :
@@ -48,6 +54,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     }
     else
     {
+        if($openfile){
+            redirect ($PATH_LIBRES."Etiquettes.ods");
+            $OPENFILE = false;
+        }
 	    $FichEtiq =
 		fopen ($PATH_LIBRES.'Etiquettes.ods', 'w');
                                                      mysql_data_seek ($ReqSoc, 0);
@@ -74,11 +84,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         fwrite ($FichEtiq, "\t$EtiqVille\n");
                                                      }
 	    fclose ($FichEtiq);
-        redirect ($PATH_LIBRES."Etiquettes.ods");
-/*
-        <a href="http://infodoc/~mathieu/stages/Libres/Etiquettes.xls"
-		         target="_blank">Telecharger</a>
-*/      
+//        redirect($PATH_LIBRES.'Etiquettes.ods');
+
+         echo '<a href='.$PATH_LIBRES.'Etiquettes.ods target="_blank">Telecharger</a>';
+
     }
 }
 else

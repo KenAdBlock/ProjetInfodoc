@@ -5,10 +5,15 @@ require_once ('Fonctions.php');
 <html>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <head>
-    <meta HTTP-EQUIV="Page-Exit" content="blendTrans(Duration=0.7)">
-    <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
-    <link rel=stylesheet type=text/css href="<?=$PATH_CSS?>stages.css">
-    <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
+
 
 <SCRIPT LANGUAGE="JavaScript">
 <!-- Begin
@@ -27,7 +32,11 @@ function check (field)
 </head>
 
 <body>
-
+<div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card grey lighten-5 z-depth-1" >
+            <div class="card-content">
 <?php
     // Récupérations des variables envoyées par POST ou GET
 	
@@ -265,5 +274,14 @@ function check (field)
     // Fermeture de la base
     mysql_close ($Connexion);
 ?>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--  Scripts-->
+      <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
+      <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
+      <script src="<?=$PATH_JS?>init.js"></script>
 </body>
 </html>

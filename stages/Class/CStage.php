@@ -536,7 +536,10 @@ class CStage
 
     } // Insert()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 180ee04b34d82e0db19f4766b0b5000c0e3e6d65
     function Delete()
     {
         global $Connexion, $NomTabStages;

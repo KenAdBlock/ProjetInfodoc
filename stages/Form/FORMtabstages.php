@@ -432,7 +432,7 @@
 italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies</p>
 <?php if ($CodErrVide || $CodErrInval) { ?>
 <p style="text-align : center; font-size : 16px;">Les
-<?=$Fleche?> indiquent qu'une rubrique est vide ou erronée</p> <?php } ?>
+<?=$Fleche?>indiquent qu'une rubrique est vide ou erronée</p> <?php } ?>
 
 <form method="post">
 <table align="center" border="1"><tr><td>
