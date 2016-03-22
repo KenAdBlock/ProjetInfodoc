@@ -1,12 +1,12 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-    $ReqOS         = Query ("SELECT * FROM $NomTabOS",             $ConnectStages);
-    $ReqLangages   = Query ("SELECT * FROM $NomTabLangages",       $ConnectStages);
-    $ReqMateriels  = Query ("SELECT * FROM $NomTabMateriels",      $ConnectStages);
-    $ReqLans       = Query ("SELECT * FROM $NomTabReseauxLocaux",  $ConnectStages);
-    $ReqWans       = Query ("SELECT * FROM $NomTabReseauxPublics", $ConnectStages);
-    $ReqBDs        = Query ("SELECT * FROM $NomTabBasesDonnees",   $ConnectStages);
+	$ReqOS = $ConnectStages->query("SELECT * FROM $NomTabOS");
+	$ReqLangages = $ConnectStages->query("SELECT * FROM $NomTabLangages");
+	$ReqMateriels = $ConnectStages->query("SELECT * FROM $NomTabMateriels");
+	$ReqLans = $ConnectStages->query("SELECT * FROM $NomTabReseauxLocaux");
+	$ReqWans = $ConnectStages->query("SELECT * FROM $NomTabReseauxPublics");
+	$ReqBDs = $ConnectStages->query("SELECT * FROM $NomTabBasesDonnees");
 
 	$ValidMateriel =
 	$ValidReseauxLocaux =
@@ -31,12 +31,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		</td>
 		<td><table><tr>
 		                                                                   <?php
-										while ($Obj = mysql_fetch_object ($ReqMateriels))
+										while ($Obj = $ReqMateriels->fetch())
 										{ 
 		                                                                   ?>
             <td valign="top" nowrap>
-                <input type="checkbox" name="<?=$Obj->Code?> value="<?=$Obj->CodeBin?>">
-                <?=$Obj->Libelle?>
+                <input type="checkbox" name="<?=$Obj['Code']?> value="<?=$Obj['CodeBin']?>">
+                <?=$Obj['Libelle']?>
 	    	</td>
 		                                                                   <?php
 										} 
@@ -53,12 +53,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    <td>
 		  <table><tr>
  		                                                                   <?php
-										while ($Obj = mysql_fetch_object ($ReqLans))
+										while ($Obj = $ReqLans->fetch())
 										{ 
 		                                                                   ?>
             <td valign="top" nowrap>
-                <input type="checkbox" name="<?=$Obj->Code?> value="<?=$Obj->CodeBin?>">
-                <?=$Obj->Libelle?>
+                <input type="checkbox" name="<?=$Obj['Code']?> value="<?=$Obj['CodeBin']?>">
+                <?=$Obj['Libelle']?>
 	    	</td>
 		                                                                   <?php
 										} 
@@ -84,12 +84,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		</td>
 		<td><table><tr>
 		                                                                   <?php
-										while ($Obj = mysql_fetch_object ($ReqWans))
+										while ($Obj = $ReqWans->fetch())
 										{ 
 		                                                                   ?>
             <td valign="top" nowrap>
-                <input type="checkbox" name="<?=$Obj->Code?> value="<?=$Obj->CodeBin?>">
-                <?=$Obj->Libelle?>
+                <input type="checkbox" name="<?=$Obj['Code']?> value="<?=$Obj['CodeBin']?>">
+                <?=$Obj['Libelle']?>
 	    	</td>
 		                                                                   <?php
 										} 
@@ -115,12 +115,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		<td><table><tr>
 		                                                                   <?php
 ($ReqLangages);
-										while ($Obj = mysql_fetch_object ($ReqLangages))
+										while ($Obj = $ReqLangages->fetch())
 										{ 
 		                                                                   ?>
             <td valign="top" nowrap>
-                <input type="checkbox" name="<?=$Obj->Code?> value="<?=$Obj->CodeBin?>">
-                <?=$Obj->Libelle?>
+                <input type="checkbox" name="<?=$Obj['Code']?> value="<?=$Obj['CodeBin']?>">
+                <?=$Obj['Libelle']?>
 	    	</td>
 		                                                                   <?php
 										} 
@@ -145,12 +145,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		</td>
 		<td><table><tr>
 		                                                                   <?php
-										while ($Obj = mysql_fetch_object ($ReqOS))
+										while ($Obj = $ReqOS->fetch())
 										{ 
 		                                                                   ?>
             <td valign="top" nowrap>
-                <input type="checkbox" name="<?=$Obj->Code?> value="<?=$Obj->CodeBin?>">
-                <?=$Obj->Libelle?>
+                <input type="checkbox" name="<?=$Obj['Code']?> value="<?=$Obj['CodeBin']?>">
+                <?=$Obj['Libelle']?>
 	    	</td>
 		                                                                   <?php
 										} 
@@ -175,12 +175,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		</td>
 		<td><table><tr>
 		                                                                   <?php
-										while ($Obj = mysql_fetch_object ($ReqBDs))
+										while ($Obj = $ReqBDs->fetch())
 										{ 
 		                                                                   ?>
             <td valign="top" nowrap>
-                <input type="checkbox" name="<?=$Obj->Code?> value="<?=$Obj->CodeBin?>">
-                <?=$Obj->Libelle?>
+                <input type="checkbox" name="<?=$Obj['Code']?> value="<?=$Obj['CodeBin']?>">
+                <?=$Obj['Libelle']?>
 	    	</td>
 		                                                                   <?php
 										} 

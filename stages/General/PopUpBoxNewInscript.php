@@ -32,9 +32,8 @@
 
     //
 
-	$ReqEntreprises = Query ("SELECT * FROM $NomTabEntreprises
-	                              ORDER BY NomE",
-	                         $ConnectStages);	
+    $ReqEntreprises = $ConnectStages->query("SELECT * FROM $NomTabEntreprises
+	                              ORDER BY NomE");
     //
 	
 	$CodErr       = array();
@@ -386,12 +385,12 @@ Responsable des stages
                       <select name="FK_Entreprise">
                           <option value="0">Choisissez</option>
                           <?php
-                            while ($Obj =  mysql_fetch_object ($ReqEntreprises))
+                            while ($Obj =  $ReqEntreprises->fetch())
                             {
                           ?>
-                          <option value="<?=$Obj->PK_Entreprise?>" 
-                            <?=$Obj->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
-                            <?=$Obj->NomE?>
+                          <option value="<?=$Obj['PK_Entreprise']?>"
+                            <?=$Obj['PK_Entreprise'] == $ValFK_Entreprise ? 'selected' : ''?>>
+                            <?=$Obj['NomE']?>
                           </option>
                           <?php
                             }
@@ -478,7 +477,7 @@ Responsable des stages
                     </div>
                   </div>
                   <p class="right">
-                  <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+                  <button type="reset" class="waves-effect waves-light btn black white-text">Réinitialiser</button>
                   <button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button></p>
                   <input type="hidden" name="StepNewInscript" value="Valid">
                 </form>

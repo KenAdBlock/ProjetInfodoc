@@ -83,32 +83,37 @@ function check (field)
         {
           case "$NomTabUsers" :
             if (! GetDroits ($Status, 'DelUser')) redirect ($URL_SITE);
-			Query ("DELETE FROM $SlxTable WHERE PK_User = '$IdentPK';",
-			       $ConnectStages);
+            $Req = $ConnectStages->prepare("DELETE FROM $SlxTable WHERE PK_User = :IdentPK;");
+            $Req->bindValue(':IdentPK', $IdentPK);
+            $Req->execute();
             break;
                 
           case "$NomTabNewInscripts" :
             if (! GetDroits ($Status, 'DelNewInscript')) redirect ($URL_SITE);
-			Query ("DELETE FROM $SlxTable WHERE PK_NewInscript = '$IdentPK';",
-			       $ConnectStages);
+            $Req = $ConnectStages->prepare("DELETE FROM $SlxTable WHERE PK_NewInscript = :IdentPK;");
+            $Req->bindValue(':IdentPK', $IdentPK);
+            $Req->execute();
             break;
                 
           case "$NomTabStages" :
             if (! GetDroits ($Status, 'DelStage')) redirect ($URL_SITE);
-			Query ("DELETE FROM $SlxTable WHERE PK_Stage = '$IdentPK';",
-			       $ConnectStages);
+            $Req = $ConnectStages->prepare("DELETE FROM $SlxTable WHERE PK_Stage = :IdentPK;");
+            $Req->bindValue(':IdentPK', $IdentPK);
+            $Req->execute();
             break;
                 
           case "$NomTabMailsToSend" :
             if (! GetDroits ($Status, 'DelMailsToSend')) redirect ($URL_SITE);
-			Query ("DELETE FROM $SlxTable WHERE PK_Login = '$IdentPK';",
-			       $ConnectStages);
+            $Req = $ConnectStages->prepare("DELETE FROM $SlxTable WHERE PK_Login = :IdentPK;");
+            $Req->bindValue(':IdentPK', $IdentPK);
+            $Req->execute();
             break;
                 
           case "$NomTabEntreprises" :
             if (! GetDroits ($Status, 'DelEntreprise')) redirect ($URL_SITE);
-			Query ("DELETE FROM $SlxTable WHERE PK_Entreprise = '$IdentPK';",
-			       $ConnectStages);
+            $Req = $ConnectStages->prepare("DELETE FROM $SlxTable WHERE PK_Entreprise = :IdentPK;");
+            $Req->bindValue(':IdentPK', $IdentPK);
+            $Req->execute();
             break;  
   
 		  default :

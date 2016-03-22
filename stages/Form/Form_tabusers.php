@@ -363,7 +363,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
 
                             <p class="center">
                                 <button type="reset" class="waves-effect waves-light btn black white-text"  onClick="history.go (-1)">Abandonner</button>
-                                <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+                                <button type="reset" class="waves-effect waves-light btn black white-text">Réinitialiser</button>
                                 <button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button></p>
 
     <input type="hidden" name="StepConsult" value="Valid" >
@@ -373,7 +373,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                     </div>
 
 <!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="<?=$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
 <script src="<?=$PATH_JS?>materialize.js"></script>
 <script src="<?=$PATH_JS?>init.js"></script>
     <?php

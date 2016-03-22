@@ -31,19 +31,22 @@
 	$NoErr = 1;
 	if ($StepPW == 'Valid')
 	{
-		$RewMail = Query ("SELECT * FROM $NomTabUsers
-		                       WHERE Mail = '$email'
-							    AND  Login = '$login';",
-						   $ConnectStages);
-		if ($NoErr = mysql_num_rows ($RewMail))
+		$RewMail = $ConnectStages->prepare("SELECT * FROM $NomTabUsers
+		                       WHERE Mail = :email
+							    AND  Login = :login");
+		$RewMail->bindValue(':email', $email);
+		$RewMail->bindValue(':login', $login);
+		$RewMail->execute();
+		if ($NoErr = $RewMail->rowCount())
 		{
-		    $ObjMail = mysql_fetch_object ($RewMail);
+		    $ObjMail = $RewMail->fetch();
 			$NewPassWord      = RandomPassWord ();
 			$NewPassWordKrpte = md5 ($NewPassWord);
-			$Message = "$ObjMail->Prenom $ObjMail->Nom,\n\nJ'ai le plaisir de vous informer que votre nouveau mot de passe est :\n\n$NewPassWord\n\n M. Laporte\nWebmestre\n$email";
-			Query ("UPDATE $NomTabUsers SET PassWord = '$NewPassWordKrpte'
-		                WHERE PK_User = '$ObjMail->PK_User';",
-				   $ConnectStages);
+			$Message = $ObjMail['Prenom'].$ObjMail['Nom'].",\n\nJ'ai le plaisir de vous informer que votre nouveau mot de passe est :\n\n$NewPassWord\n\n M. Laporte\nWebmestre\n$email";
+			$Req = $ConnectStages->prepare("UPDATE $NomTabUsers SET PassWord = '$NewPassWordKrpte'
+		                					WHERE PK_User = :PK_User;");
+			$Req->bindValue(':PK_User', $ObjMail['PK_User']);
+			$Req->execute();
 //	        mail ("marc.laporte@univ-amu.fr", 'Nouveau mot de passe', $Message, $Sender);
 	        mail ("darkweizer@gmail.com", 'Nouveau mot de passe', $Message, $Sender);
 			$StepPW = 'MAJOK';
@@ -51,14 +54,13 @@
 	}
 	
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> 
+<!DOCTYPE html>
 <html> 
-<<<<<<< HEAD
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Oubli du mot de passe</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="<?=$PATH_CSS?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="<?=$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 		<link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
@@ -76,7 +78,6 @@
                                         if ($StepPW != 'MAJOK')
 										{
 										                                   ?>
-<<<<<<< HEAD
 <div class="container">
       <div class="row">
         <div class="col s12">
@@ -156,7 +157,7 @@
                                           }
 										                                   ?>
 <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="<?=$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
   <script src="<?=$PATH_JS?>materialize.js"></script>
   <script src="<?=$PATH_JS?>init.js"></script>
 </body> 
