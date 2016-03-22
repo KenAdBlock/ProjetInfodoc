@@ -6,9 +6,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $ReqVersements = Query ("SELECT * FROM $NomTabTaxe ORDER BY RaisonSocialeSoc",
                             $Connexion);
     ?>
-<h1 style="text-align : center">
+<h4 class="center">
     <?=$Title?>
-</h1>
+</h4>
                                                                           <?php
         if (! mysql_num_rows ($ReqVersements))
         {
@@ -21,19 +21,19 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         else
         {
                                                                           ?>
-<table width="100%">
-<table align="center" style="border : thin solid black;" >
+
+<table class="highlight bordered centered grey lighten-5">
+    <thead class="grey darken-1 white-text">
     <tr>
-        <th style="text-align : center">Raison sociale</th>
-        <th style="text-align : center">Ville</th>
-        <th style="text-align : center">Cat. A</th>
-        <th style="text-align : center">Cat. A+B</th>
-        <th style="text-align : center">Cat. B+C</th>
-        <th style="text-align : center">Organisme</th>
+        <th>Raison sociale</th>
+        <th>Ville</th>
+        <th>Cat. A</th>
+        <th>Cat. A+B</th>
+        <th>Cat. B+C</th>
+        <th>Organisme</th>
+
     </tr>
-    <tr>
-        <th colspan="6"><hr width="100%"></th>
-    </tr>
+    </thead>
                                                                           <?php
                                         mysql_data_seek ($ReqVersements, 0);
                                         while ($ObjVersement = mysql_fetch_object ($ReqVersements))
@@ -41,18 +41,19 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                                           ?>
 
     <tr>
-        <td style="text-align : center"><?=stripslashes ($ObjVersement->RaisonSocialeSoc)?></td>
-        <td style="text-align : center"><?=stripslashes ($ObjVersement->VilleSoc)?></td>
-        <td style="text-align : center"><?=$ObjVersement->CatA?></td>
-        <td style="text-align : center"><?=$ObjVersement->CatAPlusB?></td>
-        <td style="text-align : center"><?=$ObjVersement->CatBPlusC?></td>
-        <td style="text-align : center"><?=stripslashes ($ObjVersement->NomCollecteur)?></td>
+        <td><?=stripslashes ($ObjVersement->RaisonSocialeSoc)?></td>
+        <td><?=stripslashes ($ObjVersement->VilleSoc)?></td>
+        <td><?=$ObjVersement->CatA?></td>
+        <td><?=$ObjVersement->CatAPlusB?></td>
+        <td><?=$ObjVersement->CatBPlusC?></td>
+        <td><?=stripslashes ($ObjVersement->NomCollecteur)?></td>
+
     </tr>
                                                                           <?php
                                         }
                                                                           ?>
 </table>
-</table>
+
                                                                           <?php
         }
 }
@@ -63,5 +64,3 @@ else
 <?php
 }
 ?>
-</body>
-</html>
