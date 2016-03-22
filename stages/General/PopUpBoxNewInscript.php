@@ -342,6 +342,31 @@ Responsable des stages
               <div class="row">
                 <form method="POST" role="form" class="col s12">
                   <div class="row">
+                                <div class="input-field col l1 m1 s">
+                                    <label for="Nom"><b>Civilité</b></label>
+                                </div>
+                                <div class="col l6 s12 m12">
+                                    <div class="input-field col l4 m4 s4">
+                                        <p>
+                                            <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
+                                            <label for="CiviliteM">M</label>
+                                        </p>
+                                    </div>
+                                    <div class="input-field col l4 m4 s4">
+                                        <p>
+                                            <input name="Civilite" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
+                                             <label for="CiviliteMme">Mme</label>
+                                        </p>
+                                    </div>
+                                    <div class="input-field col l4 m4 s4">
+                                        <p>
+                                            <input name="Civilite" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
+                                            <label for="CiviliteMlle">Mlle</label>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                  <div class="row">
                     <div class="input-field col l6 m6 s12">
                       
                       <input name="NomTuteur" size="50" value="<?=$ValNomTuteur?>" id="NomTuteur" type="text" class="validate">
@@ -354,26 +379,20 @@ Responsable des stages
                     </div>
                   </div>
                   <div class="row">
-                    <div class="input-field col l6 m6 s12">
-                      <select>
-                        <option name="CiviliteTuteur" value="M">M</option>
-                        <option name="CiviliteTuteur" value="Mme">Mme</option>
-                        <option name="CiviliteTuteur" value="Mlle">Mlle</option>
-                      </select>
-                      <label><b>&nbsp;Civilité *</b></label>
-                    </div>
+                    
                     <div class="input-field col l6 m6 s12">
                       
                       <input name="MailTuteur" size="50" value="<?=$ValMailTuteur?>" id="MailTuteur" type="email" class="validate">
                       <label for="MailTuteur"><b><?=$ValidMailTuteur?>Mail *</b></label>
                     </div>
-                  </div>
-                  <div class="row">
                     <div class="input-field col l6 m6 s12">
                       
                       <input name="TelTuteur" size="50" value="<?=$ValTelTuteur?>" id="TelTuteur" type="text" class="validate">
                       <label for="TelTuteur"><b><?=$ValidTelTuteur?>Tel *</b></label>
                     </div>
+                  </div>
+                  <div class="row">
+                    
                     <div class="input-field col l6 m6 s12">
                       <input name="FaxTuteur" size="50" value="<?=$ValFaxTuteur?>" id="FaxTuteur" type="text" class="validate">
                       <label for="FaxTuteur">Fax</label>
@@ -442,6 +461,31 @@ Responsable des stages
                     idem ci-dessus, sinon :
                   </p>
                   <div class="row">
+                                <div class="input-field col l1 m1 s">
+                                    <label for="Nom"><b>Civilité</b></label>
+                                </div>
+                                <div class="col l6 s12 m12">
+                                    <div class="input-field col l4 m4 s4">
+                                        <p>
+                                            <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
+                                            <label for="CiviliteM">M</label>
+                                        </p>
+                                    </div>
+                                    <div class="input-field col l4 m4 s4">
+                                        <p>
+                                            <input name="Civilite" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
+                                             <label for="CiviliteMme">Mme</label>
+                                        </p>
+                                    </div>
+                                    <div class="input-field col l4 m4 s4">
+                                        <p>
+                                            <input name="Civilite" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
+                                            <label for="CiviliteMlle">Mlle</label>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                  <div class="row">
                     <div class="input-field col l6 m6 s12">
                       
                       <input name="NomRespAdmin" size="50" value="<?=$ValNomRespAdmin?>" id="NomRespAdmin" type="text" class="validate">
@@ -454,24 +498,18 @@ Responsable des stages
                     </div>
                   </div>
                   <div class="row">
-                    <div class="input-field col l6 m6 s12">
-                      <select>
-                        <option name="CiviliteTuteur" value="M">M</option>
-                        <option name="CiviliteTuteur" value="Mme">Mme</option>
-                        <option name="CiviliteTuteur" value="Mlle">Mlle</option>
-                      </select>
-                      <label><b>&nbsp;&nbsp;Civilité *</b></label>
-                    </div>
+                    
                     <div class="input-field col l6 m6 s12">
                       <input name="MailRespAdmin" size="50" value="<?=$ValMailRespAdmin?>" id="MailRespAdmin" type="email" class="validate">
                       <label for="MailRespAdmin">&nbsp;Mail</label>
                     </div>
-                  </div>
-                  <div class="row">
                     <div class="input-field col l6 m6 s12">
                       <input name="TelRespAdmin" size="50" value="<?=$ValTelRespAdmin?>" id="TelRespAdmin" type="text" class="validate">
                       <label for="TelRespAdmin"><b><?=$ValidTelRespAdmin?>Tel *</b></label>
                     </div>
+                  </div>
+                  <div class="row">
+                    
                     <div class="input-field col l6 m6 s12">
                       <input name="FaxRespAdmin" size="50" value="<?=$ValFaxRespAdmin?>" id="FaxRespAdmin" type="text" class="validate">
                       <label for="FaxRespAdmin">&nbsp;Fax</label>

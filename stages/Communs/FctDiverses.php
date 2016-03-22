@@ -293,7 +293,7 @@ function SaisieRubrIntEnum ($Libelle, $NameInput, $ValeurInput, $ValFirst,
 		
 		    
 
-<select name="<?=$NameInput?>" size="1">
+<select class="browser-default" name="<?=$NameInput?>" size="1">
                                                                           <?php
                                         for ($i = $ValFirst; $i <= $ValLast; ++$i)
 										{
@@ -317,7 +317,7 @@ function SaisieRubrStringEnum ($Libelle, $NameInput, $ValeurInput,
         <?=$SymboleValid?>
         <div class="row">
 <div class="input-field col s12">
-<select name="<?=$NameInput?>" size="1">
+<select class="browser-default" name="<?=$NameInput?>" size="1">
                                                                           <?php
                                         for ($i = 0; $i < count ($ValPossibles); ++$i)
 										{
