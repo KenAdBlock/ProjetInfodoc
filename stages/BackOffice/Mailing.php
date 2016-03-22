@@ -246,21 +246,21 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 
 </div>
 	<div class="row">
-	<div class="col s12 m6 l3">
-<button class="min-btn bleu1 white-text" type="button" onClick="this.value=check (this.form.elements['tabmail[]'])">Tout decocher</button>
-</div>
+	<div class="col s12 m6 l3"><p class="center">
+<button class="min-btn waves-effect waves-light bleu1 white-text" type="button" onClick="this.value=check (this.form.elements['tabmail[]'])">Tout decocher</button>
+</p><br></div>
 
-<div class="col s12 m6 l3">
-<button class="min-btn bleu1 white-text" type="submit">Envoyer</button>
-</div>
+<div class="col s12 m6 l3"><p class="center">
+<button class="min-btn waves-effect waves-light bleu1 white-text" type="submit">Envoyer</button>
+</p><br></div>
 
-       <div class="col s12 m6 l3">
-<button class="min-btn black white-text" type="button" onClick="document.location='?Trait=Mailing&SsStep=Init'">Retour aux listes</button>
-</div>
+       <div class="col s12 m6 l3"><p class="center">
+<button class="min-btn waves-effect waves-light black white-text" type="button" onClick="document.location='?Trait=Mailing&SsStep=Init'">Retour aux listes</button>
+</p><br></div>
 
-       <div class="col s12 m6 l3">
-<button class="min-btn black white-text" type="button" onClick="document.location='?Trait='">Abandonner</button>
-</div>
+       <div class="col s12 m6 l3"><p class="center">
+<button class="min-btn waves-effect waves-light black white-text" type="button" onClick="document.location='?Trait='">Abandonner</button>
+</p><br></div>
 
 </div>
 
