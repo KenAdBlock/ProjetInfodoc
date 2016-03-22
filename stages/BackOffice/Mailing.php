@@ -2,7 +2,7 @@
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
 //    $Sender          = "From: marc.laporte@univ-amu.fr";
-    $Sender          = "From: darkweizer@gmail.com";
+    $Sender          = "From: darkweizer@infodoc.esy.es";
 
 	$UtilBD = new UtilBD();
 	$ConnectLaporte = $UtilBD->ConnectLaporte();
@@ -236,7 +236,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 </div>
 	<div class="row">
 	<div class="col s12 m6 l3"><p class="center">
-<button class="min-btn waves-effect waves-light bleu1 white-text" type="button" onClick="this.value=check (this.form.elements['tabmail[]'])">Tout decocher</button>
+<button class="min-btn waves-effect waves-light bleu1 white-text" type="button" onClick="this.value=check (this.form.elements['tabmail[]']); if(this.innerText == 'Tout décocher') {this.innerText = 'Tout cocher';} else {this.innerText = 'Tout décocher';} ">Tout décocher</button>
 </p><br></div>
 
 <div class="col s12 m6 l3"><p class="center">
@@ -281,7 +281,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 		</td>
 	    <td valign="top">
 		    <input class="filled-in" id="<?=$ObjMails['Nom']?>" type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['Mail']?>">
-		<label for="<?=$ObjMails['Nom']?>"></label>
+			<label for="<?=$ObjMails['Nom']?>"></label>
 		</td>
 	    <td valign="top">
 		    <?=$ObjMails['Nom']?> <?=$ObjMails['Prenom']?>
@@ -329,7 +329,8 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 		    <?=++$Cpt?>
 		</td>
 	    <td valign="top">
-		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['MailR']?>">
+		    <input class="filled-in" id="<?=$ObjMails['NomR']?>" type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['MailR']?>">
+			<label for="<?=$ObjMails['NomR']?>"></label>
 		</td>
 	    <td valign="top">
 		    <?=$ObjMails['NomR']?> <?=$ObjMails['PrenomR']?>
@@ -372,7 +373,8 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 		    <?=++$Cpt?>
 		</td>
 	    <td valign="top">
-		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['EMail']?>">
+		    <input class="filled-in" id="<?=$ObjMails['Nom']?>" type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['EMail']?>">
+			<label for="<?=$ObjMails['Nom']?>"></label>
 		</td>
 	    <td valign="top">
 		    <?=$ObjMails['Nom']?> <?=$ObjMails['Prenom']?>

@@ -1,6 +1,6 @@
 <?php
 //$Expediteur = 'From: marc.laporte@univ-amu.fr';
-$Expediteur = 'From: darkweizer@gmail.com';
+$Expediteur = 'From: darkweizer@infodoc.esy.es';
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
 	if ($StepSendMail == 'Valid')
@@ -9,9 +9,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                      $ConnectStages->query("DELETE FROM $NomTabMailsToSend 
 	                       WHERE PK_Login = '$IdentPK'");
 */
-ini_set("SMTP", "smtp.univ-amu.fr");
+ini_set("SMTP", "mx1.hostinger.fr");
 //ini_set("sendmail_from", "marc.laporte@univ-amu.fr");
-ini_set("sendmail_from", "darkweizer@gmail.com");
+ini_set("sendmail_from", "darkweizer@infodoc.esy.es");
         mail ($Destinataire, stripslashes ($Sujet), stripslashes ($Message), $Expediteur);
 	
 	 $URL_List = $PATH_BACKOFFICE.'BackOffice.php?Trait=List&SlxTable='.$NomTabMailsToSend;

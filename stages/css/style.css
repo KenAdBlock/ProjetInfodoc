@@ -285,7 +285,7 @@ select + label{
 }
 .table-list{
   height: 500px;
-  width:100%; 
+  width:100%;
   overflow:auto;
 }
 .info-table{
