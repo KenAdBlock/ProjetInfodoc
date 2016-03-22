@@ -57,7 +57,7 @@ $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGELP     ] = 'Licence pro SIL';
 $Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF ] = 'Indifférent';
 $Msg_FormStage [MSGFORMSTAGE_1                 ] = '<h5>1. Entreprise</h5>';
 $Msg_FormStage [MSGFORMSTAGE_1_1               ] = '<h6><b>1.1 Maître de stage</b></h6>';
-$Msg_FormStage [MSGFORMSTAGE_ADRSTAGE          ] = '<h6><b>Si l\'adresse du lieu de stage est différente de celle de l\'entreprise, veillez remplir le cadre ci-dessous</b></h6>';
+$Msg_FormStage [MSGFORMSTAGE_ADRSTAGE          ] = '<h6>Si l\'adresse du lieu de stage est différente de celle de l\'entreprise, veillez remplir le cadre ci-dessous</h6>';
 $Msg_FormStage [MSGFORMSTAGE_TUTEUR            ] = 'Tuteur de stage : ';
 $Msg_FormStage [MSGFORMSTAGE_2                 ] = '<h5>2. Environnement du stagiaire dans le cadre de sa tâche</h5>';
 $Msg_FormStage [MSGFORMSTAGE_ENV_MATERIEL      ] = '<h6><b>2.1 Environnement matériel</b></h6>';
@@ -76,25 +76,25 @@ $Msg_FormStage [MSGFORMSTAGE_LANGAGES          ] = 'Langages de programmation';
 $Msg_FormStage [MSGFORMSTAGE_BD                ] = 'Bases de données';
 $Msg_FormStage [MSGFORMSTAGE_LOGICIELS_SPEC    ] = 'Logiciels spécifiques à l\'entreprise';
 
-$Msg_FormStage [MSGFORMSTAGE_STDANALYSE        ] = '- D\'Analyse';
-$Msg_FormStage [MSGFORMSTAGE_STDCONCEPTION     ] = '- De Conception';
-$Msg_FormStage [MSGFORMSTAGE_STDPROGRAMMATION  ] = '- De Programmation';
-$Msg_FormStage [MSGFORMSTAGE_STDCONTROLE_QL    ] = '- De Controle qualité logicielle';
-$Msg_FormStage [MSGFORMSTAGE_STDGESTIONPROJET  ] = '- De Gestion de projet';
+$Msg_FormStage [MSGFORMSTAGE_STDANALYSE        ] = ' D\'Analyse';
+$Msg_FormStage [MSGFORMSTAGE_STDCONCEPTION     ] = ' De Conception';
+$Msg_FormStage [MSGFORMSTAGE_STDPROGRAMMATION  ] = ' De Programmation';
+$Msg_FormStage [MSGFORMSTAGE_STDCONTROLE_QL    ] = ' De Controle qualité logicielle';
+$Msg_FormStage [MSGFORMSTAGE_STDGESTIONPROJET  ] = ' De Gestion de projet';
 
-$Msg_FormStage [MSGFORMSTAGE_NATURE_TACHE    ] = 'Nature de la tâche :';
+$Msg_FormStage [MSGFORMSTAGE_NATURE_TACHE    ] = '<h6><b>Nature de la tâche :</b></h6>';
 $Msg_FormStage [MSGFORMSTAGE_PROGRAMMATION   ] = '&nbsp; &nbsp; &nbsp; &nbsp; - programmation';
 $Msg_FormStage [MSGFORMSTAGE_ANALYSE         ] = '&nbsp; &nbsp; &nbsp; &nbsp; - analyse';
-
-$Msg_FormStage [MSGFORMSTAGE_INTEGRATION     ] = 'Encadrement du stagiaire, le travail de l\'étudiant : ';
+	
+$Msg_FormStage [MSGFORMSTAGE_INTEGRATION     ] = '<h6><b>Encadrement du stagiaire, le travail de l\'étudiant : </b></h6>';
 $Msg_FormStage [MSGFORMSTAGE_INTEGRPROJETGLOBAL] = '&nbsp; &nbsp; &nbsp; &nbsp; - s\'intègre-t-il dans un projet global ?';
 $Msg_FormStage [MSGFORMSTAGE_ENTITEINDEPENDANTE] = '&nbsp; &nbsp; &nbsp; &nbsp; - constitue-t-il une entité indépendante ? ';
 
-$Msg_FormStage [MSGFORMSTAGE_REMARQUES       ] = 'Remarques générales : ';
+$Msg_FormStage [MSGFORMSTAGE_REMARQUES       ] = '<h6><b>Remarques générales :</b></h6> ';
 $Msg_FormStage [MSGFORMSTAGE_NBPERS_CI       ] = 'Nombre de personnes du Centre Informatique : ';
 $Msg_FormStage [MSGFORMSTAGE_NBSTAGIAIRES    ] = 'Nombre de stagiaires prévus : ';
 $Msg_FormStage [MSGFORMSTAGE_NBPERS_SERV     ] = 'Nombre de personnes du service où sera affecté le stagiaire : ';
-$Msg_FormStage [MSGFORMSTAGE_OLDSTAGIAIRES   ] = 'L\'entreprise a-t-elle déjà accueilli des stagiaires <br />&nbsp; &nbsp; de notre département auparavant ? ';
+$Msg_FormStage [MSGFORMSTAGE_OLDSTAGIAIRES   ] = 'L\'entreprise a-t-elle déjà accueilli des stagiaires de notre département auparavant ? ';
 $Msg_FormStage [MSGFORMSTAGE_ENVIRONSTAGIAIRE] = 'Le stagiaire travaillera-t-il ';
 $Msg_FormStage [MSGFORMSTAGE_SEUL            ] = 'seul ';
 $Msg_FormStage [MSGFORMSTAGE_COLL_INFORM     ] = 'en collaboration avec un informaticien';

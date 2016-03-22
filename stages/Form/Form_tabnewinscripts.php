@@ -473,6 +473,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                     </div>
                 </div>
                 </td></tr></table>
+                <br>
                                                                            <?php
                                         if (count ($CodErrInval))
 										{
@@ -490,6 +491,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                         }
                                                                            ?>
                 <hr>
+                <br>
 
         <p class="center">
             <button type="reset" class="waves-effect waves-light btn black white-text"  onClick="history.back()">Abandonner</button>
