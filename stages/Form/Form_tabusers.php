@@ -20,8 +20,6 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     require_once ($PATH_CLASS.'CUser.php');
     require_once ($PATH_UTIL.'UtilLogin.php');
     require_once ($PATH_COMMUNS.'FctDiverses.php');
-//    require_once ($PATH_GENERAL.'Entete.php');
-//    ShowEntete();
 
 	$ReqStatus      = Query ("SELECT * FROM $NomTabStatus",     
 	                         $Connexion);

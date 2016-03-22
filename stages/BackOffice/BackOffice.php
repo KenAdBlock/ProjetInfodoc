@@ -1,5 +1,7 @@
 <?php
 require_once ('Fonctions.php');
+require_once ($PATH_GENERAL.'Entete.php');
+require_once ($PATH_GENERAL.'Consult.php');
 ?>	
 
 <html>
@@ -32,6 +34,12 @@ function check (field)
 </head>
 
 <body>
+
+<?php
+    ShowEntete();
+    Consult($_SESSION ['login'], $_SESSION ['LibStatus'], $Status);
+?>
+
 <div class="container">
       <div class="row">
         <div class="col s12">

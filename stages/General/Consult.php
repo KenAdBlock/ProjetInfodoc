@@ -44,9 +44,9 @@ function Consult ($Login, $Libelle, $Status)
             <p class="center">en tant
 			<?php
 				if ($Libelle != "responsable de stage"
-                    OR $Libelle != "secrétariat"
-                    OR $Libelle != "tuteur"
-                    OR $Libelle != "professeur") {
+                    AND $Libelle != "secrétariat"
+                    AND $Libelle != "tuteur"
+                    AND $Libelle != "professeur") {
 			?>
 					qu'<b><?= $Libelle ?></b></p>
 			<?php
