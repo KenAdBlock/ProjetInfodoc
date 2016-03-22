@@ -11,7 +11,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         .($Trait == 'ListeEtud1A' ? STATUS_ETUD1 : STATUS_ETUD2)."
 						    ORDER BY Nom");
 ?>
-<h1>Liste des étudiants de <?=$Trait == 'ListeEtud1A' ? 'première' : 'deuxième'?> année</h1>
+<h4 class="center">Liste des étudiants de <?=$Trait == 'ListeEtud1A' ? 'première' : 'deuxième'?> année</h4>
 
 <table>
                                                                            <?php

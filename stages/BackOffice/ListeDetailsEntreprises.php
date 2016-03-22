@@ -55,7 +55,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 <div class="table-list">
 <table class="highlight bordered centered grey lighten-4 small-text">
- <thead class="grey darken-1 white-text">
+ <thead class="grey white-text">
 
                 <tr>
                     <th style="text-align : center" valign="top" nowrap>
