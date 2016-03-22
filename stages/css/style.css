@@ -182,11 +182,15 @@ a.ashadow:hover {
 .bleu2,.bleu2:hover{
   background: #00CCFF;
 }
-.jeune,.jeune:hover{
+.jaune,.jeune:hover{
   background:#FFCC00; 
 }
-.jeune-text{
+.jaune-text{
   color: #FFCC00;
+}
+
+.bleu1-text{
+    color: #0066cc;
 }
 option *{
   color: black;

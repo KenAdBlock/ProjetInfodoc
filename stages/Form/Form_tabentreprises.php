@@ -313,8 +313,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
                         <div class="row">
                             <div class="input-field col s12">
+                                <div class="bleu1-text"><?=$ValidPresentEntreprise?>Présentation de l'entreprise :</div><br>
                                 <textarea name="PresentEntreprise" id="PresentEntreprise" class="materialize-textarea"><?=stripslashes ($ValPresentEntreprise)?></textarea>
-                                <label for="PresentEntreprise"><?=$ValidPresentEntreprise?>Présentation de l'entreprise :</label>
                             </div>
                         </div>
                         <div class="row">

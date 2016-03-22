@@ -45,7 +45,7 @@ function Consult ($Login, $Libelle, $Status)
 			<?php
 				if ($Libelle != "professeur") {
 			?>
-					qu'<b><?= $Libelle ?></b></p>
+					qu' <b><?= $Libelle ?></b></p>
 			<?php
 				} else {
 			?>
