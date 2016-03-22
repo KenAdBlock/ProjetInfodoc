@@ -76,11 +76,11 @@ $Msg_FormStage [MSGFORMSTAGE_LANGAGES          ] = 'Langages de programmation';
 $Msg_FormStage [MSGFORMSTAGE_BD                ] = 'Bases de données';
 $Msg_FormStage [MSGFORMSTAGE_LOGICIELS_SPEC    ] = 'Logiciels spécifiques à l\'entreprise';
 
-$Msg_FormStage [MSGFORMSTAGE_STDANALYSE        ] = '&nbsp; &nbsp; &nbsp; &nbsp; - d\'Analyse';
-$Msg_FormStage [MSGFORMSTAGE_STDCONCEPTION     ] = '&nbsp; &nbsp; &nbsp; &nbsp; - de Conception';
-$Msg_FormStage [MSGFORMSTAGE_STDPROGRAMMATION  ] = '&nbsp; &nbsp; &nbsp; &nbsp; - de Programmation';
-$Msg_FormStage [MSGFORMSTAGE_STDCONTROLE_QL    ] = '&nbsp; &nbsp; &nbsp; &nbsp; - de Controle qualité logicielle';
-$Msg_FormStage [MSGFORMSTAGE_STDGESTIONPROJET  ] = '&nbsp; &nbsp; &nbsp; &nbsp; - de Gestion de projet';
+$Msg_FormStage [MSGFORMSTAGE_STDANALYSE        ] = '- D\'Analyse';
+$Msg_FormStage [MSGFORMSTAGE_STDCONCEPTION     ] = '- De Conception';
+$Msg_FormStage [MSGFORMSTAGE_STDPROGRAMMATION  ] = '- De Programmation';
+$Msg_FormStage [MSGFORMSTAGE_STDCONTROLE_QL    ] = '- De Controle qualité logicielle';
+$Msg_FormStage [MSGFORMSTAGE_STDGESTIONPROJET  ] = '- De Gestion de projet';
 
 $Msg_FormStage [MSGFORMSTAGE_NATURE_TACHE    ] = 'Nature de la tâche :';
 $Msg_FormStage [MSGFORMSTAGE_PROGRAMMATION   ] = '&nbsp; &nbsp; &nbsp; &nbsp; - programmation';

@@ -19,7 +19,7 @@
 	require_once ($PATH_UTIL.'UtilLogin.php');
 	
 	$WidthDfltPopUpBoxOubliPW  = 400;
-	$HeightDfltPopUpBoxOubliPW = 290;
+	$HeightDfltPopUpBoxOubliPW = 500;
 	
 	$WidthPopUpBoxOubliPW  = $WidthDfltPopUpBoxOubliPW + 10;
 	$HeightPopUpBoxOubliPW = $HeightDfltPopUpBoxOubliPW;
@@ -57,7 +57,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Oubli du mot de passe</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="<?=$PATH_CSS?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 		<link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
@@ -75,6 +75,7 @@
                                         if ($StepPW != 'MAJOK')
 										{
 										                                   ?>
+
 <div class="container">
       <div class="row">
         <div class="col s12">
