@@ -375,7 +375,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 			   target="_blank"
 		       onMouseOver="window.status='Imprimer'; return true"
                onMouseOut ="window.status=''; return true"
-                ></a><img src="<?=$PATH_GIFS?>PrintCourant.gif" border="0">
+                ><img src="<?=$PATH_GIFS?>PrintCourant.gif" border="0">
+</a>
 </td>
 <td style="text-align : center;" valign = center">
     <input type="button" value="Retour" style="width : <?=$WidthButton?>px" 
