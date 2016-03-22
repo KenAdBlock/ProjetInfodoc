@@ -73,7 +73,7 @@ $Msg_FormStage [MSGFORMSTAGE_SUJET             ] = '<h5>3. Sujet</h5>';
 //define ('MSGFORMSTAGE_METHODES_STANDARDS', ++$NoMsg);
 
 $Msg_FormStage [MSGFORMSTAGE_LANGAGES          ] = 'Langages de programmation'; 
-$Msg_FormStage [MSGFORMSTAGE_BD                ] = 'Bases de données';
+$Msg_FormStage [MSGFORMSTAGE_BD                ] = '<br>Bases de données';
 $Msg_FormStage [MSGFORMSTAGE_LOGICIELS_SPEC    ] = 'Logiciels spécifiques à l\'entreprise';
 
 $Msg_FormStage [MSGFORMSTAGE_STDANALYSE        ] = ' D\'Analyse';
@@ -83,12 +83,12 @@ $Msg_FormStage [MSGFORMSTAGE_STDCONTROLE_QL    ] = ' De Controle qualité logici
 $Msg_FormStage [MSGFORMSTAGE_STDGESTIONPROJET  ] = ' De Gestion de projet';
 
 $Msg_FormStage [MSGFORMSTAGE_NATURE_TACHE    ] = '<h6><b>Nature de la tâche :</b></h6>';
-$Msg_FormStage [MSGFORMSTAGE_PROGRAMMATION   ] = '- programmation';
-$Msg_FormStage [MSGFORMSTAGE_ANALYSE         ] = '- analyse';
+$Msg_FormStage [MSGFORMSTAGE_PROGRAMMATION   ] = 'programmation';
+$Msg_FormStage [MSGFORMSTAGE_ANALYSE         ] = 'analyse';
 	
 $Msg_FormStage [MSGFORMSTAGE_INTEGRATION     ] = '<h6><b>Encadrement du stagiaire, le travail de l\'étudiant : </b></h6>';
-$Msg_FormStage [MSGFORMSTAGE_INTEGRPROJETGLOBAL] = '- s\'intègre-t-il dans un projet global ?';
-$Msg_FormStage [MSGFORMSTAGE_ENTITEINDEPENDANTE] = '- constitue-t-il une entité indépendante ? ';
+$Msg_FormStage [MSGFORMSTAGE_INTEGRPROJETGLOBAL] = 's\'intègre-t-il dans un projet global ?';
+$Msg_FormStage [MSGFORMSTAGE_ENTITEINDEPENDANTE] = 'constitue-t-il une entité indépendante ? ';
 
 $Msg_FormStage [MSGFORMSTAGE_REMARQUES       ] = '<h6><b>Remarques générales :</b></h6> ';
 $Msg_FormStage [MSGFORMSTAGE_NBPERS_CI       ] = 'Nombre de personnes du Centre Informatique : ';

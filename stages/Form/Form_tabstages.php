@@ -646,7 +646,7 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
                                            $ValAutresLangages, 
 										   LANG_PAR_LIGNE);
 										   
-                                       AffichLigneVierge();
+                                      
 									   
                                        SaisieRubrStageEtAutre (
 									       '', // $ValidBD, 
@@ -697,13 +697,21 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
 									       'MethodesGestionProjet',
 									       $ValMethodesGestionProjet);
 
-                                       AffichSepar ();
+                                       
 	/*
 	    ========
 	    3. Sujet
 	    ========
 	*/
-       AffichTitre ($Msg_FormStage [MSGFORMSTAGE_SUJET], 2);
+        ?>
+<div class="row">
+<div class="col s12">
+
+<?php AffichSepar ();
+       AffichTitre ($Msg_FormStage [MSGFORMSTAGE_SUJET], 2);  ?>
+</div>
+</div>
+       <?php
 	   
                                         SaisieSujet (
 									        '',
