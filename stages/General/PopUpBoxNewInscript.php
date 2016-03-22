@@ -383,7 +383,8 @@ Responsable des stages
                   <hr><br>
                   <div class="row">
                     <div class="input-field col s12">
-                      <select name="FK_Entreprise">
+                      <label><b>Entreprise *</b></label><br><br>
+                      <select class="browser-default" name="FK_Entreprise">
                           <option value="0">Choisissez</option>
                           <?php
                             while ($Obj =  mysql_fetch_object ($ReqEntreprises))
@@ -397,7 +398,7 @@ Responsable des stages
                             }
                           ?>
                       </select>
-                      <label><b>Entreprise *</b></label>
+                      
                     </div>
                   </div>
                   <p><i>Si votre entreprise n'apparaît pas dans cette liste, veuillez compléter le cadre ci-dessous.</i></p><br>
