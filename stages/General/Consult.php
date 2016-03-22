@@ -33,17 +33,20 @@ function Consult ($Login, $Libelle, $Status)
   </nav>
 
 <div id="slide-out" class="side-nav grey lighten-4 z-depth-3 black-text">
-        <div class="row">
-          <div class="col s12">
-<h5 class="center">Bienvenue</h5> 
+    <div class="row">
+        <div class="col s12">
+            <h5 class="center">Bienvenue</h5>
             <p class="center">
-            Vous êtes connecté(e) sous le pseudonyme <br>
-            <b id="login-connect"><?=$Login?></b> 
+                Vous êtes connecté(e) sous le pseudonyme <br>
+                <b id="login-connect"><?=$Login?></b>
             </p>
 <!--            <p class="center">en tant que <b>--><?//=$Libelle?><!--</b></p>-->
             <p class="center">en tant
 			<?php
-				if ($Libelle != "professeur") {
+				if ($Libelle != "responsable de stage"
+                    OR $Libelle != "secrétariat"
+                    OR $Libelle != "tuteur"
+                    OR $Libelle != "professeur") {
 			?>
 					qu'<b><?= $Libelle ?></b></p>
 			<?php
@@ -54,8 +57,8 @@ function Consult ($Login, $Libelle, $Status)
 				}
 			?>
 
-<hr>
-<p class="center">
+            <hr>
+            <p class="center">
 
 
                                                                            <?php
@@ -69,21 +72,21 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'NewUser'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabUsers?>" 
-			   target="principal">Nouvel utilisateur</a> 
+            <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabUsers?>">
+				Nouvel utilisateur</a>
                                                                            <?php
 										}
                                         if (GetDroits ($Status, 'ListeUsers'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabUsers?>" 
-			   target="principal">Liste des utilisateurs</a> 
+            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabUsers?>">
+                Liste des utilisateurs</a>
                                                                            <?php
 										}
                                         if (GetDroits ($Status, 'NewStage'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabStages?>" target="principal">
+            <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabStages?>">
 			    Nouveau stage
 			</a> 
                                                                            <?php
@@ -99,7 +102,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'ListeFichesStages'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabStages?>" target="principal">
+            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabStages?>">
 		        Liste des fiches de stage
 			</a>
 <!--			--><?php //var_dump($URL_List.$NomTabStages);?> 
@@ -108,7 +111,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'ListeFichesStagesEntreprise'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabStages?>" target="principal">
+            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabStages?>">
 		        Vos fiches de stage
 			</a> 
                                                                            <?php
@@ -116,14 +119,14 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'RechercheStage'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=search"
-			   target="principal">Rechercher un Stage</a> 
+            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=search">
+                Rechercher un Stage</a>
                                                                            <?php
 										}
                                         if (GetDroits ($Status, 'NewEntreprise'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabEntreprises?>" target="principal">
+            <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabEntreprises?>">
                 Nouvelle entreprise
 		    </a> 
                                                                            <?php
@@ -131,7 +134,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'ModifEntreprise'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_AccesRapideSoc?>" target="principal">
+            <a class="ashadow blue-text" href="<?=$URL_AccesRapideSoc?>">
                 Modifier une entreprise
 		    </a> 
                                                                            <?php
@@ -139,7 +142,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'ListeDetailsEntreprises'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeDetailsEntreprises" target="principal">
+            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeDetailsEntreprises">
 			    Liste détaillée des entreprises
 		    </a> 
                                                                            <?php
@@ -147,7 +150,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'ListeEntreprises'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabEntreprises?>" target="principal">
+            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabEntreprises?>">
 			    Liste des entreprises
 		    </a> 
                                                                            <?php
@@ -155,7 +158,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'ModifInfosUserConnecte'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ModifInfosUserConnecte" target="principal">
+            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ModifInfosUserConnecte">
                 Vos Coordonnées
 			</a> 
                                                                            <?php
@@ -163,7 +166,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'CoordonneesEntreprise'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=CoordonneesEntreprise" target="principal">
+            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=CoordonneesEntreprise">
                 Coordonnées de l'entreprise
 			</a> 
                                                                            <?php
@@ -171,7 +174,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'ListeNewInscripts'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabNewInscripts?>" target="principal">
+            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabNewInscripts?>">
                 Liste nouveaux inscrits
 			</a> 
                                                                            <?php
@@ -179,7 +182,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'ListeEtudAvecStage'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeEtudAvecStage" target="principal">
+            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeEtudAvecStage">
                 Liste des étudiants avec stage
 			</a> 
                                                                            <?php
@@ -187,7 +190,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'ListeEtud1A'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants1A" target="principal">
+            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants1A">
                 Mailing aux 1<sup>ère</sup> année
 			</a> 
                                                                            <?php
@@ -195,7 +198,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'ListeEtud2A'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous" target="principal">
+            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous">
                 Mailing aux 2<sup>ème</sup> année
 			</a> 
                                                                            <?php
@@ -203,7 +206,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'Mailing'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing" target="principal">
+            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing">
                 Mailing
 			</a> 
                                                                            <?php
@@ -222,8 +225,7 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'Etiquettes'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Etiquettes"
-			                                             target="principal">
+            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Etiquettes">
                 Étiquettes
 			</a>
                                                                            <?php
@@ -231,29 +233,26 @@ function Consult ($Login, $Libelle, $Status)
                                         if (GetDroits ($Status, 'List_TA'))
 			                            {
 										                                   ?>
-<hr width="100%" />
-<p class="center">
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=List_TA"
-			                                             target="principal">
-                Liste de la TA
-			</a>
-                                                                           <?php
- 			                            }
-                                        if ($Status == ADMIN)
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_BackOffice?>" target="principal">
-                BackOffice
-			</a> 
+            <hr width="100%" />
+            <p class="center">
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=List_TA">
+                    Liste de la TA
+                </a>
+                                                                               <?php
+                                            }
+                                            if ($Status == ADMIN)
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$URL_BackOffice?>">
+                    BackOffice
+                </a>
 			</p>
                                                                            <?php
 			                            }
 										                                   ?>
 
-
-										                                   </p>
-</div>
-</div>
+        </div>
+    </div>
 </div>
 
 <?php

@@ -58,7 +58,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>Oubli du mot de passe</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="<?=$PATH_CSS?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="<?=$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 		<link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">

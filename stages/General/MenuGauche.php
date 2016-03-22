@@ -177,14 +177,16 @@
 	}
 	require_once ('Accueil.php');     // Accueil()
 	require_once ('Consult.php');     // Consult()
+    require_once ('Entete.php');
+    ShowEntete();
 	include ('GetDroits.php');
 
 
 switch ($Step)
 {
   case 'Accueil' :
-	 Accueil ($LoginProv);
-	 break;
+	Accueil ($LoginProv);
+	break;
 
   case 'Consult' :
     Consult ($login, $_SESSION ['LibStatus'], $Status);
