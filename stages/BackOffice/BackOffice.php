@@ -1,8 +1,8 @@
 <?php
-require_once ('Fonctions.php');
-require_once ($PATH_GENERAL.'Entete.php');
-require_once ($PATH_GENERAL.'Consult.php');
-?>	
+    require_once ('Fonctions.php');
+    require_once ($PATH_GENERAL.'Entete.php');
+    require_once ($PATH_GENERAL.'Consult.php');
+?>
 
 <html>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -17,7 +17,7 @@ require_once ($PATH_GENERAL.'Consult.php');
   <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
 
 
-<SCRIPT LANGUAGE="JavaScript">
+    <SCRIPT LANGUAGE="JavaScript">
 <!-- Begin
 var checkflag = true;
 
@@ -29,22 +29,26 @@ function check (field)
     return checkflag ? "Tout décocher" : "Tout cocher";
 }
 //  End -->
-</script>
+    </script>
+    <script language="javascript">
+        function popup(page)
+        {
+            window.open (page, "titre", "width=600, height=400, scrollbars=yes");
+        }
+    </script>
 
 </head>
 
 <body>
-
 <?php
-    ShowEntete();
-    Consult($_SESSION ['login'], $_SESSION ['LibStatus'], $Status);
+    Entete();
+    Consult($login, $_SESSION ['LibStatus'], $Status);
 ?>
-
-<div class="container">
-      <div class="row">
-        <div class="col s12">
-          <div class="card grey lighten-5 z-depth-1" >
-            <div class="card-content">
+    <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <div class="card grey lighten-5 z-depth-1" >
+                <div class="card-content">
 <?php
     // Récupérations des variables envoyées par POST ou GET
 	
@@ -282,14 +286,19 @@ function check (field)
     // Fermeture de la base
     mysql_close ($Connexion);
 ?>
-</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-<!--  Scripts-->
-      <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
-      <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
-      <script src="<?=$PATH_JS?>init.js"></script>
-</body>
+
+<?php
+    Footer();
+?>
+
+        <!--  Scripts-->
+        <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
+        <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
+        <script src="<?=$PATH_JS?>init.js"></script>
+    </body>
 </html>

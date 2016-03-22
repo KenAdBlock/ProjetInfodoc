@@ -4,7 +4,7 @@
 
    include_once ($PATH_CONSTANTES.'CstGales.php');
 
-    function ShowEntete() {
+    function Entete() {
 ?>
     <header>
         <div class="row container">

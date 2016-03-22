@@ -29,7 +29,7 @@ function Accueil ($LoginProv)
 
             <p class="center">
               Si vous désirez nous verser de la
-              <a class="waves-effect waves-light btn bleu2 white-text" href="../Libres/LettreTA.php" target="_blanc">Taxe d'apprentissage</a>
+              <a class="waves-effect waves-light btn bleu2 white-text" href="../Libres/LettreTA.php" target="_blank">Taxe d'apprentissage</a>
               merci de cliquer ci-dessus
             </p>
 
@@ -51,7 +51,7 @@ function Accueil ($LoginProv)
                   <input name="password" type="password" id="password" size="10">
 <label for="password">Pass</label>
             </div><p class="center">
-                        <button id="connecter" class="btn waves-effect waves-light white-text jeune" type="submit" name="Submit">Se connecter</button>
+                        <button id="connecter" class="btn waves-effect waves-light white-text jaune" type="submit" name="Submit">Se connecter</button>
                         
 </p>
 <input name="Step" type="hidden" value="Cnx">
@@ -73,7 +73,7 @@ function Accueil ($LoginProv)
 
             <p class="center">
               Si vous désirez nous verser de la
-              <a class="waves-effect waves-light btn blue lighten-2 white-text" href="../Libres/LettreTA.php" target="_blanc">Taxe d'apprentissage</a>
+              <a class="waves-effect waves-light btn blue lighten-2 white-text" href="../Libres/LettreTA.php" target="_blank">Taxe d'apprentissage</a>
               merci de cliquer ci-dessus
             </p>
 

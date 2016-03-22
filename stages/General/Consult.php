@@ -11,6 +11,25 @@ function Consult ($Login, $Libelle, $Status)
 	$URL_AccesRapideSoc = $PATH_BACKOFFICE.'BackOffice.php?Trait=AccesRapideSoc';
 	$URL_BackOffice     = $PATH_BACKOFFICE.'BackOffice.php?Trait=BackOffice';
 
+
+    $PATH_RACINE = '../';
+    $PATH_UTIL = $PATH_RACINE.'Util/';
+    $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
+    require_once ($PATH_CONSTANTES.'CstGales.php');
+    require_once ($PATH_UTIL.'UtilSession.php'); // CloseSession()
+
+    /* * / CloseSessionAndRedirect ($URL_SITE); /* */
+    if (IsSessionAndLoginNonVide())
+    {
+        // Une session est en cours et un login y est enregistré ==>
+        //     connexion interdite (prévenir l'appel direct de ce script)
+        //     Déconnexion ? ==> fermeture de la session et retour à l'accueil
+
+        if ($Step == 'Decnx')
+        {
+            CloseSessionAndRedirect ($URL_SITE.$PATH_PHP);
+        }
+    }
 ?>
 
 <nav class="bleu1 role="navigation">
@@ -22,7 +41,7 @@ function Consult ($Login, $Libelle, $Status)
       </ul>
 
       <ul class="right hide-on-med-and-down">
-        <li><a href="?Step=Decnx" target="_top"> Déconnexion</a></li>  
+        <li><a href="?Step=Decnx" target="_top"> Déconnexion</a></li>
       </ul> 
 
       

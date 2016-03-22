@@ -177,10 +177,10 @@
 	}
 	require_once ('Accueil.php');     // Accueil()
 	require_once ('Consult.php');     // Consult()
-    require_once ('Entete.php');
-    ShowEntete();
-	include ('GetDroits.php');
+    require_once ('Entete.php');      // Entete()
+/* * /    include ('GetDroits.php'); /* Déjà include dans BackOffice/Fonctions.php */
 
+    Entete();
 
 switch ($Step)
 {
