@@ -174,8 +174,8 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
                                             if (GetDroits ($Status, 'ListeNewInscripts'))
 			                                {
                                                                            ?>
-    
-            <ul><li><span><a class="hover-bleu" href="<?=$URL_List.$NomTabMailsToSend?>" target="principal">
+
+            <ul><li><span><a class="hover-bleu" href="<?=$URL_List.$NomTabMailsToSend?>">
                 Liste des mails à envoyer aux nouveaux inscrits
 			</a></span></li></ul>
         
