@@ -72,7 +72,7 @@ Responsable des stages
 </table>
 <input type="button" onClick="history.back()" value="Abandonner">
 &nbsp;&nbsp;&nbsp;&nbsp;
-<input type="reset" value="Reinitaliser">
+<input type="reset" value="Réinitaliser">
 <input type="submit" value="Envoyer">
 <input type="hidden" name="StepSendMail" value="Valid">
 </form>

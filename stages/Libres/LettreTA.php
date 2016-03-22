@@ -293,7 +293,7 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align : center">
-                    <input type="reset" value="Reinitialiser">
+                    <input type="reset" value="Réinitialiser">
                     <input type="hidden" name="StepValid" value="1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

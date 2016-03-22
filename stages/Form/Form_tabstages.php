@@ -804,7 +804,7 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
             <input type="button" value="Abandonner"
                     onClick="history.go (-1)">
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="reset" value="Reinitialiser">
+            <input type="reset" value="Réinitialiser">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" 

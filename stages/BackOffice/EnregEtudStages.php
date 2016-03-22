@@ -123,7 +123,7 @@ function MAJTxtAffich (ind)
 </table>
 </td></tr></table>
 <p style="text-align : center">
-    <input type="reset" value="Reinitialiser">
+    <input type="reset" value="Réinitialiser">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="submit" value="Valider" >

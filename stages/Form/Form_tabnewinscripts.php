@@ -540,7 +540,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
 		           value="Abandonner"
 		           onClick="history.back()">
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="reset" value="Reinitialiser">
+            <input type="reset" value="Réinitialiser">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" value="Valider">

@@ -373,7 +373,7 @@ Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
             <input type="button" value="Abandonner"
                     onClick="history.go (-1)">
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="reset" value="Reinitialiser">
+            <input type="reset" value="Réinitialiser">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" 
