@@ -30,11 +30,11 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    $Slx      = 'NAscSAsc';
 	    $OrderReq = "Nom asc, Status asc";
 	}
-    $ReqUsers = Query ("SELECT $NomTabUsers.*, $NomTabStatus.Libelle
+
+	$ReqUsers = $ConnectStages->query("SELECT $NomTabUsers.*, $NomTabStatus.Libelle
 	                        FROM $NomTabUsers, $NomTabStatus
 							WHERE $NomTabUsers.Status = $NomTabStatus.Code
-                            ORDER BY ".$OrderReq,
-                       $Connexion);
+                            ORDER BY ".$OrderReq);
 
 	$URL_ListNom    = '?Trait=List&SlxTable='.$NomTabUsers.'&Slx=';
 	switch ($Slx)
@@ -72,7 +72,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 <span class="card-title"><h4 class="center"><?=$Title?></h4></span>
                                                                           <?php
-     if (! mysql_num_rows ($ReqUsers))
+     if (! $ReqUsers->rowCount())
     {
                                                                           ?>
 <h4 align="center">
@@ -116,34 +116,33 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                 </tr>
                 </thead>
                                                                        <?php
-                                                     mysql_data_seek ($ReqUsers, 0);
-                                                     while ($ObjUser = mysql_fetch_object ($ReqUsers))
+                                                     while ($ObjUser = $ReqUsers->fetch())
                                                      {
                                                                        ?>
                 <tr>
                     <td valign="top">
-                        <a href="<?=$URL_ModifUser.'&IdentPK='.$ObjUser->PK_User?>"
+                        <a href="<?=$URL_ModifUser.'&IdentPK='.$ObjUser['PK_User']?>"
                            <?=AttributsAHRef  ('Modifier', 'Modifier', '', '');?>
 					   ><i class="material-icons yellow-text text-darken-2">mode_edit</i></a>
                     </td>
                     <td valign="top">
-                        <a href="<?=$URL_DelUser.'&IdentPK='.$ObjUser->PK_User?>"
+                        <a href="<?=$URL_DelUser.'&IdentPK='.$ObjUser['PK_User']?>"
                            <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
-                           onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$ObjUser->Nom?> ?')"
+                           onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$ObjUser['Nom']?> ?')"
 						   ><i class="material-icons red-text text-darken-2">delete_forever</i>
 						</a>
                     </td>
                     <td valign="top" style="text-align : center">
-					    <?=$ObjUser->Login?>
+					    <?=$ObjUser['Login']?>
 					</td>
                     <td valign="top" style="text-align : center">
-					    <?=$ObjUser->Status?>
+					    <?=$ObjUser['Status']?>
 					</td>
                     <td valign="top" style="text-align : center">
-                        <?=$ObjUser->Nom?>
+                        <?=$ObjUser['Nom']?>
 					</td>
                     <td valign="top">
-					    <?=$ObjUser->Prenom?>
+					    <?=$ObjUser['Prenom']?>
 					</td>
                 </tr>
                                                                        <?php

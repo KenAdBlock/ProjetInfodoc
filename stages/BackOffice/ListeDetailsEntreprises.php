@@ -20,8 +20,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    $slx      = 'NAsc';
 	    $OrderReq = "NomE asc";
 	}
-    $ReqSoc = Query ("SELECT * FROM $NomTabEntreprises ORDER BY ".$OrderReq, 
-	                 $Connexion);
+    $ReqSoc = $ConnectStages->query("SELECT * FROM $NomTabEntreprises ORDER BY ".$OrderReq);
 
 	$URL_AffichSoc = $PATH_BACKOFFICE.'BackOffice.php?Trait=Affich&SlxTable='.$NomTabEntreprises.'&IdentPK=';
 
@@ -42,7 +41,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     <?=$Title?>
 </h4>
                                                                           <?php
-     if (! mysql_num_rows ($ReqSoc))
+     if (! $ReqSoc->rowCount())
     {
                                                                           ?>
 <h4 align="center">
@@ -85,42 +84,41 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
                 <tr>
                                                                        <?php
-                                                     mysql_data_seek ($ReqSoc, 0);
-                                                     while ($ObjSoc = mysql_fetch_object ($ReqSoc))
+                                                     while ($ObjSoc = $ReqSoc->fetch())
                                                      {
                                                                           ?>
                     <td valign="top" style="text-align : left">
-                        <a href="<?=$URL_AffichSoc.$ObjSoc->PK_Entreprise?>"					
+                        <a href="<?=$URL_AffichSoc.$ObjSoc['PK_Entreprise']?>"
                            <?=AttributsAHRef  ('Detail', 'Detail', '', '');?>
-                           ><?=stripslashes (trim ($ObjSoc->NomE))?>
+                           ><?=stripslashes (trim ($ObjSoc['NomE']))?>
 						</a>
 					</td>
                     <td valign="top" style="text-align : left">
-                        <?=$ObjSoc->Civilite?> <?=stripslashes (trim ($ObjSoc->NomR))?> <?=stripslashes (trim ($ObjSoc->PrenomR))?>
+                        <?=$ObjSoc['Civilite']?> <?=stripslashes (trim ($ObjSoc['NomR']))?> <?=stripslashes (trim ($ObjSoc['PrenomR']))?>
 					</td>
                     <td valign="top" style="text-align : left">
-                        <?=stripslashes (trim ($ObjSoc->Adr1))?>
+                        <?=stripslashes (trim ($ObjSoc['Adr1']))?>
 					</td>
                     <td valign="top" style="text-align : left">
-                        <?=stripslashes (trim ($ObjSoc->Adr2))?>
+                        <?=stripslashes (trim ($ObjSoc['Adr2']))?>
 					</td>
                     <td valign="top" style="text-align : left">
-                        <?=$ObjSoc->CP?>
+                        <?=$ObjSoc['CP']?>
 					</td>
                     <td valign="top" style="text-align : left">
-                        <?=stripslashes (trim ($ObjSoc->Ville))?>
+                        <?=stripslashes (trim ($ObjSoc['Ville']))?>
 					</td>
                     <td valign="top" style="text-align : left">
-                        <?=$ObjSoc->TelR?>
+                        <?=$ObjSoc['TelR']?>
 					</td>
                     <td valign="top" style="text-align : left">
-                        <?=$ObjSoc->MailR?>
+                        <?=$ObjSoc['MailR']?>
 					</td>
                     <td valign="top" style="text-align : left">
-                        <?=$ObjSoc->FaxR?>
+                        <?=$ObjSoc['FaxR']?>
 					</td>
                     <td valign="top" style="text-align : left">
-                        <?=$ObjSoc->SiteEntreprise?>
+                        <?=$ObjSoc['SiteEntreprise']?>
 					</td>
                 </tr>
                                                                        <?php

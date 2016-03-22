@@ -10,7 +10,7 @@
 	$NomSession = 'Stages';
 
 
-	$PASSWDBD = "rootro";
+	$PASSWDBD = "";
 
 
 

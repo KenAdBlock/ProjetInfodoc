@@ -47,7 +47,7 @@
 
 	function ValidLogin ($Ident, $Identifiant, &$Indic)
     {
-	    global $CodErr, $Connexion, $NomTabUsers,
+	    global $CodErr, $ConnectStages, $NomTabUsers,
 		       $ERRLOGINCARINVALIDE, $ERRLOGININVALIDE, $ERRLOGINDEJAUTILISE;
 
 		$Lg = strlen ($Identifiant);
@@ -78,10 +78,9 @@
         }
 else 			print (' juste !!<br>');
         */
-		$ReqLogin = Query ("SELECT Login FROM $NomTabUsers 
-		                       WHERE Login = '$Identifiant'",
-		                   $Connexion);
-		if (mysql_num_rows ($ReqLogin) > 0)
+		$ReqLogin = $ConnectStages->query("SELECT Login FROM $NomTabUsers 
+		                       WHERE Login = '$Identifiant'");
+		if ($ReqLogin->rowCount() > 0)
 		{
             array_push ($CodErr, $ERRLOGINDEJAUTILISE);
 		    $Indic [$Ident] = FLECHE;
@@ -93,7 +92,7 @@ else 			print (' juste !!<br>');
 
     function ValidPassWord ($Ident, $PassWord, &$Indic)
     {
-	    global $CodErr, $Connexion, $NomTabUsers,
+	    global $CodErr, $ConnectStages, $NomTabUsers,
 		       $ERRPASSWDCARINVALIDE, $ERRLGPASSWDINVALIDE;
 
 		$Lg = strlen ($PassWord);

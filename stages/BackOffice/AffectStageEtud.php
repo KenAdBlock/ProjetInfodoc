@@ -1,13 +1,8 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-    $NomBaseMathieu  = /*"mathieu"*/"laporte"; 
-    $NomBaseStages   = "stages"; 
-    $UserMathieu     = /*"mathieu"*/"root";
-    $PasswdMathieu   = /*"dm2ml"*/$PASSWDBD;
-    $HoteMathieu     = "localhost";
-    $ConnectMathieu = ConnectSelect ($HoteMathieu,   $UserMathieu,
-                                     $PasswdMathieu, $NomBaseMathieu);
+	$UtilBD = new UtilBD();
+	$ConnectLaporte = $UtilBD->ConnectLaporte();
 					   
     // Génération de la table des étudiants
 	// ====================================
@@ -19,7 +14,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     switch ($Etape)
     {
       case 'Valid' :
-                                        $ReqStages = Query ("SELECT $NomTabStages.FK_Entreprise,
+										$ReqStages = $ConnectStages->query("SELECT $NomTabStages.FK_Entreprise,
 	                                                                $NomTabStages.Sujet,
 	                                                                $NomTabStages.NiveauStage,
 	                                                                $NomTabStages.PK_Stage,								
@@ -31,27 +26,27 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 																                AND
 																       $NomTabEntreprises.PK_Entreprise =
 						                                                                $NomTabStages.FK_Entreprise
-	                                                             ORDER BY NomE",
-	                                                        $Connexion);
-										if (mysql_num_rows ($ReqStages) == 0)
+	                                                             ORDER BY NomE");
+										if ($ReqStages->rowCount() == 0)
 										   print ('Aucun stage ne correspond à ce numéro');
 										else
 										{
-										 	$ObjStage = mysql_fetch_object ($ReqStages);
-											if ($ObjStage->NbStagesRestant == 0)
+										 	$ObjStage = $ReqStages->fetch();
+											if ($ObjStage['NbStagesRestant'] == 0)
 										        print ('Stage déjà pourvu');
 											else
 											{
-                                                $ReqEtudAffecte = Query ("SELECT * FROM $NomTabUsers
-			  	                                                             WHERE Identifiant = '$LoginCache'
-																			    AND FK_STAGE = 0",
-	                                                                     $ConnectMathieu);
-										        if (mysql_num_rows ($ReqEtudAffecte) == 0)
+												$ReqEtudAffecte = $ConnectLaporte->prepare("SELECT * FROM $NomTabUsers
+			  	                                                             				WHERE Identifiant = :LoginCache
+																			    			AND FK_STAGE = 0");
+												$ReqEtudAffecte->bindValue(':LoginCache', $LoginCache);
+												$ReqEtudAffecte->execute();
+												if ($ReqEtudAffecte->rowCount() == 0)
 										           print ('Étudiant déjà affecté');
 										        else
 										        {
 												    $LibelleNiveau = 'Stage de ';
-													switch ($ObjStage->NiveauStage)
+													switch ($ObjStage['NiveauStage'])
 													{
 													    case 1 :
 														  $LibelleNiveau .= 'DUT';
@@ -82,7 +77,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	</tr>
     <tr>
 	    <td><b>Entreprise</b>
-		<td><?=$ObjStage->NomE?></td>
+		<td><?=$ObjStage['NomE']?></td>
 	</tr>
 </table>
 <p>
@@ -102,20 +97,23 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
  		break;
 		
       case 'Confirm' :
-		Query ("UPDATE $NomTabUsers 
-		            SET FK_Stage = '$FK_Stage'
-		            WHERE Identifiant = '$Identifiant'",
-			   $ConnectMathieu);
+		$Req = $ConnectLaporte->prepare("UPDATE $NomTabUsers 
+										 SET FK_Stage = :FK_Stage
+										 WHERE Identifiant = :Identifiant");
+		$Req->bindValue(':Identidiant', $Identifiant);
+		$Req->bindValue(':FK_Stage', $Fk_Stage);
+		$Req->execute();
 
-		Query ("UPDATE $NomTabStages 
-		            SET NbStagesRestant = NbStagesRestant - 1
-		            WHERE PK_Stage = '$FK_Stage'",
-			   $Connexion);
+		$Req = $ConnectStages->prepare("UPDATE $NomTabStages 
+										SET NbStagesRestant = NbStagesRestant - 1
+										WHERE PK_Stage = :FK_Stage");
+		$Req->bindValue(':FK_Stage', $Fk_Stage);
+		$Req->execute();
 
 		$Etape = 'Init';
 		
       case 'Init' :
-        $ReqStages = Query ("SELECT $NomTabStages.FK_Entreprise,
+		$ReqStages = $ConnectStages->prepare("SELECT $NomTabStages.FK_Entreprise,
 	                             $NomTabStages.NiveauStage,
 	                             $NomTabStages.Sujet,
 	                             $NomTabStages.PK_Stage,
@@ -125,20 +123,21 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                         FROM $NomTabStages, $NomTabEntreprises
 	                         WHERE $NomTabEntreprises.PK_Entreprise =
 						           $NomTabStages.FK_Entreprise
-	                         AND PK_Stage = ".$FK_Stage,
-	                      $Connexion);
-	  if (mysql_num_rows ($ReqStages) == 0)
+	                         AND PK_Stage = :FK_Stage");
+		$ReqStages->bindValue(':FK_Stage', $FK_Stage);
+		$ReqStages->execute();
+	  if ($ReqStages->rowCount() == 0)
 		print ('Aucun stage ne correspond à ce numéro');
 	  else
 	  {
-		$ObjStage = mysql_fetch_object ($ReqStages);
-		if ($ObjStage->NbStagesRestant == 0)
+		$ObjStage = $ReqStages->fetch();
+		if ($ObjStage['NbStagesRestant'] == 0)
 			print ('Stage déjà pourvu');
 		else
 		{
-   			$LibelleNiveau = 'Stage n° '.$ObjStage->PK_Stage.' pour ';
+   			$LibelleNiveau = 'Stage n° '.$ObjStage['PK_Stage'].' pour ';
                      $Where = ' WHERE ';
-			switch ($ObjStage->NiveauStage)
+			switch ($ObjStage['NiveauStage'])
 			{
 				case 1 :
 					$LibelleNiveau .= 'DUT';
@@ -156,7 +155,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 					break;
 														  
 			}
-			$ReqEtud = Query ("SELECT * FROM $NomTabUsers".$Where." ORDER BY Nom", $ConnectMathieu);
+			$ReqEtud = $ConnectLaporte->query("SELECT * FROM $NomTabUsers".$Where." ORDER BY Nom");
 ?>
 
 <script language=javascript>
@@ -164,15 +163,13 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 			var TabLogins = new Array();
 			var NbEtud = 0;
 </script>
-<?php 
-	               mysql_data_seek ($ReqEtud, 0);
-
-                      for ( ; $Obj =  mysql_fetch_object ($ReqEtud); )
+<?php
+                      for ( ; $Obj =  $ReqEtud->fetch(); )
                       {
 ?>
 <script language=javascript>
-    				TabNoms   [NbEtud]   = "<?=$Obj->Nom.' '.$Obj->Prenom?>";
-				TabLogins [NbEtud++] = "<?=$Obj->Identifiant?>";
+    				TabNoms   [NbEtud]   = "<?=$Obj['Nom'].' '.$Obj['Prenom']?>";
+				TabLogins [NbEtud++] = "<?=$Obj['Identifiant']?>";
 </script>
 <?php
                        }
@@ -215,7 +212,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         <td colspan="2" style="text-align : center">
 		<?=$LibelleNiveau?>
 		<br />
-		Entreprise : <?=$ObjStage->NomE?>
+		Entreprise : <?=$ObjStage['NomE']?>
         </td>
     </tr>
     <tr>
@@ -238,7 +235,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 </table>
 </td></tr></table>
 <p class="center">
-	<button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+	<button type="reset" class="waves-effect waves-light btn black white-text">Réinitialiser</button>
 	<button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
 </p>
 <input type="hidden" name="Etape" value="Valid" >

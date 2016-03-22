@@ -132,8 +132,8 @@
         $Fleche = FLECHE;
 
         // on compare l' entreprise entrée avec les entreprises déjà existantes
-        $ReqL = Query("SELECT NomE from tabentreprise",$Connexion);
-        while ($RowL = mysql_fetch_row($ReqL))
+        $ReqL = $ConnectStages->query("SELECT NomE from tabentreprise");
+        while ($RowL = $ReqL->fetch(PDO::FETCH_NUM))
         {  
             if ($ValNomE == $RowL[0])
             {    
@@ -296,7 +296,7 @@
             <input type="button" value="Abandonner"
                     onClick="history.go (-1)">
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="reset" value="Reinitialiser">
+            <input type="reset" value="Réinitialiser">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" 

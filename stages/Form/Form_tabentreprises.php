@@ -310,7 +310,6 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                 <label for="FaxR">Fax</label>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="input-field col s12">
                                 <div class="bleu1-text"><?=$ValidPresentEntreprise?>Présentation de l'entreprise</div><br>
@@ -347,7 +346,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
                         <p class="center">
                             <button type="button" class="waves-effect waves-light btn black white-text"  onClick="history.go (-1)">Abandonner</button>
-                            <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+                            <button type="reset" class="waves-effect waves-light btn black white-text">Réinitialiser</button>
                             <button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
                         </p>
         <input type="hidden" name="StepConsult" value="Valid" >

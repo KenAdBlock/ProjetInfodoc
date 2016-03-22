@@ -23,10 +23,10 @@
 
     // Connexion a mySQL
 	
-    include_once ($PATH_UTIL.'IdentRoot.php');
     include_once ($PATH_UTIL.'UtilBD.php');
-	
-    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+
+	$UtilBD = new UtilBD();
+	$ConnectStages = $UtilBD->ConnectStages();
 
 	$WidthDfltPopUpBoxChangePW  = 550;
 	$HeightDfltPopUpBoxChangePW = 530;
@@ -50,10 +50,10 @@
 		foreach ($ArrayLibChamps as $key => $value)
 		    $Indic [$key]  = ESPACE;
 
-        if (ValidChampRempli ('NewPW1', $NewPW1, &$NomChampVide, &$Indic))
-	        ValidPassWord ('NewPW1', $NewPW1, &$Indic);
+        if (ValidChampRempli ('NewPW1', $NewPW1, $NomChampVide, $Indic))
+	        ValidPassWord ('NewPW1', $NewPW1, $Indic);
 
-        ValidChampRempli ('NewPW2', $NewPW2, &$NomChampVide, &$Indic);
+        ValidChampRempli ('NewPW2', $NewPW2, $NomChampVide, $Indic);
 
 		if (count ($CodErr) == 0)
     	    if ($NewPW1 != $NewPW2)
@@ -65,10 +65,11 @@
         {          
 		    $NewPWCrypte = md5 ($NewPW1);
 			$Identifiant = $_REQUEST ['IdentPK'];
-		    $ReqEnreg = Query ("UPDATE $NomTabUsers SET
+		    $ReqEnreg = $ConnectStages->prepare("UPDATE $NomTabUsers SET
 					  		        Pass = '$NewPWCrypte'
-								WHERE PK_User = '$Identifiant'",
-							    $Connexion);  
+								WHERE PK_User = :Identifiant");
+			$ReqEnreg->bindValue(':Identifiant', $Identifiant);
+			$ReqEnreg->execute();
                                                                               ?>
 <script language="JavaScript">
 <!--
@@ -86,7 +87,7 @@
 
 <title>Changement de mot de passe</title> 
 
-<LINK REL=STYLESHEET TYPE=text/css HREF=../Css/stages.css>
+<LINK REL=STYLESHEET TYPE=text/css HREF="<?php $PATH_CSS?>stages.css">
         
 </head> 
 <body>

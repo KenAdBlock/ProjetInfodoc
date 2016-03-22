@@ -20,13 +20,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     require_once ($PATH_CLASS.'CUser.php');
     require_once ($PATH_UTIL.'UtilLogin.php');
     require_once ($PATH_COMMUNS.'FctDiverses.php');
-
-	$ReqStatus      = Query ("SELECT * FROM $NomTabStatus",     
-	                         $Connexion);
-	$ReqEntreprises = Query ("SELECT NomE, PK_Entreprise 
-	                              FROM $NomTabEntreprises
-								  ORDER BY NomE",
-	                         $Connexion);
+    
+    $ReqStatus = $ConnectStages->query("SELECT * FROM $NomTabStatus");
+    $ReqEntreprises = $ConnectStages->query("SELECT NomE, PK_Entreprise 
+	                                           FROM $NomTabEntreprises
+								               ORDER BY NomE");
+    
     if (! GetDroits ($Status, 'ModifUser')) $IdentPK = $_SESSION ['PK_User'];
 	
     if (!isset ($StepConsult))
@@ -158,15 +157,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                 $ObjTuple->Insert();
 				
 				// Enregistrement du mail à envoyer
-				
-				Query ("INSERT INTO $NomTabMailsToSend VALUES (
+                
+                $ConnectStages->query("INSERT INTO $NomTabMailsToSend VALUES (
 			    	  	   '$ValLogin',
 				 	       '$NewPassWord',
 				 	       '$ValCivilite',
 				 	       '$ValNom',
 				 	       '$ValPrenom',
-                  	       '$ValMail');",
-			            $Connexion);
+                  	       '$ValMail');");
 			}
             else
             {
@@ -297,12 +295,12 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                 <div class="input-field col l6 m6 s12">
                                     <select name="StatusUser">
                                         <?php
-                                        while ($ObjStatus = mysql_fetch_object ($ReqStatus))
+                                        while ($ObjStatus = $ReqStatus->fetch())
                                         {
                                             ?>
-                                            <option value="<?=$ObjStatus->Code?>"
-                                                <?=$ObjStatus->Code == $ValStatus ? 'selected' : ''?>>
-                                                <?=$ObjStatus->Libelle?>
+                                            <option value="<?=$ObjStatus['Code']?>"
+                                                <?=$ObjStatus['Code'] == $ValStatus ? 'selected' : ''?>>
+                                                <?=$ObjStatus['Libelle']?>
                                             </option>
                                             <?php
                                         }
@@ -317,12 +315,12 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                         >----------------
                                         </option>
                                         <?php
-                                        while ($ObjSoc = mysql_fetch_object ($ReqEntreprises))
+                                        while ($ObjSoc = $ReqEntreprises->fetch())
                                         {
                                             ?>
-                                            <option value="<?=$ObjSoc->PK_Entreprise?>"
-                                                <?=$ObjSoc->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
-                                                <?=$ObjSoc->NomE?>
+                                            <option value="<?=$ObjSoc['PK_Entreprise']?>"
+                                                <?=$ObjSoc['PK_Entreprise'] == $ValFK_Entreprise ? 'selected' : ''?>>
+                                                <?=$ObjSoc['NomE']?>
                                             </option>
                                             <?php
                                         }
@@ -344,31 +342,32 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                 {
                                 ?>
                                 <hr>
-                                <p class="center"><?php
-                                for ($i = 0; $i < count ($CodErrInval); ++$i)
-                                {
-                                ?>
+                                <p class="center">
+                                    <?php
+                                    for ($i = 0; $i < count ($CodErrInval); ++$i)
+                                    {
+                                    ?>
                                 <?=$MsgErr [$CodErrInval [$i]]?><br />
                                 <hr><br>
                                     <?php
-                                }
+                                    }
                                 }
                                 ?></p>
                             </div>
 
                             <p class="center">
                                 <button type="reset" class="waves-effect waves-light btn black white-text"  onClick="history.go (-1)">Abandonner</button>
-                                <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
-                                <button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button></p>
-
-    <input type="hidden" name="StepConsult" value="Valid" >
-    <input type="hidden" name="PK_User" value="<?=$ValPK_User?>" >
-    <input type="hidden" name="PassWord" value="<?=$ValPassWord?>" >
+                                <button type="reset" class="waves-effect waves-light btn black white-text">Réinitialiser</button>
+                                <button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
+                            </p>
+                            <input type="hidden" name="StepConsult" value="Valid" >
+                            <input type="hidden" name="PK_User" value="<?=$ValPK_User?>" >
+                            <input type="hidden" name="PassWord" value="<?=$ValPassWord?>" >
                         </form>
                     </div>
 
 <!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="<?=$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
 <script src="<?=$PATH_JS?>materialize.js"></script>
 <script src="<?=$PATH_JS?>init.js"></script>
     <?php
