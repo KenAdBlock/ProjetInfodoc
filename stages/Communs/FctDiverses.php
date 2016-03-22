@@ -542,8 +542,8 @@ function AffichOuiNon ($Libelle, $Valeur)
 {
                                                                           ?>
 
-	    <li><i><?=$Libelle?></i>
-        <b><?=$Valeur ? '&nbsp;oui' : '&nbsp;non';?></b></li>
+	    <i><?=$Libelle?></i>
+        <b><?=$Valeur ? '&nbsp;oui' : '&nbsp;non';?></b> <br>
                                                                           <?php
 } // AffichOuiNon()
 

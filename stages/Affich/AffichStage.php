@@ -234,7 +234,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             $ObjStage->GetMateriel(),
                                             '',
                                             MATERIEL_PAR_LIGNE);
-       AffichSepar ();
+       
     /*
 	    ==========================
 	    2.2 Environnement logiciel 
@@ -356,8 +356,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	{
 	?>
 <button type="reset" class="waves-effect waves-light btn bleu1 white-text" onClick="window.location='?Trait=Form&SlxTable=<?=$NomTabStages?>&IdentPK=<?=$ObjStage->GetPK_Stage()?>'">Modifier</button>
-</div>
-</div>
+
+
 
 
                                                                        <?php
@@ -370,3 +370,4 @@ else
 <?php
 }
 ?>
+</div></div>

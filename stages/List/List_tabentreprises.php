@@ -46,6 +46,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     else
     {
                                                                           ?>
+<div class="table-list">
 <table  class="highlight bordered centered grey lighten-5">
   <thead class="grey white-text">
                 <tr>
@@ -117,7 +118,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                      }
                                                                        ?>
             </table>
-
+</div>
 <?php
     }
 }

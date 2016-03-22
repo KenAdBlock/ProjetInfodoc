@@ -5,7 +5,7 @@
  *
  * Made By MaterializeCSS.com
  */
-body{
+.card{
   margin-bottom: -30px;
 }
 
@@ -284,7 +284,6 @@ select + label{
   margin-top: -27px;
 }
 .table-list{
-  height: 500px;
   width:100%;
   overflow:auto;
 }

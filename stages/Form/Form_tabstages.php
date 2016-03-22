@@ -575,14 +575,14 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
 </p></blockquote>
 
 
-                                                                         <?php
+                        <div class="row">                                                 <?php
                                         SaisieRubrInput (
                                             $Msg_FormStage [MSGFORMSTAGE_INDEMN_STAGE],
                                             'IndemnitesMensuellesStage', 
                                             $ValIndemnitesMensuellesStage,
 										    $ValidIndemnitesMensuellesStage);
-
-                                        SaisieOuiNonEtAutre (
+?></div>
+ <?php                                         SaisieOuiNonEtAutre (
 										    $ValidIndemnitesRepas,
                                             $Msg_FormStage [MSGFORMSTAGE_INDEMN_REPAS], 
                                             'IndemnitesRepasOuiNon', 
@@ -606,6 +606,7 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
                                             $ValIsEmbauchePossible);
 
                                         AffichLigneVierge();
+                                        AffichSepar ();
 	/*
 	    =================================
 	    2. Environnement du stagiaire ... 
@@ -675,7 +676,9 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
 	    =========================
 	*/
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_METHODES_STANDARDS], 3);
-
+?>  
+<div class="row">
+<?php
                                        SaisieRubrInput (
 									       $Msg_FormStage [MSGFORMSTAGE_STDANALYSE],
 										   'MethodesAnalyse', 
@@ -704,6 +707,7 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
 	    ========
 	*/
         ?>
+        </div>
 <div class="row">
 <div class="col s12">
 
@@ -722,8 +726,8 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
 										    15,  // $RowsTextAreaDflt,
 										    'left');
 
-                                        AffichSepar ();
-									
+                                        
+									AffichLigneVierge();
                                         AffichTitre (
 										    $Msg_FormStage [MSGFORMSTAGE_NATURE_TACHE], 
 											4);
@@ -812,14 +816,15 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
                                                                            <?php
                                          }
                                                                            ?>
-    
+    <div class="row"><div class="col s12"><br>
        <p class="center">
+
             <button class="waves-effect waves-light btn black white-text" type="button" 
                     onClick="history.go (-1)">Abandonner</button>
             <button class="waves-effect waves-light btn black white-text" type="reset">Réinitialiser</button>
             <button class="waves-effect waves-light btn bleu1 white-text" type="submit">Valider</button>
         </p>
-
+</div></div>
 <input type="hidden" name="StepStage" value="Valid" >
 <input type="hidden" name="PK_Stage" value="<?=$ValPK_Stage?>" >
 
