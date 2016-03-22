@@ -51,7 +51,7 @@ function Accueil ($LoginProv)
                   <input name="password" type="password" id="password" size="10">
 <label for="password">Pass</label>
             </div><p class="center">
-                        <button id="connecter" class="btn waves-effect waves-light white-text jeune" type="submit" name="Submit">Se connecter</button>
+                        <button id="connecter" class="btn waves-effect waves-light white-text jaune" type="submit" name="Submit">Se connecter</button>
                         
 </p>
 <input name="Step" type="hidden" value="Cnx">
