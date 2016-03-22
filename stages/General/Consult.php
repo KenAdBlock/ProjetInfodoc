@@ -55,14 +55,14 @@ function Consult ($Login, $Libelle, $Status)
 			?>
 
 <hr>
-<p class="center">
+
 
 
                                                                            <?php
                                         if (GetDroits ($Status, 'ChangerPassWord'))
 			                            {
 										                                   ?>
-            <a class="ashadow blue-text" href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxChangePassWord.php')">
+            <p class="center"><a class="ashadow blue-text" href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxChangePassWord.php')">
 			    Changer de mot de passe</a>
                                                                            <?php
 										}

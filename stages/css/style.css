@@ -164,6 +164,9 @@ table.highlight > tbody > tr:hover {
   background-color: #e0e0e0;
 }
 a.ashadow {
+  background: transparent;
+  border: none;
+  box-shadow: none;
   margin-top: -13px;
   margin-bottom: -13px;
   transition: background .25s;
@@ -171,6 +174,23 @@ a.ashadow {
 }
 a.ashadow:hover {
   background: #e0e0e0;
+}
+button.ashadow {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-top: -13px;
+  margin-bottom: -13px;
+  transition: background .25s;
+  border-radius: 5px;
+}
+a.hover-bleu:hover {
+  transition: color .3s;
+  color: #64b5f6;
+}
+a.hover-bleu {
+  transition: color .3s;
+  color: #0066cc;
 }
 
 #login-connect {
@@ -216,5 +236,5 @@ textarea.materialize-textarea:focus:not([readonly]) {
   box-shadow: 0px 0px 3px 0px #0066cc;
 }
 .cadre{
-  box-shadow: 0px 0px 1px 0px #9e9e9e;
+  box-shadow: 0px 0px 2px 0px #9e9e9e;
 }
