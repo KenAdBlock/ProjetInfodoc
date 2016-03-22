@@ -289,38 +289,38 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                         <div class="row">
                             <div class="input-field col l6 m6 s12">
                                 <input name="NomR" size="50" id="NomR" type="text" class="validate" value="<?=$ValNomR?>">
-                                <label for="NomR"><b><?=$ValidNomR?>Nom :</b></label>
+                                <label for="NomR"><b><?=$ValidNomR?>Nom</b></label>
                             </div>
                             <div class="input-field col l6 m6 s12">
                                 <input name="PrenomR" size="50" id="PrenomR" type="text" class="validate" value="<?=$ValPrenomR?>">
-                                <label for="PrenomR"><b><?=$ValidPrenomR?>Prénom :</b></label>
+                                <label for="PrenomR"><b><?=$ValidPrenomR?>Prénom</b></label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col l6 m6 s12">
                                 <input name="TelR" size="50" id="TelR" type="text" class="validate" value="<?=$ValTelR?>">
-                                <label for="TelR"><b><?=$ValidTelR?>Tel :</b></label>
+                                <label for="TelR"><b><?=$ValidTelR?>Tel</b></label>
                             </div>
                             <div class="input-field col l6 m6 s12">
                                 <input name="MailR" size="50" id="MailR" type="email" class="validate" value="<?=$ValMailR?>">
-                                <label for="MailR"><b><?=$ValidMailR?>Mail :</b></label>
+                                <label for="MailR"><b><?=$ValidMailR?>Mail</b></label>
                             </div>
                             <div class="input-field col l6 m6 s12">
                                 <input name="FaxR" size="50"  id="FaxR" type="text" class="validate" value="<?=$ValFaxR?>">
-                                <label for="FaxR">Fax :</label>
+                                <label for="FaxR">Fax</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <div class="bleu1-text"><?=$ValidPresentEntreprise?>Présentation de l'entreprise :</div><br>
+                                <div class="bleu1-text"><?=$ValidPresentEntreprise?>Présentation de l'entreprise</div><br>
                                 <textarea name="PresentEntreprise" id="PresentEntreprise" class="materialize-textarea"><?=stripslashes ($ValPresentEntreprise)?></textarea>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <input name="SiteEntreprise" size="50"  id="SiteEntreprise" type="text" class="validate" value="<?=$ValSiteEntreprise?>">
-                                <label for="SiteEntreprise"><?=$ValidSiteEntreprise?>URL du site de l'entreprise :</label>
+                                <label for="SiteEntreprise"><?=$ValidSiteEntreprise?>URL du site de l'entreprise</label>
                             </div>
                         </div>
                         <?php
@@ -348,7 +348,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                         <p class="center">
                             <button type="button" class="waves-effect waves-light btn black white-text"  onClick="history.go (-1)">Abandonner</button>
                             <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
-                            <button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button>
+                            <button type="submit" class="waves-effect waves-light btn jaune white-text">Valider</button>
                         </p>
         <input type="hidden" name="StepConsult" value="Valid" >
         <input type="hidden" name="PK_Entreprise" value="<?=$ValPK_Entreprise?>" >

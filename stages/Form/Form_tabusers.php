@@ -198,7 +198,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                         {
                                                                            ?>
 
-<span class="card-title"><h4 class="center">Création d'un nouvel utilisateur :</h4></span>
+<span class="card-title"><h4 class="center">Création d'un nouvel utilisateur</h4></span>
                                                                            <?php
                                         }
 										                                   ?>
@@ -223,29 +223,29 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                     <div class="row">
                         <form method="post" role="form" class="col s12">
                             <div class="row">
-                            <div class="input-field col l1 m1 s1">
-                                <label for="Nom"><b>Civilité</b></label>
-                            </div>
-                            <div class="col l6 s12 m12">
-                            <div class="input-field col l4 m4 s4">
-                            <p>
-                                <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
-                                <label for="CiviliteM">M</label>
-                            </p>
-                            </div>
-                            <div class="input-field col l4 m4 s4">
-                            <p>
-                                <input name="Civilite" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
-                                 <label for="CiviliteMme">Mme</label>
-                            </p>
-                            </div>
-                            <div class="input-field col l4 m4 s4">
-                            <p>
-                                <input name="Civilite" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
-                                <label for="CiviliteMlle">Mlle</label>
-                            </p>
-                            </div>
-                            </div>
+                                <div class="input-field col l1 m1 s">
+                                    <label for="Nom"><b>Civilité</b></label>
+                                </div>
+                                <div class="col l6 s12 m12">
+                                    <div class="input-field col l4 m4 s4">
+                                        <p>
+                                            <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
+                                            <label for="CiviliteM">M</label>
+                                        </p>
+                                    </div>
+                                    <div class="input-field col l4 m4 s4">
+                                        <p>
+                                            <input name="Civilite" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
+                                             <label for="CiviliteMme">Mme</label>
+                                        </p>
+                                    </div>
+                                    <div class="input-field col l4 m4 s4">
+                                        <p>
+                                            <input name="Civilite" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
+                                            <label for="CiviliteMlle">Mlle</label>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col l6 m6 s12">

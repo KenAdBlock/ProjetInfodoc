@@ -246,7 +246,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 
 </div>
 	<div class="row">
-	<div class="col s12 m6 l3">
+	<div class="col s12 m6 l3"><p>
 <button class="btn" type="button" style=" background-color : #ffd7d7" onClick="this.value=check (this.form.elements['tabmail[]'])">Tout decocher</button>
 </div>
 

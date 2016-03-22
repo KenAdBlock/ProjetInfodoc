@@ -155,10 +155,13 @@ td, th {
   transition: box-shadow .25s;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+#connecter:focus{
+  background-color: #ffcc00;
+}
 [type="radio"]:checked + label:after {
-    border-radius: 50%;
-    border: 2px solid #0071b9;
-    background-color: #0071b9;
+  border-radius: 50%;
+  border: 2px solid #0071b9;
+  background-color: #0071b9;
 }
 table.highlight > tbody > tr:hover {
   background-color: #e0e0e0;
@@ -204,7 +207,7 @@ a.hover-bleu {
 }
 
 .jaune,.jaune:hover{
-  background:#FFCC00; 
+  background:#FFCC00;
 }
 .jaune-text{
   color: #FFCC00;
