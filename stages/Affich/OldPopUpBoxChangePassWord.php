@@ -50,10 +50,10 @@
 		foreach ($ArrayLibChamps as $key => $value)
 		    $Indic [$key]  = ESPACE;
 
-        if (ValidChampRempli ('NewPW1', $NewPW1, &$NomChampVide, &$Indic))
-	        ValidPassWord ('NewPW1', $NewPW1, &$Indic);
+        if (ValidChampRempli ('NewPW1', $NewPW1, $NomChampVide, $Indic))
+	        ValidPassWord ('NewPW1', $NewPW1, $Indic);
 
-        ValidChampRempli ('NewPW2', $NewPW2, &$NomChampVide, &$Indic);
+        ValidChampRempli ('NewPW2', $NewPW2, $NomChampVide, $Indic);
 
 		if (count ($CodErr) == 0)
     	    if ($NewPW1 != $NewPW2)
