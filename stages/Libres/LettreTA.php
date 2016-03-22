@@ -25,65 +25,30 @@
 ?>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lettre TA</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
         <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-        <style type="text/css">
-            <!--
-        H1 {
-           font-family: Helvetica, Arial;
-            font-size: 20px;
-            color: #003984;
-            text-align: left;
-        }
-        H2 {
-           font-family: Helvetica, Arial;
-            font-size: 16px;
-            color: #003984;
-            text-align: left;
-        }
-        body {
-            font-family: Helvetica, Arial;
-             font-size: 13px;
-             color: #323769;
-        }
-        p {
-            font-family: Helvetica, Arial;
-             font-size: 14px;
-        }
-        td {
-            font-family: Helvetica, Arial;
-             font-size: 14px;
-        }
-        b {
-            color: #a03232;
-        }
-
-            -->
-            </style>
-
-        <script language="JavaScript">
-        <!-- Begin
-         function putFocus(formInst, elementInst) {
-          if (document.forms.length > 0) {
-           document.forms[formInst].elements[elementInst].focus();
-          }
-         }
-        // The second number in the "onLoad" command in the body
-        // tag determines the form's focus. Counting starts with '0'
-        //  End -->
-        </script>
     </head>
 
     <body  onLoad="putFocus(0, 0);">
-        <img border="0" src="<?=$PATH_GIFS?>Logo_IUT.jpg" align="middle"
-                      alt="IUT Aix en Provence">
-        <h1 style="text-align : center">Formulaire de versement de la Taxe d'apprentissage
-        <br />
-        sur les salaires 2010</h1>
-                                                                                  <?php
+    <header>
+        <div class="row container">
+            <div class="col s6">
+                <img  class="left responsive-img" src="<?=$PATH_GIFS?>Logo_IUT.jpg" alt="IUT Aix en Provence">
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card grey lighten-4 z-depth-1">
+                    <div class="card-content">                                                                              <?php
                                      if (isset ($StepValid))
                                      {
         /* ==========================  Remerciements    ==========================*/
@@ -92,30 +57,28 @@
         Vous avez fait le choix de soutenir notre formation, en nous versant la taxe d'apprentissage.
 
         Ce formulaire nous permettra d'en effectuer le suivi.
+        </p>
+        <p>
 
-        <br /><br />
         Nous vous remercions de l'intérêt que vous avez porté à notre démarche.
+</p>
 
-        <br /><br />
         Nous vous aviserons du versement dès sa transmission par l'organisme collecteur.
 
         <br /><br />
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cordialement
+         Cordialement
         </p>
 
-        <blockquote><blockquote><blockquote><blockquote>
-        <p style="text-align : center">
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Patricia Gaitan
+
+        <p class="right-align">
+        Patricia Gaitan
         <br />
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Responsable du département
         </p>
-        </blockquote></blockquote></blockquote></blockquote>
 
-        <p style="text-align : center">
-        <input type="submit"
-               value="Fermer la fenetre"
-               onClick="window.close()">
-        </p>
+
+         <p class="center"><button class="btn waves-effect waves-light white-text black" type="submit"
+                           onClick="window.close()">Fermer la fenêtre</button></p>
                                                                           <?php
         /* ==========================  Enregistrement   ==========================*/
 
@@ -152,158 +115,101 @@
                                      else
                                      {
                                                                                   ?>
-        <p style="background : #D4D8D4">
-        <big>Votre Entreprise</big>
-        </p>
-        <form method="post">
-        <table align="center" border="0"><tr><td>
-        <table cellpadding="2">
-            <tr>
-                <td style="text-align : right" valign="top">Raison Sociale :</td>
-                <td>
-                    <input type="text" name="RaisonSocialeSoc" size="66">
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align : right" valign="top">Adresse :</td>
-                <td>
-                    <textarea name="AdresseSoc" rows="5" cols="50"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align : right" valign="top">Code postal :</td>
-                <td>
-                    <table>
-                       <tr>
-                         <td>
-                           <input type="text" name="CodePostalSoc" size="15">
-                         </td>
-                         <td style="text-align : right" valign="top">Ville :</td>
-                         <td>
-                           <input type="text" name="VilleSoc" size="40">
-                         </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td colspn="2">&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="text-align : right" valign="top">Personne ou <br />service à contacter :</td>
-                <td>
-                    <input type="text" name="Contact" size="66">
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align : right" valign="top">Tél. :</td>
-                <td>
-                    <table>
-                       <tr>
-                         <td>
-                           <input type="text" name="Tel" size="15">
-                         </td>
-                         <td style="text-align : right" valign="top">e-mel :</td>
-                         <td>
-                           <input type="text" name="Mail" size="38">
-                         </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-        </td></tr></table>
+        <span class="card-title"><h4 class="center">Formulaire de versement de la Taxe d'apprentissage </br>
+                                sur les salaires 2010</h4></span>
+        <hr>
+         <h5 class="black-text">Votre Entreprise</h5>
+         <div class="row">
+         <form action="" method="POST" role="form" class="col s12">
+         <div class="row">
+            <div class="input-field col s12">
+                <input name="RaisonSocialeSoc" size="66" id="RaisonSocialeSoc" type="text" class="validate">
+                <label for="RaisonSocialeSoc">Raison sociale</label>
+            </div>
+            <div class="input-field col s12">
+            <div class="bleu1-text">Adresse </div><br>
+                 <textarea name="AdresseSoc" id="AdresseSoc" class="materialize-textarea"></textarea>
+            </div>
+            <div class="input-field col l6 m6 s12">
+                <input id="CodePostalSoc" name="CodePostalSoc" type="text" size="15" class="validate">
+                <label for="CodePostalSoc">Code postal </label>
+            </div>
+            <div class="input-field col l6 m6 s12">
+                <input id="VilleSoc" name="VilleSoc" type="text" size="40" class="validate">
+                <label for="VilleSoc">Ville </label>
+            </div>
+            <div class="input-field col s12">
+                <input name="Contact" size="66" id="Contact" type="text" class="validate">
+                <label for="Contact">Personne ou service à contacter</label>
+            </div>
+            <div class="input-field col l6 m6 s12">
+                <input id="Tel" name="Tel" type="text" class="validate">
+                <label for="Tel">Tel</label>
+            </div>
+            <div class="input-field col l6 m6 s12">
+                  <input id="Mail" name="Mail" type="text" class="validate">
+                  <label for="Mail">Mail</label>
+            </div>
+            </div>
 
-        <p>
-        Le département Informatique de l'I.U.T. d'Aix-en-Provence est habilité à percevoir <u><b>un versement Hors-quota ou barème au titre de la catégorie B</b></u>.
+            <p>
+                Le département Informatique de l'I.U.T. d'Aix-en-Provence est habilité à percevoir <b class="red-text">un versement Hors-quota ou barème au titre de la catégorie B</b>.
+                (Il est toutefois possible de cumuler des catégories voisines, par exemple A+B ou B+C.
+            </p>
+            <div class="row">
+                <div class="input-field col l6 m6 s12">
+                    <input id="CatA" name="CatA" type="text" class="validate">
+                    <label for="CatA">Catégorie B - Montant </label>
+                </div>
+                <div class="input-field col l6 m6 s12">
+                     <input id="CatAPlusB" name="CatAPlusB" type="text" class="validate">
+                     <label for="CatAPlusB">Par cumul, catégories A+B - Montant</label>
+                </div>
+                 <div class="input-field col l6 m6 s12">
+                     <input id="CatBPlusC" name="CatBPlusC" type="text" class="validate">
+                     <label for="CatBPlusC">Par cumul, catégories B+C - Montant</label>
+                 </div>
+                 </div>
 
-        (Il est toutefois possible de cumuler des catégories voisines, par exemple A+B ou B+C.
-        </p>
+            <p>
+               Lors de votre versement auprès d'un organisme collecteur, veuillez bien préciser l'établissement bénéficiaire :
+            </p>
+            <p class="center">
+                <b class="red-text">Département INFORMATIQUE de l'IUT d'Aix-en-Provence</b>
+            </p>
 
-        <table align="center" border="0"><tr><td>
-        <table cellpadding="2">
-            <tr>
-                <td style="text-align : right" valign="top">Catégorie B - Montant : </td>
-                <td>
-                    <input type="text" name="CatA" size="50"">
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align : right" valign="top">Par cumul, catégories A+B - Montant : </td>
-                <td>
-                    <input type="text" name="CatAPlusB" size="50"">
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align : right" valign="top">Par cumul, catégories B+C - Montant : </td>
-                <td>
-                    <input type="text" name="CatBPlusC" size="50"">
-                </td>
-            </tr>
-        </table>
-        </td></tr></table>
+            <hr>
+            <h5 class="black-text">L'organisme collecteur </h5>
+            <div class="row">
+                 <div class="input-field col s12">
+                    <input name="NomCollecteur" size="66" id="NomCollecteur" type="text" class="validate">
+                    <label for="NomCollecteur">Nom de l'organisme </label>
+                </div>
+                <div class="input-field col s12">
+                <div class="bleu1-text">Adresse </div><br>
+                    <textarea name="AdresseCollect" id="AdresseCollect" class="materialize-textarea"></textarea>
+                </div>
+                <div class="input-field col l6 m6 s12">
+                    <input id="CodePostalCollect" name="CodePostalCollect" type="text" size="15" class="validate">
+                    <label for="CodePostalCollect">Code postal </label>
+                </div>
+                <div class="input-field col l6 m6 s12">
+                     <input id="VilleCollect" name="VilleCollect" type="text" size="40" class="validate">
+                     <label for="VilleCollect">Ville </label>
+                </div>
+            </div>
 
-        <p>
-        Lors de votre versement auprès d'un organisme collecteur, veuillez bien préciser l'établissement bénéficiaire :
-        </p>
-
-        <p  style="text-align : center">
-        <u><b>Département INFORMATIQUE de l'IUT d'Aix-en-Provence</b></u>
-        </p>
-
-        <p style="background : #D4D8D4">
-        <big>L'organisme collecteur</big>
-        </p>
-
-        <table align="center" border="0"><tr><td>
-        <table cellpadding="2">
-            <tr>
-                <td style="text-align : right" valign="top">Nom de l'organisme :</td>
-                <td>
-                    <input type="text" name="NomCollecteur" size="66">
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align : right" valign="top">Adresse :</td>
-                <td>
-                    <textarea name="AdresseCollect" rows="5" cols="50"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align : right" valign="top">Code postal :</td>
-                <td>
-                    <table>
-                       <tr>
-                         <td>
-                           <input type="text" name="CodePostalCollect" size="15">
-                         </td>
-                         <td style="text-align : right" valign="top">Ville :</td>
-                         <td>
-                           <input type="text" name="VilleCollect" size="40">
-                         </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td colspn="2">&nbsp;</td>
-            </tr>
-            <tr>
-                <td colspn="2">&nbsp;</td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align : center">
-                    <input type="reset" value="Réinitialiser">
-                    <input type="hidden" name="StepValid" value="1">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="submit" value="Valider" >
-                </td>
-            </tr>
-
-        </table>
+            <p class="center">
+                <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+                <button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button></p>
         <input type="hidden" name="StepValid">
         </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <?php /*
 <p  style="text-align : right">
 <small>Institut Universaire de Technologie d'Aix-en-Provence
@@ -317,5 +223,20 @@ Téléphone : 04 42 93 90 43 - Télécopie : 04 42 93 90 74 - mel : informatique
                                                                           <?php
                              }
                                                                           ?>
+     <!--  Scripts-->
+     <script language="JavaScript">
+          <!-- Begin
+           function putFocus(formInst, elementInst) {
+               if (document.forms.length > 0) {
+                    document.forms[formInst].elements[elementInst].focus();
+                }
+           }
+           // The second number in the "onLoad" command in the body
+           // tag determines the form's focus. Counting starts with '0'
+           //  End -->
+     </script>
+     <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
+     <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
+     <script src="<?=$PATH_JS?>init.js"></script>
     </body>
 </html>
