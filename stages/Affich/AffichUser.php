@@ -104,7 +104,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 </table>
 <hr color="black" width="360">
 <p align="center"> <a
-href="BackOffice.php?Trait=Form&SlxTable=<?=$NomTabUsers?>&IdentPK=<?=$ValPK_User?>">
+href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Form&SlxTable=<?=$NomTabUsers?>&IdentPK=<?=$ValPK_User?>">
 Modifier</a>
 </p>
 </body>

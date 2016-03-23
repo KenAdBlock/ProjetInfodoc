@@ -78,17 +78,3 @@
   </div>
 
 </main>
-
-<footer class="page-footer">
-  <div class="jaune">
-    <div class="container">
-      <div class="row no-margin-bottom">
-        <div class="col s12">
-          <p class="right white-text">
-            Le responsable des stages : <b><a class="white-text" href="mailto:marc.laporte@univ-amu.fr">  Marc Laporte</a></b>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
