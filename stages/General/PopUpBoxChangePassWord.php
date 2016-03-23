@@ -138,20 +138,16 @@
 										</div>
 									</div>
 									<div class="center">
-										<button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button>
+										<button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
 									</div>
-								</div>
-								<div class="center">
-									<button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
-								</div>
-
+						<div class="input-field col s12">
 							<hr>
 							<blockquote><sup>*</sup>
 							<small>Choisissez un mot de passe composé de
 								<b><?=MINLGPASSWD?></b> à
 								<b><?=MAXLGPASSWD?></b> lettres <br />&nbsp;
 								(majuscules ou minuscules <b>sans accents</b>) ou chiffres</small></blockquote>
-							<hr><br>
+							<hr><br></div>
 							<?php
 							if (count ($CodErr))
 							{
