@@ -11,15 +11,13 @@ function Consult ($Login, $Libelle, $Status)
 	$URL_AccesRapideSoc = $PATH_BACKOFFICE.'BackOffice.php?Trait=AccesRapideSoc';
 	$URL_BackOffice     = $PATH_BACKOFFICE.'BackOffice.php?Trait=BackOffice';
 
-
-    if (isset ($_SESSION))
-        foreach ($_SESSION as $clef => $valeur) $$clef = $valeur;
-
     foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
     foreach ($_POST as $clef => $valeur) $$clef = $valeur;
 
     if (!isset ($Step))
         $Step = 'Accueil';
+
+    /* * / CloseSessionAndRedirect ($URL_SITE); /* */
     if (IsSessionAndLoginNonVide())
     {
         // Une session est en cours et un login y est enregistré ==>
@@ -32,7 +30,6 @@ function Consult ($Login, $Libelle, $Status)
             CloseSessionAndRedirect ($URL_SITE.$PATH_PHP);
         }
     }
-
 ?>
 
 <nav class="bleu1 role="navigation">
@@ -44,10 +41,9 @@ function Consult ($Login, $Libelle, $Status)
       </ul>
 
       <ul class="right hide-on-med-and-down">
-        <li><a href="?Step=Decnx" target="_top"> Déconnexion</a></li>  
-      </ul>
-
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>  
+        <li><a href="?Step=Decnx" target="_top"> Déconnexion</a></li>
+      </ul> 
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 
     </div>
   </nav>

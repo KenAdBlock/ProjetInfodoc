@@ -4,6 +4,8 @@
     $PATH_GENERAL		= $PATH_RACINE.'General/';
 
     include_once ($PATH_CONSTANTES.'CstGales.php');
+
+	require_once ($PATH_BACKOFFICE.'Fonctions.php');
 ?>
 <html>
 	<head>
@@ -31,6 +33,7 @@
 		include ($PATH_GENERAL."Entete.php");
 		include ($PATH_GENERAL."MenuGauche.php");
 		include ($PATH_GENERAL."Generalites.php");
+		Footer();
 	?>
 
         <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
