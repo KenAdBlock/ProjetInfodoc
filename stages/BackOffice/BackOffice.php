@@ -290,8 +290,13 @@ function check (field)
 		    include ($PATH_BACKOFFICE.'ListeEtudSansStage.php');
 		break;
 
+//      case 'EtiqEntreprises0708AvecStagiaire' :
+//        if (GetDroits ($Status, 'EtiqEntreprises0708AvecStagiaire'))
+//            include ($PATH_BACKOFFICE.'EtiqEntreprises0708AvecStagiaire.php');
+//        break;
+
       default :
-	    include ($PATH_GENERAL.'Generalites.php');
+          redirect ($URL_SITE);
 	    break;
 
     }
