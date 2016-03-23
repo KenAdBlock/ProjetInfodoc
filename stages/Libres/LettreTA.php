@@ -118,7 +118,7 @@
                                                                           <?php
         /* ==========================  Enregistrement   ==========================*/
 
-                Query ("INSERT INTO $NomTabTaxe VALUES (
+                    $ConnectStages->query("INSERT INTO $NomTabTaxe VALUES (
                               NULL,
                               '".addslashes ($RaisonSocialeSoc)."',
                               '".addslashes ($AdresseSoc)."',
@@ -133,8 +133,7 @@
                               '".addslashes ($NomCollecteur)."',
                               '".addslashes ($AdresseCollect)."',
                               '$CodePostalCollect',
-                              '".addslashes ($VilleCollect)."');",
-                             $ConnectStages);
+                              '".addslashes ($VilleCollect)."');");
 
         /* ==========================  mail d'information  ======================*/
 

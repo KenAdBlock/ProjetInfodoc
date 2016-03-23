@@ -28,14 +28,13 @@ class CWan
         {
             $this->PK_Wan = $PK_Wan;
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabReseauxPublics
-                                    WHERE PK_Wan = '$PK_Wan'",
-                               $ConnectStages);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabReseauxPublics
+                                    WHERE PK_Wan = '$PK_Wan'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $this->Code    = $LeTuple->Code    ;
-            $this->Libelle = $LeTuple->Libelle ;
-            $this->CodeBin = $LeTuple->CodeBin ;
+            $this->Code    = $LeTuple['Code']    ;
+            $this->Libelle = $LeTuple['Libelle'] ;
+            $this->CodeBin = $LeTuple['CodeBin'] ;
        }
 
     } // CWan()
@@ -80,15 +79,14 @@ class CWan
     {
         global $ConnectStages;
 
-        $Req = Query ("SELECT * FROM $NomTabReseauxPublics  WHERE PK_Wan = $this->PK_Wan",
-                  $ConnectStages);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabReseauxPublics  WHERE PK_Wan = $this->PK_Wan");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetCode    ($Obj->Code);
-        $this->SetLibelle ($Obj->Libelle);
-        $this->SetCodeBin ($Obj->CodeBin);
+        $this->SetCode    ($Obj['Code']);
+        $this->SetLibelle ($Obj['Libelle']);
+        $this->SetCodeBin ($Obj['CodeBin']);
 
         return true;
 
@@ -98,12 +96,11 @@ class CWan
     {
         global $ConnectStages, $NomTabReseauxPublics;
         
-        return Query ("INSERT INTO $NomTabReseauxPublics VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabReseauxPublics VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
-                 $this->CodeBin);",
-                     $ConnectStages);
+                 $this->CodeBin);");
 
     } // Insert()
 
@@ -111,22 +108,20 @@ class CWan
     {
         global $ConnectStages, $NomTabReseauxPublics;
 
-        return Query ("DELETE FROM $NomTabReseauxPublics WHERE PK_Wan = $this->PK_Wan",
-                     $ConnectStages);
+        return $ConnectStages->query("DELETE FROM $NomTabReseauxPublics WHERE PK_Wan = $this->PK_Wan");
 
     } // Delete()
 
     function Update ()
     {
         global $ConnectStages, $NomTabReseauxPublics;
-        
-        $Req = Query ("UPDATE $NomTabReseauxPublics SET 
+
+        $ConnectStages->query("UPDATE $NomTabReseauxPublics SET 
                                  Code    = '$this->Code',
                                  Libelle = '$this->Libelle',
                                  Libelle =  $this->CodeBin,
 
-                           WHERE PK_Wan = $this->PK_Wan",
-                  $ConnectStages);
+                           WHERE PK_Wan = $this->PK_Wan");
 
     } // Update()
 

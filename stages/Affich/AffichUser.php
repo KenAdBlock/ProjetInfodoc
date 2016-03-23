@@ -4,11 +4,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     include ($PATH_CLASS.'CUser.php');
     if ($Status == PROF || $Status == ETUD1 || $Status == ETUD2 || $Status == ETUDLP)
 	{
-	    $ReqUser = Query ("SELECT PK_User FROM $NomTabUsers 
-		                        WHERE Login = '$login'",
-						   $ConnectStages); 
-        $ObjUser = mysql_fetch_object ($ReqUser);
-		$IdentPK = $ObjUser->PK_User;
+	    $ReqUser = $ConnectStages->prepare("SELECT PK_User FROM $NomTabUsers 
+		                        WHERE Login = :login");
+        $ReqUser->bindValue(':login', $login);
+        $ReqUser->execute();
+        $ObjUser = $ReqUser->fetch();
+		$IdentPK = $ObjUser['PK_User'];
     }
 	else
 	{
@@ -27,19 +28,17 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $ValFax           = $ObjTuple->GetFax();
     $ValFK_Entreprise = $ObjTuple->GetFK_Entreprise();
  
-    $ReqStatus = Query ("SELECT Code FROM $NomTabStatus 
-	                         WHERE Code = '$ValStatus'",
-						$ConnectStages);
-	$ObjStatus = mysql_fetch_object ($ReqStatus);
-	$LibelleStatus = $ObjStatus->Code;
+    $ReqStatus = $ConnectStages->query("SELECT Code FROM $NomTabStatus 
+	                         WHERE Code = '$ValStatus'");
+	$ObjStatus = $ReqStatus->fetch();
+	$LibelleStatus = $ObjStatus['Code'];
     
     if ($ValFK_Entreprise)
     {
-       $ReqSoc = Query ("SELECT NomE FROM $NomTabEntreprises
-	                         WHERE PK_Entreprise = $ValFK_Entreprise",
-						$ConnectStages); 
-       $ObjSoc = mysql_fetch_object ($ReqSoc);
-	   $NomE   = $ObjSoc->NomE;
+       $ReqSoc = $ConnectStages->query("SELECT NomE FROM $NomTabEntreprises
+	                         WHERE PK_Entreprise = $ValFK_Entreprise");
+       $ObjSoc = $ReqSoc->fetch();
+	   $NomE   = $ObjSoc['NomE'];
     }
 ?>
 

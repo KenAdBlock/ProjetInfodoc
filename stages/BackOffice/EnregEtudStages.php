@@ -6,10 +6,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     define ('STATUS_ETUD2', 6);
 
-    $ReqEtud = Query ("SELECT * FROM $NomTabUsers
+    $ReqEtud = $ConnectLaporte->query("SELECT * FROM $NomTabUsers
 			  	            WHERE FK_Statut = ".STATUS_ETUD2."
-						    ORDER BY Nom",
-	                   $ConnectLaporte);
+						    ORDER BY Nom");
 					   
     // Génération de la table des étudiants
 	// ====================================
@@ -21,7 +20,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     switch ($Etape)
     {
       case 'Valid' :
-                                        $ReqStages = Query ("SELECT $NomTabStages.FK_Entreprise,
+                                        $ReqStages = $ConnectStages->query("SELECT $NomTabStages.FK_Entreprise,
 	                                                                $NomTabStages.Sujet,
 	                                                                $NomTabStages.PK_Stage,								
 	                                                                $NomTabEntreprises.PK_Entreprise,
@@ -29,39 +28,36 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	                                                             FROM $NomTabStages, $NomTabEntreprises
 	                                                             WHERE $NomTabEntreprises.PK_Entreprise =
 						                                                                $NomTabStages.FK_Entreprise
-	                                                             ORDER BY NomE",
-	                                                        $ConnectStages);
-	                                    mysql_data_seek ($ReqStages, 0);
-                                        for ($i = 0 ; $Obj = mysql_fetch_object ($ReqStages); ++$i)
+	                                                             ORDER BY NomE");
+                                        for ($i = 0 ; $Obj = $ReqStages->fetch(); ++$i)
                                         {
 			                                $Nom = 'TxtSaisi'.$i;
-                                            Query ("UPDATE $NomTabStages 
+                                            $Req = $ConnectStages->prepare("UPDATE $NomTabStages 
 											            SET Etudiant = '".$$Nom."'
-	                                                    WHERE PK_Stage = '$Obj->PK_Stage'",
-	                                                $ConnectStages);										     
+	                                                    WHERE PK_Stage = :PK_Stage");
+                                            $Req->bindValue(':PK_Stage', $Obj['PK_Stage']);
+                                            $Req->execute();
                                         }
       case 'Init' :
-        $ReqStages = Query ("SELECT $NomTabStages.FK_Entreprise,
-	                                $NomTabStages.Sujet,
-	                                $NomTabStages.PK_Stage,								
-								    $NomTabEntreprises.PK_Entreprise,
-								    $NomTabEntreprises.NomE
-	                            FROM $NomTabStages, $NomTabEntreprises
-	                         WHERE $NomTabEntreprises.PK_Entreprise =
-						           $NomTabStages.FK_Entreprise
-						     ORDER BY NomE",
-	                       $ConnectStages);
+        $ReqStages = $ConnectStages->query("SELECT $NomTabStages.FK_Entreprise,
+                                                $NomTabStages.Sujet,
+                                                $NomTabStages.PK_Stage,								
+                                                $NomTabEntreprises.PK_Entreprise,
+                                                $NomTabEntreprises.NomE
+                                            FROM $NomTabStages, $NomTabEntreprises
+                                            WHERE $NomTabEntreprises.PK_Entreprise =
+                                                  $NomTabStages.FK_Entreprise
+                                            ORDER BY NomE");
 ?>
 
 <script language=javascript>
 var TabNoms = new Array();
 var NbEtud = 0;
-                                                                           <?php 
-	                                    mysql_data_seek ($ReqEtud, 0);
-                                        for ( ; $Obj =  mysql_fetch_object ($ReqEtud); )
+                                                                           <?php
+                                        for ( ; $Obj =  $ReqEtud->fetch(); )
                                         {
                                                                            ?>
-    TabNoms [NbEtud++] = "<?=$Obj->Nom.' '.$Obj->Prenom?>";
+    TabNoms [NbEtud++] = "<?=$Obj['Nom'].' '.$Obj['Prenom']?>";
                                                                            <?php
                                         }
                                                                            ?>
@@ -101,20 +97,19 @@ function MAJTxtAffich (ind)
         <th>Etudiant</th>
     </tr>
                                                                            <?php
-	                                    mysql_data_seek ($ReqStages, 0);
-                                        for ($i = 0 ; $Obj = mysql_fetch_object ($ReqStages); ++$i)
+                                        for ($i = 0 ; $Obj = $ReqStages->fetch(); ++$i)
                                         {
                                                                            ?>
     <tr>
         <td>
-		    <?=$Obj->NomE?>
+		    <?=$Obj['NomE']?>
         </td>
         <td>
-		    <?=substr ($Obj->Sujet, 0, 30).'...'?>
+		    <?=substr ($Obj['Sujet'], 0, 30).'...'?>
         </td>
         <td>
             <input type="text" name="TxtSaisi<?=$i?>" maxlength="50" size="30" 
-			 value="<?=$Obj->Etudiant == '' ? '' : $Obj->E1tudiant?>" onKeyUp="MAJTxtAffich(<?=$i?>)"> 
+			 value="<?=$Obj['Etudiant'] == '' ? '' : $Obj['E1tudiant']?>" onKeyUp="MAJTxtAffich(<?=$i?>)"> 
         </td>
     </tr>
                                                                            <?php

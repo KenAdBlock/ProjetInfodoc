@@ -78,10 +78,9 @@
         }
 else 			print (' juste !!<br>');
         */
-		$ReqLogin = Query ("SELECT Login FROM $NomTabUsers 
-		                       WHERE Login = '$Identifiant'",
-		                   $ConnectStages);
-		if (mysql_num_rows ($ReqLogin) > 0)
+		$ReqLogin = $ConnectStages->query("SELECT Login FROM $NomTabUsers 
+		                       WHERE Login = '$Identifiant'");
+		if ($ReqLogin->rowCount() > 0)
 		{
             array_push ($CodErr, $ERRLOGINDEJAUTILISE);
 		    $Indic [$Ident] = FLECHE;

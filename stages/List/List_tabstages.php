@@ -52,12 +52,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     if ($Status == TUTEUR)
     {
-//        $ReqStages = Query ("SELECT *
+//        $ReqStages = $ConnectStages->prepare("SELECT *
 //                                 FROM $NomTabStages S, $NomTabEntreprises E
 //                                 WHERE S.FK_Entreprise = E.PK_Entreprise
-//                                   AND E.PK_Entreprise = $FK_EntrepriseUser
-//                                 ORDER BY ".$OrderReq,
-//                            $ConnectStages);
+//                                   AND E.PK_Entreprise = :EntrepriseUser
+//                                 ORDER BY ".$OrderReq);
+        
         $ReqStages = $ConnectStages->prepare("SELECT *
                                  FROM $NomTabStages S, $NomTabEntreprises E
                                  WHERE S.FK_Entreprise = E.PK_Entreprise
@@ -79,12 +79,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     */
     else if ($Status == ETUD2)
     {
-//        $ReqStages = Query ("SELECT *
+//        $ReqStages = $ConnectStages->query("SELECT *
 //                                 FROM $NomTabStages S, $NomTabEntreprises E
 //                                 WHERE S.FK_Entreprise = E.PK_Entreprise
 //                                 AND (S.NiveauStage = 1 OR S.NiveauStage = 3)
-//                                 ORDER BY ".$OrderReq,
-//                            $ConnectStages);
+//                                 ORDER BY ".$OrderReq);
+        
         $ReqStages = $ConnectStages->query("SELECT *
                                  FROM $NomTabStages S, $NomTabEntreprises E
                                  WHERE S.FK_Entreprise = E.PK_Entreprise
@@ -93,11 +93,11 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     }
     else
     {
-//        $ReqStages = Query ("SELECT *
+//        $ReqStages = $ConnectStages->query("SELECT *
 //                                 FROM $NomTabStages S, $NomTabEntreprises E
 //                                 WHERE S.FK_Entreprise = E.PK_Entreprise
-//                                 ORDER BY ".$OrderReq,
-//                            $ConnectStages);
+//                                 ORDER BY ".$OrderReq);
+        
         $ReqStages = $ConnectStages->query("SELECT *
                                  FROM $NomTabStages S, $NomTabEntreprises E
                                  WHERE S.FK_Entreprise = E.PK_Entreprise

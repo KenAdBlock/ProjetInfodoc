@@ -78,7 +78,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <td valign="top">
                         <a href="<?=$URL_Del.'&IdentPK='.$Obj['PK_NewInscript']?>"
                            <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
-                           onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$Obj['NomTuteur']?> <?=$Obj->PrenomTuteur?> ?')"
+                           onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$Obj['NomTuteur']?> <?=$Obj['PrenomTuteur']?> ?')"
 						   ><i class="material-icons red-text text-darken-2">delete_forever</i>
 						</a>
                     </td>
@@ -89,7 +89,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                         <?=$Obj['PK_NewInscript']?>
 					</td>
                     <td valign="top" style="text-align : center">
-                        <?=$Obj->NomTuteur?> <?=$Obj['PrenomTuteur']?>
+                        <?=$Obj['NomTuteur']?> <?=$Obj['PrenomTuteur']?>
 					</td>
                 </tr>
 

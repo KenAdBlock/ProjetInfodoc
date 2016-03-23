@@ -17,11 +17,10 @@ function RecupFichEntreprises()
 		$Champs [5] = addslashes ($Champs [5]);
 		$Champs [6] = addslashes ($Champs [6]);
 		$Champs [8] = addslashes ($Champs [8]);
-		Query ("INSERT INTO oldtabentreprises VALUES (
+        $ConnectStages->query("INSERT INTO oldtabentreprises VALUES (
 		NULL,  '$Champs[0]', '$Champs[1]', '$Champs[2]', '$Champs[3]',
 		'$Champs[4]', '$Champs[5]', '$Champs[6]', '$Champs[7]', '$Champs[8]', '$Champs[9]', 
-		'$Champs[10]', '$Champs[11]', '$Champs[12]', '$Champs[13]' )", 
-		       $ConnectStages);
+		'$Champs[10]', '$Champs[11]', '$Champs[12]', '$Champs[13]' )");
 	}
     fclose ($Fic);
 
@@ -32,20 +31,18 @@ function RecupOldEntreprises()
 {
     global $ConnectStages;
 /*     * /
-    $ReqOldSocs = Query ("SELECT oldtabentreprises.*, oldtabstages.NomEtudiant, oldtabstages.Annee 
+    $ReqOldSocs = $ConnectStages->query("SELECT oldtabentreprises.*, oldtabstages.NomEtudiant, oldtabstages.Annee 
 	                         FROM oldtabentreprises, oldtabstages 
 						     WHERE oldtabentreprises.NomEntreprise = oldtabstages.NomEntreprise
 							 AND   oldtabstages.Annee > 1999
-							 ORDER BY oldtabstages.Annee DESC, oldtabentreprises.NomEntreprise",
-	                     $ConnectStages);
+							 ORDER BY oldtabstages.Annee DESC, oldtabentreprises.NomEntreprise");
 /*    */
 /*    */
-//    $ReqOldSocs = Query ("SELECT DISTINCT oldtabentreprises.*
+//    $ReqOldSocs = $ConnectStages->query("SELECT DISTINCT oldtabentreprises.*
 //	                         FROM oldtabentreprises, oldtabstages
 //						     WHERE oldtabentreprises.NomEntreprise = oldtabstages.NomEntreprise
 //							 AND   oldtabstages.Annee > 1999
-//							 ORDER BY oldtabentreprises.NomEntreprise",
-//	                     $ConnectStages);
+//							 ORDER BY oldtabentreprises.NomEntreprise");
 
     $ReqOldSocs = $ConnectStages->query("SELECT DISTINCT oldtabentreprises.*
 	                                       FROM oldtabentreprises, oldtabstages 
@@ -214,14 +211,13 @@ function NormaliserNomPrenomLogin1A2A ($Annee)
     for (; $Ligne = fgets($handle); )
     {
         NormaliserNomPrenomLogin ($Ligne, $Nom, $Prenoms, $NumGroupe, $LoginAuto);
-//        $ReqEtud = Query ("SELECT * FROM $NomTabUsers
-//			  	                WHERE Identifiant = '$LoginAuto'",
-//	                       $ConnectLaporte);
+//        $ReqEtud = $ConnectLaporte->prepare("SELECT * FROM $NomTabUsers
+//			  	                WHERE Identifiant = :LoginAuto");
         $ReqEtud = $ConnectLaporte->prepare("SELECT * FROM $NomTabUsers
 			  	                             WHERE Identifiant = '$LoginAuto'");
         $ReqEtud->bindValue(':LoginAuto', $LoginAuto);
         $ReqEtud->execute();
-        if (rowCount($ReqEtud) == 0)
+        if ($ReqEtud->rowCount() == 0)
 	        print ($LoginAuto." : non trouve <br />");
 	    else  if (mysql_num_rows ($ReqEtud) > 1)
 	       print ($LoginAuto." : plus d'une occurrence <br />");
@@ -232,12 +228,11 @@ function NormaliserNomPrenomLogin1A2A ($Annee)
 	               ' Ancien nom =  '.$Obj['Nom'].' Ancien prénom =  '.$Obj['Prenom'].'<br />');
         }
         /*
-        $ReqEtud = Query ("UPDATE $NomTabUsers SET 
+        $ReqEtud = $ConnectLaporte->query("UPDATE $NomTabUsers SET 
                                      Nom    = \"$Nom\",
                                      Prenom = \"$Prenoms\",
                                      Groupe =  $NumGroupe
-                               WHERE Identifiant = '$LoginAuto'",
-                      	        $ConnectLaporte);
+                               WHERE Identifiant = '$LoginAuto'");
         */
     }
     fclose ($handle);

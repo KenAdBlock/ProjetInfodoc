@@ -66,33 +66,32 @@ class CNewInscript
         {
             $this->PK_NewInscript = $PK_NewInscript;
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabNewInscripts
-                                    WHERE PK_NewInscript = '$PK_NewInscript'",
-                               $ConnectStages);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabNewInscripts
+                                    WHERE PK_NewInscript = '$PK_NewInscript'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $this->CiviliteTuteur    = $LeTuple->CiviliteTuteur;
-            $this->NomTuteur         = stripslashes ($LeTuple->NomTuteur);
-            $this->PrenomTuteur      = stripslashes ($LeTuple->PrenomTuteur);
-            $this->TelTuteur         = $LeTuple->TelTuteur       ;
-            $this->MailTuteur        = $LeTuple->MailTuteur      ;
-            $this->FaxTuteur         = $LeTuple->FaxTuteur       ;
+            $this->CiviliteTuteur    = $LeTuple['CiviliteTuteur'];
+            $this->NomTuteur         = stripslashes ($LeTuple['NomTuteur']);
+            $this->PrenomTuteur      = stripslashes ($LeTuple['PrenomTuteur']);
+            $this->TelTuteur         = $LeTuple['TelTuteur']       ;
+            $this->MailTuteur        = $LeTuple['MailTuteur']      ;
+            $this->FaxTuteur         = $LeTuple['FaxTuteur']       ;
 
-            $this->Is_IdemTuteur     = $LeTuple->Is_IdemTuteur   ;
-            $this->CiviliteRespAdmin = $LeTuple->CiviliteRespAdmin;
-            $this->NomRespAdmin      = stripslashes ($LeTuple->NomRespAdmin);
-            $this->PrenomRespAdmin   = stripslashes ($LeTuple->PrenomRespAdmin);
-            $this->TelRespAdmin      = $LeTuple->TelRespAdmin    ;
-            $this->MailRespAdmin     = $LeTuple->MailRespAdmin   ;
-            $this->FaxRespAdmin      = $LeTuple->FaxRespAdmin    ;
+            $this->Is_IdemTuteur     = $LeTuple['Is_IdemTuteur']   ;
+            $this->CiviliteRespAdmin = $LeTuple['CiviliteRespAdmin'];
+            $this->NomRespAdmin      = stripslashes ($LeTuple['NomRespAdmin']);
+            $this->PrenomRespAdmin   = stripslashes ($LeTuple['PrenomRespAdmin']);
+            $this->TelRespAdmin      = $LeTuple['TelRespAdmin']    ;
+            $this->MailRespAdmin     = $LeTuple['MailRespAdmin']   ;
+            $this->FaxRespAdmin      = $LeTuple['FaxRespAdmin']    ;
 
-            $this->NomE              = stripslashes ($LeTuple->NomE);
-            $this->Adr1              = stripslashes ($LeTuple->Adr1);
-            $this->Adr2              = stripslashes ($LeTuple->Adr2);
-            $this->CP                = $LeTuple->CP;
-            $this->Ville             = stripslashes ($LeTuple->Ville);
+            $this->NomE              = stripslashes ($LeTuple['NomE']);
+            $this->Adr1              = stripslashes ($LeTuple['Adr1']);
+            $this->Adr2              = stripslashes ($LeTuple['Adr2']);
+            $this->CP                = $LeTuple['CP'];
+            $this->Ville             = stripslashes ($LeTuple['Ville']);
 
-            $this->FK_Entreprise     = $LeTuple->FK_Entreprise   ;
+            $this->FK_Entreprise     = $LeTuple['FK_Entreprise']   ;
         }
 
     } // CNewInscript()
@@ -254,35 +253,34 @@ class CNewInscript
     {
         global $ConnectStages, $NomTabNewInscripts;
 
-        $Req = Query ("SELECT * FROM $NomTabNewInscripts  
-		                   WHERE PK_NewInscript = $this->PK_NewInscript",
-                      $ConnectStages);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabNewInscripts  
+		                   WHERE PK_NewInscript = $this->PK_NewInscript");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetCiviliteTuteur          ($Obj->CiviliteTuteur);
-        $this->SetNomTuteur               ($Obj->NomTuteur);
-        $this->SetPrenomTuteur            ($Obj->PrenomTuteur);
-        $this->SetTelTuteur               ($Obj->TelTuteur);
-        $this->SetMailTuteur              ($Obj->MailTuteur);
-        $this->SetFaxTuteur               ($Obj->FaxTuteur);
+        $this->SetCiviliteTuteur          ($Obj['CiviliteTuteur']);
+        $this->SetNomTuteur               ($Obj['NomTuteur']);
+        $this->SetPrenomTuteur            ($Obj['PrenomTuteur']);
+        $this->SetTelTuteur               ($Obj['TelTuteur']);
+        $this->SetMailTuteur              ($Obj['MailTuteur']);
+        $this->SetFaxTuteur               ($Obj['FaxTuteur']);
 
-        $this->SetIs_IdemTuteur           ($Obj->Is_IdemTuteur);
-        $this->SetCiviliteRespAdmin       ($Obj->CiviliteRespAdmin);
-        $this->SetNomRespAdmin            ($Obj->NomRespAdmin);
-        $this->SetPrenomRespAdmin         ($Obj->PrenomRespAdmin);
-        $this->SetTelRespAdmin            ($Obj->TelRespAdmin);
-        $this->SetMailRespAdmin           ($Obj->MailRespAdmin);
-        $this->SetFaxRespAdmin            ($Obj->FaxRespAdmin);
+        $this->SetIs_IdemTuteur           ($Obj['Is_IdemTuteur']);
+        $this->SetCiviliteRespAdmin       ($Obj['CiviliteRespAdmin']);
+        $this->SetNomRespAdmin            ($Obj['NomRespAdmin']);
+        $this->SetPrenomRespAdmin         ($Obj['PrenomRespAdmin']);
+        $this->SetTelRespAdmin            ($Obj['TelRespAdmin']);
+        $this->SetMailRespAdmin           ($Obj['MailRespAdmin']);
+        $this->SetFaxRespAdmin            ($Obj['FaxRespAdmin']);
 
-        $this->SetNomE                    ($Obj->NomE);
-        $this->SetAdr1                    ($Obj->Adr1);
-        $this->SetAdr2                    ($Obj->Adr2);
-        $this->SetCP                      ($Obj->CP);
-        $this->SetVille                   ($Obj->Ville);
+        $this->SetNomE                    ($Obj['NomE']);
+        $this->SetAdr1                    ($Obj['Adr1']);
+        $this->SetAdr2                    ($Obj['Adr2']);
+        $this->SetCP                      ($Obj['CP']);
+        $this->SetVille                   ($Obj['Ville']);
 
-        $this->SetFK_Entreprise           ($Obj->FK_Entreprise);
+        $this->SetFK_Entreprise           ($Obj['FK_Entreprise']);
 
         return true;
 
@@ -292,7 +290,7 @@ class CNewInscript
     {
         global $ConnectStages, $NomTabNewInscripts;
         
-        return Query ("INSERT INTO $NomTabNewInscripts VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabNewInscripts VALUES (
                 NULL,
                 '$this->CiviliteTuteur',
                 '$this->NomTuteur',
@@ -315,8 +313,7 @@ class CNewInscript
                 '$this->CP',
                 '$this->Ville' ,
 
-                '$this->FK_Entreprise');",
-                     $ConnectStages);
+                '$this->FK_Entreprise');");
 
     } // Insert()
 
@@ -324,9 +321,8 @@ class CNewInscript
     {
         global $ConnectStages, $NomTabNewInscripts;
 
-        return Query ("DELETE FROM $NomTabNewInscripts 
-		                   WHERE PK_NewInscript = $this->PK_NewInscript",
-                     $ConnectStages);
+        return $ConnectStages->query("DELETE FROM $NomTabNewInscripts 
+		                   WHERE PK_NewInscript = $this->PK_NewInscript");
 
     } // Delete()
 
@@ -334,7 +330,7 @@ class CNewInscript
     {
         global $ConnectStages, $NomTabNewInscripts;
         
-        $Req = Query ("UPDATE $NomTabNewInscripts SET 
+        $Req = $ConnectStages->query("UPDATE $NomTabNewInscripts SET 
                                  CiviliteTuteur      = '$this->CiviliteTuteur',
                                  NomTuteur           = '$this->NomTuteur',
                                  PrenomTuteur        = '$this->PrenomTuteur',
@@ -358,8 +354,7 @@ class CNewInscript
 
                                  FK_Entreprise = '$this->FK_Entreprise'
 
-                           WHERE PK_NewInscript = $this->PK_NewInscript",
-                  $ConnectStages);
+                           WHERE PK_NewInscript = $this->PK_NewInscript");
 
     } // Update()
 

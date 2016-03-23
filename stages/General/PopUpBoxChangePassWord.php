@@ -80,11 +80,12 @@
  		if (count ($CodErr) == 0)
         {        
 		    $NewPWCrypte = md5 ($NewPW1);
-			$login       = $_SESSION ['login']; 
-		    $ReqEnreg = Query ("UPDATE $NomTabUsers SET
+			$login       = $_SESSION ['login'];
+			$ReqEnreg = $ConnectStages->prepare("UPDATE $NomTabUsers SET
 					  		        Password = '$NewPWCrypte'
-							    WHERE Login = '$login'",
-						    $ConnectStages);
+							    WHERE Login = :login");
+			$ReqEnreg->bindValue(':login', $login);
+			$ReqEnreg->execute();
             CloseWindow();
 		    die;
 		}

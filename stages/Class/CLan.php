@@ -28,14 +28,13 @@ class CLan
         {
             $this->PK_Lan = $PK_Lan;
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabReseauxLocaux
-                                    WHERE PK_Lan = '$PK_Lan'",
-                               $ConnectStages);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabReseauxLocaux
+                                    WHERE PK_Lan = '$PK_Lan'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $this->Code    = $LeTuple->Code    ;
-            $this->Libelle = $LeTuple->Libelle ;
-            $this->CodeBin = $LeTuple->CodeBin ;
+            $this->Code    = $LeTuple['Code']    ;
+            $this->Libelle = $LeTuple['Libelle'] ;
+            $this->CodeBin = $LeTuple['CodeBin'] ;
         }
 
     } // CLan()
@@ -80,15 +79,14 @@ class CLan
     {
         global $ConnectStages, $NomTabReseauxLocaux;
 
-        $Req = Query ("SELECT * FROM $NomTabReseauxLocaux  WHERE PK_Lan = $this->PK_Lan",
-                  $ConnectStages);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabReseauxLocaux  WHERE PK_Lan = $this->PK_Lan");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetCode    ($Obj->Code);
-        $this->SetLibelle ($Obj->Libelle);
-        $this->SetCodeBin ($Obj->CodeBin);
+        $this->SetCode    ($Obj['Code']);
+        $this->SetLibelle ($Obj['Libelle']);
+        $this->SetCodeBin ($Obj['CodeBin']);
 
         return true;
 
@@ -98,12 +96,11 @@ class CLan
     {
         global $ConnectStages, $NomTabReseauxLocaux;
         
-        return Query ("INSERT INTO $NomTabReseauxLocaux VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabReseauxLocaux VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
-                 $this->CodeBin);",
-                     $ConnectStages);
+                 $this->CodeBin);");
 
     } // Insert()
 
@@ -111,8 +108,7 @@ class CLan
     {
         global $ConnectStages, $NomTabReseauxLocaux;
 
-        return Query ("DELETE FROM $NomTabReseauxLocaux WHERE PK_Lan = $this->PK_Lan",
-                     $ConnectStages);
+        return $ConnectStages->query("DELETE FROM $NomTabReseauxLocaux WHERE PK_Lan = $this->PK_Lan");
 
     } // Delete()
 
@@ -120,13 +116,12 @@ class CLan
     {
         global $ConnectStages, $NomTabReseauxLocaux;
         
-        $Req = Query ("UPDATE $NomTabReseauxLocaux SET 
+        $Req = $ConnectStages->query("UPDATE $NomTabReseauxLocaux SET 
                                  Code    = '$this->Code',
                                  Libelle = '$this->Libelle',
                                  CodeBin =  $this->CodeBin,
 
-                           WHERE PK_Lan = $this->PK_Lan",
-                  $ConnectStages);
+                           WHERE PK_Lan = $this->PK_Lan");
 
     } // Update()
 

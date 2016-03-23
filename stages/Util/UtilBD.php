@@ -52,21 +52,5 @@ require_once ($PATH_CONSTANTES.'CstGales.php');
 
 		} // ConnectStages()
 
-		function Query ($Requete, $ConnectStages)
-		{
-		   global $MsgErr, $ERRREQUEST;
-
-			$Result = @mysql_query($Requete, $ConnectStages);
-	//	                 or die ($MsgErr [$ERRREQUEST].$Requete);
-
-			if(!$Result){
-				var_dump($Requete);
-				echo mysql_error($ConnectStages);
-				exit;
-			}
-
-			return $Result;
-
-		} // Query()
 	}
 ?>

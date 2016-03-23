@@ -65,10 +65,11 @@
         {          
 		    $NewPWCrypte = md5 ($NewPW1);
 			$Identifiant = $_REQUEST ['IdentPK'];
-		    $ReqEnreg = Query ("UPDATE $NomTabUsers SET
+		    $ReqEnreg = $ConnectStages->prepare("UPDATE $NomTabUsers SET
 					  		        Pass = '$NewPWCrypte'
-								WHERE PK_User = '$Identifiant'",
-							    $ConnectStages);  
+								WHERE PK_User = :Identifiant");
+			$ReqEnreg->bindValue(':Identifiant', $Identifiant);
+			$ReqEnreg->execute();
                                                                               ?>
 <script language="JavaScript">
 <!--
@@ -86,7 +87,7 @@
 
 <title>Changement de mot de passe</title> 
 
-<LINK REL=STYLESHEET TYPE=text/css HREF=../Css/stages.css>
+<LINK REL=STYLESHEET TYPE=text/css HREF="<?php $PATH_CSS?>stages.css">
         
 </head> 
 <body>

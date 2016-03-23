@@ -28,14 +28,13 @@ class COperatingSystem
         {
             $this->PK_OS = $PK_OS;
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabOS
-                                    WHERE PK_OS = '$PK_OS'",
-                               $ConnectStages);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabOS
+                                    WHERE PK_OS = '$PK_OS'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $this->Code    = $LeTuple->Code    ;
-            $this->Libelle = $LeTuple->Libelle     ;
-            $this->CodeBin = $LeTuple->CodeBin     ;
+            $this->Code    = $LeTuple['Code']    ;
+            $this->Libelle = $LeTuple['Libelle']     ;
+            $this->CodeBin = $LeTuple['CodeBin']     ;
         }
 
     } // COperatingSystem()
@@ -80,15 +79,14 @@ class COperatingSystem
     {
         global $ConnectStages, $NomTabOS;
 
-        $Req = Query ("SELECT * FROM $NomTabOS  WHERE PK_OS = $this->PK_OS",
-                  $ConnectStages);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabOS  WHERE PK_OS = $this->PK_OS");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetCode    ($Obj->Code);
-        $this->SetLibelle ($Obj->Libelle);
-        $this->SetCodeBin ($Obj->CodeBin);
+        $this->SetCode    ($Obj['Code']);
+        $this->SetLibelle ($Obj['Libelle']);
+        $this->SetCodeBin ($Obj['CodeBin']);
 
         return true;
 
@@ -98,12 +96,11 @@ class COperatingSystem
     {
         global $ConnectStages, $NomTabOS;
         
-        return Query ("INSERT INTO $NomTabOS VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabOS VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
-                 $this->CodeBin);",
-                     $ConnectStages);
+                 $this->CodeBin);");
 
     } // Insert()
 
@@ -111,8 +108,7 @@ class COperatingSystem
     {
         global $ConnectStages, $NomTabOS;
 
-        return Query ("DELETE FROM $NomTabOS WHERE PK_OS = $this->PK_OS",
-                     $ConnectStages);
+        return $ConnectStages->query("DELETE FROM $NomTabOS WHERE PK_OS = $this->PK_OS");
 
     } // Delete()
 
@@ -120,13 +116,12 @@ class COperatingSystem
     {
         global $ConnectStages, $NomTabOS;
         
-        $Req = Query ("UPDATE $NomTabOS SET 
+        $Req = $ConnectStages->query("UPDATE $NomTabOS SET 
                                  Code    = '$this->Code',
                                  Libelle = '$this->Libelle',
                                  CodeBin =  $this->CodeBin,
 
-                           WHERE PK_OS = $this->PK_OS",
-                  $ConnectStages);
+                           WHERE PK_OS = $this->PK_OS");
 
     } // Update()
 
