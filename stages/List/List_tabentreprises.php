@@ -18,7 +18,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	$URL_ListSoc  = '?Trait=List&SlxTable='.$NomTabEntreprises.'&slx='.
 	                ($slx == 'NAsc' ? 'NDesc' : 'NAsc' );
 	$QuelOrdreSoc = 'Ordre '.  ($slx == 'NAsc' ? 'de' : '')     .'croissant';
-	$GifOrderSoc  = $PATH_GIFS.($slx == 'NAsc' ? 'desc' : 'asc').'_order.png';
+	$GifOrderSoc  = ($slx == 'NAsc' ? 'arrow_drop_down' : 'arrow_drop_up');
 
 	$URL_AffichSoc = $PATH_BACKOFFICE.'BackOffice.php?Trait=Affich&SlxTable='.$NomTabEntreprises.'&IdentPK=';
 	$URL_FormSoc   = $PATH_BACKOFFICE.'BackOffice.php?Trait=Form&SlxTable='  .$NomTabEntreprises.'&IdentPK=';
@@ -32,27 +32,22 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $Title = 'Liste des entreprises';
 
 ?>
-<h1 style="text-align : center">
-    <?=$Title?>
-</h1>
+<span class="card-title"><h4 class="center"><?=$Title?></h4></span>
+
                                                                           <?php
      if (! mysql_num_rows ($ReqSoc))
     {
                                                                           ?>
-<h4 align="center">
-
-    Aucune entreprise n'a été trouvée.
-
-</h4>
+<h5 class="center">
+    Aucun stage n'a été trouvé.
+</h5>
                                                                           <?php
     }
     else
     {
                                                                           ?>
-<table  align="center">
-    <tr>
-        <td valign="top">
-            <table cellpadding="5">
+<table  class="highlight bordered centered grey lighten-5">
+  <thead class="grey white-text">
                 <tr>
                     <th>&nbsp;</th>
                                                                           <?php
@@ -70,13 +65,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 									        }
                                                                           ?>
                     <th style="text-align : center" valign="top" nowrap>
-					    <a href="<?=$URL_ListSoc?>"
+					    <a class="white-text" href="<?=$URL_ListSoc?>"
                            <?=AttributsAHRef ($QuelOrdreSoc, $QuelOrdreSoc, '', '');?>
-						    ><b>Raison Sociale</b>&nbsp;
-							 <img border="0" src="<?=$GifOrderSoc?>">
+						    ><i class="material-icons white-text" style="font-size: 20px"><?=$GifOrderSoc?></i>
+                <b>Raison Sociale</b>&nbsp;
 						</a>
 					</th>
-                <tr><td colspan="<?=$NbCol?>"><hr></td></tr>
+        </thead>
+                
                 <tr>
                                                                        <?php
                                                      mysql_data_seek ($ReqSoc, 0);
@@ -87,7 +83,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                       <td valign="top">
                         <a href="<?=$URL_AffichSoc.$ObjSoc->PK_Entreprise?>"
                            <?=AttributsAHRef  ('Detail', 'Detail', '', '');?>
-					   ><img src="<?=$PATH_GIFS?>b_browse.png" border="0"></a>
+					   ><i class="material-icons blue-text text-lighten-1">description</i></a>
                     </td>
                                                                          <?php
 									        if ($DroitModif)
@@ -96,7 +92,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <td valign="top">
                         <a href="<?=$URL_FormSoc.$ObjSoc->PK_Entreprise?>"
                            <?=AttributsAHRef  ('Modifier', 'Modifier', '', '');?>
-					   ><img src="<?=$PATH_GIFS?>b_edit.png" border="0"></a>
+					   ><i class="material-icons yellow-text text-darken-2">mode_edit</i></a>
                     </td>
                                                                           <?php
 									        }
@@ -107,8 +103,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                         <a href="<?=$URL_DelSoc.$ObjSoc->PK_Entreprise?>"
                            <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
                            onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=addslashes($ObjSoc->NomE)?> ?')"
-                             ><img src="<?=$PATH_GIFS?>b_deltbl.png"
-						         border="0">
+                             ><i class="material-icons red-text text-darken-2">delete_forever</i>
 						</a>
                     </td>
                                                                           <?php
@@ -123,9 +118,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                      }
                                                                        ?>
             </table>
-        </td>
-    </tr>
-</table>
+
 <?php
     }
 }

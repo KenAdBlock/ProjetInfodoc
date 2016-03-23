@@ -198,7 +198,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                         {
                                                                            ?>
 
-<span class="card-title"><h4 class="center">Création d'un nouvel utilisateur :</h4></span>
+<span class="card-title"><h4 class="center">Création d'un nouvel utilisateur</h4></span>
                                                                            <?php
                                         }
 										                                   ?>
@@ -249,26 +249,22 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                             </div>
                             <div class="row">
                                 <div class="input-field col l6 m6 s12">
-                                    <?=$ValidNom?>
                                     <input id="Nom" type="text" class="validate" name="Nom" size="50" value="<?=$ValNom?>">
-                                    <label for="Nom"><b>Nom</b></label>
+                                    <label for="Nom"><b><?=$ValidNom?>Nom</b></label>
                                 </div>
                                 <div class="input-field col l6 m6 s12">
-                                    <?=$ValidPrenom?>
                                     <input id="Prenom" type="text" class="validate" name="Prenom" size="50" value="<?=$ValPrenom?>">
-                                    <label for="Prenom"><b>Prénom</b></label>
+                                    <label for="Prenom"><b><?=$ValidPrenom?>Prénom</b></label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col l6 m6 s12">
-                                    <?=$ValidTel?>
                                     <input id="Tel" type="text" class="validate" name="Tel" size="50" value="<?=$ValTel?>">
-                                    <label for="Tel"><b>Tel</b></label>
+                                    <label for="Tel"><b><?=$ValidTel?>Tel</b></label>
                                 </div>
                                 <div class="input-field col l6 m6 s12">
-                                    <?=$ValidMail?>
                                     <input id="Mail" type="text" class="validate" name="Mail" size="50" value="<?=$ValMail?>">
-                                    <label for="Mail"><b>Mail</b></label>
+                                    <label for="Mail"><b><?=$ValidMail?>Mail</b></label>
                                 </div>
                             </div>
                             <div class="row">
@@ -281,9 +277,8 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                 {
                                 ?>
                                 <div class="input-field col l6 m6 s12">
-                                    <?=$ValidLogin?>
                                     <input id="Login" type="text" class="validate" name="Login" size="50" value="<?=$ValLogin?>">
-                                    <label for="Login"><b>Nouveau login</b></label>
+                                    <label for="Login"><b><?=$ValidLogin?>Nouveau login</b></label>
                                 </div>
                             </div>
                             <?php
@@ -300,7 +295,6 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                             ?>
                             <div class="row">
                                 <div class="input-field col l6 m6 s12">
-                                    <?=$ValidStatus?>
                                     <select name="StatusUser">
                                         <?php
                                         while ($ObjStatus = mysql_fetch_object ($ReqStatus))
@@ -314,10 +308,9 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                         }
                                         ?>
                                     </select>
-                                    <label><b>Statut</b></label>
+                                    <label><b><?=$ValidStatus?>Statut</b></label>
                                 </div>
                                 <div class="input-field col l6 m6 s12">
-                                    <?=$ValidFK_Entreprise?>
                                     <select name="FK_Entreprise">
                                         <option value="0"
                                             <?=$ValFK_Entreprise == 0 ? 'selected' : ''?>
@@ -335,7 +328,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                         }
                                         ?>
                                     </select>
-                                    <label>Pour un tuteur, préciser l'<b>entreprise</b></label>
+                                    <label><?=$ValidFK_Entreprise?>Pour un tuteur, préciser l'<b>entreprise</b></label>
                                 </div>
                                 <?php
                                 }
@@ -371,7 +364,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
     <input type="hidden" name="StepConsult" value="Valid" >
     <input type="hidden" name="PK_User" value="<?=$ValPK_User?>" >
     <input type="hidden" name="PassWord" value="<?=$ValPassWord?>" >
-    </form>
+                        </form>
                     </div>
 
 <!--  Scripts-->

@@ -5,23 +5,23 @@
 ?>
 
 <html>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title id="titre"></title>
-        <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
-        <!-- CSS  -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
 
-    <script language="javascript">
-        function popup(page)
-        {
-            window.open (page, "titre", "width=600, height=400, scrollbars=yes");
-        }
-    </script>
+      <title></title>
+      <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
+      <!-- CSS  -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
+
+      <script language="javascript">
+          function popup(page)
+          {
+              window.open (page, "titre", "width=600, height=400, scrollbars=yes");
+          }
+      </script>
 
 
     <SCRIPT LANGUAGE="JavaScript">
@@ -302,8 +302,6 @@ function check (field)
 <?php
     Footer();
 ?>
-
-        <!--  Scripts-->
         <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
         <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
         <script src="<?=$PATH_JS?>init.js"></script>
@@ -312,7 +310,14 @@ function check (field)
             // Récupère toutes les balises <h1>, ... <h6> de la page
             var titres = $(":header");
             // Garde uniquement le deuxième titre (car le premier est le "Bienvenue" du menu latéral)
-            var titre = titres[1].textContent;
+            var titre = titres[2].textContent;
+            console.log(titres);
+            console.log(titre[0]);
+            console.log(titre[1]);
+            console.log(titre[2]);
+            console.log(titre[3]);
+            console.log(titre[4]);
+            console.log(titre[5]);
             // Affecte ce titre à la balise <title> de la page
             document.getElementsByTagName("title")[0].innerHTML = titre;
         </script>
