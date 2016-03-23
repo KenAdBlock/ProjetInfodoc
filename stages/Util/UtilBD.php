@@ -11,7 +11,7 @@ require_once ($PATH_CONSTANTES.'CstGales.php');
 		{
 			try{
 
-				$DbLaporte = new PDO('mysql:host=localhost;dbname=laporte', "root", $PASSWDBD, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+				$DbLaporte = new PDO('mysql:host=localhost;dbname=laporte', "root", $GLOBALS['PASSWDBD'], array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 				return $DbLaporte;
 
 			}
@@ -26,7 +26,7 @@ require_once ($PATH_CONSTANTES.'CstGales.php');
 		{
 			try{
 
-				$DbStages = new PDO('mysql:host=localhost;dbname=stages', "root", $PASSWDBD, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+				$DbStages = new PDO('mysql:host=localhost;dbname=stages', "root", $GLOBALS['PASSWDBD'], array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 				return $DbStages;
 
 			}
