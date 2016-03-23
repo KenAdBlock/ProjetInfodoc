@@ -246,21 +246,21 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 
 </div>
 	<div class="row">
-	<div class="col s12 m6 l3">
-<button class="min-btn bleu1 white-text" type="button" onClick="this.value=check (this.form.elements['tabmail[]'])">Tout decocher</button>
-</div>
+	<div class="col s12 m6 l3"><p class="center">
+<button class="min-btn waves-effect waves-light bleu1 white-text" type="button" onClick="this.value=check (this.form.elements['tabmail[]'])">Tout decocher</button>
+</p><br></div>
 
-<div class="col s12 m6 l3">
-<button class="min-btn bleu1 white-text" type="submit">Envoyer</button>
-</div>
+<div class="col s12 m6 l3"><p class="center">
+<button class="min-btn waves-effect waves-light bleu1 white-text" type="submit">Envoyer</button>
+</p><br></div>
 
-       <div class="col s12 m6 l3">
-<button class="min-btn black white-text" type="button" onClick="document.location='?Trait=Mailing&SsStep=Init'">Retour aux listes</button>
-</div>
+       <div class="col s12 m6 l3"><p class="center">
+<button class="min-btn waves-effect waves-light black white-text" type="button" onClick="document.location='?Trait=Mailing&SsStep=Init'">Retour aux listes</button>
+</p><br></div>
 
-       <div class="col s12 m6 l3">
-<button class="min-btn black white-text" type="button" onClick="document.location='?Trait='">Abandonner</button>
-</div>
+       <div class="col s12 m6 l3"><p class="center">
+<button class="min-btn waves-effect waves-light black white-text" type="button" onClick="document.location='?Trait='">Abandonner</button>
+</p><br></div>
 
 </div>
 
@@ -272,7 +272,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										  case 'LstTuteursWithMails' :
                                                                            ?>
 <div class="row"><div class="col s12">
-<table class="highlight bordered centered grey lighten-3 small-text">
+<table class="highlight bordered centered grey lighten-4 small-text">
  <thead class="grey darken-1 white-text">
     <tr>
 	    <th colspan="2" style="text-align : left">&nbsp;</th>
@@ -313,14 +313,15 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 
 										  case 'LstSocsWithMails' :
                                                                            ?>
-<table cellpadding="3">
+<table class="highlight bordered centered grey lighten-4 small-text">
+ <thead class="grey darken-1 white-text">
     <tr>
-	    <th colspan="2" style="text-align : left">&nbsp;</th>
-	    <th style="text-align : left">Nom</th>
-	    <th style="text-align : left">Entreprise</th>
-	    <th style="text-align : left">mail</th>
+	    <th colspan="2" style="text-align : center">&nbsp;</th>
+	    <th style="text-align : center">Nom</th>
+	    <th style="text-align : center">Entreprise</th>
+	    <th style="text-align : center">Mail</th>
 	</tr>
-                                                                           <?php
+  </thead>                                                                         <?php
 										    $Cpt = 0;
 										    while ($ObjMails = mysql_fetch_object ($ReqMails))
 										    {
@@ -364,13 +365,14 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										  case 'ListeEtud1A'    :
 										  case 'ListeEtud2A'    :
                                                                            ?>
-<table cellpadding="3">
+<table class="highlight bordered centered grey lighten-4 small-text">
+ <thead class="grey darken-1 white-text">
     <tr>
-	    <th colspan="2" style="text-align : left">&nbsp;</th>
-	    <th style="text-align : left">Nom - Prénom</th>
-	    <th style="text-align : left">mail</th>
+	    <th colspan="2" style="text-align : center">&nbsp;</th>
+	    <th style="text-align : center">Nom - Prénom</th>
+	    <th style="text-align : center">Mail</th>
 	</tr>
-                                                                           <?php
+ </thead>                                                                          <?php
 										    $Cpt = 0;
 										    while ($ObjMails = mysql_fetch_object ($ReqMails))
 										    {
@@ -399,7 +401,8 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 
 										  case 'LstAllWithoutMails' :
                                                                            ?>
-<table cellpadding="3">
+<table class="highlight bordered centered grey lighten-4 small-text">
+ 
                                                                            <?php
 										    $Cpt = 0;
 										    while ($ObjMails = mysql_fetch_object ($ReqMails))
@@ -428,12 +431,13 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										    }
                                                                            ?>
 </table>
-<p>
-<br />&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" value="Retour aux listes" 
-       onClick="document.location='?Trait=Mailing&SsStep=Init'">&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" value="Abandonner" 
-       onClick="document.location=''">
+<br>
+<p class="center">
+
+<button type="button" class="waves-effect waves-light btn black white-text"
+       onClick="document.location='?Trait=Mailing&SsStep=Init'">Retour aux listes</button>
+<button type="button" class="waves-effect waves-light btn black white-text" 
+       onClick="document.location=''">Abandonner</button>
 </p>
                                                                            <?php
 
@@ -446,12 +450,13 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 <?=$Headers?>
 */
                                                                            ?>
-<p>
-<br />&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" value="Retour aux listes" 
-       onClick="document.location='?Trait=Mailing&SsStep=Init'">&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" value="Abandonner" 
-       onClick="document.location=''">
+<br>
+<p class="center">
+
+<button type="button" class="waves-effect waves-light btn black white-text"
+       onClick="document.location='?Trait=Mailing&SsStep=Init'">Retour aux listes</button>
+<button type="button" class="waves-effect waves-light btn black white-text" 
+       onClick="document.location=''">Abandonner</button>
 </p>
                                                                            <?php
 										}

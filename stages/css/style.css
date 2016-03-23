@@ -233,7 +233,7 @@ textarea.materialize-textarea {
   width: 100%;
   font-size: 1rem;
   margin: 0 0 15px 0;
-  padding: 0;
+  padding-left: 2px;
   box-shadow: none;
   box-sizing: content-box;
   transition: all .3s;
@@ -254,7 +254,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
   display: inline-block;
   height: 40px;
   line-height: 20px;
-
+  width: 100%;
   outline: 0;
   padding: 0 2rem;
   vertical-align: middle;
