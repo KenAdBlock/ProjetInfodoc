@@ -6,22 +6,21 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     define ('STATUS_ETUD1', 5);
     define ('STATUS_ETUD2', 6);
-    $ReqEtud = Query ("SELECT * FROM $NomTabUsers
+    $ReqEtud = $ConnectLaporte->query("SELECT * FROM $NomTabUsers
 			  	            WHERE FK_Statut = "
-							.($Trait == 'ListeEtud1A' ? STATUS_ETUD1 : STATUS_ETUD2)."
-						    ORDER BY Nom",
-	                   $ConnectLaporte);
+        .($Trait == 'ListeEtud1A' ? STATUS_ETUD1 : STATUS_ETUD2)."
+						    ORDER BY Nom");
 ?>
 <h1>Liste des étudiants de <?=$Trait == 'ListeEtud1A' ? 'première' : 'deuxième'?> année</h1>
 
 <table>
                                                                            <?php
-                                        while ($ObjEtud = mysql_fetch_object ($ReqEtud))
+                                        while ($ObjEtud = $ReqEtud->fetch())
 										{
 										                                   ?>
     <tr>
-	    <td><?=$ObjEtud->Nom?></td>
-	    <td><?=$ObjEtud->Prenom?></td>
+	    <td><?=$ObjEtud['Nom']?></td>
+	    <td><?=$ObjEtud['Prenom']?></td>
 	</tr>
                                                                            <?php
                                         }
