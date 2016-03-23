@@ -261,6 +261,7 @@ function Consult ($Login, $Libelle, $Status)
                 <a class="ashadow blue-text" href="<?=$URL_BackOffice?>">
                     BackOffice
                 </a>
+
 			</p>
                                                                            <?php
 			                            }

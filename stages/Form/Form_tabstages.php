@@ -814,7 +814,7 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
 
             <button class="waves-effect waves-light btn black white-text" type="reset">Reinitialiser</button>
 
-            <button class="waves-effect waves-light btn bleu2 white-text" type="submit">Valider</button>
+            <button class="waves-effect waves-light btn jaune white-text" type="submit">Valider</button>
         </p>
 
 <input type="hidden" name="StepStage" value="Valid" >

@@ -164,23 +164,21 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										if (! isset ($SsStep)) $SsStep = 'Init';
 
                                                                            ?>
-<h1><?=$TitreTraitement?></h1>
+<h4 class="center"><?=$TitreTraitement?></h4>
                                                                            <?php
 										if ($SsStep == 'Init')
 										{
                                                                            ?>
-<table cellpadding="3">
+
                                                                            <?php
                                             if (GetDroits ($Status, 'ListeNewInscripts'))
 			                                {
                                                                            ?>
-    <tr>
-	    <td>
-            <a href="<?=$URL_List.$NomTabMailsToSend?>">
+
+            <ol style="list-style-type:disc;"><li><span><a class="hover-bleu" href="<?=$URL_List.$NomTabMailsToSend?>">
                 Liste des mails à envoyer aux nouveaux inscrits
-			</a>
-        </td>
-	</tr>
+			</a></span></li></ol>
+        
                                                                            <?php
                                             }
                                                                            ?>
@@ -188,45 +186,36 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
                                             if (GetDroits ($Status, 'Mailing'))
 			                                {
                                                                            ?>
-    <tr><td style="text-align : left"><hr width="50%")</td></tr>
-    <tr>
-        <td><a href="?Trait=Mailing&SsStep=LstTuteursWithMails">
-            Liste des tuteurs d'entreprise ayant un mail</a>
-        </td>
-    </tr>
-    <tr>
-        <td><a href="?Trait=Mailing&SsStep=LstSocsWithMails">
-            Liste des entreprises sans tuteur ou avec tuteur sans mail, mais responsable ayant un mail</a>
-        </td>
-    </tr>
-    <tr>
-        <td><a href="?Trait=Mailing&SsStep=LstAllWithoutMails">
-            Liste des entreprises sans aucun contact par mail</a>
-        </td>
-    </tr>
-    <tr><td style="text-align : left"><hr width="50%")</td></tr>
-    <tr>
-        <td><a href="?Trait=Mailing&SsStep=LstEnseignants">
-            Liste des enseignants</a>
-        </td>
-    </tr>
-    <tr>
-        <td><a href="?Trait=Mailing&SsStep=LstEtudiants1A">
-            Liste des étudiants de 1<sup>ère</sup> année</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Liste des étudiants de 2<sup>ème</sup> année et de LP
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous">tous</a>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=AvecStage">avec stage</a>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=SansStage">sans stage</a>
-        </td>
-    </tr>
+    <hr width="100%">
+    	<ol style="list-style-type:disc;"><li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstTuteursWithMails">
+            Liste des tuteurs d'entreprise ayant un mail</a></span></li>
+        <li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstSocsWithMails">
+            Liste des entreprises sans tuteur ou avec tuteur sans mail, mais responsable ayant un mail</a></span></li>
+        <li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstAllWithoutMails">
+            Liste des entreprises sans aucun contact par mail</a></span></li></ol>
+
+        <hr width="100%">
+    	<ol style="list-style-type:disc;"><li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstEnseignants">
+            Liste des enseignants</a></span></li>
+        
+        <li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstEtudiants1A">
+            Liste des étudiants de 1<sup>ère</sup> année</a></span></li></ol>
+        <div class="row">
+        <div class="col s12 m6 l7">
+            <ol style="list-style-type:disc;"><li><span><b>Liste des étudiants de 2<sup>ème</sup> année et de LP</b></span></li></ol>
+            	</div>
+            	<div class="col s12 m2 l5 center">
+			<ul><li><a class="hover-bleu left" href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous">tous</a>
+			
+			<a class="hover-bleu center" href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=AvecStage">avec stage</a>
+			
+			<a class="hover-bleu right" href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=SansStage">sans stage</a></li></ul>
+			</div></div>
+        
                                                                            <?php
                                             }
                                                                            ?>
-</table>
+
                                                                            <?php
                                         } // fin du cas 'Init'
 
@@ -241,38 +230,40 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										  case 'ListeEtud2A' :
                                                                            ?>
 <form action="?Trait=Mailing&SsStep=SendMails" method="post">
-<table cellpadding="3">
-<tr>
-    <td style="text-align : left">
-	    <b>Sujet</b> : 
-        <input type="text" name="SujetDuMail" value="" width="100">
+<div class="row">
+	     <div class="input-field col s12">
+        <input id="sujet" type="text" name="SujetDuMail" value="" width="100">
+        <label for="sujet"><b>Sujet</b></label></div>
                                                                            <?php
 			                                 // if (1
                                                                            ?>
-    </td>
-</tr>
-<tr>
-    <td style="text-align : left">
-	<b>Texte</b><br />
-        <textarea name="TexteDuMail" rows="10" cols="80"><?=$ValTexteDuMail?></textarea>
-    </td>
-</tr>
-<tr>
-<td style="text-align : center"><br />&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" style="width : <?=$WidthButton?>px; background-color : #ffd7d7"
-       value="Tout decocher" 
-       onClick="this.value=check (this.form.elements['tabmail[]'])">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="submit" style="width : <?=$WidthButton?>px;"
-       value="Envoyer">&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" style="width : <?=$WidthButton?>px;"
-       value="Retour aux listes" 
-       onClick="document.location='?Trait=Mailing&SsStep=Init'">&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="button" style="width : <?=$WidthButton?>px;"
-       value="Abandonner" 
-       onClick="document.location='?Trait='">
-</td></tr>
-</table>
+    
+    	<div class="input-field col s12">
+    		<div class="bleu1-text"><b>Texte</b></div><br>
+          <textarea id="TexteDuMail" class="materialize-textarea" name="TexteDuMail" rows="10" cols="80"><?=$ValTexteDuMail?></textarea>
+          
+        </div>
+
+</div>
+	<div class="row">
+	<div class="col s12 m6 l3"><p>
+<button class="btn" type="button" style=" background-color : #ffd7d7" onClick="this.value=check (this.form.elements['tabmail[]'])">Tout decocher</button>
+</div>
+
+<div class="col s12 m6 l3">
+<button class="btn" type="submit">Envoyer</button>
+</div>
+
+       <div class="col s12 m6 l3">
+<button class="btn" type="button" onClick="document.location='?Trait=Mailing&SsStep=Init'">Retour aux listes</button>
+</div>
+
+       <div class="col s12 m6 l3">
+<button class="btn" type="button" onClick="document.location='?Trait='">Abandonner</button>
+</div>
+
+</div>
+
                                                                            <?php
                                         } // fin de la préparation du mail
 
@@ -280,14 +271,17 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										{
 										  case 'LstTuteursWithMails' :
                                                                            ?>
-<table cellpadding="3">
+<div class="row"><div class="col s12">
+<table class="highlight bordered centered grey lighten-3" style="font-size:1em;">
+ <thead class="grey darken-1 white-text">
     <tr>
 	    <th colspan="2" style="text-align : left">&nbsp;</th>
-	    <th style="text-align : left">Nom</th>
-	    <th style="text-align : left">Entreprise</th>
-	    <th style="text-align : left">mail</th>
+	    <th style="text-align : center">Nom</th>
+	    <th style="text-align : center">Entreprise</th>
+	    <th style="text-align : center">Mail</th>
 	</tr>
-                                                                           <?php
+   </thead>
+   <tbody>                                                               <?php
 										    $Cpt = 0;
 										    while ($ObjMails = mysql_fetch_object ($ReqMails))
 										    {
@@ -297,10 +291,11 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 		    <?=++$Cpt?>
 		</td>
 	    <td valign="top">
-		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails->Mail?>">
+		    <input class="filled-in" id="<?=$ObjMails->Nom?>" type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails->Mail?>">
+		<label for="<?=$ObjMails->Nom?>"></label> 
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->Nom?> <?=$ObjMails->Prenom?> 
+		    <?=$ObjMails->Nom?> <?=$ObjMails->Prenom?>
 		</td>
 	    <td valign="top">
 		    <?=$ObjMails->NomE?>
@@ -312,7 +307,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
                                                                            <?php
 										    }
                                                                            ?>
-</table>
+</tbody></table></div></div>
                                                                            <?php
 										    break;
 
@@ -355,9 +350,12 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 		    <?=$ObjMails->MailR?>
 		</td>
     </tr>
-                                                                           <?php
+                                                           <?php
 
-											  }
+											  } ?>
+</table>
+											  <?php 
+
 										    break;
 
 										  case 'LstEnseignants' :
