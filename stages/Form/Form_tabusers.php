@@ -198,7 +198,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                         {
                                                                            ?>
 
-<span class="card-title"><h4 class="center">Création d'un nouvel utilisateur :</h4></span>
+<span class="card-title"><h4 class="center">Création d'un nouvel utilisateur</h4></span>
                                                                            <?php
                                         }
 										                                   ?>

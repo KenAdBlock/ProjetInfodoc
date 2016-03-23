@@ -8,19 +8,20 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-        <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
-        <!-- CSS  -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
+      <title id="title"></title>
+      <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
+      <!-- CSS  -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
 
-    <script language="javascript">
-        function popup(page)
-        {
-            window.open (page, "titre", "width=600, height=400, scrollbars=yes");
-        }
-    </script>
+      <script language="javascript">
+          function popup(page)
+          {
+              window.open (page, "titre", "width=600, height=400, scrollbars=yes");
+          }
+      </script>
 
 
     <SCRIPT LANGUAGE="JavaScript">
@@ -301,8 +302,7 @@ function check (field)
 <?php
     Footer();
 ?>
-
-        <!--  Scripts-->
+        <script>document.getElementById('title').innerHTML = document.getElementsByTagName('h4')[0].innerText;</script>
         <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
         <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
         <script src="<?=$PATH_JS?>init.js"></script>
