@@ -113,10 +113,10 @@
 				<div class="col s12">
 					<div class="card grey lighten-4 z-depth-1">
 						<div class="card-content">
-							<span class="card-title"><h5 class="center">Changement de mot de passe :</h5></span>
+							<span class="card-title"><h5 class="center">Changement de mot de passe </h5></span>
 							<form method="POST">
 									<p>
-										<b>Attention :</b>
+										<b>Attention</b>
 									</p>
 	
 									<ul><li>le mot de passe doit comporter entre <b><?=MINLGPASSWD?></b>
