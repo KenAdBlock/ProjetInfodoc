@@ -305,21 +305,7 @@ function check (field)
         <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
         <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
         <script src="<?=$PATH_JS?>init.js"></script>
-        <!-- Script récupérant le titre de la page et le mettant dans la balise <title> -->
-        <script type="text/javascript">
-            // Récupère toutes les balises <h1>, ... <h6> de la page
-            var titres = $(":header");
-            // Garde uniquement le deuxième titre (car le premier est le "Bienvenue" du menu latéral)
-            var titre = titres[2].textContent;
-            console.log(titres);
-            console.log(titre[0]);
-            console.log(titre[1]);
-            console.log(titre[2]);
-            console.log(titre[3]);
-            console.log(titre[4]);
-            console.log(titre[5]);
-            // Affecte ce titre à la balise <title> de la page
-            document.getElementsByTagName("title")[0].innerHTML = titre;
-        </script>
+        <script src="<?=$PATH_JS?>titre.js"></script>
+        <script>titre();</script>
     </body>
 </html>

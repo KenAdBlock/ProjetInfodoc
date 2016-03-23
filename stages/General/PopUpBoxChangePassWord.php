@@ -10,7 +10,9 @@
     require_once ($PATH_UTIL.'UtilSession.php');
     require_once ($PATH_UTIL.'UtilBD.php');
     require_once ($PATH_UTIL.'UtilErr.php'); // ValidChampRempli(), ValidPassWord(), 
-    require_once ($PATH_COMMUNS.'IdentRoot.php');	
+    require_once ($PATH_COMMUNS.'IdentRoot.php');
+
+	$Title = "Changement de mot de passe";
 
     // Ouverture de la session
 	// =======================
