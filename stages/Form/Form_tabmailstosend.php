@@ -26,32 +26,19 @@ ini_set("sendmail_from", "darkweizer@gmail.com");
         $Obj = mysql_fetch_object ($ReqMail);
                                                                            ?>
 <form method="post">
+<div class="row">
 <table>
-    <tr>
-        <td style="text_align : right;" valign="top">
-            Destinataire : 
-        </td>
-        <td valign="top">
-		    <input type="text" name="Destinataire" value="<?=$Obj->Mail?>" size="60">
-		</td>
-    </tr>
-    <tr>
-        <td style="text_align : right;" valign="top">
-            Sujet : 
-        </td>
-        <td valign="top">
-		    <input type="text"  name="Sujet" value="Nouveaux login et mot de passe"
-			        size="60">
-		</td>
-    </tr>
-    <tr>
-        <td style="text_align : right;" valign="top">
-            Message : 
-        </td>
-		<td valign="top">
-            <textarea  cols="80" rows="17" name="Message">
-         <?=$Obj->Prenom?> <?=$Obj->Nom?>,
-
+    <div class="input-field col s12">
+        <input id="Destinataire" type="text" name="Destinataire" value="<?=$Obj->Mail?>" width="60">
+        <label for="Destinataire"><b>Destinataire</b></label>
+    </div>
+    <div class="input-field col s12">
+        <input id="Sujet" type="text" name="Sujet" value="Nouveaux login et mot de passe" width="60">
+        <label for="Sujet"><b>Sujet</b></label>
+    </div>
+    <div class="input-field col s12">
+        <div class="bleu1-text">Message</div><br>
+        <textarea id="Message" class="materialize-textarea" name="Message" rows="17" cols="80"><?=$Obj->Prenom?> <?=$Obj->Nom?>,
 J'ai le plaisir de vous informer que vous pourrez dorénavant vous connecter et enregistrer vos propositions de stage sur le site
 
 http://infodoc.iut.univ-aix.fr/stages
@@ -61,20 +48,23 @@ en utilisant l'identifiant et le mot de passe suivants :
 Identifiant  : <?=$Obj->PK_Login?>&nbsp;
 Mot de passe : <?=$Obj->PassWord?>&nbsp;
 
-
 <?=$NomResponsableStages?>&nbsp;
 Responsable des stages
 
 <?=$MailResponsableStages?>
-</textarea>
-		</td>
-    </tr> 
+
+        </textarea>
+
+    </div>
+
 </table>
-<input type="button" onClick="history.back()" value="Abandonner">
-&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="reset" value="Reinitaliser">
-<input type="submit" value="Envoyer">
+    <p class="center">
+        <button type="reset" class="waves-effect waves-light btn black white-text"  onClick="history.back()">Abandonner</button>
+        <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+        <button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
+    </p>
 <input type="hidden" name="StepSendMail" value="Valid">
+</div>
 </form>
                                                                            <?php
     }
