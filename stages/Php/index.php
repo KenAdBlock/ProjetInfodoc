@@ -40,5 +40,5 @@
         <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
         <script src="<?=$PATH_JS?>init.js"></script>
 
-    </body>
+	</body>
 </html>

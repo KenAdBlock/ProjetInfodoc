@@ -75,180 +75,179 @@ function Consult ($Login, $Libelle, $Status)
 
             <hr>
             <p class="center">
-
-
-                                                                           <?php
-                                        if (GetDroits ($Status, 'ChangerPassWord'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxChangePassWord.php')">
-			    Changer de mot de passe</a>
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'NewUser'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabUsers?>">
-				Nouvel utilisateur</a>
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'ListeUsers'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabUsers?>">
-                Liste des utilisateurs</a>
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'NewStage'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabStages?>">
-			    Nouveau stage
-			</a> 
-                                                                           <?php
-/** /										}
-                                        if (GetDroits ($Status, 'ListeForum'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="../forum2014.html" target="principal">
-		        Liste des entreprises présentes au Forum des stages
-			</a> 
-                                                                           <?php
-/**/										}
-                                        if (GetDroits ($Status, 'ListeFichesStages'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabStages?>">
-		        Liste des fiches de stage
-			</a>
-<!--			--><?php //var_dump($URL_List.$NomTabStages);?> 
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'ListeFichesStagesEntreprise'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabStages?>">
-		        Vos fiches de stage
-			</a> 
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'RechercheStage'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=search">
-                Rechercher un Stage</a>
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'NewEntreprise'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabEntreprises?>">
-                Nouvelle entreprise
-		    </a> 
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'ModifEntreprise'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_AccesRapideSoc?>">
-                Modifier une entreprise
-		    </a> 
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'ListeDetailsEntreprises'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeDetailsEntreprises">
-			    Liste détaillée des entreprises
-		    </a> 
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'ListeEntreprises'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabEntreprises?>">
-			    Liste des entreprises
-		    </a> 
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'ModifInfosUserConnecte'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ModifInfosUserConnecte">
-                Vos Coordonnées
-			</a> 
-                                                                           <?php
-										}
-                                        if (GetDroits ($Status, 'CoordonneesEntreprise'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=CoordonneesEntreprise">
-                Coordonnées de l'entreprise
-			</a> 
-                                                                           <?php
-			                            }
-                                        if (GetDroits ($Status, 'ListeNewInscripts'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$URL_List.$NomTabNewInscripts?>">
-                Liste nouveaux inscrits
-			</a> 
-                                                                           <?php
-			                            }
-                                        if (GetDroits ($Status, 'ListeEtudAvecStage'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeEtudAvecStage">
-                Liste des étudiants avec stage
-			</a> 
-                                                                           <?php
-			                            }
-                                        if (GetDroits ($Status, 'ListeEtud1A'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants1A">
-                Mailing aux 1<sup>ère</sup> année
-			</a> 
-                                                                           <?php
-			                            }
-                                        if (GetDroits ($Status, 'ListeEtud2A'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous">
-                Mailing aux 2<sup>ème</sup> année
-			</a> 
-                                                                           <?php
-			                            }
-                                        if (GetDroits ($Status, 'Mailing'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing">
-                Mailing
-			</a> 
-                                                                           <?php
-			                            }
-/*
-                                        if (GetDroits ($Status, 'AffectStageEtud'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=AffectStageEtud"
-			                                             target="principal">
-                Affectation d'un stage à un étudiant
-			</a>
-                                                                           <?php
- 			                            }
-*/
-                                        if (GetDroits ($Status, 'Etiquettes'))
-			                            {
-										                                   ?>
-            <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Etiquettes">
-                Étiquettes
-			</a>
-                                                                           <?php
- 			                            }
-                                        if (GetDroits ($Status, 'List_TA'))
-			                            {
-										                                   ?>
+                                                                               <?php
+                                            if (GetDroits ($Status, 'ChangerPassWord'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="javascript:popup ('<?=$PATH_GENERAL?>PopUpBoxChangePassWord.php')">
+                    Changer de mot de passe</a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'NewUser'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabUsers?>">
+                    Nouvel utilisateur</a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'ListeUsers'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$URL_List.$NomTabUsers?>">
+                    Liste des utilisateurs</a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'NewStage'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabStages?>">
+                    Nouveau stage
+                </a>
+                                                                               <?php
+    /** /										}
+                                            if (GetDroits ($Status, 'ListeForum'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="../forum2014.html" target="principal">
+                    Liste des entreprises présentes au Forum des stages
+                </a>
+                                                                               <?php
+    /**/										}
+                                            if (GetDroits ($Status, 'ListeFichesStages'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$URL_List.$NomTabStages?>">
+                    Liste des fiches de stage
+                </a>
+    <!--			--><?php //var_dump($URL_List.$NomTabStages);?>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'ListeFichesStagesEntreprise'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$URL_List.$NomTabStages?>">
+                    Vos fiches de stage
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'RechercheStage'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=search">
+                    Rechercher un Stage</a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'NewEntreprise'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$URL_Form.$NomTabEntreprises?>">
+                    Nouvelle entreprise
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'ModifEntreprise'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$URL_AccesRapideSoc?>">
+                    Modifier une entreprise
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'ListeDetailsEntreprises'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeDetailsEntreprises">
+                    Liste détaillée des entreprises
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'ListeEntreprises'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$URL_List.$NomTabEntreprises?>">
+                    Liste des entreprises
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'ModifInfosUserConnecte'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ModifInfosUserConnecte">
+                    Vos Coordonnées
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'CoordonneesEntreprise'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=CoordonneesEntreprise">
+                    Coordonnées de l'entreprise
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'ListeNewInscripts'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$URL_List.$NomTabNewInscripts?>">
+                    Liste nouveaux inscrits
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'ListeEtudAvecStage'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=ListeEtudAvecStage">
+                    Liste des étudiants avec stage
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'ListeEtud1A'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants1A">
+                    Mailing aux 1<sup>ère</sup> année
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'ListeEtud2A'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous">
+                    Mailing aux 2<sup>ème</sup> année
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'Mailing'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Mailing">
+                    Mailing
+                </a>
+                                                                               <?php
+                                            }
+    /*
+                                            if (GetDroits ($Status, 'AffectStageEtud'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=AffectStageEtud"
+                                                             target="principal">
+                    Affectation d'un stage à un étudiant
+                </a>
+                                                                               <?php
+                                            }
+    */
+                                            if (GetDroits ($Status, 'Etiquettes'))
+                                            {
+                                                                               ?>
+                <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=Etiquettes">
+                    Étiquettes
+                </a>
+                                                                               <?php
+                                            }
+                                            if (GetDroits ($Status, 'List_TA'))
+                                            {
+                                                                               ?>
+            </p>
             <hr width="100%" />
             <p class="center">
                 <a class="ashadow blue-text" href="<?=$PATH_BACKOFFICE?>BackOffice.php?Trait=List_TA">
