@@ -40,8 +40,11 @@
       gutter: 0, // Spacing from edge
       belowOrigin: false, // Displays dropdown below the button
       alignment: 'left' // Displays dropdown with edge aligned to the left of button
-    }
-  );
+    });
+
+    $('#sujet').val('New Text');
+    $('#sujet').trigger('autoresize');
+        
     
   }); // end of document ready
 })(jQuery); // end of jQuery name space

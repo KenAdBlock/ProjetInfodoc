@@ -7,33 +7,27 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	            .$NomTabEntreprises;
 
 ?>
-<h1>Recherche rapide d'entreprise</h1>
+<h4 class="center">Recherche rapide d'entreprise</h4>
+<div class="row">
 <form action="<?=$URL_Form?>" method="post">
-<table align="center" border="1 px" cellpadding="5">
-    <tr>
-        <td>
-            <select name="IdentPK" size="20">
-                                                                           <?php
-                                        while ($ObjSoc = mysql_fetch_object ($ReqSocs))
-                                        {
-                                                                           ?>
+    <div class="input-field col s12">
+        <select name="IdentPK" size="20">
+            <?php
+            while ($ObjSoc = mysql_fetch_object ($ReqSocs))
+            {
+                ?>
                 <option value="<?=$ObjSoc->PK_Entreprise?>"><?=stripslashes (trim ($ObjSoc->NomE))?></option>
-                                                                           <?php
-                                        }
-                                                                           ?>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align : center">
-                <input type="button" value="Retour"
-                       onClick="history.back()">&nbsp; &nbsp; &nbsp; 
-                <input type="submit" value="Modifier">
-        </td>
-    </tr>
-</table>
+                <?php
+            }
+            ?>
+        </select>
+    </div>
+    <p class="center">
+        <button type="button" class="waves-effect waves-light btn black white-text"  onClick="history.back()">Retour</button>
+        <button type="submit" class="waves-effect waves-light btn jaune white-text">Modifier</button>
+    </p>
 </form>
-
+</div>
 <?php
 }
 else

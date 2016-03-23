@@ -287,12 +287,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     }
     $Titre = 'Validation d\'une inscription';
 										                                   ?>
-<h1>
+<h4 class="center">
     <?=$Titre?>
-</h1>
+</h4>
  
-<p style="text-align : center; font-size : 11px; font-style : italic;">
-Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
+<p class="center">
+<i>Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies</i>
 </p>
 										                                   <?php
                                         if ($CodErrVide || $CodErrInval)
@@ -304,253 +304,205 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
 										                                   <?php
                                         }
 										                                   ?>
-<form method="post"> 
-<table align="center" border="0" cellpadding="2" cellspacing="0"> 
-     <tr>
-        <td valign="top"><?=$ValidCiviliteTuteur?></td>
-        <td style="text-align : right" valign="top">
-		    <b>Civilité : </b>
-		</td>
-		<td>
-		    M<input type="radio" name="CiviliteTuteur" value="M" checked="checked">
-		    Mme<input type="radio" name="CiviliteTuteur" value="Mme" <?=$ValCiviliteTuteur == 'Mme' ? 'checked' : ''?>>
-		    Mlle<input type="radio" name="CiviliteTuteur" value="Mlle" <?=$ValCiviliteTuteur == 'Mlle' ? 'checked' : ''?>>
-		</td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidNomTuteur?></td>
-        <td style="text-align : right" valign="top"><b>Nom</b></td>
-        <td>
-            <input type="text" name="NomTuteur" size="50" value="<?=$ValNomTuteur?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidPrenomTuteur?></td>
-        <td style="text-align : right" valign="top"><b>Prénom</b></td>
-        <td>
-            <input type="text" name="PrenomTuteur" size="50" value="<?=$ValPrenomTuteur?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidTelTuteur?></td>
-        <td style="text-align : right" valign="top"><b>Tel</b></td>
-        <td>
-            <input type="text" name="TelTuteur" size="50" value="<?=$ValTelTuteur?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidMailTuteur?></td>
-        <td style="text-align : right" valign="top"><b>Mail</b></td>
-        <td>
-            <input type="text" name="MailTuteur" size="50" value="<?=$ValMailTuteur?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidFaxTuteur?></td>
-        <td style="text-align : right" valign="top">Fax</td>
-        <td>
-            <input type="text" name="FaxTuteur" size="50" value="<?=$ValFaxTuteur?>">
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><?=$ValidLoginTuteur?></td>
-        <td style="text-align : right; color : red" valign="top">
-		    <b>Nouveau login</b>
-		</td>
-        <td>
-            <input type="text" name="LoginTuteur" size="50" value="<?=$ValLoginTuteur?>">
-        </td>
-    </tr>
-	<tr>
-        <td colspan="4" align="center"><hr></td>
-    </tr>
-	<tr>
-        <td valign="top">&nbsp;</td>
-        <td style="text-align : right" valign="top"><b>Entreprise</b></td>
-        <td colspan="4" align="left">
-		    <select name="FK_Entreprise">
+<div class="row">
+<form method="post" role="form" class="col s12">
+<table align="center" border="0" cellpadding="2" cellspacing="0">
+
+     <div class="row">
+         <div class="input-field col l1 m1 s1">
+              <label><b><?=$ValidCiviliteTuteur?>Civilité</b></label>
+         </div>
+         <div class="col l6 s12 m12">
+            <div class="input-field col l4 m4 s4">
+                <p>
+                    <input name="CiviliteTuteur" type="radio" id="CiviliteM" value="M" checked="checked" />
+                     <label for="CiviliteM">M</label>
+                </p>
+            </div>
+            <div class="input-field col l4 m4 s4">
+                 <p>
+                    <input name="CiviliteTuteur" type="radio" id="CiviliteMme" value="Mme" <?=$ValCiviliteTuteur == 'Mme' ? 'checked' : ''?>/>
+                     <label for="CiviliteMme">Mme</label>
+                 </p>
+            </div>
+            <div class="input-field col l4 m4 s4">
+                <p>
+                    <input name="CiviliteTuteur" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCiviliteTuteur == 'Mlle' ? 'checked' : ''?>  />
+                    <label for="CiviliteMlle">Mlle</label>
+                </p>
+            </div>
+         </div>
+     </div>
+
+    <div class="row">
+        <div class="input-field col l6 m6 s12">
+            <input name="NomTuteur" size="50" value="<?=$ValNomTuteur?>" id="NomTuteur" type="text" class="validate">
+            <label for="NomTuteur"><b><?=$ValidNomTuteur?>Nom :</b></label>
+        </div>
+        <div class="input-field col l6 m6 s12">
+            <input name="PrenomTuteur" size="50" value="<?=$ValPrenomTuteur?>" id="PrenomTuteur" type="text" class="validate">
+            <label for="PrenomTuteur"><b><?=$ValidPrenomTuteur?>Prénom : </b></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col l6 m6 s12">
+            <input name="TelTuteur" size="50" id="TelTuteur" type="text" class="validate" value="<?=$ValTelTuteur?>">
+            <label for="TelTuteur"><b><?=$ValidTelTuteur?>Tel :</b></label>
+        </div>
+        <div class="input-field col l6 m6 s12">
+            <input name="MailTuteur" size="50" id="MailTuteur" type="text" class="validate" value="<?=$ValMailTuteur?>">
+            <label for="MailTuteur"><b><?=$ValidMailTuteur?>Mail :</b></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col l6 m6 s12">
+            <input name="FaxTuteur" size="50"  id="FaxTuteur" type="text" class="validate" value="<?=$ValFaxTuteur?>">
+            <label for="FaxTuteur"><?=$ValidFaxTuteur?>Fax :</label>
+        </div>
+        <div class="input-field col l6 m6 s12">
+            <input id="LoginTuteur" type="text" class="validate" name="LoginTuteur" size="50" value="<?=$ValLoginTuteur?>">
+            <label for="LoginTuteur"><b><?=$ValidLoginTuteur?>Nouveau login :</b></label>
+        </div>
+    </div>
+
+    <hr><br>
+
+    <div class="row">
+        <div class="input-field col s12">
+            <select name="FK_Entreprise">
                 <option value="0">----------------</option>
-		                                                                   <?php
-		                                    while ($Obj = 
-											     mysql_fetch_object ($ReqEntreprises))
-										    {
-		                                                                   ?>
-                <option value="<?=$Obj->PK_Entreprise?>" 
-				        <?=$Obj->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
-				    <?=$Obj->NomE?>
-				</option>
-		                                                                   <?php
-		                                    }
-		                                                                   ?>
+                <?php
+                while ($Obj =  mysql_fetch_object ($ReqEntreprises))
+                {
+                    ?>
+                <option value="<?=$Obj->PK_Entreprise?>"
+                    <?=$Obj->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
+                    <?=$Obj->NomE?>
+                </option>
+                <?php
+                }
+                ?>
             </select>
-        </td>
-    </tr>
-	<tr>
-	    <td colspan="3">
-            <p style="text-align : center; font-size : 11px; font-style : italic;">
-		    Si aucune entreprise n'est sélectionnée dans cette liste,
-			le cadre ci-dessous doit être complété.
-			<br />&nbsp;
+            <label><b>Entreprise :</b></label>
+        </div>
+    </div>
+	<div class="row">
+            <p class="center">
+		    <i>Si aucune entreprise n'est sélectionnée dans cette liste,le cadre ci-dessous doit être complété.</i>
 			</p>
-		</td>
-	</tr>
-	<tr>
-	    <td colspan="3" style="border : 1px solid Blue;">
-		    <table width="100%" >
-                <tr>
-				    <td colspan="3" style="text-align : center">
-					    Entreprise
-					</td>
-				</tr>
-				<tr>
-                    <td valign="top"><?=$ValidNomE?></td>
-                    <td style="text-align : right" valign="top"><b>Raison sociale</b></td>
-                    <td>
-                        <input type="text" name="NomE" size="50" value="<?=$ValNomE?>">
-                    </td>
-                </tr>
-                <tr>
-        			<td colspan="3" style="text-align : center; font-size : 11px;
-		  			                font-style : italic;">
-            			Pour les grandes entreprises, indiquer le service
-						<hr>
-        			</td>
-    			</tr>
-                <tr>
-                    <td valign="top"><?=$ValidAdr1?></td>
-                    <td style="text-align : right" valign="top"><b>Adresse</b></td>
-                    <td>
-                        <input type="text" name="Adr1" size="50" value="<?=$ValAdr1?>">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top"><?=$ValidAdr2?></td>
-                    <td style="text-align : right" valign="top">Adresse 2</td>
-                    <td>
-                        <input type="text" name="Adr2" size="50" value="<?=$ValAdr2?>">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top"><?=$ValidCP?></td>
-                    <td style="text-align : right" valign="top"><b>Code postal</b></td>
-                    <td>
-                        <input type="text" name="CP" size="50" value="<?=$ValCP?>">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top"><?=$ValidVille?></td>
-                    <td style="text-align : right" valign="top"><b>Ville</b></td>
-                    <td>
-                        <input type="text" name="Ville" size="50" value="<?=$ValVille?>">
-                    </td>
-                </tr>
-                <tr>
-				    <td colspan="3" style="text-align : center">
-					    Responsable administratif
-						<input type="checkbox" name="Is_IdemTuteur" value="1"
-						       <?=$ValIs_IdemTuteur == 1 ? 'checked' : ''?>>
-						    idem ci-dessus, sinon :
-					</td>
-				</tr>
-     			<tr>
-     			   <td valign="top"><?=$ValidCiviliteRespAdmin?></td>
-     			   <td style="text-align : right" valign="top">
-					    <b>Civilité : </b>
-					</td>
-					<td>
-					    M<input type="radio"    name="CiviliteRespAdmin" value="M" checked="checked">
-					    Mme<input type="radio"  name="CiviliteRespAdmin" value="Mme" <?=$ValCiviliteRespAdmin == 'Mme' ? 'checked' : ''?>>
-		   			    Mlle<input type="radio" name="CiviliteRespAdmin" value="Mlle" <?=$ValCiviliteRespAdmin == 'Mlle' ? 'checked' : ''?>>
-					</td>
-  			    </tr>
-                <tr>
-                    <td valign="top"><?=$ValidNomRespAdmin?></td>
-                    <td style="text-align : right" valign="top">
-					    <b>Nom</b>
-					</td>
-                    <td nowrap>
-                        <input type="text" name="NomRespAdmin" 
-						       size="50" value="<?=$ValNomRespAdmin?>">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top"><?=$ValidPrenomRespAdmin?></td>
-                    <td style="text-align : right" valign="top">
-					    <b>Prénom</b></td>
-                    <td>
-                        <input type="text" name="PrenomRespAdmin" size="50" 
-                               value="<?=$ValPrenomRespAdmin?>">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top"><?=$ValidTelRespAdmin?></td>
-                    <td style="text-align : right" valign="top">
-					    <b>Tel</b></td>
-                    <td>
-                        <input type="text" name="TelRespAdmin" size="50"
-						       value="<?=$ValTelRespAdmin?>">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top"><?=$ValidMailRespAdmin?></td>
-                    <td style="text-align : right" valign="top">
-					    Mail</td>
-                    <td>
-                        <input type="text" name="MailRespAdmin" size="50"
-						       value="<?=$ValMailRespAdmin?>">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top"><?=$ValidFaxRespAdmin?></td>
-                    <td style="text-align : right" valign="top">Fax</td>
-                    <td>
-                        <input type="text" name="FaxRespAdmin" size="50"
-						       value="<?=$ValFaxRespAdmin?>">
-                    </td>
-                </tr>
-	        </table>
-		</td>
-	</tr>
+    </div>
+
+
+<table class="cadre"><tr><td>
+                <h5 class="center">Entreprise</h5>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="NomE" size="50" value="<?=$ValNomE?>" id="NomE" type="text" class="validate">
+                        <label for="NomE"><b><?=$ValidNomE?>Raison sociale</b></label>
+                    </div>
+                </div>
+                    <p><i>Pour les grandes entreprises, indiquer le service</i></p>
+                    <hr>
+                <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                        <input name="Adr1" size="50" value="<?=$ValAdr1?>" id="Adr1" type="text" class="validate">
+                        <label for="Adr1"><b><?=$ValidAdr1?>Adresse</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input name="Adr2" size="50" value="<?=$ValAdr2?>" id="Adr2" type="text" class="validate">
+                        <label for="Adr2">Adresse 2</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                        <input name="CP" size="50" value="<?=$ValCP?>" id="CP" type="text" class="validate">
+                        <label for="CP"><b><?=$ValidCP?>Code postal</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input name="Ville" size="50" value="<?=$ValVille?>" id="Ville" type="text" class="validate">
+                        <label for="Ville"><b><?=$ValidVille?>Ville</b></label>
+                    </div>
+                </div>
+                <p>
+                    <input name="Is_IdemTuteur" value="1"
+                        <?=$ValIs_IdemTuteur == 1 ? 'checked' : ''?> type="checkbox" class="filled-in" id="Is_IdemTuteur"/>
+                    <label for="Is_IdemTuteur">Responsable administratif</label><br>
+                    idem ci-dessus, sinon :
+                </p>
+                <div class="row">
+                    <div class="input-field col l1 m1 s1">
+                        <label><b><?=$ValidCiviliteRespAdmin?>Civilité</b></label>
+                    </div>
+                    <div class="col l6 s12 m12">
+                        <div class="input-field col l4 m4 s4">
+                            <p><input name="CiviliteRespAdmin" type="radio" id="CiviliteM" value="M"  <?=$ValCiviliteRespAdmin == 'M' ? 'checked' : ''?> />
+                               <label for="CiviliteM">M</label></p>
+                        </div>
+                        <div class="input-field col l4 m4 s4">
+                            <p><input name="CiviliteRespAdmin" type="radio" id="CiviliteMme" value="Mme" <?=$ValCiviliteRespAdmin == 'Mme' ? 'checked' : ''?>/>
+                               <label for="CiviliteMme">Mme</label></p>
+                        </div>
+                        <div class="input-field col l4 m4 s4">
+                            <p><input name="CiviliteRespAdmin" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCiviliteRespAdmin == 'Mlle' ? 'checked' : ''?>  />
+                               <label for="CiviliteMlle">Mlle</label></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                        <input name="NomRespAdmin" size="50" value="<?=$ValNomRespAdmin?>" id="NomRespAdmin" type="text" class="validate">
+                        <label for="NomRespAdmin"><b><?=$ValidNomRespAdmin?>Nom </b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input name="PrenomRespAdmin" size="50" value="<?=$ValPrenomRespAdmin?>" id="PrenomRespAdmin" type="text" class="validate">
+                        <label for="PrenomRespAdmin"><b><?=$ValidPrenomRespAdmin?>Prénom </b></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col l6 m6 s12">
+                        <input name="TelRespAdmin" size="50" value="<?=$ValTelRespAdmin?>" id="TelRespAdmin" type="text" class="validate">
+                        <label for="TelRespAdmin"><b><?=$ValidTelRespAdmin?>Tel</b></label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input name="MailRespAdmin" size="50" value="<?=$ValMailRespAdmin?>" id="MailRespAdmin" type="email" class="validate">
+                        <label for="MailRespAdmin">Mail</label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input name="FaxRespAdmin" size="50" value="<?=$ValFaxRespAdmin?>" id="FaxRespAdmin" type="text" class="validate">
+                        <label for="FaxRespAdmin">Fax</label>
+                    </div>
+                </div>
+                </td></tr></table>
+                <br>
                                                                            <?php
                                         if (count ($CodErrInval))
 										{
                                                                            ?>
-	<tr>			
-        <td colspan="4" style="text-align : center"><br /><hr></td>
-    </tr>
+                <hr>
                                                                            <?php
                                             for ($i = 0; $i < count ($CodErrInval); ++$i)
 										    {
                                                                            ?>
-	<tr>			
-        <td colspan="4" style="text-align : center; color : red">
-		    <?=$MsgErr [$CodErrInval [$i]]?><br />
-        </td>
-    </tr>
-                                                                           <?php
+            <div class="row">
+		            <?=$MsgErr [$CodErrInval [$i]]?><br />
+            </div>
+                                                <?php
                                             }
                                         }
                                                                            ?>
-	<tr>			
-        <td colspan="4" align="center"><br /><hr></td>
-    </tr>
-    <tr>
-        <td colspan="3" style="text-align : center">
-		    <input type="button" 
-		           value="Abandonner"
-		           onClick="history.back()">
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="reset" value="Reinitialiser">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="submit" value="Valider">
-        </td>
-    </tr>
-</table>
+                <hr>
+                <br>
+
+        <p class="center">
+            <button type="reset" class="waves-effect waves-light btn black white-text"  onClick="history.back()">Abandonner</button>
+            <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+            <button type="submit" class="waves-effect waves-light btn jaune white-text">Valider</button>
+        </p>
+
 <input type="hidden" name="StepNewInscript" value="Valid">
 
 </form>
-                                                                           <?php
+</div>                                                                   <?php
 }
 else
 {

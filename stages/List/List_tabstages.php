@@ -107,7 +107,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                                           ?>
 
 <table  class="highlight bordered centered grey lighten-5">
-  <thead class="grey darken-2 white-text">
+  <thead class="grey white-text">
 
                   <tr>
                         <th>&nbsp;</th>
