@@ -175,9 +175,9 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 			                                {
                                                                            ?>
 
-            <ol style="list-style-type:disc;"><li><span><a class="hover-bleu" href="<?=$URL_List.$NomTabMailsToSend?>">
+            <ul><li><span><a class="hover-bleu" href="<?=$URL_List.$NomTabMailsToSend?>">
                 Liste des mails à envoyer aux nouveaux inscrits
-			</a></span></li></ol>
+			</a></span></li></ul>
         
                                                                            <?php
                                             }
@@ -187,22 +187,22 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 			                                {
                                                                            ?>
     <hr width="100%">
-    	<ol style="list-style-type:disc;"><li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstTuteursWithMails">
+    	<ul><li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstTuteursWithMails">
             Liste des tuteurs d'entreprise ayant un mail</a></span></li>
         <li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstSocsWithMails">
             Liste des entreprises sans tuteur ou avec tuteur sans mail, mais responsable ayant un mail</a></span></li>
         <li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstAllWithoutMails">
-            Liste des entreprises sans aucun contact par mail</a></span></li></ol>
+            Liste des entreprises sans aucun contact par mail</a></span></li></ul>
 
         <hr width="100%">
-    	<ol style="list-style-type:disc;"><li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstEnseignants">
+    	<ul><li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstEnseignants">
             Liste des enseignants</a></span></li>
         
         <li><span><a class="hover-bleu" href="?Trait=Mailing&SsStep=LstEtudiants1A">
-            Liste des étudiants de 1<sup>ère</sup> année</a></span></li></ol>
+            Liste des étudiants de 1<sup>ère</sup> année</a></span></li></ul>
         <div class="row">
-        <div class="col s12 m6 l7">
-            <ol style="list-style-type:disc;"><li><span><b>Liste des étudiants de 2<sup>ème</sup> année et de LP</b></span></li></ol>
+        <div class="col s12 m6 l6">
+            <ul><li><span><b>Liste des étudiants de 2<sup>ème</sup> année et de LP</b></span></li></ul>
             	</div>
             	<div class="col s12 m2 l5 center">
 			<ul><li><a class="hover-bleu left" href="?Trait=Mailing&SsStep=LstEtudiants2A&Sel2A=Tous">tous</a>
@@ -246,20 +246,20 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 
 </div>
 	<div class="row">
-	<div class="col s12 m6 l3"><p>
-<button class="btn" type="button" style=" background-color : #ffd7d7" onClick="this.value=check (this.form.elements['tabmail[]'])">Tout decocher</button>
+	<div class="col s12 m6 l3">
+<button class="min-btn bleu1 white-text" type="button" onClick="this.value=check (this.form.elements['tabmail[]'])">Tout decocher</button>
 </div>
 
 <div class="col s12 m6 l3">
-<button class="btn" type="submit">Envoyer</button>
+<button class="min-btn bleu1 white-text" type="submit">Envoyer</button>
 </div>
 
        <div class="col s12 m6 l3">
-<button class="btn" type="button" onClick="document.location='?Trait=Mailing&SsStep=Init'">Retour aux listes</button>
+<button class="min-btn black white-text" type="button" onClick="document.location='?Trait=Mailing&SsStep=Init'">Retour aux listes</button>
 </div>
 
        <div class="col s12 m6 l3">
-<button class="btn" type="button" onClick="document.location='?Trait='">Abandonner</button>
+<button class="min-btn black white-text" type="button" onClick="document.location='?Trait='">Abandonner</button>
 </div>
 
 </div>
@@ -272,7 +272,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										  case 'LstTuteursWithMails' :
                                                                            ?>
 <div class="row"><div class="col s12">
-<table class="highlight bordered centered grey lighten-3" style="font-size:1em;">
+<table class="highlight bordered centered grey lighten-3 small-text">
  <thead class="grey darken-1 white-text">
     <tr>
 	    <th colspan="2" style="text-align : left">&nbsp;</th>

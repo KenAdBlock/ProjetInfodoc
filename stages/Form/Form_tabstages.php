@@ -386,7 +386,7 @@ alert('<?php echo 'Oui ? '.$ValLogicielsSpecOuiNon.' '.ProtectApos ($ValLogiciel
                                             else
                                             {
                                                                            ?>
-<h1>Modification de la fiche de stage <?=$IdentPK?></h1>
+<span class="card-title"><h4 class="center">Modification de la fiche de stage <?=$IdentPK?></h4></span>
                                                                            <?php
 	                                        }
                                                                            ?>
@@ -811,10 +811,8 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
        <p class="center">
             <button class="waves-effect waves-light btn black white-text" type="button" 
                     onClick="history.go (-1)">Abandonner</button>
-
             <button class="waves-effect waves-light btn black white-text" type="reset">Reinitialiser</button>
-
-            <button class="waves-effect waves-light btn jaune white-text" type="submit">Valider</button>
+            <button class="waves-effect waves-light btn bleu1 white-text" type="submit">Valider</button>
         </p>
 
 <input type="hidden" name="StepStage" value="Valid" >

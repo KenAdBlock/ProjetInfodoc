@@ -28,32 +28,28 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 ?>
 
 	<br />
-	<h2 style="text-align : center"><?=$ValNomE?></h2>
-	<table align="center" valign="center">
-		<colgroup>
-			<col width = "210">
-			<col width = "450">
-		</colgroup>
+	<h4 class="center"><?=$ValNomE?></h4>
+	<table class="bordered striped">
+		<tbody>
 		<tr>
-			<td><i>Adresse :</i></td>
-			<td><?=$ValAdr1?>	</td>
+			<td width="30%"><i>Adresse :</i></td>
+			<td><?=$ValAdr1?></td>
 		</tr>
 <?php
 	if ($ValAdr2) 
 	{ 
 ?> 
 		<tr>
-			<td>&nbsp;       </td>
+			<td>&nbsp;</td>
 			<td><?=$ValAdr2?></td>
 		</tr>
 <?php
 	} 
 ?> 
 		<tr>
-			<td>&nbsp;                    </td>
+			<td>&nbsp;</td>
 			<td><?=$ValCP?> <?=$ValVille?></td>
 		</tr>
-		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
 			<td>
 				<i>Responsable :</i>
@@ -66,7 +62,6 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	if ($ValMailRespAdmin) 
 	{ 
 ?> 
-		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
 			<td><i>Email :</i></td>
 <?php
@@ -81,7 +76,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		{
 ?> 
 			<td><?=$ValMailRespAdmin?></td>
-		</tr>
+
 <?php
 		}
 	}
@@ -106,7 +101,6 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	if ($ValPresentEntreprise != '') 
 	{ 
 ?>
-		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
 			<td valign="top">
 				<i>Présentation de <nobr>l'entreprise :</nobr></i>
@@ -126,7 +120,6 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	if ($ValSiteEntreprise != '')  
 	{ 
 ?>
-		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr>
 			<td valign="top">
 				<i>Site de <nobr>l'entreprise :</nobr></i>
@@ -140,33 +133,22 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 <?php
 	}
 ?>
+		</tbody>
 	</table>
-	<br />
-	<table width="100%" style="text-align : center">
-		<tr>
-			<td>
-				<input type="button" 
-					   value="Retour" 
-					   style="width: <?=$WidthButton?>px" 
-					   onClick="history.back()">
+
+	<br/>
+		<p class="center">
+		<button type="reset" class="waves-effect waves-light btn black white-text" onClick="history.back()">Retour</button>
 <?php
 	if (GetDroits ($Status, 'ModifEntreprise'))
 	{
 ?>
-				&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="button" 
-				       value="Modifier" 
-					   style="width: <?=$WidthButton?>px" 
-					   onClick="window.location='BackOffice.php?Trait=Form&SlxTable=<?=$NomTabEntreprises?>&IdentPK=<?=$ValPK_Entreprise?>'">
+		<button type="submit" class="waves-effect waves-light btn bleu1 white-text" onClick="window.location='BackOffice.php?Trait=Form&SlxTable=<?=$NomTabEntreprises?>&IdentPK=<?=$ValPK_Entreprise?>'">Modifier</button>
+		</p>
 <?php
 	}
 ?>
-			</td>
-		</tr>
-	</table>
 
-</body>
-</html>
 <?php
 }
 else
