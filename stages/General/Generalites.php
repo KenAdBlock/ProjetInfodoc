@@ -24,7 +24,8 @@
             </p> <br>
 
             <p>
-              <b>Étudiants de 2<sup>e</sup> année 10 semaines :</b> du 11 avril au 17 juin 2016 <br>
+              <b>Étudiants de 2<sup>ème</sup> année 10 semaines :</b> du 11 avril au 17 juin 2016 <br>
+
 
               <b>Étudiants de Licence Professionnelle SIL - DA2I <sup><a class="tooltipped" data-position="top" data-delay="50" data-tooltip="Systèmes Informatiques et Logiciels - Développement et Administration Internet et Intranet">1</a></sup> 12 semaines :</b> du 18 avril au 08 juillet 2016
             </p> <br>
@@ -77,17 +78,3 @@
   </div>
 
 </main>
-
-<footer class="page-footer">
-  <div class="jeune">
-    <div class="container">
-      <div class="row no-margin-bottom">
-        <div class="col s12">
-          <p class="right white-text">
-            Le responsable des stages : <b><a class="white-text" href="mailto:marc.laporte@univ-amu.fr">  Marc Laporte</a></b>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>

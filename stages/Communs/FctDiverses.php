@@ -91,13 +91,13 @@ function SaisieRubrStage ($SymboleValid, $Libelle, $Requete, $Masque,
     $Bold    = $SymboleValid == '' ? '' : '<b>';
     $FinBold = $SymboleValid == '' ? '' : '</b>';
 						                                                   ?>
-    <tr>
-		<td><?=$SymboleValid?></td>
-        <td style="text-align : <?=$Align?>" valign="top">
-		    <?=$Bold.$Libelle.$FinBold?>
-        </td>
-		<td valign="top"><table width="100%">
-		<colgroup>
+    <div class="input-field col s12">
+		<?=$SymboleValid?>
+        
+		    <?=$Bold.$Libelle.$FinBold?> <br>
+        
+		
+		
 										                                   <?php
                                         $Reste = 100;
                                         for ($i = $NbParLigne; $i; --$i)
@@ -105,11 +105,11 @@ function SaisieRubrStage ($SymboleValid, $Libelle, $Requete, $Masque,
     										$Width = $Reste / $i;
 											$Reste -= $Width;
 										                                   ?>
-             <col width="<?=$Width?>%">
+             
 										                                   <?php
 										}
 										                                   ?>
-		</colgroup>
+		
 										                                   <?php
 										$NbSurLigne = 0;
 		                                while ($Obj = $Requete->fetch())
@@ -117,35 +117,35 @@ function SaisieRubrStage ($SymboleValid, $Libelle, $Requete, $Masque,
 										    if ($NbSurLigne == 0)
 											{
 										                                   ?>
-            <tr>
+            
 										                                   <?php
 											}
 										                                   ?>			
-			    
-				<td nowrap valign="top">
-                    <input type="checkbox" name="<?=$Obj['Code']?>" value="<?=$Obj['CodeBin']?>"
+
+				<div class="input-field col s12 l6">
+                    <input class="filled-in" id="<?=$Obj['Libelle']?>"type="checkbox" name="<?=$Obj['Code']?>" value="<?=$Obj['CodeBin']?>"
 					       <?=(IsInSet ($Obj['CodeBin'], $Masque)) ? 'checked' : ''?>>
-			        &nbsp;
-		            <?=$Obj['Libelle']?>
-		        </td>
+			        
+		            <label for="<?=$Obj['Libelle']?>"><?=$Obj['Libelle']?></label>
+		            </div>
 										                                   <?php
 											if (++$NbSurLigne == $NbParLigne)
 											{
 										        $NbSurLigne = 0;
 										                                   ?>			
-			</tr>
+			
 										                                   <?php
 										    }
 										}
 									    if ($NbSurLigne != 0)
 										{
 										                                   ?>			
-			</tr>
+			
 										                                   <?php
 										}
 										                                   ?>
-        </table></td>
-	</tr>
+        
+	</div>
 										                                   <?php
 } // SaisieRubrStage()
 
@@ -156,16 +156,16 @@ function SaisieRubrStageEtAutre ($SymboleValid, $Libelle, $Requete, $Masque,
 {
     SaisieRubrStage ($SymboleValid, $Libelle, $Requete, $Masque, $NbParLigne);
 										                                   ?>
-    <tr>
-		<td><?=$SymboleValidAutre?></td>
-        <td style="text-align : right" valign="top">
-		    Autres
-		</td>
-        <td valign="top">
-            <input type="text" name="<?=$NameAutre?>" size="50" 
+    <div class="row">
+    	<div class="input-field col s12">
+		<?=$SymboleValidAutre?>
+        
+        
+            <input type="text" name="<?=$NameAutre?>" id="<?=$NameAutre?>" size="50" 
 			       value="<?=$ValAutre?>">
-        </td>
-    </tr>
+			       <label for="<?=$NameAutre?>">Autres</label>
+        </div>
+    </div>
 										                                   <?php
 } // SaisieRubrStageEtAutre()
 
@@ -209,18 +209,22 @@ function SaisieOuiNon ($Libelle, $NameRadioBtn, $ValeurRadioBtn, $Align = 'left'
 {
     $SymboleValid = '' ;
                                                                           ?>
-    <tr>
-	    <td><?=$SymboleValid?></td>
-        <td style="text-align : <?=$Align?>;" valign="top">
-		    <nobr><?=$Libelle?></nobr>
-		</td>
-        <td style="text-align : <?=$Align?>;" valign="top">
-            <nobr><input type="radio" name="<?=$NameRadioBtn?>" value="1"
-			       <?=$ValeurRadioBtn == 1 ? 'checked' : ''?> ><?=$LibelleOui?>
-            <input type="radio" name="<?=$NameRadioBtn?>" value="0"
-			       <?=$ValeurRadioBtn == 1 ? '' : 'checked'?> ><?=$LibelleNon?></nobr>
-		</td>
-	</tr>
+    <div class="row">
+    <div class="input-field col s12 l6">
+	    <?=$SymboleValid?>
+
+		    <?=$Libelle?>
+		
+        
+            <nobr><input id="<?=$Libelle?>.<?=$LibelleOui?>" type="radio" name="<?=$NameRadioBtn?>" value="1"
+			       <?=$ValeurRadioBtn == 1 ? 'checked' : ''?> >
+			       <label for="<?=$Libelle?>.<?=$LibelleOui?>"><?=$LibelleOui?></label>
+            <input id="<?=$Libelle?>.<?=$LibelleNon?>" type="radio" name="<?=$NameRadioBtn?>" value="0"
+			       <?=$ValeurRadioBtn == 1 ? '' : 'checked'?> >
+			       <label for="<?=$Libelle?>.<?=$LibelleNon?>"><?=$LibelleNon?></label></nobr>
+		
+	</div>
+	</div>
                                                                           <?php
 } // SaisieOuiNon()
 
@@ -230,21 +234,26 @@ function SaisieOuiNonEtAutre ($SymboleValid, $Libelle, $NameRadioBtn, $ValeurRad
 							  $Align = 'left')
 {
                                                                           ?>
-    <tr>
-	    <td><?=$SymboleValid?></td>
-        <td style="text-align : <?=$Align?>;" valign="top">
-		    <?=$Libelle?>
-		</td>
-        <td style="text-align : <?=$Align?>" valign="top">
-		    <nobr><input type="radio" name="<?=$NameRadioBtn?>" value="1"
-			       <?=$ValeurRadioBtn == 1 ? 'checked' : ''?> >Oui
-            <input type="radio" name="<?=$NameRadioBtn?>" value="0"
-			       <?=$ValeurRadioBtn == 1 ? '' : 'checked'?> >Non
-		    &nbsp; &nbsp;<?=$LibelleAutre?>
-		    <input type="text" name="<?=$NameAutre?>" size="25" 
-			       value="<?=$ValeurAutre?>"></nobr>
-        </td>
-    </tr>
+    <div class="row">
+    <div class="input-field col s12 l6">
+	    <?=$SymboleValid?>
+<label><?=$Libelle?></label><br>
+		    <input id="<?=$Libelle?>.'oui'" type="radio" name="<?=$NameRadioBtn?>" value="1"
+			       <?=$ValeurRadioBtn == 1 ? 'checked' : ''?> >
+			       <label for="<?=$Libelle?>.'oui'">Oui</label>
+            <input id="<?=$Libelle?>.'non'" type="radio" name="<?=$NameRadioBtn?>" value="0"
+			       <?=$ValeurRadioBtn == 1 ? '' : 'checked'?> >
+			       <label for="<?=$Libelle?>.'non'">Non</label>
+		    
+		    
+        
+    </div>
+    <div class="input-field col s12 l6">
+<input id="<?=$Libelle?>.<?=$LibelleAutre?>" type="text" name="<?=$NameAutre?>" size="25" 
+			       value="<?=$ValeurAutre?>">
+			       <label for="<?=$Libelle?>.<?=$LibelleAutre?>"><?=$LibelleAutre?></label>
+    </div>
+    </div>
                                                                            <?php
 } // SaisieOuiNonEtAutre()
 
@@ -255,16 +264,17 @@ function SaisieRubrInput ($Libelle, $NameInput, $ValeurInput,
     $Bold    = $Obligatoire ? '<b>' : '';
     $FinBold = $Obligatoire ? '</b>' : '';
                                                                             ?>
-    <tr>
-        <td valign="top"><?=$SymboleValid?></td>
-		<td style="text-align : <?=$Align?>" valign="top">
-		    <nobr><?=$Bold.$Libelle.$Bold?></nobr>
-	    </td>
-        <td>
-            <input type="text" name="<?=$NameInput?>"
+    <div class="input-field col s12 l6">
+        <?=$SymboleValid?>
+		
+		    
+	    
+        
+            <input id="<?=$Libelle?>" type="text" name="<?=$NameInput?>"
 			       value="<?=$ValeurInput?>">
-        </td>
-    </tr>
+			       <label for="<?=$Libelle?>"><?=$Bold.$Libelle.$FinBold?></label>
+        
+    </div>
                                                                           <?php
 } // SaisieRubrInput()
 
@@ -273,12 +283,11 @@ function SaisieRubrIntEnum ($Libelle, $NameInput, $ValeurInput, $ValFirst,
                             $ValLast, $Align = 'left')
 {
     $SymboleValid = ' ' ;                                                                           ?>
-    <tr>
-        <td valign="top"><?=$SymboleValid?></td>
-		<td style="text-align : <?=$Align?>" valign="top">
-		    <?=$Libelle?>
-	    </td>
-        <td>
+   <div class="input-field col s12 l6">
+        <?=$SymboleValid?>
+		
+		    
+
 <select name="<?=$NameInput?>" size="1">
                                                                           <?php
                                         for ($i = $ValFirst; $i <= $ValLast; ++$i)
@@ -289,8 +298,8 @@ function SaisieRubrIntEnum ($Libelle, $NameInput, $ValeurInput, $ValFirst,
                                         }
 										                                  ?>
 </select>
-        </td>
-    </tr>
+<label><?=$Libelle?></label>
+        </div>
                                                                           <?php
 } // SaisieRubrIntEnum()
 
@@ -299,12 +308,10 @@ function SaisieRubrStringEnum ($Libelle, $NameInput, $ValeurInput,
 //       ===============
 {
     $SymboleValid = ' ' ;                                                                           ?>
-    <tr>
-        <td valign="top"><?=$SymboleValid?></td>
-		<td style="text-align : <?=$Align?>" valign="top">
-		    <?=$Libelle?>
-	    </td>
-        <td>
+
+        <?=$SymboleValid?>
+        
+<div class="input-field col s12 l6">
 <select name="<?=$NameInput?>" size="1">
                                                                           <?php
                                         for ($i = 0; $i < count ($ValPossibles); ++$i)
@@ -315,8 +322,9 @@ function SaisieRubrStringEnum ($Libelle, $NameInput, $ValeurInput,
                                         }
 										                                  ?>
 </select>
-        </td>
-    </tr>
+<label><?=$Libelle?></label>
+</div>
+
                                                                           <?php
 } // SaisieRubrIntEnum()
 
@@ -357,18 +365,16 @@ function SaisieSujet ($Libelle, $NameTextArea, $ValeurTextArea,
     $Bold    = $SymboleValid == '' ? '' : '<b>';
     $FinBold = $SymboleValid == '' ? '' : '</b>';
                                                                            ?>
-    <tr><td colspan="3"><table><tr>
-        <td valign="top"><?=$SymboleValid?></td>
-        <td style="text-align : <?=$Align?>" valign="top">
-		    <?=$Bold.$Libelle.$FinBold?>
-	    </td>
-        <td>
-            <textarea name="<?=$NameTextArea?>" 
+    <div class="input-field col s12">
+        <?=$SymboleValid?>
+        <?=$Bold.$Libelle.$FinBold?>
+            <textarea id="<?=$Libelle?>" class="materialize-textarea" name="<?=$NameTextArea?>" 
 			          cols="<?=$ColsTextArea?>" 
 			          rows="<?=$RowsTextArea?>"
 			    ><?=stripslashes ($ValeurTextArea)?></textarea>
-        </td>
-    </tr></table></td></tr>
+			    <label for="<?=$Libelle?>"><?=$Bold.$Libelle.$FinBold?></label>
+        
+    </div>
                                                                           <?php
 } // SaisieSujet()
 

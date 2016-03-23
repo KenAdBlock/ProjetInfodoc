@@ -13,12 +13,16 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 			 ORDER BY Nom",
 	               $ConnectLaporte);
 ?>
-<h1>Liste des étudiants ayant un stage</h1>
-<table>
+<h4 class="center">Liste des étudiants ayant un stage</h4>
+<table  class="highlight bordered centered grey lighten-5">
+  <thead class="grey white-text">
+    <tr>
         <th>Nom</th>
         <th>Prénom</th>
         <th>Entreprise</th>
         <th>Lieu du stage</th>
+    </tr>
+    </thead>
     <?php
         while ($ObjEtud = mysql_fetch_object ($ReqEtud))
 	 {

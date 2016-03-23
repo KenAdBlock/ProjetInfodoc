@@ -1,21 +1,30 @@
 <?php
-require_once ('Fonctions.php');
-?>	
+    require_once ('Fonctions.php');
+    require_once ($PATH_GENERAL.'Entete.php');
+    require_once ($PATH_GENERAL.'Consult.php');
+?>
 
 <html>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-        <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
-        <!-- CSS  -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
+      <title></title>
+      <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
+      <!-- CSS  -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
+
+      <script language="javascript">
+          function popup(page)
+          {
+              window.open (page, "titre", "width=600, height=400, scrollbars=yes");
+          }
+      </script>
 
 
-<SCRIPT LANGUAGE="JavaScript">
+    <SCRIPT LANGUAGE="JavaScript">
 <!-- Begin
 var checkflag = true;
 
@@ -27,16 +36,26 @@ function check (field)
     return checkflag ? "Tout décocher" : "Tout cocher";
 }
 //  End -->
-</script>
+    </script>
+    <script language="javascript">
+        function popup(page)
+        {
+            window.open (page, "titre", "width=600, height=400, scrollbars=yes");
+        }
+    </script>
 
 </head>
 
 <body>
-<div class="container">
-      <div class="row">
-        <div class="col s12">
-          <div class="card grey lighten-5 z-depth-1" >
-            <div class="card-content">
+<?php
+    Entete();
+    Consult($login, $_SESSION ['LibStatus'], $Status);
+?>
+    <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <div class="card grey lighten-5 z-depth-1" >
+                <div class="card-content">
 <?php
     // Récupérations des variables envoyées par POST ou GET
 	
@@ -279,14 +298,19 @@ function check (field)
     // Fermeture de la base
     $ConnectStages = null;
 ?>
-</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-<!--  Scripts-->
-      <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
-      <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
-      <script src="<?=$PATH_JS?>init.js"></script>
-</body>
+
+<?php
+    Footer();
+?>
+        <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
+        <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
+        <script src="<?=$PATH_JS?>init.js"></script>
+        <script src="<?=$PATH_JS?>titre.js"></script>
+        <script>titre();</script>
+    </body>
 </html>

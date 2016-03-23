@@ -400,7 +400,7 @@ Responsable des stages
                     </div>
                   </div>
                   <p><i>Si votre entreprise n'apparaît pas dans cette liste, veuillez compléter le cadre ci-dessous.</i></p><br>
-
+<table class="cadre"><tr><td>
                   <h5 class="center">Entreprise</h5>
                   <div class="row">
                     <div class="input-field col s12">
@@ -476,9 +476,10 @@ Responsable des stages
                       <label for="FaxRespAdmin">&nbsp;Fax</label>
                     </div>
                   </div>
-                  <p class="right">
+                  </td></tr></table> <br>
+                  <p class="center">
                   <button type="reset" class="waves-effect waves-light btn black white-text">Réinitialiser</button>
-                  <button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button></p>
+                  <button type="submit" class="waves-effect waves-light btn jaune white-text">Valider</button></p>
                   <input type="hidden" name="StepNewInscript" value="Valid">
                 </form>
 

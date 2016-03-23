@@ -16,26 +16,21 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     $Title = 'Liste des nouvelles inscriptions';
 
 ?>
-<h1 style="text-align : center">
-    <?=$Title?>
-</h1>
+<span class="card-title"><h4 class="center"><?=$Title?></h4></span>
                                                                           <?php
         if (! mysql_num_rows ($ReqNewInscripts))
         {
                                                                           ?>
-<h4 align="center">
-    Il n'y a actuellement aucun nouvel inscrit dans la liste.
-</h4>
+<h5 class="center">
+    Aucun stage n'a été trouvé.
+</h5>
                                                                           <?php
         }
         else
         {
                                                                           ?>
-<table  align="center">
-    <tr>
-        <td valign="top">
-            <table cellpadding="5">
-                <tr>
+<table  class="highlight bordered centered grey lighten-5">
+  <thead class="grey white-text">
                                                                           <?php
 									    if ($DroitEnreg)
                                         {
@@ -58,7 +53,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <th style="text-align : center" valign="top" nowrap>
 					    <b>Nom - Prénom</b>
 					</th>
-                <tr><td colspan="<?=$NbCol?>"><hr></td></tr>
+        </thead>
                 <tr>
                                                                            <?php
                                         while ($Obj = mysql_fetch_object ($ReqNewInscripts))
@@ -72,7 +67,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <td valign="top">
                         <a href="<?=$URL_Form.'&IdentPK='.$Obj->PK_NewInscript?>"
                            <?=AttributsAHRef  ('Valider', 'Valider', '', '');?>
-					   ><img src="<?=$PATH_GIFS?>b_edit.png" border="0"></a>
+					   ><i class="material-icons yellow-text text-darken-2">mode_edit</i></a>
                     </td>
                                                                            <?php
 									        }
@@ -85,8 +80,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                         <a href="<?=$URL_Del.'&IdentPK='.$Obj->PK_NewInscript?>"
                            <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
                            onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$Obj->NomTuteur?> <?=$Obj->PrenomTuteur?> ?')"
-						   ><img src="<?=$PATH_GIFS?>b_deltbl.png"
-						         border="0">
+						   ><i class="material-icons red-text text-darken-2">delete_forever</i>
 						</a>
                     </td>
                                                                            <?php
@@ -103,9 +97,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                                        <?php
                                          }
                                                                        ?>
-            </table>
-        </td>
-    </tr>
+           
 </table>
 <?php
    }

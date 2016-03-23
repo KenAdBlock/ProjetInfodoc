@@ -155,10 +155,13 @@ td, th {
   transition: box-shadow .25s;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+#connecter:focus{
+  background-color: #ffcc00;
+}
 [type="radio"]:checked + label:after {
-    border-radius: 50%;
-    border: 2px solid #0071b9;
-    background-color: #0071b9;
+  border-radius: 50%;
+  border: 2px solid #0071b9;
+  background-color: #0071b9;
 }
 table.highlight > tbody > tr:hover {
   background-color: #e0e0e0;
@@ -182,9 +185,39 @@ a.ashadow:hover {
 .bleu2,.bleu2:hover{
   background: #00CCFF;
 }
-.jeune,.jeune:hover{
-  background:#FFCC00; 
+
+.jaune,.jaune:hover{
+  background:#FFCC00;
+}
+.jaune-text{
+  color: #FFCC00;
+}
+
+.bleu1-text{
+    color: #0066cc;
 }
 option *{
   color: black;
+}
+textarea.materialize-textarea {
+  background-color: transparent;
+  border: none;
+  border: 1px solid #0066cc;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all .3s;
+}
+textarea.materialize-textarea:focus:not([readonly]) {
+  border: 1px solid #0066cc;
+  box-shadow: 0px 0px 3px 0px #0066cc;
+}
+.cadre{
+  box-shadow: 0px 0px 1px 0px #9e9e9e;
 }
