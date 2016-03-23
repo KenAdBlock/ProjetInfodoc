@@ -8,7 +8,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+        <title id="titre"></title>
         <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
         <!-- CSS  -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -307,5 +307,14 @@ function check (field)
         <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
         <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
         <script src="<?=$PATH_JS?>init.js"></script>
+        <!-- Script récupérant le titre de la page et le mettant dans la balise <title> -->
+        <script type="text/javascript">
+            // Récupère toutes les balises <h1>, ... <h6> de la page
+            var titres = $(":header");
+            // Garde uniquement le deuxième titre (car le premier est le "Bienvenue" du menu latéral)
+            var titre = titres[1].textContent;
+            // Affecte ce titre à la balise <title> de la page
+            document.getElementsByTagName("title")[0].innerHTML = titre;
+        </script>
     </body>
 </html>
