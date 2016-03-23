@@ -176,7 +176,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
                                                                            ?>
     <tr>
 	    <td>
-            <a href="<?=$URL_List.$NomTabMailsToSend?>" target="principal">
+            <a href="<?=$URL_List.$NomTabMailsToSend?>">
                 Liste des mails à envoyer aux nouveaux inscrits
 			</a>
         </td>
