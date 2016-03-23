@@ -1,7 +1,7 @@
 <?php
 function Consult ($Login, $Libelle, $Status)
 {
-    global $PATH_BACKOFFICE, $PATH_GENERAL;
+    global $PATH_BACKOFFICE, $PATH_GENERAL, $URL_SITE, $PATH_PHP;
 	global $NomTabUsers, $NomTabStages, $NomTabStatus, $NomTabEntreprises,
 	       $NomTabNewInscripts, $NomTabMailsToSend;
 	
@@ -10,6 +10,28 @@ function Consult ($Login, $Libelle, $Status)
 	$URL_Affich         = $PATH_BACKOFFICE.'BackOffice.php?Trait=Affich&SlxTable=';
 	$URL_AccesRapideSoc = $PATH_BACKOFFICE.'BackOffice.php?Trait=AccesRapideSoc';
 	$URL_BackOffice     = $PATH_BACKOFFICE.'BackOffice.php?Trait=BackOffice';
+
+
+    if (isset ($_SESSION))
+        foreach ($_SESSION as $clef => $valeur) $$clef = $valeur;
+
+    foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
+    foreach ($_POST as $clef => $valeur) $$clef = $valeur;
+
+    if (!isset ($Step))
+        $Step = 'Accueil';
+    if (IsSessionAndLoginNonVide())
+    {
+        // Une session est en cours et un login y est enregistré ==>
+        //     connexion interdite (prévenir l'appel direct de ce script)
+        //     Déconnexion ? ==> fermeture de la session et retour à l'accueil
+        //     Sinon         ==> vérifier autorisation
+
+        if ($Step == 'Decnx')
+        {
+            CloseSessionAndRedirect ($URL_SITE.$PATH_PHP);
+        }
+    }
 
 ?>
 
@@ -23,9 +45,7 @@ function Consult ($Login, $Libelle, $Status)
 
       <ul class="right hide-on-med-and-down">
         <li><a href="?Step=Decnx" target="_top"> Déconnexion</a></li>  
-      </ul> 
-
-      
+      </ul>
 
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>  
 

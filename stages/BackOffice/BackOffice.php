@@ -16,6 +16,13 @@ require_once ($PATH_GENERAL.'Consult.php');
         <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
 
+    <script language="javascript">
+        function popup(page)
+        {
+            window.open (page, "titre", "width=600, height=400, scrollbars=yes");
+        }
+    </script>
+
 
 <SCRIPT LANGUAGE="JavaScript">
 <!-- Begin

@@ -177,7 +177,7 @@
 	}
 	require_once ('Accueil.php');     // Accueil()
 	require_once ('Consult.php');     // Consult()
-    require_once ('Entete.php');
+    require_once ('Entete.php');      // ShowEntete()
     ShowEntete();
 	include ('GetDroits.php');
 
