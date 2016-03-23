@@ -206,13 +206,9 @@ a.hover-bleu {
   background: #00CCFF;
 }
 
-<<<<<<< HEAD
+
 .jaune,.jaune:hover,.jaune:focus{
   background:#FFCC00; 
-=======
-.jaune,.jaune:hover{
-  background:#FFCC00;
->>>>>>> c2306bed458919ccb6b6c9a956c76dc28be999c8
 }
 .jaune-text{
   color: #FFCC00;
