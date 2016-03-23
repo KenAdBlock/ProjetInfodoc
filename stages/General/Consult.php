@@ -56,15 +56,14 @@ function Consult ($Login, $Libelle, $Status)
                 Vous êtes connecté(e) sous le pseudonyme <br>
                 <b id="login-connect"><?=$Login?></b>
             </p>
-<!--            <p class="center">en tant que <b>--><?//=$Libelle?><!--</b></p>-->
             <p class="center">en tant
 			<?php
-				if ($Libelle != "responsable de stage"
-                    AND $Libelle != "secrétariat"
-                    AND $Libelle != "tuteur"
-                    AND $Libelle != "professeur") {
+				if ($Status != "resp"
+                    AND $Status != "secr"
+                    AND $Status != "tuteur"
+                    AND $Status != "prof") {
 			?>
-					qu' <b><?= $Libelle ?></b></p>
+					qu'<b><?= $Libelle ?></b></p>
 			<?php
 				} else {
 			?>
