@@ -23,16 +23,15 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  /*=========================*/
         $TitreTraitement = "Liste des tuteurs d'entreprise ayant un mail";
 
-		$ReqMails = Query ("SELECT $NomTabUsers.*, $NomTabEntreprises.NomE
-		                        FROM $NomTabEntreprises, $NomTabUsers 
-	                            WHERE    Status = 'tuteur'
-								   AND   Mail <> '' 
-								   AND   Mail <> '$MailBidon'
-								   AND   $NomTabUsers.FK_Entreprise = $NomTabEntreprises.PK_Entreprise
-								   ORDER BY $NomTabEntreprises.NomE, 
-								            $NomTabUsers.Nom,
-											$NomTabUsers.Prenom",
-	                        $ConnectStages);
+		$ReqMails = $ConnectStages->query("SELECT $NomTabUsers.*, $NomTabEntreprises.NomE
+											FROM $NomTabEntreprises, $NomTabUsers 
+											WHERE    Status = 'tuteur'
+											   AND   Mail <> '' 
+											   AND   Mail <> '$MailBidon'
+											   AND   $NomTabUsers.FK_Entreprise = $NomTabEntreprises.PK_Entreprise
+											   ORDER BY $NomTabEntreprises.NomE, 
+														$NomTabUsers.Nom,
+														$NomTabUsers.Prenom");
      	break;
     
 	  /*======================*/
@@ -41,10 +40,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         $TitreTraitement = "Liste des entreprises sans tuteur ou avec tuteur".
     	                   " sans mail, mais responsable ayant un mail";
 
-		$ReqMails = Query ("SELECT * FROM $NomTabEntreprises
-	                            WHERE  MailR <> '' AND MailR <> '$MailBidon'
-								ORDER BY  NomE",
-	                        $ConnectStages);
+		$ReqMails = $ConnectStages->query("SELECT * FROM $NomTabEntreprises
+										   WHERE  MailR <> '' AND MailR <> '$MailBidon'
+										   ORDER BY  NomE");
     	break;
     
 	  /*===================*/
@@ -53,10 +51,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         $TitreTraitement = "Liste des étudiants de 1<sup>ère</sup> année";
 
         define ('STATUS_ETUD1', 5);
-		$ReqMails = Query ("SELECT * FROM $NomTabUsers
-			  	               WHERE FK_Statut = ".STATUS_ETUD1."
-						       ORDER BY Nom",
-	                        $ConnectLaporte);
+		$ReqMails = $ConnectLaporte->query("SELECT * FROM $NomTabUsers
+			  	               				WHERE FK_Statut = ".STATUS_ETUD1."
+						       				ORDER BY Nom");
     	break;
     
 	  /*===================*/
@@ -75,10 +72,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		 
         define ('STATUS_ETUD2', 6);
         define ('STATUS_ETUDLP', 10);
-		$ReqMails = Query ("SELECT * FROM $NomTabUsers
+		$ReqMails = $ConnectLaporte->query("SELECT * FROM $NomTabUsers
 			  	               WHERE (FK_Statut = ".STATUS_ETUD2." OR FK_Statut =".STATUS_ETUDLP.")".$ReqWhere."
-						       ORDER BY Nom",
-	                        $ConnectLaporte);
+						       ORDER BY Nom");
     	break;
     
 	  /*===================*/
@@ -87,10 +83,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         $TitreTraitement = "Liste des enseignants";
 
         define ('STATUS_PROF', 2);
-		$ReqMails = Query ("SELECT * FROM $NomTabUsers
+		$ReqMails = $ConnectLaporte->query("SELECT * FROM $NomTabUsers
 			  	               WHERE FK_Statut = ".STATUS_PROF."
-						       ORDER BY Nom",
-	                        $ConnectLaporte);
+						       ORDER BY Nom");
     	break;
 
 	  /*=======================*/
@@ -98,11 +93,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	  /*=======================*/
         $TitreTraitement = "Liste des entreprises sans aucun contact par mail";
 
-		$ReqMails = Query ("SELECT DISTINCT $NomTabEntreprises.*, tabstages0506.FK_Entreprise FROM $NomTabEntreprises, tabstages0506
+		$ReqMails = $ConnectStages->query("SELECT DISTINCT $NomTabEntreprises.*, tabstages0506.FK_Entreprise FROM $NomTabEntreprises, tabstages0506
 	                            WHERE (MailR = '' OR MailR = '$MailBidon')
 								    AND $NomTabEntreprises.PK_Entreprise = tabstages0506.FK_Entreprise
-								ORDER BY  NomE",
-	                        $ConnectStages);
+								ORDER BY  NomE");
     	break;
     
 	  /*===============*/
@@ -144,8 +138,8 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 	$MailI = $tabmail [$i];
     mail  ($MailI, $SujetDuMail, stripslashes ($TexteDuMail), $Sender);
     $NewPwd = md5 ($NewPwd);
-    Query ("UPDATE $NomTabUsers SET PassWord = '$NewPwd'
-		    WHERE   Mail = '$MailI'", $ConnectStages);
+	$ConnectStages->query("UPDATE $NomTabUsers SET PassWord = '$NewPwd'
+		    WHERE   Mail = '$MailI'");
 }
 /*   */
 // ===================================================================
@@ -284,7 +278,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 	</tr>
                                                                            <?php
 										    $Cpt = 0;
-										    while ($ObjMails = mysql_fetch_object ($ReqMails))
+										    while ($ObjMails = $ReqMails->fetch())
 										    {
                                                                            ?>
     <tr>
@@ -292,16 +286,16 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 		    <?=++$Cpt?>
 		</td>
 	    <td valign="top">
-		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails->Mail?>">
+		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['Mail']?>">
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->Nom?> <?=$ObjMails->Prenom?> 
+		    <?=$ObjMails['Nom']?> <?=$ObjMails['Prenom']?>
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->NomE?>
+		    <?=$ObjMails['NomE']?>
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->Mail?>
+		    <?=$ObjMails['Mail']?>
 		</td>
     </tr>
                                                                            <?php
@@ -322,32 +316,33 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 	</tr>
                                                                            <?php
 										    $Cpt = 0;
-										    while ($ObjMails = mysql_fetch_object ($ReqMails))
+										    while ($ObjMails = $ReqMails->fetch())
 										    {
-		                                        $ReqMailsUser = Query ("SELECT * 
-												                            FROM $NomTabUsers 
-	                                                                        WHERE  Status = 'tuteur'
-								                                               AND Mail <> '' 
-								                                               AND Mail <> '$MailBidon'
-								                                               AND FK_Entreprise = '$ObjMails->PK_Entreprise'",
-	                                                                    $ConnectStages);
-                                                 if (mysql_num_rows ($ReqMailsUser) > 0) continue;
+												$ReqMailsUser = $ConnectStages->prepare("SELECT * 
+																						 FROM $NomTabUsers 
+																						 WHERE  Status = 'tuteur'
+																						    AND Mail <> '' 
+																						    AND Mail <> '$MailBidon'
+																						    AND FK_Entreprise = :PK_Entreprise");
+												$ReqMailsUser->bindValue(':PK_Entreprise', $ObjMails['PK_Entreprise']);
+												$ReqMailsUser->execute();
+                                                 if ($ReqMailsUser->rowCount() > 0) continue;
                                                                            ?>
     <tr>
 	    <td valign="top">
 		    <?=++$Cpt?>
 		</td>
 	    <td valign="top">
-		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails->MailR?>">
+		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['MailR']?>">
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->NomR?> <?=$ObjMails->PrenomR?> 
+		    <?=$ObjMails['NomR']?> <?=$ObjMails['PrenomR']?>
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->NomE?>
+		    <?=$ObjMails['NomE']?>
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->MailR?>
+		    <?=$ObjMails['MailR']?>
 		</td>
     </tr>
                                                                            <?php
@@ -369,7 +364,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 	</tr>
                                                                            <?php
 										    $Cpt = 0;
-										    while ($ObjMails = mysql_fetch_object ($ReqMails))
+										    while ($ObjMails = $ReqMails->fetch())
 										    {
                                                                            ?>
     <tr>
@@ -377,13 +372,13 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 		    <?=++$Cpt?>
 		</td>
 	    <td valign="top">
-		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails->EMail?>">
+		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['EMail']?>">
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->Nom?> <?=$ObjMails->Prenom?> 
+		    <?=$ObjMails['Nom']?> <?=$ObjMails['Prenom']?>
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->EMail?>
+		    <?=$ObjMails['EMail']?>
 		</td>
     </tr>
                                                                            <?php
@@ -399,26 +394,27 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 <table cellpadding="3">
                                                                            <?php
 										    $Cpt = 0;
-										    while ($ObjMails = mysql_fetch_object ($ReqMails))
+										    while ($ObjMails = $ReqMails->fetch())
 										    {
-		                                        $ReqMailsUser = Query ("SELECT * 
+												$ReqMailsUser = $ConnectStages->prepare("SELECT * 
 												                            FROM $NomTabUsers 
 	                                                                        WHERE  Status = 'tuteur'
 								                                               AND Mail <> '' 
 								                                               AND Mail <> '$MailBidon'
-								                                               AND FK_Entreprise = '$ObjMails->PK_Entreprise'",
-	                                                                    $ConnectStages);
-                                                 if (mysql_num_rows ($ReqMailsUser) > 0) continue;
+								                                               AND FK_Entreprise = :PK_Entreprise");
+												$ReqMailsUser->bindValue(':PK_Entreprise', $ObjMails['PK_Entreprise']);
+												$ReqMailsUser->execute();
+                                                 if ($ReqMailsUser->rowCount() > 0) continue;
                                                                            ?>
     <tr>
 	    <td valign="top">
 		    <?=++$Cpt?>
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->NomR?> <?=$ObjMails->PrenomR?> 
+		    <?=$ObjMails['NomR']?> <?=$ObjMails['PrenomR']?>
 		</td>
 	    <td valign="top">
-		    <?=$ObjMails->NomE?>
+		    <?=$ObjMails['NomE']?>
 		</td>
     </tr>
                                                                            <?php
