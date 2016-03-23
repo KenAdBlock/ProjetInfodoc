@@ -14,7 +14,7 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
       <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-      <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
+
 
       <script language="javascript">
           function popup(page)
@@ -310,6 +310,7 @@ function check (field)
         <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
         <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
         <script src="<?=$PATH_JS?>init.js"></script>
+        <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
         <script src="<?=$PATH_JS?>titre.js"></script>
         <script>titre();</script>
     </body>
