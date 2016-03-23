@@ -14,7 +14,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     if (!isset ($Etape)) $Etape = 'Init';
                                                                            ?>
-<h1>Affectation d'un stage</h1>
+<h4 class="center">Affectation d'un stage</h4>
                                                                            <?php
     switch ($Etape)
     {
@@ -237,11 +237,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	*/ ?>
 </table>
 </td></tr></table>
-<p>
-    <input type="reset" value="Reinitialiser">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="submit" value="Valider" >
+<p class="center">
+	<button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+	<button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
 </p>
 <input type="hidden" name="Etape" value="Valid" >
 </form>

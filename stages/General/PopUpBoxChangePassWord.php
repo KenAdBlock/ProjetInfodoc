@@ -136,7 +136,7 @@
 									</div>
 								</div>
 								<div class="center">
-									<button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button>
+									<button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
 								</div>
 
 							<hr>

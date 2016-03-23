@@ -198,7 +198,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                         {
                                                                            ?>
 
-<span class="card-title"><h4 class="center">Création d'un nouvel utilisateur :</h4></span>
+<span class="card-title"><h4 class="center">Création d'un nouvel utilisateur</h4></span>
                                                                            <?php
                                         }
 										                                   ?>
@@ -359,7 +359,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                             <p class="center">
                                 <button type="reset" class="waves-effect waves-light btn black white-text"  onClick="history.go (-1)">Abandonner</button>
                                 <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
-                                <button type="submit" class="waves-effect waves-light btn blue white-text">Valider</button></p>
+                                <button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button></p>
 
     <input type="hidden" name="StepConsult" value="Valid" >
     <input type="hidden" name="PK_User" value="<?=$ValPK_User?>" >

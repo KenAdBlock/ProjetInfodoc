@@ -176,14 +176,14 @@ a.ashadow:hover {
 #login-connect {
     font-size: 19px;
 }
-.bleu1,.bleu1:hover{
+.bleu1,.bleu1:hover,.bleu1:focus{
   background: #0066cc;
 }
-.bleu2,.bleu2:hover{
+.bleu2,.bleu2:hover,.bleu2:focus{
   background: #00CCFF;
 }
 
-.jaune,.jaune:hover{
+.jaune,.jaune:hover,.jaune:focus{
   background:#FFCC00; 
 }
 .jaune-text{

@@ -313,14 +313,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <div class="bleu1-text"><?=$ValidPresentEntreprise?>Présentation de l'entreprise :</div><br>
+                                <div class="bleu1-text"><?=$ValidPresentEntreprise?>Présentation de l'entreprise </div><br>
                                 <textarea name="PresentEntreprise" id="PresentEntreprise" class="materialize-textarea"><?=stripslashes ($ValPresentEntreprise)?></textarea>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <input name="SiteEntreprise" size="50"  id="SiteEntreprise" type="text" class="validate" value="<?=$ValSiteEntreprise?>">
-                                <label for="SiteEntreprise"><?=$ValidSiteEntreprise?>URL du site de l'entreprise :</label>
+                                <label for="SiteEntreprise"><?=$ValidSiteEntreprise?>URL du site de l'entreprise</label>
                             </div>
                         </div>
                         <?php
@@ -348,7 +348,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                         <p class="center">
                             <button type="button" class="waves-effect waves-light btn black white-text"  onClick="history.go (-1)">Abandonner</button>
                             <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
-                            <button type="submit" class="waves-effect waves-light btn jaune white-text">Valider</button>
+                            <button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
                         </p>
         <input type="hidden" name="StepConsult" value="Valid" >
         <input type="hidden" name="PK_Entreprise" value="<?=$ValPK_Entreprise?>" >

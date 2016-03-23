@@ -480,7 +480,7 @@ Responsable des stages
                   </td></tr></table> <br>
                   <p class="center">
                   <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
-                  <button type="submit" class="waves-effect waves-light btn jaune white-text">Valider</button></p>
+                  <button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button></p>
                   <input type="hidden" name="StepNewInscript" value="Valid">
                 </form>
 
