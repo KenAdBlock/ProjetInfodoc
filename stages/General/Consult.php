@@ -51,7 +51,7 @@ function Consult ($Login, $Libelle, $Status)
 <div id="slide-out" class="side-nav grey lighten-4 z-depth-3 black-text">
     <div class="row">
         <div class="col s12">
-            <h5 class="center">Bienvenue</h5>
+            <div onclick="window.location='<?=$PATH_PHP."index.php"?>;'" class="pointer"><h5 class="center">Bienvenue</h5></div>
             <p class="center">
                 Vous êtes connecté(e) sous le pseudonyme <br>
                 <b id="login-connect"><?=$Login?></b>
@@ -276,7 +276,7 @@ function Consult ($Login, $Libelle, $Status)
 <div id="nav-mobile" class="side-nav">
         <div class="row">
           <div class="col s12">
-<h5 class="center">Bienvenue</h5> 
+            <div href="<?=$PATH_PHP."index.php"?>" class="pointer"><h5 class="center">Bienvenue</h5></div>
             <p class="center">
             Vous êtes connecté(e) sous le pseudonyme <br>
             <b id="login-connect"><?=$Login?></b> 
