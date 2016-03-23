@@ -448,8 +448,8 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement être rempl
     <?php } ?>
     <?php if($_SESSION ['privilege'] != "tuteur")
        {
-            $ResultListEntreprise = Query ("SELECT NomE, PK_Entreprise FROM
-            tabentreprise",$ConnectStages);?>
+            $ResultListEntreprise = $ConnectStages->query("SELECT NomE, PK_Entreprise FROM
+            tabentreprise");?>
         <tr>
         <td valign="top"><tt><?=$ValidFK_Entreprise?></tt></td>
         <td style="text-align : right" valign="top"><b>Nom de
@@ -457,13 +457,13 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement être rempl
         <td>
             <select name="FK_Entreprise" size="1" style="width :<?=$WidthSelect?>">;
         <?php
-        while ($row = mysql_fetch_row ($ResultListEntreprise))
+        while ($row = $ResultListEntreprise->fetch(PDO::FETCH_NUM))
                                         {
                                                                          ?>
-                    <option value="<?=$row [1]?>"
+                    <option value="<?=$row[1]?>"
                     <?php if($row[1]==$ValFK_Entreprise)
                     {?>selected <?php }?>>
-                    <?=$row [0]?></option>
+                    <?=$row[0]?></option>
                                                                          <?php
                                         }
                                                                          ?>
@@ -475,12 +475,14 @@ italic;">Toutes les rubriques en <b>gras</b> doivent obligatoirement être rempl
             //pouvoir modifier l'entreprise...
           {
                $login = $_SESSION['Login'];
-               $req1 = Query("SELECT FK_Entreprise from tabusers where
-                              Login='$login'",$ConnectStages);
-               $row1 = mysql_fetch_row ($req1);
-               $req2 = Query("SELECT NomE from tabentreprise where
-                       PK_Entreprise = $row1[0]",$ConnectStages);
-               $row2 = mysql_fetch_row ($req2);
+               $req1 = $ConnectStages->prepare("SELECT FK_Entreprise from tabusers where
+                              Login= :login");
+               $req1->bindValue(':login', $login);
+               $req1->execute();
+               $row1 = $req1->fetch(PDO::FETCH_NUM);
+               $req2 = $ConnectStages->query("SELECT NomE from tabentreprise where
+                       PK_Entreprise = $row1[0]");
+               $row2 = $req2->fetch(PDO::FETCH_NUM);
           ?>
           <tr><td></td><td align ="right"><b>Entreprise</b></td><td><?=$row2[0]?></td></tr>
           <input type="hidden" name="FK_Entreprise" value =

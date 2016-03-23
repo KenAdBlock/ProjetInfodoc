@@ -140,8 +140,8 @@
                 // éviter qu'il y en ai 2 identiques
         if ($IdentPK ==0)
         {
-            $ReqL = Query("SELECT Login from tabusers",$ConnectStages);
-            while ($RowL = mysql_fetch_row($ReqL))
+            $ReqL = $ConnectStages->query("SELECT Login from tabusers");
+            while ($RowL = $ReqL->fetch(PDO::FETCH_NUM))
             {
                 if ($ValLogin == $RowL[0])
                 {
@@ -150,7 +150,7 @@
                 }
             }
         }
-        
+
         $Fleche = FLECHE;
          
         if (!$CodErrVide && !$CodErrInval && !$CodErrLog && !$CodErrTut)
@@ -347,8 +347,8 @@ invalide, veuillez entre un numéro</p>
         </td>
     </tr>
 
-    <?php $ResultListEntreprise = Query ("SELECT NomE, PK_Entreprise FROM
-    tabentreprise",$ConnectStages);?>
+    <?php $ResultListEntreprise = $ConnectStages->query("SELECT NomE, PK_Entreprise FROM
+    tabentreprise");?>
     <tr>
     <td></td><td></td><td width="250">Si vous êtes Tuteur Professionnel, précisez l'entreprise </td>
     </tr>
@@ -361,13 +361,13 @@ invalide, veuillez entre un numéro</p>
             <select name="FK_Entreprise" size="1" style="width :<?=$WidthSelect?>">;        
             <option value =''></option>
         <?php
-        while ($row = mysql_fetch_row ($ResultListEntreprise))
+        while ($row = $ResultListEntreprise->fetch(PDO::FETCH_NUM))
                                         {
                                                                          ?>
-                    <option value="<?=$row [1]?>"
+                    <option value="<?=$row[1]?>"
                     <?php if($row[1]==$ValFK_Entreprise)
                     {?>selected <?php }?>>
-                    <?=$row [0]?></option>
+                    <?=$row[0]?></option>
                                                                          <?php
                                         }
                                                                          ?>
@@ -379,12 +379,12 @@ invalide, veuillez entre un numéro</p>
             //pouvoir modifier l'entreprise...
           {
                $login = $_SESSION['Login'];
-               $req1 = Query("SELECT FK_Entreprise from tabusers where
-                              Login='$login'",$ConnectStages);
-               $row1 = mysql_fetch_row ($req1);
-               $req2 = Query("SELECT NomE from tabentreprise where
-                       PK_Entreprise = $row1[0]",$ConnectStages);
-               $row2 = mysql_fetch_row ($req2);
+               $req1= $ConnectStages->prepare("SELECT FK_Entreprise from tabusers where Login= :login");
+               $req1->bindValue(':login', $login);
+               $req1->execute();
+               $row1 = $req1->fetch(PDO::FETCH_NUM);
+               $req2= $ConnectStages->query("SELECT NomE from tabentreprise where PK_Entreprise = $row1[0]");
+               $row2 = $req2->fetch(PDO::FETCH_NUM);
           ?>
           <tr><td></td><td></td><td align="center"><b><?=$row2[0]?></b></td></tr>
           <input type="hidden" name="FK_Entreprise" value = <?=$row1[0]?>>

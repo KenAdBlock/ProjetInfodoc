@@ -132,8 +132,8 @@
         $Fleche = FLECHE;
 
         // on compare l' entreprise entrée avec les entreprises déjà existantes
-        $ReqL = Query("SELECT NomE from tabentreprise",$ConnectStages);
-        while ($RowL = mysql_fetch_row($ReqL))
+        $ReqL = $ConnectStages->query("SELECT NomE from tabentreprise");
+        while ($RowL = $ReqL->fetch(PDO::FETCH_NUM))
         {  
             if ($ValNomE == $RowL[0])
             {    
