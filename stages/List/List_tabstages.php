@@ -12,6 +12,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         $OrderReq = "NomE asc, PK_Stage asc";
         break;
 
+      case 'NomEDesc' :
+        $OrderReq = "NomE desc, PK_Stage desc";
+        break;
+
       case 'NumAsc' :
         $OrderReq = "PK_Stage asc";
         break;
@@ -22,20 +26,28 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         $OrderReq = "PK_Stage desc";
     }
 
-    $URL_ListNomE = '?Trait=List&SlxTable='.$NomTabStages.'&Slx=NomEAsc';
+    $URL_ListNomE = '?Trait=List&SlxTable='.$NomTabStages.'&Slx=';
     $URL_ListNum  = '?Trait=List&SlxTable='.$NomTabStages.'&Slx=';
     $URL_Affect   = '?Trait=AffectStageEtud&FK_Stage=';
 
     switch ($Slx)
     {
-      case 'NomEAsc' :
       case 'NumAsc'  : $URL_ListNum .= 'NumDesc' ; break;
       case 'NumDesc' : $URL_ListNum .= 'NumAsc'  ; break;
-
     }
     $QuelOrdreNum    = 'Ordre '.($Slx == 'NumAsc' ? 'dé' : '').'croissant';
     $GifOrderNum     = ($Slx == 'NumDesc' ? 'arrow_drop_down' : 'arrow_drop_up');
-    $QuelOrdreNomE   = 'Ordre croissant';
+
+    switch ($Slx)
+    {
+        case 'NomEAsc'  : $URL_ListNomE .= 'NomEDesc' ; break;
+        case 'NomEDesc' :
+        default :
+          $Slx = 'NomEDesc';
+          $URL_ListNomE .= 'NomEAsc';
+    }
+    $QuelOrdreNomE   = 'Ordre '.($Slx == 'NomEAsc' ? 'dé' : '').'croissant';
+    $GifOrderNomE    = ($Slx == 'NomEDesc' ? 'arrow_drop_down' : 'arrow_drop_up');
 
     $URL_AffichStage = $PATH_BACKOFFICE.'BackOffice.php?Trait=Affich&SlxTable='.$NomTabStages.'&IdentPK=';
     $URL_FormStage   = $PATH_BACKOFFICE.'BackOffice.php?Trait=Form&SlxTable='  .$NomTabStages.'&IdentPK=';
@@ -149,17 +161,20 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                         <th style="text-align : center" valign="top" nowrap>
                             <a class="white-text" href="<?=$URL_ListNum?>"
                                <?=AttributsAHRef ($QuelOrdreNum, $QuelOrdreNum, '', '');?>
-                                ><i class="material-icons white-text right" style="font-size: 20px"><?=$GifOrderNum?></i>
+                                ><i class="material-icons white-text" style="font-size: 20px"><?=$GifOrderNum?></i>
                                 <b>Numéro</b>&nbsp;
                                  
                             </a>
                         </th>
 
-                        <th>Nombre de stages</th>
+                        <th style="text-align : center" valign="top" nowrap>
+                          <b>Nombre de stages</b>
+                        </th>
 
                         <th style="text-align : center" valign="top" nowrap>
                             <a class="white-text" href="<?=$URL_ListNomE?>"
                                <?=AttributsAHRef ($QuelOrdreNomE, $QuelOrdreNomE, '', '');?>
+                                ><i class="material-icons white-text" style="font-size: 20px"><?=$GifOrderNomE?></i>
                                 <b>Entreprise</b>
                             </a>
                         </th>
