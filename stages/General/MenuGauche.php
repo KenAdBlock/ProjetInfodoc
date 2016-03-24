@@ -22,20 +22,14 @@
 	// Connexion a mySQL
 	// =================
 
-    require_once ($PATH_COMMUNS.   'IdentRoot.php');
 	require_once ($PATH_CONSTANTES.'CstErrBD.php');
-    require_once ($PATH_UTIL.      'UtilBD.php');    // ConnectSelect(), Query()
+    require_once ($PATH_UTIL.      'UtilBD.php'); 
     require_once ($PATH_UTIL.      'UtilLogin.php'); // IsEtudByLogin(), IsProfByLogin()
 
-    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+    $UtilBD = new UtilBD();
+    $ConnectStages = $UtilBD->ConnectStages();
 
-    $NomBaseMathieu  = "laporte";
-    $UserMathieu     = "root";
-    $PasswdMathieu   = $PASSWDBD;
-    $HoteMathieu     = "localhost";
-
-	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu,
-	                                 $PasswdMathieu, $NomBaseMathieu);
+    $ConnectLaporte = $UtilBD->ConnectLaporte();
 
 	// Récupérations des variables envoyées par POST ou GET
 	// ====================================================
@@ -92,20 +86,22 @@
 						               OR FK_Statut = '".STATUTPROFIUTAIX."'
 						               OR FK_Statut = '".STATUTML."')";
 					}
-                    $ReqUser = Query ("SELECT $NomTabUsers.* FROM $NomTabUsers WHERE Identifiant  = '$login'".$ReqWhere, $ConnectMathieu);
-                    if ($NbUsers = mysql_num_rows ($ReqUser))
+                    $ReqUser = $ConnectLaporte->prepare("SELECT $NomTabUsers.* FROM $NomTabUsers WHERE Identifiant  = :login".$ReqWhere);
+                    $ReqUser->bindValue(':login', $login, PDO::PARAM_STR);
+                    $ReqUser->execute();
+                    if ($NbUsers = $ReqUser->rowCount())
 					{
 					    // Récupération de toutes les informations utiles
 
 
-					    $User = mysql_fetch_object ($ReqUser);
+					    $User = $ReqUser->fetch();
 
-                        $UserPassWord      = $User->PassWord;
-                        $UserNom           = $User->Nom;
-                        $UserPrenom        = $User->Prenom;
-                        $UserPK_User       = $User->PK_Id;
+                        $UserPassWord      = $User['PassWord'];
+                        $UserNom           = $User['Nom'];
+                        $UserPrenom        = $User['Prenom'];
+                        $UserPK_User       = $User['PK_Id'];
 
-						switch ($User->FK_Statut)
+						switch ($User['FK_Statut'])
 						{
 						  case STATUTETUD1  : $LeStatus = ETUD1;  break;
 						  case STATUTETUD2  : $LeStatus = ETUD2;  break;
@@ -121,24 +117,26 @@
                 }
 			    else                    // recherche dans la base "stages"
 			    {
-                     $ReqUser = Query ("SELECT $NomTabUsers.*, $NomTabStatus.Libelle
-				                           FROM $NomTabUsers, $NomTabStatus
-						    			   WHERE Login  = '$login'
-							    		   AND   Status = $NomTabStatus.Code ",
-						              $Connexion);
-					if ($NbUsers = mysql_num_rows ($ReqUser))
+                    $ReqUser = $ConnectLaporte->prepare("SELECT $NomTabUsers.*, $NomTabStatus.Libelle
+				                                         FROM $NomTabUsers, $NomTabStatus
+						    			                 WHERE Login = :login
+							    		                 AND Status = :Code");
+                    $ReqUser->bindValue(':login', $login, PDO::PARAM_STR);
+                    $ReqUser->bindValue(':Code', $NomTabStatus.'Code', PDO::PARAM_STR);
+                    $ReqUser->execute();
+					if ($NbUsers = $ReqUser->rowCount())
 					{
 					    // Récupération de toutes les informations utiles
 
-					    $User = mysql_fetch_object ($ReqUser);
-						$UserPassWord      = $User->PassWord;
-                        $UserNom           = $User->Nom;
-                        $UserPrenom        = $User->Prenom;
-                        $UserPK_User       = $User->PK_User;
-						$LeStatus          = $User->Status;
+					    $User = $ReqUser->fetch();
+                        $UserPassWord      = $User['PassWord'];
+                        $UserNom           = $User['Nom'];
+                        $UserPrenom        = $User['Prenom'];
+                        $UserPK_User       = $User['PK_Id'];
+						$LeStatus          = $User['Status'];
 
 						// C'est un tuteur (ou admin, resp, secr ) =>
-                        $UserFK_Entreprise = $User->FK_Entreprise;
+                        $UserFK_Entreprise = $User['FK_Entreprise'];
                     }
 				}
 			    if ($NbUsers)
@@ -161,10 +159,12 @@
 	                    $_SESSION ['Status']            = $LeStatus;
 
 
-                        $ReqLibStatus = Query("SELECT $NomTabStatus.Libelle FROM $NomTabStatus WHERE Code = '$LeStatus'", $Connexion);
-
-                        $ObjLibStatus = mysql_fetch_object ($ReqLibStatus);
-                        $_SESSION ['LibStatus']         = $ObjLibStatus->Libelle;
+                        $ReqLibStatus = $ConnectStages->prepare("SELECT $NomTabStatus.Libelle FROM $NomTabStatus WHERE Code = :LeStatus");
+                        $ReqLibStatus->bindValue(':LeStatus', $LeStatus, PDO::PARAM_STR);
+                        $ReqLibStatus->execute();
+                        $ObjLibStatus = $ReqLibStatus->fetch();
+                        
+                        $_SESSION ['LibStatus']         = $ObjLibStatus['Libelle'];
     					Redirect ('');
                     }
 				}

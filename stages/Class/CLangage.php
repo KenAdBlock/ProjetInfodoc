@@ -14,7 +14,7 @@ class CLangage
 
     function CLangage ($PK_Langage = 0)
     {
-        global $Connexion, $NomTabLangage;
+        global $ConnectStages, $NomTabLangage;
 
         if (!isset ($PK_Langage) || $PK_Langage == 0)
         {
@@ -28,14 +28,13 @@ class CLangage
         {
             $this->PK_Langage = $PK_Langage;
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabLangage
-                                    WHERE PK_Langage = '$PK_Langage'",
-                               $Connexion);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabLangage
+                                    WHERE PK_Langage = '$PK_Langage'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $this->Code    = $LeTuple->Code    ;
-            $this->Libelle = $LeTuple->Libelle ;
-            $this->CodeBin = $LeTuple->CodeBin ;
+            $this->Code    = $LeTuple['Code']    ;
+            $this->Libelle = $LeTuple['Libelle'] ;
+            $this->CodeBin = $LeTuple['CodeBin'] ;
         }
 
     } // CLangage()
@@ -78,17 +77,16 @@ class CLangage
 
     function Select()
     {
-        global $Connexion, $NomTabLangage;
+        global $ConnectStages, $NomTabLangage;
 
-        $Req = Query ("SELECT * FROM $NomTabLangage  WHERE PK_Langage = $this->PK_Langage",
-                  $Connexion);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabLangage  WHERE PK_Langage = $this->PK_Langage");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetCode    ($Obj->Code);
-        $this->SetLibelle ($Obj->Libelle);
-        $this->SetCodeBin ($Obj->CodeBin);
+        $this->SetCode    ($Obj['Code']);
+        $this->SetLibelle ($Obj['Libelle']);
+        $this->SetCodeBin ($Obj['CodeBin']);
 
         return true;
 
@@ -96,37 +94,33 @@ class CLangage
 
     function Insert()
     {
-        global $Connexion, $NomTabLangage;
+        global $ConnectStages, $NomTabLangage;
         
-        return Query ("INSERT INTO $NomTabLangage VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabLangage VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
-                 $this->CodeBin);",
-                     $Connexion);
+                 $this->CodeBin);");
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabLangage;
+        global $ConnectStages, $NomTabLangage;
 
-        return Query ("DELETE FROM $NomTabLangage WHERE PK_Langage = $this->PK_Langage",
-                     $Connexion);
+        return $ConnectStages->query("DELETE FROM $NomTabLangage WHERE PK_Langage = $this->PK_Langage");
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabLangage;
+        global $ConnectStages, $NomTabLangage;
         
-        $Req = Query ("UPDATE $NomTabLangage SET 
+        $Req = $ConnectStages->query("UPDATE $NomTabLangage SET 
                                  Code    = '$this->Code',
                                  Libelle = '$this->Libelle',
                                  Libelle =  $this->CodeBin,
-
-                           WHERE PK_Langage = $this->PK_Langage",
-                  $Connexion);
+                           WHERE PK_Langage = $this->PK_Langage");
 
     } // Update()
 

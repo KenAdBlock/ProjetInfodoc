@@ -3,9 +3,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
     require_once ($PATH_COMMUNS.'FctDiverses.php'); // IsInSet()
 	
-    $ReqLangages     = Query ("SELECT * FROM $NomTabLangages",       $Connexion);
-    $ReqMateriels    = Query ("SELECT * FROM $NomTabMateriels",      $Connexion);
-    $ReqBDs          = Query ("SELECT * FROM $NomTabBasesDonnees",   $Connexion);
+	$ReqLangages = $ConnectStages->query("SELECT * FROM $NomTabLangages");
+	$ReqMateriels = $ConnectStages->query("SELECT * FROM $NomTabMateriels");
+	$ReqBDs = $ConnectStages->query("SELECT * FROM $NomTabBasesDonnees");
 
     require_once ($PATH_CLASS.'CStage.php');
     require_once ($PATH_CLASS.'CUser.php');

@@ -1,9 +1,8 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-    $ReqNewInscripts = Query ("SELECT * FROM $NomTabNewInscripts 
-	                               ORDER BY PK_NewInscript", 
-	                           $Connexion);
+    $ReqNewInscripts = $ConnectStages->query("SELECT * FROM $NomTabNewInscripts 
+	                               ORDER BY PK_NewInscript");
 
 	$URL_Form = $PATH_BACKOFFICE.'BackOffice.php?Trait=Form&SlxTable='.$NomTabNewInscripts;
     $URL_Del  = $PATH_BACKOFFICE.'BackOffice.php?Trait=Del&SlxTable='. $NomTabNewInscripts;
@@ -18,7 +17,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 ?>
 <span class="card-title"><h4 class="center"><?=$Title?></h4></span>
                                                                           <?php
-        if (! mysql_num_rows ($ReqNewInscripts))
+        if (! $ReqNewInscripts->rowCount())
         {
                                                                           ?>
 <h5 class="center">
@@ -56,7 +55,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         </thead>
                 <tr>
                                                                            <?php
-                                        while ($Obj = mysql_fetch_object ($ReqNewInscripts))
+                                        while ($Obj = $ReqNewInscripts->fetch())
                                         {
                                                                           ?>
                 <tr>
@@ -65,7 +64,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             {
                                                                           ?>
                     <td valign="top">
-                        <a href="<?=$URL_Form.'&IdentPK='.$Obj->PK_NewInscript?>"
+                        <a href="<?=$URL_Form.'&IdentPK='.$Obj['PK_NewInscript']?>"
                            <?=AttributsAHRef  ('Valider', 'Valider', '', '');?>
 					   ><i class="material-icons yellow-text text-darken-2">mode_edit</i></a>
                     </td>
@@ -77,9 +76,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             {
                                                                           ?>
                     <td valign="top">
-                        <a href="<?=$URL_Del.'&IdentPK='.$Obj->PK_NewInscript?>"
+                        <a href="<?=$URL_Del.'&IdentPK='.$Obj['PK_NewInscript']?>"
                            <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
-                           onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$Obj->NomTuteur?> <?=$Obj->PrenomTuteur?> ?')"
+                           onClick="return confirm ('Etes-vous sur de vouloir supprimer <?=$Obj['NomTuteur']?> <?=$Obj['PrenomTuteur']?> ?')"
 						   ><i class="material-icons red-text text-darken-2">delete_forever</i>
 						</a>
                     </td>
@@ -87,10 +86,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 									        }
                                                                           ?>
                     <td valign="top" style="text-align : center">
-                        <?=$Obj->PK_NewInscript?>
+                        <?=$Obj['PK_NewInscript']?>
 					</td>
                     <td valign="top" style="text-align : center">
-                        <?=$Obj->NomTuteur?> <?=$Obj->PrenomTuteur?>
+                        <?=$Obj['NomTuteur']?> <?=$Obj['PrenomTuteur']?>
 					</td>
                 </tr>
 

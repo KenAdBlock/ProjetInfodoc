@@ -3,14 +3,13 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
     $Title = 'Liste des entreprises devant verser la Taxe d\'Apprentissage';
 
-    $ReqVersements = Query ("SELECT * FROM $NomTabTaxe ORDER BY RaisonSocialeSoc",
-                            $Connexion);
+    $ReqVersements = $ConnectStages->query("SELECT * FROM $NomTabTaxe ORDER BY RaisonSocialeSoc");
     ?>
 <h4 class="center">
     <?=$Title?>
 </h4>
                                                                           <?php
-        if (! mysql_num_rows ($ReqVersements))
+        if (! $ReqVersements->rowCount())
         {
                                                                           ?>
 <h4 align="center">
@@ -35,19 +34,17 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     </tr>
     </thead>
                                                                           <?php
-                                        mysql_data_seek ($ReqVersements, 0);
-                                        while ($ObjVersement = mysql_fetch_object ($ReqVersements))
+                                        while ($ObjVersement = $ReqVersements->fetch())
                                         {
                                                                           ?>
 
     <tr>
-        <td><?=stripslashes ($ObjVersement->RaisonSocialeSoc)?></td>
-        <td><?=stripslashes ($ObjVersement->VilleSoc)?></td>
-        <td><?=$ObjVersement->CatA?></td>
-        <td><?=$ObjVersement->CatAPlusB?></td>
-        <td><?=$ObjVersement->CatBPlusC?></td>
-        <td><?=stripslashes ($ObjVersement->NomCollecteur)?></td>
-
+        <td><?=stripslashes ($ObjVersement['RaisonSocialeSoc'])?></td>
+        <td><?=stripslashes ($ObjVersement['VilleSoc'])?></td>
+        <td><?=$ObjVersement['CatA']?></td>
+        <td><?=$ObjVersement['CatAPlusB']?></td>
+        <td><?=$ObjVersement['CatBPlusC']?></td>
+        <td><?=stripslashes ($ObjVersement['NomCollecteur'])?></td>
     </tr>
                                                                           <?php
                                         }

@@ -28,9 +28,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         $StepNewInscript = (isset ($IdentPK) && $IdentPK != 0) 
 		                                              ? 'InitModif' : 'InitNew';
 
-	$ReqEntreprises = Query ("SELECT * FROM $NomTabEntreprises
-	                              ORDER BY NomE",
-	                         $Connexion);	
+	$ReqEntreprises = $ConnectStages->query("SELECT * FROM $NomTabEntreprises
+	                              ORDER BY NomE");
+
     $ValidPK_NewInscript  =
 	
     $ValidCiviliteTuteur  =
@@ -239,7 +239,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 		  // Récupération de sa clé
 			
-		  $ValFK_Entreprise = mysql_insert_id();
+		  $ValFK_Entreprise = $ObjSoc->PK_Entreprise;
 	     }
 	     // Enregistrement du tuteur
 			
@@ -268,14 +268,13 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 	     // Enregistrement du mail à envoyer
 
-            Query ("INSERT INTO $NomTabMailsToSend VALUES (
+            $ConnectStages->query("INSERT INTO $NomTabMailsToSend VALUES (
 			    	  '$ValLoginTuteur',
 				  '$NewPassWord',
 				  '$ValCiviliteTuteur',
 				  '".addslashes ($ValNomTuteur)."',
 				  '".addslashes ($ValPrenomTuteur)."',
-                              '$ValMailTuteur');",
-		     $Connexion);
+                              '$ValMailTuteur');");
 										                                   ?>
         <script>
             location.replace("?Trait=List&SlxTable=<?=$NomTabNewInscripts?>");
@@ -372,12 +371,12 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
             <select name="FK_Entreprise">
                 <option value="0">----------------</option>
                 <?php
-                while ($Obj =  mysql_fetch_object ($ReqEntreprises))
+                while ($Obj =  $ReqEntreprises->fetch())
                 {
                     ?>
-                <option value="<?=$Obj->PK_Entreprise?>"
-                    <?=$Obj->PK_Entreprise == $ValFK_Entreprise ? 'selected' : ''?>>
-                    <?=$Obj->NomE?>
+                <option value="<?=$Obj['PK_Entreprise']?>"
+                    <?=$Obj['PK_Entreprise'] == $ValFK_Entreprise ? 'selected' : ''?>>
+                    <?=$Obj['NomE']?>
                 </option>
                 <?php
                 }
@@ -495,7 +494,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
 
         <p class="center">
             <button type="reset" class="waves-effect waves-light btn black white-text"  onClick="history.back()">Abandonner</button>
-            <button type="reset" class="waves-effect waves-light btn black white-text">Reinitialiser</button>
+            <button type="reset" class="waves-effect waves-light btn black white-text">Réinitialiser</button>
             <button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
         </p>
 

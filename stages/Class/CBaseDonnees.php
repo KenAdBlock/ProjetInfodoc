@@ -14,7 +14,7 @@ class CBaseDonnees
 
     function CBaseDonnees ($PK_BD = 0)
     {
-        global $Connexion, $NomTabBasesDonnees;
+        global $ConnectStages, $NomTabBasesDonnees;
 
         if (!isset ($PK_BD) || $PK_BD == 0)
         {
@@ -28,14 +28,13 @@ class CBaseDonnees
         {
             $this->PK_BD = $PK_BD;
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabBasesDonnees
-                                    WHERE PK_BD = '$PK_BD'",
-                               $Connexion);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabBasesDonnees
+                                    WHERE PK_BD = '$PK_BD'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $this->Code    = $LeTuple->Code    ;
-            $this->Libelle = $LeTuple->Libelle ;
-            $this->CodeBin = $LeTuple->CodeBin ;
+            $this->Code    = $LeTuple['Code']    ;
+            $this->Libelle = $LeTuple['Libelle'] ;
+            $this->CodeBin = $LeTuple['CodeBin'] ;
         }
 
     } // CBaseDonnees()
@@ -78,17 +77,16 @@ class CBaseDonnees
 
     function Select()
     {
-        global $Connexion, $NomTabBasesDonnees;
+        global $ConnectStages, $NomTabBasesDonnees;
 
-        $Req = Query ("SELECT * FROM $NomTabBasesDonnees  WHERE PK_BD = $this->PK_BD",
-                  $Connexion);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabBasesDonnees  WHERE PK_BD = $this->PK_BD");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetCode    ($Obj->Code);
-        $this->SetLibelle ($Obj->Libelle);
-        $this->SetCodeBin ($Obj->CodeBin);
+        $this->SetCode    ($Obj['Code']);
+        $this->SetLibelle ($Obj['Libelle']);
+        $this->SetCodeBin ($Obj['CodeBin']);
 
         return true;
 
@@ -96,37 +94,33 @@ class CBaseDonnees
 
     function Insert()
     {
-        global $Connexion, $NomTabBasesDonnees;
+        global $ConnectStages, $NomTabBasesDonnees;
         
-        return Query ("INSERT INTO $NomTabBasesDonnees VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabBasesDonnees VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
-                 $this->CodeBin);",
-                     $Connexion);
+                 $this->CodeBin);");
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabBasesDonnees;
+        global $ConnectStages, $NomTabBasesDonnees;
 
-        return Query ("DELETE FROM $NomTabBasesDonnees WHERE PK_BD = $this->PK_BD",
-                     $Connexion);
+        return $ConnectStages->query("DELETE FROM $NomTabBasesDonnees WHERE PK_BD = $this->PK_BD");
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabBasesDonnees;
+        global $ConnectStages, $NomTabBasesDonnees;
         
-        $Req = Query ("UPDATE $NomTabBasesDonnees SET 
+        $ConnectStages->query("UPDATE $NomTabBasesDonnees SET 
                                  Code    = '$this->Code',
                                  Libelle = '$this->Libelle',
                                  Libelle =  $this->CodeBin,
-
-                           WHERE PK_BD = $this->PK_BD",
-                  $Connexion);
+                           WHERE PK_BD = $this->PK_BD");
 
     } // Update()
 

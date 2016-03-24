@@ -14,7 +14,7 @@ class CMateriel
 
     function CMateriel ($PK_Materiel = 0)
     {
-        global $Connexion, $NomTabMateriels;
+        global $ConnectStages, $NomTabMateriels;
 
         if (!isset ($PK_Materiel) || $PK_Materiel == 0)
         {
@@ -28,14 +28,13 @@ class CMateriel
         {
             $this->PK_Materiel = $PK_Materiel;
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabMateriels
-                                    WHERE PK_Materiel = '$PK_Materiel'",
-                               $Connexion);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabMateriels
+                                    WHERE PK_Materiel = '$PK_Materiel'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $this->Code    = $LeTuple->Code   ;
-            $this->Libelle = $LeTuple->Libelle ;
-            $this->CodeBin = $LeTuple->CodeBin ;
+            $this->Code    = $LeTuple['Code']   ;
+            $this->Libelle = $LeTuple['Libelle'] ;
+            $this->CodeBin = $LeTuple['CodeBin'] ;
         }
 
     } // CMateriel()
@@ -77,17 +76,16 @@ class CMateriel
 
     function Select()
     {
-        global $Connexion, $NomTabMateriels;
+        global $ConnectStages, $NomTabMateriels;
 
-        $Req = Query ("SELECT * FROM $NomTabMateriels  WHERE PK_Materiel = $this->PK_Materiel",
-                  $Connexion);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabMateriels  WHERE PK_Materiel = $this->PK_Materiel");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetCode    ($Obj->Code);
-        $this->SetLibelle ($Obj->Libelle);
-        $this->SetCodeBin ($Obj->CodeBin);
+        $this->SetCode    ($Obj['Code']);
+        $this->SetLibelle ($Obj['Libelle']);
+        $this->SetCodeBin ($Obj['CodeBin']);
 
         return true;
 
@@ -95,37 +93,33 @@ class CMateriel
 
     function Insert()
     {
-        global $Connexion, $NomTabMateriels;
+        global $ConnectStages, $NomTabMateriels;
         
-        return Query ("INSERT INTO $NomTabMateriels VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabMateriels VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
-                 $this->CodeBin);",
-                     $Connexion);
+                 $this->CodeBin);");
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabMateriels;
+        global $ConnectStages, $NomTabMateriels;
 
-        return Query ("DELETE FROM $NomTabMateriels WHERE PK_Materiel = $this->PK_Materiel",
-                     $Connexion);
+        return $ConnectStages->query("DELETE FROM $NomTabMateriels WHERE PK_Materiel = $this->PK_Materiel");
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabMateriels;
+        global $ConnectStages, $NomTabMateriels;
         
-        $Req = Query ("UPDATE $NomTabMateriels SET 
+        $Req = $ConnectStages->query("UPDATE $NomTabMateriels SET 
                                  Code    = '$this->Code',
                                  Libelle = '$this->Libelle',
                                  CodeBin =  $this->CodeBin,
-
-                           WHERE PK_Materiel = $this->PK_Materiel",
-                  $Connexion);
+                           WHERE PK_Materiel = $this->PK_Materiel");
 
     } // Update()
 

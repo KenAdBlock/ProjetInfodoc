@@ -32,10 +32,10 @@
 
     // Connexion a mySQL
 	
-    require_once ($PATH_UTIL.'IdentRoot.php');
     require_once ($PATH_UTIL.'UtilBD.php');
-		
-    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+
+	$UtilBD = new UtilBD();
+	$ConnectStages = $UtilBD->ConnectStages();
 
 	// Construction des droits
 /*
@@ -61,7 +61,7 @@
     $SousModule = $ObjPage->SousModule;
 	$IsSommaire = $ObjPage->IsSommaire;
 
-?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+?><!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -111,28 +111,27 @@
 												if ($IsSommaire) 
 		                                        {
                                                     $NiveauH = 0;
-		                                            $ReqPages = Query ("SELECT * FROM $NomTabPages
+		                                            $ReqPages = $ConnectStages->query("SELECT * FROM $NomTabPages
 		                                                                    WHERE NomPageMere = '$SlxPage' 
-		                                                                    ORDER BY OrdrePartiel",
-		                                                               $Connexion);
-		                                            while ($ObjAutrePage = mysql_fetch_object ($ReqPages))
+		                                                                    ORDER BY OrdrePartiel");
+		                                            while ($ObjAutrePage = $ReqPages->fetch())
 		                                            {
-									                    $ObjNewPage = SearchPage ($ObjAutrePage->NomPage, $NomFichierZip, $CorrigeZip,
+									                    $ObjNewPage = SearchPage ($ObjAutrePage['NomPage'], $NomFichierZip, $CorrigeZip,
 															                      $CheminsCorriges, $PathRelCorrige); 
-	                                        if ($ObjNewPage->Titre != '') 
+	                                        if ($ObjNewPage['Titre'] != '') 
 											                               ?>
-                    <h1 class="TitrePage"><?=$ObjNewPage->Titre?></h1>
+                    <h1 class="TitrePage"><?=$ObjNewPage['Titre']?></h1>
 	                                                                       <?php 
-											if ($ObjNewPage->SousTitre != '') 
+											if ($ObjNewPage['SousTitre'] != '') 
 											                               ?>
-                    <h2 class="TitrePage"><?=$ObjNewPage->SousTitre?></h2>
+                    <h2 class="TitrePage"><?=$ObjNewPage['SousTitre']?></h2>
 	                                                                       <?php 
-											            $CheminCompletPage = $PATH_RACINE.$ObjNewPage->Repertoire.'/';
-	                                                    $NomFichierComplet = $CheminCompletPage.$ObjNewPage->NomFichier;
+											            $CheminCompletPage = $PATH_RACINE.$ObjNewPage['Repertoire'].'/';
+	                                                    $NomFichierComplet = $CheminCompletPage.$ObjNewPage['NomFichier'];
 	                                                    if (file_exists ($NomFichierComplet))
 											            {
 												InclureRqPreliminaires ($CheminCompletPage.'RqPreliminaires.php', 
-												                         $ObjNewPage->IsRqPreliminaires);
+												                         $ObjNewPage['IsRqPreliminaires']);
 		                                                    include ($NomFichierComplet);
 
 														}
@@ -167,7 +166,7 @@
 </html>
 <?php
 
-    mysql_close ($Connexion);
+    $ConnectStages = null;
 ?>
 <script type="text/javascript" language="javascript1.2">
 <!--

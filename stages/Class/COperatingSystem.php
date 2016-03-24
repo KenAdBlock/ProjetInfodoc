@@ -14,7 +14,7 @@ class COperatingSystem
 
     function COperatingSystem ($PK_OS = 0)
     {
-        global $Connexion, $NomTabOS;
+        global $ConnectStages, $NomTabOS;
 
         if (!isset ($PK_OS) || $PK_OS == 0)
         {
@@ -28,14 +28,13 @@ class COperatingSystem
         {
             $this->PK_OS = $PK_OS;
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabOS
-                                    WHERE PK_OS = '$PK_OS'",
-                               $Connexion);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabOS
+                                    WHERE PK_OS = '$PK_OS'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $this->Code    = $LeTuple->Code    ;
-            $this->Libelle = $LeTuple->Libelle     ;
-            $this->CodeBin = $LeTuple->CodeBin     ;
+            $this->Code    = $LeTuple['Code']    ;
+            $this->Libelle = $LeTuple['Libelle']     ;
+            $this->CodeBin = $LeTuple['CodeBin']     ;
         }
 
     } // COperatingSystem()
@@ -78,17 +77,16 @@ class COperatingSystem
 
     function Select()
     {
-        global $Connexion, $NomTabOS;
+        global $ConnectStages, $NomTabOS;
 
-        $Req = Query ("SELECT * FROM $NomTabOS  WHERE PK_OS = $this->PK_OS",
-                  $Connexion);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabOS  WHERE PK_OS = $this->PK_OS");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetCode    ($Obj->Code);
-        $this->SetLibelle ($Obj->Libelle);
-        $this->SetCodeBin ($Obj->CodeBin);
+        $this->SetCode    ($Obj['Code']);
+        $this->SetLibelle ($Obj['Libelle']);
+        $this->SetCodeBin ($Obj['CodeBin']);
 
         return true;
 
@@ -96,37 +94,34 @@ class COperatingSystem
 
     function Insert()
     {
-        global $Connexion, $NomTabOS;
+        global $ConnectStages, $NomTabOS;
         
-        return Query ("INSERT INTO $NomTabOS VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabOS VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
-                 $this->CodeBin);",
-                     $Connexion);
+                 $this->CodeBin);");
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabOS;
+        global $ConnectStages, $NomTabOS;
 
-        return Query ("DELETE FROM $NomTabOS WHERE PK_OS = $this->PK_OS",
-                     $Connexion);
+        return $ConnectStages->query("DELETE FROM $NomTabOS WHERE PK_OS = $this->PK_OS");
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabOS;
+        global $ConnectStages, $NomTabOS;
         
-        $Req = Query ("UPDATE $NomTabOS SET 
+        $Req = $ConnectStages->query("UPDATE $NomTabOS SET 
                                  Code    = '$this->Code',
                                  Libelle = '$this->Libelle',
                                  CodeBin =  $this->CodeBin,
 
-                           WHERE PK_OS = $this->PK_OS",
-                  $Connexion);
+                           WHERE PK_OS = $this->PK_OS");
 
     } // Update()
 

@@ -10,11 +10,11 @@
 	// Connexion a mySQL
 	// =================
 	
-    require_once ($PATH_RACINE.     'Communs/IdentRoot.php');
 	require_once ($PATH_CONSTANTES. 'CstErrBD.php');
-    require_once ($PATH_UTIL.       'UtilBD.php');  // ConnectSelect(), Query()
+    require_once ($PATH_UTIL.       'UtilBD.php');
 
-	$Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+    $UtilBD = new UtilBD();
+    $ConnectStages = $UtilBD->ConnectStages();
 
 	// Récupérations des variables envoyées par POST ou GET
 	// ====================================================
@@ -118,7 +118,7 @@
                                                                           <?php
         /* ==========================  Enregistrement   ==========================*/
 
-                Query ("INSERT INTO $NomTabTaxe VALUES (
+                    $ConnectStages->query("INSERT INTO $NomTabTaxe VALUES (
                               NULL,
                               '".addslashes ($RaisonSocialeSoc)."',
                               '".addslashes ($AdresseSoc)."',
@@ -133,8 +133,7 @@
                               '".addslashes ($NomCollecteur)."',
                               '".addslashes ($AdresseCollect)."',
                               '$CodePostalCollect',
-                              '".addslashes ($VilleCollect)."');",
-                             $Connexion);
+                              '".addslashes ($VilleCollect)."');");
 
         /* ==========================  mail d'information  ======================*/
 
@@ -293,7 +292,7 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align : center">
-                    <input type="reset" value="Reinitialiser">
+                    <input type="reset" value="Réinitialiser">
                     <input type="hidden" name="StepValid" value="1">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

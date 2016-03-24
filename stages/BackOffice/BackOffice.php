@@ -14,7 +14,7 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link href="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
       <link href="<?=$PATH_CSS?>style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-      <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
+
 
       <script language="javascript">
           function popup(page)
@@ -102,32 +102,37 @@ function check (field)
         {
           case "$NomTabUsers" :
             if (! GetDroits ($Status, 'DelUser')) redirect ($URL_SITE);
-			Query ("DELETE FROM $SlxTable WHERE PK_User = '$IdentPK';",
-			       $Connexion);
+            $Req = $ConnectStages->prepare("DELETE FROM $SlxTable WHERE PK_User = :IdentPK;");
+            $Req->bindValue(':IdentPK', $IdentPK);
+            $Req->execute();
             break;
                 
           case "$NomTabNewInscripts" :
             if (! GetDroits ($Status, 'DelNewInscript')) redirect ($URL_SITE);
-			Query ("DELETE FROM $SlxTable WHERE PK_NewInscript = '$IdentPK';",
-			       $Connexion);
+            $Req = $ConnectStages->prepare("DELETE FROM $SlxTable WHERE PK_NewInscript = :IdentPK;");
+            $Req->bindValue(':IdentPK', $IdentPK);
+            $Req->execute();
             break;
                 
           case "$NomTabStages" :
             if (! GetDroits ($Status, 'DelStage')) redirect ($URL_SITE);
-			Query ("DELETE FROM $SlxTable WHERE PK_Stage = '$IdentPK';",
-			       $Connexion);
+            $Req = $ConnectStages->prepare("DELETE FROM $SlxTable WHERE PK_Stage = :IdentPK;");
+            $Req->bindValue(':IdentPK', $IdentPK);
+            $Req->execute();
             break;
                 
           case "$NomTabMailsToSend" :
             if (! GetDroits ($Status, 'DelMailsToSend')) redirect ($URL_SITE);
-			Query ("DELETE FROM $SlxTable WHERE PK_Login = '$IdentPK';",
-			       $Connexion);
+            $Req = $ConnectStages->prepare("DELETE FROM $SlxTable WHERE PK_Login = :IdentPK;");
+            $Req->bindValue(':IdentPK', $IdentPK);
+            $Req->execute();
             break;
                 
           case "$NomTabEntreprises" :
             if (! GetDroits ($Status, 'DelEntreprise')) redirect ($URL_SITE);
-			Query ("DELETE FROM $SlxTable WHERE PK_Entreprise = '$IdentPK';",
-			       $Connexion);
+            $Req = $ConnectStages->prepare("DELETE FROM $SlxTable WHERE PK_Entreprise = :IdentPK;");
+            $Req->bindValue(':IdentPK', $IdentPK);
+            $Req->execute();
             break;  
   
 		  default :
@@ -285,13 +290,18 @@ function check (field)
 		    include ($PATH_BACKOFFICE.'ListeEtudSansStage.php');
 		break;
 
+//      case 'EtiqEntreprises0708AvecStagiaire' :
+//        if (GetDroits ($Status, 'EtiqEntreprises0708AvecStagiaire'))
+//            include ($PATH_BACKOFFICE.'EtiqEntreprises0708AvecStagiaire.php');
+//        break;
+
       default :
-	    include ($PATH_GENERAL.'Generalites.php');
+          redirect ($URL_SITE);
 	    break;
 
     }
     // Fermeture de la base
-    mysql_close ($Connexion);
+    $ConnectStages = null;
 ?>
                 </div>
               </div>
@@ -305,6 +315,7 @@ function check (field)
         <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
         <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
         <script src="<?=$PATH_JS?>init.js"></script>
+        <script src=<?=$PATH_JS?>confirm.js type=text/javascript></script>
         <script src="<?=$PATH_JS?>titre.js"></script>
         <script>titre();</script>
     </body>
