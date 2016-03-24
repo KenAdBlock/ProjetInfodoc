@@ -32,7 +32,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	<table class="bordered striped">
 		<tbody>
 		<tr>
-			<td width="30%"><i>Adresse :</i></td>
+			<td width="30%"><i>Adresse </i></td>
 			<td><?=$ValAdr1?></td>
 		</tr>
 <?php
@@ -52,7 +52,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		</tr>
 		<tr>
 			<td>
-				<i>Responsable :</i>
+				<i>Responsable </i>
 			</td>
 			<td>
 				<?=$ValCivilite?> <b><?=$ValPrenomRespAdmin?> <?=$ValNomRespAdmin?></b>
@@ -63,7 +63,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	{ 
 ?> 
 		<tr>
-			<td><i>Email :</i></td>
+			<td><i>Email </i></td>
 <?php
 		if (GetDroits ($Status, 'MailToRespAdmin')) 
 		{ 
@@ -84,7 +84,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	{ 
 ?>
 		<tr>
-			<td><i>Tel :</i></td>
+			<td><i>Tel </i></td>
 			<td> <?=$ValTelRespAdmin?></td>
 		</tr>
 <?php
@@ -93,7 +93,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	{ 
 ?>
 		<tr>
-			<td><i>Fax :</i></td>
+			<td><i>Fax </i></td>
 			<td><?=$ValFaxRespAdmin?></td>
 		</tr>
 <?php
@@ -103,7 +103,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 ?>
 		<tr>
 			<td valign="top">
-				<i>Présentation de <nobr>l'entreprise :</nobr></i>
+				<i>Présentation de <nobr>l'entreprise </nobr></i>
 			</td>
 			<td>
 <?php 
@@ -122,7 +122,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 ?>
 		<tr>
 			<td valign="top">
-				<i>Site de <nobr>l'entreprise :</nobr></i>
+				<i>Site de <nobr>l'entreprise </nobr></i>
 			</td>
 			<td>
 				<a href="<?=$ValSiteEntreprise?>" target="_blank"?>

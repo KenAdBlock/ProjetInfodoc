@@ -42,11 +42,11 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	$MsgProposeA [2] = 'aux étudiants de Licence Professionnelle';
 	$MsgProposeA [3] = 'aux étudiants de DUT ou de Licence Professionnelle';
 ?>
-<h2 style="text-align : center;">Annee 2015-2016 : fiche de stage n° <?=$ValPK_Stage?></h2>
+<h4 class="center">Année 2015-2016 : fiche de stage n° <?=$ValPK_Stage?></h4>
 
-<h3 style="text-align : center;">
-    proposé <?=$MsgProposeA [$ObjStage->GetNiveauStage()]?>
-</h3>
+<h6 class="center">
+    <b>proposé <?=$MsgProposeA [$ObjStage->GetNiveauStage()]?></b>
+</h6>
 
 <table align="center" style="border : 2px solid blue" width="<?=$WidthCadre?>"><tr><td>
 <table  cellpadding="2" width="100%">
@@ -111,6 +111,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 										}
                                         AffichLigneVierge();
                                                                          ?>
+
  	<tr>
 	    <td></td>
         <td colspan="2"><nobr><b>Renseignements administratifs :</b></nobr></td>
@@ -377,21 +378,18 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                onMouseOut ="window.status=''; return true"
                 ></a><img src="<?=$PATH_GIFS?>PrintCourant.gif" border="0">
 </td>
-<td style="text-align : center;" valign = center">
-    <input type="button" value="Retour" style="width : <?=$WidthButton?>px" 
-	       onClick="history.go (-1)">
-                                                                       <?php
-                                        if (GetDroits ($Status, 'ModifStage'))
-                                        {
-																		   ?>
+</tr>
+<p class="center">
+<button type="reset" class="waves-effect waves-light btn black white-text" onClick="history.go()">Retour</button>
+	<?php
+	if (GetDroits ($Status, 'ModifStage'))
+	{
+	?>
+<button type="reset" class="waves-effect waves-light btn bleu1 white-text" onClick="window.location='?Trait=Form&SlxTable=<?=$NomTabStages?>&IdentPK=<?=$ObjStage->GetPK_Stage()?>'">Modifier</button>
+</p>
+											</table>
+</td></tr></table>
 
-    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-    <input type="button" value="Modifier" style="width : <?=$WidthButton?>px"
-	       onClick="window.location='?Trait=Form&SlxTable=<?=$NomTabStages?>&IdentPK=<?=$ObjStage->GetPK_Stage()?>'">
-	</a>
-</td></tr></table>
-</td></tr></table>
-            
                                                                        <?php
                                         }
 }
