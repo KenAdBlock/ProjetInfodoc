@@ -107,7 +107,7 @@
 		<label for="email">Votre e-mail</label>
 </div>
 <p class="center">
-		<button class="btn waves-effect waves-light white-text blue" type="submit">Valider</button>
+		<button class="btn waves-effect waves-light white-text bleu1" type="submit">Valider</button>
 		</p>
 
                                                                            <?php
@@ -146,7 +146,7 @@
 		
 		<br />
 		<p>Votre nouveau mot de passe vous sera envoyé automatiquement par courrier électronique dans les plus brefs délais.</p>
-<br><p class="center"><button class="btn waves-effect waves-light white-text blue" type="submit" 
+<br><p class="center"><button class="btn waves-effect waves-light white-text black" type="submit" 
 		    onClick="window.close()">Fermer la fenêtre</button></p>
 
 
@@ -160,9 +160,9 @@
                                           }
 										                                   ?>
 <!--  Scripts-->
-  <script src="<?=$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
-  <script src="<?=$PATH_JS?>materialize.js"></script>
-  <script src="<?=$PATH_JS?>init.js"></script>
+  <script src="<?=$URL_SITE.$PATH_JQUERY?>jquery-2.2.1.min.js"></script>
+        <script src="<?=$URL_SITE.$PATH_MATERIALIZE?>materialize.min.js"></script>
+        <script src="<?=$PATH_JS?>init.js"></script>
 </body> 
 </html>
 

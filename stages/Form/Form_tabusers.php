@@ -293,7 +293,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                             ?>
                             <div class="row">
                                 <div class="input-field col l6 m6 s12">
-                                    <select name="StatusUser">
+                                    <select class="browser-default" name="StatusUser">
                                         <?php
                                         while ($ObjStatus = $ReqStatus->fetch())
                                         {
@@ -309,7 +309,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                     <label><b><?=$ValidStatus?>Statut</b></label>
                                 </div>
                                 <div class="input-field col l6 m6 s12">
-                                    <select name="FK_Entreprise">
+                                    <select class="browser-default" name="FK_Entreprise">
                                         <option value="0"
                                             <?=$ValFK_Entreprise == 0 ? 'selected' : ''?>
                                         >----------------
