@@ -83,12 +83,12 @@ $Msg_FormStage [MSGFORMSTAGE_STDCONTROLE_QL    ] = ' De Controle qualité logici
 $Msg_FormStage [MSGFORMSTAGE_STDGESTIONPROJET  ] = ' De Gestion de projet';
 
 $Msg_FormStage [MSGFORMSTAGE_NATURE_TACHE    ] = '<h6><b>Nature de la tâche :</b></h6>';
-$Msg_FormStage [MSGFORMSTAGE_PROGRAMMATION   ] = '&nbsp; &nbsp; &nbsp; &nbsp; - programmation';
-$Msg_FormStage [MSGFORMSTAGE_ANALYSE         ] = '&nbsp; &nbsp; &nbsp; &nbsp; - analyse';
+$Msg_FormStage [MSGFORMSTAGE_PROGRAMMATION   ] = '- programmation';
+$Msg_FormStage [MSGFORMSTAGE_ANALYSE         ] = '- analyse';
 	
 $Msg_FormStage [MSGFORMSTAGE_INTEGRATION     ] = '<h6><b>Encadrement du stagiaire, le travail de l\'étudiant : </b></h6>';
-$Msg_FormStage [MSGFORMSTAGE_INTEGRPROJETGLOBAL] = '&nbsp; &nbsp; &nbsp; &nbsp; - s\'intègre-t-il dans un projet global ?';
-$Msg_FormStage [MSGFORMSTAGE_ENTITEINDEPENDANTE] = '&nbsp; &nbsp; &nbsp; &nbsp; - constitue-t-il une entité indépendante ? ';
+$Msg_FormStage [MSGFORMSTAGE_INTEGRPROJETGLOBAL] = '- s\'intègre-t-il dans un projet global ?';
+$Msg_FormStage [MSGFORMSTAGE_ENTITEINDEPENDANTE] = '- constitue-t-il une entité indépendante ? ';
 
 $Msg_FormStage [MSGFORMSTAGE_REMARQUES       ] = '<h6><b>Remarques générales :</b></h6> ';
 $Msg_FormStage [MSGFORMSTAGE_NBPERS_CI       ] = 'Nombre de personnes du Centre Informatique : ';
