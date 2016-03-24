@@ -178,9 +178,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                     if ($DroitStagesNonPourvus)
                                                         continue;
                                                     else
-                                                        $BgColor = '#2196f3';
+                                                        $BgColor = '#b71c1c';
                                                 else
-                                                    $BgColor = '#b71c1c';
+                                                    $BgColor = '#2196f3';
                                                                               ?>
                          <td valign="top">
                             <a href="<?=$URL_AffichStage.$ObjStage['PK_Stage']?>"

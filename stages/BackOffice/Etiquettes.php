@@ -2,7 +2,7 @@
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
 ?>
-<h1>Création d'étiquettes</h1>
+<h4 class="center">Création d'étiquettes</h4>
 
 <p>
 <a href="?Trait=EtiqEntreprises&Option=Toutes">Toutes entreprises</a>

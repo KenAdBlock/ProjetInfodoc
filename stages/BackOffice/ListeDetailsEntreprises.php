@@ -27,19 +27,19 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	$URL_ListSoc  = '?Trait=ListeDetailsEntreprises&slx='.
 	                ($slx == 'NAsc' ? 'NDesc' : 'NAsc' );
 	$QuelOrdreSoc = 'Ordre '.  ($slx == 'NAsc' ? 'de' : '')     .'croissant';
-	$GifOrderSoc  = $PATH_GIFS.($slx == 'NAsc' ? 'desc' : 'asc').'_order.png';
+	$GifOrderSoc  = ($slx == 'NAsc' ? 'arrow_drop_down' : 'arrow_drop_up');
 
 	$URL_ListResp  = '?Trait=ListeDetailsEntreprises&slx='.
 	                ($slx == 'NomRespAsc' ? 'NomRespDesc' : 'NomRespAsc' );
 	$QuelOrdreResp = 'Ordre '.  ($slx == 'NomRespAsc' ? 'de' : '')     .'croissant';
-	$GifOrderResp  = $PATH_GIFS.($slx == 'NomRespAsc' ? 'desc' : 'asc').'_order.png';
+	$GifOrderResp  = ($slx == 'NomRespAsc' ? 'arrow_drop_down' : 'arrow_drop_up');
 
     $Title = 'Liste détaillée des entreprises';
 
 ?>
-<h1 style="text-align : center">
+<h4 class="center">
     <?=$Title?>
-</h1>
+</h4>
                                                                           <?php
      if (! $ReqSoc->rowCount())
     {
@@ -52,23 +52,24 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     else
     {
                                                                           ?>
-<table  align="center">
-    <tr>
-        <td valign="top">
-            <table cellpadding="5">
+
+<div style="width:100%; overflow:auto;">
+<table class="highlight bordered centered grey lighten-4 small-text">
+ <thead class="grey darken-1 white-text">
+
                 <tr>
                     <th style="text-align : center" valign="top" nowrap>
-					    <a href="<?=$URL_ListSoc?>"
+					    <a class="white-text" href="<?=$URL_ListSoc?>"
                            <?=AttributsAHRef ($QuelOrdreSoc, $QuelOrdreSoc, '', '');?>
-						    ><b>Raison Sociale</b>&nbsp;
-							 <img border="0" src="<?=$GifOrderSoc?>">
+						    ><i class="material-icons white-text right" style="font-size: 20px"><?=$GifOrderSoc?></i>
+                <b>Raison Sociale</b>
 						</a>
 					</th>
                     <th style="text-align : center" valign="top" nowrap>
-					    <a href="<?=$URL_ListResp?>"
+					    <a class="white-text" href="<?=$URL_ListResp?>"
                            <?=AttributsAHRef ($QuelOrdreResp, $QuelOrdreResp, '', '');?>
-						    ><b>Responsable</b>&nbsp;
-							 <img border="0" src="<?=$GifOrderResp?>">
+						    ><i class="material-icons white-text right" style="font-size: 20px"><?=$GifOrderResp?></i>
+                <b>Responsable</b>
 						</a>
 					</th>
 					<th style="text-align : center" valign="top" nowrap>Adr1</th>
@@ -79,7 +80,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 					<th style="text-align : center" valign="top" nowrap>mail</th>
 					<th style="text-align : center" valign="top" nowrap>fax</th>
 					<th style="text-align : center" valign="top" nowrap>site web</th>
-                <tr><td colspan="10"><hr></td></tr>
+                </tr></thead>
+
                 <tr>
                                                                        <?php
                                                      while ($ObjSoc = $ReqSoc->fetch())
@@ -122,10 +124,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                                        <?php
                                                      }
                                                                        ?>
-            </table>
-        </td>
-    </tr>
+
 </table>
+</div>
 <?php
     }
 }

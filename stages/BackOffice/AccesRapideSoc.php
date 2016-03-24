@@ -23,7 +23,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     </div>
     <p class="center">
         <button type="button" class="waves-effect waves-light btn black white-text"  onClick="history.back()">Retour</button>
-        <button type="submit" class="waves-effect waves-light btn jaune white-text">Modifier</button>
+        <button type="submit" class="waves-effect waves-light btn bleu1 white-text">Modifier</button>
     </p>
 </form>
 </div>

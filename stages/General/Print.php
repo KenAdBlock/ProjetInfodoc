@@ -55,7 +55,7 @@
 	
 	foreach ($_GET as $clef => $valeur) $$clef = $valeur;
 
-    $ObjPage = SearchPage ($SlxPage, $NomFichierZip, $CorrigeZip, 
+    $ObjPage = SearchPage ($SlxPage, $NomFichierZip, $CorrigeZip,
 	                       $CheminsCorriges, $PathRelCorrige);
     $Module     = $ObjPage->Module;
     $SousModule = $ObjPage->SousModule;
@@ -94,11 +94,11 @@
 	                                        include ($PATH_PAGESLIBRES.'CnxPrealable.php');
 	                                    else
 	                                    {
-	                                        if ($ObjPage->Titre != '') 
+	                                        if ($ObjPage->Titre != '')
 											                               ?>
                     <h1 class="TitrePage"><?=$ObjPage->Titre?><?=$TousCorriges ? " - Corrigés" : "";?></h1>
 	                                                                       <?php 
-											if ($ObjPage->SousTitre != '') 
+											if ($ObjPage->SousTitre != '')
 											                               ?>
                     <h2 class="TitrePage"><?=$ObjPage->SousTitre?></h2>
 	                                                                      <?php 

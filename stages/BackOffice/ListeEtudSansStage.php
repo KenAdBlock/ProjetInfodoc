@@ -10,7 +10,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 			  	            WHERE FK_Statut = ".STATUS_ETUD2." AND FK_Stage = ''
 						    ORDER BY Nom");
 ?>
-<h1>Liste des étudiants n'ayant pas de stage</h1>
+<h4>Liste des étudiants n'ayant pas de stage</h4>
 
 <table>
                                                                            <?php

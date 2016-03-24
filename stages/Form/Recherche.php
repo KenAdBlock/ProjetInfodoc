@@ -157,7 +157,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    </div>
 	    </div>
 <div class="row">
-		    <h6><b><u>METHODES OU STANDARDS : </u></b></h6>
+		    <h6><b><u>METHODES OU STANDARDS </u></b></h6>
 		
 		    <?=$ValidMA?>
 		
@@ -258,7 +258,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
             <button class="waves-effect waves-light btn black white-text" type="button"
                     onClick="history.go (-1)">Retour</button>
           
-             <button class="waves-effect waves-light btn jaune white-text" type="submit" >Rechercher</button>
+             <button class="waves-effect waves-light btn bleu1 white-text" type="submit" >Rechercher</button>
         </p>
 <input type="hidden" name="Recherche"   value="1">
 <input type="hidden" name="StepConsult" value="Valid" >
