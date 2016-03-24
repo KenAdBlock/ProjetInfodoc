@@ -42,7 +42,7 @@ function GenerSendPassWord ($Login)
 
 	$Msg = 'Votre nouveau mot de passe est : '.$NewPassWord;
 	
-	mail ($Obj->EMail, 'Nouveau mot de passe', $Msg, "From: $MonEMail");
+	mail ($Obj['EMail'], 'Nouveau mot de passe', $Msg, "From: $MonEMail");
 
 } // GenerPassWord()
 

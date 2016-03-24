@@ -94,7 +94,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 						</a>
 					</td>
                     <td valign="top" style="text-align : left">
-                        <?=$ObjSoc->Civilite?> <?=stripslashes (trim ($ObjSoc['NomR']))?> <?=stripslashes (trim ($ObjSoc['PrenomR']))?>
+                        <?=$ObjSoc['Civilite']?> <?=stripslashes (trim ($ObjSoc['NomR']))?> <?=stripslashes (trim ($ObjSoc['PrenomR']))?>
 					</td>
                     <td valign="top" style="text-align : left">
                         <?=stripslashes (trim ($ObjSoc['Adr1']))?>
