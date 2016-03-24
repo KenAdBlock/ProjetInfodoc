@@ -42,15 +42,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	$MsgProposeA [2] = 'aux étudiants de Licence Professionnelle';
 	$MsgProposeA [3] = 'aux étudiants de DUT ou de Licence Professionnelle';
 ?>
-<h4 class="center">Année 2015-2016 : fiche de stage n° <?=$ValPK_Stage?></h4>
+<span class="card-title"><h4 class="center">Année 2015-2016 : fiche de stage n° <?=$ValPK_Stage?></h4></span>
 
 <h6 class="center">
     <b>proposé <?=$MsgProposeA [$ObjStage->GetNiveauStage()]?></b>
 </h6>
-
-<table align="center" style="border : 2px solid blue" width="<?=$WidthCadre?>"><tr><td>
+	<hr>
 <table  cellpadding="2" width="100%">
-                                                                          <?php
+ <tbody>                                                                         <?php
 	    /* ================================= */
 	    /* 1. Entreprise                     */
 	    /* ================================= */
@@ -364,7 +363,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 																		   ?>
 		</table></td>
 	</tr>
-
+ </tbody>
 </table>
 <table width="100%">
 <tr><td colspan="2">&nbsp;</td></tr>
@@ -389,7 +388,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 <button type="reset" class="waves-effect waves-light btn bleu1 white-text" onClick="window.location='?Trait=Form&SlxTable=<?=$NomTabStages?>&IdentPK=<?=$ObjStage->GetPK_Stage()?>'">Modifier</button>
 </p>
 											</table>
-</td></tr></table>
+
 
                                                                        <?php
                                         }
