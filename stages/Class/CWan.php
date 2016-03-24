@@ -14,7 +14,7 @@ class CWan
 
     function CWan ($PK_Wan = 0)
     {
-        global $Connexion, $NomTabReseauxPublics;
+        global $ConnectStages, $NomTabReseauxPublics;
 
         if (!isset ($PK_Wan) || $PK_Wan == 0)
         {
@@ -28,14 +28,13 @@ class CWan
         {
             $this->PK_Wan = $PK_Wan;
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabReseauxPublics
-                                    WHERE PK_Wan = '$PK_Wan'",
-                               $Connexion);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabReseauxPublics
+                                    WHERE PK_Wan = '$PK_Wan'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $this->Code    = $LeTuple->Code    ;
-            $this->Libelle = $LeTuple->Libelle ;
-            $this->CodeBin = $LeTuple->CodeBin ;
+            $this->Code    = $LeTuple['Code']    ;
+            $this->Libelle = $LeTuple['Libelle'] ;
+            $this->CodeBin = $LeTuple['CodeBin'] ;
        }
 
     } // CWan()
@@ -78,17 +77,16 @@ class CWan
 
     function Select()
     {
-        global $Connexion;
+        global $ConnectStages;
 
-        $Req = Query ("SELECT * FROM $NomTabReseauxPublics  WHERE PK_Wan = $this->PK_Wan",
-                  $Connexion);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabReseauxPublics  WHERE PK_Wan = $this->PK_Wan");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetCode    ($Obj->Code);
-        $this->SetLibelle ($Obj->Libelle);
-        $this->SetCodeBin ($Obj->CodeBin);
+        $this->SetCode    ($Obj['Code']);
+        $this->SetLibelle ($Obj['Libelle']);
+        $this->SetCodeBin ($Obj['CodeBin']);
 
         return true;
 
@@ -96,37 +94,34 @@ class CWan
 
     function Insert()
     {
-        global $Connexion, $NomTabReseauxPublics;
+        global $ConnectStages, $NomTabReseauxPublics;
         
-        return Query ("INSERT INTO $NomTabReseauxPublics VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabReseauxPublics VALUES (
                 NULL,
                 '$this->Code',
                 '$this->Libelle',
-                 $this->CodeBin);",
-                     $Connexion);
+                 $this->CodeBin);");
 
     } // Insert()
 
     function Delete()
     {
-        global $Connexion, $NomTabReseauxPublics;
+        global $ConnectStages, $NomTabReseauxPublics;
 
-        return Query ("DELETE FROM $NomTabReseauxPublics WHERE PK_Wan = $this->PK_Wan",
-                     $Connexion);
+        return $ConnectStages->query("DELETE FROM $NomTabReseauxPublics WHERE PK_Wan = $this->PK_Wan");
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabReseauxPublics;
-        
-        $Req = Query ("UPDATE $NomTabReseauxPublics SET 
+        global $ConnectStages, $NomTabReseauxPublics;
+
+        $ConnectStages->query("UPDATE $NomTabReseauxPublics SET 
                                  Code    = '$this->Code',
                                  Libelle = '$this->Libelle',
                                  Libelle =  $this->CodeBin,
 
-                           WHERE PK_Wan = $this->PK_Wan",
-                  $Connexion);
+                           WHERE PK_Wan = $this->PK_Wan");
 
     } // Update()
 

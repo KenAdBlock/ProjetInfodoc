@@ -10,6 +10,7 @@
     require_once ($PATH_UTIL.'UtilSession.php');
     require_once ($PATH_UTIL.'UtilBD.php');
     require_once ($PATH_UTIL.'UtilErr.php'); // ValidChampRempli(), ValidPassWord(), 
+
     require_once ($PATH_COMMUNS.'IdentRoot.php');
 
 	$Title = "Changement de mot de passe";
@@ -31,9 +32,10 @@
 
     // Connexion a mySQL
 	// =================
-	
-	
-    $Connexion = ConnectSelect ($Hote, $User, $Passwd, $NomBase);
+
+
+	$UtilBD = new UtilBD();
+	$ConnectStages = $UtilBD->ConnectStages();
 
     // ========================================================================== //
 
@@ -78,11 +80,12 @@
  		if (count ($CodErr) == 0)
         {        
 		    $NewPWCrypte = md5 ($NewPW1);
-			$login       = $_SESSION ['login']; 
-		    $ReqEnreg = Query ("UPDATE $NomTabUsers SET
+			$login       = $_SESSION ['login'];
+			$ReqEnreg = $ConnectStages->prepare("UPDATE $NomTabUsers SET
 					  		        Password = '$NewPWCrypte'
-							    WHERE Login = '$login'",
-						    $Connexion);
+							    WHERE Login = :login");
+			$ReqEnreg->bindValue(':login', $login);
+			$ReqEnreg->execute();
             CloseWindow();
 		    die;
 		}

@@ -23,9 +23,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
     require_once ($PATH_COMMUNS.'FctDiverses.php'); // IsInSet()
 	
-    $ReqLangages     = Query ("SELECT * FROM $NomTabLangages",       $Connexion);
-    $ReqMateriels    = Query ("SELECT * FROM $NomTabMateriels",      $Connexion);
-    $ReqBDs          = Query ("SELECT * FROM $NomTabBasesDonnees",   $Connexion);
+    $ReqLangages = $ConnectStages->query("SELECT * FROM $NomTabLangages");
+    $ReqMateriels = $ConnectStages->query("SELECT * FROM $NomTabMateriels");
+    $ReqBDs = $ConnectStages->query("SELECT * FROM $NomTabBasesDonnees");
 
     require_once ($PATH_CLASS.'CStage.php');
 
@@ -103,11 +103,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
 		if ($ValFK_Entreprise != 0)
 		{
-		    $ReqSoc  = Query ("SELECT NomE FROM $NomTabEntreprises
-			                       WHERE PK_Entreprise = $ValFK_Entreprise;",
-			                  $Connexion);
-			$ObjSoc  = mysql_fetch_object ($ReqSoc);
-			$ValNomE = $ObjSoc->NomE;
+            $ReqSoc = $ConnectStages->query("SELECT NomE FROM $NomTabEntreprises
+			                       WHERE PK_Entreprise = $ValFK_Entreprise;");
+			$ObjSoc  = $ReqSoc->fetch();
+			$ValNomE = $ObjSoc['NomE'];
 		}
 		else
 		    $ValNomE = '';
@@ -271,12 +270,11 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		
         // Recherche de l'entreprise à partir du tuteur
 
-		$ReqTuteur = Query ("SELECT FK_Entreprise FROM $NomTabUsers
-			                              WHERE PK_User = $ValFK_Tuteur;",
-								     $Connexion);
+        $ReqTuteur = $ConnectStages->query("SELECT FK_Entreprise FROM $NomTabUsers
+			                              WHERE PK_User = $ValFK_Tuteur;");
         
-        $ObjTuteur = mysql_fetch_object ($ReqTuteur);
-		$ValFK_Entreprise = $ObjTuteur->FK_Entreprise;
+        $ObjTuteur = $ReqTuteur->fetch();
+		$ValFK_Entreprise = $ObjTuteur['FK_Entreprise'];
 
         if (! ($CodErrVide || $CodErrInval))
         {
@@ -350,12 +348,11 @@ alert('<?php echo 'Oui ? '.$ValLogicielsSpecOuiNon.' '.ProtectApos ($ValLogiciel
     $FinBold = $Status == TUTEUR ? '' : '</b>';
 
     if ($Status != TUTEUR)    // ==> ADMIN || RESP || SECR
-	    $ReqTuteurs = Query ("SELECT DISTINCT $NomTabUsers.Nom, $NomTabUsers.Prenom, $NomTabUsers.PK_User, $NomTabEntreprises.NomE 
+        $ReqTuteurs = $ConnectStages->query("SELECT DISTINCT $NomTabUsers.Nom, $NomTabUsers.Prenom, $NomTabUsers.PK_User, $NomTabEntreprises.NomE 
 		                          FROM $NomTabUsers, $NomTabEntreprises 
 		                          WHERE $NomTabUsers.Status = '".TUTEUR."'
 								    AND $NomTabUsers.FK_Entreprise = $NomTabEntreprises.PK_Entreprise
-								  ORDER BY NomE, Nom", 
-	                         $Connexion);
+								  ORDER BY NomE, Nom");
 
                                         if ($StepStage == 'MAJTabOK')
                                         {
@@ -411,14 +408,14 @@ alert('<?php echo 'Oui ? '.$ValLogicielsSpecOuiNon.' '.ProtectApos ($ValLogiciel
                    <label class="black-text" for="<?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF]?>"><b><?=$Msg_FormStage [MSGFORMSTAGE_NIVEAUSTAGEINDIFF]?></b></label>
 
 
-<p style="text-align : center; font-size : 11 px; font-style : italic;">
+<p style="text-align : center; font-size : 11px; font-style : italic;">
 Toutes les rubriques en <b>gras</b> doivent obligatoirement être remplies
 </p>
                                                                            <?php
                                         if ($CodErrVide || $CodErrInval) 
 										{ 
 										                                   ?>
-<p style="text-align : center; font-size : 16 px;">
+<p style="text-align : center; font-size : 16px;">
 Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
 </p> 
                                                                            <?php
@@ -458,12 +455,12 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
             <select name="FK_Tuteur" size="1" style="width: <?=$WidthSelect?>px">;
                 <option value="0" <?=$ValFK_Tuteur == 0 ? 'selected' : ''?> >----------------</option>
                                                                          <?php
-		                                    while ($ObjTuteur = mysql_fetch_object ($ReqTuteurs))
+		                                    while ($ObjTuteur = $ReqTuteurs->fetch())
 										    {
                                                                          ?>
-                <option value="<?=$ObjTuteur->PK_User?>"
-                        <?=$ObjTuteur->PK_User == $ValFK_Tuteur ? 'selected' : ''?>
-						   ><?=$ObjTuteur->Prenom?> <?=$ObjTuteur->Nom?> - <?=$ObjTuteur->NomE?>
+                <option value="<?=$ObjTuteur['PK_User']?>"
+                        <?=$ObjTuteur['PK_User'] == $ValFK_Tuteur ? 'selected' : ''?>
+						   ><?=$ObjTuteur['Prenom']?> <?=$ObjTuteur['Nom']?> - <?=$ObjTuteur['NomE']?>
 				</option>
                                                                          <?php
 										    }
@@ -811,7 +808,7 @@ stagiaires dans le privé comme dans le public au taux de 13,75% du plafond de l
        <p class="center">
             <button class="waves-effect waves-light btn black white-text" type="button" 
                     onClick="history.go (-1)">Abandonner</button>
-            <button class="waves-effect waves-light btn black white-text" type="reset">Reinitialiser</button>
+            <button class="waves-effect waves-light btn black white-text" type="reset">Réinitialiser</button>
             <button class="waves-effect waves-light btn bleu1 white-text" type="submit">Valider</button>
         </p>
 

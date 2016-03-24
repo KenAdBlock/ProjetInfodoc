@@ -1,14 +1,9 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-	$NomBaseMathieu  = /*"mathieu"*/"laporte"; 
-	$NomBaseStages   = "stages"; 
-    $UserMathieu     = /*"mathieu"*/"root";
-    $PasswdMathieu   = /*"dehaime"*/$PASSWDBD;
-    $HoteMathieu     = "localhost";
-	
-	$ConnectMathieu = ConnectSelect ($HoteMathieu, $UserMathieu, 
-	                                 $PasswdMathieu, $NomBaseMathieu);
+	$UtilBD = new UtilBD();
+	$ConnectLaporte = $UtilBD->ConnectLaporte();
+
 ?>
 
 <h4 class="center">Liste des notes d'amphis de 1ère année</h4>

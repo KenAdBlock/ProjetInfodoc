@@ -1,12 +1,12 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-    $ReqOS         = Query ("SELECT * FROM $NomTabOS",             $Connexion);
-    $ReqLangages   = Query ("SELECT * FROM $NomTabLangages",       $Connexion);
-    $ReqMateriels  = Query ("SELECT * FROM $NomTabMateriels",      $Connexion);
-    $ReqLans       = Query ("SELECT * FROM $NomTabReseauxLocaux",  $Connexion);
-    $ReqWans       = Query ("SELECT * FROM $NomTabReseauxPublics", $Connexion);
-    $ReqBDs        = Query ("SELECT * FROM $NomTabBasesDonnees",   $Connexion);
+	$ReqOS = $ConnectStages->query("SELECT * FROM $NomTabOS");
+	$ReqLangages = $ConnectStages->query("SELECT * FROM $NomTabLangages");
+	$ReqMateriels = $ConnectStages->query("SELECT * FROM $NomTabMateriels");
+	$ReqLans = $ConnectStages->query("SELECT * FROM $NomTabReseauxLocaux");
+	$ReqWans = $ConnectStages->query("SELECT * FROM $NomTabReseauxPublics");
+	$ReqBDs = $ConnectStages->query("SELECT * FROM $NomTabBasesDonnees");
 
 	$ValidMateriel =
 	$ValidReseauxLocaux =
@@ -26,12 +26,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <h6><b>Matériel utilisé</b></h6>
 
 		                                                                   <?php
-										while ($Obj = mysql_fetch_object ($ReqMateriels))
+										while ($Obj = $ReqMateriels->fetch())
 										{ 
 		                                                                   ?>
 <div class="input-field col s12 m6 l4">
-                <input class="filled-in" type="checkbox" id="<?=$Obj->Libelle?>" name="<?=$Obj->Code?>" value="<?=$Obj->CodeBin?>">
-                <label for="<?=$Obj->Libelle?>"><?=$Obj->Libelle?></label>
+                <input class="filled-in" type="checkbox" id="<?=$Obj['Libelle']?>" name="<?=$Obj['Code']?>" value="<?=$Obj['CodeBin']?>">
+                <label for="<?=$Obj['Libelle']?>"><?=$Obj['Libelle']?></label>
 	    	</div>
 		                                                                   <?php
 										} 
@@ -43,12 +43,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <h6><b>Réseaux locaux</b></h6>
 		
  		                                                                   <?php
-										while ($Obj = mysql_fetch_object ($ReqLans))
+										while ($Obj = $ReqLans->fetch())
 										{ 
 		                                                                   ?>
             <div class="input-field col s12 m6 l4">
-                <input class="filled-in" type="checkbox" id="<?=$Obj->Libelle?>" name="<?=$Obj->Code?>" value="<?=$Obj->CodeBin?>">
-                <label for="<?=$Obj->Libelle?>"><?=$Obj->Libelle?></label>
+                <input class="filled-in" type="checkbox" id="<?=$Obj['Libelle']?>" name="<?=$Obj['Code']?>" value="<?=$Obj['CodeBin']?>">
+                <label for="<?=$Obj['Libelle']?>"><?=$Obj['Libelle']?></label>
 	    	</div>
 		                                                                   <?php
 										} 
@@ -66,12 +66,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <h6><b>Réseaux publics</b></h6>
 		
 		                                                                   <?php
-										while ($Obj = mysql_fetch_object ($ReqWans))
+										while ($Obj = $ReqWans->fetch())
 										{ 
 		                                                                   ?>
             <div class="input-field col s12 m6 l4">
-                <input class="filled-in" type="checkbox" id="<?=$Obj->Libelle?>" name="<?=$Obj->Code?>" value="<?=$Obj->CodeBin?>">
-                <label for="<?=$Obj->Libelle?>"><?=$Obj->Libelle?></label>
+                <input class="filled-in" type="checkbox" id="<?=$Obj['Libelle']?>" name="<?=$Obj['Code']?>" value="<?=$Obj['CodeBin']?>">
+                <label for="<?=$Obj['Libelle']?>"><?=$Obj['Libelle']?></label>
 	    	</div>
 		                                                                   <?php
 										} 
@@ -89,12 +89,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		
 		                                                                   <?php
 ($ReqLangages);
-										while ($Obj = mysql_fetch_object ($ReqLangages))
+										while ($Obj = $ReqLangages->fetch())
 										{ 
 		                                                                   ?>
             <div class="input-field col s12 m6 l4">
-                <input class="filled-in" type="checkbox" id="<?=$Obj->Libelle?>" name="<?=$Obj->Code?>" value="<?=$Obj->CodeBin?>">
-                <label for="<?=$Obj->Libelle?>"><?=$Obj->Libelle?></label>
+                <input class="filled-in" type="checkbox" id="<?=$Obj['Libelle']?>" name="<?=$Obj['Code']?>" value="<?=$Obj['CodeBin']?>">
+                <label for="<?=$Obj['Libelle']?>"><?=$Obj['Libelle']?></label>
 	    	</div>
 		                                                                   <?php
 										} 
@@ -111,12 +111,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <h6><b>Systèmes d'exploitation </b></h6>
 		
 		                                                                   <?php
-										while ($Obj = mysql_fetch_object ($ReqOS))
+										while ($Obj = $ReqOS->fetch())
 										{ 
 		                                                                   ?>
             <div class="input-field col s12 m6 l4">
-                <input class="filled-in" type="checkbox" id="<?=$Obj->Libelle?>" name="<?=$Obj->Code?>" value="<?=$Obj->CodeBin?>">
-                <label for="<?=$Obj->Libelle?>"><?=$Obj->Libelle?></label>
+                <input class="filled-in" type="checkbox" id="<?=$Obj['Libelle']?>" name="<?=$Obj['Code']?>" value="<?=$Obj['CodeBin']?>">
+                <label for="<?=$Obj['Libelle']?>"><?=$Obj['Libelle']?></label>
 	    	</div>
 		                                                                   <?php
 										} 
@@ -133,12 +133,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		    <h6><b>Bases de données</b></h6>
 		
 		                                                                   <?php
-										while ($Obj = mysql_fetch_object ($ReqBDs))
+										while ($Obj = $ReqBDs->fetch())
 										{ 
 		                                                                   ?>
             <div class="input-field col s12 m6 l4">
-                <input class="filled-in" type="checkbox" id="<?=$Obj->Libelle?>" name="<?=$Obj->Code?>" value="<?=$Obj->CodeBin?>">
-                <label for="<?=$Obj->Libelle?>"><?=$Obj->Libelle?></label>
+                <input class="filled-in" type="checkbox" id="<?=$Obj['Libelle']?>" name="<?=$Obj['Code']?>" value="<?=$Obj['CodeBin']?>">
+                <label for="<?=$Obj['Libelle']?>"><?=$Obj['Libelle']?></label>
 	    	</div>
 		                                                                   <?php
 										} 

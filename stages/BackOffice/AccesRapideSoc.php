@@ -1,8 +1,7 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-    $ReqSocs = Query ("SELECT * FROM $NomTabEntreprises ORDER BY NomE",
-	                  $Connexion);
+    $ReqSocs = $ConnectStages->query("SELECT * FROM $NomTabEntreprises ORDER BY NomE");
 	$URL_Form  = $PATH_BACKOFFICE.'BackOffice.php?Trait=Form&SlxTable='
 	            .$NomTabEntreprises;
 
@@ -13,10 +12,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     <div class="input-field col s12">
         <select name="IdentPK" size="20">
             <?php
-            while ($ObjSoc = mysql_fetch_object ($ReqSocs))
+            while ($ObjSoc = $ReqSocs->fetch())
             {
                 ?>
-                <option value="<?=$ObjSoc->PK_Entreprise?>"><?=stripslashes (trim ($ObjSoc->NomE))?></option>
+                <option value="<?=$ObjSoc['PK_Entreprise']?>"><?=stripslashes (trim ($ObjSoc['NomE']))?></option>
                 <?php
             }
             ?>

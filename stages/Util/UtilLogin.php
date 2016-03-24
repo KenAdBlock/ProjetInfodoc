@@ -22,14 +22,12 @@ function RandomPassWord ($MaxLg = MAXLGPASSWD)
 
 function GenerSendPassWord ($Login) 
 {
-	global $MonEMail, $Connexion;
+	global $MonEMail, $ConnectStages;
 
 	/* Chargement des infos de l'utilisateur */
 	
-	$ReqUser = Query ("SELECT EMail FROM tabusers WHERE Login = '$Login'",
-	                  $Connexion);
-	
-	$Obj = mysql_fetch_object ($ReqUser);
+	$ReqUser = $ConnectStages->query("SELECT EMail FROM tabusers WHERE Login = '$Login'");
+	$Obj = $ReqUser->fetch();
 
 	/* initialise le mot de passe */
 
@@ -38,37 +36,38 @@ function GenerSendPassWord ($Login)
 
 	/*echo $nouveau_mot_passe;*/
 
-/**/	$ReqUpdate = Query ("UPDATE tabusers SET mot_passe = PASSWORD('$NewPassWord') WHERE nom_utilisateur = '$nom_utilisateur'");
+/**/	$ConnectStages->query("UPDATE tabusers SET mot_passe = PASSWORD('$NewPassWord') WHERE nom_utilisateur = '$nom_utilisateur'");
 
 	/* envoie par email */
 
 	$Msg = 'Votre nouveau mot de passe est : '.$NewPassWord;
 	
-	mail ($Obj->EMail, 'Nouveau mot de passe', $Msg, "From: $MonEMail");
+	mail ($Obj['EMail'], 'Nouveau mot de passe', $Msg, "From: $MonEMail");
 
 } // GenerPassWord()
 
 function GetStatutByLogin (&$CodeBin)
 {
-    global $NomTabUsers, $NomTabStatuts, $Connexion;
+    global $NomTabUsers, $NomTabStatuts, $ConnectStages;
 	
 	$CodeBin = 0;
     if (! isset ($_SESSION ['login']) || $_SESSION ['login'] == '') return '';
 
 	$LoginSession = $_SESSION ['login'];
-	$ReqUser = Query ("SELECT $NomTabUsers.*, $NomTabStatuts.Statut, 
+	$ReqUser = $ConnectStages->prepare("SELECT $NomTabUsers.*, $NomTabStatuts.Statut, 
 	                          $NomTabStatuts.CodeBin
 	                   FROM $NomTabUsers, $NomTabStatuts
 		    	       WHERE $NomTabUsers.FK_Statut = $NomTabStatuts.PK_Statut
-			    		 AND $NomTabUsers.Identifiant = '$LoginSession'",
-	                  $Connexion);
-	if (mysql_num_rows ($ReqUser) != 1) return '';
+			    		 AND $NomTabUsers.Identifiant = :LoginSession");
+	$ReqUser->bindValue(':LoginSession', $LoginSession);
+	$ReqUser->execute();
+	if ($ReqUser->rowCount() != 1) return '';
 	
-    $ObjUser = mysql_fetch_object ($ReqUser);
+    $ObjUser = $ReqUser->fetch();
 	
-	$CodeBin = $ObjUser->CodeBin;
+	$CodeBin = $ObjUser['CodeBin'];
 
-	return $ObjUser->Statut;
+	return $ObjUser['Statut'];
 
 } // GetStatutByLogin()
 

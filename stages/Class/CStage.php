@@ -66,7 +66,7 @@ class CStage
 
     function CStage ($PK_Stage = 0)
     {
-        global $Connexion, $NomTabStages;
+        global $ConnectStages, $NomTabStages;
 
         if (!isset ($PK_Stage) || $PK_Stage == 0)
         {
@@ -116,53 +116,51 @@ class CStage
         else
         {
             $this->PK_Stage = $PK_Stage;
+            $ReqTuple = $ConnectStages->query("SELECT * FROM  $NomTabStages
+                                    WHERE PK_Stage = '$PK_Stage'");
+            $LeTuple = $ReqTuple->fetch();
 
-            $ReqTuple = Query ("SELECT * FROM  $NomTabStages
-                                    WHERE PK_Stage = '$PK_Stage'",
-                               $Connexion);
-            $LeTuple = mysql_fetch_object ($ReqTuple);
+            $this->FK_Entreprise                   = $LeTuple['FK_Entreprise'];
+            $this->FK_Tuteur                       = $LeTuple['FK_Tuteur'];
 
-            $this->FK_Entreprise                   = $LeTuple->FK_Entreprise;
-            $this->FK_Tuteur                       = $LeTuple->FK_Tuteur;
+            $this->NiveauStage                     = $LeTuple['NiveauStage'];
+            $this->Materiel                        = $LeTuple['Materiel'];
+            $this->Langages                        = $LeTuple['Langages'];
+            $this->AutresLangages                  = $LeTuple['AutresLangages'];
+	        $this->BD                              = $LeTuple['BD'];
+            $this->AutresBD                        = $LeTuple['AutresBD'];
 
-            $this->NiveauStage                     = $LeTuple->NiveauStage;
-            $this->Materiel                        = $LeTuple->Materiel;
-            $this->Langages                        = $LeTuple->Langages;
-            $this->AutresLangages                  = $LeTuple->AutresLangages;
-	        $this->BD                              = $LeTuple->BD;
-            $this->AutresBD                        = $LeTuple->AutresBD;
+            $this->LogicielsSpecifiques            = $LeTuple['LogicielsSpecifiques'];
+            $this->MethodesAnalyse                 = $LeTuple['MethodesAnalyse'];
+            $this->MethodesConception              = $LeTuple['MethodesConception'];
+            $this->MethodesProgrammation           = $LeTuple['MethodesProgrammation'];
+            $this->MethodesControleQL              = $LeTuple['MethodesControleQL'];
+            $this->MethodesGestionProjet           = $LeTuple['MethodesGestionProjet'];
 
-            $this->LogicielsSpecifiques            = $LeTuple->LogicielsSpecifiques;
-            $this->MethodesAnalyse                 = $LeTuple->MethodesAnalyse;
-            $this->MethodesConception              = $LeTuple->MethodesConception;
-            $this->MethodesProgrammation           = $LeTuple->MethodesProgrammation;
-            $this->MethodesControleQL              = $LeTuple->MethodesControleQL;
-            $this->MethodesGestionProjet           = $LeTuple->MethodesGestionProjet;
+            $this->Sujet                           = $LeTuple['Sujet'];
 
-            $this->Sujet                           = $LeTuple->Sujet;
+            $this->IsNatureTacheProgr              = $LeTuple['IsNatureTacheProgr'];
+            $this->IsNatureStageAnalyse            = $LeTuple['IsNatureStageAnalyse'];
+            $this->IsIntegrationProjetGlobal       = $LeTuple['IsIntegrationProjetGlobal'];
+            $this->IsIntegrationEntiteIndependante = $LeTuple['IsIntegrationEntiteIndependante'];
 
-            $this->IsNatureTacheProgr              = $LeTuple->IsNatureTacheProgr;
-            $this->IsNatureStageAnalyse            = $LeTuple->IsNatureStageAnalyse;
-            $this->IsIntegrationProjetGlobal       = $LeTuple->IsIntegrationProjetGlobal;
-            $this->IsIntegrationEntiteIndependante = $LeTuple->IsIntegrationEntiteIndependante;
-
-            $this->RemarquesGenerales              = $LeTuple->RemarquesGenerales;
-            $this->NbPersCentreInfo                = $LeTuple->NbPersCentreInfo;
-            $this->AreOldStagiaires                = $LeTuple->AreOldStagiaires;
-            $this->NbStagesProposes                = $LeTuple->NbStagesProposes;
-            $this->NbStagesRestant                 = $LeTuple->NbStagesRestant;
-            $this->NbPersonnesService              = $LeTuple->NbPersonnesService;
-            $this->IsStagiaireSeul                 = $LeTuple->IsStagiaireSeul;
+            $this->RemarquesGenerales              = $LeTuple['RemarquesGenerales'];
+            $this->NbPersCentreInfo                = $LeTuple['NbPersCentreInfo'];
+            $this->AreOldStagiaires                = $LeTuple['AreOldStagiaires'];
+            $this->NbStagesProposes                = $LeTuple['NbStagesProposes'];
+            $this->NbStagesRestant                 = $LeTuple['NbStagesRestant'];
+            $this->NbPersonnesService              = $LeTuple['NbPersonnesService'];
+            $this->IsStagiaireSeul                 = $LeTuple['IsStagiaireSeul'];
 			
-            $this->IndemnitesMensuellesStage       = $LeTuple->IndemnitesMensuellesStage;
-            $this->IndemnitesRepas                 = $LeTuple->IndemnitesRepas;
-            $this->IndemnitesTransport             = $LeTuple->IndemnitesTransport;
-            $this->IsEmbauchePossible              = $LeTuple->IsEmbauchePossible;
+            $this->IndemnitesMensuellesStage       = $LeTuple['IndemnitesMensuellesStage'];
+            $this->IndemnitesRepas                 = $LeTuple['IndemnitesRepas'];
+            $this->IndemnitesTransport             = $LeTuple['IndemnitesTransport'];
+            $this->IsEmbauchePossible              = $LeTuple['IsEmbauchePossible'];
 			
-            $this->Adr1Stage                       = $LeTuple->Adr1Stage;
-            $this->Adr2Stage                       = $LeTuple->Adr2Stage;
-            $this->CPStage                         = $LeTuple->CPStage;
-            $this->VilleStage                      = $LeTuple->VilleStage;
+            $this->Adr1Stage                       = $LeTuple['Adr1Stage'];
+            $this->Adr2Stage                       = $LeTuple['Adr2Stage'];
+            $this->CPStage                         = $LeTuple['CPStage'];
+            $this->VilleStage                      = $LeTuple['VilleStage'];
 		}
 
     } // CStage()
@@ -429,55 +427,53 @@ class CStage
 
     function Select()
     {
-        global $Connexion, $NomTabStages;
+        global $ConnectStages, $NomTabStages;
 
-        $Req = Query ("SELECT * FROM $NomTabStages  WHERE PK_Stage = $this->PK_Stage",
-                  $Connexion);
-        $Obj = mysql_fetch_object ($Req);
+        $Req = $ConnectStages->query("SELECT * FROM $NomTabStages  WHERE PK_Stage = $this->PK_Stage");
+        $Obj = $Req->fetch();
 
         if (! $Obj) return false;
 
-        $this->SetFK_Entreprise                    ($Obj->FK_Entreprise);
-        $this->SetFK_Tuteur                        ($Obj->FK_Tuteur);
+        $this->SetFK_Entreprise                    ($Obj['FK_Entreprise']);
+        $this->SetFK_Tuteur                        ($Obj['FK_Tuteur']);
 
-        $this->SetNiveauStage                      ($Obj->NiveauStage);
-        $this->SetMateriel                         ($Obj->Materiel);
-        $this->SetLangages                         ($Obj->Langages);
-        $this->SetAutresLangages                   ($Obj->AutresLangages);
-        $this->SetBD                               ($Obj->BD);
-        $this->SetAutresBD                         ($Obj->AutresBD);
-        $this->SetLogicielsSpecifiques             ($Obj->LogicielsSpecifiques);
-        $this->SetMethodesAnalyse                  ($Obj->MethodesAnalyse);
-        $this->SetMethodesConception               ($Obj->MethodesConception);
-        $this->SetMethodesProgrammation            ($Obj->MethodesProgrammation);
-        $this->SetMethodesControleQL               ($Obj->MethodesControleQL);
-        $this->SetMethodesGestionProjet            ($Obj->MethodesGestionProjet);
+        $this->SetNiveauStage                      ($Obj['NiveauStage']);
+        $this->SetMateriel                         ($Obj['Materiel']);
+        $this->SetLangages                         ($Obj['Langages']);
+        $this->SetAutresLangages                   ($Obj['AutresLangages']);
+        $this->SetBD                               ($Obj['BD']);
+        $this->SetAutresBD                         ($Obj['AutresBD']);
+        $this->SetLogicielsSpecifiques             ($Obj['LogicielsSpecifiques']);
+        $this->SetMethodesAnalyse                  ($Obj['MethodesAnalyse']);
+        $this->SetMethodesConception               ($Obj['MethodesConception']);
+        $this->SetMethodesProgrammation            ($Obj['MethodesProgrammation']);
+        $this->SetMethodesControleQL               ($Obj['MethodesControleQL']);
+        $this->SetMethodesGestionProjet            ($Obj['MethodesGestionProjet']);
 		
-        $this->SetSujet                            ($Obj->Sujet);
+        $this->SetSujet                            ($Obj['Sujet']);
 		
-        $this->SetIsNatureTacheProgr               ($Obj->IsNatureTacheProgr);
-        $this->SetIsNatureStageAnalyse             ($Obj->IsNatureStageAnalyse);
-        $this->SetIsIntegrationProjetGlobal        ($Obj->IsIntegrationProjetGlobal);
-        $this->SetIsIntegrationEntiteIndependante  ($Obj->IsIntegrationEntiteIndependante);
+        $this->SetIsNatureTacheProgr               ($Obj['IsNatureTacheProgr']);
+        $this->SetIsNatureStageAnalyse             ($Obj['IsNatureStageAnalyse']);
+        $this->SetIsIntegrationProjetGlobal        ($Obj['IsIntegrationProjetGlobal']);
+        $this->SetIsIntegrationEntiteIndependante  ($Obj['IsIntegrationEntiteIndependante']);
 		
-        $this->SetRemarquesGenerales               ($Obj->RemarquesGenerales);
+        $this->SetRemarquesGenerales               ($Obj['RemarquesGenerales']);
 		
-        $this->SetAreOldStagiaires                 ($Obj->AreOldStagiaires);
-        $this->SetNbPersCentreInfo                 ($Obj->NbPersCentreInfo);
-        $this->SetNbStagesProposes                 ($Obj->NbStagesProposes);
-        $this->SetNbStagesRestant                  ($Obj->NbStagesRestant);
-        $this->SetNbPersonnesService               ($Obj->NbPersonnesService);
-        $this->SetIsStagiaireSeul                  ($Obj->IsStagiaireSeul);
+        $this->SetAreOldStagiaires                 ($Obj['AreOldStagiaires']);
+        $this->SetNbPersCentreInfo                 ($Obj['NbPersCentreInfo']);
+        $this->SetNbStagesProposes                 ($Obj['NbStagesProposes']);
+        $this->SetNbStagesRestant                  ($Obj['NbStagesRestant']);
+        $this->SetNbPersonnesService               ($Obj['NbPersonnesService']);
+        $this->SetIsStagiaireSeul                  ($Obj['IsStagiaireSeul']);
+        $this->SetIndemnitesMensuellesStage        ($Obj['IndemnitesMensuellesStage']);
+        $this->SetIndemnitesRepas                  ($Obj['IndemnitesRepas']);
+        $this->SetIndemnitesTransport              ($Obj['IndemnitesTransport']);
+        $this->SetIsEmbauchePossible               ($Obj['IsEmbauchePossible']);
 
-        $this->SetIndemnitesMensuellesStage        ($Obj->IndemnitesMensuellesStage);
-        $this->SetIndemnitesRepas                  ($Obj->IndemnitesRepas);
-        $this->SetIndemnitesTransport              ($Obj->IndemnitesTransport);
-        $this->SetIsEmbauchePossible               ($Obj->IsEmbauchePossible);
-
-        $this->SetAdr1Stage                        ($Obj->Adr1Stage);
-        $this->SetAdr2Stage                        ($Obj->Adr2Stage);
-        $this->SetCPStage                          ($Obj->CPStage);
-        $this->SetVilleStage                       ($Obj->VilleStage);
+        $this->SetAdr1Stage                        ($Obj['Adr1Stage']);
+        $this->SetAdr2Stage                        ($Obj['Adr2Stage']);
+        $this->SetCPStage                          ($Obj['CPStage']);
+        $this->SetVilleStage                       ($Obj['VilleStage']);
 		
         return true;
 
@@ -485,9 +481,9 @@ class CStage
 
     function Insert()
     {
-        global $Connexion, $NomTabStages;
+        global $ConnectStages, $NomTabStages;
 
-        return Query ("INSERT INTO $NomTabStages VALUES (
+        return $ConnectStages->query("INSERT INTO $NomTabStages VALUES (
                            NULL,
                            $this->FK_Entreprise,
                            $this->FK_Tuteur,
@@ -530,26 +526,23 @@ class CStage
                           '$this->Adr1Stage',
                           '$this->Adr2Stage',
                           '$this->CPStage',
-                          '$this->VilleStage')",
-                     $Connexion);
-//        return Query ("INSERT INTO $NomTabStages VALUES (NULL,$this->FK_Entreprise,$this->FK_Tuteur,$this->NiveauStage,$this->Materiel,$this->Langages,'$this->AutresLangages',$this->BD,'$this->AutresBD','$this->LogicielsSpecifiques','$this->MethodesAnalyse','$this->MethodesConception','$this->MethodesProgrammation','$this->MethodesControleQL','$this->MethodesGestionProjet','$this->Sujet',$this->IsNatureTacheProgr,$this->IsNatureStageAnalyse,$this->IsIntegrationProjetGlobal,$this->IsIntegrationEntiteIndependante,'$this->RemarquesGenerales','$this->NbPersCentreInfo',$this->NbStagesProposes,$this->AreOldStagiaires,$this->NbStagesRestant ,'$this->NbPersonnesService',$this->IsStagiaireSeul,'$this->IndemnitesMensuellesStage','$this->IndemnitesRepas','$this->IndemnitesTransport',$this->IsEmbauchePossible,'$this->Adr1Stage','$this->Adr2Stage','$this->CPStage','$this->VilleStage')",$Connexion);
+                          '$this->VilleStage')");
 
     } // Insert()
     
     function Delete()
     {
-        global $Connexion, $NomTabStages;
+        global $ConnectStages, $NomTabStages;
 
-        return Query ("DELETE FROM $NomTabStages WHERE PK_Stage = $this->PK_Stage",
-                     $Connexion);
+        return $ConnectStages->query("DELETE FROM $NomTabStages WHERE PK_Stage = $this->PK_Stage");
 
     } // Delete()
 
     function Update ()
     {
-        global $Connexion, $NomTabStages;
+        global $ConnectStages, $NomTabStages;
 
-        $Req = Query ("UPDATE $NomTabStages 
+        $Req = $ConnectStages->query("UPDATE $NomTabStages 
 		               SET 
                            FK_Entreprise                    =  $this->FK_Entreprise,
 						   FK_Tuteur                        =  $this->FK_Tuteur,
@@ -594,8 +587,7 @@ class CStage
                            CPStage                          = '$this->CPStage',
                            VilleStage                       = '$this->VilleStage'
 						   
-                           WHERE PK_Stage = $this->PK_Stage",
-                  $Connexion);
+                           WHERE PK_Stage = $this->PK_Stage");
 
     } // Update()
 

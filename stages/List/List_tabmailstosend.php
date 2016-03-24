@@ -1,18 +1,17 @@
 <?php
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
-    $ReqMails = Query ("SELECT * FROM $NomTabMailsToSend 
-	                               ORDER BY Nom", 
-	                           $Connexion);
+    $ReqMails = $ConnectStages->query("SELECT * FROM $NomTabMailsToSend 
+	                                   ORDER BY Nom");
 
 	$URL_Form = $PATH_BACKOFFICE.'BackOffice.php?Trait=SendMail&SlxTable='.$NomTabMailsToSend;
-	$URL_Del = $PATH_BACKOFFICE.'BackOffice.php?Trait=Del&SlxTable='.  $NomTabMailsToSend;
+	$URL_Del = $PATH_BACKOFFICE.'BackOffice.php?Trait=Del&SlxTable='.$NomTabMailsToSend;
 
     $Title = 'Liste des mails à envoyer';
 ?>
 <span class="card-title"><h4 class="center"><?=$Title?></h4></span>
                                                                           <?php
-        if (! mysql_num_rows ($ReqMails))
+        if (! $ReqMails->rowCount())
         {
                                                                           ?>
 <h5 class="center">
@@ -38,25 +37,25 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 
                 <tr>
                                                                            <?php
-                                        while ($Obj = mysql_fetch_object ($ReqMails))
+                                        while ($Obj = $ReqMails->fetch())
                                         {
                                                                           ?>
                 <tr>
                     <td valign="top">
-                        <a href="<?=$URL_Form.'&IdentPK='.$Obj->PK_Login?>"
+                        <a href="<?=$URL_Form.'&IdentPK='.$Obj['PK_Login']?>"
                            <?=AttributsAHRef  ('Envoyer', 'Envoyer', '', '');?>
 					   ><i class="material-icons yellow-text text-darken-2">mode_edit</i></a>
                     </td>
                     <td valign="top">
-                        <a href="<?=$URL_Del.'&IdentPK='.$Obj->PK_Login?>"
+                        <a href="<?=$URL_Del.'&IdentPK='.$Obj['PK_Login']?>"
                            <?=AttributsAHRef  ('Supprimer', 'Supprimer', '', '');?>
 					   ><i class="material-icons red-text text-darken-2">delete_forever</i></a>
                     </td>
                     <td valign="top" style="text-align : center">
-                        <?=$Obj->PK_Login?>
+                        <?=$Obj['PK_Login']?>
 					</td>
                     <td valign="top" style="text-align : center">
-                        <?=$Obj->Nom?> <?=$Obj->Prenom?>
+                        <?=$Obj['Nom']?> <?=$Obj['Prenom']?>
 					</td>
                 </tr>
                                                                        <?php
