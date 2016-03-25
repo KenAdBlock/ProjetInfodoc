@@ -10,7 +10,18 @@
 	$NomSession = 'Stages';
 
 
-	$PASSWDBD = "";
+	// Vaiable de connexion à la base de donnée lpt (laporte)
+	$HOSTLPT = "localhost";
+	$NAMELPT = 'laporte';
+	$USERLPT = 'root';
+	$PASSWDBDLPT = "";
+	
+	
+	// Vaiable de connexion à la base de donnée stg (stages)
+	$HOSTSTG = "localhost";
+	$NAMESTG = 'stages';
+	$USERSTG = 'root';
+	$PASSWDBDSTG = "";
 
 
 
