@@ -216,7 +216,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         </td>
     </tr>
     <tr>
-	    <td style="text-align : right"><b>Étudiant :</b>
+	    <td style="text-align : right"><b>Étudiant</b>
         <td >
 		    <input type="text" name="NomPrenom" maxlength="50" size="30" 
 			        value="" onKeyUp="MAJTxtAffich ();">
