@@ -281,7 +281,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 		</td>
 	    <td valign="top">
 		    <input class="filled-in" id="<?=$ObjMails['Nom']?>" type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['Mail']?>">
-		<label for="<?=$ObjMails['Nom']?>"></label>
+			<label for="<?=$ObjMails['Nom']?>"></label>
 		</td>
 	    <td valign="top">
 		    <?=$ObjMails['Nom']?> <?=$ObjMails['Prenom']?>
@@ -329,7 +329,8 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 		    <?=++$Cpt?>
 		</td>
 	    <td valign="top">
-		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['MailR']?>">
+		    <input class="filled-in" type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['MailR']?>">
+			<label for="<?=$ObjMails['MailR']?>"></label>
 		</td>
 	    <td valign="top">
 		    <?=$ObjMails['NomR']?> <?=$ObjMails['PrenomR']?>
@@ -372,7 +373,8 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 		    <?=++$Cpt?>
 		</td>
 	    <td valign="top">
-		    <input type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['EMail']?>">
+		    <input class="filled-in" type="checkbox" name="tabmail[]" checked="checked" value="<?=$ObjMails['EMail']?>">
+			<label for="<?=$ObjMails['EMail']?>"></label>
 		</td>
 	    <td valign="top">
 		    <?=$ObjMails['Nom']?> <?=$ObjMails['Prenom']?>
