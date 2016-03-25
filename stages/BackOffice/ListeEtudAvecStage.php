@@ -13,7 +13,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 			 ORDER BY Nom");
 ?>
 <h4 class="center">Liste des étudiants ayant un stage</h4>
-<table  class="highlight bordered centered grey lighten-5">
+<table  class="table-list highlight bordered centered grey lighten-5">
   <thead class="grey white-text">
     <tr>
         <th>Nom</th>

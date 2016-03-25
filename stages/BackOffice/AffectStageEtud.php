@@ -80,11 +80,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		<td><?=$ObjStage['NomE']?></td>
 	</tr>
 </table>
-<p>
-    <input type="reset" value="Retour" onClick="history.go (-1)">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="submit" value="Valider" >
+<p class="center">
+	<button type="reset" class="waves-effect waves-light btn black white-text" onClick="history.go (-1)">Retour</button>
+	<button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
 </p>
 <input type="hidden" name="Etape"       value="Confirm">
 <input type="hidden" name="Identifiant" value="<?=$LoginCache?>">
@@ -225,9 +223,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     <tr>
 	    <td style="text-align : right"><b>Étudiant</b>
         <td >
+			<div class="input-field">
 		    <input type="text" name="NomPrenom" maxlength="50" size="30" 
 			        value="" onKeyUp="MAJTxtAffich ();">
-		    <input type="hidden" name="LoginCache">
+		    <input type="hidden" name="LoginCache"></div>
         </td>
 	</tr>
 	<?php /*
@@ -242,7 +241,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 </table>
 </td></tr></table>
 <p class="center">
-	<button type="reset" class="waves-effect waves-light btn black white-text">Réinitialiser</button>
+	<button type="reset" class="waves-effect waves-light btn black white-text" onClick="history.go (-1)">Réinitialiser</button>
 	<button type="submit" class="waves-effect waves-light btn bleu1 white-text">Valider</button>
 </p>
 <input type="hidden" name="Etape" value="Valid" >

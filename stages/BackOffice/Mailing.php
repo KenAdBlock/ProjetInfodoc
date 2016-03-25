@@ -261,7 +261,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										  case 'LstTuteursWithMails' :
                                                                            ?>
 <div class="row"><div class="col s12">
-<table class="highlight bordered centered grey lighten-4 small-text">
+<table class="table-list highlight bordered centered grey lighten-4 small-text">
  <thead class="grey white-text">
     <tr>
 	    <th colspan="2" style="text-align : left">&nbsp;</th>
@@ -302,7 +302,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 
 										  case 'LstSocsWithMails' :
                                                                            ?>
-<table class="highlight bordered centered grey lighten-4 small-text">
+<table class="table-list highlight bordered centered grey lighten-4 small-text">
  <thead class="grey white-text">
     <tr>
 	    <th colspan="2" style="text-align : center">&nbsp;</th>
@@ -356,7 +356,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										  case 'ListeEtud1A'    :
 										  case 'ListeEtud2A'    :
                                                                            ?>
-<table class="highlight bordered centered grey lighten-4 small-text">
+<table class="table-list highlight bordered centered grey lighten-4 small-text">
  <thead class="grey white-text">
     <tr>
 	    <th colspan="2" style="text-align : center">&nbsp;</th>
@@ -393,7 +393,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 
 										  case 'LstAllWithoutMails' :
                                                                            ?>
-<table class="highlight bordered centered grey lighten-4 small-text">
+<table class="table-list highlight bordered centered grey lighten-4 small-text">
  
                                                                            <?php
 										    $Cpt = 0;
