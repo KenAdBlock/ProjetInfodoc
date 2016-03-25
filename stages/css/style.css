@@ -219,6 +219,7 @@ option *{
   color: black;
 }
 textarea.materialize-textarea {
+  padding: 0;
   background-color: transparent;
   border: none;
   border: 1px solid #0066cc;
