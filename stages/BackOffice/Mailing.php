@@ -2,7 +2,7 @@
 if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 {
 //    $Sender          = "From: marc.laporte@univ-amu.fr";
-    $Sender          = "From: darkweizer@gmail.com";
+    $Sender          = "From: darkweizer@infodoc.esy.es";
 
 	$UtilBD = new UtilBD();
 	$ConnectLaporte = $UtilBD->ConnectLaporte();
