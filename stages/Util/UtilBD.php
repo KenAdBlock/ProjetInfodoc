@@ -16,7 +16,7 @@ require_once ($PATH_CONSTANTES.'CstGales.php');
 
 			}
 			catch(PDOException $e){
-				echo "Connexion à la base : <b>laporte</b> avec l'utilisateur : <b>root</b> a échoué. ".$e->getMessage();
+				echo "Connexion à la base : <b>laporte</b> avec l'utilisateur : <b>root</b> a échoué. ".utf8_encode($e->getMessage());
 				exit;
 			}
 
@@ -31,7 +31,7 @@ require_once ($PATH_CONSTANTES.'CstGales.php');
 
 			}
 			catch(PDOException $e){
-				echo "Connexion à la base : <b>stages</b> avec l'utilisateur : <b>root</b> a échoué. ".$e->getMessage();
+				echo "Connexion à la base : <b>stages</b> avec l'utilisateur : <b>root</b> a échoué. ".utf8_encode($e->getMessage());
 				exit;
 			}
 
@@ -46,7 +46,7 @@ require_once ($PATH_CONSTANTES.'CstGales.php');
 
 			}
 			catch(PDOException $e){
-				echo "Connexion à la base : <b>INFORMATION_SCHEMA</b> avec l'utilisateur : <b>root</b> a échoué. ".$e->getMessage();
+				echo "Connexion à la base : <b>INFORMATION_SCHEMA</b> avec l'utilisateur : <b>root</b> a échoué. ".utf8_encode($e->getMessage());
 				exit;
 			}
 
