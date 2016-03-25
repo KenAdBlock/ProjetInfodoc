@@ -236,7 +236,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 </div>
 	<div class="row">
 	<div class="col s12 m6 l3"><p class="center">
-<button class="min-btn waves-effect waves-light bleu1 white-text" type="button" onClick="this.value=check (this.form.elements['tabmail[]'])">Tout decocher</button>
+<button class="min-btn waves-effect waves-light bleu1 white-text" type="button" onClick="this.value=check (this.form.elements['tabmail[]']); if(this.innerText == 'Tout décocher') {this.innerText = 'Tout cocher';} else {this.innerText = 'Tout décocher';} ">Tout décocher</button>
 </p><br></div>
 
 <div class="col s12 m6 l3"><p class="center">
