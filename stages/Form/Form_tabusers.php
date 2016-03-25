@@ -221,10 +221,10 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                     <div class="row">
                         <form method="post" role="form" class="col s12">
                             <div class="row">
-                                <div class="input-field col l1 m1 s">
+                                <div class="input-field col l1 m1 s11">
                                     <label for="Nom"><b>Civilité</b></label>
                                 </div>
-                                <div class="col l6 s12 m12">
+                                <div class="col l5 s11 m11">
                                     <div class="input-field col l4 m4 s4">
                                         <p>
                                             <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
@@ -293,7 +293,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                             ?>
                             <div class="row">
                                 <div class="input-field col l6 m6 s12">
-                                    <select name="StatusUser">
+                                    <select class="browser-default" name="StatusUser">
                                         <?php
                                         while ($ObjStatus = $ReqStatus->fetch())
                                         {
@@ -309,7 +309,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                     <label><b><?=$ValidStatus?>Statut</b></label>
                                 </div>
                                 <div class="input-field col l6 m6 s12">
-                                    <select name="FK_Entreprise">
+                                    <select class="browser-default" name="FK_Entreprise">
                                         <option value="0"
                                             <?=$ValFK_Entreprise == 0 ? 'selected' : ''?>
                                         >----------------
@@ -354,7 +354,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                 }
                                 ?></p>
                             </div>
-
+<br>
                             <p class="center">
                                 <button type="reset" class="waves-effect waves-light btn black white-text"  onClick="history.go (-1)">Abandonner</button>
                                 <button type="reset" class="waves-effect waves-light btn black white-text">Réinitialiser</button>
