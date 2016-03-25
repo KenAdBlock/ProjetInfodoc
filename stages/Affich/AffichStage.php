@@ -118,12 +118,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
  	<tr>
 	    <td></td>
         <td colspan="3">
-	    	<table width="100%" style="border : 1px solid blue" cellpadding="5">
-                <tr style="text-align : left; background-color : #00b1ff">
+	    	<table class="bordered striped">
+				<thead class="grey white-text">
+				<tr>
        	   	        <th >&nbsp;</th>
                     <th >Responsable administratif</th>
                     <th >Maître de stage</th>
                 </tr>
+				</thead>
                 <tr>
                     <th>Nom</th>
                     <td><?=$ObjEntreprise->GetPrenomR()?>
@@ -133,17 +135,17 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 					    <?=$ObjUser->GetNom()?>
 					</td>
                 </tr>
-                <tr style="background-color : #d4d4d4">
+                <tr>
                     <th>Tél.</th>
                     <td><?=$ObjEntreprise->GetTelR()?>&nbsp;</td>
                     <td><?=$ObjUser->GetTel()?>&nbsp;</td>
                 </tr>
-                <tr >
+                <tr>
                     <th>e-mail</th>
                     <td><?=$ObjEntreprise->GetMailR()?>&nbsp;</td>
                     <td><?=$ObjUser->GetMail()?>&nbsp;</td>
                 </tr>
-               <tr style="background-color : #d4d4d4">
+               <tr>
                     <th>Fax</th>
                     <td><?=$ObjEntreprise->GetFaxR()?>&nbsp;</td>
                     <td><?=$ObjUser->GetFax()?>&nbsp;</td>
@@ -226,8 +228,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 						     ? 'oui' : 'non'?>
 		</td>
 	</tr>
+
                                                                            <?php
                                         AffichLigneVierge();
+
 	/*
 	    =================================
 	    2. Environnement du stagiaire ... 
@@ -365,11 +369,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	</tr>
  </tbody>
 </table>
-<table width="100%">
-<tr><td colspan="2">&nbsp;</td></tr>
 
-<tr>
-<td style="text-align : left">
+
+<div class="row">
+<div class="col s4 ">
 <a href="<?=$PATH_GENERAL?>Print.php?SlxPage=<?=$SlxPage?>" 
 			   title="Imprimer"
 			   target="_blank"
@@ -377,17 +380,15 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                onMouseOut ="window.status=''; return true"
                 ><img src="<?=$PATH_GIFS?>PrintCourant.gif" border="0">
 </a>
-</td>
-</tr>
-<p class="center">
+</div>
 <button type="reset" class="waves-effect waves-light btn black white-text" onClick="history.go()">Retour</button>
 	<?php
 	if (GetDroits ($Status, 'ModifStage'))
 	{
 	?>
 <button type="reset" class="waves-effect waves-light btn bleu1 white-text" onClick="window.location='?Trait=Form&SlxTable=<?=$NomTabStages?>&IdentPK=<?=$ObjStage->GetPK_Stage()?>'">Modifier</button>
-</p>
-											</table>
+
+</div>
 
 
                                                                        <?php
