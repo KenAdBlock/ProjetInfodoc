@@ -216,9 +216,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     <tr>
 	    <td style="text-align : right"><b>Étudiant</b>
         <td >
+			<div class="input-field">
 		    <input type="text" name="NomPrenom" maxlength="50" size="30" 
 			        value="" onKeyUp="MAJTxtAffich ();">
-		    <input type="hidden" name="LoginCache">
+		    <input type="hidden" name="LoginCache"></div>
         </td>
 	</tr>
 	<?php /*
