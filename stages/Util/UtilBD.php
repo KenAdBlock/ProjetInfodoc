@@ -50,7 +50,7 @@ require_once ($PATH_CONSTANTES.'CstGales.php');
 				exit;
 			}
 
-		} // ConnectStages()
+		} // ConnectInformationShema()
 
 	}
 ?>
