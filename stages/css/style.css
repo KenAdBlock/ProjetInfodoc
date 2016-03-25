@@ -5,7 +5,7 @@
  *
  * Made By MaterializeCSS.com
  */
-body{
+.card{
   margin-bottom: -30px;
 }
 
@@ -219,6 +219,7 @@ option *{
   color: black;
 }
 textarea.materialize-textarea {
+  padding: 0;
   background-color: transparent;
   border: none;
   border: 1px solid #0066cc;
@@ -228,7 +229,8 @@ textarea.materialize-textarea {
   width: 100%;
   font-size: 1rem;
   margin: 0 0 15px 0;
-  padding-left: 2px;
+  margin-left: -5px;
+  padding-left: 5px;
   box-shadow: none;
   box-sizing: content-box;
   transition: all .3s;
@@ -282,7 +284,10 @@ select + label{
   margin-top: -27px;
 }
 .table-list{
-  height: 500px;
+  width:100%;
+  overflow:auto;
+}
+.info-table{
   width:100%; 
   overflow:auto;
 }

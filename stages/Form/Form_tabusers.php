@@ -254,8 +254,8 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                     <input id="Prenom" type="text" class="validate" name="Prenom" size="50" value="<?=$ValPrenom?>">
                                     <label for="Prenom"><b><?=$ValidPrenom?>Prénom</b></label>
                                 </div>
-                            </div>
-                            <div class="row">
+                            
+                            
                                 <div class="input-field col l6 m6 s12">
                                     <input id="Tel" type="text" class="validate" name="Tel" size="50" value="<?=$ValTel?>">
                                     <label for="Tel"><b><?=$ValidTel?>Tel</b></label>
@@ -264,8 +264,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                     <input id="Mail" type="text" class="validate" name="Mail" size="50" value="<?=$ValMail?>">
                                     <label for="Mail"><b><?=$ValidMail?>Mail</b></label>
                                 </div>
-                            </div>
-                            <div class="row">
+                            
                                 <div class="input-field col l6 m6 s12">
                                     <input id="Fax" type="text" class="validate" name="Fax" size="50" value="<?=$ValFax?>">
                                     <label for="Fax">Fax</label>
@@ -278,7 +277,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                     <input id="Login" type="text" class="validate" name="Login" size="50" value="<?=$ValLogin?>">
                                     <label for="Login"><b><?=$ValidLogin?>Nouveau login</b></label>
                                 </div>
-                            </div>
+                            
                             <?php
                             }
                             else
@@ -291,7 +290,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                             GetDroits ($Status, 'ModifUser'))
                             {
                             ?>
-                            <div class="row">
+                            
                                 <div class="input-field col l6 m6 s12">
                                     <select class="browser-default" name="StatusUser">
                                         <?php
