@@ -168,7 +168,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                       {
 ?>
 <script language=javascript>
-    				TabNoms   [NbEtud]   = "<?=$Obj['Nom'].' '.$Obj['Prenom']?>";
+    			TabNoms   [NbEtud]   = "<?=$Obj['Nom'].' '.$Obj['Prenom']?>";
 				TabLogins [NbEtud++] = "<?=$Obj['Identifiant']?>";
 </script>
 <?php
@@ -193,13 +193,13 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
        			{
 					if (TabNoms [i].substr (0, LgCourante) == ChaineCherchee)
 					{
-		    				++NbOccurr;
+		    			++NbOccurr;
 						IndOccurr = i;
 					}
 				}
 				if (NbOccurr == 1)
 				{
-         				document.forms["ZoneSaisie"].NomPrenom.value  = TabNoms   [IndOccurr];
+         			document.forms["ZoneSaisie"].NomPrenom.value  = TabNoms   [IndOccurr];
 	  				document.forms["ZoneSaisie"].LoginCache.value = TabLogins [IndOccurr];
        			}
 			  } 
@@ -216,7 +216,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         </td>
     </tr>
     <tr>
-	    <td style="text-align : right"><b>Étudiant :</b>
+	    <td style="text-align : right"><b>Étudiant</b>
         <td >
 		    <input type="text" name="NomPrenom" maxlength="50" size="30" 
 			        value="" onKeyUp="MAJTxtAffich ();">

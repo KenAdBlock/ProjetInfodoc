@@ -61,7 +61,7 @@
             </p>
 
             <p>
-              Au début du stage, l'étudiant a des connaissances et l'expérience nécessaires pour s'intégrer à une équipe d'informaticiens (conception et développement); pour mieux situer les connaissances et le savoir-faire des étudiants, vous pouvez consulter les descriptifs de nos enseignements du <a href="http://infodoc.iut.univ-aix.fr/~laporte/stages/Constantes/dut_info_aix.pdf">DUT du département Informatique de l'IUT d'Aix-en-Provence</a> ou en <a href="http://infodoc.iut.univ-aix.fr/~laporte/stages/Constantes/_lp_da2i.pdf">licence professionnelle</a>.
+              Au début du stage, l'étudiant a des connaissances et l'expérience nécessaires pour s'intégrer à une équipe d'informaticiens (conception et développement); pour mieux situer les connaissances et le savoir-faire des étudiants, vous pouvez consulter les descriptifs de nos enseignements du <a href="<?php echo "$URL_PROGR_DUT"; ?>">DUT du département Informatique de l'IUT d'Aix-en-Provence</a> ou en <a href="<?php echo "$URL_PROGR_LP"; ?>">licence professionnelle</a>.
             </p>
 
             <p>

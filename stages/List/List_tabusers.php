@@ -92,21 +92,21 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <th style="text-align : center" valign="top" nowrap>
 					    <a class="white-text" href="<?=$URL_ListLogin?>"
                            <?=AttributsAHRef ($QuelOrdreLogin, $QuelOrdreLogin, '', '');?>
-						    ><i class="material-icons white-text " style="font-size: 20px"><?=$GifOrderLogin?></i>
+						    ><i class="material-icons white-text" style="font-size: 20px"><?=$GifOrderLogin?></i>
 						    <b>Login</b>&nbsp;
 						</a>
 					</th>
                     <th style="text-align : center" valign="top" nowrap>
 					    <a class="white-text" href="<?=$URL_ListStatus?>"
                            <?=AttributsAHRef ($QuelOrdreStatus, $QuelOrdreStatus, '', '');?>
-						    ><i class="material-icons white-text " style="font-size: 20px"><?=$GifOrderStatus?></i>
+						    ><i class="material-icons white-text" style="font-size: 20px"><?=$GifOrderStatus?></i>
 						    <b>Statut</b>&nbsp;
 						</a>
 					</th>
                     <th style="text-align : center" valign="top" nowrap>
 					    <a class="white-text" href="<?=$URL_ListNom?>"
                            <?=AttributsAHRef ($QuelOrdreNom, $QuelOrdreNom, '', '');?>
-						    ><i class="material-icons white-text " style="font-size: 20px"><?=$GifOrderNom?></i>
+						    ><i class="material-icons white-text" style="font-size: 20px"><?=$GifOrderNom?></i>
 						    <b>Nom</b>&nbsp;
 						</a>
 					</th>

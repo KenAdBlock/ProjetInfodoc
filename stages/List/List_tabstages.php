@@ -163,12 +163,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                <?=AttributsAHRef ($QuelOrdreNum, $QuelOrdreNum, '', '');?>
                                 ><i class="material-icons white-text" style="font-size: 20px"><?=$GifOrderNum?></i>
                                 <b>Numéro</b>&nbsp;
-                                 
                             </a>
                         </th>
 
                         <th style="text-align : center" valign="top" nowrap>
-                          <b>Nombre de stages</b>
+                            <i class="material-icons" style="width: 20px; height: 20px;"></i>
+                            <b>Nombre de stages</b>
                         </th>
 
                         <th style="text-align : center" valign="top" nowrap>
