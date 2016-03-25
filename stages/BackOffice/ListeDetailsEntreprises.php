@@ -61,14 +61,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <th style="text-align : center" valign="top" nowrap>
 					    <a class="white-text" href="<?=$URL_ListSoc?>"
                            <?=AttributsAHRef ($QuelOrdreSoc, $QuelOrdreSoc, '', '');?>
-						    ><i class="material-icons white-text right" style="font-size: 20px"><?=$GifOrderSoc?></i>
+						    ><i class="material-icons white-text" style="font-size: 20px"><?=$GifOrderSoc?></i>
                 <b>Raison Sociale</b>
 						</a>
 					</th>
                     <th style="text-align : center" valign="top" nowrap>
 					    <a class="white-text" href="<?=$URL_ListResp?>"
                            <?=AttributsAHRef ($QuelOrdreResp, $QuelOrdreResp, '', '');?>
-						    ><i class="material-icons white-text right" style="font-size: 20px"><?=$GifOrderResp?></i>
+						    ><i class="material-icons white-text" style="font-size: 20px"><?=$GifOrderResp?></i>
                 <b>Responsable</b>
 						</a>
 					</th>

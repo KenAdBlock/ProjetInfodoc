@@ -49,7 +49,7 @@
 	$HeightDfltPopUpBoxChangePW = 670;
 	
 	$WidthPopUpBoxChangePW  = $WidthDfltPopUpBoxChangePW + 10;
-	$HeightPopUpBoxChangePW = $HeightDfltPopUpBoxChangePW;
+	$HeightPopUpBoxChangePW = $HeightDfltPopUpBoxChangePW + 50;
 	
     $ArrayLibChamps ['NewPW1'] = $LibPW1 = 'Nouveau mot de passe';
     $ArrayLibChamps ['NewPW2'] = $LibPW2 = 'Le meme mot de passe';
@@ -112,7 +112,7 @@
 		</script>
 		
 		<div class="container">
-			<div class="row">
+			<div class="row no-margin-bottom">
 				<div class="col s12">
 					<div class="card grey lighten-4 z-depth-1">
 						<div class="card-content">
