@@ -342,10 +342,10 @@ Responsable des stages
               <div class="row">
                 <form method="POST" role="form" class="col s12">
                   <div class="row">
-                                <div class="input-field col l1 m1 s">
+                                <div class="input-field col s1 l1">
                                     <label for="Nom"><b>Civilité</b></label>
                                 </div>
-                                <div class="col l6 s12 m12">
+                                <div class="col l5 s11">
                                     <div class="input-field col l4 m4 s4">
                                         <p>
                                             <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
@@ -461,10 +461,10 @@ Responsable des stages
                     idem ci-dessus, sinon :
                   </p>
                   <div class="row">
-                                <div class="input-field col l1 m1 s">
+                                <div class="input-field col l1 m1 s11">
                                     <label for="Nom"><b>Civilité</b></label>
                                 </div>
-                                <div class="col l6 s12 m12">
+                                <div class="col l5 s11 m11">
                                     <div class="input-field col l4 m4 s4">
                                         <p>
                                             <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
