@@ -35,10 +35,10 @@
 	$NomTabAnneesEntreprises = 'tabanneesentreprises';
 	
 //    $MailResponsableStages = "marc.laporte@univ-amu.fr";
-    $MailResponsableStages = "darkweizer@gmail.com";
+    $MailResponsableStages = "darkweizer@infodoc.esy.es";
 	$NomResponsableStages  = "Marc LAPORTE";
 //    $MailAdministrateur    = "marc.laporte@univ-amu.fr";
-    $MailAdministrateur    = "darkweizer@gmail.com";
+    $MailAdministrateur    = "darkweizer@infodoc.esy.es";
 	$NomAdministrateur     = "Marc LAPORTE";
 	$MailSecretariatTA     = "sophie.mebkhout	@univ-amu.fr";
 	$MailBidon             = "bidon@bidon.fr";
