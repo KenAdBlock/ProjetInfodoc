@@ -53,9 +53,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     {
                                                                           ?>
 
-<div class="table-list">
-<table class="highlight bordered centered grey lighten-4 small-text">
- <thead class="grey white-text">
+    <div class="table-list">
+        <table class="highlight bordered centered grey lighten-4 small-text">
+            <thead class="grey white-text">
 
                 <tr>
                     <th style="text-align : center" valign="top" nowrap>
@@ -80,8 +80,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 					<th style="text-align : center" valign="top" nowrap>mail</th>
 					<th style="text-align : center" valign="top" nowrap>fax</th>
 					<th style="text-align : center" valign="top" nowrap>site web</th>
-                </tr></thead>
-
+                </tr>
+            </thead>
+            <tbody>
                 <tr>
                                                                        <?php
                                                      while ($ObjSoc = $ReqSoc->fetch())
@@ -124,9 +125,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                                                        <?php
                                                      }
                                                                        ?>
-
-</table>
-</div>
+            </tbody>
+        </table>
+    </div>
 <?php
     }
 }
