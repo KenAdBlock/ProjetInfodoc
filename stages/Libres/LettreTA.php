@@ -25,6 +25,7 @@
 ?>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lettre TA</title>
 
         <link rel="icon" type="image/x-icon" href="<?=$PATH_IMG?>favicon.ico">
