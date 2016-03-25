@@ -98,20 +98,27 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		
       case 'Confirm' :
 		$Req = $ConnectLaporte->prepare("UPDATE $NomTabUsers 
-										 SET FK_Stage = :FK_Stage
+										 SET FK_Stage = $FK_Stage
 										 WHERE Identifiant = :Identifiant");
-		$Req->bindValue(':Identidiant', $Identifiant);
-		$Req->bindValue(':FK_Stage', $Fk_Stage);
+		$Req->bindValue(':Identifiant', $Identifiant);
 		$Req->execute();
 
-		$Req = $ConnectStages->prepare("UPDATE $NomTabStages 
+		$Req = $ConnectStages->prepare("UPDATE $NomTabStages
 										SET NbStagesRestant = NbStagesRestant - 1
 										WHERE PK_Stage = :FK_Stage");
-		$Req->bindValue(':FK_Stage', $Fk_Stage);
+		$Req->bindValue(':FK_Stage', $FK_Stage);
 		$Req->execute();
 
-		$Etape = 'Init';
-		
+		if(!$Req){
+			echo "\nErreur d'affection :\n";
+			print_r($Req->errorInfo());
+		} else {
+			echo '<script>window.location.href = "'.$PATH_BACKOFFICE.'BackOffice.php?Trait=List&SlxTable='.$NomTabStages.'"</script>';
+			exit;
+		}
+			
+
+		  break;
       case 'Init' :
 		$ReqStages = $ConnectStages->prepare("SELECT $NomTabStages.FK_Entreprise,
 	                             $NomTabStages.NiveauStage,
@@ -255,4 +262,3 @@ else
 <?php
 }
 ?>
-

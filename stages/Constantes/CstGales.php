@@ -14,14 +14,14 @@
 	$HOSTLPT = "localhost";
 	$NAMELPT = 'laporte';
 	$USERLPT = 'root';
-	$PASSWDBDLPT = "rootro";
+	$PASSWDBDLPT = "";
 	
 	
 	// Vaiable de connexion à la base de donnée stg (stages)
 	$HOSTSTG = "localhost";
 	$NAMESTG = 'stages';
 	$USERSTG = 'root';
-	$PASSWDBDSTG = "rootro";
+	$PASSWDBDSTG = "";
 
 
 
