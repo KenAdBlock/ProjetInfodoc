@@ -93,8 +93,8 @@ function SaisieRubrStage ($SymboleValid, $Libelle, $Requete, $Masque,
 						                                                   ?>
     <div class="input-field col s12">
 		<?=$SymboleValid?>
-        
-		    <?=$Bold.$Libelle.$FinBold?>
+        <div class="col s12">
+		    <?=$Bold.$Libelle.$FinBold?></div>
         
 		
 		
@@ -118,21 +118,22 @@ function SaisieRubrStage ($SymboleValid, $Libelle, $Requete, $Masque,
 											{
 										                                   ?>
             
-										                                   <?php
+						<div class="row">				                                   <?php
 											}
 										                                   ?>
-				<div class="input-field col s12">
+				
+				<div class="input-field col s6">
                     <input class="filled-in" id="<?=$Obj['Libelle']?>"type="checkbox" name="<?=$Obj['Code']?>" value="<?=$Obj['CodeBin']?>"
 					       <?=(IsInSet ($Obj['CodeBin'], $Masque)) ? 'checked' : ''?>>
 
 		            <label for="<?=$Obj['Libelle']?>"><?=$Obj['Libelle']?></label>
 		            </div>
-										                                   <?php
+									                                   <?php
 											if (++$NbSurLigne == $NbParLigne)
 											{
 										        $NbSurLigne = 0;
 										                                   ?>			
-			
+			</div>	
 										                                   <?php
 										    }
 										}
@@ -155,7 +156,8 @@ function SaisieRubrStageEtAutre ($SymboleValid, $Libelle, $Requete, $Masque,
 {
     SaisieRubrStage ($SymboleValid, $Libelle, $Requete, $Masque, $NbParLigne);
 										                                   ?>
-    <div class="row">
+    
+    <div class="row"><br>
     	<div class="input-field col s12">
 		<?=$SymboleValidAutre?>
         
@@ -406,7 +408,7 @@ function AffichSepar ()
                                                                            ?>
     <tr>
 	    <td colspan="3">
-		    <hr size="1" noshade width="100%" align="left">
+		    <hr>
 		</td>
 	</tr>
                                                                           <?php
@@ -458,10 +460,8 @@ function AffichRubrStage ($Libelle, $Requete, $Masque, $Autres = '',
 										                                   ?>			
 			    
 				<td nowrap valign="top">
-		            <img src="<?=$PATH_GIFS?><?=(IsInSet ($Obj['CodeBin'], $Masque)) ? 'cbv' : 'cb'?>.jpg"
-			             height="13" width="13">
-			        &nbsp;
-		            <?=stripslashes ($Obj['Libelle'])?>
+					<input class="filled-in" type="checkbox" <?=(IsInSet ($Obj['CodeBin'], $Masque)) ? 'checked' : 'cb'?> disabled/>
+					<label class="black-text"><?=stripslashes ($Obj['Libelle'])?></label>
 		        </td>
 										                                   <?php
 											if (++$NbSurLigne == $NbParLigne)
@@ -541,11 +541,9 @@ function AffichOuiNonDetail ($Libelle, $Valeur, $Detail)
 function AffichOuiNon ($Libelle, $Valeur)
 {
                                                                           ?>
-   	<tr>
-		<td></td>
-	    <td><i><?=$Libelle?></i></td>
-        <td><?=$Valeur ? 'oui' : 'non';?></td>
-	</tr>
+
+	    <li><i><?=$Libelle?></i>
+        <b><?=$Valeur ? '&nbsp;oui' : '&nbsp;non';?></b></li>
                                                                           <?php
 } // AffichOuiNon()
 

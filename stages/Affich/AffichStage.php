@@ -48,78 +48,71 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     <b>proposé <?=$MsgProposeA [$ObjStage->GetNiveauStage()]?></b>
 </h6>
 	<hr>
-<table  cellpadding="2" width="100%">
- <tbody>                                                                         <?php
+                                                                         <?php
 	    /* ================================= */
 	    /* 1. Entreprise                     */
 	    /* ================================= */
         AffichTitre ($Msg_FormStage [MSGFORMSTAGE_1], 2);
                                                                           ?>
-	<tr>
-	    <td></td>
-        <td valign="top"><b>Nom :</b></td>
-        <td valign="top"><b><?=$ObjEntreprise->GetNomE()?></b></td>
-	</tr>
-	<tr>
-	    <td></td>
-        <td valign="top"><nobr><b>Adresse du lieu de stage :</nobr></i></td>
-        <td valign="top"><?=$Adr1Stage?></td>
-	</tr>
+            <div class="row">
+        	    <div class="col s5"><b>Nom :</b></div>
+            	<div class="col s7"><b><?=$ObjEntreprise->GetNomE()?></b></div>
+			</div>
+			<div class="row">
+                <div class="col s5"><b>Adresse du lieu de stage :</b></div>
+                <div class="col s7"><?=$Adr1Stage?></div>
+            </div>
+	
 	                                                                       <?php
                                         if ($Adr2Stage != '')
 										{
                                                                           ?>
-	<tr>
-	    <td></td>
-        <td>&nbsp;</td>
-        <td valign="top"><?=$Adr2Stage?></td>
-	</tr>
+            <div class="row">
+                <div class="col s7 push-s5"><?=$Adr2Stage?></div>
+            </div>
+	
 	                                                                       <?php
                                         }
                                                                           ?>
-	<tr>
-	    <td></td>
-        <td>&nbsp;</td>
-        <td valign="top"><?=$CPStage?> - <?=$VilleStage?></td>
-	</tr>
+			<div class="row">
+                <div class="col s7 push-s5"><?=$CPStage?> - <?=$VilleStage?></div>
+            </div>
+        
+	
 	                                                                       <?php
                                         if ($ObjEntreprise->GetPresentEntreprise() != '')
 										{
                                             AffichLigneVierge();
                                                                           ?>
- 	<tr>
-	    <td></td>
-        <td valign="top"><nobr><b>Présentation de l'entreprise :</b></nobr></td>
-        <td valign="top"><?=$ObjEntreprise->GetPresentEntreprise()?></td>
-	</tr>
+ 			<div class="row">
+                <div class="col s5"><b>Présentation de l'entreprise :</b></div>
+                <div class="col s7"><?=$ObjEntreprise->GetPresentEntreprise()?></div>
+            </div>
+      
+	
 	                                                                       <?php
 										}
                                         if ($ObjEntreprise->GetSiteEntreprise() != '')
 										{
                                             AffichLigneVierge();
                                                                           ?>
- 	<tr>
-	    <td></td>
-        <td valign="top"><b>Site web de l'entreprise :</b> </td>
-		<td><a href="<?=$ObjEntreprise->GetSiteEntreprise()?>" target="_blank">
+			<div class="row">
+                <div class="col s5"><b>Site web de l'entreprise :</b></div>
+                <div class="col s7"><a href="<?=$ObjEntreprise->GetSiteEntreprise()?>" target="_blank">
 			    <?=$ObjEntreprise->GetSiteEntreprise()?>
-			</a>
-		</td>
-	</tr>
-	                                                                       <?php
+			</a></div>
+            </div>
+		
+		                                                                 <?php
 										}
                                         AffichLigneVierge();
                                                                          ?>
+				<br>
 
- 	<tr>
-	    <td></td>
-        <td colspan="2"><nobr><b>Renseignements administratifs :</b></nobr></td>
-	</tr>
- 	<tr>
-	    <td></td>
-        <td colspan="3">
-	    	<table class="bordered striped">
-				<thead class="grey white-text">
+        	<b>Renseignements administratifs :</b><br><br>
+					<div class="info-table">
+	    	<table class="bordered striped" >
+				<thead class="bleu1 white-text">
 				<tr>
        	   	        <th >&nbsp;</th>
                     <th >Responsable administratif</th>
@@ -151,86 +144,76 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                     <td><?=$ObjUser->GetFax()?>&nbsp;</td>
                 </tr>
             </table>
-		</td>
-    </tr>
+		</div>
                                                                            <?php
                                         AffichLigneVierge();
                                                                            ?>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><nobr><b>Service</b></nobr></td>
-	</tr>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><?=$Msg_FormStage [MSGFORMSTAGE_NBPERS_CI]?>
-		                <?=$ObjStage->GetNbPersCentreInfo()?></td>
-	</tr>
- 	<tr>
-	    <td></td>
-        <td colspan="2">L'entreprise 
+<div class="row">
+	<div class="col s12">
+		
+
+        <b>Service</b>
+
+        <ul>
+        	<li>
+        <?=$Msg_FormStage [MSGFORMSTAGE_NBPERS_CI]?>
+		                <?=$ObjStage->GetNbPersCentreInfo()?>
+			</li>
+			<li>
+        L'entreprise 
 		     <?=$ObjStage->GetAreOldStagiaires() ? 'a déjà'
 			                                     : 'n\'a encore jamais'?>
 		     accueilli des stagiaires de notre département auparavant
-		</td>
-	</tr>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><?=$Msg_FormStage [MSGFORMSTAGE_NBSTAGIAIRES]?>
+			</li>
+			<li>
+        <?=$Msg_FormStage [MSGFORMSTAGE_NBSTAGIAIRES]?>
 		                <?=$ObjStage->GetNbStagesProposes()?> 
-		</td>
-	</tr>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><?=$Msg_FormStage [MSGFORMSTAGE_NBPERS_SERV]?>
+			</li>
+			<li>
+        <?=$Msg_FormStage [MSGFORMSTAGE_NBPERS_SERV]?>
 		                <?=$ObjStage->GetNbPersonnesService()?> 
-		</td>
-	</tr>
- 	<tr>
-	    <td></td>
-        <td colspan="2">Le stagiaire travaillera
+			</li>
+			<li>
+        Le stagiaire travaillera
 		     <?=$ObjStage->GetIsStagiaireSeul() 
 			     ? $Msg_FormStage [MSGFORMSTAGE_SEUL]
 			     : $Msg_FormStage [MSGFORMSTAGE_COLL_INFORM]?>
-		</td>
-	</tr>
-                                                                           <?php
+			</li>
+		
+        </ul>           
+        	</div>
+                                                      <?php
                                         AffichLigneVierge();
                                                                            ?>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><b><nobr>Renseignements pratiques</nobr></b>
-		</td>
-	</tr>
- 	<tr>
-	    <td></td>
-        <td colspan="2">Indemnités mensuelles :
+
+	<div class="col s12">
+        <b>Renseignements pratiques</b>
+		<ul>
+			<li>
+        Indemnités mensuelles :
 		                <?=$ObjStage->GetIndemnitesMensuellesStage();?> &euro;
-		</td>
-	</tr>
- 	<tr>
-	    <td></td>
-        <td colspan="2">Repas :
+			</li>
+			<li>
+        Repas :
 		                <?=($ObjStage->GetIndemnitesRepas() == '')
 						     ? 'non' : $ObjStage->GetIndemnitesRepas();?>
-		</td>
-	</tr>
- 	<tr>
-	    <td></td>
-        <td colspan="2">Transport :
+			</li>
+			<li>
+        Transport :
 		                <?=($ObjStage->GetIndemnitesTransport() == '')
 						     ? 'non' : $ObjStage->GetIndemnitesTransport();?>
-		</td>
-	</tr>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><?=$Msg_FormStage [MSGFORMSTAGE_EMBAUCHE]?> :
+			</li>
+			<li>
+        <?=$Msg_FormStage [MSGFORMSTAGE_EMBAUCHE]?> :
 		                <?=($ObjStage->GetIsEmbauchePossible())
 						     ? 'oui' : 'non'?>
-		</td>
-	</tr>
+						     </li>
+		</ul>
 
-                                                                           <?php
-                                        AffichLigneVierge();
+  </div>
+</div>                 
+<hr>                                                          <?php
+                                        
 
 	/*
 	    =================================
@@ -258,8 +241,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    ==========================
 	*/
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_ENV_LOGICIEL], 3);
-
-       AffichTitre ($Msg_FormStage [MSGFORMSTAGE_LANGAGES], 4, 'bold');
+		AffichLigneVierge ();
+       AffichTitre ($Msg_FormStage [MSGFORMSTAGE_LANGAGES], 6, 'bold');
 
 	                                    AffichRubrStage (
                                             $Msg_FormStage [MSGFORMSTAGE_LANG],
@@ -269,7 +252,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             LANG_PAR_LIGNE);
  
        AffichLigneVierge ();
-       AffichTitre ($Msg_FormStage [MSGFORMSTAGE_BD], 4, 'bold');
+       AffichTitre ($Msg_FormStage [MSGFORMSTAGE_BD], 6, 'bold');
 	   
 	                                    AffichRubrStage (
                                             '',
@@ -279,13 +262,11 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             BD_PAR_LIGNE);
        AffichLigneVierge ();
 																		   ?>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><?=$Msg_FormStage [MSGFORMSTAGE_LOGICIELS_SPEC]?> :
+
+        <?=$Msg_FormStage [MSGFORMSTAGE_LOGICIELS_SPEC]?> :
 		                <?=($ObjStage->GetLogicielsSpecifiques() == '')
 						     ? 'non' : $ObjStage->GetLogicielsSpecifiques()?>
-		</td>
-	</tr>
+		
 	                                                                       <?php
        AffichSepar ();
 	/*
@@ -300,9 +281,8 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             $ObjStage->GetMethodesGestionProjet() != '')
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_METHODES_STANDARDS], 3);
 																		   ?>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><table cellspacing="5">
+ 	
+        
 
 	                                                                       <?php
        AffichRubr2Stage ($ObjStage->GetMethodesAnalyse(),
@@ -320,8 +300,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
        AffichRubr2Stage ($ObjStage->GetMethodesGestionProjet(),
                          $Msg_FormStage [MSGFORMSTAGE_STDGESTIONPROJET]);
 																		   ?>
-		</table></td>
-	</tr>
+		
 	                                                                       <?php
 	/*
 	    ========
@@ -330,49 +309,38 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	*/
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_SUJET], 2);
 																		   ?>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><table cellspacing="5">
+ 	
 	                                                                       <?php
        AffichRubr2Stage ($ObjStage->GetSujet(), '');
 																		   ?>
-		</table></td>
-	</tr>
-	                                                                       <?php	   
+		
+	                                                                     <?php	   
        AffichLigneVierge ();
 
        AffichTitre  ($Msg_FormStage [MSGFORMSTAGE_NATURE_TACHE], 4, 'normal');   
 																		   ?>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><table cellspacing="5">
+ 	
 	                                                                       <?php
        AffichOuiNon ($Msg_FormStage [MSGFORMSTAGE_PROGRAMMATION], $ObjStage->GetIsNatureTacheProgr());
        AffichOuiNon ($Msg_FormStage [MSGFORMSTAGE_ANALYSE],       $ObjStage->GetIsNatureStageAnalyse());
 																		   ?>
-		</table></td>
-	</tr>
+		
 	                                                                       <?php
 
-       AffichLigneVierge();
+       
 
        AffichTitre ($Msg_FormStage [MSGFORMSTAGE_INTEGRATION], 4, 'normal');
 																		   ?>
- 	<tr>
-	    <td></td>
-        <td colspan="2"><table cellspacing="5">
+
 	                                                                       <?php
        AffichOuiNon ($Msg_FormStage [MSGFORMSTAGE_INTEGRPROJETGLOBAL], $ObjStage->GetIsIntegrationProjetGlobal());
        AffichOuiNon ($Msg_FormStage [MSGFORMSTAGE_ENTITEINDEPENDANTE], $ObjStage->GetIsIntegrationEntiteIndependante());
 																		   ?>
-		</table></td>
-	</tr>
- </tbody>
-</table>
-
+		
+<br><br>
 
 <div class="row">
-<div class="col s4 ">
+<div class="col s1 ">
 <a href="<?=$PATH_GENERAL?>Print.php?SlxPage=<?=$SlxPage?>" 
 			   title="Imprimer"
 			   target="_blank"
@@ -381,13 +349,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                 ><img src="<?=$PATH_GIFS?>PrintCourant.gif" border="0">
 </a>
 </div>
+<div class="col s11 center">
 <button type="reset" class="waves-effect waves-light btn black white-text" onClick="history.go()">Retour</button>
 	<?php
 	if (GetDroits ($Status, 'ModifStage'))
 	{
 	?>
 <button type="reset" class="waves-effect waves-light btn bleu1 white-text" onClick="window.location='?Trait=Form&SlxTable=<?=$NomTabStages?>&IdentPK=<?=$ObjStage->GetPK_Stage()?>'">Modifier</button>
-
+</div>
 </div>
 
 
