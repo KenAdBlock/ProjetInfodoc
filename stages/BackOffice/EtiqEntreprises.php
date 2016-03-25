@@ -38,12 +38,9 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                           ORDER BY NomE");
 	    break;
 	}
+    
 
-
-    $UtilBD = new UtilBD();
-    $ConnectStagesInforShema = $UtilBD->ConnectInformationShema();
-
-    $ReqCulName = $ConnectStagesInforShema->query("SELECT COLUMN_NAME FROM COLUMNS where TABLE_NAME='$NomTabEntreprises' AND (COLUMN_NAME='NomE' OR COLUMN_NAME='Adr1' OR COLUMN_NAME='Adr2' OR COLUMN_NAME='CP' OR COLUMN_NAME='Ville')");
+    $ReqCulName = $ConnectStages->query("SHOW COLUMNS FROM $NomTabEntreprises WHERE (FIELD='NomE' OR FIELD='Adr1' OR FIELD='Adr2' OR FIELD='CP' OR FIELD='Ville')");
     if (! $ReqSoc->rowCount())
     {
                                                                           ?>
@@ -65,7 +62,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         while($ObjSocs = $ReqCulName->fetch()){
             if($cpt>0)
                 fwrite($FichEtiq,"\t");
-            fwrite ($FichEtiq, $ObjSocs['COLUMN_NAME']);
+            fwrite ($FichEtiq, $ObjSocs['Field']);
             $cpt++;
         }
         fwrite($FichEtiq,"\n\n");
@@ -85,8 +82,13 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	    fclose ($FichEtiq);
 //        redirect($PATH_LIBRES.'Etiquettes.ods');
 
-         echo '<a href='.$PATH_LIBRES.'Etiquettes.ods target="_blank">Télécharger</a>';
+         echo '<a id=\'lien\' onclick="'.$PATH_BACKOFFICE.'BackOffice.php?Trait=Etiquettes" href="'.$PATH_LIBRES.'Etiquettes.ods" target="_blank" ></a>';
+         echo '<a id=\'redirect\' href="'.$PATH_BACKOFFICE.'BackOffice.php?Trait=Etiquettes" ></a>';
 
+        echo'<script>
+            window.location.href = document.getElementById(\'lien\').href;
+            setTimeout(function(){ window.location.href = document.getElementById(\'redirect\').href;}, 1000);
+        </script>';
     }
 }
 else
@@ -95,4 +97,6 @@ else
 <h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
 <?php
 }
-?>
+?>$(\'#result\').append($(\'<a>\'));
+    $(\'#result\').setAttribute("id", "redirect");
+    /*window.location.href = document.getElementById(\'redirect\').href*/;
