@@ -42,15 +42,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 	$MsgProposeA [2] = 'aux étudiants de Licence Professionnelle';
 	$MsgProposeA [3] = 'aux étudiants de DUT ou de Licence Professionnelle';
 ?>
-<h2 style="text-align : center;">Annee 2015-2016 : fiche de stage n° <?=$ValPK_Stage?></h2>
+<span class="card-title"><h4 class="center">Année 2015-2016 : fiche de stage n° <?=$ValPK_Stage?></h4></span>
 
-<h3 style="text-align : center;">
-    proposé <?=$MsgProposeA [$ObjStage->GetNiveauStage()]?>
-</h3>
-
-<table align="center" style="border : 2px solid blue" width="<?=$WidthCadre?>"><tr><td>
+<h6 class="center">
+    <b>proposé <?=$MsgProposeA [$ObjStage->GetNiveauStage()]?></b>
+</h6>
+	<hr>
 <table  cellpadding="2" width="100%">
-                                                                          <?php
+ <tbody>                                                                         <?php
 	    /* ================================= */
 	    /* 1. Entreprise                     */
 	    /* ================================= */
@@ -111,6 +110,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 										}
                                         AffichLigneVierge();
                                                                          ?>
+
  	<tr>
 	    <td></td>
         <td colspan="2"><nobr><b>Renseignements administratifs :</b></nobr></td>
@@ -118,12 +118,14 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
  	<tr>
 	    <td></td>
         <td colspan="3">
-	    	<table width="100%" style="border : 1px solid blue" cellpadding="5">
-                <tr style="text-align : left; background-color : #00b1ff">
+	    	<table class="bordered striped">
+				<thead class="grey white-text">
+				<tr>
        	   	        <th >&nbsp;</th>
                     <th >Responsable administratif</th>
                     <th >Maître de stage</th>
                 </tr>
+				</thead>
                 <tr>
                     <th>Nom</th>
                     <td><?=$ObjEntreprise->GetPrenomR()?>
@@ -133,17 +135,17 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 					    <?=$ObjUser->GetNom()?>
 					</td>
                 </tr>
-                <tr style="background-color : #d4d4d4">
+                <tr>
                     <th>Tél.</th>
                     <td><?=$ObjEntreprise->GetTelR()?>&nbsp;</td>
                     <td><?=$ObjUser->GetTel()?>&nbsp;</td>
                 </tr>
-                <tr >
+                <tr>
                     <th>e-mail</th>
                     <td><?=$ObjEntreprise->GetMailR()?>&nbsp;</td>
                     <td><?=$ObjUser->GetMail()?>&nbsp;</td>
                 </tr>
-               <tr style="background-color : #d4d4d4">
+               <tr>
                     <th>Fax</th>
                     <td><?=$ObjEntreprise->GetFaxR()?>&nbsp;</td>
                     <td><?=$ObjUser->GetFax()?>&nbsp;</td>
@@ -226,8 +228,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 						     ? 'oui' : 'non'?>
 		</td>
 	</tr>
+
                                                                            <?php
                                         AffichLigneVierge();
+
 	/*
 	    =================================
 	    2. Environnement du stagiaire ... 
@@ -363,13 +367,12 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 																		   ?>
 		</table></td>
 	</tr>
-
+ </tbody>
 </table>
-<table width="100%">
-<tr><td colspan="2">&nbsp;</td></tr>
 
-<tr>
-<td style="text-align : left">
+
+<div class="row">
+<div class="col s4 ">
 <a href="<?=$PATH_GENERAL?>Print.php?SlxPage=<?=$SlxPage?>" 
 			   title="Imprimer"
 			   target="_blank"
@@ -377,22 +380,17 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                onMouseOut ="window.status=''; return true"
                 ><img src="<?=$PATH_GIFS?>PrintCourant.gif" border="0">
 </a>
-</td>
-<td style="text-align : center;" valign = center">
-    <input type="button" value="Retour" style="width : <?=$WidthButton?>px" 
-	       onClick="history.go (-1)">
-                                                                       <?php
-                                        if (GetDroits ($Status, 'ModifStage'))
-                                        {
-																		   ?>
+</div>
+<button type="reset" class="waves-effect waves-light btn black white-text" onClick="history.go()">Retour</button>
+	<?php
+	if (GetDroits ($Status, 'ModifStage'))
+	{
+	?>
+<button type="reset" class="waves-effect waves-light btn bleu1 white-text" onClick="window.location='?Trait=Form&SlxTable=<?=$NomTabStages?>&IdentPK=<?=$ObjStage->GetPK_Stage()?>'">Modifier</button>
 
-    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-    <input type="button" value="Modifier" style="width : <?=$WidthButton?>px"
-	       onClick="window.location='?Trait=Form&SlxTable=<?=$NomTabStages?>&IdentPK=<?=$ObjStage->GetPK_Stage()?>'">
-	</a>
-</td></tr></table>
-</td></tr></table>
-            
+</div>
+
+
                                                                        <?php
                                         }
 }

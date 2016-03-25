@@ -262,7 +262,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
                                                                            ?>
 <div class="row"><div class="col s12">
 <table class="highlight bordered centered grey lighten-4 small-text">
- <thead class="grey darken-1 white-text">
+ <thead class="grey white-text">
     <tr>
 	    <th colspan="2" style="text-align : left">&nbsp;</th>
 	    <th style="text-align : center">Nom</th>
@@ -303,7 +303,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										  case 'LstSocsWithMails' :
                                                                            ?>
 <table class="highlight bordered centered grey lighten-4 small-text">
- <thead class="grey darken-1 white-text">
+ <thead class="grey white-text">
     <tr>
 	    <th colspan="2" style="text-align : center">&nbsp;</th>
 	    <th style="text-align : center">Nom</th>
@@ -356,7 +356,7 @@ Vous pourrez bien sûr le modifier à votre convenance dès votre prochaine conn
 										  case 'ListeEtud2A'    :
                                                                            ?>
 <table class="highlight bordered centered grey lighten-4 small-text">
- <thead class="grey darken-1 white-text">
+ <thead class="grey white-text">
     <tr>
 	    <th colspan="2" style="text-align : center">&nbsp;</th>
 	    <th style="text-align : center">Nom - Prénom</th>

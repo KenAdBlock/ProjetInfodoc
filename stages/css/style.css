@@ -281,3 +281,8 @@ select>option{
 select + label{
   margin-top: -27px;
 }
+.table-list{
+  height: 500px;
+  width:100%; 
+  overflow:auto;
+}

@@ -60,7 +60,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
         }
 	    $FichEtiq =
 		fopen ($PATH_LIBRES.'Etiquettes.ods', 'w');
-                                                     fwrite($FichEtiq,chr(239) . chr(187) . chr(191));
+        fwrite($FichEtiq,chr(239) . chr(187) . chr(191));
         $cpt = 0;
         while($ObjSocs = $ReqCulName->fetch()){
             if($cpt>0)
