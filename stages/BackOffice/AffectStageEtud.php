@@ -72,7 +72,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		<td><?=$NomPrenom?></td>
 	</tr>
     <tr>
-	    <td><b>login</b>
+	    <td><b>Login</b>
 		<td><?=$LoginCache?></td>
 	</tr>
     <tr>
