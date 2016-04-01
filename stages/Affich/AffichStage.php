@@ -260,7 +260,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
                                             $ObjStage->GetBD(),
                                             $ObjStage->GetAutresBD(),
                                             BD_PAR_LIGNE);
-       AffichLigneVierge ();
+       AffichLigneVierge (); 
 																		   ?>
 
         <?=$Msg_FormStage [MSGFORMSTAGE_LOGICIELS_SPEC]?> :
