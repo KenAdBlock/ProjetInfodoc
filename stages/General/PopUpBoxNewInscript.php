@@ -299,19 +299,30 @@
 										{
 										  case 'Ack' : 
 										                                   ?>
+<div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card grey lighten-4 z-depth-1">
+            <div class="card-content">    
+<p>     
     Votre inscription a bien été enregistrée et nous vous en remercions.
 
     Vous recevrez dans les plus brefs délais un login et un mot de passe pour vous permettre d'entrer les caractéristiques du stage que vous proposez.
-
-<br /><br />
+</p>
+<br />
 <div style="text-align : right">
 <?=$NomResponsableStages?>
 <br />
 Responsable des stages
+</div><br>
+<p class="center">
+                  <button type="submit" class="waves-effect waves-light btn black white-text"
+                    onClick="window.close()">Fermer la fenetre</button>
+                </p>
 </div>
-<div style="text-align : center">
-<input type="button" value="Fermer la fenêtre"
-       onClick="window.close()">
+</div>
+</div>
+</div>
 </div>
 
                                                                            <?php

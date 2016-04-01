@@ -292,7 +292,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                             ?>
                             
                                 <div class="input-field col l6 m6 s12">
-                                    <select class="browser-default" name="StatusUser">
+                                    <select class="" name="StatusUser">
                                         <?php
                                         while ($ObjStatus = $ReqStatus->fetch())
                                         {
