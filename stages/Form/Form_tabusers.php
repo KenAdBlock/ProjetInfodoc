@@ -270,6 +270,9 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                     <label for="Fax">Fax</label>
                                 </div>
                                <?php
+                               
+                               $pull="";
+
                                 if ($IdentPK == 0)
                                 {
                                 ?>
@@ -281,8 +284,10 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                             <?php
                             }
                             else
-                            {
-                                ?>
+                            {   
+                                $pull="pull-l6";
+
+                            ?>
                                 <input type="hidden" name="Login" value="<?=$ValLogin?>">
                                 <?php
                             }
@@ -292,7 +297,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                             ?>
                             
                                 <div class="input-field col l6 m6 s12">
-                                    <select class="" name="StatusUser">
+                                    <select class="browser-default" name="StatusUser">
                                         <?php
                                         while ($ObjStatus = $ReqStatus->fetch())
                                         {
@@ -307,7 +312,7 @@ Les <?=FLECHE?>indiquent qu'une rubrique est vide ou erronée
                                     </select>
                                     <label><b><?=$ValidStatus?>Statut</b></label>
                                 </div>
-                                <div class="input-field col l6 m6 s12">
+                                <div class="input-field col l6 m6 s12 <?php echo $pull; ?>">
                                     <select class="browser-default" name="FK_Entreprise">
                                         <option value="0"
                                             <?=$ValFK_Entreprise == 0 ? 'selected' : ''?>
