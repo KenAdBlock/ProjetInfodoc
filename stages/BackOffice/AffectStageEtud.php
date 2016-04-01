@@ -72,7 +72,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		<td><?=$NomPrenom?></td>
 	</tr>
     <tr>
-	    <td><b>login</b>
+	    <td><b>Login</b>
 		<td><?=$LoginCache?></td>
 	</tr>
     <tr>
@@ -96,20 +96,27 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 		
       case 'Confirm' :
 		$Req = $ConnectLaporte->prepare("UPDATE $NomTabUsers 
-										 SET FK_Stage = :FK_Stage
+										 SET FK_Stage = $FK_Stage
 										 WHERE Identifiant = :Identifiant");
-		$Req->bindValue(':Identidiant', $Identifiant);
-		$Req->bindValue(':FK_Stage', $Fk_Stage);
+		$Req->bindValue(':Identifiant', $Identifiant);
 		$Req->execute();
 
-		$Req = $ConnectStages->prepare("UPDATE $NomTabStages 
+		$Req = $ConnectStages->prepare("UPDATE $NomTabStages
 										SET NbStagesRestant = NbStagesRestant - 1
 										WHERE PK_Stage = :FK_Stage");
-		$Req->bindValue(':FK_Stage', $Fk_Stage);
+		$Req->bindValue(':FK_Stage', $FK_Stage);
 		$Req->execute();
 
-		$Etape = 'Init';
-		
+		if(!$Req){
+			echo "\nErreur d'affection :\n";
+			print_r($Req->errorInfo());
+		} else {
+			echo '<script>window.location.href = "'.$PATH_BACKOFFICE.'BackOffice.php?Trait=List&SlxTable='.$NomTabStages.'"</script>';
+			exit;
+		}
+			
+
+		  break;
       case 'Init' :
 		$ReqStages = $ConnectStages->prepare("SELECT $NomTabStages.FK_Entreprise,
 	                             $NomTabStages.NiveauStage,
@@ -216,9 +223,10 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
     <tr>
 	    <td style="text-align : right"><b>Étudiant</b>
         <td >
+			<div class="input-field">
 		    <input type="text" name="NomPrenom" maxlength="50" size="30" 
 			        value="" onKeyUp="MAJTxtAffich ();">
-		    <input type="hidden" name="LoginCache">
+		    <input type="hidden" name="LoginCache"></div>
         </td>
 	</tr>
 	<?php /*
@@ -253,4 +261,3 @@ else
 <?php
 }
 ?>
-

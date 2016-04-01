@@ -118,7 +118,6 @@ function Consult ($Login, $Libelle, $Status)
                 <a class="ashadow blue-text" href="<?=$URL_List.$NomTabStages?>">
                     Liste des fiches de stage
                 </a>
-    <!--			--><?php //var_dump($URL_List.$NomTabStages);?>
                                                                                <?php
                                             }
                                             if (GetDroits ($Status, 'ListeFichesStagesEntreprise'))
