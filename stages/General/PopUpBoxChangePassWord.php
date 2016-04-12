@@ -54,7 +54,7 @@
 	$HeightPopUpBoxChangePW = $HeightDfltPopUpBoxChangePW + 50;
 	
     $ArrayLibChamps ['NewPW1'] = $LibPW1 = 'Nouveau mot de passe';
-    $ArrayLibChamps ['NewPW2'] = $LibPW2 = 'Le meme mot de passe';
+    $ArrayLibChamps ['NewPW2'] = $LibPW2 = 'Le même mot de passe';
     //
 	
 	$CodErr       = array();
