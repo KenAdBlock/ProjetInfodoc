@@ -55,6 +55,7 @@ li span {font-weight:normal;line-height: 25px;}
    .input-field input[type=email]:focus + label {
      color: #0066cc;
    }
+
    /* label underline focus color */
    .input-field input[type=text],.input-field input[type=password],.input-field input[type=email] {
    
@@ -68,7 +69,7 @@ li span {font-weight:normal;line-height: 25px;}
      box-shadow: 0 2px 0 0 #0066cc;
    }
    /* valid color */
-   .input-field input[type=text].valid,  .input-field input[type=email].valid {
+   .input-field input[type=text].valid, .input-field input[type=email].valid {
      border-bottom: 1px solid #0066CC;
      box-shadow: 0 1px 0 0 #0066CC;
    }
@@ -276,6 +277,7 @@ select.browser-default:focus {
 }
 select>option{
   background: white;
+  color: black;
 }
 select + label{
   margin-top: -27px;
@@ -287,4 +289,12 @@ select + label{
 .info-table{
   width:100%; 
   overflow:auto;
+}
+
+.select-wrapper span.caret {
+  color: black;
+  position: absolute;
+  right: 0;
+  top: 16px;
+  font-size: 10px;
 }
