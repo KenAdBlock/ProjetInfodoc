@@ -11,17 +11,17 @@
 
 
 	// Vaiable de connexion à la base de donnée lpt (laporte)
-	$HOSTLPT = "localhost";
-	$NAMELPT = 'laporte';
-	$USERLPT = 'root';
-	$PASSWDBDLPT = "";
+	$HOSTLPT = "mysql.hostinger.fr";
+	$NAMELPT = 'u583282816_lpt';
+	$USERLPT = 'u583282816_lpt';
+	$PASSWDBDLPT = "d2m2l2";
 	
 	
 	// Vaiable de connexion à la base de donnée stg (stages)
-	$HOSTSTG = "localhost";
-	$NAMESTG = 'stages';
-	$USERSTG = 'root';
-	$PASSWDBDSTG = "";
+	$HOSTSTG = "mysql.hostinger.fr";
+	$NAMESTG = 'u583282816_stg';
+	$USERSTG = 'u583282816_stg';
+	$PASSWDBDSTG = "d2m2l2";
 
 
 
@@ -46,10 +46,10 @@
 	$NomTabAnneesEntreprises = 'tabanneesentreprises';
 	
 //    $MailResponsableStages = "marc.laporte@univ-amu.fr";
-    $MailResponsableStages = "darkweizer@infodoc.esy.es";
+    $MailResponsableStages = "darkweizer@gmail.com";
 	$NomResponsableStages  = "Marc LAPORTE";
 //    $MailAdministrateur    = "marc.laporte@univ-amu.fr";
-    $MailAdministrateur    = "darkweizer@infodoc.esy.es";
+    $MailAdministrateur    = "darkweizer@gmail.com";
 	$NomAdministrateur     = "Marc LAPORTE";
 	$MailSecretariatTA     = "sophie.mebkhout	@univ-amu.fr";
 	$MailBidon             = "bidon@bidon.fr";
@@ -82,8 +82,8 @@
 	    break;
 
 	  case INFODOC :
-	    $URL_SERVEUR_SITE = 'http://localhost' . $port . '/';
-	    $RACINE           = 'ProjetInfodoc/stages/';
+	    $URL_SERVEUR_SITE = 'http://infodoc.esy.es' . $port . '/';
+	    $RACINE           = 'stages/';
 	    break;
 	}
 	$URL_SITE            = $URL_SERVEUR_SITE.$RACINE;
