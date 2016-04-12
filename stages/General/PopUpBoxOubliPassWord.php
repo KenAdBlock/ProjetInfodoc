@@ -1,4 +1,6 @@
 <?php
+	ini_set ("display_errors", 0);
+	error_reporting (0);
     $PATH_RACINE     = '../';
     $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
 //    $Sender          = "From: marc.laporte@univ-amu.fr";

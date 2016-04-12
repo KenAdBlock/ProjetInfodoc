@@ -1,4 +1,6 @@
 <?php
+    ini_set ("display_errors", 0);
+    error_reporting (0);
     function ProtectApos ($String)
     {
         $NewString = "";
@@ -260,9 +262,12 @@
 		  $Sujet   = 'Nouvel inscrit pour stage';
 		  $Message = 'Inscription de :   '.
 		             $ValCiviliteTuteur.' '.$ValPrenomTuteur.'   '.$ValNomTuteur.'    à valider';
-                $Dest    =  $MailResponsableStages;
+           $Dest    =  $MailResponsableStages;
 
-		  if ($MachineHote == INFODOC) mail ($Dest, $Sujet, $Message);
+		  if ($MachineHote == INFODOC) {
+              die (test);
+              mail($Dest, $Sujet, $Message);
+          }
 			 
 		  $Title = 'Accuse d\'inscription';
             }

@@ -16,7 +16,7 @@ require_once ($PATH_CONSTANTES.'CstGales.php');
 
 			}
 			catch(PDOException $e){
-				echo "Connexion à la base : <b>laporte</b> avec l'utilisateur : <b>root</b> a échoué. ".utf8_encode($e->getMessage());
+				echo "Connexion à la base : <b>".$GLOBALS['NAMELPT']."</b> avec l'utilisateur : <b>".$GLOBALS['USERLPT']."</b> a échoué. ".utf8_encode($e->getMessage());
 				exit;
 			}
 
@@ -31,7 +31,7 @@ require_once ($PATH_CONSTANTES.'CstGales.php');
 
 			}
 			catch(PDOException $e){
-				echo "Connexion à la base : <b>stages</b> avec l'utilisateur : <b>root</b> a échoué. ".utf8_encode($e->getMessage());
+				echo "Connexion à la base : <b>".$GLOBALS['NAMESTG']."</b> avec l'utilisateur : <b>".$GLOBALS['USERSTG']."</b> a échoué. ".utf8_encode($e->getMessage());
 				exit;
 			}
 

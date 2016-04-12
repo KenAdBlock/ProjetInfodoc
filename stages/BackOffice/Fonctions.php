@@ -114,12 +114,29 @@ function RecupOldEntreprises()
 	OpenedSessionAndLoginNonVideIsOK ($JS_HistoryBack);
 
 	// Récupérations des variables envoyées par POST ou GET
-	
-    foreach ($_GET  as $clef => $valeur) $$clef = $valeur;
-    foreach ($_POST as $clef => $valeur) $$clef = stripslashes ($valeur);
 
-    if (isset ($_SESSION)) 
+    function SupprSlash($tab) {
+        foreach ($tab as $k => $v) {
+            if(is_array($v)) {
+                SupprSlash($v);
+            } else {
+                $$v = stripslashes($v);
+            }
+        }
+    }
+
+    if(isset($_GET)){
+        SupprSlash($_GET);
+    }
+
+
+    if(isset($_POST)){
+        SupprSlash($_POST);
+    }
+
+    if (isset ($_SESSION)){
 	    foreach ($_SESSION as $clef => $valeur) $$clef = $valeur;
+    }
 
     // Connexion a mySQL
 	// =================

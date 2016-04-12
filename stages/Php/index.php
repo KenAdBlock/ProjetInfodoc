@@ -1,4 +1,6 @@
 <?php
+	ini_set ("display_errors", 0);
+	error_reporting (0);
     $PATH_RACINE     = '../';
     $PATH_CONSTANTES = $PATH_RACINE.'Constantes/';
     $PATH_GENERAL		= $PATH_RACINE.'General/';
@@ -7,6 +9,7 @@
 
 	require_once ($PATH_BACKOFFICE.'Fonctions.php');
 ?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
