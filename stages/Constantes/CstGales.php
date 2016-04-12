@@ -11,17 +11,18 @@
 
 
 	// Vaiable de connexion à la base de donnée lpt (laporte)
-	$HOSTLPT = "mysql.hostinger.fr";
-	$NAMELPT = 'u583282816_lpt';
-	$USERLPT = 'u583282816_lpt';
-	$PASSWDBDLPT = "d2m2l2";
-	
-	
+
+	$HOSTLPT = "localhost";
+	$NAMELPT = 'laporte';
+	$USERLPT = 'root';
+	$PASSWDBDLPT = "";
+
+
 	// Vaiable de connexion à la base de donnée stg (stages)
-	$HOSTSTG = "mysql.hostinger.fr";
-	$NAMESTG = 'u583282816_stg';
-	$USERSTG = 'u583282816_stg';
-	$PASSWDBDSTG = "d2m2l2";
+	$HOSTSTG = "localhost";
+	$NAMESTG = 'stages';
+	$USERSTG = 'root';
+	$PASSWDBDSTG = "";
 
 
 

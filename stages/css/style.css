@@ -5,40 +5,89 @@
  *
  * Made By MaterializeCSS.com
  */
+
+/*body card*/
 .card{
   margin-bottom: -30px;
 }
+/**********************/
 
+/* header logo images */
 #separator-img{
   border: 0px;
 }
-.card1{
-  background: linear-gradient(to right, rgba(256,256,256,.80),rgba(256,256,256,.90), rgba(256,256,256,.80));
+/**********************/
+
+/********************************************
+    Navigation bar
+*/
+nav{
+  margin-top: -20px;
 }
-hr{
-  border-color: #ffffff;
+/*******************************************/
+
+/********************************************
+    side nav
+*/
+
+#sidenav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120vh;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 997;
+  will-change: opacity;
 }
+
 .side-nav > p{
   line-height: 30px;
 }
 
-p{
-  text-align: justify;
-  line-height: 25px;
-}
-ol {font-weight: bold;}
-li span {font-weight:normal;line-height: 25px;}
-
 .collapsible-body{
   padding: 20px;
 }
+
 .collapsible-header{
   background:#546e7a;
   border: 0px;
 }
+
 .collapsible-header:hover{
   background:#90a4ae;
 }
+
+nav .input-field label.active {
+  font-size: .8rem;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
+}
+
+nav .input-field input {
+  height: 100%;
+  font-size: 1rem;
+  border-bottom: 1px solid #0066cc;
+  padding-left: 0rem;
+}
+/**********************/
+
+/********************************************
+    List OBJECTIFS DES STAGES
+*/
+ol {
+  font-weight: bold;
+}
+
+li span {
+  font-weight:normal;
+  line-height: 25px;
+}
+/**********************/
+
+/******************************************
+    Formulaires
+*/
 /* label color */
    .input-field label {
      color: #0066CC;
@@ -55,6 +104,7 @@ li span {font-weight:normal;line-height: 25px;}
    .input-field input[type=email]:focus + label {
      color: #0066cc;
    }
+
    /* label underline focus color */
    .input-field input[type=text],.input-field input[type=password],.input-field input[type=email] {
    
@@ -68,7 +118,7 @@ li span {font-weight:normal;line-height: 25px;}
      box-shadow: 0 2px 0 0 #0066cc;
    }
    /* valid color */
-   .input-field input[type=text].valid {
+   .input-field input[type=text].valid, .input-field input[type=email].valid {
      border-bottom: 1px solid #0066CC;
      box-shadow: 0 1px 0 0 #0066CC;
    }
@@ -87,52 +137,75 @@ li span {font-weight:normal;line-height: 25px;}
   background-color: #0066CC;
   z-index: 0;
 }
-nav{
-  margin-top: -20px;
+
+[type="radio"]:checked + label:after {
+  border-radius: 50%;
+  border: 2px solid #0071b9;
+  background-color: #0071b9;
 }
+
+option *{
+  color: black;
+}
+textarea.materialize-textarea {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border: 1px solid #0066cc;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  margin-left: -5px;
+  padding-left: 5px;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all .3s;
+}
+textarea.materialize-textarea:focus:not([readonly]) {
+  border: 1px solid #0066cc;
+  box-shadow: 0px 0px 3px 0px #0066cc;
+}
+.cadre{
+  box-shadow: 0px 0px 2px 0px #9e9e9e;
+}
+
+select.browser-default {
+  background: transparent;
+  border: none;
+  border-bottom:  1px solid #0066cc;
+  box-shadow: none;
+  border-radius: 0;
+}
+select.browser-default:focus {
+  border: none;
+  border-bottom:  1px solid #0066cc;
+  box-shadow: none;
+  outline: 0;
+}
+select>option{
+  background: white;
+  color: black;
+}
+select + label{
+  margin-top: -27px;
+}
+/********************************************/
+
+/*******************************************
+    Footer
+*/
 footer.page-footer{
   background:transparent;
 }
-
-/********************************************/
-.no-margin-bottom {
-    margin-bottom: 0;
-}
-
-.pointer {
-  cursor: pointer;
-}
 /********************************************/
 
-#sidenav-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 120vh;
-  background-color: rgba(0, 0, 0, .5);
-  z-index: 997;
-  will-change: opacity;
-}
+/********************************************
+    Buttons
+*/
 
-nav .input-field label.active {
-  font-size: .8rem;
-  -webkit-transform: translateY(-40%);
-          transform: translateY(-40%);
-}
-nav .input-field input {
-  height: 100%;
-  font-size: 1rem;
-  border-bottom: 1px solid #0066cc;
-  padding-left: 0rem;
-}
-td, th {
-  padding: 15px 5px;
-  display: table-cell;
-  text-align: left;
-  vertical-align: middle;
-  border-radius: 0px;
-}
 #connecter{
   width: 100%;
   border: none;
@@ -154,14 +227,7 @@ td, th {
 #connecter:focus{
   background-color: #ffcc00;
 }
-[type="radio"]:checked + label:after {
-  border-radius: 50%;
-  border: 2px solid #0071b9;
-  background-color: #0071b9;
-}
-table.highlight > tbody > tr:hover {
-  background-color: #e0e0e0;
-}
+
 a.ashadow {
   background: transparent;
   border: none;
@@ -192,56 +258,6 @@ a.hover-bleu {
   color: #0066cc;
 }
 
-#login-connect {
-    font-size: 19px;
-}
-.bleu1,.bleu1:hover,.bleu1:focus{
-  background: #0066cc;
-}
-.bleu2,.bleu2:hover,.bleu2:focus{
-  background: #00CCFF;
-}
-
-.jaune,.jaune:hover,.jaune:focus{
-  background:#FFCC00;
-}
-.jaune-text{
-  color: #FFCC00;
-}
-
-.bleu1-text{
-    color: #0066cc;
-}
-option *{
-  color: black;
-}
-textarea.materialize-textarea {
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  border: 1px solid #0066cc;
-  border-radius: 0;
-  outline: none;
-  height: 3rem;
-  width: 100%;
-  font-size: 1rem;
-  margin: 0 0 15px 0;
-  margin-left: -5px;
-  padding-left: 5px;
-  box-shadow: none;
-  box-sizing: content-box;
-  transition: all .3s;
-}
-textarea.materialize-textarea:focus:not([readonly]) {
-  border: 1px solid #0066cc;
-  box-shadow: 0px 0px 3px 0px #0066cc;
-}
-.cadre{
-  box-shadow: 0px 0px 2px 0px #9e9e9e;
-}
-.small-text{
-  font-size: 1em;
-}
 .min-btn{
   border: none;
   border-radius: 2px;
@@ -260,26 +276,22 @@ textarea.materialize-textarea:focus:not([readonly]) {
   box-shadow: 0px 3px 10px 0px #757575;
   transition: all .25s;
 }
+/********************************************/
 
-select.browser-default {
-  background: transparent;
-  border: none;
-  border-bottom:  1px solid #0066cc;
-  box-shadow: none;
-  border-radius: 0;
+/********************************************
+    Tables
+*/
+td, th {
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 0px;
 }
-select.browser-default:focus {
-  border: none;
-  border-bottom:  1px solid #0066cc;
-  box-shadow: none;
-  outline: 0;
+table.highlight > tbody > tr:hover {
+  background-color: #e0e0e0;
 }
-select>option{
-  background: white;
-}
-select + label{
-  margin-top: -27px;
-}
+
 .table-list{
   width:100%;
   overflow:auto;
@@ -288,3 +300,51 @@ select + label{
   width:100%; 
   overflow:auto;
 }
+/********************************************/
+
+/********************************************
+    Colors charte graphique 
+*/
+.bleu1,.bleu1:hover,.bleu1:focus{
+  background: #0066cc;
+}
+.bleu2,.bleu2:hover,.bleu2:focus{
+  background: #00CCFF;
+}
+
+.jaune,.jaune:hover,.jaune:focus{
+  background:#FFCC00;
+}
+.jaune-text{
+  color: #FFCC00;
+}
+
+.bleu1-text{
+    color: #0066cc;
+}
+/********************************************/
+
+.small-text{
+  font-size: 1em;
+}
+
+#login-connect {
+    font-size: 19px;
+}
+hr{
+  border-color: #ffffff;
+}
+
+p{
+  text-align: justify;
+  line-height: 25px;
+}
+/********************************************/
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+/********************************************/

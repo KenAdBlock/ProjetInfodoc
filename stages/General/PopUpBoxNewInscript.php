@@ -304,19 +304,30 @@
 										{
 										  case 'Ack' : 
 										                                   ?>
+<div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card grey lighten-4 z-depth-1">
+            <div class="card-content">    
+<p>     
     Votre inscription a bien été enregistrée et nous vous en remercions.
 
     Vous recevrez dans les plus brefs délais un login et un mot de passe pour vous permettre d'entrer les caractéristiques du stage que vous proposez.
-
-<br /><br />
+</p>
+<br />
 <div style="text-align : right">
 <?=$NomResponsableStages?>
 <br />
 Responsable des stages
+</div><br>
+<p class="center">
+                  <button type="submit" class="waves-effect waves-light btn black white-text"
+                    onClick="window.close()">Fermer la fenetre</button>
+                </p>
 </div>
-<div style="text-align : center">
-<input type="button" value="Fermer la fenêtre"
-       onClick="window.close()">
+</div>
+</div>
+</div>
 </div>
 
                                                                            <?php
@@ -353,19 +364,19 @@ Responsable des stages
                                 <div class="col l5 s11">
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
+                                            <input name="CiviliteTuteur" type="radio" id="CiviliteM" value="M" checked="checked" />
                                             <label for="CiviliteM">M</label>
                                         </p>
                                     </div>
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
+                                            <input name="CiviliteTuteur" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
                                              <label for="CiviliteMme">Mme</label>
                                         </p>
                                     </div>
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
+                                            <input name="CiviliteTuteur" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
                                             <label for="CiviliteMlle">Mlle</label>
                                         </p>
                                     </div>
@@ -472,20 +483,20 @@ Responsable des stages
                                 <div class="col l5 s11 m11">
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
-                                            <label for="CiviliteM">M</label>
+                                            <input name="CiviliteRespAdmin" type="radio" id="CiviliteAdminM" value="M" checked="checked" />
+                                            <label for="CiviliteAdminM">M</label>
                                         </p>
                                     </div>
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
-                                             <label for="CiviliteMme">Mme</label>
+                                            <input name="CiviliteRespAdmin" type="radio" id="CiviliteAdminMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
+                                             <label for="CiviliteAdminMme">Mme</label>
                                         </p>
                                     </div>
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
-                                            <label for="CiviliteMlle">Mlle</label>
+                                            <input name="CiviliteRespAdmin" type="radio" id="CiviliteAdminMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
+                                            <label for="CiviliteAdminMlle">Mlle</label>
                                         </p>
                                     </div>
                                 </div>
