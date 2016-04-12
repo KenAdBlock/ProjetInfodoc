@@ -348,19 +348,19 @@ Responsable des stages
                                 <div class="col l5 s11">
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
+                                            <input name="CiviliteTuteur" type="radio" id="CiviliteM" value="M" checked="checked" />
                                             <label for="CiviliteM">M</label>
                                         </p>
                                     </div>
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
+                                            <input name="CiviliteTuteur" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
                                              <label for="CiviliteMme">Mme</label>
                                         </p>
                                     </div>
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
+                                            <input name="CiviliteTuteur" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
                                             <label for="CiviliteMlle">Mlle</label>
                                         </p>
                                     </div>
@@ -467,20 +467,20 @@ Responsable des stages
                                 <div class="col l5 s11 m11">
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteM" value="M" checked="checked" />
-                                            <label for="CiviliteM">M</label>
+                                            <input name="CiviliteRespAdmin" type="radio" id="CiviliteAdminM" value="M" checked="checked" />
+                                            <label for="CiviliteAdminM">M</label>
                                         </p>
                                     </div>
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
-                                             <label for="CiviliteMme">Mme</label>
+                                            <input name="CiviliteRespAdmin" type="radio" id="CiviliteAdminMme" value="Mme" <?=$ValCivilite == 'Mme' ? 'checked' : ''?>/>
+                                             <label for="CiviliteAdminMme">Mme</label>
                                         </p>
                                     </div>
                                     <div class="input-field col l4 m4 s4">
                                         <p>
-                                            <input name="Civilite" type="radio" id="CiviliteMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
-                                            <label for="CiviliteMlle">Mlle</label>
+                                            <input name="CiviliteRespAdmin" type="radio" id="CiviliteAdminMlle" value="Mlle" <?=$ValCivilite == 'Mlle' ? 'checked' : ''?>  />
+                                            <label for="CiviliteAdminMlle">Mlle</label>
                                         </p>
                                     </div>
                                 </div>
