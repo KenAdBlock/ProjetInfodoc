@@ -18,6 +18,7 @@
 	$PASSWDBDLPT = "";
 
 
+
 	// Vaiable de connexion à la base de donnée stg (stages)
 	$HOSTSTG = "localhost";
 	$NAMESTG = 'stages';

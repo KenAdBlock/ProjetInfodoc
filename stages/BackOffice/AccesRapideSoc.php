@@ -34,7 +34,7 @@ if ($CleOK == '069b9247591948b71d303ac66371bf0b')
 else
 {
 ?>
-<h2 style="text-align : center">Vous ne pouvez accéder directement à cette page</h2>
+<h4 class="center">Vous ne pouvez accéder directement à cette page</h4>
 <?php
 }
 ?>
